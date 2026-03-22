@@ -15,7 +15,7 @@ GMAIL_SMTP_SERVER = 'smtp.gmail.com'
 GMAIL_SMTP_PORT = 587
 
 # RSS 설정
-FT_RSS_URL = os.getenv('FT_RSS_URL', 'https://feeds.ft.com/home/page/rss')
+FT_RSS_URL = os.getenv('FT_RSS_URL', 'https://www.ft.com/?format=rss')
 RSS_HOURS_LOOKBACK = 24  # 최근 24시간
 
 # 분석 리포트 수신자
