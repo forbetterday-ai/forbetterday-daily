@@ -70,7 +70,6 @@ TECH_FEEDS = {
 
 # ===== 매일경제 =====
 MK_FEEDS = {
-    'MK 헤드라인': 'https://www.mk.co.kr/rss/30000001/',
     'MK 경제': 'https://www.mk.co.kr/rss/30100041/',
     'MK 금융': 'https://www.mk.co.kr/rss/30200030/',
     'MK 기업': 'https://www.mk.co.kr/rss/50100012/',
@@ -83,12 +82,10 @@ HANKYUNG_FEEDS = {
     'HK 경제': 'https://www.hankyung.com/feed/economy',
     'HK 금융': 'https://www.hankyung.com/feed/finance',
     'HK IT': 'https://www.hankyung.com/feed/it',
-    'HK 전체': 'https://www.hankyung.com/feed/all-news',
 }
 
 # ===== 조선일보 =====
 CHOSUN_FEEDS = {
-    '조선 헤드라인': 'https://www.chosun.com/arc/outboundfeeds/rss/?outputType=xml',
     '조선 정치': 'https://www.chosun.com/arc/outboundfeeds/rss/category/politics/?outputType=xml',
     '조선 사회': 'https://www.chosun.com/arc/outboundfeeds/rss/category/national/?outputType=xml',
 }
