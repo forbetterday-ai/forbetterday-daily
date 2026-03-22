@@ -66,6 +66,7 @@ DEFENSE_FEEDS = {
 # ===== Tech =====
 TECH_FEEDS = {
     'Ars Technica': 'https://feeds.arstechnica.com/arstechnica/index',
+    'The Information': 'https://rss.app/feeds/WHiQ80N8WLtalVfX.xml',
 }
 
 # ===== 매일경제 =====
