@@ -14,54 +14,48 @@ logger = setup_logger(__name__)
 if CLAUDE_API_KEY:
     os.environ['ANTHROPIC_API_KEY'] = CLAUDE_API_KEY
 
+
 def _get_client():
     """Anthropic 클라이언트 지연 초기화"""
     return Anthropic()
 
+
 def translate_articles(articles_by_section: Dict[str, List[dict]]) -> Dict[str, List[dict]]:
     """
-    기사 제목 및 요약을 한글로 번역
-    
-    Args:
-        articles_by_section: RSS 수집 결과
-    
-    Returns:
-        번역된 기사 (title_ko, has_watchlist, watchlist_item 추가)
+    기사 제목 및 요약을 한글로 번역 (한국 뉴스는 번역 스킵)
     """
     try:
         logger.info("기사 번역 시작 (Claude API)")
-        
+
         for section, articles in articles_by_section.items():
             for article in articles:
-                # 제목 번역
-                title_ko = translate_text(article['title'])
-                article['title_ko'] = title_ko
-                
+                # 한국 뉴스는 번역 스킵
+                if article.get('is_korean', False):
+                    article['title_ko'] = article['title']
+                else:
+                    title_ko = translate_text(article['title'])
+                    article['title_ko'] = title_ko
+
                 # 워치리스트 종목 감지
                 has_watchlist, watchlist_item = is_watchlist_item(
-                    title_ko + " " + article['title']
+                    article.get('title_ko', '') + " " + article['title']
                 )
                 article['has_watchlist'] = has_watchlist
                 article['watchlist_item'] = watchlist_item
-                
-                logger.debug(f"번역 완료: {title_ko}")
-        
+
+                logger.debug(f"처리 완료: {article.get('title_ko', '')}")
+
         logger.info(f"번역 완료: 전체 {sum(len(v) for v in articles_by_section.values())}개 기사")
         return articles_by_section
-    
+
     except Exception as e:
         logger.error(f"번역 실패: {str(e)}", exc_info=True)
         return articles_by_section
 
+
 def translate_text(text: str) -> str:
     """
     텍스트를 한글로 번역
-    
-    Args:
-        text: 영문 텍스트
-    
-    Returns:
-        한글 번역문
     """
     try:
         client = _get_client()
@@ -74,17 +68,17 @@ def translate_text(text: str) -> str:
                     "content": f"""다음 영문 텍스트를 자연스러운 한글로 번역해주세요.
 전문 용어는 [한글 풀이] (영문원어) 형식으로 표기해주세요.
 번역문만 출력하세요.
-
 영문 텍스트:
 {text}"""
                 }
             ]
         )
         return message.content[0].text.strip()
-    
+
     except Exception as e:
         logger.warning(f"번역 실패: {text[:50]}... → 원문 사용 ({str(e)})")
         return text
+
 
 def translate_for_analysis(article_text: str) -> str:
     """
@@ -102,14 +96,13 @@ def translate_for_analysis(article_text: str) -> str:
 논리적 흐름을 유지하며 자연스럽게 번역하세요.
 전문 용어는 [한글 풀이] (영문원어) 형식으로 표기해주세요.
 번역문만 출력하세요.
-
 기사:
 {article_text}"""
                 }
             ]
         )
         return message.content[0].text.strip()
-    
+
     except Exception as e:
         logger.warning(f"상세 번역 실패: {str(e)}")
         return article_text
