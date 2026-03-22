@@ -1,5 +1,5 @@
 """
-데일리 뉴스 브리핑 웹페이지 생성 모듈 - 사이드바 레이아웃
+데일리 뉴스 브리핑 웹페이지 생성 모듈 - 사이드바 + 요약
 """
 import os
 import re
@@ -46,7 +46,6 @@ def generate_briefing_page(articles_by_section: dict):
     weekday = weekday_map[now.weekday()]
     total_articles = sum(len(v) for v in articles_by_section.values())
 
-    # 피드 상태
     status = get_feed_status()
     unavailable_feeds = [k for k, v in status.items() if v in ('unavailable', 'error')]
     status_html = ""
@@ -54,7 +53,6 @@ def generate_briefing_page(articles_by_section: dict):
         feeds_list = ", ".join(unavailable_feeds)
         status_html = f'<div class="status-alert">⚠️ 접속불가: {feeds_list}</div>'
 
-    # 날짜 목록
     all_dates = set()
     for section, articles in articles_by_section.items():
         for article in articles:
@@ -63,12 +61,10 @@ def generate_briefing_page(articles_by_section: dict):
                 all_dates.add(d)
     sorted_dates = sorted(all_dates, reverse=True)
 
-    # 날짜 버튼
     date_items = '<li><button class="sb-btn date-btn active" onclick="filterDate(\'all\')">전체</button></li>'
     for d in sorted_dates:
         date_items += f'<li><button class="sb-btn date-btn" onclick="filterDate(\'{d}\')">{d}</button></li>'
 
-    # 소스 버튼 + 기사 수
     source_items = '<li><button class="sb-btn source-btn active" onclick="filterSource(\'all\')">Show All</button></li>'
     for group_name, section_list in SOURCE_GROUPS.items():
         count = 0
@@ -78,7 +74,6 @@ def generate_briefing_page(articles_by_section: dict):
         if count > 0:
             source_items += f'<li><button class="sb-btn source-btn" onclick="filterSource(\'{group_name}\')">{group_name} <span class="sb-count">{count}</span></button></li>'
 
-    # 기사 HTML
     articles_html = ""
     for section, articles in articles_by_section.items():
         source_group = _get_source_group(section)
@@ -87,21 +82,27 @@ def generate_briefing_page(articles_by_section: dict):
         for article in articles:
             title = article.get('title', 'N/A')
             title_ko = article.get('title_ko', '')
+            summary_ko = article.get('summary_ko', '')
             link = article.get('link', '#')
             pub_date = article.get('pub_date', '')
             has_watchlist = article.get('has_watchlist', False)
             watchlist_item = article.get('watchlist_item', '')
             article_date = _extract_date_str(pub_date)
             watchlist_badge = f'<span class="wl-badge">★ {watchlist_item}</span>' if has_watchlist else ''
+
             if title_ko and title_ko != title:
                 main_title = title_ko
                 sub_html = f'<div class="art-orig">{title}</div>'
             else:
                 main_title = title
                 sub_html = ''
+
+            summary_html = f'<div class="art-summary">{summary_ko}</div>' if summary_ko else ''
+
             articles_html += f'''<a href="{link}" target="_blank" class="art-card {"watchlist" if has_watchlist else ""}" data-date="{article_date}" data-source="{source_group}">
 <div class="art-head"><div class="art-title">{main_title}</div>{watchlist_badge}</div>
 {sub_html}
+{summary_html}
 <div class="art-meta"><span class="art-date">{pub_date}</span></div>
 </a>'''
         articles_html += '</div>'
@@ -137,8 +138,6 @@ body {{
     color: var(--txt);
     line-height: 1.6;
 }}
-
-/* === SIDEBAR === */
 .sidebar {{
     position: fixed;
     top: 0; left: 0;
@@ -196,10 +195,7 @@ body {{
     letter-spacing: 0.15em;
     margin-bottom: 0.4rem;
 }}
-.sb-list {{
-    list-style: none;
-    margin-bottom: 0.5rem;
-}}
+.sb-list {{ list-style: none; margin-bottom: 0.5rem; }}
 .sb-list li {{ margin-bottom: 0.2rem; }}
 .sb-btn {{
     width: 100%;
@@ -217,10 +213,7 @@ body {{
     justify-content: space-between;
     align-items: center;
 }}
-.sb-btn:hover {{
-    background: var(--bg3);
-    color: var(--txt);
-}}
+.sb-btn:hover {{ background: var(--bg3); color: var(--txt); }}
 .sb-btn.active {{
     background: var(--accent2);
     border-color: var(--accent);
@@ -248,8 +241,6 @@ body {{
     color: var(--wl);
     line-height: 1.4;
 }}
-
-/* === MAIN CONTENT === */
 .main {{
     margin-left: var(--sidebar-w);
     padding: 1.5rem 2rem 4rem;
@@ -307,6 +298,14 @@ body {{
     border-left: 2px solid var(--border);
     font-style: italic;
 }}
+.art-summary {{
+    font-size: 0.78rem;
+    color: var(--txt2);
+    margin-top: 0.3rem;
+    line-height: 1.5;
+    padding-left: 0.6rem;
+    border-left: 2px solid var(--accent2);
+}}
 .wl-badge {{
     flex-shrink: 0;
     font-size: 0.58rem;
@@ -328,91 +327,60 @@ body {{
     padding: 1.5rem 2rem;
     text-align: center;
 }}
-.footer-text {{
-    font-size: 0.68rem;
-    color: var(--txt3);
-}}
-
-/* === MOBILE === */
+.footer-text {{ font-size: 0.68rem; color: var(--txt3); }}
 @media (max-width: 768px) {{
     .sidebar {{
         position: static;
         width: 100%;
         height: auto;
-        max-height: none;
         border-right: none;
         border-bottom: 1px solid var(--border);
         overflow-y: visible;
         padding: 1rem;
     }}
-    .main {{
-        margin-left: 0;
-        padding: 1rem;
-    }}
-    .footer {{
-        margin-left: 0;
-        padding: 1rem;
-    }}
-    .art-head {{
-        flex-direction: column;
-        gap: 0.2rem;
-    }}
+    .main {{ margin-left: 0; padding: 1rem; }}
+    .footer {{ margin-left: 0; padding: 1rem; }}
+    .art-head {{ flex-direction: column; gap: 0.2rem; }}
 }}
 </style>
 </head>
 <body>
-
 <aside class="sidebar">
     <div class="sb-brand">Daily News Brief</div>
     <div class="sb-sub">FT · Bloomberg · Reuters · TechCrunch<br>Space · Defense · 매경 · 한경 · 조선</div>
     <div class="sb-info">{weekday}요일 · {date_str}</div>
     <div class="sb-info">업데이트 {time_str} KST</div>
     <span class="sb-total">총 {total_articles}개 기사</span>
-
     <hr class="sb-divider">
     <div class="sb-label">날짜</div>
-    <ul class="sb-list">
-        {date_items}
-    </ul>
-
+    <ul class="sb-list">{date_items}</ul>
     <hr class="sb-divider">
     <div class="sb-label">소스</div>
-    <ul class="sb-list">
-        {source_items}
-    </ul>
-
+    <ul class="sb-list">{source_items}</ul>
     <div class="sb-filter-count" id="filterCount"></div>
     {status_html}
 </aside>
-
 <main class="main">
     {articles_html if total_articles > 0 else '<div style="text-align:center;padding:4rem 0;color:var(--txt3);">📭 수집된 기사가 없습니다.</div>'}
 </main>
-
 <footer class="footer">
-    <div class="footer-text">
-        Daily News Brief · KST 07:00 / 12:00 / 20:00 / 21:00 자동 업데이트
-    </div>
+    <div class="footer-text">Daily News Brief · KST 07:00 / 12:00 / 20:00 / 21:00 자동 업데이트</div>
 </footer>
-
 <script>
 let currentDate = 'all';
 let currentSource = 'all';
-
 function filterDate(date) {{
     currentDate = date;
     document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
     applyFilters();
 }}
-
 function filterSource(source) {{
     currentSource = source;
     document.querySelectorAll('.source-btn').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
     applyFilters();
 }}
-
 function applyFilters() {{
     let n = 0;
     document.querySelectorAll('.art-card').forEach(c => {{
