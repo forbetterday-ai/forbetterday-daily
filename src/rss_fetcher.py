@@ -19,6 +19,8 @@ FT_FEEDS = {
     'FT Technology': 'https://www.ft.com/technology?format=rss',
     'FT World': 'https://www.ft.com/world?format=rss',
     'FT US': 'https://www.ft.com/world/us?format=rss',
+    'FT Opinion': 'https://www.ft.com/opinion?format=rss',
+    'FT Global Economy': 'https://www.ft.com/global-economy?format=rss',
 }
 
 # ===== Bloomberg =====
