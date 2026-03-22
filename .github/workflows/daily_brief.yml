@@ -1,9 +1,9 @@
 name: FT 데일리 브리핑 자동화
 on:
   schedule:
-    - cron: '0 11 * * *'  # UTC 11:00 = KST 20:00 (FT 업데이트)
-    - cron: '0 12 * * *'  # UTC 12:00 = KST 21:00 (Bloomberg 업데이트)
-  workflow_dispatch:  # 수동 트리거
+    - cron: '0 11 * * *'  # UTC 11:00 = KST 20:00 (FT only)
+    - cron: '0 12 * * *'  # UTC 12:00 = KST 21:00 (나머지 전체)
+  workflow_dispatch:  # 수동 트리거 (전체 실행)
 
 permissions:
   contents: write
@@ -29,8 +29,8 @@ jobs:
       - name: Run daily brief
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
-          FT_RSS_URL: https://www.ft.com/?format=rss
           LOG_LEVEL: INFO
+          FEED_GROUP: ${{ github.event.schedule == '0 11 * * *' && 'ft' || 'all' }}
         run: |
           python main.py --mode daily
       
