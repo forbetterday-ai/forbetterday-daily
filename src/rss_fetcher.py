@@ -1,5 +1,5 @@
 """
-FT + Bloomberg + Reuters RSS 수집 모듈 - 멀티 소스, 멀티 섹션 피드
+FT + Bloomberg + Reuters + TechCrunch RSS 수집 모듈
 """
 import feedparser
 from datetime import datetime
@@ -34,8 +34,16 @@ REUTERS_SECTION_FEEDS = {
     'Reuters Markets': 'https://feeds.reuters.com/reuters/marketsNews',
 }
 
+# TechCrunch RSS 피드
+TECHCRUNCH_FEEDS = {
+    'TechCrunch': 'https://techcrunch.com/feed/',
+    'TC Startups': 'https://techcrunch.com/category/startups/feed/',
+    'TC AI': 'https://techcrunch.com/category/artificial-intelligence/feed/',
+    'TC Venture': 'https://techcrunch.com/category/venture/feed/',
+}
+
 # 전체 피드 합치기
-ALL_FEEDS = {**FT_SECTION_FEEDS, **BLOOMBERG_SECTION_FEEDS, **REUTERS_SECTION_FEEDS}
+ALL_FEEDS = {**FT_SECTION_FEEDS, **BLOOMBERG_SECTION_FEEDS, **REUTERS_SECTION_FEEDS, **TECHCRUNCH_FEEDS}
 
 # 피드 상태 추적 (웹페이지에서 표시용)
 feed_status = {}
@@ -48,7 +56,7 @@ def get_feed_status() -> dict:
 
 def fetch_ft_rss() -> Dict[str, List[dict]]:
     """
-    FT + Bloomberg + Reuters RSS 피드 수집 - 복수 소스에서 수집 및 중복 제거
+    전체 RSS 피드 수집 - 복수 소스에서 수집 및 중복 제거
     """
     global feed_status
     articles_by_section = {}
@@ -111,7 +119,6 @@ def get_articles_summary(articles_by_section: Dict[str, List[dict]]) -> str:
     for section, articles in articles_by_section.items():
         summary += f"- {section}: {len(articles)}개\n"
 
-    # 피드 상태 요약
     unavailable = [k for k, v in feed_status.items() if v == 'unavailable']
     if unavailable:
         summary += f"\n⚠️ 접속 불가 피드: {', '.join(unavailable)}\n"
