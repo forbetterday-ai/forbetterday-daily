@@ -1,9 +1,11 @@
-name: FT 데일리 브리핑 자동화
+name: Daily News Brief 자동화
 on:
   schedule:
-    - cron: '0 11 * * *'  # UTC 11:00 = KST 20:00 (FT only)
-    - cron: '0 12 * * *'  # UTC 12:00 = KST 21:00 (나머지 전체)
-  workflow_dispatch:  # 수동 트리거 (전체 실행)
+    - cron: '0 22 * * *'  # UTC 22:00 = KST 07:00
+    - cron: '0 3 * * *'   # UTC 03:00 = KST 12:00
+    - cron: '0 11 * * *'  # UTC 11:00 = KST 20:00
+    - cron: '0 12 * * *'  # UTC 12:00 = KST 21:00
+  workflow_dispatch:  # 수동 트리거
 
 permissions:
   contents: write
@@ -30,7 +32,6 @@ jobs:
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           LOG_LEVEL: INFO
-          FEED_GROUP: ${{ github.event.schedule == '0 11 * * *' && 'ft' || 'all' }}
         run: |
           python main.py --mode daily
       
