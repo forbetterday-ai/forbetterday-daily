@@ -12,18 +12,19 @@ from src.rss_fetcher import fetch_ft_rss, get_articles_summary
 from src.translator import translate_articles
 from src.email_sender import send_daily_brief
 from src.article_analyzer import analyze_article
+from src.page_generator import generate_briefing_page
 
 logger = setup_logger(__name__)
 
 def daily_mode():
-    """일일 브리핑 모드: RSS → 번역 → 이메일 발송"""
+    """일일 브리핑 모드: RSS → 번역 → 이메일 발송 → 웹페이지 생성"""
     try:
         logger.info("=" * 60)
         logger.info(f"FT 데일리 브리핑 실행 시작 - {datetime.now(KST)}")
         logger.info("=" * 60)
         
         # 1단계: RSS 수집
-        logger.info("\n[1/3] RSS 수집 중...")
+        logger.info("\n[1/4] RSS 수집 중...")
         articles_by_section = fetch_ft_rss()
         if not articles_by_section:
             logger.error("수집된 기사가 없습니다.")
@@ -32,21 +33,31 @@ def daily_mode():
         logger.info(get_articles_summary(articles_by_section))
         
         # 2단계: 번역
-        logger.info("[2/3] 기사 번역 중...")
+        logger.info("[2/4] 기사 번역 중...")
         articles_by_section = translate_articles(articles_by_section)
         
         # 3단계: 이메일 발송
-        logger.info("[3/3] 이메일 발송 중...")
-        success = send_daily_brief(articles_by_section)
+        logger.info("[3/4] 이메일 발송 중...")
+        email_success = send_daily_brief(articles_by_section)
         
-        if success:
-            logger.info("=" * 60)
-            logger.info("✅ 일일 브리핑 완료!")
-            logger.info("=" * 60)
-            return True
+        if email_success:
+            logger.info("✅ 이메일 발송 완료!")
         else:
-            logger.error("이메일 발송 실패")
-            return False
+            logger.warning("⚠️ 이메일 발송 실패 (웹페이지 생성은 계속 진행)")
+        
+        # 4단계: 웹페이지 생성
+        logger.info("[4/4] 브리핑 웹페이지 생성 중...")
+        page_path = generate_briefing_page(articles_by_section)
+        
+        if page_path:
+            logger.info(f"✅ 웹페이지 생성 완료: {page_path}")
+        else:
+            logger.warning("⚠️ 웹페이지 생성 실패")
+        
+        logger.info("=" * 60)
+        logger.info("✅ 일일 브리핑 완료!")
+        logger.info("=" * 60)
+        return True
     
     except Exception as e:
         logger.error(f"일일 브리핑 실패: {str(e)}", exc_info=True)
