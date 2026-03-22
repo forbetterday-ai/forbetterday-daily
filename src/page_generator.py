@@ -18,6 +18,7 @@ SOURCE_GROUPS = {
     'Space': ['SpaceNews', 'Space.com', 'Payload Space', 'Satellite Today'],
     'Defense': ['Breaking Defense', 'Defense News', 'Defense One', 'DefenseScoop', 'Air & Space Forces', 'Space & Defense'],
     'Ars Technica': ['Ars Technica'],
+    'The Information': ['The Information'],
     '매경': ['MK 헤드라인', 'MK 경제', 'MK 금융', 'MK 기업', 'MK 증권', 'MK IT'],
     '한경': ['HK 경제', 'HK 산업', 'HK 금융', 'HK IT', 'HK 전체'],
     '조선': ['조선 헤드라인', '조선 정치', '조선 사회'],
