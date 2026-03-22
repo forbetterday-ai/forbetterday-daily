@@ -29,7 +29,7 @@ jobs:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
-          FT_RSS_URL: https://feeds.ft.com/home/page/rss
+          FT_RSS_URL: https://www.ft.com/?format=rss
           LOG_LEVEL: INFO
         run: |
           python main.py --mode daily
