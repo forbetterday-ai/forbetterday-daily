@@ -88,7 +88,6 @@ def _get_active_feeds() -> dict:
     if feed_group == 'ft':
         return FT_FEEDS
     else:
-        # 'all' = FT 제외 나머지 전체 (FT는 20:00에 이미 수집됨)
         return {
             **BLOOMBERG_FEEDS,
             **REUTERS_FEEDS,
