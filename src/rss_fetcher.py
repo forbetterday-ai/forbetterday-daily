@@ -1,5 +1,5 @@
 """
-FT.com RSS 수집 모듈 - 멀티 섹션 피드
+FT.com + Bloomberg RSS 수집 모듈 - 멀티 소스, 멀티 섹션 피드
 """
 import feedparser
 from datetime import datetime
@@ -12,17 +12,30 @@ logger = setup_logger(__name__)
 
 # FT 섹션별 RSS 피드
 FT_SECTION_FEEDS = {
-    'Markets': 'https://www.ft.com/markets?format=rss',
-    'Companies': 'https://www.ft.com/companies?format=rss',
-    'Technology': 'https://www.ft.com/technology?format=rss',
-    'World': 'https://www.ft.com/world?format=rss',
-    'US': 'https://www.ft.com/world/us?format=rss',
+    'FT Markets': 'https://www.ft.com/markets?format=rss',
+    'FT Companies': 'https://www.ft.com/companies?format=rss',
+    'FT Technology': 'https://www.ft.com/technology?format=rss',
+    'FT World': 'https://www.ft.com/world?format=rss',
+    'FT US': 'https://www.ft.com/world/us?format=rss',
 }
+
+# Bloomberg 섹션별 RSS 피드
+BLOOMBERG_SECTION_FEEDS = {
+    'BBG Markets': 'https://feeds.bloomberg.com/markets/news.rss',
+    'BBG Technology': 'https://feeds.bloomberg.com/technology/news.rss',
+    'BBG Politics': 'https://feeds.bloomberg.com/politics/news.rss',
+    'BBG Economics': 'https://feeds.bloomberg.com/economics/news.rss',
+    'BBG Industries': 'https://feeds.bloomberg.com/industries/news.rss',
+    'BBG AI': 'https://feeds.bloomberg.com/ai/news.rss',
+}
+
+# 전체 피드 합치기
+ALL_FEEDS = {**FT_SECTION_FEEDS, **BLOOMBERG_SECTION_FEEDS}
 
 
 def fetch_ft_rss() -> Dict[str, List[dict]]:
     """
-    FT RSS 피드 수집 - 복수 섹션 피드에서 수집 및 중복 제거
+    FT + Bloomberg RSS 피드 수집 - 복수 소스에서 수집 및 중복 제거
 
     Returns:
         {
@@ -40,13 +53,17 @@ def fetch_ft_rss() -> Dict[str, List[dict]]:
     articles_by_section = {}
     seen_links = set()  # 중복 제거용
 
-    for section_name, feed_url in FT_SECTION_FEEDS.items():
+    for section_name, feed_url in ALL_FEEDS.items():
         try:
-            logger.info(f"FT RSS 수집: {section_name} ({feed_url})")
+            logger.info(f"RSS 수집: {section_name} ({feed_url})")
             feed = feedparser.parse(feed_url)
 
             if feed.bozo:
                 logger.warning(f"RSS 파싱 경고 ({section_name}): {feed.bozo_exception}")
+                # 접속 실패 시 건너뛰기
+                if not feed.entries:
+                    logger.warning(f"  → {section_name}: 접속 실패, 건너뜀")
+                    continue
 
             section_articles = []
 
