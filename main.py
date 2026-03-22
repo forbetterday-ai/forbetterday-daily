@@ -6,8 +6,8 @@ import argparse
 import sys
 import os
 import json
-from datetime import datetime, timedelta
-from config.config import KST, RSS_HOURS_LOOKBACK
+from datetime import datetime
+from config.config import KST
 from src.logger import setup_logger
 from src.rss_fetcher import fetch_ft_rss, get_articles_summary
 from src.translator import translate_articles
@@ -19,7 +19,6 @@ CACHE_PATH = 'docs/articles_cache.json'
 
 
 def load_cache() -> dict:
-    """캐시 파일 로드 (link를 키로 사용)"""
     try:
         if os.path.exists(CACHE_PATH):
             with open(CACHE_PATH, 'r', encoding='utf-8') as f:
@@ -32,11 +31,9 @@ def load_cache() -> dict:
 
 
 def save_cache(articles_by_section: dict):
-    """번역된 기사를 캐시에 저장 (link를 키로)"""
     try:
         cache = {}
         now = datetime.now(KST).isoformat()
-
         for section, articles in articles_by_section.items():
             for article in articles:
                 link = article.get('link', '')
@@ -44,6 +41,7 @@ def save_cache(articles_by_section: dict):
                     cache[link] = {
                         'title': article.get('title', ''),
                         'title_ko': article.get('title_ko', ''),
+                        'summary_ko': article.get('summary_ko', ''),
                         'link': link,
                         'pub_date': article.get('pub_date', ''),
                         'summary': article.get('summary', ''),
@@ -53,7 +51,6 @@ def save_cache(articles_by_section: dict):
                         'is_korean': article.get('is_korean', False),
                         'cached_at': now,
                     }
-
         os.makedirs('docs', exist_ok=True)
         with open(CACHE_PATH, 'w', encoding='utf-8') as f:
             json.dump(cache, f, ensure_ascii=False, indent=2)
@@ -63,12 +60,6 @@ def save_cache(articles_by_section: dict):
 
 
 def apply_cache(articles_by_section: dict, cache: dict) -> tuple:
-    """
-    캐시에 있는 기사는 번역 결과를 재사용, 없는 기사만 번역 대상으로 분리
-
-    Returns:
-        (캐시 적용된 articles_by_section, 새로 번역 필요한 articles_by_section)
-    """
     cached_sections = {}
     new_sections = {}
     cache_hit = 0
@@ -77,12 +68,11 @@ def apply_cache(articles_by_section: dict, cache: dict) -> tuple:
     for section, articles in articles_by_section.items():
         cached_list = []
         new_list = []
-
         for article in articles:
             link = article.get('link', '')
             if link in cache and cache[link].get('title_ko'):
-                # 캐시 히트: 번역 결과 재사용
                 article['title_ko'] = cache[link]['title_ko']
+                article['summary_ko'] = cache[link].get('summary_ko', '')
                 article['has_watchlist'] = cache[link].get('has_watchlist', False)
                 article['watchlist_item'] = cache[link].get('watchlist_item', '')
                 cached_list.append(article)
@@ -90,7 +80,6 @@ def apply_cache(articles_by_section: dict, cache: dict) -> tuple:
             else:
                 new_list.append(article)
                 cache_miss += 1
-
         if cached_list:
             cached_sections[section] = cached_list
         if new_list:
@@ -101,10 +90,8 @@ def apply_cache(articles_by_section: dict, cache: dict) -> tuple:
 
 
 def merge_sections(cached: dict, translated: dict) -> dict:
-    """캐시된 기사와 새로 번역된 기사를 합치기"""
     merged = {}
     all_sections = set(list(cached.keys()) + list(translated.keys()))
-
     for section in all_sections:
         articles = []
         if section in cached:
@@ -113,32 +100,26 @@ def merge_sections(cached: dict, translated: dict) -> dict:
             articles.extend(translated[section])
         if articles:
             merged[section] = articles
-
     return merged
 
 
 def daily_mode():
-    """일일 브리핑 모드: RSS → 캐시 확인 → 신규만 번역 → 웹페이지 생성"""
     try:
         logger.info("=" * 60)
         logger.info(f"Daily News Brief 실행 시작 - {datetime.now(KST)}")
         logger.info("=" * 60)
 
-        # 1단계: RSS 수집
         logger.info("\n[1/4] RSS 수집 중...")
         articles_by_section = fetch_ft_rss()
         if not articles_by_section:
             logger.error("수집된 기사가 없습니다.")
             return False
-
         logger.info(get_articles_summary(articles_by_section))
 
-        # 2단계: 캐시 확인
         logger.info("[2/4] 캐시 확인 중...")
         cache = load_cache()
         cached_sections, new_sections = apply_cache(articles_by_section, cache)
 
-        # 3단계: 신규 기사만 번역
         if new_sections:
             total_new = sum(len(v) for v in new_sections.values())
             logger.info(f"[3/4] 신규 {total_new}개 기사 번역 중...")
@@ -147,19 +128,13 @@ def daily_mode():
             logger.info("[3/4] 신규 번역 대상 없음 (모두 캐시)")
             translated_sections = {}
 
-        # 합치기
         all_articles = merge_sections(cached_sections, translated_sections)
 
-        # 4단계: 웹페이지 생성
         logger.info("[4/4] 브리핑 웹페이지 생성 중...")
         page_path = generate_briefing_page(all_articles)
-
         if page_path:
             logger.info(f"✅ 웹페이지 생성 완료: {page_path}")
-        else:
-            logger.warning("⚠️ 웹페이지 생성 실패")
 
-        # 캐시 저장
         save_cache(all_articles)
 
         logger.info("=" * 60)
@@ -173,15 +148,8 @@ def daily_mode():
 
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Daily News Brief 자동화 시스템",
-    )
-    parser.add_argument(
-        '--mode',
-        choices=['daily'],
-        default='daily',
-        help='실행 모드 (기본값: daily)'
-    )
+    parser = argparse.ArgumentParser(description="Daily News Brief 자동화 시스템")
+    parser.add_argument('--mode', choices=['daily'], default='daily')
     args = parser.parse_args()
 
     from config.config import CLAUDE_API_KEY
@@ -189,8 +157,7 @@ def main():
         logger.error("❌ CLAUDE_API_KEY 환경변수가 설정되지 않았습니다.")
         return False
 
-    success = daily_mode()
-    return success
+    return daily_mode()
 
 
 if __name__ == '__main__':
