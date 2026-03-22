@@ -1,5 +1,6 @@
 """
-FT + Bloomberg + Reuters + TechCrunch RSS 수집 모듈
+멀티 소스 RSS 수집 모듈
+FT + Bloomberg + Reuters + TechCrunch + Space + Defense
 """
 import feedparser
 from datetime import datetime
@@ -10,8 +11,8 @@ from src.utils import is_within_hours, format_publish_date
 
 logger = setup_logger(__name__)
 
-# FT 섹션별 RSS 피드
-FT_SECTION_FEEDS = {
+# ===== FT =====
+FT_FEEDS = {
     'FT Markets': 'https://www.ft.com/markets?format=rss',
     'FT Companies': 'https://www.ft.com/companies?format=rss',
     'FT Technology': 'https://www.ft.com/technology?format=rss',
@@ -19,8 +20,8 @@ FT_SECTION_FEEDS = {
     'FT US': 'https://www.ft.com/world/us?format=rss',
 }
 
-# Bloomberg 섹션별 RSS 피드
-BLOOMBERG_SECTION_FEEDS = {
+# ===== Bloomberg =====
+BLOOMBERG_FEEDS = {
     'BBG Markets': 'https://feeds.bloomberg.com/markets/news.rss',
     'BBG Technology': 'https://feeds.bloomberg.com/technology/news.rss',
     'BBG Politics': 'https://feeds.bloomberg.com/politics/news.rss',
@@ -28,13 +29,13 @@ BLOOMBERG_SECTION_FEEDS = {
     'BBG Industries': 'https://feeds.bloomberg.com/industries/news.rss',
 }
 
-# Reuters 섹션별 RSS 피드
-REUTERS_SECTION_FEEDS = {
+# ===== Reuters =====
+REUTERS_FEEDS = {
     'Reuters Business': 'https://feeds.reuters.com/reuters/businessNews',
     'Reuters Markets': 'https://feeds.reuters.com/reuters/marketsNews',
 }
 
-# TechCrunch RSS 피드
+# ===== TechCrunch =====
 TECHCRUNCH_FEEDS = {
     'TechCrunch': 'https://techcrunch.com/feed/',
     'TC Startups': 'https://techcrunch.com/category/startups/feed/',
@@ -42,10 +43,41 @@ TECHCRUNCH_FEEDS = {
     'TC Venture': 'https://techcrunch.com/category/venture/feed/',
 }
 
-# 전체 피드 합치기
-ALL_FEEDS = {**FT_SECTION_FEEDS, **BLOOMBERG_SECTION_FEEDS, **REUTERS_SECTION_FEEDS, **TECHCRUNCH_FEEDS}
+# ===== Space =====
+SPACE_FEEDS = {
+    'SpaceNews': 'https://spacenews.com/feed/',
+    'Space.com': 'https://www.space.com/feeds.xml',
+    'Payload Space': 'https://payloadspace.com/feed/',
+    'Satellite Today': 'https://www.satellitetoday.com/feed/',
+}
 
-# 피드 상태 추적 (웹페이지에서 표시용)
+# ===== Defense =====
+DEFENSE_FEEDS = {
+    'Breaking Defense': 'https://breakingdefense.com/feed/',
+    'Defense News': 'https://www.defensenews.com/arc/outboundfeeds/rss/?outputType=xml',
+    'Defense One': 'https://www.defenseone.com/rss/all/',
+    'DefenseScoop': 'https://defensescoop.com/feed/',
+    'Air & Space Forces': 'https://www.airandspaceforces.com/feed/',
+    'Space & Defense': 'https://spaceanddefense.io/feed/',
+}
+
+# ===== Tech =====
+TECH_FEEDS = {
+    'Ars Technica': 'https://feeds.arstechnica.com/arstechnica/index',
+}
+
+# 전체 피드 합치기
+ALL_FEEDS = {
+    **FT_FEEDS,
+    **BLOOMBERG_FEEDS,
+    **REUTERS_FEEDS,
+    **TECHCRUNCH_FEEDS,
+    **SPACE_FEEDS,
+    **DEFENSE_FEEDS,
+    **TECH_FEEDS,
+}
+
+# 피드 상태 추적
 feed_status = {}
 
 
