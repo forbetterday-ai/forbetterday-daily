@@ -115,6 +115,14 @@
   ],
   "SpaceNews": [
     {
+      "title": "The software behind Artemis, Gateway and America’s defense in space deserves its own strategy",
+      "link": "https://spacenews.com/the-software-behind-artemis-gateway-and-americas-defense-in-space-deserves-its-own-strategy/",
+      "pub_date": "2026년 03월 23일 22:00 KST",
+      "summary": "<figure><img alt=\"SLS/Orion 2026 Feb 2\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/02/art2-20260202.jpeg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>When we talk about national space infrastr",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
       "title": "Lunar lander developers say they are ready to meet anticipated increased NASA demand",
       "link": "https://spacenews.com/lunar-lander-developers-say-they-are-ready-to-meet-anticipated-increased-nasa-demand/",
       "pub_date": "2026년 03월 23일 18:40 KST",
@@ -153,25 +161,25 @@
       "summary": "<figure><img alt=\"SLS Artemis 2 rollout\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/NHQ20260320_admin_0005-large.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The Artemis 2 launch vehicl",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "Officina Stellare wins $2 million contract for lasercom ground station in Spain",
-      "link": "https://spacenews.com/officina-stellare-wins-2-million-contract-for-lasercom-ground-station-in-spain/",
-      "pub_date": "2026년 03월 21일 06:49 KST",
-      "summary": "<figure><img alt=\"An optical ground station. Credit: Officina Stellare\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"1024\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/ground_station.webp?fit=683%2C1024&amp;ssl=1\" width=\"683\" /></figure>\n<p>MILAN – O",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Rocket Lab launches eighth Synspective radar imaging satellite",
-      "link": "https://spacenews.com/rocket-lab-launches-eighth-synspective-radar-imaging-satellite/",
-      "pub_date": "2026년 03월 21일 06:15 KST",
-      "summary": "<figure><img alt=\"Electron launch\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/55158658336_49d39f6c9f_k.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Rocket Lab launched the latest in a s",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "Northern lights dazzle worldwide as strong G3 geomagnetic storm sparks stunning show (photos)",
+      "link": "https://www.space.com/stargazing/auroras/northern-lights-dazzle-worldwide-as-strong-g3-geomagnetic-storm-sparks-stunning-show-photos",
+      "pub_date": "2026년 03월 23일 22:00 KST",
+      "summary": "Powerful geomagnetic storms sent the northern lights dancing far beyond the poles, delivering a spectacular show across the world.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Are mysterious 'Little Red Dots' discovered by the James Webb Space Telescope actually baby galaxies under construction?",
+      "link": "https://www.space.com/astronomy/galaxies/are-mysterious-little-red-dots-discovered-by-the-james-webb-space-telescope-actually-baby-galaxies-under-construction",
+      "pub_date": "2026년 03월 23일 21:00 KST",
+      "summary": "What if the mysterious 'Little Red Dots' aren't baby black holes, but rather globular clusters in their messy, glorious formation?",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "Could our universe exist because black holes ate up all the antimatter?",
       "link": "https://www.space.com/astronomy/black-holes/could-our-universe-exist-because-black-holes-ate-up-all-the-antimatter",
@@ -263,6 +271,14 @@
   ],
   "Payload Space": [
     {
+      "title": "Contrivian Launches New Product Bundling Amazon Leo & Starlink",
+      "link": "https://payloadspace.com/contrivian-launches-new-product-bundling-amazon-leo-starlink/",
+      "pub_date": "2026년 03월 23일 22:00 KST",
+      "summary": "<p><img alt=\"Image: Contrivian\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/03/Contrivian-200x200.jpeg\" width=\"200\" />Customers looking for satellite connectivity are often forced to choose between one provider or anoth",
+      "section": "Payload Space",
+      "is_korean": false
+    },
+    {
       "title": "SpaceX v. Amazon Heats Up at the FCC",
       "link": "https://payloadspace.com/spacex-v-amazon-heats-up-at-the-fcc/",
       "pub_date": "2026년 03월 23일 09:54 KST",
@@ -282,6 +298,22 @@
     }
   ],
   "Defense News": [
+    {
+      "title": "Patriot missile involved in Bahrain blast likely US-operated, analysis finds",
+      "link": "https://www.defensenews.com/flashpoints/2026/03/23/patriot-missile-involved-in-bahrain-blast-likely-us-operated-analysis-finds/",
+      "pub_date": "2026년 03월 23일 22:21 KST",
+      "summary": "The pre-dawn explosion injured dozens of civilians, including children, and tore through homes in U.S.-ally Bahrain 10 days into the war.",
+      "section": "Defense News",
+      "is_korean": false
+    },
+    {
+      "title": "Dutch armed forces to add drone operators to combat brigades",
+      "link": "https://www.defensenews.com/global/europe/2026/03/23/dutch-armed-forces-to-add-drone-operators-to-combat-brigades/",
+      "pub_date": "2026년 03월 23일 22:08 KST",
+      "summary": "The Dutch military will expand that capability “significantly” by deploying 1,000 to 1,200 personnel specifically for drone and counter-drone operations.",
+      "section": "Defense News",
+      "is_korean": false
+    },
     {
       "title": "US-made naval drone with active warhead washes up in northern Turkey, gets blown up",
       "link": "https://www.defensenews.com/global/europe/2026/03/23/us-made-naval-drone-with-active-warhead-washes-up-in-northern-turkey-gets-blown-up/",
@@ -399,49 +431,17 @@
       "summary": "“Assume the NRC is going to do whatever we tell the NRC to do.”",
       "section": "Ars Technica",
       "is_korean": false
-    },
-    {
-      "title": "Jury finds Musk owes damages to Twitter investors for his tweets",
-      "link": "https://arstechnica.com/tech-policy/2026/03/jury-agrees-that-musks-tweets-during-twitter-takeover-constituted-fraud/",
-      "pub_date": "2026년 03월 21일 07:27 KST",
-      "summary": "The verdict, while not a complete loss, could still cost him billions.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "You're likely already infected with a brain-eating virus you've never heard of",
-      "link": "https://arstechnica.com/health/2026/03/youre-likely-already-infected-with-a-brain-eating-virus-youve-never-heard-of/",
-      "pub_date": "2026년 03월 21일 07:11 KST",
-      "summary": "Fatal brain infection was thought to be from profound immune suppression. Not anymore.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Once again, ULA can't deliver when the US military needs a satellite in orbit",
-      "link": "https://arstechnica.com/space/2026/03/spacex-swipes-yet-another-military-contract-from-united-launch-alliance/",
-      "pub_date": "2026년 03월 21일 06:35 KST",
-      "summary": "ULA's Vulcan launch vehicle is grounded after a solid rocket booster anomaly last month.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Microsoft keeps insisting that it's deeply committed to the quality of Windows 11",
-      "link": "https://arstechnica.com/gadgets/2026/03/microsoft-keeps-insisting-that-its-deeply-committed-to-the-quality-of-windows-11/",
-      "pub_date": "2026년 03월 21일 06:26 KST",
-      "summary": "\"Reducing unnecessary Copilot entry points\" is one of Microsoft's action items.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Writer denies it, but publisher pulls horror novel after multiple allegations of AI use",
-      "link": "https://arstechnica.com/ai/2026/03/hachette-pulls-shy-girl-horror-novel-after-concerns-about-ai-use/",
-      "pub_date": "2026년 03월 21일 06:03 KST",
-      "summary": "One of the first controversies of its kind.",
-      "section": "Ars Technica",
-      "is_korean": false
     }
   ],
   "The Information": [
+    {
+      "title": "OpenAI’s Shopping U-Turn Could Complicate Enterprise Playbook",
+      "link": "https://www.theinformation.com/articles/openais-shopping-u-turn-complicate-enterprise-playbook",
+      "pub_date": "2026년 03월 23일 22:00 KST",
+      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16805/3198c135-e83b-419e-94d8-654d01c14abc.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>OpenAI’s abrupt shopping pullback earlier this month didn’t just raise questions about its decision-making. It also aff",
+      "section": "The Information",
+      "is_korean": false
+    },
     {
       "title": "The Electric: A 500-Year Battery is a New Potential Boon to AI Data Centers",
       "link": "https://www.theinformation.com/newsletters/the-electric/electric-500-year-battery-new-potential-boon-ai-data-centers",
@@ -494,7 +494,7 @@
       "title": "Inside Anduril’s Big Gamble: An Ohio Weapons Factory",
       "link": "https://www.theinformation.com/articles/inside-andurils-big-gamble-ohio-weapons-factory",
       "pub_date": "2026년 03월 21일 22:00 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16798/71515b37-d859-47c7-a46c-2a6b437282cf.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Just past the soybean farms in Pickaway County, Ohio, stands a flat-roofed building clad in blue and gray panels, with ",
+      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16798/eec47118-97b7-4844-9d38-61ae855f5925.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Just past the soybean farms in Pickaway County, Ohio, stands a flat-roofed building clad in blue and gray panels, with ",
       "section": "The Information",
       "is_korean": false
     },
@@ -504,758 +504,6 @@
       "pub_date": "2026년 03월 21일 21:00 KST",
       "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16796/f43b56ba-ffd1-4338-bd4d-b163fab01639.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Last summer, Apple held talks to acquire Lux Optics, a tiny startup that makes Halide, one of the most popular and crit",
       "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "CIA Venture Arm Invests in Data Center Developer Prometheus Hyperscale",
-      "link": "https://www.theinformation.com/articles/cia-venture-arm-invests-data-center-developer-prometheus-hyperscale",
-      "pub_date": "2026년 03월 21일 07:33 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16795/676a6466-74ee-450b-8f0f-18745cfb8cd6.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>The Central Intelligence Agency’s venture investment arm, IQT, has invested in AI data center company Prometheus Hypers",
-      "section": "The Information",
-      "is_korean": false
-    }
-  ],
-  "WSJ US Business": [
-    {
-      "title": "The Veteran Podcasters Hanging up Their Headphones",
-      "link": "https://www.wsj.com/business/media/the-veteran-podcasters-hanging-up-their-headphones-0b1070e1?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 20:00 KST",
-      "summary": "Podcasts can run forever, but some hosts are bowing out as celebrities and YouTube dominate the industry.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Lawmakers to Introduce Bipartisan Bill Banning Sports Bets on Prediction Markets",
-      "link": "https://www.wsj.com/finance/regulation/lawmakers-to-introduce-bipartisan-bill-banning-sports-bets-on-prediction-markets-17d2e272?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 18:30 KST",
-      "summary": "A bipartisan pair of U.S. senators are introducing legislation to prohibit CFTC-regulated entities from listing contracts related to sporting events.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Iranian Missile Strikes Are Costing Big Oil Billions in Lost Revenue",
-      "link": "https://www.wsj.com/business/energy-oil/iranian-missile-strikes-are-costing-big-oil-billions-in-lost-revenue-7c492caa?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 11:00 KST",
-      "summary": "Damaged energy infrastructure is likely to take years to come back online, but a surge in oil-and-gas prices is helping to offset some of the lost production for now.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "The Economy Cabin on Airplanes Keeps on Shrinking",
-      "link": "https://www.wsj.com/business/airlines/the-economy-cabin-on-airplanes-keeps-on-shrinking-1ddc3239?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 10:00 KST",
-      "summary": "Carriers are expanding the options in premium cabins in a bid to boost their earnings.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Tesla, SpaceX Plan to Build New Chip Factory in Texas",
-      "link": "https://www.wsj.com/tech/tesla-spacex-plan-to-build-new-chip-factory-in-texas-4dfb9a46?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 09:48 KST",
-      "summary": "Elon Musk, who leads both companies, said the facility would supply chips for Tesla vehicles and SpaceX satellites.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Activist Elliott Builds Big Stake in Chip-Design Software Maker Synopsys",
-      "link": "https://www.wsj.com/business/deals/activist-elliott-builds-big-stake-in-chip-design-software-maker-synopsys-4bf88127?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 07:06 KST",
-      "summary": "Elliott plans to engage with Synopsys to push the business to make more money from its software and services, according to people familiar with the matter.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Victory Capital Rejects Reports of Client Pushback in Bid for Janus Henderson",
-      "link": "https://www.wsj.com/business/victory-capital-rejects-reports-of-client-pushback-in-bid-for-janus-henderson-58513312?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 20:46 KST",
-      "summary": "Victory Capital Holdings pushed back against reports that major clients are uneasy with its bid for Janus Henderson, calling the claims misleading and part of an effort to undermine what it calls a superior offer.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Berkshire Hathaway to Acquire $1.8 Billion Stake in Japan’s Tokio Marine",
-      "link": "https://www.wsj.com/business/berkshire-hathaway-to-acquire-stake-in-japans-tokio-marine-c53dbfd5?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 20:11 KST",
-      "summary": "Warren Buffett’s Berkshire Hathaway plans to acquire a 2.5% stake in Tokio Marine for $1.8 billion as part of a strategic partnership.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Delivery Hero to Sell Taiwan Business to Grab",
-      "link": "https://www.wsj.com/business/deals/delivery-hero-to-sell-taiwan-business-to-grab-3683a359?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 18:16 KST",
-      "summary": "The German food-delivery company said it would sell Foodpanda to Grab Holdings for $600 million in cash as it slims down its portfolio to bolster its balance sheet.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Poste Italiane Unveils $12.50 Billion Offer for Telecom Italia",
-      "link": "https://www.wsj.com/business/deals/poste-italiane-unveils-12-50-billion-offer-for-telecom-italia-5cb73a87?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 11:10 KST",
-      "summary": "Poste Italiane said the transaction is aimed at creating a single group that would integrate two of Italy’s largest industrial companies",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Eight States Seek Restraining Order to Stop $6.2 Billion Nexstar-Tegna Combination",
-      "link": "https://www.wsj.com/business/media/eight-states-seek-restraining-order-to-stop-6-2-billion-nexstar-tegna-combination-e7f252cd?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 06:29 KST",
-      "summary": "The states have previously argued the deal would result in too much concentration in some local TV markets.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Protein Drink Maker Huel Agrees to $1.2 Billion Offer From Danone",
-      "link": "https://www.wsj.com/business/danone-to-buy-nutrition-company-huel-92a57264?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 20:57 KST",
-      "summary": "The food company is scooping up a maker of plant-based food powders and meal-replacement drinks to bolster its nutrition portfolio.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "This Time, the Hype Around Self-Driving Cars Feels Real",
-      "link": "https://www.wsj.com/tech/this-time-the-hype-around-self-driving-cars-feels-real-e37f2e7f?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 20:00 KST",
-      "summary": "A new excitement is building for autonomous vehicles to become mainstream.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Sick of High Gas Prices? EV Deals Are Everywhere Right Now",
-      "link": "https://www.wsj.com/business/autos/electric-vehicle-discounts-bf554d2a?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 09:00 KST",
-      "summary": "Automakers and dealers are offering deep discounts in response to the slowdown in electric-vehicle sales.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Opinion | Chicago’s Minimum-Wage Retreat",
-      "link": "https://www.wsj.com/opinion/chicagos-minimum-wage-retreat-9c60805a?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 04:40 KST",
-      "summary": "The City Council votes to repeal a law championed by Mayor Brandon Johnson.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Opinion | Beijing’s Wind Power Isn’t Only Hot Air",
-      "link": "https://www.wsj.com/opinion/beijings-wind-power-isnt-only-hot-air-d4056446?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 00:29 KST",
-      "summary": "America is at risk of surrendering eminence on this valuable energy source to China.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Opinion | Trump’s Lina Khan Impersonator",
-      "link": "https://www.wsj.com/opinion/andrew-ferguson-ftc-fifth-circuit-lina-khan-merger-rule-2b9ea8b9?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 06:33 KST",
-      "summary": "The FTC loses in its attempt to defend a Biden antitrust rule.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Opinion | Iran Attacks the Gulf Arabs. Will They Fight Back?",
-      "link": "https://www.wsj.com/opinion/iran-gulf-states-oman-united-arab-emirates-donald-trump-077149d2?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 06:31 KST",
-      "summary": "These states can do more to help as Tehran blocks and targets their energy.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Sinopec Says Has Enough Oil Inventory to Ensure Stable Production for Now",
-      "link": "https://www.wsj.com/business/energy-oil/sinopec-says-has-enough-oil-inventory-to-ensure-stable-production-for-now-94e43593?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 19:12 KST",
-      "summary": "At the briefing, Sinopec executives said the Middle East crisis has significantly disrupted the global economic and trade landscape.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "European Gas Prices Rise as Middle East LNG Disruptions Cloud Outlook",
-      "link": "https://www.wsj.com/articles/european-gas-prices-rise-as-middle-east-lng-disruptions-cloud-outlook-98d5b6b7?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 17:43 KST",
-      "summary": "European natural-gas prices rose as the U.S. and Iran exchanged threats over the Strait of Hormuz and energy infrastructure.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Goldman Lifts Oil Price Forecast on Longer Hormuz Disruption",
-      "link": "https://www.wsj.com/business/energy-oil/goldman-lifts-oil-price-forecast-on-longer-hormuz-disruption-4e9d71ca?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 17:38 KST",
-      "summary": "Brent crude is now expected to average $85 a barrel this year, up from a previous forecast of $77. The U.S. oil gauge West Texas Intermediate is seen at $79 a barrel from $72 earlier.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Trump, Tehran Exchange Threats",
-      "link": "https://www.wsj.com/world/middle-east/trump-tehran-exchange-threats-f1c01fbc?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 12:18 KST",
-      "summary": "Iran to hit interests in region if plants are struck after president demands open strait",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "The New Weapons of Global Power Are Oil, Rare Earths and Microchips",
-      "link": "https://www.wsj.com/world/the-new-weapons-of-global-power-are-oil-rare-earths-and-microchips-86b894e5?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 23:09 KST",
-      "summary": "Iran has wielded crude as a cudgel on a scale unseen in decades, marking a new phase in the 21st-century competition for dominance.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "LaGuardia Airport Closed After Runway Collision That Killed Two Pilots",
-      "link": "https://www.wsj.com/us-news/faa-issues-ground-stop-at-laguardia-after-plane-collides-with-vehicle-c65ed396?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 19:05 KST",
-      "summary": "An Air Canada Express plane was arriving from Montreal when it collided with a firefighting vehicle. The FAA said the airport would remain closed until at least 2 p.m. ET.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Trump Says He’ll Send ICE to Airports If Funding Standoff Continues",
-      "link": "https://www.wsj.com/business/airlines/tsa-agents-pay-government-shutdown-34d3b366?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 00:49 KST",
-      "summary": "Airport-security workers are missing paychecks and absences are rising, lengthening screening lines during the spring-break travel season.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Flights Are Still Taking Off as Missiles Rain Down in the Middle East",
-      "link": "https://www.wsj.com/business/airlines/flights-are-still-taking-off-as-missiles-rain-down-in-the-middle-east-110358c4?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 10:00 KST",
-      "summary": "Dozens of flights have arrived in and departed Dubai within minutes of strikes, a WSJ analysis found.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Nevada Wins Temporary Ban on Sports Betting on Kalshi",
-      "link": "https://www.wsj.com/business/media/nevada-wins-temporary-ban-on-sports-betting-on-kalshi-2f7aadfa?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 03:40 KST",
-      "summary": "The prediction-market platform must obtain state gambling licenses and prohibit users under 21 to offer such contracts, a state court said.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Ads Are Popping Up on the Fridge and It Isn’t Going Over Well",
-      "link": "https://www.wsj.com/lifestyle/samsung-refrigerator-ads-lg-whirlpool-ge-10ea7bcc?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 18:30 KST",
-      "summary": "Some Americans have been taken aback by marketing messages on the door of certain Samsung appliances",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Amazon Gets Its Biggest Hit Movie Ever With ‘Project Hail Mary’",
-      "link": "https://www.wsj.com/business/media/amazon-project-hail-mary-box-office-55609da6?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 02:10 KST",
-      "summary": "The sci-fi adventure starring Ryan Gosling opened with $80.5 million in the U.S. and Canada.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "News quiz for March 21, 2026",
-      "link": "https://www.wsj.com/business/media/news-quiz-for-march-21-2026-42d34921?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 19:00 KST",
-      "summary": "",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "The Pentagon’s New Press Rules Violate the First Amendment, Judge Rules",
-      "link": "https://www.wsj.com/politics/the-pentagons-new-press-rules-violate-the-first-amendment-judge-rules-cbca9999?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 09:17 KST",
-      "summary": "The decision orders the agency to restore press credentials that were illegally restricted.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Disney Sank Millions Into the New ‘Bachelorette.’ Then It Pulled the Plug.",
-      "link": "https://www.wsj.com/business/media/disney-sank-millions-into-the-new-bachelorette-then-it-pulled-the-plug-742772eb?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 09:00 KST",
-      "summary": "“Secret Lives of Mormon Wives” star Taylor Frankie Paul was picked to boost an aging reality franchise beset by sagging ratings and declining ad revenue—a decision that blew up in ABC’s face.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "$5 Diesel is Crushing Truckers. It Will Soon Be Felt Across the Economy.",
-      "link": "https://www.wsj.com/economy/truckers-are-the-first-victims-of-the-diesel-price-shock-52ff802d?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 23:00 KST",
-      "summary": "Truck drivers in the U.S. are feeling some of the first economic effects of the rapid surge in the cost of diesel. A broader economic impact could hit soon.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "How Amazon Is Bringing Fast Delivery to Rural America",
-      "link": "https://www.wsj.com/business/logistics/how-amazon-is-bringing-fast-delivery-to-rural-america-25101174?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 18:30 KST",
-      "summary": "Amazon is investing $4 billion to push two-day delivery further across its network—and finding it takes a lot to get packages to the wilds of Montana within 48 hours.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Iran’s Houthi Allies Lie in Wait on Another Key Oil Route: the Red Sea",
-      "link": "https://www.wsj.com/world/middle-east/irans-houthi-allies-lie-in-wait-on-another-key-oil-route-the-red-sea-9c0c38f5?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 08:00 KST",
-      "summary": "Tehran’s Houthi allies in Yemen have ramped up their threats after bottling up shipping for years.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Even if You’re Not Driving, You’re Probably Using Oil",
-      "link": "https://www.wsj.com/business/energy-oil/even-if-youre-not-driving-youre-probably-using-oil-113421b0?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 22일 01:00 KST",
-      "summary": "It isn’t just cars and airplanes. Oil is a key ingredient in thousands of common products.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Elon Musk Is Liable for Some Twitter Investors’ Losses, Jury Says",
-      "link": "https://www.wsj.com/tech/elon-musk-is-liable-for-some-twitter-investors-losses-jury-says-4b0c10a3?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 08:44 KST",
-      "summary": "Elon Musk’s lawyers said they would appeal the verdict. The jury absolved Musk of “engaging in a scheme to defraud Twitter investors.”",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "BTS Pushes the Limits of the Music Industry’s Business Model",
-      "link": "https://www.wsj.com/business/taylor-swifts-eras-tour-was-big-bts-wants-to-go-bigger-57e38319?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 08:00 KST",
-      "summary": "The K-pop group wants success like Taylor Swift’s ‘Eras’ tour, with 360-degree seating, livestreaming on Netflix and gobs of merchandise.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "No Cease-Fire With Iran, Trump Says",
-      "link": "https://www.wsj.com/business/no-cease-fire-with-iran-trump-says-46bd29eb?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 21일 06:41 KST",
-      "summary": "Plus, oil prices hit $112 a barrel, and a Revolutionary War general’s mansion is for sale.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    },
-    {
-      "title": "Peptides Are Everywhere. RFK Jr. Wants to Make Them Even Easier to Buy",
-      "link": "https://www.wsj.com/health/rfk-jr-china-peptides-market-2ce249df?mod=pls_whats_news_us_business_f",
-      "pub_date": "2026년 03월 23일 01:00 KST",
-      "summary": "They are available on the gray market at huge discounts and are used for everything from weight loss to muscle recovery.",
-      "section": "WSJ US Business",
-      "is_korean": false
-    }
-  ],
-  "WSJ Markets": [
-    {
-      "title": "Stock Market Today: Dow Futures Jump, Oil Skids After Trump Postpones Strikes on Iran",
-      "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-03-23-2026?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 17:18 KST",
-      "summary": "The U.S. will hold off on strikes against Iranian energy assets for five days, with Trump citing 'constructive' talks",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "How to Win the Loser’s Game",
-      "link": "https://www.wsj.com/finance/stocks/how-to-win-the-losers-game-2af1b4ce?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 19:27 KST",
-      "summary": "Plus, gold is melting.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Larry Fink’s Warning: Invest or Risk Getting Left Behind by AI",
-      "link": "https://www.wsj.com/finance/investing/larry-finks-warning-invest-or-risk-getting-left-behind-by-ai-d2f1d09d?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 19:00 KST",
-      "summary": "The BlackRock CEO’s annual letter urges broader participation in markets as a defense against widening wealth inequality.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "The Housing Bargain Hiding in Plain Sight",
-      "link": "https://www.wsj.com/economy/housing/the-housing-bargain-hiding-in-plain-sight-803c73f4?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 18:30 KST",
-      "summary": "A bill that would limit the activities of big housing investors has turned Wall Street landlords into a value play.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Lawmakers to Introduce Bipartisan Bill Banning Sports Bets on Prediction Markets",
-      "link": "https://www.wsj.com/finance/regulation/lawmakers-to-introduce-bipartisan-bill-banning-sports-bets-on-prediction-markets-17d2e272?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 18:30 KST",
-      "summary": "A bipartisan pair of U.S. senators are introducing legislation to prohibit CFTC-regulated entities from listing contracts related to sporting events.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Why Healthcare Is Doing the Heavy Lifting in This Job Market",
-      "link": "https://www.wsj.com/finance/investing/why-healthcare-is-doing-the-heavy-lifting-in-this-job-market-8944ae43?mod=rss_markets_main",
-      "pub_date": "2026년 03월 22일 18:30 KST",
-      "summary": "An aging population can continue to fuel hiring in healthcare even if the rest of the economy wobbles.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "War and Inflation Are Supposed to Be Gold’s Friends. Not This Time.",
-      "link": "https://www.wsj.com/finance/commodities-futures/war-and-inflation-are-supposed-to-be-golds-friends-not-this-time-3d21ebcd?mod=rss_markets_main",
-      "pub_date": "2026년 03월 22일 18:30 KST",
-      "summary": "Investors would have been better off in the tiniest microcap stocks than in the oldest source of safety.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Victory Capital Rejects Reports of Client Pushback in Bid for Janus Henderson",
-      "link": "https://www.wsj.com/business/victory-capital-rejects-reports-of-client-pushback-in-bid-for-janus-henderson-58513312?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 20:46 KST",
-      "summary": "Victory Capital Holdings pushed back against reports that major clients are uneasy with its bid for Janus Henderson, calling the claims misleading and part of an effort to undermine what it calls a superior offer.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Eurozone Bond Yields Jump; 10-Year Italian BTP Yield Above 4%",
-      "link": "https://www.wsj.com/finance/investing/bonds-decoupling-from-oil-amid-longer-conflict-fears-d1fa0620?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 17:05 KST",
-      "summary": "Eurozone government bond yields jumped, tracking Treasury yields, as the war in the Middle East exacerbates inflation concerns.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Why This Couple Is Saying Goodbye to Life on the Road After 10 Years",
-      "link": "https://www.wsj.com/lifestyle/travel/nomadic-life-settle-down-1688b993?mod=rss_markets_main",
-      "pub_date": "2026년 03월 22일 20:00 KST",
-      "summary": "They’ve lived and worked while traveling. It has been a wonderful adventure. Now it’s time to settle down.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "ESG Roundup: Market Talk",
-      "link": "https://www.wsj.com/articles/esg-roundup-market-talk-b028c3ea?mod=rss_markets_main",
-      "pub_date": "2026년 03월 21일 06:05 KST",
-      "summary": "Gain insight on Super Micro Computer and more in the latest Market Talks covering ESG impact investing.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Asian Markets Slump as Mideast Conflict Escalates",
-      "link": "https://www.wsj.com/finance/stocks/asian-markets-slump-as-mideast-conflict-escalates-3f35ef72?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 16:11 KST",
-      "summary": "Oil prices jumped, while Asian equities and government bonds fell across the board.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "The Banner Year for International Stocks Has Stalled Before It Even Began",
-      "link": "https://www.wsj.com/finance/stocks/us-stocks-equities-iran-war-2b1f7087?mod=rss_markets_main",
-      "pub_date": "2026년 03월 22일 10:00 KST",
-      "summary": "The Iran war has investors rethinking a rush out of U.S. stocks into overseas markets.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Opinion | Best Protection Against an AI Bubble? Index Funds",
-      "link": "https://www.wsj.com/opinion/best-protection-against-an-ai-bubble-index-funds-229371bb?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 04:15 KST",
-      "summary": "You’ll experience losses when a bear market comes, but most active managers will do even worse.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Oil Price Falls After Trump Postpones Iran Strikes",
-      "link": "https://www.wsj.com/finance/commodities-futures/oil-edges-lower-as-traders-eye-trumps-deadline-to-reopen-strait-of-hormuz-83ec556a?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 20:35 KST",
-      "summary": "Oil futures fell after President Trump said he was postponing strikes on Iranian power plants for five days after what he described as productive talks with Iran",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Sinopec Says Has Enough Oil Inventory to Ensure Stable Production for Now",
-      "link": "https://www.wsj.com/business/energy-oil/sinopec-says-has-enough-oil-inventory-to-ensure-stable-production-for-now-94e43593?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 19:12 KST",
-      "summary": "At the briefing, Sinopec executives said the Middle East crisis has significantly disrupted the global economic and trade landscape.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Gold Erases 2026 Gains as Middle East War Fuels Inflation Fears",
-      "link": "https://www.wsj.com/articles/gold-erases-2026-gains-as-middle-east-war-fuels-inflation-fears-9e94f140?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 18:58 KST",
-      "summary": "Gold wiped out all of this year’s gains as the war in the Middle East stoked worries about inflation and higher interest rates, dimming the outlook for the non-yielding asset.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "European Gas Prices Rise as Middle East LNG Disruptions Cloud Outlook",
-      "link": "https://www.wsj.com/articles/european-gas-prices-rise-as-middle-east-lng-disruptions-cloud-outlook-98d5b6b7?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 17:43 KST",
-      "summary": "European natural-gas prices rose as the U.S. and Iran exchanged threats over the Strait of Hormuz and energy infrastructure.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Gold Falls to Lowest Level This Year on Inflation Concerns",
-      "link": "https://www.wsj.com/finance/commodities-futures/gold-edges-lower-on-prospects-of-liquidity-driven-sales-28d36652?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 16:37 KST",
-      "summary": "Gold prices fell to their weakest level this year as the Middle East conflict escalates, raising concerns over inflation and prospects of higher interest rates.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Dollar Turns Lower as U.S. Postpones Attacks on Iran Power Plants",
-      "link": "https://www.wsj.com/finance/currencies/australian-dollar-could-get-dumped-if-iran-war-drags-on-6a8ff05f?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 20:36 KST",
-      "summary": "The dollar turned lower as U.S. postponed attacks on Iran power plants.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "Renewed Geopolitical Risk Puts Yen Back in Intervention Danger Zone",
-      "link": "https://www.wsj.com/finance/currencies/renewed-geopolitical-risk-puts-yen-back-in-intervention-danger-zone-93671853?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 19:06 KST",
-      "summary": "The worsening Middle East conflict is stoking anxiety about Japan’s energy-dependent economy.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "The Silicon Valley Salesman Accused of Helping China Get Nvidia’s Top Chips",
-      "link": "https://www.wsj.com/tech/the-silicon-valley-salesman-accused-of-helping-china-get-nvidias-top-chips-f1ecb1c2?mod=rss_markets_main",
-      "pub_date": "2026년 03월 22일 02:18 KST",
-      "summary": "A recently unsealed indictment naming Wally Liaw, co-founder of Super Micro Computer, puts the company at the center of the U.S.-China tech war.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "See How Fast Gasoline Prices Are Rising",
-      "link": "https://www.wsj.com/finance/commodities-futures/us-gas-prices-charts-bfe10437?mod=rss_markets_main",
-      "pub_date": "2026년 03월 22일 12:07 KST",
-      "summary": "Energy markets were rocked this week by the outbreak of war in the Persian Gulf, where roughly one-fifth of the world’s oil supply originates.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    },
-    {
-      "title": "6 of the Best Financial Advisor Companies: Well-Known Fiduciary Investment Firms to Consider",
-      "link": "https://www.wsj.com/buyside/personal-finance/financial-advisors/best-financial-advisors?mod=rss_markets_main",
-      "pub_date": "2026년 03월 23일 18:00 KST",
-      "summary": "We analyzed everything from advisor credentials to fees to portfolio options at some of the larger and more well-known registered investment advisor firms to help you select a firm that could best connect you with a fiduciary financial advisor.",
-      "section": "WSJ Markets",
-      "is_korean": false
-    }
-  ],
-  "WSJ Technology": [
-    {
-      "title": "The Veteran Podcasters Hanging up Their Headphones",
-      "link": "https://www.wsj.com/business/media/the-veteran-podcasters-hanging-up-their-headphones-0b1070e1?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 20:00 KST",
-      "summary": "Podcasts can run forever, but some hosts are bowing out as celebrities and YouTube dominate the industry.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Companies Aren’t Ripping Out Business Software for AI. Here’s What They’re Doing Instead.",
-      "link": "https://www.wsj.com/tech/ai/companies-arent-ripping-out-business-software-for-ai-heres-what-theyre-doing-instead-793c3a37?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 20:00 KST",
-      "summary": "Tech leaders at large corporations say that, for now, they’re vibe-coding their own small, custom apps, and putting pressure on their software vendors.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Ads Are Popping Up on the Fridge and It Isn’t Going Over Well",
-      "link": "https://www.wsj.com/lifestyle/samsung-refrigerator-ads-lg-whirlpool-ge-10ea7bcc?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 18:30 KST",
-      "summary": "Some Americans have been taken aback by marketing messages on the door of certain Samsung appliances",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Tesla, SpaceX Plan to Build New Chip Factory in Texas",
-      "link": "https://www.wsj.com/tech/tesla-spacex-plan-to-build-new-chip-factory-in-texas-4dfb9a46?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 09:48 KST",
-      "summary": "Elon Musk, who leads both companies, said the facility would supply chips for Tesla vehicles and SpaceX satellites.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Mark Zuckerberg Is Building an AI Agent to Help Him Be CEO",
-      "link": "https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 07:37 KST",
-      "summary": "The Meta Platforms chief uses the tool to get information faster as the company seeks to embrace artificial intelligence in all it does.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Activist Elliott Builds Big Stake in Chip-Design Software Maker Synopsys",
-      "link": "https://www.wsj.com/business/deals/activist-elliott-builds-big-stake-in-chip-design-software-maker-synopsys-4bf88127?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 07:06 KST",
-      "summary": "Elliott plans to engage with Synopsys to push the business to make more money from its software and services, according to people familiar with the matter.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "AI Is Rewriting the Old Rules of Google Search and SEO",
-      "link": "https://www.wsj.com/tech/ai/google-search-seo-ai-tactics-5efb9f99?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 01:00 KST",
-      "summary": "Winning the search war now depends less on keywords and more on what strangers are saying about you on Reddit.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Chatbot Makers Try Sex Appeal",
-      "link": "https://www.wsj.com/tech/ai/chatbot-makers-try-sex-appeal-f10c6263?mod=rss_Technology",
-      "pub_date": "2026년 03월 22일 21:25 KST",
-      "summary": "Plus, why we believe AI is actually thinking, phase two of the boom and Bezos’s $100 billion fundraising effort.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "What Young Workers Are Doing to AI-Proof Themselves",
-      "link": "https://www.wsj.com/economy/jobs/ai-jobs-young-people-careers-14282284?mod=rss_Technology",
-      "pub_date": "2026년 03월 22일 18:30 KST",
-      "summary": "They’ve got their whole careers ahead of them, and they’re navigating a technology with a still-uncertain impact.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "The Silicon Valley Salesman Accused of Helping China Get Nvidia’s Top Chips",
-      "link": "https://www.wsj.com/tech/the-silicon-valley-salesman-accused-of-helping-china-get-nvidias-top-chips-f1ecb1c2?mod=rss_Technology",
-      "pub_date": "2026년 03월 22일 02:18 KST",
-      "summary": "A recently unsealed indictment naming Wally Liaw, co-founder of Super Micro Computer, puts the company at the center of the U.S.-China tech war.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "How I Stop AI From Telling Me What I Want to Hear",
-      "link": "https://www.wsj.com/tech/ai/ai-chatbot-sycophancy-tactics-87a9981e?mod=rss_Technology",
-      "pub_date": "2026년 03월 22일 01:00 KST",
-      "summary": "Chatbot sycophancy may make us feel good. But it creates all sorts of problems.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Roche Halts Development of Drug Candidate for Muscle Diseases, Chugai Says",
-      "link": "https://www.wsj.com/health/pharma/roche-halts-development-of-drug-candidate-for-muscle-diseases-chugai-says-acabc236?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 17:07 KST",
-      "summary": "The company discontinued developing emugrobart after two studies showed the drug didn’t achieve intended outcomes.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Opinion | Best Protection Against an AI Bubble? Index Funds",
-      "link": "https://www.wsj.com/opinion/best-protection-against-an-ai-bubble-index-funds-229371bb?mod=rss_Technology",
-      "pub_date": "2026년 03월 23일 04:15 KST",
-      "summary": "You’ll experience losses when a bear market comes, but most active managers will do even worse.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "This Time, the Hype Around Self-Driving Cars Feels Real",
-      "link": "https://www.wsj.com/tech/this-time-the-hype-around-self-driving-cars-feels-real-e37f2e7f?mod=rss_Technology",
-      "pub_date": "2026년 03월 22일 20:00 KST",
-      "summary": "A new excitement is building for autonomous vehicles to become mainstream.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "The Trillion Dollar Race to Automate Our Entire Lives",
-      "link": "https://www.wsj.com/tech/ai/claude-code-cursor-codex-vibe-coding-52750531?mod=rss_Technology",
-      "pub_date": "2026년 03월 21일 11:00 KST",
-      "summary": "The AI sprint is hurtling toward a world where anyone can build personal concierges to do everything from executive presentations to March Madness brackets.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "The Smartest Minds in AI Just Learned the World’s Most Valuable F-Word",
-      "link": "https://www.wsj.com/tech/ai/openai-anthropic-claude-code-apple-steve-jobs-4cdc28d2?mod=rss_Technology",
-      "pub_date": "2026년 03월 21일 10:00 KST",
-      "summary": "At companies that can do anything, the most important thing is focus. Steve Jobs made it a priority at Apple—and OpenAI and Anthropic are learning why.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "Elon Musk Is Liable for Some Twitter Investors’ Losses, Jury Says",
-      "link": "https://www.wsj.com/tech/elon-musk-is-liable-for-some-twitter-investors-losses-jury-says-4b0c10a3?mod=rss_Technology",
-      "pub_date": "2026년 03월 21일 08:44 KST",
-      "summary": "Elon Musk’s lawyers said they would appeal the verdict. The jury absolved Musk of “engaging in a scheme to defraud Twitter investors.”",
-      "section": "WSJ Technology",
-      "is_korean": false
-    },
-    {
-      "title": "‘New Humans: Memories of the Future’ Review: The New Museum’s Maximalist New Chapter",
-      "link": "https://www.wsj.com/arts-culture/fine-art/new-humans-memories-of-the-future-review-the-new-museums-maximalist-new-chapter-airdigital-99516841?mod=rss_Technology",
-      "pub_date": "2026년 03월 21일 06:41 KST",
-      "summary": "Reopening after a high-profile expansion, the institution stages a sprawling and enthralling inaugural show that examines how technology shapes ideas of what it means to be human.",
-      "section": "WSJ Technology",
-      "is_korean": false
-    }
-  ],
-  "WSJ Economy": [
-    {
-      "title": "Heard on the Street: Investors with a stomach for political risk can get 30% off the price of U.S. homes right now",
-      "link": "https://www.wsj.com/economy/housing/the-housing-bargain-hiding-in-plain-sight-803c73f4",
-      "pub_date": "2026년 03월 23일 18:30 KST",
-      "summary": "A bill that would limit the activities of big housing investors has turned Wall Street landlords into a value play.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "Americans are spending more than ever on manicures and doggy daycare",
-      "link": "https://www.wsj.com/economy/consumers/americans-are-spending-more-than-ever-on-manicures-and-doggy-daycare-ecec4966",
-      "pub_date": "2026년 03월 23일 18:30 KST",
-      "summary": "Consumers have plenty of cash to pay for all kinds of services, but rising prices are feeding into sticky inflation.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "Polish Inflation Holding Near Target Despite Iran War, Gov. Glapinski Says",
-      "link": "https://www.wsj.com/articles/polish-inflation-holding-near-target-despite-iran-war-gov-glapinski-says-611b6ee8",
-      "pub_date": "2026년 03월 23일 18:02 KST",
-      "summary": "EXCLUSIVE: As investors jettisoned expectations for rate cuts in Europe following the outbreak of war in Iran, the National Bank of Poland lowered borrowing costs, underscoring its confidence inflation will remain contained.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "Japan Companies Signal Biggest Wage Hike in 35 Years",
-      "link": "https://www.wsj.com/economy/japan-companies-signal-biggest-wage-hike-in-35-years-35a2938c",
-      "pub_date": "2026년 03월 23일 17:10 KST",
-      "summary": "Preliminary data from the nation’s largest labor union group showed that 1,100 members secured wage increases of 5.26% on average this year.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "Kevin Warsh promised to overhaul the Federal Reserve and cut rates. He is being greeted by rising inflation, an oil shock and a confirmation in limbo.",
-      "link": "https://www.wsj.com/economy/central-banking/federal-reserve-kevin-warsh-onboarding-510839b7",
-      "pub_date": "2026년 03월 23일 10:00 KST",
-      "summary": "Kevin Warsh promised to overhaul the central bank and cut rates. He is being greeted by rising inflation, an oil shock and a confirmation in limbo.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "Small truck drivers in the U.S. are feeling some of the first economic effects of the rapid surge in the cost of diesel, and a broader economic impact could hit soon",
-      "link": "https://www.wsj.com/economy/truckers-are-the-first-victims-of-the-diesel-price-shock-52ff802d",
-      "pub_date": "2026년 03월 22일 23:00 KST",
-      "summary": "Truck drivers in the U.S. are feeling some of the first economic effects of the rapid surge in the cost of diesel. A broader economic impact could hit soon.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "More would-be home sellers are renting out their houses and condos, unwilling to cut prices in a sluggish housing market",
-      "link": "https://www.wsj.com/economy/housing/single-family-home-rental-market-homeowners-e33d72e9",
-      "pub_date": "2026년 03월 22일 18:30 KST",
-      "summary": "About 2.2% of rental listings on Zillow in November had previously been listed for sale, according to a Zillow analysis, the highest level since late 2022 when mortgage rates surged.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "South Korean President Lee Jae Myung has nominated Shin Hyun-song, a senior Bank for International Settlements official, as the country’s next central bank governor",
-      "link": "https://www.wsj.com/economy/central-banking/south-korea-names-bis-official-as-next-central-bank-chief-a69cddbc",
-      "pub_date": "2026년 03월 22일 21:52 KST",
-      "summary": "Shin Hyun-song will replace departing Bank of Korea Governor Rhee Chang-yong, whose four-year term ends next month.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "A Fed rate increase, once unthinkable, has become thinkable thanks to stubborn inflation, Iran and a resilient economy, @greg_ip writes",
-      "link": "https://www.wsj.com/economy/central-banking/why-the-feds-next-rate-move-could-be-a-hike-81e22988",
-      "pub_date": "2026년 03월 21일 18:30 KST",
-      "summary": "A rate increase, once unthinkable, has become thinkable thanks to stubborn inflation, Iran and a resilient economy.",
-      "section": "WSJ Economy",
-      "is_korean": false
-    },
-    {
-      "title": "Young people, who are just starting their careers, are trying to figure out which professions will insulate them from AI’s impact—or what jobs will benefit from it",
-      "link": "https://www.wsj.com/economy/jobs/ai-jobs-young-people-careers-14282284",
-      "pub_date": "2026년 03월 22일 18:30 KST",
-      "summary": "They’ve got their whole careers ahead of them, and they’re navigating a technology with a still-uncertain impact.",
-      "section": "WSJ Economy",
       "is_korean": false
     }
   ]
