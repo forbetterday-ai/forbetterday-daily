@@ -52,6 +52,7 @@ jobs:
           git config user.email "forbetterday@gmail.com"
           git add docs/
           git diff --staged --quiet || git commit -m "Update briefing [${{ env.FEED_GROUP }}] - $(date +'%Y-%m-%d %H:%M UTC')"
+          git pull --rebase origin main
           git push
         env:
           FEED_GROUP: ${{ (github.event.schedule == '0 22,12 * * *' || github.event_name == 'workflow_dispatch') && 'all' || 'premium' }}
