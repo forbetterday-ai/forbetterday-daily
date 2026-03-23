@@ -74,8 +74,7 @@ WSJ_FEEDS = {
     'WSJ US Business': 'https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml',
     'WSJ Markets': 'https://feeds.a.dj.com/rss/RSSMarketsMain.xml',
     'WSJ Technology': 'https://feeds.a.dj.com/rss/RSSWSJD.xml',
-    'WSJ Economy': 'https://feeds.content.dowjones.io/public/rss/WSJcomEconomics',
-    'WSJ Business': 'https://feeds.content.dowjones.io/public/rss/WSJcomBusiness',
+    'WSJ Economy': 'https://feeds.content.dowjones.io/public/rss/socialeconomyfeed',
 }
 
 # ===== 매일경제 =====
