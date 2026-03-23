@@ -2,7 +2,7 @@
   "ratings": {
     "2021d58cb27b": {
       "rating": "star3",
-      "title": "Ã«Â¯Â¸ÃªÂµÂ°, 'Ã¬ÂÂÃ­ÂÂ½ Ã­ÂÂ¨Ã«Â¦Â¬' Ã¬ÂÂÃ¬Â Â Ã¬Â´ÂÃªÂ¸Â° 'Ã¬Â ÂÃ«ÂÂµÃ¬Â Â' Ã¬ÂÂÃ¬ÂÂ¤ Ã¬ÂÂÃªÂ³Âµ Ã«ÂÂÃ«Â¡Â  Ã¬ÂÂÃ­ÂÂ Ã«ÂÂÃ¬ÂÂ: ÃªÂ¸Â°Ã¬ÂÂÃ­ÂÂ¸",
+      "title": "ÃÂ«ÃÂ¯ÃÂ¸ÃÂªÃÂµÃÂ°, 'ÃÂ¬ÃÂÃÂÃÂ­ÃÂÃÂ½ ÃÂ­ÃÂÃÂ¨ÃÂ«ÃÂ¦ÃÂ¬' ÃÂ¬ÃÂÃÂÃÂ¬ÃÂ ÃÂ ÃÂ¬ÃÂ´ÃÂÃÂªÃÂ¸ÃÂ° 'ÃÂ¬ÃÂ ÃÂÃÂ«ÃÂÃÂµÃÂ¬ÃÂ ÃÂ' ÃÂ¬ÃÂÃÂÃÂ¬ÃÂÃÂ¤ ÃÂ¬ÃÂÃÂÃÂªÃÂ³ÃÂµ ÃÂ«ÃÂÃÂÃÂ«ÃÂ¡ÃÂ  ÃÂ¬ÃÂÃÂÃÂ­ÃÂÃÂ ÃÂ«ÃÂÃÂÃÂ¬ÃÂÃÂ: ÃÂªÃÂ¸ÃÂ°ÃÂ¬ÃÂÃÂÃÂ­ÃÂÃÂ¸",
       "source": "Defense",
       "link": "https://www.defensenews.com/news/your-military/2026/03/20/us-countered-drone-threat-over-strategic-installation-in-early-hours-of-operation-epic-fury-guillot/",
       "watchlistItem": "Drone",
@@ -10,7 +10,7 @@
     },
     "bcf9360ac9de": {
       "rating": "star3",
-      "title": "ì°ì£¼êµ°, ë ê±°ì ì§ì ê¸°ë° ë¯¸ì¬ì¼ ë°©ì´ ë ì´ë ìì¤í ì ë©´ ê°í¸ ìì ",
+      "title": "Ã¬ÂÂ°Ã¬Â£Â¼ÃªÂµÂ°, Ã«Â ÂÃªÂ±Â°Ã¬ÂÂ Ã¬Â§ÂÃ¬ÂÂ ÃªÂ¸Â°Ã«Â°Â Ã«Â¯Â¸Ã¬ÂÂ¬Ã¬ÂÂ¼ Ã«Â°Â©Ã¬ÂÂ´ Ã«Â ÂÃ¬ÂÂ´Ã«ÂÂ Ã¬ÂÂÃ¬ÂÂ¤Ã­ÂÂ Ã¬Â ÂÃ«Â©Â´ ÃªÂ°ÂÃ­ÂÂ¸ Ã¬ÂÂÃ¬Â Â",
       "source": "Defense",
       "link": "https://breakingdefense.com/2026/03/space-force-to-overhaul-legacy-ground-based-missile-defense-radar-systems/",
       "watchlistItem": "Defense",
@@ -18,12 +18,20 @@
     },
     "b60283c2d90d": {
       "rating": "star2",
-      "title": "이사르 에어로스페이스, 발사 앞두고 2억 5천만 유로 투자 유치 협상 중",
+      "title": "ì´ì¬ë¥´ ìì´ë¡ì¤íì´ì¤, ë°ì¬ ìëê³  2ìµ 5ì²ë§ ì ë¡ í¬ì ì ì¹ íì ì¤",
       "source": "Bloomberg",
       "link": "https://www.bloomberg.com/news/articles/2026-03-23/isar-aerospace-in-talks-to-raise-250-million-ahead-of-launch",
       "watchlistItem": "Space",
       "ratedAt": "2026-03-23T14:23:46.353Z"
+    },
+    "fa39393ce15c": {
+      "rating": "star3",
+      "title": "새로운 법정 서류, 트럼프가 관계 단절을 선언한 일주일 후 국방부가 앤스로픽에게 양측이 거의 합의점에 도달했다고 말했다고 밝혀",
+      "source": "TechCrunch",
+      "link": "https://techcrunch.com/2026/03/20/new-court-filing-reveals-pentagon-told-anthropic-the-two-sides-were-nearly-aligned-a-week-after-trump-declared-the-relationship-kaput/",
+      "watchlistItem": "Defense",
+      "ratedAt": "2026-03-23T14:40:30.710Z"
     }
   },
-  "lastUpdated": "2026-03-23T14:23:46.353Z"
+  "lastUpdated": "2026-03-23T14:40:30.710Z"
 }
