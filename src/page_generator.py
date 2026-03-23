@@ -1,8 +1,9 @@
 """
-데일리 뉴스 브리핑 웹페이지 생성 모듈 - 사이드바 + 요약 + 별점 시스템
+데일리 뉴스 브리핑 웹페이지 생성 모듈 - 사이드바 + 요약 + 별점 + 인사이트
 """
 import os
 import re
+import json
 import hashlib
 from datetime import datetime
 from config.config import KST
@@ -24,10 +25,10 @@ SOURCE_GROUPS = {
 }
 
 WORKER_URL = 'https://news-ratings.forbetterday.workers.dev'
+INSIGHTS_PATH = 'docs/insights.json'
 
 
 def _make_article_id(link: str) -> str:
-    """기사 링크로 고유 ID 생성"""
     return hashlib.md5(link.encode()).hexdigest()[:12]
 
 
@@ -45,6 +46,118 @@ def _get_source_group(section_name: str) -> str:
     return "기타"
 
 
+def _load_insights() -> dict:
+    try:
+        if os.path.exists(INSIGHTS_PATH):
+            with open(INSIGHTS_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+    except Exception as e:
+        logger.warning(f"인사이트 로드 실패: {e}")
+    return {'daily': [], 'weekly': []}
+
+
+def _markdown_to_html(text: str) -> str:
+    """간단한 마크다운 → HTML 변환"""
+    lines = text.split('\n')
+    html_lines = []
+    in_list = False
+
+    for line in lines:
+        stripped = line.strip()
+        if not stripped:
+            if in_list:
+                html_lines.append('</ul>')
+                in_list = False
+            html_lines.append('<br>')
+            continue
+
+        # 헤딩
+        if stripped.startswith('### '):
+            if in_list:
+                html_lines.append('</ul>')
+                in_list = False
+            html_lines.append(f'<h4 class="insight-h4">{stripped[4:]}</h4>')
+        elif stripped.startswith('## '):
+            if in_list:
+                html_lines.append('</ul>')
+                in_list = False
+            html_lines.append(f'<h3 class="insight-h3">{stripped[3:]}</h3>')
+        elif stripped.startswith('# '):
+            if in_list:
+                html_lines.append('</ul>')
+                in_list = False
+            html_lines.append(f'<h2 class="insight-h2">{stripped[2:]}</h2>')
+        # 리스트
+        elif stripped.startswith('- ') or stripped.startswith('* '):
+            if not in_list:
+                html_lines.append('<ul class="insight-list">')
+                in_list = True
+            content = stripped[2:]
+            # 볼드 처리
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
+            html_lines.append(f'<li>{content}</li>')
+        # 숫자 리스트
+        elif re.match(r'^\d+\.', stripped):
+            if not in_list:
+                html_lines.append('<ul class="insight-list">')
+                in_list = True
+            content = re.sub(r'^\d+\.\s*', '', stripped)
+            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
+            html_lines.append(f'<li>{content}</li>')
+        else:
+            if in_list:
+                html_lines.append('</ul>')
+                in_list = False
+            # 볼드 처리
+            stripped = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', stripped)
+            html_lines.append(f'<p class="insight-p">{stripped}</p>')
+
+    if in_list:
+        html_lines.append('</ul>')
+
+    return '\n'.join(html_lines)
+
+
+def _generate_insights_html(insights: dict) -> str:
+    """인사이트 HTML 생성"""
+    daily_list = sorted(insights.get('daily', []), key=lambda x: x.get('date', ''), reverse=True)
+    weekly_list = sorted(insights.get('weekly', []), key=lambda x: x.get('date', ''), reverse=True)
+
+    if not daily_list and not weekly_list:
+        return '<div class="insight-empty">📊 아직 인사이트가 없습니다.<br><span style="font-size:0.75rem">기사에 별점을 주면 자동으로 생성됩니다.</span></div>'
+
+    html = ''
+
+    # 최신 주간 리포트
+    if weekly_list:
+        latest_weekly = weekly_list[0]
+        html += f'''<div class="insight-card weekly">
+<div class="insight-badge">📊 주간 리포트</div>
+<div class="insight-date">{latest_weekly.get('date', '')} · {latest_weekly.get('article_count', 0)}개 기사 분석</div>
+<div class="insight-content">{_markdown_to_html(latest_weekly.get('content', ''))}</div>
+</div>'''
+
+    # 일간 인사이트 (최근 7일)
+    for insight in daily_list[:7]:
+        html += f'''<div class="insight-card daily">
+<div class="insight-badge">💡 일간 트렌드</div>
+<div class="insight-date">{insight.get('date', '')} {insight.get('time', '')} · {insight.get('article_count', 0)}개 ⭐ 기사</div>
+<div class="insight-content">{_markdown_to_html(insight.get('content', ''))}</div>
+</div>'''
+
+    # 이전 주간 리포트
+    if len(weekly_list) > 1:
+        html += '<div class="insight-divider">이전 주간 리포트</div>'
+        for w in weekly_list[1:4]:
+            html += f'''<div class="insight-card weekly old">
+<div class="insight-badge">📊 주간 리포트</div>
+<div class="insight-date">{w.get('date', '')} · {w.get('article_count', 0)}개 기사 분석</div>
+<div class="insight-content">{_markdown_to_html(w.get('content', ''))}</div>
+</div>'''
+
+    return html
+
+
 def generate_briefing_page(articles_by_section: dict):
     now = datetime.now(KST)
     date_str = now.strftime('%Y년 %m월 %d일')
@@ -52,6 +165,10 @@ def generate_briefing_page(articles_by_section: dict):
     weekday_map = {0: '월', 1: '화', 2: '수', 3: '목', 4: '금', 5: '토', 6: '일'}
     weekday = weekday_map[now.weekday()]
     total_articles = sum(len(v) for v in articles_by_section.values())
+
+    # 인사이트 로드
+    insights = _load_insights()
+    insights_html = _generate_insights_html(insights)
 
     status = get_feed_status()
     unavailable_feeds = [k for k, v in status.items() if v in ('unavailable', 'error')]
@@ -107,7 +224,6 @@ def generate_briefing_page(articles_by_section: dict):
 
             summary_html = f'<div class="art-summary">{summary_ko}</div>' if summary_ko else ''
 
-            # 별점 UI
             rating_html = f'''<div class="rating-bar" data-article-id="{article_id}">
 <button class="rate-btn" data-rating="star1" onclick="rateArticle(event, '{article_id}', 'star1', this)" title="⭐">⭐</button>
 <button class="rate-btn" data-rating="star2" onclick="rateArticle(event, '{article_id}', 'star2', this)" title="⭐⭐">⭐⭐</button>
@@ -116,7 +232,6 @@ def generate_briefing_page(articles_by_section: dict):
 <span class="rate-status" id="status-{article_id}"></span>
 </div>'''
 
-            # data 속성에 메타 정보 저장 (별점 저장 시 함께 전송)
             data_attrs = f'data-date="{article_date}" data-source="{source_group}" data-id="{article_id}" data-title="{main_title}" data-link="{link}" data-watchlist="{watchlist_item}"'
 
             soft_dislike_class = 'soft-dislike' if article.get('is_soft_dislike') else ''
@@ -266,6 +381,33 @@ body {{
     color: var(--txt3);
     line-height: 1.6;
 }}
+/* Tab buttons */
+.tab-bar {{
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+}}
+.tab-btn {{
+    flex: 1;
+    padding: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: transparent;
+    color: var(--txt3);
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.05em;
+}}
+.tab-btn:hover {{ background: var(--bg3); color: var(--txt); }}
+.tab-btn.active {{
+    background: var(--accent2);
+    border-color: var(--accent);
+    color: var(--accent);
+}}
 .status-alert {{
     margin-top: 0.8rem;
     padding: 0.5rem 0.6rem;
@@ -281,6 +423,8 @@ body {{
     padding: 1.5rem 2rem 4rem;
     min-height: 100vh;
 }}
+#newsView, #insightView {{ }}
+#insightView {{ display: none; }}
 .section-group {{ margin-bottom: 2rem; }}
 .section-group.hidden {{ display: none; }}
 .section-label {{
@@ -311,6 +455,7 @@ body {{
     border-left: 3px solid var(--wl);
 }}
 .art-card.hidden {{ display: none; }}
+.art-card.rated-dislike {{ opacity: 0.35; }}
 .art-card.soft-dislike {{
     opacity: 0.45;
     border-left: 3px solid var(--dislike);
@@ -321,9 +466,7 @@ body {{
     color: inherit;
     transition: transform 0.15s ease;
 }}
-.art-link:hover {{
-    transform: translateX(3px);
-}}
+.art-link:hover {{ transform: translateX(3px); }}
 .art-head {{
     display: flex;
     justify-content: space-between;
@@ -366,7 +509,7 @@ body {{
     font-size: 0.63rem;
     color: var(--txt3);
 }}
-/* ===== Rating Bar ===== */
+/* Rating Bar */
 .rating-bar {{
     display: flex;
     align-items: center;
@@ -385,25 +528,12 @@ body {{
     transition: all 0.15s ease;
     opacity: 0.6;
 }}
-.rate-btn:hover {{
-    opacity: 1;
-    background: var(--bg4);
-    border-color: var(--accent);
-    transform: scale(1.05);
-}}
-.rate-btn.active {{
-    opacity: 1;
-    border-color: var(--accent);
-    box-shadow: 0 0 8px rgba(201,169,78,0.25);
-}}
+.rate-btn:hover {{ opacity: 1; background: var(--bg4); border-color: var(--accent); transform: scale(1.05); }}
+.rate-btn.active {{ opacity: 1; border-color: var(--accent); box-shadow: 0 0 8px rgba(201,169,78,0.25); }}
 .rate-btn.active[data-rating="star1"] {{ background: rgba(139,115,85,0.3); }}
 .rate-btn.active[data-rating="star2"] {{ background: rgba(201,169,78,0.3); }}
 .rate-btn.active[data-rating="star3"] {{ background: rgba(245,197,24,0.3); }}
-.rate-btn.dislike-btn.active {{
-    border-color: var(--dislike);
-    background: rgba(85,85,85,0.3);
-    box-shadow: 0 0 8px rgba(85,85,85,0.25);
-}}
+.rate-btn.dislike-btn.active {{ border-color: var(--dislike); background: rgba(85,85,85,0.3); box-shadow: 0 0 8px rgba(85,85,85,0.25); }}
 .rate-status {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.6rem;
@@ -412,8 +542,96 @@ body {{
     opacity: 0;
     transition: opacity 0.3s ease;
 }}
-.rate-status.show {{
-    opacity: 1;
+.rate-status.show {{ opacity: 1; }}
+/* Insight Styles */
+.insight-empty {{
+    text-align: center;
+    padding: 4rem 0;
+    color: var(--txt3);
+    font-size: 0.9rem;
+}}
+.insight-card {{
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 1.2rem;
+}}
+.insight-card.weekly {{
+    border-left: 3px solid var(--accent);
+}}
+.insight-card.daily {{
+    border-left: 3px solid var(--star2);
+}}
+.insight-card.old {{
+    opacity: 0.7;
+}}
+.insight-badge {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+}}
+.insight-date {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--txt3);
+    margin-bottom: 0.8rem;
+}}
+.insight-content {{
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--txt);
+}}
+.insight-h2 {{
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 1rem 0 0.4rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+}}
+.insight-h3 {{
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--txt);
+    margin: 0.8rem 0 0.3rem;
+}}
+.insight-h4 {{
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--txt2);
+    margin: 0.6rem 0 0.2rem;
+}}
+.insight-p {{
+    margin-bottom: 0.4rem;
+}}
+.insight-list {{
+    list-style: none;
+    margin: 0.3rem 0 0.6rem;
+}}
+.insight-list li {{
+    padding: 0.2rem 0 0.2rem 1rem;
+    position: relative;
+    font-size: 0.8rem;
+}}
+.insight-list li::before {{
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}}
+.insight-divider {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--txt3);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding: 1rem 0 0.5rem;
+    border-top: 1px solid var(--border);
+    margin-top: 1rem;
 }}
 .footer {{
     margin-left: var(--sidebar-w);
@@ -447,22 +665,33 @@ body {{
     <div class="sb-info">업데이트 {time_str} KST</div>
     <span class="sb-total">총 {total_articles}개 기사</span>
     <hr class="sb-divider">
-    <div class="sb-label">날짜</div>
-    <ul class="sb-list">{date_items}</ul>
-    <hr class="sb-divider">
-    <div class="sb-label">소스</div>
-    <ul class="sb-list">{source_items}</ul>
-    <div class="sb-filter-count" id="filterCount"></div>
-    <hr class="sb-divider">
-    <div class="sb-label">내 평가</div>
-    <div class="sb-rating-stats" id="ratingStats">로딩 중...</div>
+    <div class="tab-bar">
+        <button class="tab-btn active" onclick="switchTab('news')">📰 뉴스</button>
+        <button class="tab-btn" onclick="switchTab('insight')">💡 인사이트</button>
+    </div>
+    <div id="newsFilters">
+        <div class="sb-label">날짜</div>
+        <ul class="sb-list">{date_items}</ul>
+        <hr class="sb-divider">
+        <div class="sb-label">소스</div>
+        <ul class="sb-list">{source_items}</ul>
+        <div class="sb-filter-count" id="filterCount"></div>
+        <hr class="sb-divider">
+        <div class="sb-label">내 평가</div>
+        <div class="sb-rating-stats" id="ratingStats">로딩 중...</div>
+    </div>
     {status_html}
 </aside>
 <main class="main">
-    {articles_html if total_articles > 0 else '<div style="text-align:center;padding:4rem 0;color:var(--txt3);">📭 수집된 기사가 없습니다.</div>'}
+    <div id="newsView">
+        {articles_html if total_articles > 0 else '<div style="text-align:center;padding:4rem 0;color:var(--txt3);">📭 수집된 기사가 없습니다.</div>'}
+    </div>
+    <div id="insightView">
+        {insights_html}
+    </div>
 </main>
 <footer class="footer">
-    <div class="footer-text">Daily News Brief · Premium: 매시간 (KST 7~23시) · Daily: KST 07:00 / 21:00</div>
+    <div class="footer-text">Daily News Brief · Premium: 매시간 (KST 7~23시) · Daily: KST 07:00 / 21:00 · 주간 리포트: 일요일 21:30</div>
 </footer>
 <script>
 const WORKER_URL = '{WORKER_URL}';
@@ -470,8 +699,21 @@ let currentDate = 'all';
 let currentSource = 'all';
 let ratingsCache = {{}};
 
-// 페이지 로드 시 기존 평가 불러오기
 document.addEventListener('DOMContentLoaded', loadRatings);
+
+function switchTab(tab) {{
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    event.target.classList.add('active');
+    if (tab === 'news') {{
+        document.getElementById('newsView').style.display = '';
+        document.getElementById('insightView').style.display = 'none';
+        document.getElementById('newsFilters').style.display = '';
+    }} else {{
+        document.getElementById('newsView').style.display = 'none';
+        document.getElementById('insightView').style.display = '';
+        document.getElementById('newsFilters').style.display = 'none';
+    }}
+}}
 
 async function loadRatings() {{
     try {{
@@ -516,12 +758,9 @@ function updateRatingStats() {{
 async function rateArticle(event, articleId, rating, btn) {{
     event.preventDefault();
     event.stopPropagation();
-
     const bar = btn.closest('.rating-bar');
     const card = bar.closest('.art-card');
     const statusEl = document.getElementById('status-' + articleId);
-
-    // 이미 같은 평가가 선택되어 있으면 해제 (토글)
     if (btn.classList.contains('active')) {{
         bar.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('active'));
         card.classList.remove('rated-dislike');
@@ -529,51 +768,33 @@ async function rateArticle(event, articleId, rating, btn) {{
         statusEl.textContent = '해제됨';
         statusEl.classList.add('show');
         setTimeout(() => statusEl.classList.remove('show'), 1500);
-        // TODO: 서버에서도 삭제 (현재는 캐시만)
         updateRatingStats();
         return;
     }}
-
-    // 기존 선택 해제
     bar.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('active'));
     card.classList.remove('rated-dislike');
     btn.classList.add('active');
-
-    if (rating === 'dislike') {{
-        card.classList.add('rated-dislike');
-    }}
-
-    // 서버에 저장
+    if (rating === 'dislike') {{ card.classList.add('rated-dislike'); }}
     statusEl.textContent = '저장 중...';
     statusEl.classList.add('show');
-
     try {{
         const res = await fetch(WORKER_URL + '/rate', {{
             method: 'POST',
             headers: {{ 'Content-Type': 'application/json' }},
             body: JSON.stringify({{
-                articleId,
-                rating,
+                articleId, rating,
                 title: card.dataset.title || '',
                 source: card.dataset.source || '',
                 link: card.dataset.link || '',
                 watchlistItem: card.dataset.watchlist || '',
             }}),
         }});
-
         if (res.ok) {{
             ratingsCache[articleId] = {{ rating }};
             statusEl.textContent = '✓ 저장됨';
             updateRatingStats();
-        }} else {{
-            statusEl.textContent = '✗ 실패';
-            btn.classList.remove('active');
-        }}
-    }} catch (e) {{
-        statusEl.textContent = '✗ 오프라인';
-        btn.classList.remove('active');
-    }}
-
+        }} else {{ statusEl.textContent = '✗ 실패'; btn.classList.remove('active'); }}
+    }} catch (e) {{ statusEl.textContent = '✗ 오프라인'; btn.classList.remove('active'); }}
     setTimeout(() => statusEl.classList.remove('show'), 2000);
 }}
 
