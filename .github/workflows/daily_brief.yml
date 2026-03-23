@@ -1,19 +1,31 @@
 name: Daily News Brief 자동화
 
 # ===== 스케줄 설명 =====
-# 그룹1 (Premium: FT/Bloomberg/Reuters): KST 7~23시 매시간
-# 그룹2 (Daily: TechCrunch/Space/Defense/Tech/WSJ): KST 7시, 21시만
-# 한국 뉴스 (매경/한경/조선): 삭제됨
+# 그룹1 (Premium: FT/Bloomberg/Reuters/WSJ): KST 7~23시 매시간
+# 그룹2 (Daily: TechCrunch/Space/Defense/Tech): KST 7시, 21시만
+# 주간 리포트: 매주 일요일 KST 21:30
 
 on:
   schedule:
     # KST 7시, 21시 → 전체 피드 (Premium + Daily)
     - cron: '0 22,12 * * *'
 
-    # KST 8~20시, 22~23시 → Premium만 (FT/Bloomberg/Reuters)
+    # KST 8~20시, 22~23시 → Premium만 (FT/Bloomberg/Reuters/WSJ)
     - cron: '0 0-11,13-14,23 * * *'
 
-  workflow_dispatch:  # 수동 트리거 → 전체 피드
+    # 매주 일요일 KST 21:30 → 주간 리포트
+    - cron: '30 12 * * 0'
+
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: '실행 모드'
+        required: false
+        default: 'daily'
+        type: choice
+        options:
+          - daily
+          - weekly
 
 permissions:
   contents: write
@@ -36,26 +48,45 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Determine run mode
+        id: mode
+        run: |
+          # 주간 리포트 (일요일 KST 21:30)
+          if [ "${{ github.event.schedule }}" = "30 12 * * 0" ]; then
+            echo "mode=weekly" >> $GITHUB_OUTPUT
+            echo "feed_group=all" >> $GITHUB_OUTPUT
+          # 수동 실행
+          elif [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+            echo "feed_group=all" >> $GITHUB_OUTPUT
+          # KST 7시/21시 → 전체
+          elif [ "${{ github.event.schedule }}" = "0 22,12 * * *" ]; then
+            echo "mode=daily" >> $GITHUB_OUTPUT
+            echo "feed_group=all" >> $GITHUB_OUTPUT
+          # 그 외 → Premium만
+          else
+            echo "mode=daily" >> $GITHUB_OUTPUT
+            echo "feed_group=premium" >> $GITHUB_OUTPUT
+          fi
+
       - name: Run daily brief
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           LOG_LEVEL: INFO
-          # KST 7시/21시 또는 수동 실행 → all (전체), 그 외 → premium (FT/BBG/Reuters만)
-          FEED_GROUP: ${{ (github.event.schedule == '0 22,12 * * *' || github.event_name == 'workflow_dispatch') && 'all' || 'premium' }}
+          FEED_GROUP: ${{ steps.mode.outputs.feed_group }}
         run: |
+          echo "MODE: ${{ steps.mode.outputs.mode }}"
           echo "FEED_GROUP: $FEED_GROUP"
-          python main.py --mode daily
+          python main.py --mode ${{ steps.mode.outputs.mode }}
 
       - name: Deploy briefing page
         run: |
           git config user.name "FT Automation"
           git config user.email "forbetterday@gmail.com"
           git add docs/
-          git diff --staged --quiet || git commit -m "Update briefing [${{ env.FEED_GROUP }}] - $(date +'%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "Update briefing [${{ steps.mode.outputs.mode }}] - $(date +'%Y-%m-%d %H:%M UTC')"
           git pull --rebase origin main
           git push
-        env:
-          FEED_GROUP: ${{ (github.event.schedule == '0 22,12 * * *' || github.event_name == 'workflow_dispatch') && 'all' || 'premium' }}
 
       - name: Upload logs
         if: always()
