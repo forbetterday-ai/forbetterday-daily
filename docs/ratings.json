@@ -2,12 +2,20 @@
   "ratings": {
     "2021d58cb27b": {
       "rating": "star3",
-      "title": "미군, '에픽 퓨리' 작전 초기 '전략적' 시설 상공 드론 위협 대응: 기요트",
+      "title": "ë¯¸êµ°, 'ìí½ í¨ë¦¬' ìì  ì´ê¸° 'ì ëµì ' ìì¤ ìê³µ ëë¡  ìí ëì: ê¸°ìí¸",
       "source": "Defense",
       "link": "https://www.defensenews.com/news/your-military/2026/03/20/us-countered-drone-threat-over-strategic-installation-in-early-hours-of-operation-epic-fury-guillot/",
       "watchlistItem": "Drone",
       "ratedAt": "2026-03-23T13:56:48.491Z"
+    },
+    "bcf9360ac9de": {
+      "rating": "star3",
+      "title": "우주군, 레거시 지상 기반 미사일 방어 레이더 시스템 전면 개편 예정",
+      "source": "Defense",
+      "link": "https://breakingdefense.com/2026/03/space-force-to-overhaul-legacy-ground-based-missile-defense-radar-systems/",
+      "watchlistItem": "Defense",
+      "ratedAt": "2026-03-23T14:11:47.334Z"
     }
   },
-  "lastUpdated": "2026-03-23T13:56:48.491Z"
+  "lastUpdated": "2026-03-23T14:11:47.334Z"
 }
