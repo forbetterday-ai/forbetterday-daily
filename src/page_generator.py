@@ -237,7 +237,7 @@ def generate_briefing_page(articles_by_section: dict):
             soft_dislike_class = 'soft-dislike' if article.get('is_soft_dislike') else ''
             articles_html += f'''<div class="art-card {"watchlist" if has_watchlist else ""} {soft_dislike_class}" {data_attrs}>
 <a href="{link}" target="_blank" class="art-link">
-<div class="art-head"><div class="art-title">{main_title}</div>{watchlist_badge}</div>
+<div class="art-head">{watchlist_badge}<div class="art-title">{main_title}</div></div>
 {sub_html}
 {summary_html}
 <div class="art-meta"><span class="art-date">{pub_date}</span></div>
@@ -451,8 +451,6 @@ body {{
     border-color: var(--border);
 }}
 .art-card.watchlist {{
-    background: var(--wl-bg);
-    border-left: 3px solid var(--wl);
 }}
 .art-card.hidden {{ display: none; }}
 .art-card.rated-dislike {{ opacity: 0.35; }}
