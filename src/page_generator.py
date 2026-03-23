@@ -256,23 +256,23 @@ def generate_briefing_page(articles_by_section: dict):
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:wght@700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {{
-    --bg: #0a0a0a;
-    --bg2: #111;
-    --bg3: #141414;
-    --bg4: #1a1a1a;
-    --border: #222;
-    --txt: #e8e8e8;
-    --txt2: #888;
-    --txt3: #555;
-    --accent: #c9a94e;
-    --accent2: #6b5a2a;
-    --wl: #d4442a;
-    --wl-bg: rgba(212,68,42,0.08);
+    --bg: #F8F7F4;
+    --bg2: #1a1f36;
+    --bg3: #EFEEEB;
+    --bg4: #E8E6E1;
+    --border: #D5D2CB;
+    --txt: #2a2a2a;
+    --txt2: #666;
+    --txt3: #999;
+    --accent: #a68532;
+    --accent2: rgba(166,133,50,0.12);
+    --wl: #c0392b;
+    --wl-bg: rgba(192,57,43,0.06);
     --sidebar-w: 260px;
     --star1: #8b7355;
-    --star2: #c9a94e;
-    --star3: #f5c518;
-    --dislike: #555;
+    --star2: #a68532;
+    --star3: #d4a017;
+    --dislike: #999;
 }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 body {{
