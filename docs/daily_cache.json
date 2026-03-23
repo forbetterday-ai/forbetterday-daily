@@ -1,6 +1,38 @@
 {
   "TechCrunch": [
     {
+      "title": "Bengaluru food delivery startup Swish raises $38M: its third round in 18 months",
+      "link": "https://techcrunch.com/2026/03/23/bengaluru-food-startup-swish-raises-38m-in-its-third-round-in-18-months/",
+      "pub_date": "2026년 03월 24일 08:30 KST",
+      "summary": "Swish has more than doubled its valuation in a year as its full-stack, hyperlocal model positions ultra-fast food delivery as a high-frequency habit.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Despite bitter rivalry, Kalshi, Polymarket CEOs back $35M predictions markets VC fund",
+      "link": "https://techcrunch.com/2026/03/23/despite-bitter-rivalry-kalshi-polymarket-ceos-back-35m-predictions-markets-vc-fund/",
+      "pub_date": "2026년 03월 24일 07:57 KST",
+      "summary": "As prediction markets explode, the new firm called 5(c) Capital, will back startups supporting the burgeoning category.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Air Street becomes one of the largest solo VCs in Europe with $232M fund",
+      "link": "https://techcrunch.com/2026/03/23/air-street-becomes-one-of-the-largest-solo-vcs-in-europe-with-232m-fund/",
+      "pub_date": "2026년 03월 24일 07:36 KST",
+      "summary": "London’s Air Street Capital has raised a large Fund III with eyes locked on backing early-stage European and North American AI companies.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Apple Maps may be about to get ads",
+      "link": "https://techcrunch.com/2026/03/23/apple-maps-may-be-about-to-get-ads/",
+      "pub_date": "2026년 03월 24일 07:33 KST",
+      "summary": "Apple Maps may soon serve ads in top results when users search on terms like \"restaurants.\"",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "Someone has publicly leaked an exploit kit that can hack millions of iPhones",
       "link": "https://techcrunch.com/2026/03/23/someone-has-publicly-leaked-an-exploit-kit-that-can-hack-millions-of-iphones/",
       "pub_date": "2026년 03월 24일 05:42 KST",
@@ -127,21 +159,15 @@
       "summary": "The Trump administration has deployed ICE agents to over a dozen U.S. airports amid an ongoing federal shutdown that's causing long wait times. Eyewitnesses have already recorded at least one arrest in San Francisco's airport.",
       "section": "TechCrunch",
       "is_korean": false
-    },
+    }
+  ],
+  "TC Startups": [
     {
       "title": "The SEC drops its four-year-old investigation into EV startup Faraday Future",
       "link": "https://techcrunch.com/2026/03/22/the-sec-drops-its-four-year-old-investigation-into-ev-startup-faraday-future/",
       "pub_date": "2026년 03월 23일 04:50 KST",
       "summary": "After four years, and multiple subpoenas and depositions, the beleaguered startup has dodged yet another bullet.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Do you want to build a robot snowman?",
-      "link": "https://techcrunch.com/2026/03/22/do-you-want-to-build-a-robot-snowman/",
-      "pub_date": "2026년 03월 23일 04:45 KST",
-      "summary": "On the latest episode of the Equity podcast, we recapped CEO Jensen Huang’s GTC keynote and debated what it means for Nvidia’s future.",
-      "section": "TechCrunch",
+      "section": "TC Startups",
       "is_korean": false
     },
     {
@@ -149,19 +175,9 @@
       "link": "https://techcrunch.com/2026/03/22/cursor-admits-its-new-coding-model-was-built-on-top-of-moonshot-ais-kimi/",
       "pub_date": "2026년 03월 23일 03:41 KST",
       "summary": "Building on top of a Chinese model feels particularly fraught right now.",
-      "section": "TechCrunch",
+      "section": "TC Startups",
       "is_korean": false
     },
-    {
-      "title": "Elon Musk unveils chip manufacturing plans for SpaceX and Tesla",
-      "link": "https://techcrunch.com/2026/03/22/elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla/",
-      "pub_date": "2026년 03월 23일 01:20 KST",
-      "summary": "Elon Musk recently outlined ambitious plans for a chip-building collaboration Tesla and SpaceX — but he has a history of overpromising.",
-      "section": "TechCrunch",
-      "is_korean": false
-    }
-  ],
-  "TC Startups": [
     {
       "title": "Delve accused of misleading customers with ‘fake compliance’",
       "link": "https://techcrunch.com/2026/03/22/delve-accused-of-misleading-customers-with-fake-compliance/",
@@ -172,6 +188,22 @@
     }
   ],
   "TC AI": [
+    {
+      "title": "Do you want to build a robot snowman?",
+      "link": "https://techcrunch.com/2026/03/22/do-you-want-to-build-a-robot-snowman/",
+      "pub_date": "2026년 03월 23일 04:45 KST",
+      "summary": "On the latest episode of the Equity podcast, we recapped CEO Jensen Huang’s GTC keynote and debated what it means for Nvidia’s future.",
+      "section": "TC AI",
+      "is_korean": false
+    },
+    {
+      "title": "Elon Musk unveils chip manufacturing plans for SpaceX and Tesla",
+      "link": "https://techcrunch.com/2026/03/22/elon-musk-unveils-chip-manufacturing-plans-for-spacex-and-tesla/",
+      "pub_date": "2026년 03월 23일 01:20 KST",
+      "summary": "Elon Musk recently outlined ambitious plans for a chip-building collaboration Tesla and SpaceX — but he has a history of overpromising.",
+      "section": "TC AI",
+      "is_korean": false
+    },
     {
       "title": "An exclusive tour of Amazon’s Trainium lab, the chip that’s won over Anthropic, OpenAI, even Apple",
       "link": "https://techcrunch.com/2026/03/22/an-exclusive-tour-of-amazons-trainium-lab-the-chip-thats-won-over-anthropic-openai-even-apple/",
@@ -635,15 +667,23 @@
   ],
   "Defense One": [
     {
-      "title": "‘Keeps me up at night’: KC-135 crash underscores need for comms upgrades, former leaders say",
+      "title": "KC-135 crash in Iraq spurs calls for communications upgrades",
       "link": "https://www.defenseone.com/defense-systems/2026/03/it-keeps-me-night-kc-135-crash-underscores-necessary-comms-upgrades-leaders-say/412317/",
       "pub_date": "2026년 03월 24일 06:56 KST",
-      "summary": "Lack of battlespace awareness on aging tankers have former Air Force mobility leaders speaking out .",
+      "summary": "Almost half of the Air Force's oldest tanker fleet lacks real-time battlefield connectivity systems.",
       "section": "Defense One",
       "is_korean": false
     }
   ],
   "DefenseScoop": [
+    {
+      "title": "Marine EOD techs team with robots in frigid Alaskan waters",
+      "link": "https://defensescoop.com/2026/03/23/marine-eod-techs-team-with-robots-alaskan-waters/",
+      "pub_date": "2026년 03월 24일 07:59 KST",
+      "summary": "<p>\"Anytime I can get an unmanned system, even though it may be expensive, it doesn't come with a name and a family tied to it,” one tech said. “I’ll put that in the water first.”</p>\n<p>The post <a href=\"https://defensescoop.com/2026/03/23/marine-eod-techs-team-with-robots-alaskan-waters/\">Marine E",
+      "section": "DefenseScoop",
+      "is_korean": false
+    },
     {
       "title": "How Transcom is handling medical evacuations and planning for Operation Epic Fury",
       "link": "https://defensescoop.com/2026/03/23/iran-war-medevac-operation-epic-fury/",
@@ -877,7 +917,7 @@
       "is_korean": false
     },
     {
-      "title": "Why Notion is Switching From Cursor to Claude Code and Codex",
+      "title": "Claude Code and Codex Are Outpacing Cursor Among Notion's Engineers",
       "link": "https://www.theinformation.com/newsletters/ai-agenda/notion-switching-cursor-claude-code-codex",
       "pub_date": "2026년 03월 23일 23:00 KST",
       "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16807/b6904dc7-c1d5-400f-98ea-98a46022d9bd-6BjNAg.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Software engineers embracing the AI coding revolution don’t have much loyalty to any particular coding tool, esp",
@@ -893,7 +933,7 @@
       "is_korean": false
     },
     {
-      "title": "The Electric: A 500-Year Battery is a New Potential Boon to AI Data Centers",
+      "title": "The Electric: This Tesla Adviser's Batteries Could Last for Centuries",
       "link": "https://www.theinformation.com/newsletters/the-electric/electric-500-year-battery-new-potential-boon-ai-data-centers",
       "pub_date": "2026년 03월 23일 20:30 KST",
       "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16803/30c26b9c-496b-434a-99d9-e8f89524272b-tvrMRF.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>What if batteries lasted forever?</div></div>",
@@ -909,7 +949,7 @@
       "is_korean": false
     },
     {
-      "title": "Tech M&A Chilled by AI, Inflation Fears",
+      "title": "Data Center Deals Puncture Tech’s M&A Slump",
       "link": "https://www.theinformation.com/articles/tech-m-chilled-ai-inflation-fears",
       "pub_date": "2026년 03월 23일 00:06 KST",
       "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16802/50cfa633-fb6a-430b-9262-b2d2aea6fd11.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>This year hasn’t lived up to the high expectations of the bankers and lawyers that advise tech companies on acquisition",
