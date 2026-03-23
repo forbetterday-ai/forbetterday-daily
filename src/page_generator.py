@@ -1,8 +1,9 @@
 """
-데일리 뉴스 브리핑 웹페이지 생성 모듈 - 사이드바 + 요약
+데일리 뉴스 브리핑 웹페이지 생성 모듈 - 사이드바 + 요약 + 별점 시스템
 """
 import os
 import re
+import hashlib
 from datetime import datetime
 from config.config import KST
 from src.logger import setup_logger
@@ -14,15 +15,20 @@ SOURCE_GROUPS = {
     'FT': ['FT Markets', 'FT Companies', 'FT Technology', 'FT World', 'FT US', 'FT Opinion', 'FT Global Economy'],
     'Bloomberg': ['BBG Markets', 'BBG Technology', 'BBG Politics', 'BBG Economics', 'BBG Industries'],
     'Reuters': ['Reuters Business', 'Reuters Markets'],
+    'WSJ': ['WSJ US Business', 'WSJ Markets', 'WSJ Technology', 'WSJ Economy'],
     'TechCrunch': ['TechCrunch', 'TC Startups', 'TC AI', 'TC Venture'],
     'Space': ['SpaceNews', 'Space.com', 'Payload Space', 'Satellite Today'],
     'Defense': ['Breaking Defense', 'Defense News', 'Defense One', 'DefenseScoop', 'Air & Space Forces', 'Space & Defense'],
     'Ars Technica': ['Ars Technica'],
     'The Information': ['The Information'],
-    '매경': ['MK 헤드라인', 'MK 경제', 'MK 금융', 'MK 기업', 'MK 증권', 'MK IT'],
-    '한경': ['HK 경제', 'HK 산업', 'HK 금융', 'HK IT', 'HK 전체'],
-    '조선': ['조선 헤드라인', '조선 정치', '조선 사회'],
 }
+
+WORKER_URL = 'https://news-ratings.forbetterday.workers.dev'
+
+
+def _make_article_id(link: str) -> str:
+    """기사 링크로 고유 ID 생성"""
+    return hashlib.md5(link.encode()).hexdigest()[:12]
 
 
 def _extract_date_str(pub_date: str) -> str:
@@ -89,6 +95,7 @@ def generate_briefing_page(articles_by_section: dict):
             has_watchlist = article.get('has_watchlist', False)
             watchlist_item = article.get('watchlist_item', '')
             article_date = _extract_date_str(pub_date)
+            article_id = _make_article_id(link)
             watchlist_badge = f'<span class="wl-badge">★ {watchlist_item}</span>' if has_watchlist else ''
 
             if title_ko and title_ko != title:
@@ -100,12 +107,27 @@ def generate_briefing_page(articles_by_section: dict):
 
             summary_html = f'<div class="art-summary">{summary_ko}</div>' if summary_ko else ''
 
-            articles_html += f'''<a href="{link}" target="_blank" class="art-card {"watchlist" if has_watchlist else ""}" data-date="{article_date}" data-source="{source_group}">
+            # 별점 UI
+            rating_html = f'''<div class="rating-bar" data-article-id="{article_id}">
+<button class="rate-btn" data-rating="star1" onclick="rateArticle(event, '{article_id}', 'star1', this)" title="⭐">⭐</button>
+<button class="rate-btn" data-rating="star2" onclick="rateArticle(event, '{article_id}', 'star2', this)" title="⭐⭐">⭐⭐</button>
+<button class="rate-btn" data-rating="star3" onclick="rateArticle(event, '{article_id}', 'star3', this)" title="⭐⭐⭐">⭐⭐⭐</button>
+<button class="rate-btn dislike-btn" data-rating="dislike" onclick="rateArticle(event, '{article_id}', 'dislike', this)" title="관심없음">👎</button>
+<span class="rate-status" id="status-{article_id}"></span>
+</div>'''
+
+            # data 속성에 메타 정보 저장 (별점 저장 시 함께 전송)
+            data_attrs = f'data-date="{article_date}" data-source="{source_group}" data-id="{article_id}" data-title="{main_title}" data-link="{link}" data-watchlist="{watchlist_item}"'
+
+            articles_html += f'''<div class="art-card {"watchlist" if has_watchlist else ""}" {data_attrs}>
+<a href="{link}" target="_blank" class="art-link">
 <div class="art-head"><div class="art-title">{main_title}</div>{watchlist_badge}</div>
 {sub_html}
 {summary_html}
 <div class="art-meta"><span class="art-date">{pub_date}</span></div>
-</a>'''
+</a>
+{rating_html}
+</div>'''
         articles_html += '</div>'
 
     html = f'''<!DOCTYPE html>
@@ -131,6 +153,10 @@ def generate_briefing_page(articles_by_section: dict):
     --wl: #d4442a;
     --wl-bg: rgba(212,68,42,0.08);
     --sidebar-w: 260px;
+    --star1: #8b7355;
+    --star2: #c9a94e;
+    --star3: #f5c518;
+    --dislike: #555;
 }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 body {{
@@ -232,6 +258,13 @@ body {{
     color: var(--accent);
     margin-top: 0.5rem;
 }}
+.sb-rating-stats {{
+    margin-top: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--txt3);
+    line-height: 1.6;
+}}
 .status-alert {{
     margin-top: 0.8rem;
     padding: 0.5rem 0.6rem;
@@ -262,8 +295,6 @@ body {{
 }}
 .art-card {{
     display: block;
-    text-decoration: none;
-    color: inherit;
     padding: 0.7rem 0.8rem;
     margin-bottom: 0.1rem;
     border-radius: 6px;
@@ -273,13 +304,24 @@ body {{
 .art-card:hover {{
     background: var(--bg4);
     border-color: var(--border);
-    transform: translateX(3px);
 }}
 .art-card.watchlist {{
     background: var(--wl-bg);
     border-left: 3px solid var(--wl);
 }}
 .art-card.hidden {{ display: none; }}
+.art-card.rated-dislike {{
+    opacity: 0.35;
+}}
+.art-link {{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.15s ease;
+}}
+.art-link:hover {{
+    transform: translateX(3px);
+}}
 .art-head {{
     display: flex;
     justify-content: space-between;
@@ -322,6 +364,55 @@ body {{
     font-size: 0.63rem;
     color: var(--txt3);
 }}
+/* ===== Rating Bar ===== */
+.rating-bar {{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: 0.4rem;
+    padding-top: 0.4rem;
+    border-top: 1px solid rgba(255,255,255,0.04);
+}}
+.rate-btn {{
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    opacity: 0.6;
+}}
+.rate-btn:hover {{
+    opacity: 1;
+    background: var(--bg4);
+    border-color: var(--accent);
+    transform: scale(1.05);
+}}
+.rate-btn.active {{
+    opacity: 1;
+    border-color: var(--accent);
+    box-shadow: 0 0 8px rgba(201,169,78,0.25);
+}}
+.rate-btn.active[data-rating="star1"] {{ background: rgba(139,115,85,0.3); }}
+.rate-btn.active[data-rating="star2"] {{ background: rgba(201,169,78,0.3); }}
+.rate-btn.active[data-rating="star3"] {{ background: rgba(245,197,24,0.3); }}
+.rate-btn.dislike-btn.active {{
+    border-color: var(--dislike);
+    background: rgba(85,85,85,0.3);
+    box-shadow: 0 0 8px rgba(85,85,85,0.25);
+}}
+.rate-status {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--accent);
+    margin-left: 0.3rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}}
+.rate-status.show {{
+    opacity: 1;
+}}
 .footer {{
     margin-left: var(--sidebar-w);
     border-top: 1px solid var(--border);
@@ -342,13 +433,14 @@ body {{
     .main {{ margin-left: 0; padding: 1rem; }}
     .footer {{ margin-left: 0; padding: 1rem; }}
     .art-head {{ flex-direction: column; gap: 0.2rem; }}
+    .rate-btn {{ padding: 0.25rem 0.4rem; font-size: 0.65rem; }}
 }}
 </style>
 </head>
 <body>
 <aside class="sidebar">
     <div class="sb-brand">Daily News Brief</div>
-    <div class="sb-sub">FT · Bloomberg · Reuters · TechCrunch<br>Space · Defense · 매경 · 한경 · 조선</div>
+    <div class="sb-sub">FT · Bloomberg · Reuters · WSJ<br>TechCrunch · Space · Defense</div>
     <div class="sb-info">{weekday}요일 · {date_str}</div>
     <div class="sb-info">업데이트 {time_str} KST</div>
     <span class="sb-total">총 {total_articles}개 기사</span>
@@ -359,17 +451,130 @@ body {{
     <div class="sb-label">소스</div>
     <ul class="sb-list">{source_items}</ul>
     <div class="sb-filter-count" id="filterCount"></div>
+    <hr class="sb-divider">
+    <div class="sb-label">내 평가</div>
+    <div class="sb-rating-stats" id="ratingStats">로딩 중...</div>
     {status_html}
 </aside>
 <main class="main">
     {articles_html if total_articles > 0 else '<div style="text-align:center;padding:4rem 0;color:var(--txt3);">📭 수집된 기사가 없습니다.</div>'}
 </main>
 <footer class="footer">
-    <div class="footer-text">Daily News Brief · KST 07:00 / 12:00 / 20:00 / 21:00 자동 업데이트</div>
+    <div class="footer-text">Daily News Brief · Premium: 매시간 (KST 7~23시) · Daily: KST 07:00 / 21:00</div>
 </footer>
 <script>
+const WORKER_URL = '{WORKER_URL}';
 let currentDate = 'all';
 let currentSource = 'all';
+let ratingsCache = {{}};
+
+// 페이지 로드 시 기존 평가 불러오기
+document.addEventListener('DOMContentLoaded', loadRatings);
+
+async function loadRatings() {{
+    try {{
+        const res = await fetch(WORKER_URL + '/ratings');
+        const data = await res.json();
+        ratingsCache = data.ratings || {{}};
+        applyRatingsUI();
+        updateRatingStats();
+    }} catch (e) {{
+        console.error('평가 데이터 로드 실패:', e);
+        document.getElementById('ratingStats').textContent = '오프라인';
+    }}
+}}
+
+function applyRatingsUI() {{
+    for (const [articleId, info] of Object.entries(ratingsCache)) {{
+        const bar = document.querySelector(`.rating-bar[data-article-id="${{articleId}}"]`);
+        if (!bar) continue;
+        const btn = bar.querySelector(`[data-rating="${{info.rating}}"]`);
+        if (btn) btn.classList.add('active');
+        if (info.rating === 'dislike') {{
+            const card = bar.closest('.art-card');
+            if (card) card.classList.add('rated-dislike');
+        }}
+    }}
+}}
+
+function updateRatingStats() {{
+    const stats = {{ star1: 0, star2: 0, star3: 0, dislike: 0 }};
+    for (const info of Object.values(ratingsCache)) {{
+        if (stats.hasOwnProperty(info.rating)) stats[info.rating]++;
+    }}
+    const total = stats.star1 + stats.star2 + stats.star3 + stats.dislike;
+    const el = document.getElementById('ratingStats');
+    if (total === 0) {{
+        el.textContent = '아직 평가 없음';
+    }} else {{
+        el.innerHTML = `⭐ ${{stats.star1}} · ⭐⭐ ${{stats.star2}} · ⭐⭐⭐ ${{stats.star3}}<br>👎 ${{stats.dislike}} · 총 ${{total}}개 평가`;
+    }}
+}}
+
+async function rateArticle(event, articleId, rating, btn) {{
+    event.preventDefault();
+    event.stopPropagation();
+
+    const bar = btn.closest('.rating-bar');
+    const card = bar.closest('.art-card');
+    const statusEl = document.getElementById('status-' + articleId);
+
+    // 이미 같은 평가가 선택되어 있으면 해제 (토글)
+    if (btn.classList.contains('active')) {{
+        bar.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('active'));
+        card.classList.remove('rated-dislike');
+        delete ratingsCache[articleId];
+        statusEl.textContent = '해제됨';
+        statusEl.classList.add('show');
+        setTimeout(() => statusEl.classList.remove('show'), 1500);
+        // TODO: 서버에서도 삭제 (현재는 캐시만)
+        updateRatingStats();
+        return;
+    }}
+
+    // 기존 선택 해제
+    bar.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('active'));
+    card.classList.remove('rated-dislike');
+    btn.classList.add('active');
+
+    if (rating === 'dislike') {{
+        card.classList.add('rated-dislike');
+    }}
+
+    // 서버에 저장
+    statusEl.textContent = '저장 중...';
+    statusEl.classList.add('show');
+
+    try {{
+        const res = await fetch(WORKER_URL + '/rate', {{
+            method: 'POST',
+            headers: {{ 'Content-Type': 'application/json' }},
+            body: JSON.stringify({{
+                articleId,
+                rating,
+                title: card.dataset.title || '',
+                source: card.dataset.source || '',
+                link: card.dataset.link || '',
+                watchlistItem: card.dataset.watchlist || '',
+            }}),
+        }});
+
+        if (res.ok) {{
+            ratingsCache[articleId] = {{ rating }};
+            statusEl.textContent = '✓ 저장됨';
+            updateRatingStats();
+        }} else {{
+            statusEl.textContent = '✗ 실패';
+            btn.classList.remove('active');
+        }}
+    }} catch (e) {{
+        statusEl.textContent = '✗ 오프라인';
+        btn.classList.remove('active');
+    }}
+
+    setTimeout(() => statusEl.classList.remove('show'), 2000);
+}}
+
 function filterDate(date) {{
     currentDate = date;
     document.querySelectorAll('.date-btn').forEach(b => b.classList.remove('active'));
