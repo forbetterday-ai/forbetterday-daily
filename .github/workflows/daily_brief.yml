@@ -1,11 +1,19 @@
 name: Daily News Brief 자동화
+
+# ===== 스케줄 설명 =====
+# 그룹1 (Premium: FT/Bloomberg/Reuters): KST 7~23시 매시간
+# 그룹2 (Daily: TechCrunch/Space/Defense/Tech/WSJ): KST 7시, 21시만
+# 한국 뉴스 (매경/한경/조선): 삭제됨
+
 on:
   schedule:
-    - cron: '0 22 * * *'  # UTC 22:00 = KST 07:00
-    - cron: '0 3 * * *'   # UTC 03:00 = KST 12:00
-    - cron: '0 11 * * *'  # UTC 11:00 = KST 20:00
-    - cron: '0 12 * * *'  # UTC 12:00 = KST 21:00
-  workflow_dispatch:  # 수동 트리거
+    # KST 7시, 21시 → 전체 피드 (Premium + Daily)
+    - cron: '0 22,12 * * *'
+
+    # KST 8~20시, 22~23시 → Premium만 (FT/Bloomberg/Reuters)
+    - cron: '0 0-11,13-14,23 * * *'
+
+  workflow_dispatch:  # 수동 트리거 → 전체 피드
 
 permissions:
   contents: write
@@ -13,36 +21,41 @@ permissions:
 jobs:
   daily-brief:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      
+
       - name: Run daily brief
         env:
           CLAUDE_API_KEY: ${{ secrets.CLAUDE_API_KEY }}
           LOG_LEVEL: INFO
+          # KST 7시/21시 또는 수동 실행 → all (전체), 그 외 → premium (FT/BBG/Reuters만)
+          FEED_GROUP: ${{ (github.event.schedule == '0 22,12 * * *' || github.event_name == 'workflow_dispatch') && 'all' || 'premium' }}
         run: |
+          echo "FEED_GROUP: $FEED_GROUP"
           python main.py --mode daily
-      
+
       - name: Deploy briefing page
         run: |
           git config user.name "FT Automation"
           git config user.email "forbetterday@gmail.com"
           git add docs/
-          git diff --staged --quiet || git commit -m "Update briefing - $(date +'%Y-%m-%d %H:%M UTC')"
+          git diff --staged --quiet || git commit -m "Update briefing [${{ env.FEED_GROUP }}] - $(date +'%Y-%m-%d %H:%M UTC')"
           git push
-      
+        env:
+          FEED_GROUP: ${{ (github.event.schedule == '0 22,12 * * *' || github.event_name == 'workflow_dispatch') && 'all' || 'premium' }}
+
       - name: Upload logs
         if: always()
         uses: actions/upload-artifact@v4
@@ -50,7 +63,7 @@ jobs:
           name: logs-${{ github.run_id }}
           path: output/
           retention-days: 7
-      
+
       - name: Notify on failure
         if: failure()
         run: echo "✗ 데일리 브리핑 실행 실패. 로그를 확인하세요."
