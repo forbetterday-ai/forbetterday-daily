@@ -1,8 +1,7 @@
 """
 멀티 소스 RSS 수집 모듈
-그룹1 (Premium): FT + Bloomberg + Reuters → KST 7~23시 매시간
-그룹2 (Daily): TechCrunch + Space + Defense + Tech + WSJ → KST 7시, 21시만
-한국 뉴스 (매경/한경/조선) → 삭제됨
+Premium: FT + Bloomberg + Reuters + WSJ + GlobeNewswire + 개별기업 IR → KST 7~23시 매시간
+Daily: TechCrunch + Space + Defense + Tech → KST 7시, 21시만
 """
 import os
 import json
@@ -45,6 +44,47 @@ REUTERS_FEEDS = {
     'Reuters Markets': 'https://rss.app/feeds/ll09owyV9vLoceC6.xml',
 }
 
+# ===== WSJ =====
+WSJ_FEEDS = {
+    'WSJ US Business': 'https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness',
+    'WSJ Markets': 'https://feeds.content.dowjones.io/public/rss/RSSMarketsMain',
+    'WSJ Technology': 'https://feeds.content.dowjones.io/public/rss/RSSWSJD',
+    'WSJ Economy': 'https://feeds.content.dowjones.io/public/rss/socialeconomyfeed',
+}
+
+# ===== GlobeNewswire 산업별 =====
+GLOBENEWSWIRE_FEEDS = {
+    'GN Aerospace & Defense': 'https://www.globenewswire.com/RssFeed/industry/5001-Aerospace%20and%20Defense/feedTitle/GlobeNewswire%20-%20Aerospace%20and%20Defense',
+    'GN Semiconductors': 'https://www.globenewswire.com/RssFeed/industry/5009-Semiconductors/feedTitle/GlobeNewswire%20-%20Semiconductors',
+    'GN Energy': 'https://www.globenewswire.com/RssFeed/industry/5004-Energy/feedTitle/GlobeNewswire%20-%20Energy',
+}
+
+# ===== 개별 기업 IR RSS =====
+IR_FEEDS = {
+    # NVIDIA (Q4 Inc 플랫폼)
+    'IR NVIDIA': 'https://investor.nvidia.com/rss/news-releases.xml',
+    # Broadcom (Q4 Inc 플랫폼)
+    'IR Broadcom': 'https://investors.broadcom.com/rss/news-releases.xml',
+    # Marvell (QuoteMedia 플랫폼)
+    'IR Marvell': 'https://investor.marvell.com/rss/news-releases.xml',
+    # Lumentum (Q4 Inc 플랫폼)
+    'IR Lumentum': 'https://investor.lumentum.com/rss/news-releases.xml',
+    # Coherent (자체 사이트 - GlobeNewswire 배포)
+    'IR Coherent': 'https://www.coherent.com/company/investor-relations/rss/news-releases.xml',
+    # Palantir (Q4 Inc 플랫폼)
+    'IR Palantir': 'https://investors.palantir.com/rss/news-releases.xml',
+    # Rocket Lab (Q4 Inc 플랫폼)
+    'IR Rocket Lab': 'https://investors.rocketlabcorp.com/rss/news-releases.xml',
+    # Bloom Energy (Q4 Inc 플랫폼)
+    'IR Bloom Energy': 'https://investor.bloomenergy.com/rss/news-releases.xml',
+    # Planet Labs (Q4 Inc 플랫폼)
+    'IR Planet Labs': 'https://investors.planet.com/rss/news-releases.xml',
+    # Tesla (Business Wire 배포)
+    'IR Tesla': 'https://ir.tesla.com/rss/news-releases.xml',
+    # Cheniere Energy (Q4 Inc 플랫폼)
+    'IR Cheniere': 'https://lngir.cheniere.com/rss/news-releases.xml',
+}
+
 # ===================================
 # 그룹2: Daily (7시, 21시만 업데이트)
 # ===================================
@@ -81,14 +121,6 @@ TECH_FEEDS = {
     'The Information': 'https://rss.app/feeds/WHiQ80N8WLtalVfX.xml',
 }
 
-# ===== WSJ =====
-WSJ_FEEDS = {
-    'WSJ US Business': 'https://feeds.content.dowjones.io/public/rss/WSJcomUSBusiness',
-    'WSJ Markets': 'https://feeds.content.dowjones.io/public/rss/RSSMarketsMain',
-    'WSJ Technology': 'https://feeds.content.dowjones.io/public/rss/RSSWSJD',
-    'WSJ Economy': 'https://feeds.content.dowjones.io/public/rss/socialeconomyfeed',
-}
-
 # ===================================
 # 피드 그룹 정의
 # ===================================
@@ -98,6 +130,8 @@ PREMIUM_FEEDS = {
     **BLOOMBERG_FEEDS,
     **REUTERS_FEEDS,
     **WSJ_FEEDS,
+    **GLOBENEWSWIRE_FEEDS,
+    **IR_FEEDS,
 }
 
 DAILY_FEEDS = {
@@ -132,7 +166,7 @@ def is_korean_feed(section_name: str) -> bool:
 def _get_feed_group() -> str:
     """
     FEED_GROUP 환경변수에 따라 피드 그룹 결정
-    - 'premium': FT + Bloomberg + Reuters만 (매시간)
+    - 'premium': Premium만 (매시간)
     - 'all': 전체 피드 (KST 7시, 21시)
     """
     return os.getenv('FEED_GROUP', 'all')
