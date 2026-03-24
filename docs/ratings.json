@@ -72,14 +72,6 @@
       "watchlistItem": "Defense",
       "ratedAt": "2026-03-23T23:44:21.575Z"
     },
-    "22564e4ac533": {
-      "rating": "star3",
-      "title": "NASA, 오늘 아르테미스 달 계획 업데이트 발표: 생중계 시청 가능",
-      "source": "Space",
-      "link": "https://www.space.com/space-exploration/artemis/nasa-announcing-update-to-artemis-moon-plans-today-watch-it-live",
-      "watchlistItem": "Planet Labs",
-      "ratedAt": "2026-03-24T10:10:36.498Z"
-    },
     "e2a781490f17": {
       "rating": "star2",
       "title": "ChatGPT, Claude, Gemini가 WSJ 브래킷 풀에 참가했다. 그 중 하나가 실제로 우승할지도 모른다.",
@@ -89,5 +81,5 @@
       "ratedAt": "2026-03-24T10:24:20.878Z"
     }
   },
-  "lastUpdated": "2026-03-24T10:24:30.219Z"
+  "lastUpdated": "2026-03-24T10:24:35.067Z"
 }
