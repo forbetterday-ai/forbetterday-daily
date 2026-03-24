@@ -61,27 +61,8 @@ GLOBENEWSWIRE_FEEDS = {
 
 # ===== 개별 기업 IR RSS =====
 IR_FEEDS = {
-    # NVIDIA Newsroom (공식 RSS 제공)
     'IR NVIDIA': 'https://nvidianews.nvidia.com/rss.xml',
-    # Broadcom (PR Newswire 배포 - RSS.app 생성 필요하면 제거)
-    'IR Broadcom': 'https://www.businesswire.com/rss/home/?rss=G1QFDERJXkJeEFpRWA==&_gl=1',
-    # Marvell (Business Wire 배포)
-    'IR Marvell': 'https://investor.marvell.com/rss/news-releases.xml?items=20',
-    # Lumentum (Business Wire 배포)
-    'IR Lumentum': 'https://investor.lumentum.com/rss/news-releases.xml?items=20',
-    # Coherent (GlobeNewswire 배포 - 산업 피드에서 커버)
-    # Palantir (Business Wire 배포)
-    'IR Palantir': 'https://investors.palantir.com/rss/news-releases.xml?items=20',
-    # Rocket Lab (GlobeNewswire 배포)
     'IR Rocket Lab': 'https://investors.rocketlabcorp.com/rss/news-releases.xml?items=20',
-    # Bloom Energy (Q4 Inc)
-    'IR Bloom Energy': 'https://investor.bloomenergy.com/rss/news-releases.xml?items=20',
-    # Planet Labs (Q4 Inc)
-    'IR Planet Labs': 'https://investors.planet.com/rss/news-releases.xml?items=20',
-    # Tesla (Business Wire 배포)
-    'IR Tesla': 'https://ir.tesla.com/rss/press-releases.xml',
-    # Cheniere (Q4 Inc)
-    'IR Cheniere': 'https://lngir.cheniere.com/rss/news-releases.xml?items=20',
 }
 
 # ===================================
