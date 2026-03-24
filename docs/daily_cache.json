@@ -1,6 +1,14 @@
 {
   "TechCrunch": [
     {
+      "title": "Delve halts demos, Insight Partners scrubs investment post amid ‘fake compliance’ allegations",
+      "link": "https://techcrunch.com/2026/03/23/delve-halts-demos-insight-partners-scrubs-investment-post-amid-fake-compliance-allegations/",
+      "pub_date": "2026년 03월 24일 14:26 KST",
+      "summary": "After a whistleblower alleged that the startup fabricated audit evidence, its prominent Series A investor removed an article detailing why it led the deal.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "Emil Michael, now a senior Pentagon official, says he’ll never forgive Uber investors who ousted him and Kalanick",
       "link": "https://techcrunch.com/2026/03/23/emil-michael-now-a-senior-pentagon-official-says-hell-never-forgive-uber-investors-who-ousted-him-and-kalanick/",
       "pub_date": "2026년 03월 24일 08:49 KST",
@@ -151,17 +159,17 @@
       "summary": "Hackers working for Iran’s government are using Telegram in hacking operations that use malware to target dissidents, opposition groups, and journalists who oppose its regime, according to the FBI.",
       "section": "TechCrunch",
       "is_korean": false
-    },
+    }
+  ],
+  "TC Startups": [
     {
       "title": "Sam Altman-backed fusion startup Helion in talks to sell power to OpenAI",
       "link": "https://techcrunch.com/2026/03/23/sam-altman-openai-fusion-energy-board-helion/",
       "pub_date": "2026년 03월 24일 00:03 KST",
       "summary": "OpenAI CEO Sam Altman is stepping down as board chair of Helion. His departure comes as reports that the two companies are negotiating a deal that would see Helion sell 12.5% of its power output to OpenAI.",
-      "section": "TechCrunch",
+      "section": "TC Startups",
       "is_korean": false
-    }
-  ],
-  "TC Startups": [
+    },
     {
       "title": "The SEC drops its four-year-old investigation into EV startup Faraday Future",
       "link": "https://techcrunch.com/2026/03/22/the-sec-drops-its-four-year-old-investigation-into-ev-startup-faraday-future/",
@@ -325,14 +333,6 @@
       "summary": "<figure><img alt=\"Orbex Prime\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"682\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/01/orbexprime-nov2025.jpeg?fit=1024%2C682&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Nearly 140 million euros ($162 million) that E",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "Artemis 2 returns to the pad for April launch attempt",
-      "link": "https://spacenews.com/artemis-2-returns-to-the-pad-for-april-launch-attempt/",
-      "pub_date": "2026년 03월 22일 00:14 KST",
-      "summary": "<figure><img alt=\"SLS Artemis 2 rollout\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/NHQ20260320_admin_0005-large.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The Artemis 2 launch vehicl",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
@@ -447,41 +447,17 @@
       "summary": "Russia's Progress 94 cargo spacecraft did not deploy one of its docking antennas as planned after launching toward the ISS on Sunday (March 22), complicating plans for its arrival.",
       "section": "Space.com",
       "is_korean": false
-    },
-    {
-      "title": "We chat with legendary space shuttle commander Eileen Collins about her new documentary, 'Spacewoman' (interview)",
-      "link": "https://www.space.com/entertainment/space-movies-shows/we-chat-to-legendary-space-shuttle-commander-eileen-collins-about-her-new-documentary-spacewoman-interview",
-      "pub_date": "2026년 03월 21일 23:00 KST",
-      "summary": "A brand new feature-length documentary showcases the inspirational accomplishments of pioneering astronaut Eileen Collins.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "This Week In Space podcast: Episode 202 — Artemis Imminent",
-      "link": "https://www.space.com/entertainment/space-movies-shows/this-week-in-space-podcast-episode-202-artemis-imminent",
-      "pub_date": "2026년 03월 21일 22:34 KST",
-      "summary": "On Episode 202 of This Week In Space, Rod Pyle and Tariq Malik are joined by Mike Wall, the spaceflight and tech editor at Space.com, to bring us up to date on all the latest Artemis news.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Artemis Accords nations grapple with how to handle emergencies and 'harmful interference' on the moon",
-      "link": "https://www.space.com/space-exploration/artemis/artemis-accords-nations-grapple-with-how-to-handle-emergencies-and-harmful-interference-on-the-moon",
-      "pub_date": "2026년 03월 21일 22:00 KST",
-      "summary": "As moon missions accelerate, countries are working to define how to respond to emergencies and avoid interference between competing operations.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "The loneliest places in the universe might actually be some of the best places for life",
-      "link": "https://www.space.com/astronomy/exoplanets/the-loneliest-places-in-the-universe-might-actually-be-some-of-the-best-places-for-life",
-      "pub_date": "2026년 03월 21일 21:00 KST",
-      "summary": "Extreme exomoons with tidal heating and thick, hydrogen-rich atmospheres may be able to create billions of years of potentially habitable surface conditions.",
-      "section": "Space.com",
-      "is_korean": false
     }
   ],
   "Payload Space": [
+    {
+      "title": "Beyond the Rocket: The Digital Infrastructure of the Artemis II Mission",
+      "link": "https://payloadspace.com/beyond-the-rocket-the-digital-infrastructure-of-the-artemis-ii-mission/",
+      "pub_date": "2026년 03월 24일 11:34 KST",
+      "summary": "<p><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/03/artemis-ii-rollout-200x200.png\" width=\"200\" />When Artemis II lifts off, the world will see a rocket. What it won’t see is the digital architecture that make",
+      "section": "Payload Space",
+      "is_korean": false
+    },
     {
       "title": "Contrivian Launches New Product Bundling Amazon Leo & Starlink",
       "link": "https://payloadspace.com/contrivian-launches-new-product-bundling-amazon-leo-starlink/",
@@ -500,6 +476,22 @@
     }
   ],
   "Satellite Today": [
+    {
+      "title": "Amazon Leo Readies 200+ Satellites for Orbit as It Ramps Up Launch Schedule",
+      "link": "https://www.satellitetoday.com/connectivity/2026/03/23/amazon-leo-readies-200-satellites-for-orbit-as-it-ramps-up-launch-schedule/",
+      "pub_date": "2026년 03월 24일 10:52 KST",
+      "summary": "<p>More than 200 Amazon Leo satellites are loaded onto six dispensers at Cape Canaveral, ready to be launched into orbit in the coming months as Amazon prepares to ramp up...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/03/23/amazon-leo-readies-200-satellites-for-orbit-a",
+      "section": "Satellite Today",
+      "is_korean": false
+    },
+    {
+      "title": "Space Force, Industry Leaders Warn of Critical Gaps in Orbital Intelligence",
+      "link": "https://www.satellitetoday.com/government-military/2026/03/23/space-force-industry-leaders-warn-of-critical-gaps-in-orbital-intelligence/",
+      "pub_date": "2026년 03월 24일 10:51 KST",
+      "summary": "<p>With a kaleidoscope of ground radars, electro-optical telescopes, and Geostationary (GEO) spy satellites, the U.S. Space Force can closely track space objects as they hurtle through orbit. But in terms...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/government-military/2026/03/23/space",
+      "section": "Satellite Today",
+      "is_korean": false
+    },
     {
       "title": "Interview With TE Connectivity Principal Engineer Bruce Conway at SATShow Week",
       "link": "https://www.satellitetoday.com/partner-content/2026/03/23/interview-with-te-connectivity-principal-engineer-bruce-conway-at-satshow-week/",
@@ -667,6 +659,30 @@
   ],
   "Defense One": [
     {
+      "title": "Iran war shows the strategic limits of tactical strikes",
+      "link": "https://www.defenseone.com/ideas/2026/03/strategic-limits-tactical-strikes/412326/",
+      "pub_date": "2026년 03월 24일 14:16 KST",
+      "summary": "A complex web of economic and geopolitical consequences are keeping victory out of reach.",
+      "section": "Defense One",
+      "is_korean": false
+    },
+    {
+      "title": "Trump claims ‘good and productive’ talks with Iran, which denies negotiating",
+      "link": "https://www.defenseone.com/policy/2026/03/trump-iran-war-claims/412324/",
+      "pub_date": "2026년 03월 24일 13:34 KST",
+      "summary": "President says Hormuz would be under \"joint control,\" removing uranium would be \"very easy.\"",
+      "section": "Defense One",
+      "is_korean": false
+    },
+    {
+      "title": "Mullin takes DHS helm as 100,000 employees remain unpaid",
+      "link": "https://www.defenseone.com/policy/2026/03/mullin-dhs-shutdown-employees-unpaid/412320/",
+      "pub_date": "2026년 03월 24일 09:45 KST",
+      "summary": "Senator vows reforms, staffing rebuild as he steps into his first executive-branch job.",
+      "section": "Defense One",
+      "is_korean": false
+    },
+    {
       "title": "KC-135 crash in Iraq spurs calls for communications upgrades",
       "link": "https://www.defenseone.com/defense-systems/2026/03/it-keeps-me-night-kc-135-crash-underscores-necessary-comms-upgrades-leaders-say/412317/",
       "pub_date": "2026년 03월 24일 06:56 KST",
@@ -730,7 +746,7 @@
       "title": "Testing Shows Progress on Key Air Force Missiles and Bombs",
       "link": "https://www.airandspaceforces.com/testing-progress-key-air-force-missiles-and-bombs/",
       "pub_date": "2026년 03월 24일 09:42 KST",
-      "summary": "<p>The Pentagon’s top weapons tester noted progress on key munitions for the Air Force in his latest report, covering everything from dogfighting missiles to hypersonics.<br />\nA unique weapon that made headlines last year, the Guided Bomb Unit-57 Massive Ordnance Penetrator, has been released from ",
+      "summary": "<p>The Pentagon’s top weapons tester noted progress on key munitions for the Air Force in his latest report, covering everything from dogfighting missiles to hypersonics.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/testing-progress-key-air-force-missiles-and-bombs/\">Testing Shows Prog",
       "section": "Air & Space Forces",
       "is_korean": false
     },
@@ -739,14 +755,6 @@
       "link": "https://www.airandspaceforces.com/drone-incursions-b-52-base-strategic-installations/",
       "pub_date": "2026년 03월 23일 23:58 KST",
       "summary": "<p>Unauthorized drones flew over Barksdale Air Force Base in Louisiana, home of a B-52 bomber wing, multiple times last week, Air &#038; Space Forces Magazine has confirmed. The incident highlights the persistent, vexing threat that small drones present to military installations.</p>\n<p>The post <a ",
-      "section": "Air & Space Forces",
-      "is_korean": false
-    },
-    {
-      "title": "Key Space Force C2 Upgrade Still Faces Issues: Pentagon Report",
-      "link": "https://www.airandspaceforces.com/key-space-force-c2-upgrade-issues-pentagon-report/",
-      "pub_date": "2026년 03월 21일 21:30 KST",
-      "summary": "<p>The Space Force is still not ready to decommission a 1980s-era command and control system, despite approving a next-generation upgrade for initial operations last year, according to a new report from the Pentagon's top weapons tester.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/key",
       "section": "Air & Space Forces",
       "is_korean": false
     }
@@ -921,14 +929,6 @@
       "summary": "Policymakers debate if we even need deep ocean mining and if we can do it safely.",
       "section": "Ars Technica",
       "is_korean": false
-    },
-    {
-      "title": "We keep finding the raw material of DNA in asteroids—what's it telling us?",
-      "link": "https://arstechnica.com/science/2026/03/we-keep-finding-the-raw-material-of-dna-in-asteroids-whats-it-telling-us/",
-      "pub_date": "2026년 03월 21일 20:00 KST",
-      "summary": "This week's result is just the latest in a growing collection of discoveries.",
-      "section": "Ars Technica",
-      "is_korean": false
     }
   ],
   "The Information": [
@@ -993,38 +993,6 @@
       "link": "https://www.theinformation.com/articles/openais-first-advertisers-prove-chatgpt-ads-work",
       "pub_date": "2026년 03월 22일 01:00 KST",
       "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16801/906f7f75-82fc-41b4-a554-08bbd44178d1.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>As OpenAI prepares to open up ad sales to more marketers next month, it is trying to address what some advertisers say ",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "AI’s Enthusiasm Chasm",
-      "link": "https://www.theinformation.com/newsletters/the-weekend/ais-enthusiasm-chasm",
-      "pub_date": "2026년 03월 21일 23:00 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16800/ac1e8b53-3d94-4281-9633-a5df49ad4f3d-TY1l1l.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Welcome, Weekenders! In this newsletter:• The Big Read: A rising star at Microsoft has a challenging new job• De",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "Compute Costs? No, Caviar and Cocktails: In the Bay Area, AI Splurges on Private Parties",
-      "link": "https://www.theinformation.com/articles/compute-costs-caviar-cocktails-bay-area-ai-splurges-private-parties",
-      "pub_date": "2026년 03월 21일 22:47 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16797/df3e28f9-e652-4c9e-93b2-a9f9fbf437a3.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Around the time last fall that Vercel tripled its valuation to $9 billion, the startup decided to throw a swank dinner ",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "Inside Anduril’s Big Gamble: An Ohio Weapons Factory",
-      "link": "https://www.theinformation.com/articles/inside-andurils-big-gamble-ohio-weapons-factory",
-      "pub_date": "2026년 03월 21일 22:00 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16798/eec47118-97b7-4844-9d38-61ae855f5925.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Just past the soybean farms in Pickaway County, Ohio, stands a flat-roofed building clad in blue and gray panels, with ",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "Apple Acquisition Talks, Fraud Accusations: Behind One App Startup’s Nasty Split",
-      "link": "https://www.theinformation.com/articles/apple-acquisition-talks-fraud-accusations-behind-one-app-startups-nasty-split",
-      "pub_date": "2026년 03월 21일 21:00 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16796/f43b56ba-ffd1-4338-bd4d-b163fab01639.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Last summer, Apple held talks to acquire Lux Optics, a tiny startup that makes Halide, one of the most popular and crit",
       "section": "The Information",
       "is_korean": false
     }
