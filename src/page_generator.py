@@ -676,6 +676,7 @@ body {{
     <div class="tab-bar">
         <button class="tab-btn active" onclick="switchTab('news')">📰 뉴스</button>
         <button class="tab-btn" onclick="switchTab('insight')">💡 인사이트</button>
+        <button class="tab-btn" onclick="switchTab('archive')">📌 보관함</button>
     </div>
     <div id="newsFilters">
         <div class="sb-label">날짜</div>
