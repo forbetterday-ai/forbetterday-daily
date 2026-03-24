@@ -22,7 +22,13 @@ WATCHLIST = {
     'IonQ': ['IONQ', 'IonQ', 'ionq', 'Skyloom'],
     'Micron': ['MU', 'Micron', 'micron'],
     'SanDisk': ['SanDisk', 'Western Digital', 'WDC'],
-    
+
+    # ===== 신규 추가: 반도체/광통신 =====
+    'Broadcom': ['AVGO', 'Broadcom', 'broadcom', 'Hock Tan', 'VMware'],
+    'Marvell': ['MRVL', 'Marvell', 'marvell', 'custom ASIC'],
+    'Lumentum': ['LITE', 'Lumentum', 'lumentum', 'optical transceiver', 'EML'],
+    'Coherent': ['COHR', 'Coherent', 'coherent', 'II-VI', 'silicon carbide', 'SiC'],
+
     # ===== 방산/우주 글로벌 =====
     'Rheinmetall': ['Rheinmetall', 'rheinmetall'],
     'BAE Systems': ['BAE Systems', 'BAE', 'bae systems'],
@@ -34,33 +40,32 @@ WATCHLIST = {
     'L3Harris': ['L3Harris', 'l3harris'],
     'General Dynamics': ['General Dynamics', 'GD'],
     'Mynaric': ['Mynaric', 'mynaric', 'OISL', 'optical inter-satellite'],
-    
+
     # ===== 한국 =====
     'SK Hynix': ['SK Hynix', 'SK하이닉스', 'SKH', '하이닉스', 'Hynix', 'HBM'],
     'Samsung Electronics': ['Samsung', '삼성전자', 'SSNLF', 'Samsung Foundry', 'Samsung Electronics'],
     'Hanwha Aerospace': ['Hanwha Aerospace', '한화에어로스페이스', 'Hanwha Defense', 'Hanwha Ocean'],
     'LIG Nex1': ['LIG Nex1', '천궁', 'Cheongung', 'LIG넥스원'],
-    'Korean Air': ['Korean Air', '대한항공'],
-    
+
     # ===== 테마: 반도체/AI =====
     'HBM': ['HBM', 'HBM4', 'HBM3E', 'High Bandwidth Memory'],
     'AI Inference': ['AI inference', 'inference', 'LLM', 'large language model', 'GPT', 'generative AI'],
     'AI Chip': ['AI chip', 'AI accelerator', 'GPU', 'TPU', 'NPU', 'custom silicon'],
     'Semiconductor': ['semiconductor', 'foundry', 'TSMC', 'chip', 'wafer', 'EUV', 'fab', 'chipmaker'],
-    'CPO': ['co-packaged optics', 'CPO', 'optical transceiver', 'Lumentum', 'Coherent'],
-    
+    'CPO': ['co-packaged optics', 'CPO', 'optical transceiver', '800G', '1.6T'],
+
     # ===== 테마: 방산/우주 =====
     'Defense': ['defense', 'defence', 'military', 'Pentagon', 'NATO', 'rearmament', 'arms', 'missile', 'hypersonic', 'Dark Eagle', 'ICBM', 'munition'],
     'Space': ['space', 'satellite', 'orbit', 'launch vehicle', 'constellation', 'SDA', 'Space Force', 'PWSA', 'Golden Dome', 'SHIELD'],
     'European Defense': ['European defence', 'EU defense', 'IRIS-T', 'GOVSATCOM', 'EU SAFE', 'European rearmament'],
     'Drone': ['drone', 'UAV', 'unmanned', 'autonomous weapon', 'loitering munition', 'FPV'],
-    
+
     # ===== 테마: 에너지 =====
     'Energy': ['energy', 'power grid', 'power plant', 'electricity', 'utility'],
     'LNG Market': ['LNG', 'liquefied natural gas', 'natural gas', 'Hormuz', 'Qatar', 'gas pipeline'],
     'Nuclear': ['nuclear', 'SMR', 'small modular reactor', 'uranium', 'nuclear fusion'],
     'Data Center Power': ['data center', 'data centre', 'hyperscaler', 'power demand', 'colocation'],
-    
+
     # ===== 테마: 지정학/거시 =====
     'Geopolitics': ['geopolitics', 'sanction', 'tariff', 'trade war', 'decoupling', 'export control'],
     'China': ['China', 'Beijing', 'Xi Jinping', 'CCP', 'Chinese'],
