@@ -1,5 +1,5 @@
 """
-데일리 뉴스 브리핑 웹페이지 생성 모듈 - 사이드바 + 요약 + 별점 + 인사이트
+데일리 뉴스 브리핑 웹페이지 생성 모듈 - 시간순 정렬 + 소스태그 + 별점 + 인사이트
 """
 import os
 import re
@@ -46,6 +46,15 @@ def _get_source_group(section_name: str) -> str:
     return "기타"
 
 
+def _sort_key(article):
+    """pub_date 기준 정렬 키 (최신순)"""
+    pd = article.get('pub_date', '')
+    m = re.search(r'(\d{4})년\s*(\d{2})월\s*(\d{2})일\s*(\d{2}):(\d{2})', pd)
+    if m:
+        return f"{m.group(1)}{m.group(2)}{m.group(3)}{m.group(4)}{m.group(5)}"
+    return '0'
+
+
 def _load_insights() -> dict:
     try:
         if os.path.exists(INSIGHTS_PATH):
@@ -71,7 +80,6 @@ def _markdown_to_html(text: str) -> str:
             html_lines.append('<br>')
             continue
 
-        # 헤딩
         if stripped.startswith('### '):
             if in_list:
                 html_lines.append('</ul>')
@@ -87,16 +95,13 @@ def _markdown_to_html(text: str) -> str:
                 html_lines.append('</ul>')
                 in_list = False
             html_lines.append(f'<h2 class="insight-h2">{stripped[2:]}</h2>')
-        # 리스트
         elif stripped.startswith('- ') or stripped.startswith('* '):
             if not in_list:
                 html_lines.append('<ul class="insight-list">')
                 in_list = True
             content = stripped[2:]
-            # 볼드 처리
             content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
             html_lines.append(f'<li>{content}</li>')
-        # 숫자 리스트
         elif re.match(r'^\d+\.', stripped):
             if not in_list:
                 html_lines.append('<ul class="insight-list">')
@@ -108,7 +113,6 @@ def _markdown_to_html(text: str) -> str:
             if in_list:
                 html_lines.append('</ul>')
                 in_list = False
-            # 볼드 처리
             stripped = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', stripped)
             html_lines.append(f'<p class="insight-p">{stripped}</p>')
 
@@ -119,7 +123,6 @@ def _markdown_to_html(text: str) -> str:
 
 
 def _generate_insights_html(insights: dict) -> str:
-    """인사이트 HTML 생성"""
     daily_list = sorted(insights.get('daily', []), key=lambda x: x.get('date', ''), reverse=True)
     weekly_list = sorted(insights.get('weekly', []), key=lambda x: x.get('date', ''), reverse=True)
 
@@ -128,7 +131,6 @@ def _generate_insights_html(insights: dict) -> str:
 
     html = ''
 
-    # 최신 주간 리포트
     if weekly_list:
         latest_weekly = weekly_list[0]
         html += f'''<div class="insight-card weekly">
@@ -137,7 +139,6 @@ def _generate_insights_html(insights: dict) -> str:
 <div class="insight-content">{_markdown_to_html(latest_weekly.get('content', ''))}</div>
 </div>'''
 
-    # 일간 인사이트 (최근 7일)
     for insight in daily_list[:7]:
         html += f'''<div class="insight-card daily">
 <div class="insight-badge">💡 일간 트렌드</div>
@@ -145,7 +146,6 @@ def _generate_insights_html(insights: dict) -> str:
 <div class="insight-content">{_markdown_to_html(insight.get('content', ''))}</div>
 </div>'''
 
-    # 이전 주간 리포트
     if len(weekly_list) > 1:
         html += '<div class="insight-divider">이전 주간 리포트</div>'
         for w in weekly_list[1:4]:
@@ -166,7 +166,6 @@ def generate_briefing_page(articles_by_section: dict):
     weekday = weekday_map[now.weekday()]
     total_articles = sum(len(v) for v in articles_by_section.values())
 
-    # 인사이트 로드
     insights = _load_insights()
     insights_html = _generate_insights_html(insights)
 
@@ -198,12 +197,19 @@ def generate_briefing_page(articles_by_section: dict):
         if count > 0:
             source_items += f'<li><button class="sb-btn source-btn" onclick="filterSource(\'{group_name}\')">{group_name} <span class="sb-count">{count}</span></button></li>'
 
-    articles_html = ""
+    # 모든 기사를 하나의 리스트로 합치고 시간순 정렬
+    all_articles_flat = []
     for section, articles in articles_by_section.items():
-        source_group = _get_source_group(section)
-        articles_html += f'<div class="section-group" data-source="{source_group}">'
-        articles_html += f'<div class="section-label">{section}</div>'
         for article in articles:
+            article['_source_group'] = _get_source_group(section)
+            if not article.get('section'):
+                article['section'] = section
+            all_articles_flat.append(article)
+
+    all_articles_flat.sort(key=_sort_key, reverse=True)
+
+    articles_html = '<div class="section-group">'
+    for article in all_articles_flat:
             title = article.get('title', 'N/A')
             title_ko = article.get('title_ko', '')
             summary_ko = article.get('summary_ko', '')
@@ -213,7 +219,10 @@ def generate_briefing_page(articles_by_section: dict):
             watchlist_item = article.get('watchlist_item', '')
             article_date = _extract_date_str(pub_date)
             article_id = _make_article_id(link)
+            source_group = article.get('_source_group', '기타')
+            section = article.get('section', '')
             watchlist_badge = f'<span class="wl-badge">★ {watchlist_item}</span>' if has_watchlist else ''
+            source_badge = f'<span class="source-tag">{section}</span>'
 
             if title_ko and title_ko != title:
                 main_title = title_ko
@@ -237,14 +246,15 @@ def generate_briefing_page(articles_by_section: dict):
             soft_dislike_class = 'soft-dislike' if article.get('is_soft_dislike') else ''
             articles_html += f'''<div class="art-card {"watchlist" if has_watchlist else ""} {soft_dislike_class}" {data_attrs}>
 <a href="{link}" target="_blank" class="art-link">
-{watchlist_badge}<div class="art-title">{main_title}</div>
+{watchlist_badge}{source_badge}
+<div class="art-title">{main_title}</div>
 {sub_html}
 {summary_html}
 <div class="art-meta"><span class="art-date">{pub_date}</span></div>
 </a>
 {rating_html}
 </div>'''
-        articles_html += '</div>'
+    articles_html += '</div>'
 
     html = f'''<!DOCTYPE html>
 <html lang="ko">
@@ -298,12 +308,12 @@ body {{
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 900;
-    color: var(--accent);
+    color: #d4a017;
     margin-bottom: 0.2rem;
 }}
 .sb-sub {{
     font-size: 0.6rem;
-    color: var(--txt3);
+    color: #8890a4;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-bottom: 0.8rem;
@@ -312,14 +322,14 @@ body {{
 .sb-info {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: var(--txt2);
+    color: #8890a4;
     margin-bottom: 0.3rem;
 }}
 .sb-total {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
-    color: var(--accent);
-    background: var(--accent2);
+    color: #d4a017;
+    background: rgba(212,160,23,0.15);
     padding: 0.2rem 0.6rem;
     border-radius: 100px;
     display: inline-block;
@@ -327,13 +337,13 @@ body {{
 }}
 .sb-divider {{
     border: none;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgba(255,255,255,0.1);
     margin: 0.8rem 0;
 }}
 .sb-label {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.6rem;
-    color: var(--txt3);
+    color: #8890a4;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin-bottom: 0.4rem;
@@ -349,39 +359,38 @@ body {{
     border: 1px solid transparent;
     border-radius: 5px;
     background: transparent;
-    color: var(--txt2);
+    color: #a0a8bc;
     cursor: pointer;
     transition: all 0.15s ease;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }}
-.sb-btn:hover {{ background: var(--bg3); color: var(--txt); }}
+.sb-btn:hover {{ background: rgba(255,255,255,0.05); color: #e0e0e0; }}
 .sb-btn.active {{
-    background: var(--accent2);
-    border-color: var(--accent);
-    color: var(--accent);
+    background: rgba(212,160,23,0.15);
+    border-color: #d4a017;
+    color: #d4a017;
     font-weight: 500;
 }}
 .sb-count {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
-    color: var(--accent);
+    color: #d4a017;
 }}
 .sb-filter-count {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: var(--accent);
+    color: #d4a017;
     margin-top: 0.5rem;
 }}
 .sb-rating-stats {{
     margin-top: 0.5rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
-    color: var(--txt3);
+    color: #8890a4;
     line-height: 1.6;
 }}
-/* Tab buttons */
 .tab-bar {{
     display: flex;
     gap: 0.3rem;
@@ -394,28 +403,28 @@ body {{
     font-size: 0.7rem;
     font-weight: 500;
     text-align: center;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 5px;
     background: transparent;
-    color: var(--txt3);
+    color: #8890a4;
     cursor: pointer;
     transition: all 0.15s ease;
     letter-spacing: 0.05em;
 }}
-.tab-btn:hover {{ background: var(--bg3); color: var(--txt); }}
+.tab-btn:hover {{ background: rgba(255,255,255,0.05); color: #e0e0e0; }}
 .tab-btn.active {{
-    background: var(--accent2);
-    border-color: var(--accent);
-    color: var(--accent);
+    background: rgba(212,160,23,0.15);
+    border-color: #d4a017;
+    color: #d4a017;
 }}
 .status-alert {{
     margin-top: 0.8rem;
     padding: 0.5rem 0.6rem;
-    background: var(--wl-bg);
-    border: 1px solid rgba(212,68,42,0.2);
+    background: rgba(192,57,43,0.1);
+    border: 1px solid rgba(192,57,43,0.2);
     border-radius: 6px;
     font-size: 0.68rem;
-    color: var(--wl);
+    color: #e74c3c;
     line-height: 1.4;
 }}
 .main {{
@@ -466,13 +475,11 @@ body {{
     transition: transform 0.15s ease;
 }}
 .art-link:hover {{ transform: translateX(3px); }}
-.art-head {{
-    display: block;
-}}
 .art-title {{
     font-size: 0.98rem;
     font-weight: 500;
     line-height: 1.45;
+    margin-top: 0.2rem;
 }}
 .art-orig {{
     font-size: 0.85rem;
@@ -491,11 +498,23 @@ body {{
     border-left: 2px solid var(--accent2);
 }}
 .wl-badge {{
-    flex-shrink: 0;
+    display: inline-block;
     font-size: 0.58rem;
     font-weight: 500;
     color: var(--wl);
-    background: rgba(212,68,42,0.15);
+    background: rgba(192,57,43,0.1);
+    padding: 0.12rem 0.45rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    margin-right: 0.3rem;
+}}
+.source-tag {{
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent2);
     padding: 0.12rem 0.45rem;
     border-radius: 4px;
     white-space: nowrap;
@@ -512,10 +531,10 @@ body {{
     gap: 0.3rem;
     margin-top: 0.4rem;
     padding-top: 0.4rem;
-    border-top: 1px solid rgba(255,255,255,0.04);
+    border-top: 1px solid var(--border);
 }}
 .rate-btn {{
-    background: var(--bg3);
+    background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 0.2rem 0.5rem;
@@ -525,11 +544,11 @@ body {{
     opacity: 0.6;
 }}
 .rate-btn:hover {{ opacity: 1; background: var(--bg4); border-color: var(--accent); transform: scale(1.05); }}
-.rate-btn.active {{ opacity: 1; border-color: var(--accent); box-shadow: 0 0 8px rgba(201,169,78,0.25); }}
-.rate-btn.active[data-rating="star1"] {{ background: rgba(139,115,85,0.3); }}
-.rate-btn.active[data-rating="star2"] {{ background: rgba(201,169,78,0.3); }}
-.rate-btn.active[data-rating="star3"] {{ background: rgba(245,197,24,0.3); }}
-.rate-btn.dislike-btn.active {{ border-color: var(--dislike); background: rgba(85,85,85,0.3); box-shadow: 0 0 8px rgba(85,85,85,0.25); }}
+.rate-btn.active {{ opacity: 1; border-color: var(--accent); box-shadow: 0 0 8px rgba(166,133,50,0.25); }}
+.rate-btn.active[data-rating="star1"] {{ background: rgba(139,115,85,0.15); }}
+.rate-btn.active[data-rating="star2"] {{ background: rgba(166,133,50,0.15); }}
+.rate-btn.active[data-rating="star3"] {{ background: rgba(212,160,23,0.2); }}
+.rate-btn.dislike-btn.active {{ border-color: var(--dislike); background: rgba(153,153,153,0.15); box-shadow: 0 0 8px rgba(153,153,153,0.2); }}
 .rate-status {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.6rem;
@@ -553,15 +572,9 @@ body {{
     padding: 1.2rem 1.5rem;
     margin-bottom: 1.2rem;
 }}
-.insight-card.weekly {{
-    border-left: 3px solid var(--accent);
-}}
-.insight-card.daily {{
-    border-left: 3px solid var(--star2);
-}}
-.insight-card.old {{
-    opacity: 0.7;
-}}
+.insight-card.weekly {{ border-left: 3px solid var(--accent); }}
+.insight-card.daily {{ border-left: 3px solid var(--star2); }}
+.insight-card.old {{ opacity: 0.7; }}
 .insight-badge {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.65rem;
@@ -601,9 +614,7 @@ body {{
     color: var(--txt2);
     margin: 0.6rem 0 0.2rem;
 }}
-.insight-p {{
-    margin-bottom: 0.4rem;
-}}
+.insight-p {{ margin-bottom: 0.4rem; }}
 .insight-list {{
     list-style: none;
     margin: 0.3rem 0 0.6rem;
@@ -648,7 +659,6 @@ body {{
     }}
     .main {{ margin-left: 0; padding: 1rem; }}
     .footer {{ margin-left: 0; padding: 1rem; }}
-    .art-head {{ flex-direction: column; gap: 0.2rem; }}
     .rate-btn {{ padding: 0.25rem 0.4rem; font-size: 0.65rem; }}
 }}
 </style>
@@ -815,9 +825,8 @@ function applyFilters() {{
         else {{ c.classList.add('hidden'); }}
     }});
     document.querySelectorAll('.section-group').forEach(g => {{
-        const ms = (currentSource === 'all' || g.getAttribute('data-source') === currentSource);
         const hv = g.querySelectorAll('.art-card:not(.hidden)').length > 0;
-        if (ms && hv) {{ g.classList.remove('hidden'); }}
+        if (hv) {{ g.classList.remove('hidden'); }}
         else {{ g.classList.add('hidden'); }}
     }});
     const el = document.getElementById('filterCount');
