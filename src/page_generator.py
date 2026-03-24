@@ -561,6 +561,51 @@ body {{
 }}
 .rate-status.show {{ opacity: 1; }}
 /* Insight Styles */
+/* Archive Styles */
+.archive-card {{
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 0.7rem 0.8rem;
+    margin-bottom: 0.5rem;
+}}
+.archive-head {{
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+}}
+.archive-star {{ font-size: 0.75rem; }}
+.archive-title {{
+    display: block;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--txt);
+    text-decoration: none;
+    line-height: 1.45;
+}}
+.archive-title:hover {{ color: var(--accent); }}
+.archive-meta {{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.4rem;
+}}
+.archive-date {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--txt3);
+}}
+.archive-del {{
+    font-size: 0.65rem;
+    color: var(--dislike);
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.15rem 0.5rem;
+    cursor: pointer;
+}}
+.archive-del:hover {{ background: rgba(153,153,153,0.15); color: var(--wl); border-color: var(--wl); }}
 .insight-empty {{
     text-align: center;
     padding: 4rem 0;
@@ -698,6 +743,10 @@ body {{
     <div id="insightView">
         {insights_html}
     </div>
+    <div id="archiveView" style="display:none;">
+        <div id="archiveList"></div>
+        <div id="archiveEmpty" style="text-align:center;padding:4rem 0;color:var(--txt3);">📌 아직 보관한 기사가 없습니다.<br><span style="font-size:0.75rem">기사에 별점을 주면 자동으로 보관됩니다.</span></div>
+    </div>
 </main>
 <footer class="footer">
     <div class="footer-text">Daily News Brief · Premium: 매시간 (KST 7~23시) · Daily: KST 07:00 / 21:00 · 주간 리포트: 일요일 21:30</div>
@@ -713,15 +762,65 @@ document.addEventListener('DOMContentLoaded', loadRatings);
 function switchTab(tab) {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
     event.target.classList.add('active');
+    document.getElementById('newsView').style.display = 'none';
+    document.getElementById('insightView').style.display = 'none';
+    document.getElementById('archiveView').style.display = 'none';
+    document.getElementById('newsFilters').style.display = 'none';
     if (tab === 'news') {{
         document.getElementById('newsView').style.display = '';
-        document.getElementById('insightView').style.display = 'none';
         document.getElementById('newsFilters').style.display = '';
-    }} else {{
-        document.getElementById('newsView').style.display = 'none';
+    }} else if (tab === 'insight') {{
         document.getElementById('insightView').style.display = '';
-        document.getElementById('newsFilters').style.display = 'none';
+    }} else if (tab === 'archive') {{
+        document.getElementById('archiveView').style.display = '';
+        renderArchive();
     }}
+}}
+
+function renderArchive() {{
+    const list = document.getElementById('archiveList');
+    const empty = document.getElementById('archiveEmpty');
+    const rated = Object.entries(ratingsCache).filter(([id, info]) => info.rating !== 'dislike');
+    if (rated.length === 0) {{
+        list.innerHTML = '';
+        empty.style.display = '';
+        return;
+    }}
+    empty.style.display = 'none';
+    const starMap = {{ star1: '⭐', star2: '⭐⭐', star3: '⭐⭐⭐' }};
+    const sorted = rated.sort((a, b) => (b[1].ratedAt || '').localeCompare(a[1].ratedAt || ''));
+    list.innerHTML = sorted.map(([id, info]) => `<div class="archive-card" id="arc-${{id}}">
+<div class="archive-head">
+<span class="archive-star">${{starMap[info.rating] || '⭐'}}</span>
+<span class="source-tag">${{info.source || ''}}</span>
+${{info.watchlistItem ? `<span class="wl-badge">★ ${{info.watchlistItem}}</span>` : ''}}
+</div>
+<a href="${{info.link || '#'}}" target="_blank" class="archive-title">${{info.title || '제목 없음'}}</a>
+<div class="archive-meta">
+<span class="archive-date">${{(info.ratedAt || '').slice(0, 10)}}</span>
+<button class="archive-del" onclick="deleteRating('${{id}}')">삭제</button>
+</div>
+</div>`).join('');
+}}
+
+async function deleteRating(articleId) {{
+    if (!confirm('이 기사를 보관함에서 삭제할까요?')) return;
+    try {{
+        const res = await fetch(WORKER_URL + '/delete-rate', {{
+            method: 'POST',
+            headers: {{ 'Content-Type': 'application/json' }},
+            body: JSON.stringify({{ articleId }}),
+        }});
+        if (res.ok) {{
+            delete ratingsCache[articleId];
+            const bar = document.querySelector(`.rating-bar[data-article-id="${{articleId}}"]`);
+            if (bar) bar.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById('arc-' + articleId)?.remove();
+            updateRatingStats();
+            const rated = Object.entries(ratingsCache).filter(([id, info]) => info.rating !== 'dislike');
+            if (rated.length === 0) document.getElementById('archiveEmpty').style.display = '';
+        }}
+    }} catch (e) {{ alert('삭제 실패: ' + e.message); }}
 }}
 
 async function loadRatings() {{
