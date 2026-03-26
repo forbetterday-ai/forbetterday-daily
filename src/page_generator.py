@@ -723,6 +723,7 @@ body {{
         <button class="tab-btn" onclick="switchTab('insight')">💡 인사이트</button>
         <button class="tab-btn" onclick="switchTab('archive')">📌 보관함</button>
     </div>
+    <a href="investor-journey.html" style="display:block;text-align:center;margin:0.5rem 0;font-family:'JetBrains Mono',monospace;font-size:0.7rem;padding:0.45rem;border:1px solid rgba(255,255,255,0.1);border-radius:5px;color:#8890a4;text-decoration:none;" onmouseover="this.style.background='rgba(212,160,23,0.15)';this.style.color='#d4a017'" onmouseout="this.style.background='transparent';this.style.color='#8890a4'">📚 초보 투자자 성장기</a>
     <div id="newsFilters">
         <div class="sb-label">날짜</div>
         <ul class="sb-list">{date_items}</ul>
