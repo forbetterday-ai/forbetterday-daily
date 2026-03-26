@@ -1,0 +1,14 @@
+{
+  "title": "초보 투자자 성장기",
+  "description": "투자 공부를 하면서 하나씩 정리한 기록입니다.",
+  "posts": [
+    {
+      "id": 1,
+      "date": "2026-03-26",
+      "title": "첫 번째 강의: 투자 기초 개념",
+      "description": "주식, ETF, 채권의 기본 개념과 장기투자의 중요성",
+      "artifact_url": "https://claude.ai/public/artifacts/5913cf67-3847-40b4-8174-004fb464f252",
+      "tags": ["기초", "입문"]
+    }
+  ]
+}
