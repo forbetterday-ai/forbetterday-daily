@@ -209,13 +209,8 @@ def daily_mode():
 
         all_articles = merge_sections(cached_sections, translated_sections)
 
-        # 5단계: 일간 인사이트 생성
-        logger.info("[5/6] 일간 인사이트 생성 중...")
-        try:
-            from src.insight_generator import run_daily_insight
-            run_daily_insight()
-        except Exception as e:
-            logger.warning(f"인사이트 생성 실패 (계속 진행): {e}")
+        # 5단계: 인사이트 생성 (비활성화 - API 비용 절약)
+        logger.info("[5/6] 인사이트 생성 스킵")
 
         # 6단계: 웹페이지 생성
         logger.info("[6/6] 브리핑 웹페이지 생성 중...")
