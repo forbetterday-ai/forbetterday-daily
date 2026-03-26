@@ -1,6 +1,14 @@
 {
   "TechCrunch": [
     {
+      "title": "WhatsApp can now draft AI-generated responses based on your conversations",
+      "link": "https://techcrunch.com/2026/03/26/whatsapp-can-now-draft-ai-generated-responses-based-on-your-conversations/",
+      "pub_date": "2026년 03월 26일 22:00 KST",
+      "summary": "The Meta-owned messaging platform is also launching a way to free up space, the ability to touch up photos with Meta AI, and more.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "A ‘pound of flesh’ from data centers: one senator’s answer to AI job losses",
       "link": "https://techcrunch.com/2026/03/26/a-pound-of-flesh-from-data-centers-one-senators-answer-to-ai-job-losses/",
       "pub_date": "2026년 03월 26일 21:00 KST",
@@ -151,14 +159,6 @@
       "summary": "Russian state-owned media reported that police in Russia arrested the administrator of LeakBase, a large hacking forum.",
       "section": "TechCrunch",
       "is_korean": false
-    },
-    {
-      "title": "Reddit takes on the bots with new ‘human verification’ requirements for fishy behavior",
-      "link": "https://techcrunch.com/2026/03/25/reddit-bots-new-human-verification-requirements/",
-      "pub_date": "2026년 03월 26일 01:10 KST",
-      "summary": "Reddit will require suspected automated accounts to verify they’re human, as it ramps up efforts to curb bot-driven spam and manipulation.",
-      "section": "TechCrunch",
-      "is_korean": false
     }
   ],
   "TC Startups": [
@@ -285,6 +285,14 @@
   ],
   "TC AI": [
     {
+      "title": "Reddit takes on the bots with new ‘human verification’ requirements for fishy behavior",
+      "link": "https://techcrunch.com/2026/03/25/reddit-bots-new-human-verification-requirements/",
+      "pub_date": "2026년 03월 26일 01:10 KST",
+      "summary": "Reddit will require suspected automated accounts to verify they’re human, as it ramps up efforts to curb bot-driven spam and manipulation.",
+      "section": "TC AI",
+      "is_korean": false
+    },
+    {
       "title": "Granola raises $125M, hits $1.5B valuation as it expands from meeting notetaker to enterprise AI app",
       "link": "https://techcrunch.com/2026/03/25/granola-raises-125m-hits-1-5b-valuation-as-it-expands-from-meeting-notetaker-to-enterprise-ai-app/",
       "pub_date": "2026년 03월 25일 23:48 KST",
@@ -368,6 +376,14 @@
     }
   ],
   "SpaceNews": [
+    {
+      "title": "Golden Dome and the velocity race: Why ground-based optics are the key to mission persistence",
+      "link": "https://spacenews.com/golden-dome-and-the-velocity-race-why-ground-based-optics-are-the-key-to-mission-persistence/",
+      "pub_date": "2026년 03월 26일 22:00 KST",
+      "summary": "<figure><img alt=\"An illustration of the Golden Dome. Credit: Arcfield\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/08/Golden-Dome-scaled.jpg?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>While ",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
     {
       "title": "NASA to test nuclear electric propulsion with 2028 mission to Mars",
       "link": "https://spacenews.com/nasa-to-test-nuclear-electric-propulsion-with-2028-mission-to-mars/",
@@ -547,6 +563,14 @@
   ],
   "Space.com": [
     {
+      "title": "Who is Artemis? Meet the Greek goddess who inspired NASA's return to the moon",
+      "link": "https://www.space.com/space-exploration/artemis/who-is-artemis-meet-the-goddess-who-inspired-nasas-return-to-the-moon",
+      "pub_date": "2026년 03월 26일 22:00 KST",
+      "summary": "From Greek mythology to modern spaceflight, Artemis and her twin brother Apollo connect humanity's first lunar missions to the next era of exploration with Artemis 2 and beyond.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
       "title": "These 45 exoplanets may be the best places to search for alien life",
       "link": "https://www.space.com/astronomy/exoplanets/these-45-exoplanets-may-be-the-best-places-to-search-for-alien-life",
       "pub_date": "2026년 03월 26일 21:00 KST",
@@ -675,18 +699,18 @@
       "is_korean": false
     },
     {
-      "title": "Scientists discover mirror of our solar system in 2 exoplanets forming around a star",
-      "link": "https://www.space.com/astronomy/exoplanets/scientists-discover-mirror-of-our-solar-system-in-2-exoplanets-forming-around-a-star",
-      "pub_date": "2026년 03월 25일 06:00 KST",
-      "summary": "Astronomers have spotted two planets forming around a distant infant star, offering a time capsule into see what the solar system looked like billions of years ago.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
       "title": "Amazon Spring Sale deals for stargazing 2026: Huge savings on telescopes, binoculars and cameras",
       "link": "https://www.space.com/technology/amazon-spring-sale-deals-for-stargazing-2026-huge-savings-on-telescopes-binoculars-and-cameras",
       "pub_date": "2026년 03월 25일 06:00 KST",
       "summary": "Don't miss out on hundreds of dollars off the best skywatching optics and cameras in this week's Amazon Spring Sale.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Scientists discover mirror of our solar system in 2 exoplanets forming around a star",
+      "link": "https://www.space.com/astronomy/exoplanets/scientists-discover-mirror-of-our-solar-system-in-2-exoplanets-forming-around-a-star",
+      "pub_date": "2026년 03월 25일 06:00 KST",
+      "summary": "Astronomers have spotted two planets forming around a distant infant star, offering a time capsule into see what the solar system looked like billions of years ago.",
       "section": "Space.com",
       "is_korean": false
     },
@@ -1067,6 +1091,14 @@
   ],
   "Defense News": [
     {
+      "title": "Volkswagen in talks to make Iron Dome parts at struggling German auto plant: report",
+      "link": "https://www.defensenews.com/global/europe/2026/03/26/volkswagen-in-talks-to-make-iron-dome-parts-at-struggling-german-auto-plant-report/",
+      "pub_date": "2026년 03월 26일 21:56 KST",
+      "summary": "Several automotive manufacturers have initiated a production switch to defense equipment, as the once-mighty German auto industry faces a downturn.",
+      "section": "Defense News",
+      "is_korean": false
+    },
+    {
       "title": "France to boost munitions spending by nearly $10 billion through 2030",
       "link": "https://www.defensenews.com/global/europe/2026/03/26/france-to-boost-munitions-spending-by-nearly-10-billion-through-2030/",
       "pub_date": "2026년 03월 26일 21:12 KST",
@@ -1213,7 +1245,7 @@
       "is_korean": false
     },
     {
-      "title": "Will too much AI weaken troops' judgement?",
+      "title": "The real danger of military AI isn’t killer robots; it’s worse human judgement",
       "link": "https://www.defenseone.com/technology/2026/03/military-ai-troops-judgement/412390/",
       "pub_date": "2026년 03월 26일 10:48 KST",
       "summary": "As Pentagon rushes to deploy LLM-based tools, research suggests they can undermine human thought and communication.",
