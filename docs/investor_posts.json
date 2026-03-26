@@ -9,6 +9,14 @@
       "description": "매달 조금씩 넣는 돈이 만들어내는 풍경",
       "artifact_url": "https://claude.site/public/artifacts/61288a33-2a8b-4893-98ba-5c9524d8edd3/embed",
       "tags": ["적립식", "ETF", "특별강"]
+    },
+    {
+      "id": 2,
+      "date": "2026-03-26",
+      "title": "13-2강: 나만의 ETF 포트폴리오 설계",
+      "description": "ETF 적립식의 확장편",
+      "artifact_url": "https://claude.site/public/artifacts/5913cf67-3847-40b4-8174-004fb464f252/embed",
+      "tags": ["ETF", "포트폴리오", "13강"]
     }
   ]
 }
