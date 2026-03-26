@@ -1,5 +1,5 @@
 """
-데일리 뉴스 브리핑 웹페이지 생성 모듈 - 시간순 정렬 + 소스태그 + 별점 + 인사이트
+데일리 뉴스 브리핑 웹페이지 생성 모듈 - 시간순 정렬 + 소스태그 + 별점 + 인사이트 + Spotify Player
 """
 import os
 import re
@@ -28,6 +28,10 @@ SOURCE_GROUPS = {
 
 WORKER_URL = 'https://news-ratings.forbetterday.workers.dev'
 INSIGHTS_PATH = 'docs/insights.json'
+
+# ★ Spotify 설정 - 본인 플레이리스트 ID로 교체하세요
+# 플레이리스트: /embed/playlist/ID  |  트랙: /embed/track/ID  |  앨범: /embed/album/ID
+SPOTIFY_EMBED_URL = 'https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?utm_source=generator&theme=0'
 
 
 def _make_article_id(link: str) -> str:
@@ -285,6 +289,9 @@ def generate_briefing_page(articles_by_section: dict):
     --star2: #a68532;
     --star3: #d4a017;
     --dislike: #999;
+    --spotify-green: #1DB954;
+    --spotify-dark: #121212;
+    --player-h: 80px;
 }}
 * {{ margin:0; padding:0; box-sizing:border-box; }}
 body {{
@@ -292,6 +299,7 @@ body {{
     background: var(--bg);
     color: var(--txt);
     line-height: 1.6;
+    padding-bottom: var(--player-h);
 }}
 .sidebar {{
     position: fixed;
@@ -692,8 +700,62 @@ body {{
     border-top: 1px solid var(--border);
     padding: 1.5rem 2rem;
     text-align: center;
+    margin-bottom: var(--player-h);
 }}
 .footer-text {{ font-size: 0.68rem; color: var(--txt3); }}
+
+/* ===== Spotify 하단 고정 플레이어 ===== */
+.spotify-bottom-bar {{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: var(--spotify-dark);
+    border-top: 1px solid #282828;
+    height: var(--player-h);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}}
+.spotify-bottom-bar.collapsed {{
+    transform: translateY(var(--player-h));
+}}
+.spotify-bottom-bar iframe {{
+    width: 100%;
+    height: var(--player-h);
+    border: none;
+}}
+.spotify-toggle-btn {{
+    position: fixed;
+    bottom: calc(var(--player-h) + 8px);
+    right: 20px;
+    z-index: 10000;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: var(--spotify-green);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 12px rgba(29, 185, 84, 0.35);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}}
+.spotify-toggle-btn:hover {{
+    transform: scale(1.1);
+    box-shadow: 0 5px 18px rgba(29, 185, 84, 0.5);
+}}
+.spotify-toggle-btn.collapsed {{
+    bottom: 16px;
+    background: #282828;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+}}
+.spotify-toggle-btn.collapsed:hover {{
+    background: var(--spotify-green);
+}}
+
 @media (max-width: 768px) {{
     .sidebar {{
         position: static;
@@ -707,6 +769,7 @@ body {{
     .main {{ margin-left: 0; padding: 1rem; }}
     .footer {{ margin-left: 0; padding: 1rem; }}
     .rate-btn {{ padding: 0.25rem 0.4rem; font-size: 0.65rem; }}
+    .spotify-toggle-btn {{ right: 12px; width: 36px; height: 36px; font-size: 16px; }}
 }}
 </style>
 </head>
@@ -743,6 +806,18 @@ body {{
 <footer class="footer">
     <div class="footer-text">Daily News Brief · Premium: 매시간 (KST 7~23시) · Daily: KST 07:00 / 21:00 · 주간 리포트: 일요일 21:30</div>
 </footer>
+
+<!-- ★ Spotify 하단 고정 플레이어 -->
+<div class="spotify-bottom-bar" id="spotifyBar">
+    <iframe
+        src="{SPOTIFY_EMBED_URL}"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        title="Spotify Player">
+    </iframe>
+</div>
+<button class="spotify-toggle-btn" id="spotifyToggle" aria-label="음악 플레이어 토글">🎵</button>
+
 <script>
 const WORKER_URL = '{WORKER_URL}';
 let currentDate = 'all';
@@ -750,6 +825,17 @@ let currentSource = 'all';
 let ratingsCache = {{}};
 
 document.addEventListener('DOMContentLoaded', loadRatings);
+
+/* ★ Spotify 토글 */
+(function() {{
+    const bar = document.getElementById('spotifyBar');
+    const btn = document.getElementById('spotifyToggle');
+    btn.addEventListener('click', function() {{
+        bar.classList.toggle('collapsed');
+        btn.classList.toggle('collapsed');
+        document.body.style.paddingBottom = bar.classList.contains('collapsed') ? '0' : 'var(--player-h)';
+    }});
+}})();
 
 function switchTab(tab) {{
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
