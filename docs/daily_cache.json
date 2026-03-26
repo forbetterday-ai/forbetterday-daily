@@ -1,6 +1,30 @@
 {
   "TechCrunch": [
     {
+      "title": "The least surprising chapter of the Manus story is what’s happening right now",
+      "link": "https://techcrunch.com/2026/03/25/the-least-surprising-chapter-of-the-manus-story-is-whats-happening-right-now/",
+      "pub_date": "2026년 03월 26일 11:46 KST",
+      "summary": "Did anyone think there would not be a reckoning over this tie-up?",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Mercor competitor Deccan AI raises $25M, sources experts from India",
+      "link": "https://techcrunch.com/2026/03/25/deccan-ai-raises-25m-as-ai-training-push-relies-on-india-based-workforce/",
+      "pub_date": "2026년 03월 26일 09:30 KST",
+      "summary": "Deccan AI concentrates its workforce in India to manage quality in a fast-growing but fragmented AI training market.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Delve did the security compliance on LiteLLM, an AI project hit by malware",
+      "link": "https://techcrunch.com/2026/03/25/delve-did-the-security-compliance-on-litellm-an-ai-project-hit-by-malware/",
+      "pub_date": "2026년 03월 26일 09:03 KST",
+      "summary": "LiteLLM offers an AI open source project used by millions that was infected by credential harvesting malware.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "The AI skills gap is here, says AI company, and power users are pulling ahead",
       "link": "https://techcrunch.com/2026/03/25/the-ai-skills-gap-is-here-says-ai-company-and-power-users-are-pulling-ahead/",
       "pub_date": "2026년 03월 26일 06:44 KST",
@@ -135,30 +159,6 @@
       "summary": "Granola's valuation jumped from $250 million to $1.5 billion with this round, and it has added more support for AI agents after users previously complained.",
       "section": "TechCrunch",
       "is_korean": false
-    },
-    {
-      "title": "Meta launches new initiative to support entrepreneurship, drive AI adoption",
-      "link": "https://techcrunch.com/2026/03/25/meta-launches-new-initiative-to-support-entrepreneurship-drive-ai-adoption/",
-      "pub_date": "2026년 03월 25일 23:45 KST",
-      "summary": "Meta CEO Mark Zuckerberg said in a memo to staff that small businesses have always been a big part of the company's business model, and that while tens of millions of entrepreneurs already use its platforms to grow and connect with customers, the company wants to do more in the space.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Arbor Energy just landed a billion-dollar order to bring rocket turbine tech to the power grid",
-      "link": "https://techcrunch.com/2026/03/25/arbor-energy-just-landed-a-billion-dollar-order-to-bring-rocket-turbine-tech-to-the-power-grid/",
-      "pub_date": "2026년 03월 25일 23:17 KST",
-      "summary": "The large deal sees Arbor delivering as many as 200 of its Halcyon turbines, which can burn either natural gas or waste biomass.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Meta turns to AI to make shopping easier on Instagram and Facebook",
-      "link": "https://techcrunch.com/2026/03/25/meta-turns-to-ai-to-make-shopping-easier-on-instagram-and-facebook/",
-      "pub_date": "2026년 03월 25일 23:16 KST",
-      "summary": "Meta is using generative AI to provide more product and brand information to consumers when they're shopping in its apps.",
-      "section": "TechCrunch",
-      "is_korean": false
     }
   ],
   "TC Startups": [
@@ -281,25 +281,25 @@
       "summary": "As prediction markets explode, the new firm called 5(c) Capital, will back startups supporting the burgeoning category.",
       "section": "TC Startups",
       "is_korean": false
-    },
-    {
-      "title": "Vibe-coding startup Lovable is on the hunt for acquisitions",
-      "link": "https://techcrunch.com/2026/03/23/vibe-coding-startup-lovable-is-on-the-hunt-for-acquisitions/",
-      "pub_date": "2026년 03월 24일 03:22 KST",
-      "summary": "Lovable's founder said the fast-growing vibe-coding startup is looking for startups and teams to join its company.",
-      "section": "TC Startups",
-      "is_korean": false
-    },
-    {
-      "title": "Startup Gimlet Labs is solving the AI inference bottleneck in a surprisingly elegant way",
-      "link": "https://techcrunch.com/2026/03/23/startup-gimlet-labs-is-solving-the-ai-inference-bottleneck-in-a-surprisingly-elegant-way/",
-      "pub_date": "2026년 03월 24일 01:00 KST",
-      "summary": "Gimlet Labs just raised an $80 million Series A for tech that lets AI run across NVIDIA, AMD, Intel, ARM, Cerebras and d-Matrix chips, simultaneously.",
-      "section": "TC Startups",
-      "is_korean": false
     }
   ],
   "TC AI": [
+    {
+      "title": "Meta launches new initiative to support entrepreneurship, drive AI adoption",
+      "link": "https://techcrunch.com/2026/03/25/meta-launches-new-initiative-to-support-entrepreneurship-drive-ai-adoption/",
+      "pub_date": "2026년 03월 25일 23:45 KST",
+      "summary": "Meta CEO Mark Zuckerberg said in a memo to staff that small businesses have always been a big part of the company's business model, and that while tens of millions of entrepreneurs already use its platforms to grow and connect with customers, the company wants to do more in the space.",
+      "section": "TC AI",
+      "is_korean": false
+    },
+    {
+      "title": "Meta turns to AI to make shopping easier on Instagram and Facebook",
+      "link": "https://techcrunch.com/2026/03/25/meta-turns-to-ai-to-make-shopping-easier-on-instagram-and-facebook/",
+      "pub_date": "2026년 03월 25일 23:16 KST",
+      "summary": "Meta is using generative AI to provide more product and brand information to consumers when they're shopping in its apps.",
+      "section": "TC AI",
+      "is_korean": false
+    },
     {
       "title": "With Sift, two ex-SpaceX engineers are bringing the software that helped launch rockets to the factory floor",
       "link": "https://techcrunch.com/2026/03/25/with-sift-stack-two-ex-spacex-engineers-are-bringing-the-software-that-helped-launch-rockets-to-the-factory-floor/",
@@ -347,22 +347,6 @@
       "summary": "The idea behind the new tool is to give artists more control over which tracks are associated with their name on Spotify.",
       "section": "TC AI",
       "is_korean": false
-    },
-    {
-      "title": "Arm is releasing the first in-house chip in its 35-year history",
-      "link": "https://techcrunch.com/2026/03/24/arm-is-releasing-its-first-in-house-chip-in-its-35-year-history/",
-      "pub_date": "2026년 03월 25일 04:48 KST",
-      "summary": "Arm is producing its own CPU for the first time. It developed the CPU with Meta, which is also the chip's first customer.",
-      "section": "TC AI",
-      "is_korean": false
-    },
-    {
-      "title": "OpenAI’s plans to make ChatGPT more like Amazon aren’t going so well",
-      "link": "https://techcrunch.com/2026/03/24/openais-plans-to-make-chatgpt-more-like-amazon-arent-going-so-well/",
-      "pub_date": "2026년 03월 25일 04:27 KST",
-      "summary": "OpenAI says it's moving away from Instant Checkout, which allowed users to buy items directly through the ChatGPT interface.",
-      "section": "TC AI",
-      "is_korean": false
     }
   ],
   "TC Venture": [
@@ -373,9 +357,219 @@
       "summary": "London’s Air Street Capital has raised a large Fund III with eyes locked on backing early-stage European and North American AI companies.",
       "section": "TC Venture",
       "is_korean": false
+    },
+    {
+      "title": "Startup Gimlet Labs is solving the AI inference bottleneck in a surprisingly elegant way",
+      "link": "https://techcrunch.com/2026/03/23/startup-gimlet-labs-is-solving-the-ai-inference-bottleneck-in-a-surprisingly-elegant-way/",
+      "pub_date": "2026년 03월 24일 01:00 KST",
+      "summary": "Gimlet Labs just raised an $80 million Series A for tech that lets AI run across NVIDIA, AMD, Intel, ARM, Cerebras and d-Matrix chips, simultaneously.",
+      "section": "TC Venture",
+      "is_korean": false
+    }
+  ],
+  "SpaceNews": [
+    {
+      "title": "Space Force weighs launch alternatives as Vulcan faces potential months-long grounding",
+      "link": "https://spacenews.com/space-force-weighs-launch-alternatives-as-vulcan-faces-potential-months-long-grounding/",
+      "pub_date": "2026년 03월 26일 07:55 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/55090240803_a555b0ee7e_k.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Officials explore shifting missions, extending satel",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Office of Space Commerce releases mission authorization proposal",
+      "link": "https://spacenews.com/office-of-space-commerce-releases-mission-authorization-proposal/",
+      "pub_date": "2026년 03월 26일 04:50 KST",
+      "summary": "<figure><img alt=\"Taylor Jordan\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"769\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/sat2026-jordan.jpeg?fit=1024%2C769&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The Office of Space Commerce has rolled out its ",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Terran Orbital Introduces New Star Tracker Product Line at SATSHOW 2026",
+      "link": "https://spacenews.com/terran-orbital-introduces-new-star-tracker-product-line-at-satshow-2026/",
+      "pub_date": "2026년 03월 26일 03:16 KST",
+      "summary": "<figure><img alt=\"Terran orbital logo\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"1024\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/09/terran-orbital-square.png?fit=1024%2C1024&amp;ssl=1\" width=\"1024\" /></figure>\n<p>IRVINE, Calif., March 25, 2026 — T",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Telesat eyes defense role with laser comms test ahead of LEO debut",
+      "link": "https://spacenews.com/telesat-eyes-defense-role-with-laser-comms-test-ahead-of-leo-debut/",
+      "pub_date": "2026년 03월 26일 00:20 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"734\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/HDsspW3bkAANy6p-e1774443984121.jpeg?fit=1024%2C734&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Canadian operator adds military Ka-band and p",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Sift raises $42 million in Series B round",
+      "link": "https://spacenews.com/sift-raises-42-million-in-series-b-round/",
+      "pub_date": "2026년 03월 26일 00:14 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"429\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/rsz_1culture_4.jpg?fit=879%2C429&amp;ssl=1\" width=\"879\" /></figure>\n<p>WASHINGTON – Sift, a Southern California startup developing tool",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Infinity Avionics Unveils Aquila: The Next-Generation Space Imaging Solution for Complex Orbital Operations",
+      "link": "https://spacenews.com/infinity-avionics-unveils-aquila-the-next-generation-space-imaging-solution-for-complex-orbital-operations/",
+      "pub_date": "2026년 03월 25일 23:00 KST",
+      "summary": "<figure><img alt=\"Infinity Avionics logo\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"1024\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/infinity-avionics-logo-square-scaled.png?fit=1024%2C1024&amp;ssl=1\" width=\"1024\" /></figure>\n<p>CANBERRA, Austra",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Airbase raises $5 million to tackle spectrum bottleneck as FCC eyes new space uses",
+      "link": "https://spacenews.com/airbase-raises-5-million-to-tackle-spectrum-bottleneck-as-fcc-eyes-new-space-uses/",
+      "pub_date": "2026년 03월 25일 22:17 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/Cofounders-Millen-Anand-and-Ari-Rosner-scaled.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>New York-based software startup",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Musk wants to go to the moon. But how will he build his ‘self-growing city’?",
+      "link": "https://spacenews.com/musk-wants-to-go-to-the-moon-but-how-will-he-build-his-self-growing-city/",
+      "pub_date": "2026년 03월 25일 22:00 KST",
+      "summary": "<figure><img alt=\"Concept art of a crewed lunar base. Credit: ESA – P. Carril\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"510\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/03/moon-mission.webp?fit=907%2C510&amp;ssl=1\" width=\"907\" /></figure>\n<p>It goe",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Pave Space raises $40 million to develop European heavy kickstage",
+      "link": "https://spacenews.com/pave-space-raises-40-million-to-develop-european-heavy-kickstage/",
+      "pub_date": "2026년 03월 25일 20:17 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/10-copy.png?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Swiss startup Pave Space has raised $40 million to develop an orbital",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "NASA proposes new strategy for commercial space stations",
+      "link": "https://spacenews.com/nasa-proposes-new-strategy-for-commercial-space-stations/",
+      "pub_date": "2026년 03월 25일 19:37 KST",
+      "summary": "<figure><img alt=\"core module\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"555\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/isscoremodule.jpeg?fit=1024%2C555&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA, concerned about slow development of commercia",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Geopolitical shifts bring opportunities and headaches for satellite execs",
+      "link": "https://spacenews.com/geopolitical-shifts-bring-opportunities-and-headaches-for-satellite-execs/",
+      "pub_date": "2026년 03월 25일 06:00 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"777\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/Satellite-execs-Satshow-20266-scaled.png?fit=1024%2C777&amp;ssl=1\" width=\"1024\" /></figure>\n<p>A shifting geopolitical landscape is dri",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Moog taps Redwire to provide solar arrays for Meteor",
+      "link": "https://spacenews.com/moog-taps-redwire-to-provide-solar-arrays-for-meteor/",
+      "pub_date": "2026년 03월 25일 04:24 KST",
+      "summary": "<figure><img alt=\"ELSA array\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/redwire-elsa.jpeg?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>WASHINGTON &#8212; Redwire announced the first award ",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "OrbitsIQ Global Announces Breakthrough in Space-Based IoT Connectivity",
+      "link": "https://spacenews.com/orbitsiq-global-announces-breakthrough-in-space-based-iot-connectivity/",
+      "pub_date": "2026년 03월 25일 03:57 KST",
+      "summary": "<figure><img alt=\"orbitsiq logo square\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"1024\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/orbitsiq-logo-scaled.png?fit=1024%2C1024&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Washington, D.C., March 24, 2026 –",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "From missions to systems: The architecture enabling a sustained lunar economy",
+      "link": "https://spacenews.com/from-missions-to-systems-the-architecture-enabling-a-sustained-lunar-economy/",
+      "pub_date": "2026년 03월 25일 02:16 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"575\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/voyager-maxspace-lander-1.jpeg?fit=1024%2C575&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The conversation around humanity’s return to the m",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "China’s Astronstone raises $29 million for reusable rocket with chopstick-style recovery",
+      "link": "https://spacenews.com/chinas-astronstone-raises-29-million-for-reusable-rocket-with-chopstick-style-recovery/",
+      "pub_date": "2026년 03월 25일 02:14 KST",
+      "summary": "<figure><img alt=\"Astronstone&#039;s stainless steel rocket stage and AS-1 scale model inside a production facility in China, featuring prominent weld lines and branding; a large banner on the wall displays Chinese characters.\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" heig",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Space Development Agency slows satellite launches to focus on on-orbit performance",
+      "link": "https://spacenews.com/space-development-agency-slows-satellite-launches-to-focus-on-on-orbit-performance/",
+      "pub_date": "2026년 03월 25일 01:35 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"776\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/IMG_0268-scaled-e1774353293196.jpeg?fit=1024%2C776&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The agency’s acting director says checkout, o",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "NASA halts work on Gateway to develop a lunar base",
+      "link": "https://spacenews.com/nasa-halts-work-on-gateway-to-develop-a-lunar-base/",
+      "pub_date": "2026년 03월 25일 01:09 KST",
+      "summary": "<figure><img alt=\"NASA lunar base\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"450\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/moon-base1.webp?fit=800%2C450&amp;ssl=1\" width=\"800\" /></figure>\n<p>NASA is halting plans to develop the lunar Gateway a",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Space Force officer shares intelligence on threats to space systems",
+      "link": "https://spacenews.com/space-force-officer-shares-intelligence-on-threats-to-space-systems/",
+      "pub_date": "2026년 03월 25일 00:48 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"772\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/07/LeoLabs1.jpg?fit=893%2C772&amp;ssl=1\" width=\"893\" /></figure>\n<p>WASHINGTON – Electronic warfare is a growing threat to U.S. space syst",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "SpaceEye-T: 25 cm Satellite Imagery and Tasking Now Available Through Pacific Geomatics Limited",
+      "link": "https://spacenews.com/spaceeye-t-25-cm-satellite-imagery-and-tasking-now-available-through-pacific-geomatics-limited/",
+      "pub_date": "2026년 03월 24일 23:00 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"1024\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/Pacific-Geomatics-Limited.jpg?fit=1024%2C1024&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Victoria, Canada / Daejeon, South Korea – March 2",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "SES orders 28 satellites from K2 Space for next-gen MEO network",
+      "link": "https://spacenews.com/ses-targets-28-satellites-with-k2-space-for-next-gen-meo-network/",
+      "pub_date": "2026년 03월 24일 22:00 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"579\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/MeoSES-scaled.jpg?fit=1024%2C579&amp;ssl=1\" width=\"1024\" /></figure>\n<p>SES has ordered an initial 28 satellites from manufacturing sta",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Fusion engine for missile warning lacks a government dataset",
+      "link": "https://spacenews.com/fusion-engine-for-missile-warning-lacks-a-government-dataset/",
+      "pub_date": "2026년 03월 24일 19:30 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"585\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/rsz_screenshot_2026-03-23_at_42429-pm.png?fit=879%2C585&amp;ssl=1\" width=\"879\" /></figure>\n<p>WASHINGTON – National missile warning and",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Space Force adds cyber units to guard rocket launches",
+      "link": "https://spacenews.com/space-force-adds-cyber-units-to-guard-rocket-launches/",
+      "pub_date": "2026년 03월 24일 06:37 KST",
+      "summary": "<figure><img alt=\"F9 launch\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"602\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/01/f9-20260125.jpeg?fit=1024%2C602&amp;ssl=1\" width=\"1024\" /></figure>\n<p>&#8216;Cyber defense&#8217; squadrons at Cape Canaveral",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Amazon Leo targets faster deployment cadence as deadline pressure mounts",
+      "link": "https://spacenews.com/amazon-leo-targets-faster-deployment-cadence-as-deadline-pressure-mounts/",
+      "pub_date": "2026년 03월 24일 05:39 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/Amazon-stack.jpeg?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Amazon vowed to double the annual launch rate for its low Earth",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Parsons unveils new satellite antenna aimed at military market",
+      "link": "https://spacenews.com/parsons-unveils-new-satellite-antenna-aimed-at-military-market/",
+      "pub_date": "2026년 03월 24일 04:00 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"800\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/e9994929-b57f-40f0-a78d-c96843a3e001.jpg.jpeg?fit=597%2C800&amp;ssl=1\" width=\"597\" /></figure>\n<p>Hybrid antenna developed by Parsons a",
+      "section": "SpaceNews",
+      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "Inside Artemis 2: NASA's historic astronaut moon mission explained (video series)",
+      "link": "https://www.space.com/space-exploration/artemis/inside-artemis-2-nasas-historic-astronaut-moon-mission-explained-video-series",
+      "pub_date": "2026년 03월 26일 07:43 KST",
+      "summary": "Get to know NASA's Artemis 2 moon mission with Space.com's exclusive four-part video series Inside Artemis II debuting March 25-March 31.",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "100 new alien worlds: Scientists find hidden haul in data from NASA exoplanet-hunting spacecraft",
       "link": "https://www.space.com/astronomy/exoplanets/100-new-alien-worlds-scientists-find-hidden-haul-in-data-from-nasa-exoplanet-hunting-spacecraft",
@@ -623,38 +817,6 @@
       "summary": "A massive stellar wind bubble sculpts the nebula into the shape of the Norse god's famous helmet.",
       "section": "Space.com",
       "is_korean": false
-    },
-    {
-      "title": "Triangulum Galaxy dazzles in psychedelic color | Space photo of the day for March 23, 2026",
-      "link": "https://www.space.com/astronomy/galaxies/triangulum-galaxy-dazzles-in-psychedelic-color-space-photo-of-the-day-for-march-23-2026",
-      "pub_date": "2026년 03월 23일 23:00 KST",
-      "summary": "Astronomers captured a colorful new portrait of the Triangulum Galaxy, revealing complex clouds of gas in between the galaxy's 40 billion stars.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Northern lights dazzle worldwide as strong G3 geomagnetic storm sparks stunning show (photos)",
-      "link": "https://www.space.com/stargazing/auroras/northern-lights-dazzle-worldwide-as-strong-g3-geomagnetic-storm-sparks-stunning-show-photos",
-      "pub_date": "2026년 03월 23일 22:00 KST",
-      "summary": "Powerful geomagnetic storms sent the northern lights dancing far beyond the poles, delivering a spectacular show across the world.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Are mysterious 'Little Red Dots' discovered by the James Webb Space Telescope actually baby galaxies under construction?",
-      "link": "https://www.space.com/astronomy/galaxies/are-mysterious-little-red-dots-discovered-by-the-james-webb-space-telescope-actually-baby-galaxies-under-construction",
-      "pub_date": "2026년 03월 23일 21:00 KST",
-      "summary": "What if the mysterious 'Little Red Dots' aren't baby black holes, but rather globular clusters in their messy, glorious formation?",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Could our universe exist because black holes ate up all the antimatter?",
-      "link": "https://www.space.com/astronomy/black-holes/could-our-universe-exist-because-black-holes-ate-up-all-the-antimatter",
-      "pub_date": "2026년 03월 23일 19:00 KST",
-      "summary": "Did primordial black holes born during the Big Bang swallow the universe's antimatter, allowing matter to dominate the cosmos?",
-      "section": "Space.com",
-      "is_korean": false
     }
   ],
   "Payload Space": [
@@ -721,17 +883,49 @@
       "summary": "<p><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/03/artemis-ii-rollout-200x200.png\" width=\"200\" />When Artemis II lifts off, the world will see a rocket. What it won’t see is the digital architecture that make",
       "section": "Payload Space",
       "is_korean": false
-    },
-    {
-      "title": "Contrivian Launches New Product Bundling Amazon Leo & Starlink",
-      "link": "https://payloadspace.com/contrivian-launches-new-product-bundling-amazon-leo-starlink/",
-      "pub_date": "2026년 03월 23일 22:00 KST",
-      "summary": "<p><img alt=\"Image: Contrivian\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/03/Contrivian-200x200.jpeg\" width=\"200\" />Customers looking for satellite connectivity are often forced to choose between one provider or anoth",
-      "section": "Payload Space",
-      "is_korean": false
     }
   ],
   "Satellite Today": [
+    {
+      "title": "Interview With Kepler Chief Revenue Officer Beau Jarvis at SATShow Week",
+      "link": "https://www.satellitetoday.com/partner-content/2026/03/26/interview-with-kepler-chief-revenue-officer-beau-jarvis-at-satshow-week/",
+      "pub_date": "2026년 03월 26일 13:34 KST",
+      "summary": "<p>In this SATShow Week interview, Kepler Communications Chief Revenue Officer Beau Jarvis talks about the company&#8217;s approach to solving the problem of downlinking data collected in space down to Earth....</p>\n<p>The post <a href=\"https://www.satellitetoday.com/partner-content/2026/03/26/inter",
+      "section": "Satellite Today",
+      "is_korean": false
+    },
+    {
+      "title": "The Evolving Influence of IFC Driving Network Development",
+      "link": "https://www.satellitetoday.com/connectivity/2026/03/26/the-evolving-influence-of-ifc-driving-network-development/",
+      "pub_date": "2026년 03월 26일 13:01 KST",
+      "summary": "<p>Airlines have been embracing inflight connectivity (IFC) as a standard competitive offering for their passengers for over 20 years. But as the demand increases, IFC developers are diving deeper into...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/03/26/the-evolving-in",
+      "section": "Satellite Today",
+      "is_korean": false
+    },
+    {
+      "title": "Government Investment, Regulations Are the Key Trends to Watch in India, APAC Space",
+      "link": "https://www.satellitetoday.com/connectivity/2026/03/25/government-investment-regulations-are-the-key-trends-to-watch-in-india-apac-space/",
+      "pub_date": "2026년 03월 26일 12:49 KST",
+      "summary": "<p>The role of governments as an investor and market creator will be the dominant trend to watch in the growth of the space economy in India and the Asia Pacific...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/03/25/government-investment-regulations-are-the-key-trends-to",
+      "section": "Satellite Today",
+      "is_korean": false
+    },
+    {
+      "title": "Interview With Comtech Satellite & Space President Daniel Gizinski at SATShow Week",
+      "link": "https://www.satellitetoday.com/partner-content/2026/03/25/interview-with-comtech-satellite-space-president-daniel-gizinski-at-satshow-week/",
+      "pub_date": "2026년 03월 26일 12:43 KST",
+      "summary": "<p>Comtech Satellite &#38; Space President Daniel Gizinski talks first delivery of Comtech&#8217;s Digital Common Ground 7000 series modems, with live multi-orbit demonstrations during SATShow. In this interview, he also talks...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/partner-conten",
+      "section": "Satellite Today",
+      "is_korean": false
+    },
+    {
+      "title": "Space Commerce Official Proposes Streamlined Mission Authorization Process for Novel Space Missions",
+      "link": "https://www.satellitetoday.com/government-military/2026/03/25/space-commerce-official-proposes-streamlined-mission-authorization-process-for-novel-space-missions/",
+      "pub_date": "2026년 03월 26일 12:39 KST",
+      "summary": "<p>U.S. Office of Space Commerce Director Taylor Jordan announced the office’s proposal of a revamped mission authorization process for novel space activities in a keynote address during SATShow Week on...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/government-military/2026/03/25/space-c",
+      "section": "Satellite Today",
+      "is_korean": false
+    },
     {
       "title": "Inside the Data Fusion and Integration Challenges to Building the Golden Dome",
       "link": "https://www.satellitetoday.com/government-military/2026/03/25/inside-the-data-fusion-and-integration-challenges-to-building-the-golden-dome/",
@@ -769,46 +963,6 @@
       "link": "https://www.satellitetoday.com/government-military/2026/03/24/sda-takes-strategic-pause-on-launches-to-work-through-fixes/",
       "pub_date": "2026년 03월 25일 11:00 KST",
       "summary": "<p>The Space Development Agency (SDA) was stood up to move fast and disrupt traditional space acquisition while leveraging commercial practices to enable a higher rate of satellite production. After launching its...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/government-military/2026/03/",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Astranis and Oman Group Execs Detail How Middle East Conflict is Driving Demand For Sovereign Satellite Services",
-      "link": "https://www.satellitetoday.com/connectivity/2026/03/24/astranis-and-oman-group-execs-detail-how-middle-east-conflict-is-driving-demand-for-sovereign-satellite-services/",
-      "pub_date": "2026년 03월 25일 10:33 KST",
-      "summary": "<p>The war in the Middle East underlines the value proposition of sovereign satellite communications, partners of a recent satellite deal between Astranis and MB Group said Monday during SATShow Week. ...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/03/24/astranis-and-om",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Redwire, Moog Sign Deal to Integrate Redwire ELSA Solar Array Wings with Moog Meteor Bus",
-      "link": "https://www.satellitetoday.com/manufacturing/2026/03/24/redwire-moog-sign-deal-to-integrate-redwire-elsa-solar-array-wings-with-moog-meteor-bus/",
-      "pub_date": "2026년 03월 25일 10:20 KST",
-      "summary": "<p>Officials from Redwire and Moog cemented a recent $12.8 million contract to integrate Redwire’s Extensible Low-Profile Solar Array (ELSA) wings with Moog’s largest satellite bus on Tuesday during SATShow Week....</p>\n<p>The post <a href=\"https://www.satellitetoday.com/manufacturing/2026/03/24/red",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Interview With Mini-Circuits CEO Jin Bains at SATShow Week",
-      "link": "https://www.satellitetoday.com/partner-content/2026/03/24/interview-with-mini-circuits-ceo-jin-bains-at-satshow-week/",
-      "pub_date": "2026년 03월 25일 10:14 KST",
-      "summary": "<p>With the massive increase in satellites in orbit, there&#8217;s growing demand for radio frequency (RF) components to support satellite systems. Via Satellite interviews Jin Bains, CEO of of Mini-Circuits, a...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/partner-content/2026/03/24/int",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Amazon Leo Readies 200+ Satellites for Orbit as It Ramps Up Launch Schedule",
-      "link": "https://www.satellitetoday.com/connectivity/2026/03/23/amazon-leo-readies-200-satellites-for-orbit-as-it-ramps-up-launch-schedule/",
-      "pub_date": "2026년 03월 24일 10:52 KST",
-      "summary": "<p>More than 200 Amazon Leo satellites are loaded onto six dispensers at Cape Canaveral, ready to be launched into orbit in the coming months as Amazon prepares to ramp up...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/03/23/amazon-leo-readies-200-satellites-for-orbit-a",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Space Force, Industry Leaders Warn of Critical Gaps in Orbital Intelligence",
-      "link": "https://www.satellitetoday.com/government-military/2026/03/23/space-force-industry-leaders-warn-of-critical-gaps-in-orbital-intelligence/",
-      "pub_date": "2026년 03월 24일 10:51 KST",
-      "summary": "<p>With a kaleidoscope of ground radars, electro-optical telescopes, and Geostationary (GEO) spy satellites, the U.S. Space Force can closely track space objects as they hurtle through orbit. But in terms...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/government-military/2026/03/23/space",
       "section": "Satellite Today",
       "is_korean": false
     }
@@ -936,6 +1090,14 @@
     }
   ],
   "Defense News": [
+    {
+      "title": "US Army Special Operations Command takes home top prize in sniper competition",
+      "link": "https://www.defensenews.com/news/your-military/2026/03/25/us-army-special-operations-command-takes-home-top-prize-in-sniper-competition/",
+      "pub_date": "2026년 03월 26일 08:15 KST",
+      "summary": "Seventeen elite sniper teams from across services and partner nations put their skills to the test this month at Fort Bragg, North Carolina.",
+      "section": "Defense News",
+      "is_korean": false
+    },
     {
       "title": "Pentagon announces major surge in missile production",
       "link": "https://www.defensenews.com/industry/techwatch/2026/03/25/pentagon-announces-major-surge-in-missile-production/",
@@ -1079,33 +1241,25 @@
       "summary": "Polish officials said they have discussed the project with Italian and Japanese stakeholders, but it's unclear if there have been formal government talks.",
       "section": "Defense News",
       "is_korean": false
-    },
-    {
-      "title": "Patriot missile involved in Bahrain blast likely US-operated, analysis finds",
-      "link": "https://www.defensenews.com/flashpoints/2026/03/23/patriot-missile-involved-in-bahrain-blast-likely-us-operated-analysis-finds/",
-      "pub_date": "2026년 03월 23일 22:21 KST",
-      "summary": "The pre-dawn explosion injured dozens of civilians, including children, and tore through homes in U.S.-ally Bahrain 10 days into the war.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "Dutch armed forces to add drone operators to combat brigades",
-      "link": "https://www.defensenews.com/global/europe/2026/03/23/dutch-armed-forces-to-add-drone-operators-to-combat-brigades/",
-      "pub_date": "2026년 03월 23일 22:08 KST",
-      "summary": "The Dutch military will expand that capability “significantly” by deploying 1,000 to 1,200 personnel specifically for drone and counter-drone operations.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "US-made naval drone with active warhead washes up in northern Turkey, gets blown up",
-      "link": "https://www.defensenews.com/global/europe/2026/03/23/us-made-naval-drone-with-active-warhead-washes-up-in-northern-turkey-gets-blown-up/",
-      "pub_date": "2026년 03월 23일 19:54 KST",
-      "summary": "The vessel, identified as an AEGIR-W variant, came aground on a beach in the Yüceler neighborhood of Ünye district in Ordu province.",
-      "section": "Defense News",
-      "is_korean": false
     }
   ],
   "Defense One": [
+    {
+      "title": "Will too much AI weaken troops' judgement?",
+      "link": "https://www.defenseone.com/technology/2026/03/military-ai-troops-judgement/412390/",
+      "pub_date": "2026년 03월 26일 10:48 KST",
+      "summary": "As Pentagon rushes to deploy LLM-based tools, research suggests they can undermine human thought and communication.",
+      "section": "Defense One",
+      "is_korean": false
+    },
+    {
+      "title": "Lessons from Ukraine are shaping US Army's drones, training, comms",
+      "link": "https://www.defenseone.com/defense-systems/2026/03/army-needs-more-realistic-drone-training-more-versatile-drones/412389/",
+      "pub_date": "2026년 03월 26일 08:33 KST",
+      "summary": "Leaders implore industry to look to Ukrainians, \"by far the best counter-UAS people on the planet.”",
+      "section": "Defense One",
+      "is_korean": false
+    },
     {
       "title": "Defense Business Brief: Pentagon equity stakes FTW?; Hill & Valley Forum takeaways; plus a bit more",
       "link": "https://www.defenseone.com/business/2026/03/defense-business-brief-pentagon-equity-stakes-ftw-hill-valley-forum-takeaways-plus-bit-more/412365/",
@@ -1263,10 +1417,26 @@
   ],
   "Air & Space Forces": [
     {
+      "title": "Air Force Officials Say They’re Beating Cost Goal for CCA Drones",
+      "link": "https://www.airandspaceforces.com/air-force-beating-goal-cost-cca-drones/",
+      "pub_date": "2026년 03월 26일 09:24 KST",
+      "summary": "<p>The Air Force’s nascent Collaborative Combat Aircraft program is beating former Secretary Frank Kendall’s goal of producing drone wingmen at about one-third the cost of an F-35, an official leading the effort said March 25.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/air-force-beat",
+      "section": "Air & Space Forces",
+      "is_korean": false
+    },
+    {
       "title": "Air Force Upgrades COVID Discharges, Extends Deadline to Rejoin the Service",
       "link": "https://www.airandspaceforces.com/air-force-upgrades-covid-discharges/",
       "pub_date": "2026년 03월 26일 04:58 KST",
       "summary": "<p>The Air Force has upgraded the discharges of nearly 600 Airmen separated from service for refusing the COVID-19 vaccination and extended the deadline for those separated to rejoin the service. The Department of the Air Force announced March 19 that it had completed a proactive review and upgrade ",
+      "section": "Air & Space Forces",
+      "is_korean": false
+    },
+    {
+      "title": "Space Force Exercise Aims to Solidify Responsive Space Processes",
+      "link": "https://www.airandspaceforces.com/space-force-tabletop-field-exercise-responsive-space/",
+      "pub_date": "2026년 03월 26일 09:45 KST",
+      "summary": "<p>Space Systems Command just conducted its second Tactically Responsive Space mission, Victus Diem—but this time, instead of preparing and launching a live rocket and satellite on rapid timelines, the exercise was a simulation designed to refine its processes for repeatable rapid launch missions. <",
       "section": "Air & Space Forces",
       "is_korean": false
     },
@@ -1309,9 +1479,33 @@
       "summary": "<p>The Space Force this month established a squadron dedicated to defending against cyber intrusions at Vandenberg Space Force Base, Calif., as concerns about threats to the service’s physical and digital launch infrastructure are on the rise.</p>\n<p>The post <a href=\"https://www.airandspaceforces.c",
       "section": "Air & Space Forces",
       "is_korean": false
+    },
+    {
+      "title": "Look Inside Anduril’s New Factory as Collaborative Combat Aircraft Production Begins",
+      "link": "https://www.airandspaceforces.com/look-anduril-new-factory-cca-production/",
+      "pub_date": "2026년 03월 24일 09:56 KST",
+      "summary": "<p>Anduril Industries has begun production of its YFQ-44A “Fury” Collaborative Combat Aircraft drone at its Arsenal-1 plant outside of Columbus, Ohio.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/look-anduril-new-factory-cca-production/\">Look Inside Anduril&#8217;s New Factory as Colla",
+      "section": "Air & Space Forces",
+      "is_korean": false
     }
   ],
   "Space & Defense": [
+    {
+      "title": "SatVu HotSat-2 to launch on the Transporter-16 Rideshare Mission with SpaceX",
+      "link": "https://spaceanddefense.io/satvu-hotsat-2-to-launch-on-the-transporter-16-rideshare-mission-with-spacex/?utm_source=rss&utm_medium=rss&utm_campaign=satvu-hotsat-2-to-launch-on-the-transporter-16-rideshare-mission-with-spacex",
+      "pub_date": "2026년 03월 26일 09:26 KST",
+      "summary": "SatVu, the UK-based leader in high-resolution thermal Earth observation, today announced that HotSat-2 has completed launch integration and is ready for launch aboard the Transporter-16 rideshare mission with SpaceX no earlier than later this month from Vandenberg Space Force Base, California. HotSa",
+      "section": "Space & Defense",
+      "is_korean": false
+    },
+    {
+      "title": "Lockheed Martin, US Department of War sign framework to quadruple PrSM production",
+      "link": "https://spaceanddefense.io/lockheed-martin-us-department-of-war-sign-framework-to-quadruple-prsm-production/?utm_source=rss&utm_medium=rss&utm_campaign=lockheed-martin-us-department-of-war-sign-framework-to-quadruple-prsm-production",
+      "pub_date": "2026년 03월 26일 08:28 KST",
+      "summary": "Lockheed Martin and the US Department of War (DoW) have announced a framework agreement aimed at accelerating production of the Precision Strike Missile (PrSM), building on a US Army contract award valued at up to $4.94 billion announced last year. According to the company, the framework agreement a",
+      "section": "Space & Defense",
+      "is_korean": false
+    },
     {
       "title": "BlueTide Capital signs MOU with SEPA to support expansion in deep tech markets",
       "link": "https://spaceanddefense.io/blue-tide-capital-signs-mou-with-sepa-to-support-expansion-in-deep-tech-markets/?utm_source=rss&utm_medium=rss&utm_campaign=blue-tide-capital-signs-mou-with-sepa-to-support-expansion-in-deep-tech-markets",
@@ -1493,6 +1687,14 @@
   ],
   "The Information": [
     {
+      "title": "Meta’s Future Value and the Social Media Verdict",
+      "link": "https://www.theinformation.com/newsletters/the-briefing/metas-future-value-social-media-verdict",
+      "pub_date": "2026년 03월 26일 09:00 KST",
+      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16822/e34cb360-c3cf-417e-85de-390d7ccaded9-6DFXOH.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Talk about bad timing. Meta Platforms made a big splash on Tuesday night by disclosing new stock grants for seni",
+      "section": "The Information",
+      "is_korean": false
+    },
+    {
       "title": "Blackstone Nears Deal to Buy Data Center Firm Rowan",
       "link": "https://www.theinformation.com/articles/blackstone-nears-deal-buy-data-center-firm-rowan",
       "pub_date": "2026년 03월 26일 06:26 KST",
@@ -1609,30 +1811,6 @@
       "link": "https://www.theinformation.com/articles/nvidias-new-server-rack-will-run-ai-chips-made-rivals",
       "pub_date": "2026년 03월 24일 00:00 KST",
       "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16806/a1b47079-3336-4912-8506-5bb0935257ac.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Nvidia faces growing competition in the AI chip market. But the chip designer has found a way to make money even from i",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "Claude Code and Codex Are Outpacing Cursor Among Notion's Engineers",
-      "link": "https://www.theinformation.com/newsletters/ai-agenda/notion-switching-cursor-claude-code-codex",
-      "pub_date": "2026년 03월 23일 23:00 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16807/b6904dc7-c1d5-400f-98ea-98a46022d9bd-6BjNAg.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Software engineers embracing the AI coding revolution don’t have much loyalty to any particular coding tool, esp",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "OpenAI’s Shopping U-Turn Could Complicate Enterprise Playbook",
-      "link": "https://www.theinformation.com/articles/openais-shopping-u-turn-complicate-enterprise-playbook",
-      "pub_date": "2026년 03월 23일 22:00 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16805/3198c135-e83b-419e-94d8-654d01c14abc.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>OpenAI’s abrupt shopping pullback earlier this month didn’t just raise questions about its decision-making. It also aff",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "The Electric: This Tesla Adviser's Batteries Could Last for Centuries",
-      "link": "https://www.theinformation.com/newsletters/the-electric/electric-500-year-battery-new-potential-boon-ai-data-centers",
-      "pub_date": "2026년 03월 23일 20:30 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16803/30c26b9c-496b-434a-99d9-e8f89524272b-tvrMRF.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>What if batteries lasted forever?</div></div>",
       "section": "The Information",
       "is_korean": false
     }
