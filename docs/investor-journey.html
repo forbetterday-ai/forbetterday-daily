@@ -112,6 +112,32 @@ body {
     color: #e0e0e0;
 }
 
+.tab-bar {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+.tab-btn {
+    flex: 1;
+    padding: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    background: transparent;
+    color: #8890a4;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    letter-spacing: 0.05em;
+}
+.tab-btn:hover { background: rgba(255,255,255,0.05); color: #e0e0e0; }
+.tab-btn.active {
+    background: rgba(212,160,23,0.15);
+    border-color: #d4a017;
+    color: #d4a017;
+}    
 /* ===== 메인 영역 ===== */
 .main {
     margin-left: var(--sidebar-w);
@@ -305,10 +331,10 @@ body {
     <a href="index.html" class="sb-brand">Daily News Brief</a>
     <div class="sb-sub">FT · Bloomberg · Reuters · WSJ<br>TechCrunch · Space · Defense</div>
     <hr class="sb-divider">
-    <div class="sb-label">페이지</div>
-    <a href="index.html" class="sb-nav-link">📰 뉴스 브리핑</a>
-    <a href="investor-journey.html" class="sb-nav-link active">📚 초보 투자자 성장기</a>
-    <hr class="sb-divider">
+    <div class="tab-bar">
+        <a href="index.html" class="tab-btn" style="text-decoration:none;text-align:center;">📰 뉴스</a>
+        <a href="investor-journey.html" class="tab-btn active" style="text-decoration:none;text-align:center;">❤️ 초보 투자자 성장기</a>
+    </div>
     <div class="sb-guide" id="guide-box">
         <strong>새 글 추가 방법</strong><br>
         GitHub에서 <code>docs/investor_posts.json</code>을 열고 <code>posts</code> 배열에 새 항목을 추가하세요.<br><br>
