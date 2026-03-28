@@ -344,6 +344,55 @@ body {
     margin-left: 0.5rem;
 }
 .comment-delete:hover { color: #c0392b; background: rgba(192,57,43,0.08); }
+.comment-edit {
+    font-size: 0.6rem;
+    color: var(--txt3);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    transition: all 0.15s;
+    margin-left: 0.3rem;
+}
+.comment-edit:hover { color: var(--accent); background: var(--accent2); }
+.comment-edit-input {
+    width: 100%;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.82rem;
+    color: var(--txt);
+    outline: none;
+    margin-bottom: 0.3rem;
+}
+.comment-edit-actions {
+    display: flex;
+    gap: 0.3rem;
+}
+.comment-edit-save {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.comment-edit-save:hover { opacity: 0.85; }
+.comment-edit-cancel {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--txt3);
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.comment-edit-cancel:hover { color: var(--txt); border-color: var(--txt3); }
 .comments-empty {
     font-size: 0.78rem;
     color: var(--txt3);
@@ -741,6 +790,55 @@ function deleteComment(commentId, postId) {
     });
 }
 
+/* ★ 댓글 수정 모드 */
+function editComment(commentId, postId, currentText) {
+    var commentItem = document.querySelector('[data-comment-id="' + commentId + '"]');
+    if (!commentItem) return;
+    var bodyEl = commentItem.querySelector('.comment-body');
+    var originalHTML = bodyEl.innerHTML;
+    commentItem.dataset.originalHtml = originalHTML;
+
+    var authorEl = bodyEl.querySelector('.comment-author');
+    var authorHTML = authorEl ? authorEl.outerHTML : '';
+
+    bodyEl.innerHTML = authorHTML +
+        '<input type="text" class="comment-edit-input" id="edit-input-' + commentId + '" value="' + currentText.replace(/"/g, '&quot;') + '" maxlength="500" onkeypress="if(event.key===\'Enter\')saveComment(\'' + commentId + '\',\'' + postId + '\')">' +
+        '<div class="comment-edit-actions">' +
+            '<button class="comment-edit-save" onclick="saveComment(\'' + commentId + '\',\'' + postId + '\')">저장</button>' +
+            '<button class="comment-edit-cancel" onclick="cancelEdit(\'' + commentId + '\')">취소</button>' +
+        '</div>';
+
+    var editInput = document.getElementById('edit-input-' + commentId);
+    if (editInput) editInput.focus();
+}
+
+/* ★ 댓글 수정 저장 */
+function saveComment(commentId, postId) {
+    var input = document.getElementById('edit-input-' + commentId);
+    if (!input) return;
+    var text = (input.value || '').trim();
+    if (!text) { alert('댓글 내용을 입력해주세요.'); return; }
+    if (text.length > 500) { alert('댓글은 500자 이내로 작성해주세요.'); return; }
+    if (isSpam(text)) { alert('링크나 광고성 내용은 등록할 수 없습니다.'); return; }
+
+    db.collection('comments').doc(commentId).update({
+        text: text,
+        editedAt: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function() {
+        loadComments(postId);
+    }).catch(function(err) {
+        alert('수정 실패: ' + err.message);
+    });
+}
+
+/* ★ 댓글 수정 취소 */
+function cancelEdit(commentId) {
+    var commentItem = document.querySelector('[data-comment-id="' + commentId + '"]');
+    if (!commentItem || !commentItem.dataset.originalHtml) return;
+    var bodyEl = commentItem.querySelector('.comment-body');
+    bodyEl.innerHTML = commentItem.dataset.originalHtml;
+}
+
 /* ★ 댓글 불러오기 */
 function loadComments(postId) {
     var listEl = document.getElementById('comments-list-' + postId);
@@ -759,16 +857,21 @@ function loadComments(postId) {
             snapshot.forEach(function(doc) {
                 var c = doc.data();
                 var time = c.timestamp ? new Date(c.timestamp.toDate()).toLocaleString('ko-KR') : '';
-                var deleteBtn = (currentUser && currentUser.uid === c.uid)
+                var edited = c.editedAt ? ' (수정됨)' : '';
+                var isMine = (currentUser && currentUser.uid === c.uid);
+                var editBtn = isMine
+                    ? '<button class="comment-edit" onclick="editComment(\'' + doc.id + '\',\'' + postId + '\',\'' + c.text.replace(/'/g, "\\'").replace(/"/g, '&quot;') + '\')">수정</button>'
+                    : '';
+                var deleteBtn = isMine
                     ? '<button class="comment-delete" onclick="deleteComment(\'' + doc.id + '\',\'' + postId + '\')">삭제</button>'
                     : '';
                 html +=
-                    '<div class="comment-item">' +
+                    '<div class="comment-item" data-comment-id="' + doc.id + '">' +
                         '<img class="comment-avatar" src="' + (c.photo || '') + '" alt="" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%228%22 r=%224%22 fill=%22%23999%22/><path d=%22M4 20c0-4 3.6-7 8-7s8 3 8 7%22 fill=%22%23999%22/></svg>\'">' +
                         '<div class="comment-body">' +
-                            '<div class="comment-author">' + c.name + deleteBtn + '</div>' +
+                            '<div class="comment-author">' + c.name + editBtn + deleteBtn + '</div>' +
                             '<div class="comment-text">' + c.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
-                            '<div class="comment-time">' + time + '</div>' +
+                            '<div class="comment-time">' + time + edited + '</div>' +
                         '</div>' +
                     '</div>';
             });
