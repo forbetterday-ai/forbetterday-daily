@@ -1,6 +1,62 @@
 {
   "TechCrunch": [
     {
+      "title": "Mark Zuckerberg texted Elon Musk to offer help with DOGE",
+      "link": "https://techcrunch.com/2026/03/28/mark-zuckerberg-texted-elon-musk-to-offer-help-with-doge/",
+      "pub_date": "2026년 03월 29일 06:23 KST",
+      "summary": "While the relationship was once thorny enough that Musk challenged Zuckerberg to a cagefight, things seem to have warmed up by the early days of the second Trump administration.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Stanford study outlines dangers of asking AI chatbots for personal advice",
+      "link": "https://techcrunch.com/2026/03/28/stanford-study-outlines-dangers-of-asking-ai-chatbots-for-personal-advice/",
+      "pub_date": "2026년 03월 29일 05:45 KST",
+      "summary": "While there’s been plenty of debate about AI sycophancy, a new study by Stanford computer scientists attempts to measure how harmful that tendency might be.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Elon Musk’s last co-founder reportedly leaves xAI",
+      "link": "https://techcrunch.com/2026/03/28/elon-musks-last-co-founder-reportedly-leaves-xai/",
+      "pub_date": "2026년 03월 29일 01:11 KST",
+      "summary": "All but two of Musk's 11 xAI co-founders departed before this week.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "These iPad apps will make you wish you had more free time",
+      "link": "https://techcrunch.com/2026/03/28/best-ipad-apps-for-unleashing-and-exploring-your-creativity/",
+      "pub_date": "2026년 03월 29일 01:00 KST",
+      "summary": "We’ve compiled a list of some of the best iPad apps for creativity that are available on the App Store.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Anthropic’s Claude popularity with paying consumers is skyrocketing",
+      "link": "https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/",
+      "pub_date": "2026년 03월 28일 23:15 KST",
+      "summary": "Estimates for total Claude consumer users are all over the map (we've seen figures ranging from 18 million to 30 million). Anthropic hasn't disclosed this data, but a spokesperson did tell TechCrunch that Claude paid subscriptions have more than doubled this year.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "What will power the grid in 2035? The race is wide open",
+      "link": "https://techcrunch.com/2026/03/28/what-will-power-the-grid-in-2035-the-race-is-wide-open/",
+      "pub_date": "2026년 03월 28일 22:05 KST",
+      "summary": "Fusion, fission, and even natural gas are appeared tied in the race to deliver new power to the grid in the early 2030s.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Let’s take a look at the retro tech making a comeback",
+      "link": "https://techcrunch.com/2026/03/28/lets-take-a-look-at-the-retro-tech-making-a-comeback/",
+      "pub_date": "2026년 03월 28일 22:00 KST",
+      "summary": "Boomboxes, instant cameras, and even landlines are making a comeback. Here are the coolest retro-inspired devices available.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "From Moon hotels to cattle herding: 8 startups investors chased at YC Demo Day",
       "link": "https://techcrunch.com/2026/03/28/from-moon-hotels-to-cattle-herding-8-startups-investors-chased-at-yc-demo-day/",
       "pub_date": "2026년 03월 28일 21:00 KST",
@@ -9,7 +65,7 @@
       "is_korean": false
     },
     {
-      "title": "Whoop has LeBron – now it wants your mom",
+      "title": "Whoop’s fitness band is cool. Can it stay cool as the company grows?",
       "link": "https://techcrunch.com/2026/03/27/whoop-has-lebron-now-it-wants-your-mom/",
       "pub_date": "2026년 03월 28일 11:31 KST",
       "summary": "Whoop founder Will Ahmed has spent 14 years building a health wearable beloved by elite athletes, and is now racing Oura — and the FDA, and the limits of consumer medicine — to turn it into something that could one day save your life.",
@@ -103,62 +159,6 @@
       "summary": "Sacks will be much further from the power center in Washington than since the outset of this second Trump administration.",
       "section": "TechCrunch",
       "is_korean": false
-    },
-    {
-      "title": "Anthropic wins injunction against Trump administration over Defense Department saga",
-      "link": "https://techcrunch.com/2026/03/26/anthropic-wins-injunction-against-trump-administration-over-defense-department-saga/",
-      "pub_date": "2026년 03월 27일 10:18 KST",
-      "summary": "A federal judge has ordered that the Trump administration rescind recent restrictions it placed on the AI company.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "You can now transfer your chats and personal information from other chatbots directly into Gemini",
-      "link": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
-      "pub_date": "2026년 03월 27일 08:47 KST",
-      "summary": "Google is launching \"switching tools\" that, just as it sounds, will make it easier for users of other chatbots to switch to Gemini.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Wikipedia cracks down on the use of AI in article writing",
-      "link": "https://techcrunch.com/2026/03/26/wikipedia-cracks-down-on-the-use-of-ai-in-article-writing/",
-      "pub_date": "2026년 03월 27일 06:50 KST",
-      "summary": "The site, whose policies are subject to change, has struggled with the issue of AI-generated writing.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Mastodon is making its decentralized social network easier to use with its latest revamp",
-      "link": "https://techcrunch.com/2026/03/26/mastodon-is-making-its-decentralized-social-network-easier-to-use-with-its-latest-revamp/",
-      "pub_date": "2026년 03월 27일 05:42 KST",
-      "summary": "Mastodon is redesigning user profiles to simplify the experience and better appeal to mainstream users and organizations.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Netflix confirms it’s raising prices again",
-      "link": "https://techcrunch.com/2026/03/26/netflix-confirms-its-raising-prices-again/",
-      "pub_date": "2026년 03월 27일 05:39 KST",
-      "summary": "The standard plan without ads now costs $19.99 per month, a $2 increase from the previous $17.99 subscription fee, while the premium plan is also going up by $2 and will now cost $26.99 per month.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "16 of the most interesting startups from YC W26 Demo Day",
-      "link": "https://techcrunch.com/2026/03/26/16-of-the-most-interesting-startups-from-yc-w26-demo-day/",
-      "pub_date": "2026년 03월 27일 04:30 KST",
-      "summary": "From redirecting doomscrolling to training humanoid robots, these 16 startups stood out as the most interesting ones from an overflowing YC cohort.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Google Translate’s real-time headphone translations feature expands to iOS and more countries",
-      "link": "https://techcrunch.com/2026/03/26/google-translates-real-time-headphone-translations-feature-expands-to-ios-and-more-countries/",
-      "pub_date": "2026년 03월 27일 04:11 KST",
-      "summary": "The real-time headphone translations experience keeps each speaker’s tone, emphasis, and cadence intact, so it’s easier to follow the conversation and tell who’s saying what.",
-      "section": "TechCrunch",
-      "is_korean": false
     }
   ],
   "TC Startups": [
@@ -167,6 +167,14 @@
       "link": "https://techcrunch.com/podcast/vcs-are-betting-billions-on-ais-next-wave-so-why-is-openai-killing-sora/",
       "pub_date": "2026년 03월 28일 00:40 KST",
       "summary": "When an 82-year-old Kentucky woman was&#160;offered $26 million&#160;from an AI company that wanted to build a data center on her land, she said no. Sure, that same company can try to rezone&#160;2,000 acres&#160;nearby anyway, but as AI infrastructure stretches further into the real world,&#160;the",
+      "section": "TC Startups",
+      "is_korean": false
+    },
+    {
+      "title": "16 of the most interesting startups from YC W26 Demo Day",
+      "link": "https://techcrunch.com/2026/03/26/16-of-the-most-interesting-startups-from-yc-w26-demo-day/",
+      "pub_date": "2026년 03월 27일 04:30 KST",
+      "summary": "From redirecting doomscrolling to training humanoid robots, these 16 startups stood out as the most interesting ones from an overflowing YC cohort.",
       "section": "TC Startups",
       "is_korean": false
     },
@@ -201,17 +209,33 @@
       "summary": "Conntour uses AI models to let security teams query camera feeds using natural language to find any object, person, or situation.",
       "section": "TC Startups",
       "is_korean": false
-    },
-    {
-      "title": "Mercor competitor Deccan AI raises $25M, sources experts from India",
-      "link": "https://techcrunch.com/2026/03/25/deccan-ai-raises-25m-as-ai-training-push-relies-on-india-based-workforce/",
-      "pub_date": "2026년 03월 26일 09:30 KST",
-      "summary": "Deccan AI concentrates its workforce in India to manage quality in a fast-growing but fragmented AI training market.",
-      "section": "TC Startups",
-      "is_korean": false
     }
   ],
   "TC AI": [
+    {
+      "title": "Anthropic wins injunction against Trump administration over Defense Department saga",
+      "link": "https://techcrunch.com/2026/03/26/anthropic-wins-injunction-against-trump-administration-over-defense-department-saga/",
+      "pub_date": "2026년 03월 27일 10:18 KST",
+      "summary": "A federal judge has ordered that the Trump administration rescind recent restrictions it placed on the AI company.",
+      "section": "TC AI",
+      "is_korean": false
+    },
+    {
+      "title": "You can now transfer your chats and personal information from other chatbots directly into Gemini",
+      "link": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
+      "pub_date": "2026년 03월 27일 08:47 KST",
+      "summary": "Google is launching \"switching tools\" that, just as it sounds, will make it easier for users of other chatbots to switch to Gemini.",
+      "section": "TC AI",
+      "is_korean": false
+    },
+    {
+      "title": "Wikipedia cracks down on the use of AI in article writing",
+      "link": "https://techcrunch.com/2026/03/26/wikipedia-cracks-down-on-the-use-of-ai-in-article-writing/",
+      "pub_date": "2026년 03월 27일 06:50 KST",
+      "summary": "The site, whose policies are subject to change, has struggled with the issue of AI-generated writing.",
+      "section": "TC AI",
+      "is_korean": false
+    },
     {
       "title": "OpenAI abandons yet another side quest: ChatGPT’s erotic mode",
       "link": "https://techcrunch.com/2026/03/26/openai-abandons-yet-another-side-quest-chatgpts-erotic-mode/",
@@ -259,17 +283,17 @@
       "summary": "The model, which lets enterprises build voice agents for sales and customer engagement, puts Mistral in direct competition with the likes of ElevenLabs, Deepgram, and OpenAI.",
       "section": "TC AI",
       "is_korean": false
-    },
-    {
-      "title": "The least surprising chapter of the Manus story is what’s happening right now",
-      "link": "https://techcrunch.com/2026/03/25/the-least-surprising-chapter-of-the-manus-story-is-whats-happening-right-now/",
-      "pub_date": "2026년 03월 26일 11:46 KST",
-      "summary": "Did anyone think there would not be a reckoning over this tie-up?",
-      "section": "TC AI",
-      "is_korean": false
     }
   ],
   "SpaceNews": [
+    {
+      "title": "Starfish Space finds a new partner for docking demonstration mission",
+      "link": "https://spacenews.com/starfish-space-finds-a-new-partner-for-docking-demonstration-mission/",
+      "pub_date": "2026년 03월 29일 05:28 KST",
+      "summary": "<figure><img alt=\"Otter Pup 2 docking\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/05/otterpup2-docking.jpeg?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Starfish Space has changed plans for a ",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
     {
       "title": "Artemis 2 astronauts arrive at KSC",
       "link": "https://spacenews.com/artemis-2-astronauts-arrive-at-ksc/",
@@ -429,17 +453,25 @@
       "summary": "<figure><img alt=\"SR-1 Freedom\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"552\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/sr-1-freedom.jpeg?fit=1024%2C552&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA’s new exploration strategy includes the rapid ",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "Space Force weighs launch alternatives as Vulcan faces potential months-long grounding",
-      "link": "https://spacenews.com/space-force-weighs-launch-alternatives-as-vulcan-faces-potential-months-long-grounding/",
-      "pub_date": "2026년 03월 26일 07:55 KST",
-      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/55090240803_a555b0ee7e_k.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Officials explore shifting missions, extending satel",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "Where should we send a real 'Hail Mary' spacecraft? A new study has the answers",
+      "link": "https://www.space.com/entertainment/space-movies-shows/where-could-we-send-a-real-hail-mary-spacecraft-a-new-study-has-the-answers",
+      "pub_date": "2026년 03월 29일 01:00 KST",
+      "summary": "A new atlas of 45 potentially habitable planets makes us think of the new film \"Project Hail Mary,\" based on the book by Andy Weir.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Astrophotographer captures spectacular photo of Antennae Galaxies dueling in deep space",
+      "link": "https://www.space.com/stargazing/astrophotography/astrophotographer-captures-spectacular-photo-of-antennae-galaxies-dueling-in-deep-space",
+      "pub_date": "2026년 03월 28일 22:00 KST",
+      "summary": "The Antennae galaxies are witnessed in the process of merging into a single elliptical galaxy.",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "This Week In Space podcast: Episode 203 — China Rising",
       "link": "https://www.space.com/entertainment/space-movies-shows/this-week-in-space-podcast-episode-203-china-rising",
@@ -647,22 +679,6 @@
       "summary": "Lightning on Jupiter may pack more than 100 times the power of Earth's bolts, and may prove one million times stronger, a new study finds.",
       "section": "Space.com",
       "is_korean": false
-    },
-    {
-      "title": "Inside Artemis 2: NASA's historic astronaut moon mission explained (video series)",
-      "link": "https://www.space.com/space-exploration/artemis/inside-artemis-2-nasas-historic-astronaut-moon-mission-explained-video-series",
-      "pub_date": "2026년 03월 26일 07:43 KST",
-      "summary": "Get to know NASA's Artemis 2 moon mission with Space.com's exclusive four-part video series Inside Artemis II debuting March 25-March 31.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "100 new alien worlds: Scientists find hidden haul in data from NASA exoplanet-hunting spacecraft",
-      "link": "https://www.space.com/astronomy/exoplanets/100-new-alien-worlds-scientists-find-hidden-haul-in-data-from-nasa-exoplanet-hunting-spacecraft",
-      "pub_date": "2026년 03월 26일 07:00 KST",
-      "summary": "Astronomers have discovered an additional 100 new worlds in data collected by NASA's exoplanet-hunting spacecraft TESS, thanks to an innovative AI program.",
-      "section": "Space.com",
-      "is_korean": false
     }
   ],
   "Payload Space": [
@@ -761,38 +777,6 @@
       "link": "https://www.satellitetoday.com/finance/2026/03/26/investors-debate-ipo-path-financing-routes-needed-to-grow-space-market/",
       "pub_date": "2026년 03월 27일 10:24 KST",
       "summary": "<p>The way the commercial space sector is financed needs to catch up with the huge advances industry has made in its capabilities, venture capitalists at a SATShow business panel said...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/finance/2026/03/26/investors-debate-ipo-path-financing-ro",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Interview With Kepler Chief Revenue Officer Beau Jarvis at SATShow Week",
-      "link": "https://www.satellitetoday.com/partner-content/2026/03/26/interview-with-kepler-chief-revenue-officer-beau-jarvis-at-satshow-week/",
-      "pub_date": "2026년 03월 26일 13:34 KST",
-      "summary": "<p>In this SATShow Week interview, Kepler Communications Chief Revenue Officer Beau Jarvis talks about the company&#8217;s approach to solving the problem of downlinking data collected in space down to Earth....</p>\n<p>The post <a href=\"https://www.satellitetoday.com/partner-content/2026/03/26/inter",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "The Evolving Influence of IFC Driving Network Development",
-      "link": "https://www.satellitetoday.com/connectivity/2026/03/26/the-evolving-influence-of-ifc-driving-network-development/",
-      "pub_date": "2026년 03월 26일 13:01 KST",
-      "summary": "<p>Airlines have been embracing inflight connectivity (IFC) as a standard competitive offering for their passengers for over 20 years. But as the demand increases, IFC developers are diving deeper into...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/03/26/the-evolving-in",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Government Investment, Regulations Are the Key Trends to Watch in India, APAC Space",
-      "link": "https://www.satellitetoday.com/connectivity/2026/03/25/government-investment-regulations-are-the-key-trends-to-watch-in-india-apac-space/",
-      "pub_date": "2026년 03월 26일 12:49 KST",
-      "summary": "<p>The role of governments as an investor and market creator will be the dominant trend to watch in the growth of the space economy in India and the Asia Pacific...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/03/25/government-investment-regulations-are-the-key-trends-to",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Interview With Comtech Satellite & Space President Daniel Gizinski at SATShow Week",
-      "link": "https://www.satellitetoday.com/partner-content/2026/03/25/interview-with-comtech-satellite-space-president-daniel-gizinski-at-satshow-week/",
-      "pub_date": "2026년 03월 26일 12:43 KST",
-      "summary": "<p>Comtech Satellite &#38; Space President Daniel Gizinski talks first delivery of Comtech&#8217;s Digital Common Ground 7000 series modems, with live multi-orbit demonstrations during SATShow. In this interview, he also talks...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/partner-conten",
       "section": "Satellite Today",
       "is_korean": false
     }
@@ -920,6 +904,30 @@
     }
   ],
   "Defense News": [
+    {
+      "title": "USS Tripoli, embarked 31st Marine Expeditionary Unit arrive in Middle East",
+      "link": "https://www.defensenews.com/news/your-military/2026/03/28/uss-tripoli-embarked-31st-marine-expeditionary-unit-arrive-in-middle-east/",
+      "pub_date": "2026년 03월 29일 01:43 KST",
+      "summary": "The Tripoli Amphibious Ready Group and the embarked 31st Marine Expeditionary Unit entered CENTCOM waters Friday.",
+      "section": "Defense News",
+      "is_korean": false
+    },
+    {
+      "title": "Aircraft carrier USS Gerald R. Ford arrives in Croatia for repairs",
+      "link": "https://www.defensenews.com/news/your-military/2026/03/28/aircraft-carrier-uss-gerald-r-ford-arrives-in-croatia-for-repairs/",
+      "pub_date": "2026년 03월 28일 23:47 KST",
+      "summary": "The warship has been deployed for nine ​months and also took part in operations against Venezuela in the Caribbean ⁠prior to arriving in the Middle East.",
+      "section": "Defense News",
+      "is_korean": false
+    },
+    {
+      "title": "Ukraine’s Zelenskyy agrees to defense cooperation with UAE, Qatar",
+      "link": "https://www.defensenews.com/global/europe/2026/03/28/ukraines-zelenskyy-agrees-to-defense-cooperation-with-uae-qatar/",
+      "pub_date": "2026년 03월 28일 23:26 KST",
+      "summary": "Qatar said on Saturday that Doha and Kyiv have signed a defense cooperation agreement that includes sharing counter-missile and UAS expertise.",
+      "section": "Defense News",
+      "is_korean": false
+    },
     {
       "title": "US Space Command provides update on phased headquarters relocation to Alabama",
       "link": "https://www.defensenews.com/news/your-military/2026/03/27/us-space-command-provides-update-on-phased-headquarters-relocation-to-alabama/",
@@ -1055,19 +1063,11 @@
       "summary": "Kubilius is on a “missile tour” of Europe to discuss with manufacturers how the European Commission can help with missile production.",
       "section": "Defense News",
       "is_korean": false
-    },
-    {
-      "title": "US Army Special Operations Command takes home top prize in sniper competition",
-      "link": "https://www.defensenews.com/news/your-military/2026/03/25/us-army-special-operations-command-takes-home-top-prize-in-sniper-competition/",
-      "pub_date": "2026년 03월 26일 08:15 KST",
-      "summary": "Seventeen elite sniper teams from across services and partner nations put their skills to the test this month at Fort Bragg, North Carolina.",
-      "section": "Defense News",
-      "is_korean": false
     }
   ],
   "Defense One": [
     {
-      "title": "Space Command wants move nearly 200 people to new Alabama HQ this year",
+      "title": "Space Command wants to move nearly 200 people to new Alabama HQ this year",
       "link": "https://www.defenseone.com/policy/2026/03/space-command-wants-move-nearly-200-people-new-alabama-hq-year/412472/",
       "pub_date": "2026년 03월 28일 09:51 KST",
       "summary": "April will see the ribbon cut on a new top-secret facility, its commander told lawmakers.",
@@ -1145,22 +1145,6 @@
       "summary": "A serious cyberattack hasn’t prompted a strong enough policy or public reaction, one former director said.",
       "section": "Defense One",
       "is_korean": false
-    },
-    {
-      "title": "The Army wants to use bullets, mortars, and artillery to take out small drones",
-      "link": "https://www.defenseone.com/technology/2026/03/army-wants-use-bullets-mortars-and-artillery-rounds-take-out-small-drones/412392/",
-      "pub_date": "2026년 03월 26일 16:41 KST",
-      "summary": "How existing systems are being shaped to shoot at tiny targets.",
-      "section": "Defense One",
-      "is_korean": false
-    },
-    {
-      "title": "The real danger of military AI isn’t killer robots; it’s worse human judgement",
-      "link": "https://www.defenseone.com/technology/2026/03/military-ai-troops-judgement/412390/",
-      "pub_date": "2026년 03월 26일 10:48 KST",
-      "summary": "As Pentagon rushes to deploy LLM-based tools, research suggests they can undermine human thought and communication.",
-      "section": "Defense One",
-      "is_korean": false
     }
   ],
   "DefenseScoop": [
@@ -1223,14 +1207,6 @@
       "is_korean": false
     },
     {
-      "title": "Space Force Exercise Aims to Solidify Responsive Space Processes",
-      "link": "https://www.airandspaceforces.com/space-force-tabletop-field-exercise-responsive-space/",
-      "pub_date": "2026년 03월 26일 09:45 KST",
-      "summary": "<p>Space Systems Command just conducted its second Tactically Responsive Space mission, Victus Diem—but this time, instead of preparing and launching a live rocket and satellite on rapid timelines, the exercise was a simulation designed to refine its processes for repeatable rapid launch missions. <",
-      "section": "Air & Space Forces",
-      "is_korean": false
-    },
-    {
       "title": "Pentagon Eyes Canceling ‘Troubled’ GPS Ground System",
       "link": "https://www.airandspaceforces.com/pentagon-eyes-canceling-troubled-gps-ground-system/",
       "pub_date": "2026년 03월 28일 07:47 KST",
@@ -1277,6 +1253,22 @@
       "summary": "<p>Three additional B-1B Lancers arrived at RAF Fairford on March 26, bringing the total number of bombers stationed at the U.K. base to 21—one of the largest bomber deployments in recent history.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/more-b-1s-arrive-uk-iran-ops/\">More B-1s Arr",
       "section": "Air & Space Forces",
       "is_korean": false
+    },
+    {
+      "title": "Space Force Seeks Proposals for Physical Test and Training Range",
+      "link": "https://www.airandspaceforces.com/space-force-seeks-proposals-for-physical-test-and-training-range/",
+      "pub_date": "2026년 03월 27일 09:32 KST",
+      "summary": "<p>The Space Force is moving ahead with plans to build a physical test and training range that will feature a mix of ground and space-based systems, releasing a formal solicitation for a multi-vendor contract worth $981 million to design, develop, integrate, and sustain those capabilities.</p>\n<p>Th",
+      "section": "Air & Space Forces",
+      "is_korean": false
+    },
+    {
+      "title": "STARCOM Opens New Headquarters Building in Florida",
+      "link": "https://www.airandspaceforces.com/starcom-headquarters-patrick-space-force-base/",
+      "pub_date": "2026년 03월 27일 09:21 KST",
+      "summary": "<p>Space Training and Readiness Command officially opened its new headquarters building in Florida this month, as the field command starts to move in earnest from Colorado. The process will hopefully be complete by 2027, Chief Master Sergeant of the Space Force John F. Bentivenga told lawmakers Marc",
+      "section": "Air & Space Forces",
+      "is_korean": false
     }
   ],
   "Space & Defense": [
@@ -1287,27 +1279,19 @@
       "summary": "In this episode we visit Fugro’s Remote Operations Center (ROC) in Houston, Texas, USA and speak with Finn Richard, Regional Manager for the Americas, about how the company manages offshore survey operations and uncrewed vessels from a 24/7 command facility. Part of Fugro’s global network of remote ",
       "section": "Space & Defense",
       "is_korean": false
-    },
-    {
-      "title": "SatVu HotSat-2 to launch on the Transporter-16 Rideshare Mission with SpaceX",
-      "link": "https://spaceanddefense.io/satvu-hotsat-2-to-launch-on-the-transporter-16-rideshare-mission-with-spacex/?utm_source=rss&utm_medium=rss&utm_campaign=satvu-hotsat-2-to-launch-on-the-transporter-16-rideshare-mission-with-spacex",
-      "pub_date": "2026년 03월 26일 09:26 KST",
-      "summary": "SatVu, the UK-based leader in high-resolution thermal Earth observation, today announced that HotSat-2 has completed launch integration and is ready for launch aboard the Transporter-16 rideshare mission with SpaceX no earlier than later this month from Vandenberg Space Force Base, California. HotSa",
-      "section": "Space & Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Lockheed Martin, US Department of War sign framework to quadruple PrSM production",
-      "link": "https://spaceanddefense.io/lockheed-martin-us-department-of-war-sign-framework-to-quadruple-prsm-production/?utm_source=rss&utm_medium=rss&utm_campaign=lockheed-martin-us-department-of-war-sign-framework-to-quadruple-prsm-production",
-      "pub_date": "2026년 03월 26일 08:28 KST",
-      "summary": "Lockheed Martin and the US Department of War (DoW) have announced a framework agreement aimed at accelerating production of the Precision Strike Missile (PrSM), building on a US Army contract award valued at up to $4.94 billion announced last year. According to the company, the framework agreement a",
-      "section": "Space & Defense",
-      "is_korean": false
     }
   ],
   "Ars Technica": [
     {
-      "title": "Getting formal about quantum mechanics' lack of causality",
+      "title": "Explanation for why we don't see two-foot-long dragonflies anymore fails",
+      "link": "https://arstechnica.com/science/2026/03/leading-explanation-for-ancient-giant-flying-insects-gets-squashed/",
+      "pub_date": "2026년 03월 28일 21:30 KST",
+      "summary": "Breathing capacity could have compensated for lower atmospheric oxygen.",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
+    {
+      "title": "Causality optional? Testing the \"indefinite causal order\" superposition",
       "link": "https://arstechnica.com/science/2026/03/getting-formal-about-quantum-mechanics-lack-of-causality/",
       "pub_date": "2026년 03월 28일 21:00 KST",
       "summary": "A quantum experiment shows that we can formally test if the order of events matters.",
@@ -1457,17 +1441,25 @@
       "summary": "Ultra-sensitive data may have been hacked.",
       "section": "Ars Technica",
       "is_korean": false
-    },
-    {
-      "title": "As RFK Jr.’s anti-vaccine ways turn toxic to GOP, CDC director is hard to find",
-      "link": "https://arstechnica.com/health/2026/03/as-rfk-jr-s-anti-vaccine-ways-turn-toxic-to-gop-cdc-director-is-hard-to-find/",
-      "pub_date": "2026년 03월 27일 05:46 KST",
-      "summary": "Wednesday was the deadline to nominate a new director.",
-      "section": "Ars Technica",
-      "is_korean": false
     }
   ],
   "The Information": [
+    {
+      "title": "Inside JPMorgan's Tech100: Bezos, Amodei and the Billionaire Who Wasn't There",
+      "link": "https://www.theinformation.com/newsletters/the-weekend/inside-jpmorgans-tech100-bezos-amodei-billionaire-2",
+      "pub_date": "2026년 03월 29일 00:00 KST",
+      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16837/411c74e6-b47f-4626-8a12-292278b79b42-Didik8.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Welcome, Weekenders! In this newsletter:• The Big Read: Midjourney’s David Holz was AI’s creative rebel. Then Go",
+      "section": "The Information",
+      "is_korean": false
+    },
+    {
+      "title": "The ‘For All Mankind’ Showrunners Think They Know What Silicon Valley Likes",
+      "link": "https://www.theinformation.com/articles/mankind-showrunners-think-know-silicon-valley-likes",
+      "pub_date": "2026년 03월 28일 23:01 KST",
+      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16835/2375ce16-7589-4c33-a8eb-9035ebe1d9cc.jpg?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Over five seasons, the fictional human beings in “For All Mankind,” Apple TV’s alt-history space race drama, have accom",
+      "section": "The Information",
+      "is_korean": false
+    },
     {
       "title": "Midjourney Is Profitable and Chasing Hardware Dreams. But Can It Survive Google?",
       "link": "https://www.theinformation.com/articles/midjourney-profitable-chasing-hardware-dreams-can-survive-google",
@@ -1553,14 +1545,6 @@
       "link": "https://www.theinformation.com/newsletters/the-electric/exclusive-electric-two-electric-aviation-startups-attempt-jump-ahead-rivals",
       "pub_date": "2026년 03월 26일 20:30 KST",
       "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16824/1e01f0ef-ea52-4d9d-9516-a888c468727a-UAdKRb.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>The Iran war seems likely to scotch the plans of U.S. electric aviation startups to launch their first commercia",
-      "section": "The Information",
-      "is_korean": false
-    },
-    {
-      "title": "Meta’s Future Value and the Social Media Verdict",
-      "link": "https://www.theinformation.com/newsletters/the-briefing/metas-future-value-social-media-verdict",
-      "pub_date": "2026년 03월 26일 09:00 KST",
-      "summary": "<div><img src=\"https://tii.imgix.net/production/articles/16822/e34cb360-c3cf-417e-85de-390d7ccaded9-6DFXOH.png?fm=jpg&amp;auto=compress&amp;w=1200&amp;frame=0\" style=\"width: 100%;\" /><div>Talk about bad timing. Meta Platforms made a big splash on Tuesday night by disclosing new stock grants for seni",
       "section": "The Information",
       "is_korean": false
     }
