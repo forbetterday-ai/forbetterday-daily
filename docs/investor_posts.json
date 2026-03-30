@@ -41,6 +41,14 @@
       "description": "기업을 사는 사람과 가격을 사는 사람 — 시간이 편을 드는 쪽은 정해져 있다",
       "artifact_url": "https://claude.site/public/artifacts/9ed9bf40-b284-478f-aeeb-6625a4cef37c/embed",
       "tags": ["복리의힘", "왜 사는가", "기업의 미래냐 내일의 가격이냐"]
+    },
+    {
+      "id": 6,
+      "date": "2026-03-30",
+      "title": "지금 시작해도 괜찮을까",
+      "description": "전쟁, 유가, 불안 — 좀 더 지켜보자가 가장 비싼 선택이 되는 이유",
+      "artifact_url": "https://claude.site/public/artifacts/259ecee4-5d79-4133-9e19-cb4af7471acb/embed",
+      "tags": ["시장타이밍", "적립식투자", "투자시작 불안"]
     }
   ]
 }
