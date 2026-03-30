@@ -55,6 +55,12 @@
             <div class="notif-header"><span class="notif-header-title">알림</span><button class="notif-mark-read" onclick="markAllRead()">모두 읽음</button></div>
             <div id="notif-list"><div class="notif-empty">알림이 없습니다.</div></div>
         </div>
+      <a href="admin.html" class="notif-bell-btn" id="admin-link" style="display:none;text-decoration:none;margin-top:0.4rem;">⚙️ 관리자 대시보드</a>
+```
+
+**수정 2:** `Ctrl+F`로 `trackUserSession();setGreeting()` 검색 → 이 부분을 아래로 교체:
+```
+trackUserSession();if(user.uid==='xv5KNd2v16QrYMiDKxxwokU84pj1'){var al=document.getElementById('admin-link');if(al)al.style.display='flex'}setGreeting()
     </div>
 </aside>
 <button class="theater-close-btn" id="theater-close-btn" onclick="exitTheater()">◀ 목록으로</button>
