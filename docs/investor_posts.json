@@ -5,13 +5,93 @@
     {
       "id": 1,
       "date": "2026-03-30",
+      "title": "1강: 자본주의란 무엇인가 — 우리가 매일 살고 있는 세상의 작동 원리",
+      "description": "베네치아의 상인들이 시작한 것, 우리가 매일 참여하고 있는 것",
+      "artifact_url": "https://claude.site/public/artifacts/ea4f3115-6f88-4dd2-93cb-bc6fc8ac7587/embed",
+      "tags": ["자본주의", "소유권", "코카콜라"]
+    },
+    {
+      "id": 2,
+      "date": "2026-03-30",
+      "title": "2강: 수익률과 불확실성 — 돈을 불리려면 받아들여야 할 것",
+      "description": "예금 이자 2%와 주식 수익 10%의 차이는 어디서 오는가",
+      "artifact_url": "https://claude.site/public/artifacts/ac8e120c-24a6-44e2-b7e7-528936ddc6bc/embed",
+      "tags": ["수익률", "불확실성", "탈레브"]
+    },
+    {
+      "id": 3,
+      "date": "2026-03-30",
+      "title": "3강: 이윤의 구조 — 기업은 어디서 돈을 버는가",
+      "description": "매출, 비용, 마진 — 세 개의 숫자가 기업의 운명을 결정한다",
+      "artifact_url": "https://claude.site/public/artifacts/728c7112-c0ea-4dc8-b6df-c3caf4468e19/embed",
+      "tags": ["이윤", "비용구조", "나이키"]
+    },
+    {
+      "id": 4,
+      "date": "2026-03-30",
+      "title": "4강: 경쟁과 독점 — 이윤을 지키는 힘, 해자",
+      "description": "이윤이 보이면 경쟁자가 몰린다 — 그래도 마진을 지키는 기업의 비밀",
+      "artifact_url": "https://claude.site/public/artifacts/c1df0027-3820-44f8-ac73-bb8d8625c769/embed",
+      "tags": ["해자", "전환비용", "애플"]
+    },
+    {
+      "id": 5,
+      "date": "2026-03-30",
+      "title": "5강: 자본주의의 빛과 그림자 — 완벽하지 않은 시스템과 함께 사는 법",
+      "description": "200년간 인류를 풍요롭게 만든 시스템은 왜 동시에 위기를 만드는가",
+      "artifact_url": "https://claude.site/public/artifacts/a20130e3-f21e-496d-8fa2-72257d0d20b5/embed",
+      "tags": ["금융위기", "폴라니", "JNJ"]
+    },
+    {
+      "id": 6,
+      "date": "2026-03-30",
+      "title": "6강: 기술혁신과 생산성 — 같은 시간에 더 많이 만드는 힘",
+      "description": "기술이 비용을 줄이고, 시장을 만들고, 해자를 쌓는 경로",
+      "artifact_url": "https://claude.site/public/artifacts/03bb8dc6-3c2e-4e81-91ed-15885dbc09a2/embed",
+      "tags": ["기술혁신", "ClaudeCrash", "아마존"]
+    },
+    {
+      "id": 7,
+      "date": "2026-03-30",
+      "title": "7강: 빌린 돈이 세상을 움직이는 방법",
+      "description": "신용, 레버리지, 그리고 기업가가 위험을 감수하는 이유",
+      "artifact_url": "https://claude.site/public/artifacts/228d8d6e-fc44-423b-b2bf-7c00766da6fe/embed",
+      "tags": ["신용", "레버리지", "테슬라"]
+    },
+    {
+      "id": 8,
+      "date": "2026-03-30",
+      "title": "8강: 인구와 소비 — 사람이 늘면 경제는 자동으로 성장하는가?",
+      "description": "고객 수 × 1인당 지출 — 투자자가 인구를 보는 진짜 방식",
+      "artifact_url": "https://claude.site/public/artifacts/785735ff-5a19-4026-9e74-cc642d7307c9/embed",
+      "tags": ["인구", "소비", "코스트코"]
+    },
+    {
+      "id": 9,
+      "date": "2026-03-30",
+      "title": "9강: 철도와 석유 — 시대의 인프라를 소유한 자가 승자였다",
+      "description": "대륙횡단 철도에서 록펠러의 정유소까지 — 150년 전 투자 교훈",
+      "artifact_url": "https://claude.site/public/artifacts/cfd93f14-88b0-4ac1-8ab1-5393e1549944/embed",
+      "tags": ["철도", "석유", "엑손모빌"]
+    },
+    {
+      "id": 10,
+      "date": "2026-03-30",
+      "title": "10강: 자동차와 브랜드 — 대량생산이 만든 소비의 시대",
+      "description": "만드는 것에서 누가 만들었는가로 — 해자의 무게중심이 옮겨간 순간",
+      "artifact_url": "https://claude.site/public/artifacts/e86978bd-d007-4b9a-8d9c-f5da27d7efb1/embed",
+      "tags": ["브랜드", "베블런", "디즈니"]
+    },
+    {
+      "id": 11,
+      "date": "2026-03-30",
       "title": "11강: 컴퓨터와 금융 — 숫자가 돈이 된 시대",
       "description": "만질 수 있는 것에서 보이지 않는 것으로 — 소프트웨어가 해자가 된 순간",
       "artifact_url": "https://claude.site/public/artifacts/25fab5fc-9d04-442a-9846-ea0072ebf0f8/embed",
       "tags": ["소프트웨어", "마이크로소프트", "전환비용"]
     },
     {
-      "id": 2,
+      "id": 12,
       "date": "2026-03-30",
       "title": "12강: 인터넷과 플랫폼 — 연결이 독점이 된 시대",
       "description": "모두가 모이는 곳을 소유한 자가 이기는 구조 — 네트워크 효과와 생존자의 조건",
@@ -19,7 +99,7 @@
       "tags": ["플랫폼", "네트워크효과", "닷컴버블"]
     },
     {
-      "id": 3,
+      "id": 13,
       "date": "2026-03-30",
       "title": "13-1강: AI의 시대가 열리다 — 바둑돌 하나가 바꾼 세계관",
       "description": "이세돌에서 ChatGPT까지 — 기계가 생각하기 시작한 순간, 자본은 어디로 흘렀는가",
@@ -27,7 +107,7 @@
       "tags": ["AI", "엔비디아", "튜링"]
     },
     {
-      "id": 4,
+      "id": 14,
       "date": "2026-03-26",
       "title": "13-2강: ChatGPT와 골드러시 — 누가 곡괭이를 파는가",
       "description": "AI 시대의 진짜 수혜자를 찾는 투자 관점",
@@ -35,7 +115,7 @@
       "tags": ["AI", "반도체", "13강"]
     },
     {
-      "id": 5,
+      "id": 15,
       "date": "2026-03-27",
       "title": "13-3강: GPU 너머의 투자 지도 — AI에게도 몸이 필요하다",
       "description": "두뇌만 있으면 사람이 되나? — AI가 작동하려면 몸 전체가 필요하다",
@@ -43,7 +123,7 @@
       "tags": ["메모리", "패키징", "신경망"]
     },
     {
-      "id": 6,
+      "id": 16,
       "date": "2026-03-26",
       "title": "적립식 투자자의 시간표 — 1년, 3년, 5년, 10년 뒤의 나",
       "description": "매달 조금씩 넣는 돈이 만들어내는 풍경",
@@ -51,7 +131,7 @@
       "tags": ["적립식", "ETF", "특별강"]
     },
     {
-      "id": 7,
+      "id": 17,
       "date": "2026-03-28",
       "title": "14강: 가만히 있으면 괜찮을까 — 아무것도 안 하는 것의 비용",
       "description": "노동소득의 천장, 인플레이션의 바닥 — 왜 저축만으로는 부족한가",
@@ -59,7 +139,7 @@
       "tags": ["투자의", "핵심", "선택을 하지 않는 것도 선택이다"]
     },
     {
-      "id": 8,
+      "id": 18,
       "date": "2026-03-29",
       "title": "15강: 투자와 투기 — 같은 주식, 다른 결과",
       "description": "기업을 사는 사람과 가격을 사는 사람 — 시간이 편을 드는 쪽은 정해져 있다",
@@ -67,7 +147,7 @@
       "tags": ["복리의힘", "왜 사는가", "기업의 미래냐 내일의 가격이냐"]
     },
     {
-      "id": 9,
+      "id": 19,
       "date": "2026-03-30",
       "title": "지금 시작해도 괜찮을까",
       "description": "전쟁, 유가, 불안 — 좀 더 지켜보자가 가장 비싼 선택이 되는 이유",
