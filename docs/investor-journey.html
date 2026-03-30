@@ -233,8 +233,9 @@ body {
     padding: 0.6rem 0.8rem;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     transition: background 0.15s;
-    cursor: default;
+    cursor: pointer;
 }
+.notif-item:hover { background: rgba(255,255,255,0.06); }
 .notif-item:last-child { border-bottom: none; }
 .notif-item.unread { background: rgba(212,160,23,0.08); }
 .notif-item-text {
@@ -1218,7 +1219,7 @@ function listenNotifications() {
                 var n = doc.data();
                 if (!n.read) unreadCount++;
                 var time = n.timestamp ? new Date(n.timestamp.toDate()).toLocaleString('ko-KR') : '';
-                html += '<div class="notif-item' + (!n.read ? ' unread' : '') + '" data-notif-id="' + doc.id + '">' +
+                html += '<div class="notif-item' + (!n.read ? ' unread' : '') + '" data-notif-id="' + doc.id + '" onclick="goToComment(\'' + (n.postId || '') + '\',\'' + doc.id + '\')">' +
                     '<div class="notif-item-text"><strong>' + (n.senderName || '사용자') + '</strong>님이 답글을 남겼어요: ' + (n.text || '') + '</div>' +
                     '<div class="notif-item-time">' + time + '</div>' +
                 '</div>';
@@ -1262,6 +1263,40 @@ function markAllRead() {
         .catch(function(err) {
             console.error('읽음 처리 실패:', err);
         });
+}
+
+/* ★ 알림 클릭 → 해당 글 댓글로 이동 */
+function goToComment(postId, notifId) {
+    /* 1. 드롭다운 닫기 */
+    document.getElementById('notif-dropdown').classList.remove('open');
+
+    /* 2. 해당 알림 읽음 처리 */
+    if (notifId && currentUser) {
+        db.collection('notifications').doc(notifId).update({ read: true }).catch(function() {});
+    }
+
+    /* 3. 해당 포스트 열기 */
+    if (!postId) return;
+    var embedEl = document.getElementById('embed-' + postId);
+    if (!embedEl) return;
+
+    /* 이미 열려있지 않으면 열기 */
+    if (!embedEl.classList.contains('open')) {
+        togglePost(Number(postId));
+    }
+
+    /* 4. 댓글 영역으로 스크롤 (약간 딜레이 후) */
+    setTimeout(function() {
+        var commentsSection = embedEl.querySelector('.comments-section');
+        if (commentsSection) {
+            commentsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            /* 잠깐 하이라이트 효과 */
+            commentsSection.style.background = 'rgba(166,133,50,0.1)';
+            setTimeout(function() {
+                commentsSection.style.background = '';
+            }, 1500);
+        }
+    }, 300);
 }
 
 /* 드롭다운 바깥 클릭 시 닫기 */
