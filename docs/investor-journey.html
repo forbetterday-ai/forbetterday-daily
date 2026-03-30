@@ -149,7 +149,113 @@ body {
     background: rgba(212,160,23,0.15);
     border-color: #d4a017;
     color: #d4a017;
-}    
+}
+
+/* ===== 알림 벨 ===== */
+.notif-wrapper {
+    margin-top: 0.8rem;
+    position: relative;
+}
+.notif-bell-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    background: transparent;
+    color: #a0a8bc;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+}
+.notif-bell-btn:hover { background: rgba(255,255,255,0.05); color: #e0e0e0; }
+.notif-badge {
+    display: none;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 8px;
+    background: #e74c3c;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 700;
+    padding: 0 4px;
+    margin-left: auto;
+}
+.notif-badge.show { display: inline-block; }
+.notif-dropdown {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: var(--bg2);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index: 200;
+}
+.notif-dropdown.open { display: block; }
+.notif-dropdown::-webkit-scrollbar { width: 4px; }
+.notif-dropdown::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
+.notif-header {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.notif-header-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    color: #8890a4;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.notif-mark-read {
+    font-size: 0.6rem;
+    color: #d4a017;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.notif-mark-read:hover { text-decoration: underline; }
+.notif-item {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    transition: background 0.15s;
+    cursor: default;
+}
+.notif-item:last-child { border-bottom: none; }
+.notif-item.unread { background: rgba(212,160,23,0.08); }
+.notif-item-text {
+    font-size: 0.72rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+.notif-item-text strong { color: #d4a017; font-weight: 600; }
+.notif-item-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem;
+    color: #8890a4;
+    margin-top: 0.2rem;
+}
+.notif-empty {
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 0.72rem;
+    color: #8890a4;
+}
+
 /* ===== 메인 영역 ===== */
 .main {
     margin-left: var(--sidebar-w);
@@ -309,12 +415,26 @@ body {
     border: 1px solid var(--border);
     border-radius: 6px;
 }
+/* 대댓글 들여쓰기 */
+.comment-item.reply {
+    margin-left: 2rem;
+    background: var(--bg3);
+    border-color: var(--bg4);
+}
+.comment-item.reply::before {
+    content: '';
+    display: none;
+}
 .comment-avatar {
     width: 28px;
     height: 28px;
     border-radius: 50%;
     border: 1px solid var(--border);
     flex-shrink: 0;
+}
+.comment-item.reply .comment-avatar {
+    width: 24px;
+    height: 24px;
 }
 .comment-body { flex: 1; min-width: 0; }
 .comment-author {
@@ -329,25 +449,21 @@ body {
     line-height: 1.5;
     word-break: break-word;
 }
+.comment-reply-to {
+    font-size: 0.68rem;
+    color: var(--accent);
+    margin-bottom: 0.2rem;
+}
 .comment-time {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.62rem;
     color: var(--txt3);
     margin-top: 0.25rem;
 }
-.comment-delete {
-    font-size: 0.6rem;
-    color: var(--txt3);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.1rem 0.3rem;
-    border-radius: 3px;
-    transition: all 0.15s;
-    margin-left: 0.5rem;
+.comment-actions {
+    display: inline;
 }
-.comment-delete:hover { color: #c0392b; background: rgba(192,57,43,0.08); }
-.comment-edit {
+.comment-delete, .comment-edit, .comment-reply-btn {
     font-size: 0.6rem;
     color: var(--txt3);
     background: none;
@@ -358,7 +474,9 @@ body {
     transition: all 0.15s;
     margin-left: 0.3rem;
 }
+.comment-delete:hover { color: #c0392b; background: rgba(192,57,43,0.08); }
 .comment-edit:hover { color: var(--accent); background: var(--accent2); }
+.comment-reply-btn:hover { color: #3498db; background: rgba(52,152,219,0.08); }
 .comment-edit-input {
     width: 100%;
     padding: 0.4rem 0.6rem;
@@ -396,6 +514,43 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 .comment-edit-cancel:hover { color: var(--txt); border-color: var(--txt3); }
+/* 대댓글 입력 폼 */
+.reply-form {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--bg4);
+}
+.reply-form input {
+    flex: 1;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.78rem;
+    background: #fff;
+    color: var(--txt);
+    outline: none;
+}
+.reply-form input:focus { border-color: var(--accent); }
+.reply-form button {
+    padding: 0.35rem 0.7rem;
+    border: none;
+    border-radius: 5px;
+    background: #3498db;
+    color: #fff;
+    font-size: 0.7rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.reply-form button:hover { opacity: 0.85; }
+.reply-form .reply-cancel {
+    background: var(--bg4);
+    color: var(--txt3);
+    border: 1px solid var(--border);
+}
 .comments-empty {
     font-size: 0.78rem;
     color: var(--txt3);
@@ -608,6 +763,10 @@ body {
     .spotify-toggle-btn { right: 12px; width: 36px; height: 36px; font-size: 16px; }
     .comment-form { flex-direction: column; }
     .comment-submit { width: 100%; }
+    .comment-item.reply { margin-left: 1.2rem; }
+    .notif-dropdown { position: fixed; bottom: auto; top: auto; left: 1rem; right: 1rem; }
+    .reply-form { flex-direction: column; }
+    .reply-form button { width: 100%; }
 }
 </style>
 </head>
@@ -642,6 +801,22 @@ body {
             <img id="user-photo" src="" alt="">
             <span class="auth-user-name" id="user-name"></span>
             <button class="auth-logout" onclick="googleLogout()">로그아웃</button>
+        </div>
+    </div>
+    <!-- 알림 벨 (로그인 시만 보임) -->
+    <div class="notif-wrapper" id="notif-wrapper" style="display:none;">
+        <button class="notif-bell-btn" id="notif-bell-btn" onclick="toggleNotifDropdown()">
+            🔔 알림
+            <span class="notif-badge" id="notif-badge">0</span>
+        </button>
+        <div class="notif-dropdown" id="notif-dropdown">
+            <div class="notif-header">
+                <span class="notif-header-title">알림</span>
+                <button class="notif-mark-read" onclick="markAllRead()">모두 읽음</button>
+            </div>
+            <div id="notif-list">
+                <div class="notif-empty">알림이 없습니다.</div>
+            </div>
         </div>
     </div>
 </aside>
@@ -695,6 +870,7 @@ firebase.initializeApp({
 var auth = firebase.auth();
 var db = firebase.firestore();
 var currentUser = null;
+var notifUnsubscribe = null;
 
 /* ★ Google 로그인 */
 function googleLogin() {
@@ -728,18 +904,22 @@ auth.onAuthStateChanged(function(user) {
     var userInfo = document.getElementById('user-info');
     var userPhoto = document.getElementById('user-photo');
     var userName = document.getElementById('user-name');
+    var notifWrapper = document.getElementById('notif-wrapper');
 
     if (user) {
         loginBtns.style.display = 'none';
         userInfo.style.display = 'inline-flex';
         userPhoto.src = user.photoURL || '';
         userName.textContent = user.displayName || '사용자';
+        notifWrapper.style.display = 'block';
+        listenNotifications();
     } else {
         loginBtns.style.display = 'flex';
         userInfo.style.display = 'none';
+        notifWrapper.style.display = 'none';
+        if (notifUnsubscribe) { notifUnsubscribe(); notifUnsubscribe = null; }
     }
 
-    // 열려있는 댓글 영역 업데이트
     document.querySelectorAll('.comments-section').forEach(function(el) {
         var postId = el.dataset.postId;
         if (postId) updateCommentForm(postId);
@@ -772,7 +952,7 @@ function isSpam(text) {
     return false;
 }
 
-/* ★ 댓글 등록 */
+/* ★ 댓글 등록 (일반 댓글) */
 function submitComment(postId) {
     if (!currentUser) return;
     var input = document.getElementById('comment-input-' + postId);
@@ -785,6 +965,7 @@ function submitComment(postId) {
 
     db.collection('comments').add({
         postId: String(postId),
+        parentId: null,
         uid: currentUser.uid,
         name: currentUser.displayName || '사용자',
         photo: currentUser.photoURL || '',
@@ -798,6 +979,72 @@ function submitComment(postId) {
         alert('댓글 등록 실패: ' + err.message);
         input.disabled = false;
     });
+}
+
+/* ★ 대댓글(답글) 등록 */
+function submitReply(postId, parentId, parentUid, parentName) {
+    if (!currentUser) return;
+    var input = document.getElementById('reply-input-' + parentId);
+    if (!input) return;
+    var text = (input.value || '').trim();
+    if (!text) return;
+    if (text.length > 500) { alert('댓글은 500자 이내로 작성해주세요.'); return; }
+    if (isSpam(text)) { alert('링크나 광고성 내용은 등록할 수 없습니다.'); return; }
+
+    input.disabled = true;
+
+    db.collection('comments').add({
+        postId: String(postId),
+        parentId: parentId,
+        parentName: parentName,
+        uid: currentUser.uid,
+        name: currentUser.displayName || '사용자',
+        photo: currentUser.photoURL || '',
+        text: text,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function() {
+        /* 알림 생성 (본인 댓글에 답글이면 알림 안 보냄) */
+        if (parentUid && parentUid !== currentUser.uid) {
+            db.collection('notifications').add({
+                recipientUid: parentUid,
+                senderName: currentUser.displayName || '사용자',
+                senderPhoto: currentUser.photoURL || '',
+                postId: String(postId),
+                text: text.length > 60 ? text.substring(0, 60) + '...' : text,
+                read: false,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).catch(function(e) { console.error('알림 생성 실패:', e); });
+        }
+        loadComments(postId);
+    }).catch(function(err) {
+        alert('답글 등록 실패: ' + err.message);
+        input.disabled = false;
+    });
+}
+
+/* ★ 답글 입력 폼 열기 */
+function showReplyForm(commentId, postId, parentUid, parentName) {
+    /* 이미 열린 다른 답글 폼 닫기 */
+    document.querySelectorAll('.reply-form').forEach(function(el) { el.remove(); });
+
+    var commentItem = document.querySelector('[data-comment-id="' + commentId + '"]');
+    if (!commentItem) return;
+
+    if (!currentUser) {
+        alert('답글을 남기려면 로그인해주세요.');
+        return;
+    }
+
+    var safeParentName = parentName.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    var formHtml =
+        '<div class="reply-form" id="reply-form-' + commentId + '">' +
+            '<input type="text" id="reply-input-' + commentId + '" placeholder="' + parentName + '님에게 답글..." maxlength="500" onkeypress="if(event.key===\'Enter\')submitReply(\'' + postId + '\',\'' + commentId + '\',\'' + parentUid + '\',\'' + safeParentName + '\')">' +
+            '<button onclick="submitReply(\'' + postId + '\',\'' + commentId + '\',\'' + parentUid + '\',\'' + safeParentName + '\')">답글</button>' +
+            '<button class="reply-cancel" onclick="this.parentElement.remove()">취소</button>' +
+        '</div>';
+
+    commentItem.insertAdjacentHTML('afterend', formHtml);
+    document.getElementById('reply-input-' + commentId).focus();
 }
 
 /* ★ 댓글 삭제 (본인만 가능) */
@@ -859,7 +1106,7 @@ function cancelEdit(commentId) {
     bodyEl.innerHTML = commentItem.dataset.originalHtml;
 }
 
-/* ★ 댓글 불러오기 */
+/* ★ 댓글 불러오기 (대댓글 포함) */
 function loadComments(postId) {
     var listEl = document.getElementById('comments-list-' + postId);
     if (!listEl) return;
@@ -873,28 +1120,31 @@ function loadComments(postId) {
                 listEl.innerHTML = '<div class="comments-empty">아직 댓글이 없습니다. 첫 번째 댓글을 남겨보세요!</div>';
                 return;
             }
-            var html = '';
+
+            var parents = [];
+            var replies = {};
+
             snapshot.forEach(function(doc) {
                 var c = doc.data();
-                var time = c.timestamp ? new Date(c.timestamp.toDate()).toLocaleString('ko-KR') : '';
-                var edited = c.editedAt ? ' (수정됨)' : '';
-                var isMine = (currentUser && currentUser.uid === c.uid);
-                var editBtn = isMine
-                    ? '<button class="comment-edit" onclick="editComment(\'' + doc.id + '\',\'' + postId + '\',\'' + c.text.replace(/'/g, "\\'").replace(/"/g, '&quot;') + '\')">수정</button>'
-                    : '';
-                var deleteBtn = isMine
-                    ? '<button class="comment-delete" onclick="deleteComment(\'' + doc.id + '\',\'' + postId + '\')">삭제</button>'
-                    : '';
-                html +=
-                    '<div class="comment-item" data-comment-id="' + doc.id + '">' +
-                        '<img class="comment-avatar" src="' + (c.photo || '') + '" alt="" onerror="this.src=\'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%228%22 r=%224%22 fill=%22%23999%22/><path d=%22M4 20c0-4 3.6-7 8-7s8 3 8 7%22 fill=%22%23999%22/></svg>\'">' +
-                        '<div class="comment-body">' +
-                            '<div class="comment-author">' + c.name + editBtn + deleteBtn + '</div>' +
-                            '<div class="comment-text">' + c.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
-                            '<div class="comment-time">' + time + edited + '</div>' +
-                        '</div>' +
-                    '</div>';
+                c._id = doc.id;
+                if (c.parentId) {
+                    if (!replies[c.parentId]) replies[c.parentId] = [];
+                    replies[c.parentId].push(c);
+                } else {
+                    parents.push(c);
+                }
             });
+
+            var html = '';
+            parents.forEach(function(c) {
+                html += renderComment(c, postId, false);
+                if (replies[c._id]) {
+                    replies[c._id].forEach(function(r) {
+                        html += renderComment(r, postId, true);
+                    });
+                }
+            });
+
             listEl.innerHTML = html;
         })
         .catch(function(err) {
@@ -902,6 +1152,125 @@ function loadComments(postId) {
             listEl.innerHTML = '<div class="comments-empty">댓글을 불러올 수 없습니다.</div>';
         });
 }
+
+/* ★ 댓글 하나 렌더링 */
+function renderComment(c, postId, isReply) {
+    var time = c.timestamp ? new Date(c.timestamp.toDate()).toLocaleString('ko-KR') : '';
+    var edited = c.editedAt ? ' (수정됨)' : '';
+    var isMine = (currentUser && currentUser.uid === c.uid);
+    var safeText = c.text.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    var safeName = (c.name || '사용자').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+
+    var editBtn = isMine
+        ? '<button class="comment-edit" onclick="editComment(\'' + c._id + '\',\'' + postId + '\',\'' + safeText + '\')">수정</button>'
+        : '';
+    var deleteBtn = isMine
+        ? '<button class="comment-delete" onclick="deleteComment(\'' + c._id + '\',\'' + postId + '\')">삭제</button>'
+        : '';
+    var replyBtn = (!isReply && currentUser)
+        ? '<button class="comment-reply-btn" onclick="showReplyForm(\'' + c._id + '\',\'' + postId + '\',\'' + c.uid + '\',\'' + safeName + '\')">답글</button>'
+        : '';
+
+    var replyToLabel = (isReply && c.parentName)
+        ? '<div class="comment-reply-to">↳ ' + c.parentName + '님에게 답글</div>'
+        : '';
+
+    var fallbackAvatar = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%228%22 r=%224%22 fill=%22%23999%22/><path d=%22M4 20c0-4 3.6-7 8-7s8 3 8 7%22 fill=%22%23999%22/></svg>';
+
+    return '<div class="comment-item' + (isReply ? ' reply' : '') + '" data-comment-id="' + c._id + '">' +
+        '<img class="comment-avatar" src="' + (c.photo || '') + '" alt="" onerror="this.src=\'' + fallbackAvatar + '\'">' +
+        '<div class="comment-body">' +
+            '<div class="comment-author">' + (c.name || '사용자') +
+                '<span class="comment-actions">' + replyBtn + editBtn + deleteBtn + '</span>' +
+            '</div>' +
+            replyToLabel +
+            '<div class="comment-text">' + c.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
+            '<div class="comment-time">' + time + edited + '</div>' +
+        '</div>' +
+    '</div>';
+}
+
+/* ===== 알림 시스템 ===== */
+
+/* ★ 알림 실시간 감지 */
+function listenNotifications() {
+    if (notifUnsubscribe) notifUnsubscribe();
+    if (!currentUser) return;
+
+    notifUnsubscribe = db.collection('notifications')
+        .where('recipientUid', '==', currentUser.uid)
+        .orderBy('timestamp', 'desc')
+        .limit(20)
+        .onSnapshot(function(snapshot) {
+            var badge = document.getElementById('notif-badge');
+            var listEl = document.getElementById('notif-list');
+            var unreadCount = 0;
+            var html = '';
+
+            if (snapshot.empty) {
+                listEl.innerHTML = '<div class="notif-empty">알림이 없습니다.</div>';
+                badge.textContent = '0';
+                badge.classList.remove('show');
+                return;
+            }
+
+            snapshot.forEach(function(doc) {
+                var n = doc.data();
+                if (!n.read) unreadCount++;
+                var time = n.timestamp ? new Date(n.timestamp.toDate()).toLocaleString('ko-KR') : '';
+                html += '<div class="notif-item' + (!n.read ? ' unread' : '') + '" data-notif-id="' + doc.id + '">' +
+                    '<div class="notif-item-text"><strong>' + (n.senderName || '사용자') + '</strong>님이 답글을 남겼어요: ' + (n.text || '') + '</div>' +
+                    '<div class="notif-item-time">' + time + '</div>' +
+                '</div>';
+            });
+
+            listEl.innerHTML = html;
+            badge.textContent = String(unreadCount);
+            if (unreadCount > 0) {
+                badge.classList.add('show');
+            } else {
+                badge.classList.remove('show');
+            }
+        }, function(err) {
+            console.error('알림 로드 실패:', err);
+        });
+}
+
+/* ★ 알림 드롭다운 토글 */
+function toggleNotifDropdown() {
+    var dropdown = document.getElementById('notif-dropdown');
+    dropdown.classList.toggle('open');
+}
+
+/* ★ 모두 읽음 처리 */
+function markAllRead() {
+    if (!currentUser) return;
+    db.collection('notifications')
+        .where('recipientUid', '==', currentUser.uid)
+        .where('read', '==', false)
+        .get()
+        .then(function(snapshot) {
+            var batch = db.batch();
+            snapshot.forEach(function(doc) {
+                batch.update(doc.ref, { read: true });
+            });
+            return batch.commit();
+        })
+        .then(function() {
+            /* onSnapshot이 자동으로 UI 업데이트 */
+        })
+        .catch(function(err) {
+            console.error('읽음 처리 실패:', err);
+        });
+}
+
+/* 드롭다운 바깥 클릭 시 닫기 */
+document.addEventListener('click', function(e) {
+    var wrapper = document.getElementById('notif-wrapper');
+    if (wrapper && !wrapper.contains(e.target)) {
+        document.getElementById('notif-dropdown').classList.remove('open');
+    }
+});
 
 /* ★ Spotify 토글 */
 (function() {
@@ -961,7 +1330,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                         '<a href="' + post.artifact_url + '" target="_blank" class="embed-link">↗ Claude에서 열기</a>' +
                         '<button class="embed-resize" onclick="resizeEmbed(' + post.id + ', event)">높이 조절</button>' +
                     '</div>' +
-                    '<!-- 댓글 영역 -->' +
                     '<div class="comments-section" data-post-id="' + post.id + '">' +
                         '<div class="comments-title">💬 댓글</div>' +
                         '<div id="comment-form-area-' + post.id + '"></div>' +
@@ -999,7 +1367,6 @@ function togglePost(id) {
         if (!iframeEl.src || iframeEl.src === 'about:blank' || iframeEl.src === window.location.href) {
             iframeEl.src = iframeEl.dataset.src;
         }
-        // 댓글 로드
         updateCommentForm(id);
         loadComments(id);
     }
