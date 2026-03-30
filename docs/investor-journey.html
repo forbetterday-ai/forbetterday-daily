@@ -1554,27 +1554,38 @@ function setDailyQuote() {
     el.innerHTML = '"' + q.text + '"<div class="quote-author">— ' + q.author + '</div>';
 }
 
-/* ★ 계절 테마 (월별) */
+/* ★ 계절 테마 (월별) — 사이드바 포함 */
 var seasonData = [
-    { emoji: '⛄', label: '겨울', accent: '#8baec4' },
-    { emoji: '💕', label: '봄이 오고 있어요', accent: '#d4a0b0' },
-    { emoji: '🌸', label: '벚꽃 시즌', accent: '#e0a0b8' },
-    { emoji: '🌱', label: '새싹의 계절', accent: '#7bc47f' },
-    { emoji: '🌿', label: '푸른 5월', accent: '#5db85d' },
-    { emoji: '☀️', label: '여름 시작', accent: '#d4a017' },
-    { emoji: '🌊', label: '한여름', accent: '#4a90d9' },
-    { emoji: '🌻', label: '해바라기', accent: '#d4a017' },
-    { emoji: '🍂', label: '가을 입구', accent: '#c87533' },
-    { emoji: '🎃', label: '깊은 가을', accent: '#d4732a' },
-    { emoji: '🍁', label: '낙엽의 계절', accent: '#b8860b' },
-    { emoji: '❄️', label: '겨울', accent: '#8baec4' }
+    { emoji: '⛄', label: '겨울', accent: '#8baec4', sidebar: '#1a2636', sidebarBrand: '#8baec4' },
+    { emoji: '💕', label: '봄이 오고 있어요', accent: '#d4a0b0', sidebar: '#2a1a28', sidebarBrand: '#d4a0b0' },
+    { emoji: '🌸', label: '벚꽃 시즌', accent: '#e0a0b8', sidebar: '#2c1a24', sidebarBrand: '#e0a0b8' },
+    { emoji: '🌱', label: '새싹의 계절', accent: '#7bc47f', sidebar: '#1a2a1e', sidebarBrand: '#7bc47f' },
+    { emoji: '🌿', label: '푸른 5월', accent: '#5db85d', sidebar: '#1a2a1c', sidebarBrand: '#5db85d' },
+    { emoji: '☀️', label: '여름 시작', accent: '#d4a017', sidebar: '#1a1f36', sidebarBrand: '#d4a017' },
+    { emoji: '🌊', label: '한여름', accent: '#4a90d9', sidebar: '#1a2430', sidebarBrand: '#4a90d9' },
+    { emoji: '🌻', label: '해바라기', accent: '#d4a017', sidebar: '#24201a', sidebarBrand: '#d4a017' },
+    { emoji: '🍂', label: '가을 입구', accent: '#c87533', sidebar: '#2a1f1a', sidebarBrand: '#c87533' },
+    { emoji: '🎃', label: '깊은 가을', accent: '#d4732a', sidebar: '#2a1c16', sidebarBrand: '#d4732a' },
+    { emoji: '🍁', label: '낙엽의 계절', accent: '#b8860b', sidebar: '#241f1a', sidebarBrand: '#b8860b' },
+    { emoji: '❄️', label: '겨울', accent: '#8baec4', sidebar: '#1a2430', sidebarBrand: '#8baec4' }
 ];
 function setSeasonTheme() {
     var month = new Date().getMonth();
     var s = seasonData[month];
-    document.getElementById('season-badge').textContent = s.emoji + ' ' + s.label;
+    var badge = document.getElementById('season-badge');
+    if (badge) badge.textContent = s.emoji + ' ' + s.label;
     document.documentElement.style.setProperty('--accent', s.accent);
     document.documentElement.style.setProperty('--accent2', s.accent + '20');
+    document.documentElement.style.setProperty('--bg2', s.sidebar);
+    /* 사이드바 브랜드 색상 */
+    var brandEl = document.querySelector('.sb-brand');
+    if (brandEl) brandEl.style.color = s.sidebarBrand;
+    /* 탭 active 색상도 계절에 맞춤 */
+    document.querySelectorAll('.tab-btn.active').forEach(function(el) {
+        el.style.background = s.accent + '25';
+        el.style.borderColor = s.accent;
+        el.style.color = s.accent;
+    });
 }
 
 /* ★ 방문 카운터 (로그인 사용자) */
