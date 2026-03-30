@@ -55,13 +55,8 @@
             <div class="notif-header"><span class="notif-header-title">알림</span><button class="notif-mark-read" onclick="markAllRead()">모두 읽음</button></div>
             <div id="notif-list"><div class="notif-empty">알림이 없습니다.</div></div>
         </div>
-      <a href="admin.html" class="notif-bell-btn" id="admin-link" style="display:none;text-decoration:none;margin-top:0.4rem;">⚙️ 관리자 대시보드</a>
-```
-
-**수정 2:** `Ctrl+F`로 `trackUserSession();setGreeting()` 검색 → 이 부분을 아래로 교체:
-```
-trackUserSession();if(user.uid==='xv5KNd2v16QrYMiDKxxwokU84pj1'){var al=document.getElementById('admin-link');if(al)al.style.display='flex'}setGreeting()
     </div>
+    <a href="admin.html" class="notif-bell-btn" id="admin-link" style="display:none;text-decoration:none;margin-top:0.4rem;">⚙️ 관리자 대시보드</a>
 </aside>
 <button class="theater-close-btn" id="theater-close-btn" onclick="exitTheater()">◀ 목록으로</button>
 <main class="main">
@@ -103,8 +98,8 @@ function googleLogout(){updateLastActive();auth.signOut()}
 auth.onAuthStateChanged(function(user){
     currentUser=user;
     var lb=document.getElementById('login-btns'),ui=document.getElementById('user-info'),up=document.getElementById('user-photo'),un=document.getElementById('user-name'),nw=document.getElementById('notif-wrapper');
-    if(user){lb.style.display='none';ui.style.display='inline-flex';up.src=user.photoURL||'';un.textContent=user.displayName||'사용자';nw.style.display='block';listenNotifications();if(authReady)showWelcome(user.displayName);trackVisit();trackUserSession();setGreeting()}
-    else{lb.style.display='flex';ui.style.display='none';nw.style.display='none';currentSessionId=null;if(notifUnsubscribe){notifUnsubscribe();notifUnsubscribe=null}}
+    if(user){lb.style.display='none';ui.style.display='inline-flex';up.src=user.photoURL||'';un.textContent=user.displayName||'사용자';nw.style.display='block';listenNotifications();if(authReady)showWelcome(user.displayName);trackVisit();trackUserSession();if(user.uid==='xv5KNd2v16QrYMiDKxxwokU84pj1'){var al=document.getElementById('admin-link');if(al)al.style.display='flex'}setGreeting()}
+    else{lb.style.display='flex';ui.style.display='none';nw.style.display='none';currentSessionId=null;if(notifUnsubscribe){notifUnsubscribe();notifUnsubscribe=null}var al2=document.getElementById('admin-link');if(al2)al2.style.display='none'}
     authReady=true;
     document.querySelectorAll('.comments-section').forEach(function(el){var p=el.dataset.postId;if(p)updateCommentForm(p)});
 });
@@ -131,7 +126,6 @@ function setDailyQuote(){var el=document.getElementById('quote-card'),d=Math.flo
 var seasonData=[{emoji:'⛄',label:'겨울',accent:'#8baec4',sidebar:'#1a2636',sidebarBrand:'#8baec4'},{emoji:'💕',label:'봄이 오고 있어요',accent:'#d4a0b0',sidebar:'#2a1a28',sidebarBrand:'#d4a0b0'},{emoji:'🌸',label:'벚꽃 시즌',accent:'#e0a0b8',sidebar:'#2c1a24',sidebarBrand:'#e0a0b8'},{emoji:'🌱',label:'새싹의 계절',accent:'#7bc47f',sidebar:'#1a2a1e',sidebarBrand:'#7bc47f'},{emoji:'🌿',label:'푸른 5월',accent:'#5db85d',sidebar:'#1a2a1c',sidebarBrand:'#5db85d'},{emoji:'☀️',label:'여름 시작',accent:'#d4a017',sidebar:'#1a1f36',sidebarBrand:'#d4a017'},{emoji:'🌊',label:'한여름',accent:'#4a90d9',sidebar:'#1a2430',sidebarBrand:'#4a90d9'},{emoji:'🌻',label:'해바라기',accent:'#d4a017',sidebar:'#24201a',sidebarBrand:'#d4a017'},{emoji:'🍂',label:'가을 입구',accent:'#c87533',sidebar:'#2a1f1a',sidebarBrand:'#c87533'},{emoji:'🎃',label:'깊은 가을',accent:'#d4732a',sidebar:'#2a1c16',sidebarBrand:'#d4732a'},{emoji:'🍁',label:'낙엽의 계절',accent:'#b8860b',sidebar:'#241f1a',sidebarBrand:'#b8860b'},{emoji:'❄️',label:'겨울',accent:'#8baec4',sidebar:'#1a2430',sidebarBrand:'#8baec4'}];
 function setSeasonTheme(){var m=new Date().getMonth(),s=seasonData[m],b=document.getElementById('season-badge');if(b)b.textContent=s.emoji+' '+s.label;document.documentElement.style.setProperty('--accent',s.accent);document.documentElement.style.setProperty('--accent2',s.accent+'20');document.documentElement.style.setProperty('--bg2',s.sidebar);var br=document.querySelector('.sb-brand');if(br)br.style.color=s.sidebarBrand;document.querySelectorAll('.tab-btn.active').forEach(function(el){el.style.background=s.accent+'25';el.style.borderColor=s.accent;el.style.color=s.accent})}
 function trackVisit(){if(!currentUser){document.getElementById('visit-msg').style.display='none';return}var r=db.collection('visits').doc(currentUser.uid);r.get().then(function(d){var c=1,today=new Date().toISOString().slice(0,10),si=true;if(d.exists){var data=d.data();c=data.count||0;if(data.lastDate===today)si=false;if(si){c=c+1;r.update({count:c,lastDate:today,lastVisit:firebase.firestore.FieldValue.serverTimestamp()})}}else{r.set({count:1,lastDate:today,lastVisit:firebase.firestore.FieldValue.serverTimestamp()})}var m=document.getElementById('visit-msg');m.style.display='block';if(c<=1)m.innerHTML='🎉 첫 방문을 환영합니다!';else if(c<10)m.innerHTML='🌱 벌써 <span class="visit-num">'+c+'</span>일째 방문이에요! 꾸준함이 최고의 전략이에요.';else if(c<50)m.innerHTML='🔥 <span class="visit-num">'+c+'</span>일째 방문! 이 정도면 진짜 투자자예요.';else m.innerHTML='🏆 <span class="visit-num">'+c+'</span>일째 방문! 당신은 이미 전문가입니다.'}).catch(function(){})}
-
 /* ★★★ 접속 로그 시스템 (관리자 대시보드용) ★★★ */
 function trackUserSession(){if(!currentUser)return;db.collection('user_logs').add({uid:currentUser.uid,name:currentUser.displayName||'사용자',photo:currentUser.photoURL||'',loginTime:firebase.firestore.FieldValue.serverTimestamp(),lastActive:firebase.firestore.FieldValue.serverTimestamp(),pagesViewed:[],device:navigator.userAgent}).then(function(ref){currentSessionId=ref.id}).catch(function(e){console.error('접속 로그 기록 실패:',e)})}
 function logPageView(title){if(!currentSessionId||!currentUser)return;db.collection('user_logs').doc(currentSessionId).update({lastActive:firebase.firestore.FieldValue.serverTimestamp(),pagesViewed:firebase.firestore.FieldValue.arrayUnion(title)}).catch(function(e){console.error('페이지 뷰 기록 실패:',e)})}
@@ -140,7 +134,6 @@ window.addEventListener('beforeunload',function(){updateLastActive()});
 document.addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden')updateLastActive()});
 setInterval(function(){if(document.visibilityState==='visible')updateLastActive()},300000);
 /* ★★★ 접속 로그 시스템 끝 ★★★ */
-
 function updateProgress(tp){var r=JSON.parse(localStorage.getItem('readPosts')||'[]'),rc=r.length;if(tp<=0)return;var p=Math.round((rc/tp)*100);document.getElementById('progress-wrap').style.display='flex';document.getElementById('progress-text').textContent='📖 '+rc+'/'+tp+' 읽음';document.getElementById('progress-fill').style.width=p+'%'}
 function markAsRead(pid){var r=JSON.parse(localStorage.getItem('readPosts')||'[]');if(r.indexOf(String(pid))===-1){r.push(String(pid));localStorage.setItem('readPosts',JSON.stringify(r))}}
 (function(){var bar=document.getElementById('spotifyBar'),btn=document.getElementById('spotifyToggle');btn.addEventListener('click',function(){bar.classList.toggle('collapsed');btn.classList.toggle('collapsed');document.body.style.paddingBottom=bar.classList.contains('collapsed')?'0':'var(--player-h)'})})();
