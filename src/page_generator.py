@@ -1,5 +1,5 @@
 """
-데일리 뉴스 브리핑 웹페이지 생성 모듈 - 시간순 정렬 + 소스태그 + 별점 + Spotify Player
+데일리 뉴스 브리핑 웹페이지 생성 모듈 - 시간순 정렬 + 소스태그 + 별점 + Spotify Player + 계절테마
 """
 import os
 import re
@@ -157,6 +157,14 @@ def generate_briefing_page(articles_by_section: dict):
     html = f'''<!DOCTYPE html>
 <html lang="ko">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MW9D45P93T"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', 'G-MW9D45P93T');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>투자자 성장기 - {date_str}</title>
@@ -203,6 +211,7 @@ body {{
     overflow-y: auto;
     padding: 1.5rem 1rem;
     z-index: 100;
+    transition: background 0.5s ease;
 }}
 .sidebar::-webkit-scrollbar {{ width: 4px; }}
 .sidebar::-webkit-scrollbar-thumb {{ background: var(--border); border-radius: 2px; }}
@@ -210,8 +219,9 @@ body {{
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-weight: 900;
-    color: #d4a017;
+    color: var(--accent);
     margin-bottom: 0.2rem;
+    transition: color 0.5s ease;
 }}
 .sb-sub {{
     font-size: 0.6rem;
@@ -230,12 +240,13 @@ body {{
 .sb-total {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
-    color: #d4a017;
-    background: rgba(212,160,23,0.15);
+    color: var(--accent);
+    background: var(--accent2);
     padding: 0.2rem 0.6rem;
     border-radius: 100px;
     display: inline-block;
     margin-bottom: 1rem;
+    transition: color 0.5s ease, background 0.5s ease;
 }}
 .sb-divider {{
     border: none;
@@ -270,20 +281,20 @@ body {{
 }}
 .sb-btn:hover {{ background: rgba(255,255,255,0.05); color: #e0e0e0; }}
 .sb-btn.active {{
-    background: rgba(212,160,23,0.15);
-    border-color: #d4a017;
-    color: #d4a017;
+    background: var(--accent2);
+    border-color: var(--accent);
+    color: var(--accent);
     font-weight: 500;
 }}
 .sb-count {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
-    color: #d4a017;
+    color: var(--accent);
 }}
 .sb-filter-count {{
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.7rem;
-    color: #d4a017;
+    color: var(--accent);
     margin-top: 0.5rem;
 }}
 .sb-rating-stats {{
@@ -315,9 +326,16 @@ body {{
 }}
 .tab-btn:hover {{ background: rgba(255,255,255,0.05); color: #e0e0e0; }}
 .tab-btn.active {{
-    background: rgba(212,160,23,0.15);
-    border-color: #d4a017;
-    color: #d4a017;
+    background: var(--accent2);
+    border-color: var(--accent);
+    color: var(--accent);
+}}
+.season-label {{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    display: block;
 }}
 .status-alert {{
     margin-top: 0.8rem;
@@ -526,6 +544,7 @@ body {{
 <aside class="sidebar">
     <div class="sb-brand">투자자 성장기</div>
     <div class="sb-sub">FT · Bloomberg · Reuters · WSJ<br>TechCrunch · Space · Defense</div>
+    <span class="season-label" id="season-label"></span>
     <div class="sb-info">{weekday}요일 · {date_str}</div>
     <div class="sb-info">업데이트 {time_str} KST</div>
     <span class="sb-total">총 {total_articles}개 기사</span>
@@ -573,7 +592,35 @@ let currentDate = 'all';
 let currentSource = 'all';
 let ratingsCache = {{}};
 
-document.addEventListener('DOMContentLoaded', loadRatings);
+/* ★ 계절 테마 (월별) — 사이드바 포함 */
+var seasonData = [
+    {{ emoji: '⛄', label: '겨울', accent: '#8baec4', sidebar: '#1a2636' }},
+    {{ emoji: '💕', label: '봄이 오고 있어요', accent: '#d4a0b0', sidebar: '#2a1a28' }},
+    {{ emoji: '🌸', label: '벚꽃 시즌', accent: '#e0a0b8', sidebar: '#2c1a24' }},
+    {{ emoji: '🌱', label: '새싹의 계절', accent: '#7bc47f', sidebar: '#1a2a1e' }},
+    {{ emoji: '🌿', label: '푸른 5월', accent: '#5db85d', sidebar: '#1a2a1c' }},
+    {{ emoji: '☀️', label: '여름 시작', accent: '#d4a017', sidebar: '#1a1f36' }},
+    {{ emoji: '🌊', label: '한여름', accent: '#4a90d9', sidebar: '#1a2430' }},
+    {{ emoji: '🌻', label: '해바라기', accent: '#d4a017', sidebar: '#24201a' }},
+    {{ emoji: '🍂', label: '가을 입구', accent: '#c87533', sidebar: '#2a1f1a' }},
+    {{ emoji: '🎃', label: '깊은 가을', accent: '#d4732a', sidebar: '#2a1c16' }},
+    {{ emoji: '🍁', label: '낙엽의 계절', accent: '#b8860b', sidebar: '#241f1a' }},
+    {{ emoji: '❄️', label: '겨울', accent: '#8baec4', sidebar: '#1a2430' }}
+];
+function setSeasonTheme() {{
+    var month = new Date().getMonth();
+    var s = seasonData[month];
+    var label = document.getElementById('season-label');
+    if (label) label.textContent = s.emoji + ' ' + s.label;
+    document.documentElement.style.setProperty('--accent', s.accent);
+    document.documentElement.style.setProperty('--accent2', s.accent + '20');
+    document.documentElement.style.setProperty('--bg2', s.sidebar);
+}}
+
+document.addEventListener('DOMContentLoaded', function() {{
+    setSeasonTheme();
+    loadRatings();
+}});
 
 /* ★ Spotify 토글 */
 (function() {{
