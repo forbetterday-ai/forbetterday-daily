@@ -747,6 +747,37 @@ body {
     background: var(--spotify-green);
 }
 
+/* ===== 환영 토스트 ===== */
+.welcome-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100px);
+    z-index: 10001;
+    padding: 0.8rem 1.5rem;
+    background: var(--bg2);
+    color: #e0e0e0;
+    border: 1px solid rgba(212,160,23,0.4);
+    border-radius: 10px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.88rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+}
+.welcome-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+.welcome-toast .welcome-name {
+    color: #d4a017;
+    font-weight: 700;
+}
+.welcome-toast .welcome-emoji {
+    margin-right: 0.3rem;
+}
+
 /* ===== 시어터 모드 ===== */
 body.theater-mode .sidebar {
     transform: translateX(-100%);
@@ -894,6 +925,11 @@ body.theater-mode .theater-close-btn { display: block; }
     <div class="footer-text">초보 투자자 성장기 · Powered by Claude AI Artifacts</div>
 </footer>
 
+<!-- 환영 토스트 -->
+<div class="welcome-toast" id="welcome-toast">
+    <span class="welcome-emoji">👋</span> 반가워요, <span class="welcome-name" id="welcome-name"></span>님!
+</div>
+
 <!-- ★ Spotify 하단 고정 플레이어 -->
 <div class="spotify-bottom-bar" id="spotifyBar">
     <iframe
@@ -926,6 +962,16 @@ var auth = firebase.auth();
 var db = firebase.firestore();
 var currentUser = null;
 var notifUnsubscribe = null;
+var authReady = false;
+
+/* ★ 환영 토스트 표시 */
+function showWelcome(name) {
+    var toast = document.getElementById('welcome-toast');
+    var nameEl = document.getElementById('welcome-name');
+    nameEl.textContent = name || '사용자';
+    toast.classList.add('show');
+    setTimeout(function() { toast.classList.remove('show'); }, 2500);
+}
 
 /* ★ Google 로그인 */
 function googleLogin() {
@@ -968,12 +1014,18 @@ auth.onAuthStateChanged(function(user) {
         userName.textContent = user.displayName || '사용자';
         notifWrapper.style.display = 'block';
         listenNotifications();
+        /* 실제 로그인 시에만 환영 토스트 (페이지 새로고침 시 안 뜸) */
+        if (authReady) {
+            showWelcome(user.displayName);
+        }
     } else {
         loginBtns.style.display = 'flex';
         userInfo.style.display = 'none';
         notifWrapper.style.display = 'none';
         if (notifUnsubscribe) { notifUnsubscribe(); notifUnsubscribe = null; }
     }
+
+    authReady = true;
 
     document.querySelectorAll('.comments-section').forEach(function(el) {
         var postId = el.dataset.postId;
