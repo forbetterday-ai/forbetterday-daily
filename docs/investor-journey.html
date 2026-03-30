@@ -1597,22 +1597,34 @@ function trackVisit() {
     var visitRef = db.collection('visits').doc(currentUser.uid);
     visitRef.get().then(function(doc) {
         var count = 1;
+        var today = new Date().toISOString().slice(0, 10); /* YYYY-MM-DD */
+        var shouldIncrement = true;
+
         if (doc.exists) {
-            count = (doc.data().count || 0) + 1;
-            visitRef.update({ count: count, lastVisit: firebase.firestore.FieldValue.serverTimestamp() });
+            var data = doc.data();
+            count = data.count || 0;
+            /* 마지막 방문 날짜가 오늘이면 카운트 증가하지 않음 */
+            if (data.lastDate === today) {
+                shouldIncrement = false;
+            }
+            if (shouldIncrement) {
+                count = count + 1;
+                visitRef.update({ count: count, lastDate: today, lastVisit: firebase.firestore.FieldValue.serverTimestamp() });
+            }
         } else {
-            visitRef.set({ count: 1, lastVisit: firebase.firestore.FieldValue.serverTimestamp() });
+            visitRef.set({ count: 1, lastDate: today, lastVisit: firebase.firestore.FieldValue.serverTimestamp() });
         }
+
         var msgEl = document.getElementById('visit-msg');
         msgEl.style.display = 'block';
         if (count <= 1) {
             msgEl.innerHTML = '🎉 첫 방문을 환영합니다!';
         } else if (count < 10) {
-            msgEl.innerHTML = '🌱 벌써 <span class="visit-num">' + count + '</span>번째 방문이에요! 꾸준함이 최고의 전략이에요.';
+            msgEl.innerHTML = '🌱 벌써 <span class="visit-num">' + count + '</span>일째 방문이에요! 꾸준함이 최고의 전략이에요.';
         } else if (count < 50) {
-            msgEl.innerHTML = '🔥 <span class="visit-num">' + count + '</span>번째 방문! 이 정도면 진짜 투자자예요.';
+            msgEl.innerHTML = '🔥 <span class="visit-num">' + count + '</span>일째 방문! 이 정도면 진짜 투자자예요.';
         } else {
-            msgEl.innerHTML = '🏆 <span class="visit-num">' + count + '</span>번째 방문! 당신은 이미 전문가입니다.';
+            msgEl.innerHTML = '🏆 <span class="visit-num">' + count + '</span>일째 방문! 당신은 이미 전문가입니다.';
         }
     }).catch(function() {});
 }
