@@ -747,6 +747,57 @@ body {
     background: var(--spotify-green);
 }
 
+/* ===== 시어터 모드 ===== */
+body.theater-mode .sidebar {
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+}
+body.theater-mode .main {
+    margin-left: 0;
+    padding: 1rem 1.5rem 4rem;
+}
+body.theater-mode .footer {
+    margin-left: 0;
+}
+body.theater-mode .post-embed iframe {
+    height: calc(100vh - 180px);
+}
+body.theater-mode .page-header {
+    display: none;
+}
+/* 닫힌 포스트 카드도 시어터에서 숨김 */
+body.theater-mode .post-card:not(.theater-active) {
+    display: none;
+}
+body.theater-mode .post-card.theater-active .post-header {
+    padding: 0.6rem 1.2rem;
+}
+/* 시어터 닫기 버튼 */
+.theater-close-btn {
+    display: none;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 200;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg2);
+    color: #e0e0e0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.theater-close-btn:hover { background: #d4a017; color: #fff; border-color: #d4a017; }
+body.theater-mode .theater-close-btn { display: block; }
+/* 전환 애니메이션 */
+.sidebar { transition: transform 0.35s ease, opacity 0.35s ease; }
+.main { transition: margin-left 0.35s ease, padding 0.35s ease; }
+.footer { transition: margin-left 0.35s ease; }
+
 /* ===== 반응형 ===== */
 @media (max-width: 768px) {
     .sidebar {
@@ -821,6 +872,9 @@ body {
         </div>
     </div>
 </aside>
+
+<!-- 시어터 모드 닫기 버튼 -->
+<button class="theater-close-btn" id="theater-close-btn" onclick="exitTheater()">◀ 목록으로</button>
 
 <main class="main">
     <div class="page-header">
@@ -1391,20 +1445,37 @@ function togglePost(id) {
     var embedEl = document.getElementById('embed-' + id);
     var toggleEl = document.getElementById('toggle-' + id);
     var iframeEl = document.getElementById('iframe-' + id);
+    var postCard = embedEl.closest('.post-card');
     var isOpen = embedEl.classList.contains('open');
 
+    /* 다른 열린 포스트 닫기 */
     document.querySelectorAll('.post-embed.open').forEach(function(el) { el.classList.remove('open'); });
     document.querySelectorAll('.post-toggle.open').forEach(function(el) { el.classList.remove('open'); });
+    document.querySelectorAll('.post-card.theater-active').forEach(function(el) { el.classList.remove('theater-active'); });
 
     if (!isOpen) {
         embedEl.classList.add('open');
         toggleEl.classList.add('open');
+        postCard.classList.add('theater-active');
         if (!iframeEl.src || iframeEl.src === 'about:blank' || iframeEl.src === window.location.href) {
             iframeEl.src = iframeEl.dataset.src;
         }
         updateCommentForm(id);
         loadComments(id);
+        /* 시어터 모드 진입 */
+        document.body.classList.add('theater-mode');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+        exitTheater();
     }
+}
+
+/* ★ 시어터 모드 종료 */
+function exitTheater() {
+    document.body.classList.remove('theater-mode');
+    document.querySelectorAll('.post-embed.open').forEach(function(el) { el.classList.remove('open'); });
+    document.querySelectorAll('.post-toggle.open').forEach(function(el) { el.classList.remove('open'); });
+    document.querySelectorAll('.post-card.theater-active').forEach(function(el) { el.classList.remove('theater-active'); });
 }
 
 var heightStates = {};
