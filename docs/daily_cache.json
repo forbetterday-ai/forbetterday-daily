@@ -1,18 +1,66 @@
 {
   "TechCrunch": [
     {
-      "title": "Former Coatue partner raises huge $65M seed for enterprise AI agent startup",
-      "link": "https://techcrunch.com/2026/03/30/former-coatue-partner-raises-huge-65m-seed-for-enterprise-ai-agent-startup/",
-      "pub_date": "2026년 03월 31일 06:53 KST",
-      "summary": "A few things turned investors' heads and drew them to participate in such a big round out of the gate.",
+      "title": "With its new app store, Ring bets on AI to go beyond home security",
+      "link": "https://techcrunch.com/2026/03/31/ring-app-store-bets-on-ai-to-go-beyond-home-security/",
+      "pub_date": "2026년 03월 31일 22:00 KST",
+      "summary": "Ring's app store will allow the company to target broader use cases beyond security, like elder care or business needs.",
       "section": "TechCrunch",
       "is_korean": false
     },
     {
-      "title": "15% of Americans say they’d be willing to work for an AI boss",
-      "link": "https://techcrunch.com/2026/03/30/ai-boss-supervisor-us-quinnipiac-poll/",
-      "pub_date": "2026년 03월 31일 06:39 KST",
-      "summary": "Your human manager may soon be a chatbot. Across organizations, AI is being used to replace layers of management in what some are calling \"The Great Flattening.\"",
+      "title": "Google is now letting users in the US change their Gmail address",
+      "link": "https://techcrunch.com/2026/03/31/google-is-now-letting-users-in-the-us-change-their-gmail-address/",
+      "pub_date": "2026년 03월 31일 21:30 KST",
+      "summary": "Users will be able to change their username only once every 12 months. Plus, they won't be able to delete their new email address for that period of time.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Airbnb is introducing a private car pick-up service",
+      "link": "https://techcrunch.com/2026/03/31/airbnb-private-car-pick-up-service-welcome-pickups/",
+      "pub_date": "2026년 03월 31일 18:00 KST",
+      "summary": "Airbnb is partnering with transportation company Welcome Pickups to let users book a private car service during their trip.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "The Silicon Valley congressional race is getting ugly",
+      "link": "https://techcrunch.com/2026/03/31/the-silicon-valley-congressional-race-is-getting-ugly/",
+      "pub_date": "2026년 03월 31일 16:23 KST",
+      "summary": "The primary isn&#8217;t until early June, but the CA-17 race between five-term incumbent Ro Khanna and tech founder Ethan Agarwal is already getting nasty. Agarwal entered the race in March, backed by a roster of prominent tech billionaires largely in response to Khanna&#8217;s public support for a ",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Allbirds is selling for $39 million. It raised nearly 10 times that amount in its IPO.",
+      "link": "https://techcrunch.com/2026/03/30/allbirds-is-selling-for-39-million-it-raised-nearly-10-times-that-amount-in-its-ipo/",
+      "pub_date": "2026년 03월 31일 14:30 KST",
+      "summary": "The collapse of the brand, which was originally venture-backed and that went public in 2021,  has been well-documented.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "15% of Americans say they’d be willing to work for an AI boss, according to new poll",
+      "link": "https://techcrunch.com/2026/03/30/ai-work-boss-supervisor-us-quinnipiac-poll/",
+      "pub_date": "2026년 03월 31일 08:41 KST",
+      "summary": "According to a Quinnipiac University poll, 15% of Americans say they'd be willing to have a job where their direct supervisor was an AI program that assigned tasks and set schedules.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Popular AI gateway startup LiteLLM ditches controversial startup Delve",
+      "link": "https://techcrunch.com/2026/03/30/popular-ai-gateway-startup-litellm-ditches-controversial-startup-delve/",
+      "pub_date": "2026년 03월 31일 08:08 KST",
+      "summary": "LiteLLM had obtained two security compliance certifications via Delve and fell victim to some horrific credential-stealing malware last week.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Former Coatue partner raises huge $65M seed for enterprise AI agent startup",
+      "link": "https://techcrunch.com/2026/03/30/former-coatue-partner-raises-huge-65m-seed-for-enterprise-ai-agent-startup/",
+      "pub_date": "2026년 03월 31일 06:53 KST",
+      "summary": "A few things turned investors' heads and drew them to participate in such a big round out of the gate.",
       "section": "TechCrunch",
       "is_korean": false
     },
@@ -111,13 +159,15 @@
       "summary": "As AI floods software development with code, Qodo is betting the real challenge is making sure it actually works.",
       "section": "TechCrunch",
       "is_korean": false
-    },
+    }
+  ],
+  "TC AI": [
     {
       "title": "Starcloud raises $170 million Series A to build data centers in space",
       "link": "https://techcrunch.com/2026/03/30/starcloud-raises-170-million-series-ato-build-data-centers-in-space/",
       "pub_date": "2026년 03월 30일 20:00 KST",
       "summary": "Starcloud becomes the fastest Y Combinator startup to reach unicorn status, just 17 months after demo day.",
-      "section": "TechCrunch",
+      "section": "TC AI",
       "is_korean": false
     },
     {
@@ -125,31 +175,7 @@
       "link": "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/",
       "pub_date": "2026년 03월 30일 12:09 KST",
       "summary": "OpenAI's decision last week to shut down Sora, its AI video-generation tool, just six months after releasing it to the public, raised immediate suspicions. The app had invited users to upload their own faces — so was this some kind of elaborate data grab?",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "The Pixel 10a doesn’t have a camera bump, and it’s great",
-      "link": "https://techcrunch.com/2026/03/29/google-pixel-10a-review-camera-bump-performance-ai-chip/",
-      "pub_date": "2026년 03월 30일 06:30 KST",
-      "summary": "The Google Pixel 10a can lay flat on a table, but otherwise the company hasn't brought a ton of upgrades to its newest budget smartphone.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "YouTube CEO says the best YouTubers will ‘never leave their home’",
-      "link": "https://techcrunch.com/2026/03/29/youtube-ceo-says-the-best-youtubers-will-never-leave-their-home/",
-      "pub_date": "2026년 03월 30일 06:17 KST",
-      "summary": "CEO Neal Mohan insisted that he isn’t worried about Netflix luring away YouTube's most popular creators.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "‘Project Hail Mary’ becomes Amazon MGM’s biggest box office hit",
-      "link": "https://techcrunch.com/2026/03/29/project-hail-mary-becomes-amazon-mgms-biggest-box-office-hit/",
-      "pub_date": "2026년 03월 30일 04:50 KST",
-      "summary": "Amazon’s bet on “Project Hail Mary” has paid off handsomely.",
-      "section": "TechCrunch",
+      "section": "TC AI",
       "is_korean": false
     },
     {
@@ -157,29 +183,9 @@
       "link": "https://techcrunch.com/2026/03/29/soras-shutdown-could-be-a-reality-check-moment-for-ai-video/",
       "pub_date": "2026년 03월 30일 01:30 KST",
       "summary": "Is this just normal corporate strategy, or are we about to see a broader pullback on AI-generated video?",
-      "section": "TechCrunch",
-      "is_korean": false
-    }
-  ],
-  "TC Startups": [
-    {
-      "title": "Elon Musk’s last co-founder reportedly leaves xAI",
-      "link": "https://techcrunch.com/2026/03/28/elon-musks-last-co-founder-reportedly-leaves-xai/",
-      "pub_date": "2026년 03월 29일 01:11 KST",
-      "summary": "All but two of Musk's 11 xAI co-founders departed before this week.",
-      "section": "TC Startups",
+      "section": "TC AI",
       "is_korean": false
     },
-    {
-      "title": "From moon hotels to cattle herding: 8 startups investors chased at YC Demo Day",
-      "link": "https://techcrunch.com/2026/03/28/from-moon-hotels-to-cattle-herding-8-startups-investors-chased-at-yc-demo-day/",
-      "pub_date": "2026년 03월 28일 21:00 KST",
-      "summary": "We polled nearly a dozen VCs to find out which W26 startups are the sought after in the batch.",
-      "section": "TC Startups",
-      "is_korean": false
-    }
-  ],
-  "TC AI": [
     {
       "title": "Bluesky leans into AI with Attie, an app for building custom feeds",
       "link": "https://techcrunch.com/2026/03/28/bluesky-leans-into-ai-with-attie-an-app-for-building-custom-feeds/",
@@ -187,25 +193,57 @@
       "summary": "Bluesky’s new app Attie uses AI to help people build custom feeds the open social networking protocol atproto.",
       "section": "TC AI",
       "is_korean": false
-    },
-    {
-      "title": "Stanford study outlines dangers of asking AI chatbots for personal advice",
-      "link": "https://techcrunch.com/2026/03/28/stanford-study-outlines-dangers-of-asking-ai-chatbots-for-personal-advice/",
-      "pub_date": "2026년 03월 29일 05:45 KST",
-      "summary": "While there’s been plenty of debate about AI sycophancy, a new study by Stanford computer scientists attempts to measure how harmful that tendency might be.",
-      "section": "TC AI",
-      "is_korean": false
-    },
-    {
-      "title": "Anthropic’s Claude popularity with paying consumers is skyrocketing",
-      "link": "https://techcrunch.com/2026/03/28/anthropics-claude-popularity-with-paying-consumers-is-skyrocketing/",
-      "pub_date": "2026년 03월 28일 23:15 KST",
-      "summary": "Estimates for total Claude consumer users are all over the map (we've seen figures ranging from 18 million to 30 million). Anthropic hasn't disclosed this data, but a spokesperson did tell TechCrunch that Claude paid subscriptions have more than doubled this year.",
-      "section": "TC AI",
-      "is_korean": false
     }
   ],
   "SpaceNews": [
+    {
+      "title": "Agentic AI: the future of space warfare",
+      "link": "https://spacenews.com/agentic-ai-the-future-of-space-warfare/",
+      "pub_date": "2026년 03월 31일 22:00 KST",
+      "summary": "<figure><img alt=\"Transporter-16 launch\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/transporter16.jpeg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The future of space warfare will be deter",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Antaris™ Raises $28 Million Series A to Accelerate AI-Driven Space Missions",
+      "link": "https://spacenews.com/antaris-raises-28-million-series-a-to-accelerate-ai-driven-space-missions/",
+      "pub_date": "2026년 03월 31일 21:00 KST",
+      "summary": "<figure><img alt=\"Antaris Space Logo\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"400\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/Antaris-Logo.png?fit=400%2C400&amp;ssl=1\" width=\"400\" /></figure>\n<p>Los Altos, California&#160;&#8212; Antaris™, cre",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "China targets 140 launches in 2026 amid commercial space surge",
+      "link": "https://spacenews.com/china-targets-140-launches-in-2026-amid-commercial-space-surge/",
+      "pub_date": "2026년 03월 31일 19:29 KST",
+      "summary": "<figure><img alt=\"A wide aerial view of a rocket launch site in a desert landscape at sunset. A tall white rocket stands vertically on a launch pad near the center-right, surrounded by service towers and low buildings. A long rectangular assembly building and crane structure sit nearby, connected by",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Europe’s space sector faces power shift as funding grows",
+      "link": "https://spacenews.com/europes-space-sector-faces-power-shift-as-funding-grows/",
+      "pub_date": "2026년 03월 31일 18:00 KST",
+      "summary": "<figure><img alt=\"A photo of Europe taken January 19, 2024, from aboard the International Space Station by a member of the Expedition 70 crew. Credit: NASA\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/0",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Artemis 2 countdown underway",
+      "link": "https://spacenews.com/artemis-2-countdown-underway/",
+      "pub_date": "2026년 03월 31일 15:23 KST",
+      "summary": "<figure><img alt=\"SLS\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"709\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/NHQ202603270006-large.jpg?fit=1024%2C709&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The two-day countdown for the Artemis 2 mission arou",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Second Starlink satellite suffers anomaly, generating debris",
+      "link": "https://spacenews.com/second-starlink-satellite-suffers-anomaly-generating-debris/",
+      "pub_date": "2026년 03월 31일 08:50 KST",
+      "summary": "<figure><img alt=\"Starlink-35956\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"752\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/01/starlink-35956.jpeg?fit=752%2C752&amp;ssl=1\" width=\"752\" /></figure>\n<p>For the second time in just over three months, a ",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
     {
       "title": "Rocket Lab wins German approval for Mynaric deal",
       "link": "https://spacenews.com/rocket-lab-wins-german-approval-for-mynaric-deal/",
@@ -301,17 +339,41 @@
       "summary": "<figure><img alt=\"IM-5\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/im-5.jpeg?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>While NASA outlined plans to increase the cadence of robotic lunar ",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "Starfish Space finds a new partner for docking demonstration mission",
-      "link": "https://spacenews.com/starfish-space-finds-a-new-partner-for-docking-demonstration-mission/",
-      "pub_date": "2026년 03월 29일 05:28 KST",
-      "summary": "<figure><img alt=\"Otter Pup 2 docking\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/05/otterpup2-docking.jpeg?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Starfish Space has changed plans for a ",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "NASA's Artemis 2 pilot Victor Glover listens to 'Whitey on the Moon' every Monday. This is why.",
+      "link": "https://www.space.com/space-exploration/artemis-2-pilot-victor-glover-whitey-on-the-moon-",
+      "pub_date": "2026년 03월 31일 21:00 KST",
+      "summary": "\"It ain't about racism. It's about the human condition.\"",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Why won't NASA's Artemis 2 astronauts land on the moon when they get there?",
+      "link": "https://www.space.com/space-exploration/artemis/why-wont-nasas-artemis-2-astronauts-land-on-the-moon-when-they-get-there",
+      "pub_date": "2026년 03월 31일 19:00 KST",
+      "summary": "Artemis 2 will launch four astronauts around the moon no sooner than April 1. Why won't this quartet land on the lunar surface?",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Northern lights could be visible in 16 states tonight March 31 as a speedy CME barrels toward Earth",
+      "link": "https://www.space.com/stargazing/auroras/northern-lights-could-be-visible-in-16-states-tonight-march-31-as-a-speedy-coronal-mass-ejection-heads-for-earth",
+      "pub_date": "2026년 03월 31일 18:58 KST",
+      "summary": "Auroras may be visible from Alaska to Wyoming tonight as Earth braces for impact from a speedy coronal mass ejection.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Huge solar flare no threat to Artemis 2 astronaut launch to the moon, NASA says",
+      "link": "https://www.space.com/space-exploration/artemis/huge-solar-flare-no-threat-to-artemis-2-astronaut-launch-to-the-moon-nasa-says",
+      "pub_date": "2026년 03월 31일 08:31 KST",
+      "summary": "A massive X1.4 solar flare won't endanger NASA's four Artemis 2 astronauts on their way to the moon.",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "Record-breaking 'space laser' erupts from merging galaxies 8 billion light-years away",
       "link": "https://www.space.com/astronomy/galaxies/record-breaking-space-laser-erupts-from-merging-galaxies-8-billion-light-years-away",
@@ -457,26 +519,10 @@
       "is_korean": false
     },
     {
-      "title": "'We work for them, too': Artemis 2 moon mission is for everyone, NASA astronaut Victor Glover says (video)",
-      "link": "https://www.space.com/space-exploration/artemis/we-work-for-them-too-artemis-2-moon-mission-is-for-everyone-nasa-astronaut-victor-glover-says-video",
+      "title": "Making Canadian history: Artemis 2 astronaut Jeremy Hansen is ready for his epic moon mission",
+      "link": "https://www.space.com/space-exploration/artemis/making-canadian-history-artemis-2-astronaut-jeremy-hansen-is-ready-for-his-epic-moon-mission",
       "pub_date": "2026년 03월 29일 19:00 KST",
-      "summary": "NASA astronaut Victor Glover says he is not solely focused on milestones for the Artemis 2 mission, but also on how to engage different communities about the crew’s work.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "'We're all on this journey together:' Who are the Artemis 2 astronauts launching to the moon?",
-      "link": "https://www.space.com/space-exploration/artemis/were-all-on-this-journey-together-who-are-the-artemis-2-astronauts-launching-to-the-moon",
-      "pub_date": "2026년 03월 29일 19:00 KST",
-      "summary": "Four astronauts. Two countries. One destination: the moon.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "'An incredible privilege and responsibility': Artemis 2's Christina Koch is ready to become the 1st woman to fly around the moon",
-      "link": "https://www.space.com/space-exploration/artemis/an-incredible-privilege-and-responsibility-artemis-2s-christina-koch-is-ready-to-become-the-1st-woman-to-fly-around-the-moon",
-      "pub_date": "2026년 03월 29일 19:00 KST",
-      "summary": "\"We are firing on all cylinders.\"",
+      "summary": "Jeremy Hansen grew up in a world with no Canadian astronauts. Soon, the Artemis 2 crewmate wil become the first person from his country to fly around the moon.",
       "section": "Space.com",
       "is_korean": false
     },
@@ -489,63 +535,47 @@
       "is_korean": false
     },
     {
-      "title": "Making Canadian history: Artemis 2 astronaut Jeremy Hansen is ready for his epic moon mission",
-      "link": "https://www.space.com/space-exploration/artemis/making-canadian-history-artemis-2-astronaut-jeremy-hansen-is-ready-for-his-epic-moon-mission",
+      "title": "'An incredible privilege and responsibility': Artemis 2's Christina Koch is ready to become the 1st woman to fly around the moon",
+      "link": "https://www.space.com/space-exploration/artemis/an-incredible-privilege-and-responsibility-artemis-2s-christina-koch-is-ready-to-become-the-1st-woman-to-fly-around-the-moon",
       "pub_date": "2026년 03월 29일 19:00 KST",
-      "summary": "Jeremy Hansen grew up in a world with no Canadian astronauts. Soon, the Artemis 2 crewmate wil become the first person from his country to fly around the moon.",
+      "summary": "\"We are firing on all cylinders.\"",
       "section": "Space.com",
       "is_korean": false
     },
     {
-      "title": "Where should we send a real 'Hail Mary' spacecraft? A new study has the answers",
-      "link": "https://www.space.com/entertainment/space-movies-shows/where-could-we-send-a-real-hail-mary-spacecraft-a-new-study-has-the-answers",
-      "pub_date": "2026년 03월 29일 01:00 KST",
-      "summary": "A new atlas of 45 potentially habitable planets makes us think of the new film \"Project Hail Mary,\" based on the book by Andy Weir.",
+      "title": "'We're all on this journey together:' Who are the Artemis 2 astronauts launching to the moon?",
+      "link": "https://www.space.com/space-exploration/artemis/were-all-on-this-journey-together-who-are-the-artemis-2-astronauts-launching-to-the-moon",
+      "pub_date": "2026년 03월 29일 19:00 KST",
+      "summary": "Four astronauts. Two countries. One destination: the moon.",
       "section": "Space.com",
       "is_korean": false
     },
     {
-      "title": "Astrophotographer captures spectacular photo of Antennae Galaxies dueling in deep space",
-      "link": "https://www.space.com/stargazing/astrophotography/astrophotographer-captures-spectacular-photo-of-antennae-galaxies-dueling-in-deep-space",
-      "pub_date": "2026년 03월 28일 22:00 KST",
-      "summary": "The Antennae galaxies are witnessed in the process of merging into a single elliptical galaxy.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "This Week In Space podcast: Episode 203 — China Rising",
-      "link": "https://www.space.com/entertainment/space-movies-shows/this-week-in-space-podcast-episode-203-china-rising",
-      "pub_date": "2026년 03월 28일 21:16 KST",
-      "summary": "On Episode 203 of This Week In Space, Rod Pyle and Tariq Malik are joined by Dr. Namrata Goswami of Johns Hopkins University to examine the potential threats to American leadership in space.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "'Project Hail Mary' author Andy Weir reveals his favorite scenes in the movie, praises Ryan Gosling's amazing performance, & more (interview)",
-      "link": "https://www.space.com/entertainment/space-movies-shows/project-hail-mary-author-andy-weir-reveals-his-favorite-scenes-in-the-movie-praises-ryan-goslings-amazing-performance-and-more-interview",
-      "pub_date": "2026년 03월 28일 21:00 KST",
-      "summary": "'Seeing Ryan add all these layers, I'm like, 'Oh good, he’s covering the things that I didn’t do.''",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "This Celestron Firstscope is my go-to for moonwatching and it's 15% off in Amazon's Spring Sale",
-      "link": "https://www.space.com/stargazing/skywatching-kit/this-celestron-firstscope-is-my-go-to-for-moonwatching-and-its-15-percent-off-in-amazons-spring-sale",
-      "pub_date": "2026년 03월 28일 20:00 KST",
-      "summary": "Ideal for adults and children alike, this super-compact tabletop Celestron Firstscope is perfect for fast, fuss-free skywatching. I'd never part with mine and it's even cheaper thanks to Amazon's Big Spring Sale.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "How to watch NASA's Artemis 2 astronauts launch to the moon on April 1",
-      "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronauts-are-launching-to-the-moon-on-april-1-watch-it-live",
-      "pub_date": "2026년 03월 28일 19:00 KST",
-      "summary": "Artemis 2 aims to fly to the moon with four astronauts on April 1 at 6:24 p.m. EDT (2224 GMT). Here's how you can watch live.",
+      "title": "'We work for them, too': Artemis 2 moon mission is for everyone, NASA astronaut Victor Glover says (video)",
+      "link": "https://www.space.com/space-exploration/artemis/we-work-for-them-too-artemis-2-moon-mission-is-for-everyone-nasa-astronaut-victor-glover-says-video",
+      "pub_date": "2026년 03월 29일 19:00 KST",
+      "summary": "NASA astronaut Victor Glover says he is not solely focused on milestones for the Artemis 2 mission, but also on how to engage different communities about the crew’s work.",
       "section": "Space.com",
       "is_korean": false
     }
   ],
   "Payload Space": [
+    {
+      "title": "Voyager and Icarus Team Up on ISS Robotics Demo",
+      "link": "https://payloadspace.com/voyager-and-icarus-team-up-on-in-space-robotics-demo/",
+      "pub_date": "2026년 03월 31일 21:47 KST",
+      "summary": "<p><img alt=\"A rendering of Joy. Image: Icarus Robotics\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/03/Image-3-26-26-at-4.59-PM-e1774961691715-200x200.jpeg\" width=\"200\" />The pages of the ISS manifest are starting to l",
+      "section": "Payload Space",
+      "is_korean": false
+    },
+    {
+      "title": "Q&A With Lunar Base Manager Carlos Garcia-Galan",
+      "link": "https://payloadspace.com/qa-with-lunar-base-manager-carlos-garcia-galan/",
+      "pub_date": "2026년 03월 31일 21:14 KST",
+      "summary": "<p><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/03/moon-base1-200x200.webp\" width=\"200\" />At the start of last week, Carlos Garcia-Galan was working on NASA’s program for a lunar-orbiting habitat. Last Tuesda",
+      "section": "Payload Space",
+      "is_korean": false
+    },
     {
       "title": "Transporter-16 Sends 119 Payloads to Orbit",
       "link": "https://payloadspace.com/transporter-16-sends-119-payloads-to-orbit/",
@@ -615,6 +645,22 @@
   ],
   "Breaking Defense": [
     {
+      "title": "Ukraine attacks on oil and gas to be ‘painful’ for Russian economy: Official",
+      "link": "https://breakingdefense.com/2026/03/ukraine-attacks-on-oil-and-gas-to-be-painful-for-russian-economy-official/",
+      "pub_date": "2026년 03월 31일 16:30 KST",
+      "summary": "<p><a href=\"https://breakingdefense.com/2026/03/ukraine-attacks-on-oil-and-gas-to-be-painful-for-russian-economy-official/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"577\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2026/03/260330_kubilius_GettyImages-2267",
+      "section": "Breaking Defense",
+      "is_korean": false
+    },
+    {
+      "title": "Breaking Defense announces Breaking Defense Europe, a new, distinct, European edition",
+      "link": "https://breakingdefense.com/2026/03/breaking-defense-announces-breaking-defense-europe-a-new-distinct-european-edition/",
+      "pub_date": "2026년 03월 31일 13:45 KST",
+      "summary": "<p><a href=\"https://breakingdefense.com/2026/03/breaking-defense-announces-breaking-defense-europe-a-new-distinct-european-edition/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"569\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2026/03/Breaking-Defense-Europe",
+      "section": "Breaking Defense",
+      "is_korean": false
+    },
+    {
       "title": "Israel approves $45B defense budget as Iran war rages",
       "link": "https://breakingdefense.com/2026/03/israel-approves-45b-defense-budget-as-iran-war-rages/",
       "pub_date": "2026년 03월 31일 04:57 KST",
@@ -664,6 +710,14 @@
     }
   ],
   "Defense News": [
+    {
+      "title": "The US Navy brought a ‘one-of-a-kind’ laser weapon back from the dead",
+      "link": "https://www.defensenews.com/industry/techwatch/2026/03/31/the-us-navy-brought-a-one-of-a-kind-laser-weapon-back-from-the-dead/",
+      "pub_date": "2026년 03월 31일 21:09 KST",
+      "summary": "The U.S. Navy's lone 150 kW laser weapon is back in action – sort of.",
+      "section": "Defense News",
+      "is_korean": false
+    },
     {
       "title": "Limited missions, big risks: What a US ground fight in Iran could become",
       "link": "https://www.defensenews.com/news/your-military/2026/03/30/limited-missions-big-risks-what-a-us-ground-fight-in-iran-could-become/",
@@ -727,33 +781,25 @@
       "summary": "The report comes as U.S. military assets — most recently the Tripoli Amphibious Ready Group and embarked 31st MEU — continue to flood the region.",
       "section": "Defense News",
       "is_korean": false
-    },
-    {
-      "title": "USS Tripoli, embarked 31st Marine Expeditionary Unit arrive in Middle East",
-      "link": "https://www.defensenews.com/news/your-military/2026/03/28/uss-tripoli-embarked-31st-marine-expeditionary-unit-arrive-in-middle-east/",
-      "pub_date": "2026년 03월 29일 01:43 KST",
-      "summary": "The Tripoli Amphibious Ready Group and the embarked 31st Marine Expeditionary Unit entered CENTCOM waters Friday.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "Aircraft carrier USS Gerald R. Ford arrives in Croatia for repairs",
-      "link": "https://www.defensenews.com/news/your-military/2026/03/28/aircraft-carrier-uss-gerald-r-ford-arrives-in-croatia-for-repairs/",
-      "pub_date": "2026년 03월 28일 23:47 KST",
-      "summary": "The warship has been deployed for nine ​months and also took part in operations against Venezuela in the Caribbean ⁠prior to arriving in the Middle East.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "Ukraine’s Zelenskyy agrees to defense cooperation with UAE, Qatar",
-      "link": "https://www.defensenews.com/global/europe/2026/03/28/ukraines-zelenskyy-agrees-to-defense-cooperation-with-uae-qatar/",
-      "pub_date": "2026년 03월 28일 23:26 KST",
-      "summary": "Qatar said on Saturday that Doha and Kyiv have signed a defense cooperation agreement that includes sharing counter-missile and UAS expertise.",
-      "section": "Defense News",
-      "is_korean": false
     }
   ],
   "Defense One": [
+    {
+      "title": "War boosts counter-drone sales, joint ventures",
+      "link": "https://www.defenseone.com/business/2026/03/counter-drone-sales/412504/",
+      "pub_date": "2026년 03월 31일 09:43 KST",
+      "summary": "Recent weeks have seen a flurry of partnerships by defense-tech companies and orders from nations under fire.",
+      "section": "Defense One",
+      "is_korean": false
+    },
+    {
+      "title": "Don't bottleneck defense-personnel vetting with a small-business set-aside",
+      "link": "https://www.defenseone.com/ideas/2026/03/personnel-vetting-small-business/412498/",
+      "pub_date": "2026년 03월 31일 01:25 KST",
+      "summary": "Screening a million federal employees a year has never been a small job, and it's getting bigger.",
+      "section": "Defense One",
+      "is_korean": false
+    },
     {
       "title": "What the Claude AI chatbot really does for CENTCOM",
       "link": "https://www.defenseone.com/defense-systems/2026/03/claude-ai-chatbot-centcom/412475/",
@@ -783,18 +829,10 @@
   ],
   "Air & Space Forces": [
     {
-      "title": "Construction Begins on Prototype Silo for New Sentinel ICBM",
-      "link": "https://www.airandspaceforces.com/construction-begins-prototype-silo-new-sentinel-icbm/",
-      "pub_date": "2026년 03월 31일 05:06 KST",
-      "summary": "<p>The Air Force and industry partners have broken ground on a prototype launch silo for the service’s next-generation Sentinel nuclear intercontinental ballistic missile.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/construction-begins-prototype-silo-new-sentinel-icbm/\">Construction B",
-      "section": "Air & Space Forces",
-      "is_korean": false
-    },
-    {
-      "title": "First USAF F-35s Permanently Based in Japan Arrive at Misawa",
-      "link": "https://www.airandspaceforces.com/first-usaf-f-35s-based-in-japan-arrive-misawa/",
-      "pub_date": "2026년 03월 31일 04:55 KST",
-      "summary": "<p>Misawa Air Base welcomed its first permanently assigned F-35A fighters March 28, marking the first time the Air Force has based F-35s in Japan.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/first-usaf-f-35s-based-in-japan-arrive-misawa/\">First USAF F-35s Permanently Based in Japan Ar",
+      "title": "Key E-3 AWACS Damaged in Iranian Attack on Saudi Air Base",
+      "link": "https://www.airandspaceforces.com/key-e-3-awacs-aircraft-damaged-iranian-attack-saudi-air-base/",
+      "pub_date": "2026년 03월 29일 08:48 KST",
+      "summary": "<p>An important U.S. Air Force E-3 Sentry AWACS command and control plane was among the aircraft damaged in a March 27 Iranian missile and drone attack on Prince Sultan Air Base, Saudi Arabia, people familiar with the matter told Air &#038; Space Forces Magazine.</p>\n<p>The post <a href=\"https://www",
       "section": "Air & Space Forces",
       "is_korean": false
     },
@@ -807,15 +845,71 @@
       "is_korean": false
     },
     {
-      "title": "Key E-3 AWACS Damaged in Iranian Attack on Saudi Air Base",
-      "link": "https://www.airandspaceforces.com/key-e-3-awacs-aircraft-damaged-iranian-attack-saudi-air-base/",
-      "pub_date": "2026년 03월 29일 08:48 KST",
-      "summary": "<p>An important U.S. Air Force E-3 Sentry AWACS command and control plane was among the aircraft damaged in a March 27 Iranian missile and drone attack on Prince Sultan Air Base, Saudi Arabia, people familiar with the matter told Air &#038; Space Forces Magazine.</p>\n<p>The post <a href=\"https://www",
+      "title": "First USAF F-35s Permanently Based in Japan Arrive at Misawa",
+      "link": "https://www.airandspaceforces.com/first-usaf-f-35s-based-in-japan-arrive-misawa/",
+      "pub_date": "2026년 03월 31일 04:55 KST",
+      "summary": "<p>Misawa Air Base welcomed its first permanently assigned F-35A fighters March 28, marking the first time the Air Force has based F-35s in Japan.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/first-usaf-f-35s-based-in-japan-arrive-misawa/\">First USAF F-35s Permanently Based in Japan Ar",
+      "section": "Air & Space Forces",
+      "is_korean": false
+    },
+    {
+      "title": "NGA Launches New Small Sats to Measure Earth’s Magnetic Field",
+      "link": "https://www.airandspaceforces.com/nga-new-small-sats-earth-magnetic-field-pnt/",
+      "pub_date": "2026년 03월 31일 11:13 KST",
+      "summary": "<p>Small satellites meant to improve the way the U.S. measures Earth’s magnetic field—an option to expand the military’s position, navigation, and timing enterprise—launched March 30 from Vandenberg Space Force Base, Calif.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/nga-new-small-sat",
+      "section": "Air & Space Forces",
+      "is_korean": false
+    },
+    {
+      "title": "Missile Cancer Study Finds Increased Rate of Two Cancers Based on More Data",
+      "link": "https://www.airandspaceforces.com/air-force-cancer-study-testicular-cancer-hodgkin-lymphoma/",
+      "pub_date": "2026년 03월 31일 11:05 KST",
+      "summary": "<p>Air Force Global Strike Command has found increased rates of testicular cancer and Hodgkin lymphoma in the nuclear intercontinental ballistic missile community compared to other service career specialties, service officials said March 27.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com",
+      "section": "Air & Space Forces",
+      "is_korean": false
+    },
+    {
+      "title": "Construction Begins on Prototype Silo for New Sentinel ICBM",
+      "link": "https://www.airandspaceforces.com/construction-begins-prototype-silo-new-sentinel-icbm/",
+      "pub_date": "2026년 03월 31일 05:06 KST",
+      "summary": "<p>The Air Force and industry partners have broken ground on a prototype launch silo for the service’s next-generation Sentinel nuclear intercontinental ballistic missile.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/construction-begins-prototype-silo-new-sentinel-icbm/\">Construction B",
       "section": "Air & Space Forces",
       "is_korean": false
     }
   ],
   "Space & Defense": [
+    {
+      "title": "Unseenlabs says BRO-19 satellite launched on SpaceX Transporter-16 mission",
+      "link": "https://spaceanddefense.io/unseenlabs-says-bro-19-satellite-launched-on-spacex-transporter-16-mission/?utm_source=rss&utm_medium=rss&utm_campaign=unseenlabs-says-bro-19-satellite-launched-on-spacex-transporter-16-mission",
+      "pub_date": "2026년 03월 31일 21:14 KST",
+      "summary": "French space company Unseenlabs says it has successfully launched its BRO-19 satellite, expanding its space-based radio-frequency (RF) detection capabilities for maritime monitoring. In an email update, the company said BRO-19 launched on March 30, 2026, at 4:02 a.m. PT aboard SpaceX’s Transporter-1",
+      "section": "Space & Defense",
+      "is_korean": false
+    },
+    {
+      "title": "Inside the Lab building Australia’s next satellite",
+      "link": "https://spaceanddefense.io/inside-the-lab-building-australias-next-satellite/?utm_source=rss&utm_medium=rss&utm_campaign=inside-the-lab-building-australias-next-satellite",
+      "pub_date": "2026년 03월 31일 11:58 KST",
+      "summary": "Filmed at Edith Cowan University in Perth, Rueben Rajasingam, CEO and Co-Founder of LC60.AI, shares an inside look at the company’s new satellite manufacturing facility. From building a commercial-grade satellite in a state-of-the-art clean room to developing a nine-satellite constellation, this int",
+      "section": "Space & Defense",
+      "is_korean": false
+    },
+    {
+      "title": "QuantX Labs Launches World-First Optical Atomic Clock Technology into Orbit",
+      "link": "https://spaceanddefense.io/quantx-labs-launches-world-first-optical-atomic-clock-technology-into-orbit/?utm_source=rss&utm_medium=rss&utm_campaign=quantx-labs-launches-world-first-optical-atomic-clock-technology-into-orbit",
+      "pub_date": "2026년 03월 31일 10:47 KST",
+      "summary": "QuantX Labs has successfully launched its optical frequency comb into orbit, marking a major milestone in the development of the company’s TEMPO.Space optical atomic clock and bringing the world closer to the first fully operational optical atomic clock in space. The optical frequency comb, a critic",
+      "section": "Space & Defense",
+      "is_korean": false
+    },
+    {
+      "title": "Teledyne to supply near-infrared detectors for Lazuli Space Observatory spectrograph",
+      "link": "https://spaceanddefense.io/teledyne-to-supply-near-infrared-detectors-for-lazuli-space-observatory-spectrograph/?utm_source=rss&utm_medium=rss&utm_campaign=teledyne-to-supply-near-infrared-detectors-for-lazuli-space-observatory-spectrograph",
+      "pub_date": "2026년 03월 31일 10:28 KST",
+      "summary": "Teledyne Space Imaging has been awarded a contract by Schmidt Sciences to deliver near-infrared H4RG-10 flight focal plane arrays and custom electronics for the Integral Field Spectrograph on the Lazuli Space Observatory. Lazuli, part of the Eric and Wendy Schmidt Observatory System, is intended to ",
+      "section": "Space & Defense",
+      "is_korean": false
+    },
     {
       "title": "IAF Spring Meetings 2026 set agenda for upcoming space congress in Türkiye",
       "link": "https://spaceanddefense.io/iaf-spring-meetings-2026-set-agenda-for-upcoming-space-congress-in-turkiye/?utm_source=rss&utm_medium=rss&utm_campaign=iaf-spring-meetings-2026-set-agenda-for-upcoming-space-congress-in-turkiye",
@@ -850,6 +944,14 @@
     }
   ],
   "Ars Technica": [
+    {
+      "title": "Water utility announces it's ditching fluoride—then reveals it did so years ago",
+      "link": "https://arstechnica.com/health/2026/03/water-utility-announces-its-ditching-fluoride-then-reveals-it-did-so-years-ago/",
+      "pub_date": "2026년 03월 31일 07:32 KST",
+      "summary": "The water utility highlighted unsubstantiated health concerns.",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
     {
       "title": "Judge halts Nexstar/Tegna merger after FCC let firms exceed TV ownership limit",
       "link": "https://arstechnica.com/tech-policy/2026/03/judge-halts-nexstar-tegna-merger-after-fcc-let-firms-exceed-tv-ownership-limit/",
@@ -911,30 +1013,6 @@
       "link": "https://arstechnica.com/science/2026/03/polygraphs-have-major-flaws-are-there-better-options/",
       "pub_date": "2026년 03월 29일 20:01 KST",
       "summary": "Research proceeds on alternatives, but some doubt whether true lie detection is possible.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Explanation for why we don't see two-foot-long dragonflies anymore fails",
-      "link": "https://arstechnica.com/science/2026/03/leading-explanation-for-ancient-giant-flying-insects-gets-squashed/",
-      "pub_date": "2026년 03월 28일 21:30 KST",
-      "summary": "Breathing capacity could have compensated for lower atmospheric oxygen.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Causality optional? Testing the \"indefinite causal order\" superposition",
-      "link": "https://arstechnica.com/science/2026/03/getting-formal-about-quantum-mechanics-lack-of-causality/",
-      "pub_date": "2026년 03월 28일 21:00 KST",
-      "summary": "A quantum experiment shows that we can formally test if the order of events matters.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "How new fishing tech can reduce bycatch of turtles and other creatures",
-      "link": "https://arstechnica.com/science/2026/03/how-new-fishing-tech-can-reduce-bycatch-of-turtles-and-other-creatures/",
-      "pub_date": "2026년 03월 28일 20:15 KST",
-      "summary": "Specially equipped nets can help save some species, while allowing fisherman to still catch others.",
       "section": "Ars Technica",
       "is_korean": false
     }
