@@ -8,656 +8,145 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-    --bg0: #0a0b0d;
-    --bg1: #12141a;
-    --bg2: #1a1d26;
-    --bg3: #242834;
-    --border: #2a2e3a;
-    --text1: #e8e8ec;
-    --text2: #9a9bb0;
-    --text3: #6b6c80;
-    --gold: #d4a017;
-    --gold-dim: rgba(212,160,23,0.15);
-    --green: #34d399;
-    --green-dim: rgba(52,211,153,0.12);
-    --red: #f87171;
-    --blue: #60a5fa;
-    --blue-dim: rgba(96,165,250,0.12);
-}
-
-body {
-    font-family: 'Noto Sans KR', sans-serif;
-    background: var(--bg0);
-    color: var(--text1);
-    min-height: 100vh;
-}
-
-/* ===== Header ===== */
-.header {
-    background: var(--bg1);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-.header-logo {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--gold);
-    letter-spacing: -0.02em;
-}
-.header-badge {
-    font-size: 0.65rem;
-    font-weight: 500;
-    background: var(--gold-dim);
-    color: var(--gold);
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-.header-right {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.admin-name {
-    font-size: 0.82rem;
-    color: var(--text2);
-}
-.btn-logout {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.8rem;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text2);
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s;
-}
-.btn-logout:hover { border-color: var(--red); color: var(--red); }
-.btn-back {
-    font-size: 0.75rem;
-    padding: 0.35rem 0.8rem;
-    background: transparent;
-    border: 1px solid var(--border);
-    color: var(--text2);
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: inherit;
-    text-decoration: none;
-    transition: all 0.2s;
-}
-.btn-back:hover { border-color: var(--gold); color: var(--gold); }
-
-/* ===== Login Screen ===== */
-.login-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    gap: 1.5rem;
-}
-.login-screen h1 {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--gold);
-}
-.login-screen p {
-    font-size: 0.85rem;
-    color: var(--text3);
-}
-.btn-google-login {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.7rem 1.5rem;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text1);
-    font-family: inherit;
-    font-size: 0.88rem;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.btn-google-login:hover { border-color: var(--gold); }
-.btn-google-login img {
-    width: 18px;
-    height: 18px;
-}
-.access-denied {
-    color: var(--red);
-    font-size: 0.85rem;
-    display: none;
-}
-
-/* ===== Dashboard ===== */
-.dashboard { display: none; }
-
-/* Stats Row */
-.stats-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-}
-.stat-card {
-    background: var(--bg1);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.2rem;
-}
-.stat-label {
-    font-size: 0.72rem;
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 0.4rem;
-}
-.stat-value {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--text1);
-}
-.stat-value.gold { color: var(--gold); }
-.stat-value.green { color: var(--green); }
-.stat-value.blue { color: var(--blue); }
-
-/* Controls */
-.controls {
-    padding: 0 2rem 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-}
-.controls label {
-    font-size: 0.78rem;
-    color: var(--text3);
-}
-.controls input[type="date"] {
-    font-family: inherit;
-    font-size: 0.82rem;
-    padding: 0.4rem 0.6rem;
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    color: var(--text1);
-    outline: none;
-}
-.controls input[type="date"]:focus { border-color: var(--gold); }
-.btn-refresh {
-    font-size: 0.78rem;
-    padding: 0.4rem 1rem;
-    background: var(--gold-dim);
-    border: 1px solid rgba(212,160,23,0.3);
-    color: var(--gold);
-    border-radius: 6px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: all 0.2s;
-}
-.btn-refresh:hover { background: rgba(212,160,23,0.25); }
-
-/* Table */
-.table-wrap {
-    padding: 0 2rem 2rem;
-    overflow-x: auto;
-}
-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.82rem;
-}
-thead th {
-    text-align: left;
-    padding: 0.7rem 1rem;
-    background: var(--bg2);
-    color: var(--text3);
-    font-weight: 500;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-bottom: 1px solid var(--border);
-    white-space: nowrap;
-}
-tbody td {
-    padding: 0.8rem 1rem;
-    border-bottom: 1px solid var(--border);
-    vertical-align: top;
-}
-tbody tr { transition: background 0.15s; }
-tbody tr:hover { background: var(--bg2); }
-
-.user-cell {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-.user-photo {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid var(--border);
-}
-.user-photo-placeholder {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: var(--bg3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.65rem;
-    color: var(--text3);
-}
-.user-name-text { font-weight: 500; }
-
-.time-badge {
-    display: inline-block;
-    font-size: 0.75rem;
-    padding: 0.15rem 0.5rem;
-    background: var(--bg3);
-    border-radius: 4px;
-    color: var(--text2);
-    font-variant-numeric: tabular-nums;
-}
-.duration-badge {
-    display: inline-block;
-    font-size: 0.75rem;
-    padding: 0.15rem 0.5rem;
-    background: var(--green-dim);
-    border-radius: 4px;
-    color: var(--green);
-}
-.pages-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-}
-.page-tag {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.45rem;
-    background: var(--blue-dim);
-    border-radius: 4px;
-    color: var(--blue);
-    max-width: 180px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-.device-text {
-    font-size: 0.72rem;
-    color: var(--text3);
-    max-width: 200px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.empty-state {
-    text-align: center;
-    padding: 3rem;
-    color: var(--text3);
-    font-size: 0.88rem;
-}
-.loading-state {
-    text-align: center;
-    padding: 3rem;
-    color: var(--text3);
-    font-size: 0.85rem;
-}
-.loading-state .spinner {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    border: 2px solid var(--border);
-    border-top-color: var(--gold);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    margin-right: 0.5rem;
-    vertical-align: middle;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* Responsive */
-@media (max-width: 768px) {
-    .header { padding: 0.8rem 1rem; }
-    .stats-row { padding: 1rem; grid-template-columns: 1fr 1fr; }
-    .controls { padding: 0 1rem 1rem; }
-    .table-wrap { padding: 0 1rem 1rem; }
-    .stat-value { font-size: 1.4rem; }
-}
+:root { --bg0:#0a0b0d;--bg1:#12141a;--bg2:#1a1d26;--bg3:#242834;--border:#2a2e3a;--text1:#e8e8ec;--text2:#9a9bb0;--text3:#6b6c80;--gold:#d4a017;--gold-dim:rgba(212,160,23,0.15);--green:#34d399;--green-dim:rgba(52,211,153,0.12);--red:#f87171;--blue:#60a5fa;--blue-dim:rgba(96,165,250,0.12); }
+body { font-family:'Noto Sans KR',sans-serif; background:var(--bg0); color:var(--text1); min-height:100vh; }
+.header { background:var(--bg1); border-bottom:1px solid var(--border); padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
+.header-left { display:flex; align-items:center; gap:0.75rem; }
+.header-logo { font-size:1.1rem; font-weight:700; color:var(--gold); }
+.header-badge { font-size:0.65rem; background:var(--gold-dim); color:var(--gold); padding:0.2rem 0.5rem; border-radius:4px; text-transform:uppercase; letter-spacing:0.05em; }
+.header-right { display:flex; align-items:center; gap:1rem; }
+.admin-name { font-size:0.82rem; color:var(--text2); }
+.btn-logout,.btn-back { font-size:0.75rem; padding:0.35rem 0.8rem; background:transparent; border:1px solid var(--border); color:var(--text2); border-radius:6px; cursor:pointer; font-family:inherit; text-decoration:none; transition:all 0.2s; }
+.btn-logout:hover { border-color:var(--red); color:var(--red); }
+.btn-back:hover { border-color:var(--gold); color:var(--gold); }
+.login-screen { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; gap:1.5rem; }
+.login-screen h1 { font-size:1.3rem; font-weight:700; color:var(--gold); }
+.login-screen p { font-size:0.85rem; color:var(--text3); }
+.btn-google-login { display:flex; align-items:center; gap:0.5rem; padding:0.7rem 1.5rem; background:var(--bg2); border:1px solid var(--border); border-radius:8px; color:var(--text1); font-family:inherit; font-size:0.88rem; cursor:pointer; transition:all 0.2s; }
+.btn-google-login:hover { border-color:var(--gold); }
+.btn-google-login img { width:18px; height:18px; }
+.access-denied { color:var(--red); font-size:0.85rem; display:none; }
+.dashboard { display:none; }
+.tab-bar { display:flex; gap:0; padding:0 2rem; background:var(--bg1); border-bottom:1px solid var(--border); }
+.tab-item { padding:0.8rem 1.5rem; font-size:0.85rem; font-weight:500; color:var(--text3); cursor:pointer; border-bottom:2px solid transparent; transition:all 0.2s; }
+.tab-item:hover { color:var(--text2); }
+.tab-item.active { color:var(--gold); border-bottom-color:var(--gold); }
+.tab-content { display:none; }
+.tab-content.active { display:block; }
+.stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; padding:1.5rem 2rem; }
+.stat-card { background:var(--bg1); border:1px solid var(--border); border-radius:10px; padding:1.2rem; }
+.stat-label { font-size:0.72rem; color:var(--text3); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.4rem; }
+.stat-value { font-size:1.8rem; font-weight:700; }
+.stat-value.gold { color:var(--gold); }
+.stat-value.green { color:var(--green); }
+.stat-value.blue { color:var(--blue); }
+.controls { padding:0 2rem 1rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.controls label { font-size:0.78rem; color:var(--text3); }
+.controls input[type="date"] { font-family:inherit; font-size:0.82rem; padding:0.4rem 0.6rem; background:var(--bg2); border:1px solid var(--border); border-radius:6px; color:var(--text1); outline:none; }
+.controls input[type="date"]:focus { border-color:var(--gold); }
+.btn-refresh { font-size:0.78rem; padding:0.4rem 1rem; background:var(--gold-dim); border:1px solid rgba(212,160,23,0.3); color:var(--gold); border-radius:6px; cursor:pointer; font-family:inherit; transition:all 0.2s; }
+.btn-refresh:hover { background:rgba(212,160,23,0.25); }
+.table-wrap { padding:0 2rem 2rem; overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:0.82rem; }
+thead th { text-align:left; padding:0.7rem 1rem; background:var(--bg2); color:var(--text3); font-weight:500; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid var(--border); white-space:nowrap; }
+tbody td { padding:0.8rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
+tbody tr:hover { background:var(--bg2); }
+.user-cell { display:flex; align-items:center; gap:0.6rem; }
+.user-photo { width:28px; height:28px; border-radius:50%; object-fit:cover; border:1px solid var(--border); }
+.user-photo-placeholder { width:28px; height:28px; border-radius:50%; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:0.65rem; color:var(--text3); }
+.time-badge { display:inline-block; font-size:0.75rem; padding:0.15rem 0.5rem; background:var(--bg3); border-radius:4px; color:var(--text2); }
+.duration-badge { display:inline-block; font-size:0.75rem; padding:0.15rem 0.5rem; background:var(--green-dim); border-radius:4px; color:var(--green); }
+.pages-list { display:flex; flex-wrap:wrap; gap:0.3rem; }
+.page-tag { font-size:0.7rem; padding:0.15rem 0.45rem; background:var(--blue-dim); border-radius:4px; color:var(--blue); max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.device-text { font-size:0.72rem; color:var(--text3); }
+.comment-card { background:var(--bg1); border:1px solid var(--border); border-radius:8px; padding:1rem; margin-bottom:0.6rem; transition:border-color 0.2s; }
+.comment-card:hover { border-color:var(--gold); }
+.comment-card.is-reply { margin-left:2rem; border-left:3px solid var(--bg3); }
+.comment-header { display:flex; align-items:center; gap:0.6rem; margin-bottom:0.5rem; }
+.comment-header img { width:24px; height:24px; border-radius:50%; border:1px solid var(--border); }
+.comment-author { font-size:0.82rem; font-weight:600; }
+.comment-post-tag { font-size:0.62rem; padding:0.1rem 0.4rem; background:var(--gold-dim); color:var(--gold); border-radius:3px; margin-left:auto; }
+.comment-text { font-size:0.85rem; color:var(--text2); line-height:1.6; margin-bottom:0.4rem; word-break:break-word; }
+.comment-reply-label { font-size:0.72rem; color:var(--blue); margin-bottom:0.3rem; }
+.comment-time { font-size:0.68rem; color:var(--text3); }
+.comment-actions { margin-top:0.4rem; }
+.btn-delete-comment { font-size:0.68rem; padding:0.2rem 0.5rem; background:transparent; border:1px solid var(--border); color:var(--text3); border-radius:4px; cursor:pointer; font-family:inherit; transition:all 0.2s; }
+.btn-delete-comment:hover { border-color:var(--red); color:var(--red); }
+.comment-stats { padding:1rem 2rem 0.5rem; font-size:0.78rem; color:var(--text3); }
+.comment-stats span { color:var(--gold); font-weight:600; }
+.comment-list-wrap { padding:0 2rem 2rem; }
+.empty-state { text-align:center; padding:3rem; color:var(--text3); font-size:0.88rem; }
+.loading-state { text-align:center; padding:3rem; color:var(--text3); font-size:0.85rem; }
+.spinner { display:inline-block; width:20px; height:20px; border:2px solid var(--border); border-top-color:var(--gold); border-radius:50%; animation:spin 0.8s linear infinite; margin-right:0.5rem; vertical-align:middle; }
+@keyframes spin { to { transform:rotate(360deg); } }
+@media (max-width:768px) { .header{padding:0.8rem 1rem;flex-wrap:wrap;gap:0.5rem;} .stats-row{padding:1rem;grid-template-columns:1fr 1fr;} .controls{padding:0 1rem 1rem;} .table-wrap,.comment-list-wrap{padding:0 1rem 1rem;} .stat-value{font-size:1.4rem;} .tab-bar{padding:0 1rem;} .tab-item{padding:0.6rem 1rem;font-size:0.78rem;} .comment-card.is-reply{margin-left:1rem;} }
 </style>
 </head>
 <body>
-
-<!-- ===== 로그인 화면 ===== -->
 <div class="login-screen" id="login-screen">
     <h1>🔒 관리자 대시보드</h1>
     <p>초보 투자자 성장기 — 관리자 전용 페이지</p>
-    <button class="btn-google-login" onclick="googleLogin()">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G">
-        Google 로그인
-    </button>
-    <p class="access-denied" id="access-denied">⚠️ 관리자 권한이 없습니다. 다른 계정으로 로그인해주세요.</p>
+    <button class="btn-google-login" onclick="googleLogin()"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="G"> Google 로그인</button>
+    <p class="access-denied" id="access-denied">⚠️ 관리자 권한이 없습니다.</p>
 </div>
-
-<!-- ===== 대시보드 ===== -->
 <div class="dashboard" id="dashboard">
     <div class="header">
-        <div class="header-left">
-            <span class="header-logo">초보 투자자 성장기</span>
-            <span class="header-badge">Admin</span>
-        </div>
-        <div class="header-right">
-            <span class="admin-name" id="admin-name"></span>
-            <a class="btn-back" href="investor-journey.html">← 사이트로</a>
-            <button class="btn-logout" onclick="googleLogout()">로그아웃</button>
-        </div>
+        <div class="header-left"><span class="header-logo">초보 투자자 성장기</span><span class="header-badge">Admin</span></div>
+        <div class="header-right"><span class="admin-name" id="admin-name"></span><a class="btn-back" href="investor-journey.html">← 사이트로</a><button class="btn-logout" onclick="googleLogout()">로그아웃</button></div>
     </div>
-
-    <!-- 통계 카드 -->
-    <div class="stats-row">
-        <div class="stat-card">
-            <div class="stat-label">오늘 방문자</div>
-            <div class="stat-value gold" id="stat-today">-</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-label">총 세션 수 (조회 기간)</div>
-            <div class="stat-value blue" id="stat-sessions">-</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-label">고유 사용자</div>
-            <div class="stat-value green" id="stat-users">-</div>
-        </div>
-        <div class="stat-card">
-            <div class="stat-label">총 등록 사용자</div>
-            <div class="stat-value" id="stat-total-users">-</div>
-        </div>
+    <div class="tab-bar">
+        <div class="tab-item active" onclick="switchTab('logs')">📊 접속 로그</div>
+        <div class="tab-item" onclick="switchTab('comments')">💬 댓글 관리</div>
     </div>
-
-    <!-- 필터 -->
-    <div class="controls">
-        <label>시작일</label>
-        <input type="date" id="date-from">
-        <label>종료일</label>
-        <input type="date" id="date-to">
-        <button class="btn-refresh" onclick="loadLogs()">🔄 조회</button>
+    <div class="tab-content active" id="tab-logs">
+        <div class="stats-row">
+            <div class="stat-card"><div class="stat-label">오늘 방문자</div><div class="stat-value gold" id="stat-today">-</div></div>
+            <div class="stat-card"><div class="stat-label">총 세션 (조회 기간)</div><div class="stat-value blue" id="stat-sessions">-</div></div>
+            <div class="stat-card"><div class="stat-label">고유 사용자</div><div class="stat-value green" id="stat-users">-</div></div>
+            <div class="stat-card"><div class="stat-label">총 등록 사용자</div><div class="stat-value" id="stat-total-users">-</div></div>
+        </div>
+        <div class="controls">
+            <label>시작일</label><input type="date" id="date-from">
+            <label>종료일</label><input type="date" id="date-to">
+            <button class="btn-refresh" onclick="loadLogs()">🔄 조회</button>
+        </div>
+        <div class="table-wrap"><table><thead><tr><th>사용자</th><th>접속일</th><th>접속</th><th>마지막 활동</th><th>체류</th><th>열람한 글</th><th>기기</th></tr></thead><tbody id="log-body"><tr><td colspan="7" class="loading-state"><span class="spinner"></span>로딩 중...</td></tr></tbody></table></div>
     </div>
-
-    <!-- 로그 테이블 -->
-    <div class="table-wrap">
-        <table>
-            <thead>
-                <tr>
-                    <th>사용자</th>
-                    <th>접속일</th>
-                    <th>접속 시간</th>
-                    <th>마지막 활동</th>
-                    <th>체류 시간</th>
-                    <th>열람한 글</th>
-                    <th>기기</th>
-                </tr>
-            </thead>
-            <tbody id="log-body">
-                <tr><td colspan="7" class="loading-state"><span class="spinner"></span>로딩 중...</td></tr>
-            </tbody>
-        </table>
+    <div class="tab-content" id="tab-comments">
+        <div class="comment-stats" id="comment-stats"></div>
+        <div class="controls"><button class="btn-refresh" onclick="loadAllComments()">🔄 새로고침</button></div>
+        <div class="comment-list-wrap" id="comment-list"><div class="loading-state"><span class="spinner"></span>댓글 불러오는 중...</div></div>
     </div>
 </div>
-
-<!-- ★ Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
-
 <script>
-/* ★ Firebase 초기화 */
-firebase.initializeApp({
-    apiKey: "AIzaSyDfDkIUzac4P5b9NrkxrQS1R_qY98ylWnw",
-    authDomain: "forbetterday-daily.firebaseapp.com",
-    projectId: "forbetterday-daily",
-    storageBucket: "forbetterday-daily.firebasestorage.app",
-    messagingSenderId: "143728638736",
-    appId: "1:143728638736:web:e29eb25a3bc68f66d14395",
-    measurementId: "G-VN1M2CZ0Q4"
-});
+firebase.initializeApp({apiKey:"AIzaSyDfDkIUzac4P5b9NrkxrQS1R_qY98ylWnw",authDomain:"forbetterday-daily.firebaseapp.com",projectId:"forbetterday-daily",storageBucket:"forbetterday-daily.firebasestorage.app",messagingSenderId:"143728638736",appId:"1:143728638736:web:e29eb25a3bc68f66d14395"});
+var auth=firebase.auth(),db=firebase.firestore(),ADMIN_UID='xv5KNd2v16QrYMiDKxxwokU84pj1';
 
-var auth = firebase.auth();
-var db = firebase.firestore();
-var ADMIN_UID = 'xv5KNd2v16QrYMiDKxxwokU84pj1';
+function switchTab(t){document.querySelectorAll('.tab-item').forEach(function(e){e.classList.remove('active')});document.querySelectorAll('.tab-content').forEach(function(e){e.classList.remove('active')});event.target.classList.add('active');document.getElementById('tab-'+t).classList.add('active');if(t==='comments')loadAllComments();}
+function googleLogin(){auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(function(e){if(e.code!=='auth/popup-closed-by-user')alert(e.message)});}
+function googleLogout(){auth.signOut();}
 
-/* ★ Google 로그인 */
-function googleLogin() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider).catch(function(err) {
-        if (err.code !== 'auth/popup-closed-by-user') {
-            alert('로그인 실패: ' + err.message);
-        }
-    });
-}
+auth.onAuthStateChanged(function(u){if(u){if(u.uid===ADMIN_UID){document.getElementById('login-screen').style.display='none';document.getElementById('dashboard').style.display='block';document.getElementById('admin-name').textContent=u.displayName||u.email;initDashboard();}else{document.getElementById('access-denied').style.display='block';auth.signOut();}}else{document.getElementById('login-screen').style.display='flex';document.getElementById('dashboard').style.display='none';document.getElementById('access-denied').style.display='none';}});
 
-function googleLogout() {
-    auth.signOut();
-}
+function initDashboard(){var t=new Date(),w=new Date();w.setDate(t.getDate()-7);document.getElementById('date-to').value=fmtD(t);document.getElementById('date-from').value=fmtD(w);loadLogs();db.collection('visits').get().then(function(s){document.getElementById('stat-total-users').textContent=s.size}).catch(function(){document.getElementById('stat-total-users').textContent='?'});}
+function fmtD(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
 
-/* ★ 로그인 상태 감지 */
-auth.onAuthStateChanged(function(user) {
-    if (user) {
-        if (user.uid === ADMIN_UID) {
-            document.getElementById('login-screen').style.display = 'none';
-            document.getElementById('dashboard').style.display = 'block';
-            document.getElementById('admin-name').textContent = user.displayName || user.email;
-            initDashboard();
-        } else {
-            document.getElementById('access-denied').style.display = 'block';
-            auth.signOut();
-        }
-    } else {
-        document.getElementById('login-screen').style.display = 'flex';
-        document.getElementById('dashboard').style.display = 'none';
-        document.getElementById('access-denied').style.display = 'none';
-    }
-});
+function loadLogs(){var f=document.getElementById('date-from').value,t=document.getElementById('date-to').value;if(!f||!t)return;var fd=new Date(f+'T00:00:00+09:00'),td=new Date(t+'T23:59:59+09:00'),tb=document.getElementById('log-body');tb.innerHTML='<tr><td colspan="7" class="loading-state"><span class="spinner"></span>조회 중...</td></tr>';db.collection('user_logs').where('loginTime','>=',fd).where('loginTime','<=',td).orderBy('loginTime','desc').limit(200).get().then(function(s){if(s.empty){tb.innerHTML='<tr><td colspan="7" class="empty-state">📭 해당 기간에 로그가 없습니다.</td></tr>';updS([]);return;}var l=[];s.forEach(function(d){l.push(d.data())});updS(l);renL(l);}).catch(function(e){tb.innerHTML='<tr><td colspan="7" class="empty-state">⚠️ '+e.message+'</td></tr>';});}
 
-/* ★ 대시보드 초기화 */
-function initDashboard() {
-    /* 기본 날짜: 오늘부터 7일 전 */
-    var today = new Date();
-    var weekAgo = new Date();
-    weekAgo.setDate(today.getDate() - 7);
+function updS(l){var ts=fmtD(new Date()),tS=new Set(),uS=new Set();l.forEach(function(g){var d=g.loginTime&&g.loginTime.toDate?g.loginTime.toDate():new Date();if(fmtD(d)===ts)tS.add(g.uid||g.name);uS.add(g.uid||g.name);});document.getElementById('stat-today').textContent=tS.size;document.getElementById('stat-sessions').textContent=l.length;document.getElementById('stat-users').textContent=uS.size;}
 
-    document.getElementById('date-to').value = formatDateInput(today);
-    document.getElementById('date-from').value = formatDateInput(weekAgo);
+function renL(l){var tb=document.getElementById('log-body'),h='';l.forEach(function(g){var lt=g.loginTime&&g.loginTime.toDate?g.loginTime.toDate():null,la=g.lastActive&&g.lastActive.toDate?g.lastActive.toDate():null;var ph=g.photo?'<img class="user-photo" src="'+esc(g.photo)+'" alt="">':'<div class="user-photo-placeholder">👤</div>';var ds=lt?fmtK(lt,'d'):'-',ls=lt?'<span class="time-badge">'+fmtK(lt,'t')+'</span>':'-',as=la?'<span class="time-badge">'+fmtK(la,'t')+'</span>':'-';var dur='-';if(lt&&la){var m=Math.floor((la-lt)/60000);if(m<1)dur='<span class="duration-badge">&lt;1분</span>';else if(m<60)dur='<span class="duration-badge">'+m+'분</span>';else dur='<span class="duration-badge">'+Math.floor(m/60)+'시간 '+(m%60)+'분</span>';}var pg='-';if(g.pagesViewed&&g.pagesViewed.length>0){pg='<div class="pages-list">'+g.pagesViewed.map(function(p){return'<span class="page-tag">'+esc(p)+'</span>'}).join('')+'</div>';}h+='<tr><td><div class="user-cell">'+ph+'<span class="user-name-text">'+esc(g.name||'비회원')+'</span></div></td><td>'+ds+'</td><td>'+ls+'</td><td>'+as+'</td><td>'+dur+'</td><td>'+pg+'</td><td><span class="device-text">'+pDev(g.device)+'</span></td></tr>';});tb.innerHTML=h;}
 
-    loadLogs();
-    loadTotalUsers();
-}
+function loadAllComments(){var el=document.getElementById('comment-list');el.innerHTML='<div class="loading-state"><span class="spinner"></span>댓글 불러오는 중...</div>';db.collection('comments').orderBy('timestamp','desc').limit(200).get().then(function(s){if(s.empty){el.innerHTML='<div class="empty-state">💬 아직 댓글이 없습니다.</div>';document.getElementById('comment-stats').innerHTML='총 <span>0</span>개 댓글';return;}var c=[];s.forEach(function(d){var o=d.data();o._id=d.id;c.push(o);});var rc=c.filter(function(x){return x.parentId}).length;document.getElementById('comment-stats').innerHTML='총 <span>'+c.length+'</span>개 댓글 · 답글 <span>'+rc+'</span>개';var h='';c.forEach(function(x){var ir=!!x.parentId,tm=x.timestamp?new Date(x.timestamp.toDate()).toLocaleString('ko-KR'):'',ed=x.editedAt?' (수정됨)':'',ph=x.photo?'<img src="'+esc(x.photo)+'" alt="" onerror="this.outerHTML=\'<div class=user-photo-placeholder>👤</div>\'">':'<div class="user-photo-placeholder">👤</div>',rl=ir&&x.parentName?'<div class="comment-reply-label">↳ '+esc(x.parentName)+'님에게 답글</div>':'';h+='<div class="comment-card'+(ir?' is-reply':'')+'"><div class="comment-header">'+ph+'<span class="comment-author">'+esc(x.name||'사용자')+'</span><span class="comment-post-tag">글 #'+esc(x.postId||'?')+'</span></div>'+rl+'<div class="comment-text">'+esc(x.text||'')+'</div><div class="comment-time">'+tm+ed+'</div><div class="comment-actions"><button class="btn-delete-comment" onclick="delC(\''+x._id+'\')">🗑 삭제</button></div></div>';});el.innerHTML=h;}).catch(function(e){el.innerHTML='<div class="empty-state">⚠️ '+e.message+'</div>';});}
 
-function formatDateInput(d) {
-    return d.getFullYear() + '-' +
-        String(d.getMonth() + 1).padStart(2, '0') + '-' +
-        String(d.getDate()).padStart(2, '0');
-}
+function delC(id){if(!confirm('이 댓글을 삭제하시겠습니까?'))return;db.collection('comments').doc(id).delete().then(function(){loadAllComments()}).catch(function(e){alert('삭제 실패: '+e.message)});}
 
-/* ★ 총 등록 사용자 수 (visits 컬렉션 기반) */
-function loadTotalUsers() {
-    db.collection('visits').get().then(function(snap) {
-        document.getElementById('stat-total-users').textContent = snap.size;
-    }).catch(function() {
-        document.getElementById('stat-total-users').textContent = '?';
-    });
-}
-
-/* ★ 로그 조회 */
-function loadLogs() {
-    var fromStr = document.getElementById('date-from').value;
-    var toStr = document.getElementById('date-to').value;
-
-    if (!fromStr || !toStr) { alert('날짜를 선택해주세요.'); return; }
-
-    var fromDate = new Date(fromStr + 'T00:00:00+09:00');
-    var toDate = new Date(toStr + 'T23:59:59+09:00');
-
-    var tbody = document.getElementById('log-body');
-    tbody.innerHTML = '<tr><td colspan="7" class="loading-state"><span class="spinner"></span>조회 중...</td></tr>';
-
-    db.collection('user_logs')
-        .where('loginTime', '>=', fromDate)
-        .where('loginTime', '<=', toDate)
-        .orderBy('loginTime', 'desc')
-        .limit(200)
-        .get()
-        .then(function(snap) {
-            if (snap.empty) {
-                tbody.innerHTML = '<tr><td colspan="7" class="empty-state">📭 해당 기간에 접속 로그가 없습니다.</td></tr>';
-                updateStats([], fromDate, toDate);
-                return;
-            }
-
-            var logs = [];
-            snap.forEach(function(doc) {
-                logs.push(doc.data());
-            });
-
-            updateStats(logs, fromDate, toDate);
-            renderTable(logs);
-        })
-        .catch(function(err) {
-            console.error('로그 조회 실패:', err);
-            tbody.innerHTML = '<tr><td colspan="7" class="empty-state">⚠️ 조회 실패: ' + err.message + '</td></tr>';
-        });
-}
-
-/* ★ 통계 업데이트 */
-function updateStats(logs, fromDate, toDate) {
-    /* 오늘 방문자 */
-    var todayStr = formatDateInput(new Date());
-    var todaySet = new Set();
-    var userSet = new Set();
-
-    logs.forEach(function(log) {
-        var loginDate = log.loginTime && log.loginTime.toDate ? log.loginTime.toDate() : new Date(log.loginTime);
-        if (formatDateInput(loginDate) === todayStr) {
-            todaySet.add(log.uid);
-        }
-        userSet.add(log.uid);
-    });
-
-    document.getElementById('stat-today').textContent = todaySet.size;
-    document.getElementById('stat-sessions').textContent = logs.length;
-    document.getElementById('stat-users').textContent = userSet.size;
-}
-
-/* ★ 테이블 렌더링 */
-function renderTable(logs) {
-    var tbody = document.getElementById('log-body');
-    var html = '';
-
-    logs.forEach(function(log) {
-        var loginTime = log.loginTime && log.loginTime.toDate ? log.loginTime.toDate() : null;
-        var lastActive = log.lastActive && log.lastActive.toDate ? log.lastActive.toDate() : null;
-
-        /* 사용자 */
-        var photoHtml = log.photo
-            ? '<img class="user-photo" src="' + escapeHtml(log.photo) + '" alt="">'
-            : '<div class="user-photo-placeholder">?</div>';
-        var nameHtml = '<span class="user-name-text">' + escapeHtml(log.name || '익명') + '</span>';
-
-        /* 날짜 & 시간 */
-        var dateStr = loginTime ? formatKST(loginTime, 'date') : '-';
-        var loginStr = loginTime ? '<span class="time-badge">' + formatKST(loginTime, 'time') + '</span>' : '-';
-        var lastStr = lastActive ? '<span class="time-badge">' + formatKST(lastActive, 'time') + '</span>' : '-';
-
-        /* 체류 시간 */
-        var durationStr = '-';
-        if (loginTime && lastActive) {
-            var diffMs = lastActive.getTime() - loginTime.getTime();
-            if (diffMs > 0) {
-                var mins = Math.floor(diffMs / 60000);
-                if (mins < 1) {
-                    durationStr = '<span class="duration-badge">&lt;1분</span>';
-                } else if (mins < 60) {
-                    durationStr = '<span class="duration-badge">' + mins + '분</span>';
-                } else {
-                    var hrs = Math.floor(mins / 60);
-                    var remMins = mins % 60;
-                    durationStr = '<span class="duration-badge">' + hrs + '시간 ' + remMins + '분</span>';
-                }
-            }
-        }
-
-        /* 열람한 글 */
-        var pagesHtml = '-';
-        if (log.pagesViewed && log.pagesViewed.length > 0) {
-            pagesHtml = '<div class="pages-list">';
-            log.pagesViewed.forEach(function(p) {
-                pagesHtml += '<span class="page-tag" title="' + escapeHtml(p) + '">' + escapeHtml(p) + '</span>';
-            });
-            pagesHtml += '</div>';
-        }
-
-        /* 기기 */
-        var deviceStr = '<span class="device-text" title="' + escapeHtml(log.device || '') + '">' + parseDevice(log.device || '') + '</span>';
-
-        html += '<tr>'
-            + '<td><div class="user-cell">' + photoHtml + nameHtml + '</div></td>'
-            + '<td>' + dateStr + '</td>'
-            + '<td>' + loginStr + '</td>'
-            + '<td>' + lastStr + '</td>'
-            + '<td>' + durationStr + '</td>'
-            + '<td>' + pagesHtml + '</td>'
-            + '<td>' + deviceStr + '</td>'
-            + '</tr>';
-    });
-
-    tbody.innerHTML = html;
-}
-
-/* ★ 유틸리티 함수 */
-function formatKST(date, mode) {
-    var kst = new Date(date.getTime() + (9 * 60 * 60 * 1000));
-    if (mode === 'date') {
-        return kst.getUTCFullYear() + '.' +
-            String(kst.getUTCMonth() + 1).padStart(2, '0') + '.' +
-            String(kst.getUTCDate()).padStart(2, '0');
-    }
-    return String(kst.getUTCHours()).padStart(2, '0') + ':' +
-        String(kst.getUTCMinutes()).padStart(2, '0') + ':' +
-        String(kst.getUTCSeconds()).padStart(2, '0');
-}
-
-function parseDevice(ua) {
-    if (!ua) return '-';
-    if (/iPhone/i.test(ua)) return '📱 iPhone';
-    if (/iPad/i.test(ua)) return '📱 iPad';
-    if (/Android/i.test(ua)) return '📱 Android';
-    if (/Macintosh/i.test(ua)) return '💻 Mac';
-    if (/Windows/i.test(ua)) return '💻 Windows';
-    if (/Linux/i.test(ua)) return '💻 Linux';
-    return '🖥️ 기타';
-}
-
-function escapeHtml(str) {
-    if (!str) return '';
-    return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
+function fmtK(d,m){var k=new Date(d.getTime()+(9*3600000));if(m==='d')return k.getUTCFullYear()+'.'+String(k.getUTCMonth()+1).padStart(2,'0')+'.'+String(k.getUTCDate()).padStart(2,'0');return String(k.getUTCHours()).padStart(2,'0')+':'+String(k.getUTCMinutes()).padStart(2,'0')+':'+String(k.getUTCSeconds()).padStart(2,'0');}
+function pDev(u){if(!u)return'-';if(/iPhone/i.test(u))return'📱 iPhone';if(/iPad/i.test(u))return'📱 iPad';if(/Android/i.test(u))return'📱 Android';if(/Macintosh/i.test(u))return'💻 Mac';if(/Windows/i.test(u))return'💻 Windows';return'🖥️ 기타';}
+function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 </script>
 </body>
 </html>
