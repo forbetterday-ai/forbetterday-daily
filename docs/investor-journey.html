@@ -1044,7 +1044,7 @@ var db = firebase.firestore();
 var currentUser = null;
 var notifUnsubscribe = null;
 var authReady = false;
-var ADMIN_UID = 'REPLACE_WITH_YOUR_GOOGLE_UID'; /* Google 로그인 UID */
+var ADMIN_UID = 'xv5KNd2v16QrYMiDKxxwokU84pj1'; /* Google 로그인 UID */
 
 /* ★ 환영 토스트 표시 */
 function showWelcome(name) {
@@ -1808,17 +1808,28 @@ function trackUserSession() {
     }
     var sessionRef = db.collection('user_logs').doc(_sessionId);
     var isLoggedIn = !!currentUser;
-    var sessionData = {
-        uid: isLoggedIn ? currentUser.uid : null,
-        name: isLoggedIn ? (currentUser.displayName || '사용자') : '비회원',
-        photo: isLoggedIn ? (currentUser.photoURL || '') : '',
-        device: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? '모바일' : 'PC',
-        startTime: firebase.firestore.FieldValue.serverTimestamp(),
-        lastActive: firebase.firestore.FieldValue.serverTimestamp(),
-        pagesViewed: [],
-        date: new Date().toISOString().slice(0, 10)
-    };
-    sessionRef.set(sessionData, { merge: true }).catch(function(e) { console.log('세션 기록 실패:', e); });
+
+    /* 이미 세션이 있으면 loginTime을 덮어쓰지 않음 */
+    sessionRef.get().then(function(doc) {
+        if (doc.exists) {
+            sessionRef.update({
+                lastActive: firebase.firestore.FieldValue.serverTimestamp(),
+                uid: isLoggedIn ? currentUser.uid : null,
+                name: isLoggedIn ? (currentUser.displayName || '사용자') : '비회원',
+                photo: isLoggedIn ? (currentUser.photoURL || '') : ''
+            }).catch(function() {});
+        } else {
+            sessionRef.set({
+                uid: isLoggedIn ? currentUser.uid : null,
+                name: isLoggedIn ? (currentUser.displayName || '사용자') : '비회원',
+                photo: isLoggedIn ? (currentUser.photoURL || '') : '',
+                device: navigator.userAgent,
+                loginTime: firebase.firestore.FieldValue.serverTimestamp(),
+                lastActive: firebase.firestore.FieldValue.serverTimestamp(),
+                pagesViewed: []
+            }).catch(function(e) { console.log('세션 기록 실패:', e); });
+        }
+    }).catch(function() {});
 }
 
 function logPageView(postId, postTitle) {
