@@ -153,6 +153,14 @@
       "description": "전쟁, 유가, 불안 — 좀 더 지켜보자가 가장 비싼 선택이 되는 이유",
       "artifact_url": "https://claude.site/public/artifacts/259ecee4-5d79-4133-9e19-cb4af7471acb/embed",
       "tags": ["시장타이밍", "적립식투자", "투자시작 불안"]
+    },
+    {
+      "id": 20,
+      "date": "2026-04-02",
+      "title": "아직 아무것도 아니라고 느끼는 당신에게",
+      "description": "열심히 하고 있는데 잘하고 있는 건지 모르겠는 모든 사람들에게",
+      "artifact_url": "https://claude.site/public/artifacts/31c86aa8-5ae8-4885-9903-c851c4855d94/embed",
+      "tags": ["꾸준함이", "바른 방향을 만나면", "밝은미래"]
     }
   ]
 }
