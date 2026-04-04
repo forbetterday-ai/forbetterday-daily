@@ -1,6 +1,38 @@
 {
   "TechCrunch": [
     {
+      "title": "Unpacking Peter Thiel’s big bet on solar-powered cow collars",
+      "link": "https://techcrunch.com/2026/04/04/unpacking-peter-thiels-big-bet-on-solar-powered-cow-collars/",
+      "pub_date": "2026년 04월 05일 06:30 KST",
+      "summary": "Why did Founders Fund invest $220 million in cattle management startup Halter?",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Embattled startup Delve has ‘parted ways’ with Y Combinator",
+      "link": "https://techcrunch.com/2026/04/04/embattled-startup-delve-has-parted-ways-with-y-combinator/",
+      "pub_date": "2026년 04월 05일 06:03 KST",
+      "summary": "The controversy around Delve appears to have cost the compliance startup its relationship with accelerator Y Combinator.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage",
+      "link": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
+      "pub_date": "2026년 04월 05일 01:32 KST",
+      "summary": "It’s about to become more expensive for Claude Code subscribers to use Anthropic’s coding assistant with OpenClaw and other third-party tools.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "After fighting malware for decades, this cybersecurity veteran is now hacking drones",
+      "link": "https://techcrunch.com/2026/04/04/after-fighting-malware-for-decades-this-cybersecurity-veteran-is-now-hacking-drones/",
+      "pub_date": "2026년 04월 04일 22:00 KST",
+      "summary": "Mikko Hyppönen is one of the most recognizable faces of the cybersecurity industry. After fighting computer viruses, worms, and malware, for more than 35 years, he tells TechCrunch why he is now working on systems to stop killer drones.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "Anthropic is having a moment in the private markets; SpaceX could spoil the party",
       "link": "https://techcrunch.com/2026/04/03/anthropic-is-having-a-moment-in-the-private-markets-spacex-could-spoil-the-party/",
       "pub_date": "2026년 04월 04일 10:31 KST",
@@ -127,38 +159,6 @@
       "summary": "Next time around, the pressure will be on SpaceX and Blue Origin.",
       "section": "TechCrunch",
       "is_korean": false
-    },
-    {
-      "title": "Gateway Capital announces first close of $25M Fund II",
-      "link": "https://techcrunch.com/2026/04/02/gateway-capital-dana-guthrie-milwaukee-first-close-fund-ii/",
-      "pub_date": "2026년 04월 03일 04:45 KST",
-      "summary": "Gateway Capital, the Milwaukee-based venture firm founded by Dana Guthrie, can now begin investment operations for its $25M Fund II.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "OpenAI acquires TBPN, the buzzy founder-led business talk show",
-      "link": "https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/",
-      "pub_date": "2026년 04월 03일 04:21 KST",
-      "summary": "TBPN, Silicon Valley's cult-favorite tech podcast, will operate independently, even as it's overseen by chief political operative Chris Lehane.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Flipboard’s new ‘social websites’ help publishers and creators tap into the open social web",
-      "link": "https://techcrunch.com/2026/04/02/flipboard-surf-social-websites-help-publishers-and-creators-tap-into-the-open-social-web/",
-      "pub_date": "2026년 04월 03일 04:18 KST",
-      "summary": "Flipboard's social websites consolidate profiles and posts from Bluesky, Mastodon, Threads, YouTube, podcasts, blogs, and RSS feeds into a single, shared destination.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "ElevenLabs releases a new AI-powered music-generation app",
-      "link": "https://techcrunch.com/2026/04/02/elevenlabs-releases-a-new-ai-powered-music-generation-app/",
-      "pub_date": "2026년 04월 03일 03:58 KST",
-      "summary": "ElevenMusic lets users create and remix songs using text prompts. The new app suggests ElevenLabs wants to be more than just a voice model company.",
-      "section": "TechCrunch",
-      "is_korean": false
     }
   ],
   "TC Startups": [
@@ -181,6 +181,14 @@
   ],
   "TC AI": [
     {
+      "title": "OpenAI acquires TBPN, the buzzy founder-led business talk show",
+      "link": "https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/",
+      "pub_date": "2026년 04월 03일 04:21 KST",
+      "summary": "TBPN, Silicon Valley's cult-favorite tech podcast, will operate independently, even as it's overseen by chief political operative Chris Lehane.",
+      "section": "TC AI",
+      "is_korean": false
+    },
+    {
       "title": "Microsoft takes on AI rivals with three new foundational models",
       "link": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
       "pub_date": "2026년 04월 03일 01:48 KST",
@@ -195,17 +203,35 @@
       "summary": "Google is adding a way to customize and instruct avatars for video creation in the Vids app.",
       "section": "TC AI",
       "is_korean": false
-    },
+    }
+  ],
+  "TC Venture": [
     {
-      "title": "Anthropic took down thousands of GitHub repos trying to yank its leaked source code — a move the company says was an accident",
-      "link": "https://techcrunch.com/2026/04/01/anthropic-took-down-thousands-of-github-repos-trying-to-yank-its-leaked-source-code-a-move-the-company-says-was-an-accident/",
-      "pub_date": "2026년 04월 02일 07:12 KST",
-      "summary": "Anthropic executives said it was an accident and retracted the bulk of the takedown notices.",
-      "section": "TC AI",
+      "title": "Gateway Capital announces first close of $25M Fund II",
+      "link": "https://techcrunch.com/2026/04/02/gateway-capital-dana-guthrie-milwaukee-first-close-fund-ii/",
+      "pub_date": "2026년 04월 03일 04:45 KST",
+      "summary": "Gateway Capital, the Milwaukee-based venture firm founded by Dana Guthrie, can now begin investment operations for its $25M Fund II.",
+      "section": "TC Venture",
       "is_korean": false
     }
   ],
   "SpaceNews": [
+    {
+      "title": "Atlas 5 launches Amazon Leo satellites",
+      "link": "https://spacenews.com/atlas-5-launches-amazon-leo-satellites/",
+      "pub_date": "2026년 04월 05일 05:27 KST",
+      "summary": "<figure><img alt=\"Atlas 5 Amazon Leo 5 launch\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/55186765921_b24845973c_k.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>An Atlas 5 launched the l",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Space Force budget would more than double in Trump’s $1.5 trillion defense plan",
+      "link": "https://spacenews.com/space-force-budget-would-more-than-double-in-trumps-1-5-trillion-defense-plan/",
+      "pub_date": "2026년 04월 05일 01:30 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/55183031918_33e332e0c7_k.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>$71 billion request for the U.S. Space Force for fis",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
     {
       "title": "Artemis 2 in good shape cruising towards the moon",
       "link": "https://spacenews.com/artemis-2-in-good-shape-cruising-towards-the-moon/",
@@ -325,17 +351,41 @@
       "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"586\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/rsz_josh_jetter_headshot_2.png?fit=879%2C586&amp;ssl=1\" width=\"879\" /></figure>\n<p>SAN FRANCISCO – Los Angeles startup Fortastra has hi",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "Artemis 2 launches on first human mission to the moon in more than 50 years",
-      "link": "https://spacenews.com/artemis-2-launches-on-first-mission-to-the-moon-in-more-than-50-years/",
-      "pub_date": "2026년 04월 02일 07:50 KST",
-      "summary": "<figure><img alt=\"Artemis 2 liftoff\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/art2-liftoff1.jpeg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The first human mission beyond Earth orbit in",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "Artemis 2 astronauts — now halfway to the moon — report 'burning smell' from toilet, but everything's fine",
+      "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronauts-now-halfway-to-the-moon-report-burning-smell-from-toilet-but-everythings-fine",
+      "pub_date": "2026년 04월 05일 03:30 KST",
+      "summary": "The astronauts on NASA's Artemis 2 moon mission reported a burning smell from their Orion spacecraft toilet overnight, but Mission Control isn't overly concerned. They are over halfway to the moon today.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "This Week In Space podcast: Episode 204 — A New NASA",
+      "link": "https://www.space.com/entertainment/space-movies-shows/this-week-in-space-podcast-episode-204-a-new-nasa",
+      "pub_date": "2026년 04월 05일 00:12 KST",
+      "summary": "On Episode 204 of This Week In Space, Rod Pyle and Tariq Malik bring it to you from Houston, as the Artemis 2 mission continues.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "'Avatar: Fire and Ash' is finally available to buy digitally, and we've got an exclusive behind-the-scenes clip",
+      "link": "https://www.space.com/entertainment/space-movies-shows/avatar-fire-and-ash-is-finally-available-to-buy-digitally-and-weve-got-an-exclusive-behind-the-scenes-clip",
+      "pub_date": "2026년 04월 05일 00:00 KST",
+      "summary": "'If you see the deep ones, the Tsyong, they're spirits sent to judge you.'",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Disclosure day: If ET made contact, how would we handle the news?",
+      "link": "https://www.space.com/space-exploration/search-for-life/disclosure-day-if-et-made-contact-how-would-we-handle-the-news",
+      "pub_date": "2026년 04월 04일 23:00 KST",
+      "summary": "How would people react if an alien civilization actually made contact with us? Space.com talked to experts, who shared a variety of opinions about a possible real-life \"disclosure day.\"",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "Defender at 45: How an icon of space gaming is in danger of being lost to history",
       "link": "https://www.space.com/entertainment/space-games/defender-at-45-how-an-icon-of-space-gaming-is-in-danger-of-being-lost-to-history",
@@ -393,10 +443,10 @@
       "is_korean": false
     },
     {
-      "title": "Watch Atlas V rocket launch its heaviest-ever payload early on April 4",
+      "title": "Atlas V rocket launches its heaviest-ever payload, sending 29 Amazon internet satellites to orbit",
       "link": "https://www.space.com/space-exploration/launches-spacecraft/ula-atlas-v-amazon-leo-5-internet-satellite-launch",
       "pub_date": "2026년 04월 04일 01:00 KST",
-      "summary": "An Atlas V is slated to launch 29 of Amazon's internet satellites — collectively the heaviest load the rocket has ever lofted — on Saturday morning (April 4), and you can watch it live.",
+      "summary": "An Atlas V launched 29 of Amazon's internet satellites — collectively the heaviest load the rocket has ever lofted — on Saturday morning (April 4).",
       "section": "Space.com",
       "is_korean": false
     },
@@ -543,30 +593,6 @@
       "summary": "Artemis 2 is gearing up for a critical engine burn this evening (April 2), which will send the mission's four astronauts on a looping journey around the moon.",
       "section": "Space.com",
       "is_korean": false
-    },
-    {
-      "title": "There was a bit of toilet trouble on NASA's Artemis 2 mission to the moon",
-      "link": "https://www.space.com/space-exploration/artemis/theres-a-bit-of-toilet-trouble-on-nasas-artemis-2-mission-to-the-moon",
-      "pub_date": "2026년 04월 02일 13:17 KST",
-      "summary": "It wasn't their No. 1 problem, but it was a problem for going number one.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Why is the Artemis 2 rocket launch different from all other rocket launches?",
-      "link": "https://www.space.com/space-exploration/artemis/why-is-the-artemis-2-rocket-launch-different-from-all-other-rocket-launches",
-      "pub_date": "2026년 04월 02일 09:35 KST",
-      "summary": "That's one small sip of Manischewitz…",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "NASA launches 4 astronauts to the moon on historic Artemis 2 voyage, a lunar leap for the 21st century",
-      "link": "https://www.space.com/space-exploration/artemis/nasa-launches-4-astronauts-to-the-moon-on-historic-artemis-2-voyage-a-lunar-leap-for-the-21st-century",
-      "pub_date": "2026년 04월 02일 08:02 KST",
-      "summary": "NASA launched its Artemis 2 mission today (April 1), sending astronauts toward the moon for the first time in more than 50 years.",
-      "section": "Space.com",
-      "is_korean": false
     }
   ],
   "Payload Space": [
@@ -607,14 +633,6 @@
       "link": "https://payloadspace.com/phantom-space-acquires-thermal-management-technologies/",
       "pub_date": "2026년 04월 02일 22:00 KST",
       "summary": "<p><img alt=\"A rendering of Phantom Cloud sats deploying from Daytona. Image: Phantom Space\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/04/rsz_phantom_cloud-200x200.webp\" width=\"200\" />Thermal Management Technologies b",
-      "section": "Payload Space",
-      "is_korean": false
-    },
-    {
-      "title": "Artemis II Is On The Way To The Moon",
-      "link": "https://payloadspace.com/artemis-ii-is-on-the-way-to-the-moon/",
-      "pub_date": "2026년 04월 02일 07:50 KST",
-      "summary": "<p><img alt=\"Image: NASA\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/04/HE2w0eZW8AAuYBu-200x200.jpeg\" width=\"200\" />NASA astronauts Reid Wiseman, Christina Koch, and Victor Glover, plus Canadian Space Agency astronaut ",
       "section": "Payload Space",
       "is_korean": false
     }
@@ -817,6 +835,14 @@
   ],
   "Defense News": [
     {
+      "title": "Iran leaves door open for peace talks as hunt for missing US pilot continues",
+      "link": "https://www.defensenews.com/news/pentagon-congress/2026/04/04/iran-leaves-door-open-for-peace-talks-as-hunt-for-missing-us-pilot-continues/",
+      "pub_date": "2026년 04월 04일 23:45 KST",
+      "summary": "The prospect of a U.S. service member alive and on the run in Iran comes days after Trump threatened to bomb Iran “back to the Stone Ages.”",
+      "section": "Defense News",
+      "is_korean": false
+    },
+    {
       "title": "A-10 Warthog crashes near Strait of Hormuz",
       "link": "https://www.defensenews.com/news/your-military/2026/04/03/a-10-warthog-crashes-near-strait-of-hormuz/",
       "pub_date": "2026년 04월 04일 05:51 KST",
@@ -985,14 +1011,6 @@
       "summary": "The reasons are far more organizational than technological.",
       "section": "Defense One",
       "is_korean": false
-    },
-    {
-      "title": "Once again, Trump declines to describe desired end-state to his Iran war",
-      "link": "https://www.defenseone.com/threats/2026/04/trump-iran-war-end-state/412574/",
-      "pub_date": "2026년 04월 02일 11:45 KST",
-      "summary": "In a primetime address, the president doesn’t list military objectives or what the U.S. wants from Tehran.",
-      "section": "Defense One",
-      "is_korean": false
     }
   ],
   "DefenseScoop": [
@@ -1143,49 +1161,17 @@
       "summary": "NASA says its Artemis II mission has departed Earth orbit and is now on a trajectory to fly around the Moon, following a key burn of the Orion spacecraft’s main engine. The agency confirmed a translunar injection burn lasting about six minutes accelerated Orion and its four-person crew — NASA astron",
       "section": "Space & Defense",
       "is_korean": false
-    },
-    {
-      "title": "Scotland’s Consular Community Ignite Global Growth for Scottish Space",
-      "link": "https://spaceanddefense.io/scotlands-consular-community-ignite-global-growth-for-scottish-space/?utm_source=rss&utm_medium=rss&utm_campaign=scotlands-consular-community-ignite-global-growth-for-scottish-space",
-      "pub_date": "2026년 04월 02일 09:47 KST",
-      "summary": "Senior diplomats from 20 countries and some of Scotland’s most innovative space companies gathered in Edinburgh to turn international interest into tangible partnerships at “Space Connects the World: Consular Corps ScottishSpace Forum.” Convened by the Space Scotland International Engagement Working",
-      "section": "Space & Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Bright Ascension software successfully supports launch of AAC Clyde Space VIREON™ satellites",
-      "link": "https://spaceanddefense.io/bright-ascension-software-successfully-supports-launch-of-aac-clyde-space-vireon-satellites/?utm_source=rss&utm_medium=rss&utm_campaign=bright-ascension-software-successfully-supports-launch-of-aac-clyde-space-vireon-satellites",
-      "pub_date": "2026년 04월 02일 09:41 KST",
-      "summary": "Bright Ascension confirms the successful launch of two VIREON™ Earth observation satellites, developed by AAC Clyde Space. The spacecraft — VIREON™ 1 and VIREON™ 2 — launched on SpaceX&#8217;s Transporter 16 mission on 30th March and are now progressing through commissioning and early orbit operatio",
-      "section": "Space & Defense",
-      "is_korean": false
-    },
-    {
-      "title": "NASA launches Artemis II crew on 10-day Moon flyby test mission",
-      "link": "https://spaceanddefense.io/nasa-launches-artemis-ii-crew-on-10-day-moon-flyby-test-mission/?utm_source=rss&utm_medium=rss&utm_campaign=nasa-launches-artemis-ii-crew-on-10-day-moon-flyby-test-mission",
-      "pub_date": "2026년 04월 02일 09:28 KST",
-      "summary": "NASA has launched the crewed Artemis II mission, sending four astronauts aboard the Orion spacecraft on a planned test flight around the Moon and back. The agency’s Space Launch System (SLS) rocket lifted off from Launch Pad 39B at Kennedy Space Center in Florida at 6:35 p.m. EDT on Wednesday, April",
-      "section": "Space & Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Ingalls Shipbuilding launches guided missile destroyer George M. Neal (DDG 131)",
-      "link": "https://spaceanddefense.io/ingalls-shipbuilding-launches-guided-missile-destroyer-george-m-neal-ddg-131/?utm_source=rss&utm_medium=rss&utm_campaign=ingalls-shipbuilding-launches-guided-missile-destroyer-george-m-neal-ddg-131",
-      "pub_date": "2026년 04월 02일 08:53 KST",
-      "summary": "HII’s Ingalls Shipbuilding division has launched the future USS George M. Neal (DDG 131), a milestone in construction of the fourth Flight III Arleigh Burke-class destroyer to be built at the Pascagoula, Mississippi shipyard. HII said shipbuilders completed construction work, secured major component",
-      "section": "Space & Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Teledyne consolidates space-focused businesses under Teledyne Space",
-      "link": "https://spaceanddefense.io/teledyne-consolidates-space-focused-businesses-under-teledyne-space/?utm_source=rss&utm_medium=rss&utm_campaign=teledyne-consolidates-space-focused-businesses-under-teledyne-space",
-      "pub_date": "2026년 04월 02일 08:51 KST",
-      "summary": "Teledyne Technologies has announced it is integrating its space-focused technologies and businesses under a new collective, Teledyne Space, as the company prepares to present the combined portfolio at the 2026 Space Symposium in Colorado Springs. The company said the move is intended to align capabi",
-      "section": "Space & Defense",
-      "is_korean": false
     }
   ],
   "Ars Technica": [
+    {
+      "title": "Tech companies are trying to neuter Colorado’s landmark right-to-repair law",
+      "link": "https://arstechnica.com/tech-policy/2026/04/tech-companies-are-trying-to-neuter-colorados-landmark-right-to-repair-law/",
+      "pub_date": "2026년 04월 05일 05:36 KST",
+      "summary": "A state bill is a glimpse of how corporations are limiting people's ability to make their own fixes and upgrades.",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
     {
       "title": "Trump proposes steep cut to NASA budget as astronauts head for the Moon",
       "link": "https://arstechnica.com/space/2026/04/trump-proposes-steep-cut-to-nasa-budget-as-astronauts-head-for-the-moon/",
@@ -1335,14 +1321,6 @@
       "link": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
       "pub_date": "2026년 04월 03일 01:01 KST",
       "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "This Ford is the quickest production car at the Nürburgring, ever",
-      "link": "https://arstechnica.com/cars/2026/04/a-production-ford-sets-third-fastest-time-ever-at-the-nurburgring/",
-      "pub_date": "2026년 04월 03일 01:00 KST",
-      "summary": "Only three race cars have ever gone quicker around this famous track.",
       "section": "Ars Technica",
       "is_korean": false
     }
