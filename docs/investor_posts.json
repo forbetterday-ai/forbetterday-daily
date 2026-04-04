@@ -161,6 +161,14 @@
       "description": "열심히 하고 있는데 잘하고 있는 건지 모르겠는 모든 사람들에게",
       "artifact_url": "https://claude.site/public/artifacts/31c86aa8-5ae8-4885-9903-c851c4855d94/embed",
       "tags": ["꾸준함이", "바른 방향을 만나면", "밝은미래"]
+    },
+    {
+      "id": 21,
+      "date": "2026-04-04",
+      "title": "경제 뉴스 숫자 읽기 — 체온계를 읽을 줄 알면 겁이 줄어든다",
+      "description": "GDP, 물가, 고용 — 세 개의 숫자만 알면 뉴스가 다르게 보인다",
+      "artifact_url": "https://claude.site/public/artifacts/70ed9251-1001-4f6b-b34c-2aa9917be7eb/embed",
+      "tags": ["경제지표", "숫자", "사실은 이해하기 쉬운 이야기"]
     }
   ]
 }
