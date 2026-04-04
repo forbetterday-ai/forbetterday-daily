@@ -416,7 +416,6 @@ body {
     border: 1px solid var(--border);
     border-radius: 6px;
 }
-/* 대댓글 들여쓰기 */
 .comment-item.reply {
     margin-left: 2rem;
     background: var(--bg3);
@@ -515,7 +514,6 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 .comment-edit-cancel:hover { color: var(--txt); border-color: var(--txt3); }
-/* 대댓글 입력 폼 */
 .reply-form {
     display: flex;
     gap: 0.4rem;
@@ -869,14 +867,12 @@ body.theater-mode .post-embed iframe {
 body.theater-mode .page-header {
     display: none;
 }
-/* 닫힌 포스트 카드도 시어터에서 숨김 */
 body.theater-mode .post-card:not(.theater-active) {
     display: none;
 }
 body.theater-mode .post-card.theater-active .post-header {
     padding: 0.6rem 1.2rem;
 }
-/* 시어터 닫기 버튼 */
 .theater-close-btn {
     display: none;
     position: fixed;
@@ -896,7 +892,6 @@ body.theater-mode .post-card.theater-active .post-header {
 }
 .theater-close-btn:hover { background: #d4a017; color: #fff; border-color: #d4a017; }
 body.theater-mode .theater-close-btn { display: block; }
-/* 전환 애니메이션 */
 .sidebar { transition: transform 0.35s ease, opacity 0.35s ease; }
 .main { transition: margin-left 0.35s ease, padding 0.35s ease; }
 .footer { transition: margin-left 0.35s ease; }
@@ -940,7 +935,6 @@ body.theater-mode .theater-close-btn { display: block; }
         GitHub에서 <code>docs/investor_posts.json</code>을 열고 <code>posts</code> 배열에 새 항목을 추가하세요.<br><br>
         <strong>중요:</strong> artifact publish 시 Allowed domains에 <code>forbetterday-ai.github.io</code>를 입력하세요.
     </div>
-    <!-- 로그인 영역 -->
     <div class="auth-area" id="auth-area">
         <div class="auth-btns" id="login-btns">
             <button class="auth-btn" onclick="googleLogin()">
@@ -958,7 +952,6 @@ body.theater-mode .theater-close-btn { display: block; }
             <button class="auth-logout" onclick="googleLogout()">로그아웃</button>
         </div>
     </div>
-    <!-- 알림 벨 (로그인 시만 보임) -->
     <div class="notif-wrapper" id="notif-wrapper" style="display:none;">
         <button class="notif-bell-btn" id="notif-bell-btn" onclick="toggleNotifDropdown()">
             🔔 알림
@@ -974,11 +967,9 @@ body.theater-mode .theater-close-btn { display: block; }
             </div>
         </div>
     </div>
-    <!-- 관리자 대시보드 링크 (관리자만 보임) -->
     <a href="admin.html" class="sb-nav-link" id="admin-link" style="display:none; margin-top:0.5rem;">⚙️ 관리자 대시보드</a>
 </aside>
 
-<!-- 시어터 모드 닫기 버튼 -->
 <button class="theater-close-btn" id="theater-close-btn" onclick="exitTheater()">◀ 목록으로</button>
 
 <main class="main">
@@ -1006,12 +997,10 @@ body.theater-mode .theater-close-btn { display: block; }
     <div class="footer-text">초보 투자자 성장기 · Powered by Claude AI Artifacts</div>
 </footer>
 
-<!-- 환영 토스트 -->
 <div class="welcome-toast" id="welcome-toast">
     <span class="welcome-emoji">👋</span> 반가워요, <span class="welcome-name" id="welcome-name"></span>님!
 </div>
 
-<!-- ★ Spotify 하단 고정 플레이어 -->
 <div class="spotify-bottom-bar" id="spotifyBar">
     <iframe
         src="https://open.spotify.com/embed/playlist/2tjg5sKHNvPb2FgXEEXCg9?utm_source=generator&theme=0"
@@ -1022,13 +1011,11 @@ body.theater-mode .theater-close-btn { display: block; }
 </div>
 <button class="spotify-toggle-btn" id="spotifyToggle" aria-label="음악 플레이어 토글">🎵</button>
 
-<!-- ★ Firebase SDK -->
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 
 <script>
-/* ★ Firebase 초기화 */
 firebase.initializeApp({
     apiKey: "AIzaSyDfDkIUzac4P5b9NrkxrQS1R_qY98ylWnw",
     authDomain: "forbetterday-daily.firebaseapp.com",
@@ -1044,9 +1031,8 @@ var db = firebase.firestore();
 var currentUser = null;
 var notifUnsubscribe = null;
 var authReady = false;
-var ADMIN_UID = 'xv5KNd2v16QrYMiDKxxwokU84pj1'; /* Google 로그인 UID */
+var ADMIN_UID = 'xv5KNd2v16QrYMiDKxxwokU84pj1';
 
-/* ★ 환영 토스트 표시 */
 function showWelcome(name) {
     var toast = document.getElementById('welcome-toast');
     var nameEl = document.getElementById('welcome-name');
@@ -1055,7 +1041,6 @@ function showWelcome(name) {
     setTimeout(function() { toast.classList.remove('show'); }, 2500);
 }
 
-/* ★ Google 로그인 */
 function googleLogin() {
     var provider = new firebase.auth.GoogleAuthProvider();
     auth.signInWithPopup(provider).catch(function(err) {
@@ -1065,7 +1050,6 @@ function googleLogin() {
     });
 }
 
-/* ★ 카카오 로그인 */
 function kakaoLogin() {
     var provider = new firebase.auth.OAuthProvider('oidc.kakao');
     auth.signInWithPopup(provider).catch(function(err) {
@@ -1075,12 +1059,11 @@ function kakaoLogin() {
     });
 }
 
-/* ★ 로그아웃 */
 function googleLogout() {
     auth.signOut();
 }
 
-/* ★ 로그인 상태 감지 */
+/* ★ 로그인 상태 감지 — 수정: 익명 인증 추가 */
 auth.onAuthStateChanged(function(user) {
     currentUser = user;
     var loginBtns = document.getElementById('login-btns');
@@ -1090,28 +1073,39 @@ auth.onAuthStateChanged(function(user) {
     var notifWrapper = document.getElementById('notif-wrapper');
 
     if (user) {
-        loginBtns.style.display = 'none';
-        userInfo.style.display = 'inline-flex';
-        userPhoto.src = user.photoURL || '';
-        userName.textContent = user.displayName || '사용자';
-        notifWrapper.style.display = 'block';
-        listenNotifications();
-        /* 관리자 대시보드 링크 */
-        var adminLink = document.getElementById('admin-link');
-        if (adminLink) adminLink.style.display = (user.uid === ADMIN_UID) ? 'block' : 'none';
-        /* 실제 로그인 시에만 환영 토스트 (페이지 새로고침 시 안 뜸) */
-        if (authReady) {
-            showWelcome(user.displayName);
+        if (user.isAnonymous) {
+            /* ─── 익명 사용자: 로그인 버튼 유지, 방문만 추적 ─── */
+            loginBtns.style.display = 'flex';
+            userInfo.style.display = 'none';
+            notifWrapper.style.display = 'none';
+            trackVisit();
+            setGreeting();
+        } else {
+            /* ─── 실명 로그인 사용자: 기존 로직 그대로 ─── */
+            loginBtns.style.display = 'none';
+            userInfo.style.display = 'inline-flex';
+            userPhoto.src = user.photoURL || '';
+            userName.textContent = user.displayName || '사용자';
+            notifWrapper.style.display = 'block';
+            listenNotifications();
+            var adminLink = document.getElementById('admin-link');
+            if (adminLink) adminLink.style.display = (user.uid === ADMIN_UID) ? 'block' : 'none';
+            if (authReady) {
+                showWelcome(user.displayName);
+            }
+            trackVisit();
+            setGreeting();
+            updateLastActive();
         }
-        trackVisit();
-        setGreeting();
-        updateLastActive(); /* 세션에 로그인 정보 반영 */
     } else {
+        /* ─── 비로그인: 익명 인증 시도 ─── */
         loginBtns.style.display = 'flex';
         userInfo.style.display = 'none';
         notifWrapper.style.display = 'none';
         if (notifUnsubscribe) { notifUnsubscribe(); notifUnsubscribe = null; }
-        updateLastActive(); /* 로그아웃 시 세션 업데이트 */
+        auth.signInAnonymously().catch(function(err) {
+            console.log('Anonymous auth failed:', err);
+        });
     }
 
     authReady = true;
@@ -1122,12 +1116,11 @@ auth.onAuthStateChanged(function(user) {
     });
 });
 
-/* ★ 댓글 폼 상태 업데이트 */
 function updateCommentForm(postId) {
     var formArea = document.getElementById('comment-form-area-' + postId);
     if (!formArea) return;
 
-    if (currentUser) {
+    if (currentUser && !currentUser.isAnonymous) {
         formArea.innerHTML =
             '<div class="comment-form">' +
                 '<input type="text" class="comment-input" id="comment-input-' + postId + '" placeholder="댓글을 남겨보세요..." maxlength="500" onkeypress="if(event.key===\'Enter\')submitComment(\'' + postId + '\')">' +
@@ -1138,7 +1131,6 @@ function updateCommentForm(postId) {
     }
 }
 
-/* ★ 스팸 필터 */
 var spamWords = ['http://', 'https://', 'www.', '.com', '.net', 'casino', 'poker', 'viagra', '광고', '홍보', '클릭', '무료상담', '대출'];
 function isSpam(text) {
     var lower = text.toLowerCase();
@@ -1148,9 +1140,8 @@ function isSpam(text) {
     return false;
 }
 
-/* ★ 댓글 등록 (일반 댓글) */
 function submitComment(postId) {
-    if (!currentUser) return;
+    if (!currentUser || currentUser.isAnonymous) return;
     var input = document.getElementById('comment-input-' + postId);
     var text = (input.value || '').trim();
     if (!text) return;
@@ -1177,9 +1168,8 @@ function submitComment(postId) {
     });
 }
 
-/* ★ 대댓글(답글) 등록 */
 function submitReply(postId, parentId, parentUid, parentName) {
-    if (!currentUser) return;
+    if (!currentUser || currentUser.isAnonymous) return;
     var input = document.getElementById('reply-input-' + parentId);
     if (!input) return;
     var text = (input.value || '').trim();
@@ -1199,7 +1189,6 @@ function submitReply(postId, parentId, parentUid, parentName) {
         text: text,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     }).then(function() {
-        /* 알림 생성 (본인 댓글에 답글이면 알림 안 보냄) */
         if (parentUid && parentUid !== currentUser.uid) {
             db.collection('notifications').add({
                 recipientUid: parentUid,
@@ -1218,15 +1207,13 @@ function submitReply(postId, parentId, parentUid, parentName) {
     });
 }
 
-/* ★ 답글 입력 폼 열기 */
 function showReplyForm(commentId, postId, parentUid, parentName) {
-    /* 이미 열린 다른 답글 폼 닫기 */
     document.querySelectorAll('.reply-form').forEach(function(el) { el.remove(); });
 
     var commentItem = document.querySelector('[data-comment-id="' + commentId + '"]');
     if (!commentItem) return;
 
-    if (!currentUser) {
+    if (!currentUser || currentUser.isAnonymous) {
         alert('답글을 남기려면 로그인해주세요.');
         return;
     }
@@ -1243,7 +1230,6 @@ function showReplyForm(commentId, postId, parentUid, parentName) {
     document.getElementById('reply-input-' + commentId).focus();
 }
 
-/* ★ 댓글 삭제 (본인만 가능) */
 function deleteComment(commentId, postId) {
     if (!confirm('댓글을 삭제하시겠습니까?')) return;
     db.collection('comments').doc(commentId).delete().then(function() {
@@ -1253,7 +1239,6 @@ function deleteComment(commentId, postId) {
     });
 }
 
-/* ★ 댓글 수정 모드 */
 function editComment(commentId, postId, currentText) {
     var commentItem = document.querySelector('[data-comment-id="' + commentId + '"]');
     if (!commentItem) return;
@@ -1275,7 +1260,6 @@ function editComment(commentId, postId, currentText) {
     if (editInput) editInput.focus();
 }
 
-/* ★ 댓글 수정 저장 */
 function saveComment(commentId, postId) {
     var input = document.getElementById('edit-input-' + commentId);
     if (!input) return;
@@ -1294,7 +1278,6 @@ function saveComment(commentId, postId) {
     });
 }
 
-/* ★ 댓글 수정 취소 */
 function cancelEdit(commentId) {
     var commentItem = document.querySelector('[data-comment-id="' + commentId + '"]');
     if (!commentItem || !commentItem.dataset.originalHtml) return;
@@ -1302,7 +1285,6 @@ function cancelEdit(commentId) {
     bodyEl.innerHTML = commentItem.dataset.originalHtml;
 }
 
-/* ★ 댓글 불러오기 (대댓글 포함) */
 function loadComments(postId) {
     var listEl = document.getElementById('comments-list-' + postId);
     if (!listEl) return;
@@ -1349,11 +1331,10 @@ function loadComments(postId) {
         });
 }
 
-/* ★ 댓글 하나 렌더링 */
 function renderComment(c, postId, isReply) {
     var time = c.timestamp ? new Date(c.timestamp.toDate()).toLocaleString('ko-KR') : '';
     var edited = c.editedAt ? ' (수정됨)' : '';
-    var isMine = (currentUser && currentUser.uid === c.uid);
+    var isMine = (currentUser && !currentUser.isAnonymous && currentUser.uid === c.uid);
     var safeText = c.text.replace(/'/g, "\\'").replace(/"/g, '&quot;');
     var safeName = (c.name || '사용자').replace(/'/g, "\\'").replace(/"/g, '&quot;');
 
@@ -1363,7 +1344,7 @@ function renderComment(c, postId, isReply) {
     var deleteBtn = isMine
         ? '<button class="comment-delete" onclick="deleteComment(\'' + c._id + '\',\'' + postId + '\')">삭제</button>'
         : '';
-    var replyBtn = (!isReply && currentUser)
+    var replyBtn = (!isReply && currentUser && !currentUser.isAnonymous)
         ? '<button class="comment-reply-btn" onclick="showReplyForm(\'' + c._id + '\',\'' + postId + '\',\'' + c.uid + '\',\'' + safeName + '\')">답글</button>'
         : '';
 
@@ -1386,9 +1367,6 @@ function renderComment(c, postId, isReply) {
     '</div>';
 }
 
-/* ===== 알림 시스템 ===== */
-
-/* ★ 알림 실시간 감지 */
 function listenNotifications() {
     if (notifUnsubscribe) notifUnsubscribe();
     if (!currentUser) return;
@@ -1432,13 +1410,11 @@ function listenNotifications() {
         });
 }
 
-/* ★ 알림 드롭다운 토글 */
 function toggleNotifDropdown() {
     var dropdown = document.getElementById('notif-dropdown');
     dropdown.classList.toggle('open');
 }
 
-/* ★ 모두 읽음 처리 */
 function markAllRead() {
     if (!currentUser) return;
     db.collection('notifications')
@@ -1452,40 +1428,31 @@ function markAllRead() {
             });
             return batch.commit();
         })
-        .then(function() {
-            /* onSnapshot이 자동으로 UI 업데이트 */
-        })
+        .then(function() {})
         .catch(function(err) {
             console.error('읽음 처리 실패:', err);
         });
 }
 
-/* ★ 알림 클릭 → 해당 글 댓글로 이동 */
 function goToComment(postId, notifId) {
-    /* 1. 드롭다운 닫기 */
     document.getElementById('notif-dropdown').classList.remove('open');
 
-    /* 2. 해당 알림 읽음 처리 */
     if (notifId && currentUser) {
         db.collection('notifications').doc(notifId).update({ read: true }).catch(function() {});
     }
 
-    /* 3. 해당 포스트 열기 */
     if (!postId) return;
     var embedEl = document.getElementById('embed-' + postId);
     if (!embedEl) return;
 
-    /* 이미 열려있지 않으면 열기 */
     if (!embedEl.classList.contains('open')) {
         togglePost(Number(postId));
     }
 
-    /* 4. 댓글 영역으로 스크롤 (약간 딜레이 후) */
     setTimeout(function() {
         var commentsSection = embedEl.querySelector('.comments-section');
         if (commentsSection) {
             commentsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            /* 잠깐 하이라이트 효과 */
             commentsSection.style.background = 'rgba(166,133,50,0.1)';
             setTimeout(function() {
                 commentsSection.style.background = '';
@@ -1494,7 +1461,6 @@ function goToComment(postId, notifId) {
     }, 300);
 }
 
-/* 드롭다운 바깥 클릭 시 닫기 */
 document.addEventListener('click', function(e) {
     var wrapper = document.getElementById('notif-wrapper');
     if (wrapper && !wrapper.contains(e.target)) {
@@ -1502,9 +1468,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-/* ===== 따뜻한 감성 UI ===== */
-
-/* ★ 시간대별 인사말 */
 function setGreeting() {
     var el = document.getElementById('greeting-bar');
     var h = new Date().getHours();
@@ -1517,11 +1480,10 @@ function setGreeting() {
     else if (h >= 20 && h < 23) { greeting = '오늘도 수고했어요'; emoji = '🌙'; }
     else { greeting = '늦은 밤까지 대단해요'; emoji = '✨'; }
 
-    var nameHtml = currentUser ? ', <span class="greeting-name">' + (currentUser.displayName || '사용자') + '</span>님' : '';
+    var nameHtml = (currentUser && !currentUser.isAnonymous) ? ', <span class="greeting-name">' + (currentUser.displayName || '사용자') + '</span>님' : '';
     el.innerHTML = '<span class="greeting-emoji">' + emoji + '</span> ' + greeting + nameHtml + '!';
 }
 
-/* ★ 오늘의 투자 명언 */
 var investQuotes = [
     { text: '시장에서 가장 위험한 네 글자는 "이번엔 달라"이다.', author: '존 템플턴' },
     { text: '주식시장은 인내심 없는 사람의 돈을 인내심 있는 사람에게 옮기는 도구다.', author: '워렌 버핏' },
@@ -1562,7 +1524,6 @@ function setDailyQuote() {
     el.innerHTML = '"' + q.text + '"<div class="quote-author">— ' + q.author + '</div>';
 }
 
-/* ★ 계절 테마 (월별) — 사이드바 포함 */
 var seasonData = [
     { emoji: '⛄', label: '겨울', accent: '#8baec4', sidebar: '#1a2636', sidebarBrand: '#8baec4' },
     { emoji: '💕', label: '봄이 오고 있어요', accent: '#d4a0b0', sidebar: '#2a1a28', sidebarBrand: '#d4a0b0' },
@@ -1585,10 +1546,8 @@ function setSeasonTheme() {
     document.documentElement.style.setProperty('--accent', s.accent);
     document.documentElement.style.setProperty('--accent2', s.accent + '20');
     document.documentElement.style.setProperty('--bg2', s.sidebar);
-    /* 사이드바 브랜드 색상 */
     var brandEl = document.querySelector('.sb-brand');
     if (brandEl) brandEl.style.color = s.sidebarBrand;
-    /* 탭 active 색상도 계절에 맞춤 */
     document.querySelectorAll('.tab-btn.active').forEach(function(el) {
         el.style.background = s.accent + '25';
         el.style.borderColor = s.accent;
@@ -1596,31 +1555,45 @@ function setSeasonTheme() {
     });
 }
 
-/* ★ 방문 카운터 (로그인 사용자) */
+/* ★ 방문 카운터 — 수정: 익명 사용자도 추적, isAnonymous 필드 저장 */
 function trackVisit() {
     if (!currentUser) {
         document.getElementById('visit-msg').style.display = 'none';
         return;
     }
+    var isAnon = currentUser.isAnonymous;
     var visitRef = db.collection('visits').doc(currentUser.uid);
     visitRef.get().then(function(doc) {
         var count = 1;
-        var today = new Date().toISOString().slice(0, 10); /* YYYY-MM-DD */
+        var today = new Date().toISOString().slice(0, 10);
         var shouldIncrement = true;
 
         if (doc.exists) {
             var data = doc.data();
             count = data.count || 0;
-            /* 마지막 방문 날짜가 오늘이면 카운트 증가하지 않음 */
             if (data.lastDate === today) {
                 shouldIncrement = false;
             }
             if (shouldIncrement) {
                 count = count + 1;
-                visitRef.update({ count: count, lastDate: today, lastVisit: firebase.firestore.FieldValue.serverTimestamp() });
+                visitRef.update({
+                    count: count,
+                    lastDate: today,
+                    lastVisit: firebase.firestore.FieldValue.serverTimestamp(),
+                    isAnonymous: isAnon,
+                    displayName: isAnon ? '익명 방문자' : (currentUser.displayName || '사용자')
+                });
             }
         } else {
-            visitRef.set({ count: 1, lastDate: today, lastVisit: firebase.firestore.FieldValue.serverTimestamp() });
+            visitRef.set({
+                count: 1,
+                lastDate: today,
+                lastVisit: firebase.firestore.FieldValue.serverTimestamp(),
+                isAnonymous: isAnon,
+                displayName: isAnon ? '익명 방문자' : (currentUser.displayName || '사용자'),
+                email: isAnon ? '' : (currentUser.email || ''),
+                photoURL: isAnon ? '' : (currentUser.photoURL || '')
+            });
         }
 
         var msgEl = document.getElementById('visit-msg');
@@ -1637,7 +1610,6 @@ function trackVisit() {
     }).catch(function() {});
 }
 
-/* ★ 읽기 진행률 */
 function updateProgress(totalPosts) {
     var read = JSON.parse(localStorage.getItem('readPosts') || '[]');
     var readCount = read.length;
@@ -1655,7 +1627,6 @@ function markAsRead(postId) {
     }
 }
 
-/* ★ Spotify 토글 */
 (function() {
     var bar = document.getElementById('spotifyBar');
     var btn = document.getElementById('spotifyToggle');
@@ -1666,9 +1637,7 @@ function markAsRead(postId) {
     });
 })();
 
-/* ★ 포스트 로드 */
 document.addEventListener('DOMContentLoaded', async () => {
-    /* 따뜻한 감성 UI 초기화 */
     setGreeting();
     setDailyQuote();
     setSeasonTheme();
@@ -1733,7 +1702,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             document.getElementById('guide-box').style.display = 'none';
         }
 
-        /* 진행률 업데이트 */
         window._totalPosts = posts.length;
         updateProgress(posts.length);
 
@@ -1743,7 +1711,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-/* ★ 포스트 토글 (댓글 로드 포함) */
 function togglePost(id) {
     var embedEl = document.getElementById('embed-' + id);
     var toggleEl = document.getElementById('toggle-' + id);
@@ -1751,7 +1718,6 @@ function togglePost(id) {
     var postCard = embedEl.closest('.post-card');
     var isOpen = embedEl.classList.contains('open');
 
-    /* 다른 열린 포스트 닫기 */
     document.querySelectorAll('.post-embed.open').forEach(function(el) { el.classList.remove('open'); });
     document.querySelectorAll('.post-toggle.open').forEach(function(el) { el.classList.remove('open'); });
     document.querySelectorAll('.post-card.theater-active').forEach(function(el) { el.classList.remove('theater-active'); });
@@ -1765,13 +1731,10 @@ function togglePost(id) {
         }
         updateCommentForm(id);
         loadComments(id);
-        /* 읽음 표시 + 진행률 갱신 */
         markAsRead(id);
         if (window._totalPosts) updateProgress(window._totalPosts);
-        /* 세션 로그에 읽은 글 기록 */
         var postTitle = postCard.querySelector('.post-title');
         logPageView(id, postTitle ? postTitle.textContent : '');
-        /* 시어터 모드 진입 */
         document.body.classList.add('theater-mode');
         window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
@@ -1779,7 +1742,6 @@ function togglePost(id) {
     }
 }
 
-/* ★ 시어터 모드 종료 */
 function exitTheater() {
     document.body.classList.remove('theater-mode');
     document.querySelectorAll('.post-embed.open').forEach(function(el) { el.classList.remove('open'); });
@@ -1798,7 +1760,6 @@ function resizeEmbed(id, event) {
     iframe.style.height = heights[next] + 'px';
 }
 
-/* ===== 세션 추적 (관리자 대시보드용) ===== */
 var _sessionId = null;
 function trackUserSession() {
     _sessionId = sessionStorage.getItem('_sid');
@@ -1807,9 +1768,8 @@ function trackUserSession() {
         sessionStorage.setItem('_sid', _sessionId);
     }
     var sessionRef = db.collection('user_logs').doc(_sessionId);
-    var isLoggedIn = !!currentUser;
+    var isLoggedIn = currentUser && !currentUser.isAnonymous;
 
-    /* 이미 세션이 있으면 loginTime을 덮어쓰지 않음 */
     sessionRef.get().then(function(doc) {
         if (doc.exists) {
             sessionRef.update({
@@ -1843,20 +1803,19 @@ function logPageView(postId, postTitle) {
 
 function updateLastActive() {
     if (!_sessionId) return;
+    var isLoggedIn = currentUser && !currentUser.isAnonymous;
     db.collection('user_logs').doc(_sessionId).update({
         lastActive: firebase.firestore.FieldValue.serverTimestamp(),
-        uid: currentUser ? currentUser.uid : null,
-        name: currentUser ? (currentUser.displayName || '사용자') : '비회원'
+        uid: isLoggedIn ? currentUser.uid : null,
+        name: isLoggedIn ? (currentUser.displayName || '사용자') : '비회원'
     }).catch(function() {});
 }
 
-/* 종료 시 / 탭 전환 시 마지막 활동 시간 업데이트 */
 window.addEventListener('beforeunload', updateLastActive);
 document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'hidden') updateLastActive();
 });
 
-/* 페이지 로드 시 세션 시작 */
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(trackUserSession, 1000);
 });
