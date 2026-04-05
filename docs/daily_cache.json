@@ -1,7 +1,7 @@
 {
   "TechCrunch": [
     {
-      "title": "Unpacking Peter Thiel’s big bet on solar-powered cow collars",
+      "title": "Peter Thiel’s big bet on solar-powered cow collars",
       "link": "https://techcrunch.com/2026/04/04/unpacking-peter-thiels-big-bet-on-solar-powered-cow-collars/",
       "pub_date": "2026년 04월 05일 06:30 KST",
       "summary": "Why did Founders Fund invest $220 million in cattle management startup Halter?",
@@ -143,79 +143,17 @@
       "summary": "The e-commerce giant called the surcharge \"temporary\" but couldn't give a date for when the policy would be retired.",
       "section": "TechCrunch",
       "is_korean": false
-    },
-    {
-      "title": "Telehealth giant Hims & Hers says its customer support system was hacked",
-      "link": "https://techcrunch.com/2026/04/02/telehealth-giant-hims-hers-says-its-customer-support-system-was-hacked/",
-      "pub_date": "2026년 04월 03일 06:26 KST",
-      "summary": "The U.S. telehealth giant says hackers stole customer support ticket data over the course of several days in February.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Artemis II is NASA’s last moon mission without Silicon Valley",
-      "link": "https://techcrunch.com/2026/04/02/artemis-ii-is-nasas-last-moon-mission-without-silicon-valley/",
-      "pub_date": "2026년 04월 03일 05:06 KST",
-      "summary": "Next time around, the pressure will be on SpaceX and Blue Origin.",
-      "section": "TechCrunch",
-      "is_korean": false
-    }
-  ],
-  "TC Startups": [
-    {
-      "title": "Commonwealth Fusion Systems leans on magnets for near-term revenue",
-      "link": "https://techcrunch.com/2026/04/02/commonwealth-fusion-systems-leans-on-magnets-for-near-term-revenue/",
-      "pub_date": "2026년 04월 02일 23:15 KST",
-      "summary": "Realta Fusion is buying magnets from Commonwealth Fusion Systems, providing a revenue stopgap.",
-      "section": "TC Startups",
-      "is_korean": false
-    },
-    {
-      "title": "Diverse teams start with diverse VCs",
-      "link": "https://techcrunch.com/2026/04/02/diverse-teams-start-with-diverse-vcs/",
-      "pub_date": "2026년 04월 02일 22:45 KST",
-      "summary": "It is the path of least resistance for a growth-stage company to hire from the familiar Silicon Valley pipelines but if a founder wants a diverse team, that value has to be put into practice from the very first hire.",
-      "section": "TC Startups",
-      "is_korean": false
-    }
-  ],
-  "TC AI": [
-    {
-      "title": "OpenAI acquires TBPN, the buzzy founder-led business talk show",
-      "link": "https://techcrunch.com/2026/04/02/openai-acquires-tbpn-the-buzzy-founder-led-business-talk-show/",
-      "pub_date": "2026년 04월 03일 04:21 KST",
-      "summary": "TBPN, Silicon Valley's cult-favorite tech podcast, will operate independently, even as it's overseen by chief political operative Chris Lehane.",
-      "section": "TC AI",
-      "is_korean": false
-    },
-    {
-      "title": "Microsoft takes on AI rivals with three new foundational models",
-      "link": "https://techcrunch.com/2026/04/02/microsoft-takes-on-ai-rivals-with-three-new-foundational-models/",
-      "pub_date": "2026년 04월 03일 01:48 KST",
-      "summary": "MAI released models that can transcribe voice into text as well as generate audio and images after the group's formation six months ago.",
-      "section": "TC AI",
-      "is_korean": false
-    },
-    {
-      "title": "Google now lets you direct avatars through prompts in its Vids app",
-      "link": "https://techcrunch.com/2026/04/02/google-now-lets-you-direct-avatars-through-prompts-in-its-vids-app/",
-      "pub_date": "2026년 04월 03일 01:00 KST",
-      "summary": "Google is adding a way to customize and instruct avatars for video creation in the Vids app.",
-      "section": "TC AI",
-      "is_korean": false
-    }
-  ],
-  "TC Venture": [
-    {
-      "title": "Gateway Capital announces first close of $25M Fund II",
-      "link": "https://techcrunch.com/2026/04/02/gateway-capital-dana-guthrie-milwaukee-first-close-fund-ii/",
-      "pub_date": "2026년 04월 03일 04:45 KST",
-      "summary": "Gateway Capital, the Milwaukee-based venture firm founded by Dana Guthrie, can now begin investment operations for its $25M Fund II.",
-      "section": "TC Venture",
-      "is_korean": false
     }
   ],
   "SpaceNews": [
+    {
+      "title": "NASA finalizes science plans for Artemis 2 lunar flyby",
+      "link": "https://spacenews.com/nasa-finalizes-science-plans-for-artemis-2-lunar-flyby/",
+      "pub_date": "2026년 04월 05일 12:29 KST",
+      "summary": "<figure><img alt=\"Orion Artemis 2\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"768\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/art002e004357-large.jpg?fit=1024%2C768&amp;ssl=1\" width=\"1024\" /></figure>\n<p>As Artemis 2 approaches the moon, a NASA s",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
     {
       "title": "Atlas 5 launches Amazon Leo satellites",
       "link": "https://spacenews.com/atlas-5-launches-amazon-leo-satellites/",
@@ -295,65 +233,41 @@
       "summary": "<figure><img alt=\"LINK and Swift\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"410\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/09/katalyst-swift.jpeg?fit=1024%2C410&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA modified operations of an astrophysics spa",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "Former Sierra Space CEO Tom Vice to lead Astrion",
-      "link": "https://spacenews.com/former-sierra-space-ceo-tom-vice-to-lead-astrion/",
-      "pub_date": "2026년 04월 03일 05:44 KST",
-      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"1024\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/GoqkLFEXwAEuwcD-scaled.jpeg?fit=768%2C1024&amp;ssl=1\" width=\"768\" /></figure>\n<p>Huntsville-based defense contractor focuses on system",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Optical terminals still a bottleneck in Pentagon’s proliferated constellation",
-      "link": "https://spacenews.com/optical-terminals-still-a-bottleneck-in-pentagons-proliferated-constellation/",
-      "pub_date": "2026년 04월 03일 04:39 KST",
-      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/55183647589_dcff58d63d_k.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>GP Sandhoo: ‘From an optical communications terminal",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Pentagon awards Raytheon $45 million for GPS ground system as program future is reassessed",
-      "link": "https://spacenews.com/pentagon-awards-raytheon-45-million-for-gps-ground-system-as-program-future-is-reassessed/",
-      "pub_date": "2026년 04월 03일 02:17 KST",
-      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"567\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/05/Screenshot-2025-05-07-at-6.47.20%E2%80%AFPM.png?fit=1024%2C567&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The ‘unpriced change order’ suppo",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Moog Technology Successfully Steers Artemis II Launch",
-      "link": "https://spacenews.com/moog-technology-successfully-steers-artemis-ii-launch/",
-      "pub_date": "2026년 04월 02일 23:55 KST",
-      "summary": "<figure><img alt=\"Moog logo\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"1024\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/03/moog-square.png?fit=1024%2C1024&amp;ssl=1\" width=\"1024\" /></figure>\n<p>East Aurora, NY &#8212; Moog Inc. (NYSE: MOG.A and MOG",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Carmel Ortiz on the evolving landscape of satellite communications",
-      "link": "https://spacenews.com/carmel-ortiz-on-the-evolving-landscape-of-satellite-communications/",
-      "pub_date": "2026년 04월 02일 23:42 KST",
-      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"768\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/space-minds-podcast-SES-2000-1500.jpg?fit=1024%2C768&amp;ssl=1\" width=\"1024\" /></figure>\n<p>In this week&#8217;s episode of Space Minds",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Phantom Space buys thermal specialist to support orbital data center push",
-      "link": "https://spacenews.com/phantom-space-buys-thermal-specialist-to-support-orbital-data-center-push/",
-      "pub_date": "2026년 04월 02일 22:06 KST",
-      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"768\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/20191016_095801-scaled.jpg?fit=1024%2C768&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Phantom Space has acquired satellite thermal hardware ",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Relativity, Hermeus, Astrion and Divergent executives join Fortastra C-suite",
-      "link": "https://spacenews.com/relativity-hermeus-astrion-and-divergent-executives-join-fortastra-c-suite/",
-      "pub_date": "2026년 04월 02일 22:00 KST",
-      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"586\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/rsz_josh_jetter_headshot_2.png?fit=879%2C586&amp;ssl=1\" width=\"879\" /></figure>\n<p>SAN FRANCISCO – Los Angeles startup Fortastra has hi",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "Artemis 2 moon astronauts will try to recreate Apollo 8's historic 'Earthrise' photo during April 6 flyby",
+      "link": "https://www.space.com/space-exploration/artemis/artemis-2-moon-astronauts-will-try-to-recreate-apollo-8s-historic-earthrise-photo-during-april-6-flyby",
+      "pub_date": "2026년 04월 05일 21:00 KST",
+      "summary": "Plans are in place for the crew of Artemis 2 to try to replicate one of the most famous images ever taken from space — Apollo 8's shot of Earth rising over the moon's horizon.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Artemis 2 astronaut Victor Glover delivers inspiring Easter message on the way to the moon (video)",
+      "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronaut-victor-glover-delivers-inspiring-easter-message-on-the-way-to-the-moon-video",
+      "pub_date": "2026년 04월 05일 20:00 KST",
+      "summary": "NASA astronaut Victor Glover delivered an impromptu Easter message as his Artemis 2 Orion capsule sped toward the moon on Saturday (April 4).",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Dozens of hidden star streams found in the outskirts of our Milky Way galaxy",
+      "link": "https://www.space.com/astronomy/stars/dozens-of-hidden-star-streams-found-in-the-outskirts-of-our-milky-way-galaxy",
+      "pub_date": "2026년 04월 05일 19:00 KST",
+      "summary": "Astronomers discovered dozens of stellar streams in the Milky Way using Gaia data, offering new clues about galaxy formation and dark matter.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Lego's educational space sets are a stellar way to teach kids about the basic physics of collisions and impacts",
+      "link": "https://www.space.com/entertainment/space-toys-lego/legos-educational-space-sets-are-a-stellar-way-to-teach-kids-about-the-basic-physics-of-collisions-and-impacts",
+      "pub_date": "2026년 04월 05일 18:00 KST",
+      "summary": "Won't somebody please think of the children?",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "Artemis 2 astronauts — now halfway to the moon — report 'burning smell' from toilet, but everything's fine",
       "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronauts-now-halfway-to-the-moon-report-burning-smell-from-toilet-but-everythings-fine",
@@ -513,86 +427,6 @@
       "summary": "Some airplane passengers had the best seats in the house during NASA's Artemis 2 moon rocket launch. Here are some of my favorite videos captured from the sky.",
       "section": "Space.com",
       "is_korean": false
-    },
-    {
-      "title": "In honor of \"Project Hail Mary\"'s Rocky, we celebrate 17 sci-fi aliens who look nothing like humans",
-      "link": "https://www.space.com/entertainment/space-movies-shows/in-honor-of-project-hail-marys-rocky-we-celebrate-17-sci-fi-aliens-who-look-nothing-like-humans",
-      "pub_date": "2026년 04월 03일 05:00 KST",
-      "summary": "Because there's more to extra-terrestrial life than humans with prosthetics stuck to their foreheads.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Watch comet C/2026 A1 plunge toward the sun online this week",
-      "link": "https://www.space.com/stargazing/watch-comet-c-2026-a1-plunge-toward-the-sun-online-this-week",
-      "pub_date": "2026년 04월 03일 03:00 KST",
-      "summary": "Comet C/2026 A1 (MAPS) belongs to a rare group of sungrazing comets.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "'The universe shall quake in my shadow' — 'Masters of the Universe' looks like the summer's most metal movie",
-      "link": "https://www.space.com/entertainment/space-movies-shows/the-universe-shall-quake-in-my-shadow-masters-of-the-universe-looks-like-the-summers-most-metal-movie",
-      "pub_date": "2026년 04월 03일 02:00 KST",
-      "summary": "Jared Leto's Skeletor slashes He-Man in rocking new 'MOTU' trailer.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "'Supergirl' goes full John Wick to save her dog Krypto in new trailer",
-      "link": "https://www.space.com/entertainment/space-movies-shows/supergirl-goes-full-john-wick-to-save-her-dog-krypto-in-new-trailer",
-      "pub_date": "2026년 04월 03일 01:00 KST",
-      "summary": "\"There's no home without you, buddy.\"",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Stunning new James Webb Space Telescope images reveal 'hidden' stars being born",
-      "link": "https://www.space.com/astronomy/james-webb-space-telescope/stunning-new-james-webb-space-telescope-images-reveal-hidden-stars-being-born",
-      "pub_date": "2026년 04월 03일 00:00 KST",
-      "summary": "Using the James Webb Space Telescope, astronomers have investigated the star-forming region W51, resulting in stunning new images.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "NASA's Artemis 2 moon launch seen from space | Space photo of the day for April 2, 2026",
-      "link": "https://www.space.com/space-exploration/artemis/artemis-2-launch-spotted-from-space-space-photo-of-the-day-for-april-2-2026",
-      "pub_date": "2026년 04월 02일 23:00 KST",
-      "summary": "NASA's Artemis 2 has launched on a history-making journey around the moon and back, and the moment was captured from space.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "How to track the Artemis 2 astronauts on their journey around the moon",
-      "link": "https://www.space.com/space-exploration/artemis/how-to-track-the-artemis-2-astronauts-on-their-journey-around-the-moon",
-      "pub_date": "2026년 04월 02일 22:00 KST",
-      "summary": "You can follow the Artemis 2 astronaut mission around the moon in real time, thanks to a NASA website.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Relive NASA's historic Artemis 2 launch to the moon in these stunning photos",
-      "link": "https://www.space.com/space-exploration/relive-nasas-historic-artemis-2-launch-to-the-moon-in-these-stunning-photos",
-      "pub_date": "2026년 04월 02일 21:56 KST",
-      "summary": "The launch of NASA's historic Artemis 2 mission looks incredible in these stunning launch photos.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "April full moon 2026 dazzles as 'Pink Moon' lights up skies worldwide (photos)",
-      "link": "https://www.space.com/stargazing/april-full-moon-2026-spectacular-photos-pink-moon",
-      "pub_date": "2026년 04월 02일 21:00 KST",
-      "summary": "\"we have a beautiful moon rise, we're headed right at it.\"",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "NASA just launched Artemis 2. What happens today could make or break the moon mission",
-      "link": "https://www.space.com/space-exploration/artemis/nasa-just-launched-artemis-2-what-happens-today-could-make-or-break-the-moon-mission",
-      "pub_date": "2026년 04월 02일 17:17 KST",
-      "summary": "Artemis 2 is gearing up for a critical engine burn this evening (April 2), which will send the mission's four astronauts on a looping journey around the moon.",
-      "section": "Space.com",
-      "is_korean": false
     }
   ],
   "Payload Space": [
@@ -625,14 +459,6 @@
       "link": "https://payloadspace.com/clps-companies-excited-for-nasas-opportunity-bomb-lunar-plan/",
       "pub_date": "2026년 04월 03일 07:10 KST",
       "summary": "<p><img alt=\"&quot;The lander saw her shadow, 2 more weeks of ops!&quot; Image: Firefly Aerospace\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2025/03/blue-ghost-200x200.jpg\" width=\"200\" />Last week, NASA laid out a vision f",
-      "section": "Payload Space",
-      "is_korean": false
-    },
-    {
-      "title": "Phantom Space Acquires Thermal Management Technologies",
-      "link": "https://payloadspace.com/phantom-space-acquires-thermal-management-technologies/",
-      "pub_date": "2026년 04월 02일 22:00 KST",
-      "summary": "<p><img alt=\"A rendering of Phantom Cloud sats deploying from Daytona. Image: Phantom Space\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/04/rsz_phantom_cloud-200x200.webp\" width=\"200\" />Thermal Management Technologies b",
       "section": "Payload Space",
       "is_korean": false
     }
@@ -675,46 +501,6 @@
       "link": "https://www.satellitetoday.com/government-military/2026/04/03/gravitics-receives-strategic-funding-increase-from-spacewerx/",
       "pub_date": "2026년 04월 04일 00:53 KST",
       "summary": "<p>Gravitics has received a Strategic Funding Increase (STRATFI) contract from SpaceWERX, the U.S. Space Force’s innovation arm, to accelerate development and demonstration of its Orbital Carrier architecture, the company said...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/government-mil",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Astroscale and Exotrail to Co-Develop Servicing Mission",
-      "link": "https://www.satellitetoday.com/technology/2026/04/02/astroscale-and-exotrail-to-co-develop-servicing-mission/",
-      "pub_date": "2026년 04월 03일 04:32 KST",
-      "summary": "<p>Astroscale and Exotrail will develop a satellite de-orbiting mission together. This new contract brings together Japanese and French expertise in on-orbit servicing to develop a capability for safely removing satellites...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/technology/2026/04",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "In-Orbit Logistics Companies Call for Clearer Demand Signals from Gov",
-      "link": "https://www.satellitetoday.com/technology/2026/04/02/in-orbit-logistics-companies-call-for-clearer-demand-signals-from-gov/",
-      "pub_date": "2026년 04월 03일 04:29 KST",
-      "summary": "<p>“Space remains hard,” Ryan Wolff, a program director for Tranche 0 and vendor growth at the Space Development Agency (SDA), said during SATShow Week. “It is a hard place to...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/technology/2026/04/02/in-orbit-logistics-companies-call-for-clear",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Canada’s Northwestel to Provide Broadband With Telesat Lightspeed Capacity",
-      "link": "https://www.satellitetoday.com/connectivity/2026/04/02/canadas-northwestel-to-provide-broadband-with-telesat-lightspeed-capacity/",
-      "pub_date": "2026년 04월 03일 04:26 KST",
-      "summary": "<p>Canadian telco Northwestel has signed on for a multi-year contract for capacity from Telesat’s Lightspeed constellation to provide broadband services.  Northwestel operates in Canada’s North, which includes Nunavut, the Northwest...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connecti",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "Phantom Space Acquires Component Supplier Thermal Management Technologies",
-      "link": "https://www.satellitetoday.com/manufacturing/2026/04/02/phantom-space-acquires-component-supplier-thermal-management-technologies/",
-      "pub_date": "2026년 04월 03일 04:13 KST",
-      "summary": "<p>Launch vehicle manufacturer Phantom Space Corporation has acquired Thermal Management Technologies (TMT) to accelerate the development of its planned orbital data center constellation and further its vertical integration strategy. TMT...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/man",
-      "section": "Satellite Today",
-      "is_korean": false
-    },
-    {
-      "title": "ArkEdge Space to Work With ABIT For IoT Service Rollout",
-      "link": "https://www.satellitetoday.com/connectivity/2026/04/02/arkedge-space-to-work-with-abit-for-iot-service-rollout/",
-      "pub_date": "2026년 04월 03일 04:09 KST",
-      "summary": "<p>ArkEdge Space and ABIT Corporation have signed a memorandum of understanding to jointly develop Internet of Things (IoT) solutions and satellite communication devices, ArkEdge Space said on Thursday. The partnership...</p>\n<p>The post <a href=\"https://www.satellitetoday.com/connectivity/2026/04/0",
       "section": "Satellite Today",
       "is_korean": false
     }
@@ -773,62 +559,6 @@
       "link": "https://breakingdefense.com/2026/04/trump-to-propose-1-5-trillion-defense-budget-banking-on-350-billion-from-reconciliation/",
       "pub_date": "2026년 04월 03일 08:09 KST",
       "summary": "<p><a href=\"https://breakingdefense.com/2026/04/trump-to-propose-1-5-trillion-defense-budget-banking-on-350-billion-from-reconciliation/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"493\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2025/12/251222_trump_battl",
-      "section": "Breaking Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Hegseth fires Army’s top officer, Gen. Randy George",
-      "link": "https://breakingdefense.com/2026/04/hegseth-fires-armys-top-officer-gen-randy-george/",
-      "pub_date": "2026년 04월 03일 05:37 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/hegseth-fires-armys-top-officer-gen-randy-george/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"577\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2025/01/randy-george-scaled-e1735919540725-1024x577.jpg\" style=\"h",
-      "section": "Breaking Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Iran conflict could open door for new players in Gulf defense market",
-      "link": "https://breakingdefense.com/2026/04/iran-conflict-could-open-door-for-new-players-in-gulf-defense-market/",
-      "pub_date": "2026년 04월 03일 03:16 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/iran-conflict-could-open-door-for-new-players-in-gulf-defense-market/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"577\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2026/03/9438856-scaled-e1774547550327-1024x57",
-      "section": "Breaking Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Space Force plans to establish HQ staff group as surrogate Futures Command",
-      "link": "https://breakingdefense.com/2026/04/space-force-plans-to-establish-hq-staff-group-as-surrogate-futures-command/",
-      "pub_date": "2026년 04월 03일 02:41 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/space-force-plans-to-establish-hq-staff-group-as-surrogate-futures-command/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"576\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2025/09/9134128-scaled-e1758643306829-1",
-      "section": "Breaking Defense",
-      "is_korean": false
-    },
-    {
-      "title": "A year after ‘Liberation Day,’ impact of Trump tariffs on defense industry remains muted",
-      "link": "https://breakingdefense.com/2026/04/a-year-after-liberation-day-impact-of-trump-tariffs-on-defense-industry-remains-muted/",
-      "pub_date": "2026년 04월 03일 01:42 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/a-year-after-liberation-day-impact-of-trump-tariffs-on-defense-industry-remains-muted/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"577\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2025/04/trump-tariff-scaled-",
-      "section": "Breaking Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Edgewing receives first GCAP next-gen fighter international contract to boost design activities",
-      "link": "https://breakingdefense.com/2026/04/edgewing-receives-first-gcap-next-gen-fighter-international-contract-to-boost-design-activities/",
-      "pub_date": "2026년 04월 03일 00:05 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/edgewing-receives-first-gcap-next-gen-fighter-international-contract-to-boost-design-activities/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"683\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2026/04/GCAP_aircr",
-      "section": "Breaking Defense",
-      "is_korean": false
-    },
-    {
-      "title": "ST Engineering to serve as subcontractor for Kuwaiti navy vessels deal",
-      "link": "https://breakingdefense.com/2026/04/st-engineering-to-serve-as-subcontractor-for-kuwaiti-navy-vessels-deal/",
-      "pub_date": "2026년 04월 02일 23:02 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/st-engineering-to-serve-as-subcontractor-for-kuwaiti-navy-vessels-deal/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"575\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2025/01/250114_falaj3_ship_EDGE_YTgrab-e173",
-      "section": "Breaking Defense",
-      "is_korean": false
-    },
-    {
-      "title": "Army’s enterprise contracting vehicles likely to speed procurement but not without risk",
-      "link": "https://breakingdefense.com/2026/04/armys-enterprise-contracting-vehicles-likely-to-speed-procurement-but-not-without-risk/",
-      "pub_date": "2026년 04월 02일 21:00 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/armys-enterprise-contracting-vehicles-likely-to-speed-procurement-but-not-without-risk/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"576\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2023/05/230502_anduril_soft",
       "section": "Breaking Defense",
       "is_korean": false
     }
@@ -897,46 +627,6 @@
       "summary": "The Pentagon intends to replace him with a leader aligned with Hegseth and President Donald Trump’s vision for the Army, an official told Military Times.",
       "section": "Defense News",
       "is_korean": false
-    },
-    {
-      "title": "Bipartisan group of senators vow to keep US in NATO despite Trump threats",
-      "link": "https://www.defensenews.com/news/pentagon-congress/2026/04/02/bipartisan-group-of-senators-vow-to-keep-us-in-nato-despite-trump-threats/",
-      "pub_date": "2026년 04월 03일 05:56 KST",
-      "summary": "The senators reaffirmed America's commitment to NATO just one day after Trump threatened to abandon the transatlantic alliance.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "Golden Dome, ships and missiles top Trump’s $1.5 trillion defense wish list",
-      "link": "https://www.defensenews.com/news/pentagon-congress/2026/04/02/golden-dome-ships-and-missiles-top-trumps-15-trillion-defense-wish-list/",
-      "pub_date": "2026년 04월 03일 04:09 KST",
-      "summary": "Trump is set to unveil the fiscal 2027 defense budget request on Friday.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "US defense stocks see no Iran war lift after early surge",
-      "link": "https://www.defensenews.com/news/your-military/2026/04/02/us-defense-stocks-see-no-iran-war-lift-after-early-surge/",
-      "pub_date": "2026년 04월 03일 03:55 KST",
-      "summary": "U.S. defense stocks have declined even as the Iran war drags on.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "Money starts flowing for new GCAP fighter, as Britain sorts out finances",
-      "link": "https://www.defensenews.com/global/europe/2026/04/02/money-starts-flowing-for-new-gcap-fighter-as-britain-sorts-out-finances/",
-      "pub_date": "2026년 04월 02일 23:56 KST",
-      "summary": "A source on the program told Defense News the new contract is a “bridge” allowing work to continue until the end of June.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "Swedish arms maker to set up major ammunition plant in Estonia",
-      "link": "https://www.defensenews.com/global/europe/2026/04/02/swedish-arms-maker-to-set-up-major-ammunition-plant-in-estonia/",
-      "pub_date": "2026년 04월 02일 20:40 KST",
-      "summary": "Estonian Defense Minister Hanno Pevkur said the company had been promised confidentiality until contracts are signed, local broadcaster ERR reported.",
-      "section": "Defense News",
-      "is_korean": false
     }
   ],
   "Defense One": [
@@ -987,30 +677,6 @@
       "summary": "A counter-drone leader describes front lines where humans hide, machines collaborate, and survival depends on adapting in real time.",
       "section": "Defense One",
       "is_korean": false
-    },
-    {
-      "title": "The US has declared ‘space superiority’ over Iran. What does that mean?",
-      "link": "https://www.defenseone.com/threats/2026/04/us-has-declared-space-superiority-over-iran-what-does-mean/412605/",
-      "pub_date": "2026년 04월 03일 07:33 KST",
-      "summary": "Iran’s nascent space program was destroyed. It's still using other nations' space intel.",
-      "section": "Defense One",
-      "is_korean": false
-    },
-    {
-      "title": "Hegseth forces out Army’s top general in ‘widely anticipated’ move",
-      "link": "https://www.defenseone.com/policy/2026/04/hegseth-forces-out-armys-top-general-widely-anticipated-move/412603/",
-      "pub_date": "2026년 04월 03일 07:29 KST",
-      "summary": "The writing was on the wall late last year, when Gen. Randy George’s deputy was replaced by Hegseth’s senior military aide.",
-      "section": "Defense One",
-      "is_korean": false
-    },
-    {
-      "title": "How Ukraine’s defense industry innovates at the speed of modern war",
-      "link": "https://www.defenseone.com/ideas/2026/04/ukraine-defense-industry-innovates-modern-war/412594/",
-      "pub_date": "2026년 04월 03일 04:07 KST",
-      "summary": "The reasons are far more organizational than technological.",
-      "section": "Defense One",
-      "is_korean": false
     }
   ],
   "DefenseScoop": [
@@ -1045,46 +711,22 @@
       "summary": "<p>The Army's chief of staff typically serves a four-year term, cutting George’s tenure short by more than a year.</p>\n<p>The post <a href=\"https://defensescoop.com/2026/04/02/hegseth-fired-gen-george-army-chief-of-staff/\">Hegseth ousts Gen. George as Army chief of staff</a> appeared first on <a hre",
       "section": "DefenseScoop",
       "is_korean": false
-    },
-    {
-      "title": "Space Force using ‘integrated test teams’ to speed up capability delivery",
-      "link": "https://defensescoop.com/2026/04/02/space-force-integrated-test-teams-speed-up-capability-delivery/",
-      "pub_date": "2026년 04월 03일 05:52 KST",
-      "summary": "<p>“One of the things that we’re doing is, we’re kind of combining [developmental testing] and [operational testing],” Lt. Gen. Douglass Schiess said. </p>\n<p>The post <a href=\"https://defensescoop.com/2026/04/02/space-force-integrated-test-teams-speed-up-capability-delivery/\">Space Force using &#82",
-      "section": "DefenseScoop",
-      "is_korean": false
-    },
-    {
-      "title": "Defense agencies are bullish on commercial tech, but shortcomings persist",
-      "link": "https://defensescoop.com/2026/04/02/defense-agencies-bullish-commercial-tech-shortcomings-persist/",
-      "pub_date": "2026년 04월 03일 05:28 KST",
-      "summary": "<p>“Commercial first is vitally important,\" said the Army's Andrew Evans. But it \"also has some challenges, too.\"</p>\n<p>The post <a href=\"https://defensescoop.com/2026/04/02/defense-agencies-bullish-commercial-tech-shortcomings-persist/\">Defense agencies are bullish on commercial tech, but shortcom",
-      "section": "DefenseScoop",
-      "is_korean": false
-    },
-    {
-      "title": "Navy looking to emulate signals on maritime drones to train systems for Pacific Fleet",
-      "link": "https://defensescoop.com/2026/04/02/navy-unmanned-systems-signals-management-pacific-fleet/",
-      "pub_date": "2026년 04월 03일 02:34 KST",
-      "summary": "<p>The Defense Innovation Unit is trying to aid the Navy via its Emulation Module for Unmanned Systems (EMU) program.</p>\n<p>The post <a href=\"https://defensescoop.com/2026/04/02/navy-unmanned-systems-signals-management-pacific-fleet/\">Navy looking to emulate signals on maritime drones to train syst",
-      "section": "DefenseScoop",
-      "is_korean": false
     }
   ],
   "Air & Space Forces": [
     {
-      "title": "F-15E Downed over Iran, A-10 Crashes in Region: 2 of 3 Airmen Rescued as Search Continues",
-      "link": "https://www.airandspaceforces.com/iran-f-15e-downed-search-rescue/",
-      "pub_date": "2026년 04월 03일 23:34 KST",
-      "summary": "<p>A U.S. Air Force F-15E Strike Eagle was downed over Iran, and combat search and rescue efforts are underway, people familiar with the matter told Air &#038; Space Forces Magazine.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/iran-f-15e-downed-search-rescue/\">F-15E Downed over Iran, ",
+      "title": "F-15E Aviator Missing in Iran Rescued by US Forces",
+      "link": "https://www.airandspaceforces.com/f-15e-aviator-missing-in-iran-rescued-by-us-forces/",
+      "pub_date": "2026년 04월 05일 13:12 KST",
+      "summary": "<p>The second crew member of the F-15E shot down April 3 has been rescued from Iran. U.S. forces recovered the aviator alive and all American forces involved in the operation are believed to be safe, U.S. officials told Air &#038; Space Forces Magazine.</p>\n<p>The post <a href=\"https://www.airandspa",
       "section": "Air & Space Forces",
       "is_korean": false
     },
     {
-      "title": "B-52s Carrying JDAMs over Iran as US Bombers Play Growing Role in Air War",
-      "link": "https://www.airandspaceforces.com/b-52-jdams-iran-us-bombers-growing-role-air-war/",
-      "pub_date": "2026년 04월 03일 10:45 KST",
-      "summary": "<p>B-52 Stratofortress bombers marked a new first in Operation Epic Fury when some of the BUFFs flew over Iran carrying JDAM-guided gravity bombs, according to people familiar with the matter. The development signals a weakening of Iranian air defenses and a new use for the venerable bomber in the n",
+      "title": "F-15E Downed over Iran, A-10 Crashes in Region: 2 of 3 Airmen Rescued",
+      "link": "https://www.airandspaceforces.com/iran-f-15e-downed-search-rescue/",
+      "pub_date": "2026년 04월 03일 23:34 KST",
+      "summary": "<p>A U.S. Air Force F-15E Strike Eagle was downed over Iran, and combat search and rescue efforts are underway, people familiar with the matter told Air &#038; Space Forces Magazine.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/iran-f-15e-downed-search-rescue/\">F-15E Downed over Iran, ",
       "section": "Air & Space Forces",
       "is_korean": false
     },
@@ -1121,26 +763,10 @@
       "is_korean": false
     },
     {
-      "title": "Pentagon Awards $6.6 Billion Contract for Next Two Lots of F-35 Engines",
-      "link": "https://www.airandspaceforces.com/pentagon-f-35-engine-contract-lots-18-19/",
-      "pub_date": "2026년 04월 03일 06:43 KST",
-      "summary": "<p>The Pentagon on March 30 announced a a $3.8 billion contract modification to buy F135 engines for the F-35 Joint Strike Fighter from contractor Pratt &#038; Whitney.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/pentagon-f-35-engine-contract-lots-18-19/\">Pentagon Awards $6.6 Billion ",
-      "section": "Air & Space Forces",
-      "is_korean": false
-    },
-    {
-      "title": "What Options Does the Air Force Have for E-3 Taken Out by Iran?",
-      "link": "https://www.airandspaceforces.com/air-force-damaged-e-3-iran-options/",
-      "pub_date": "2026년 04월 03일 01:34 KST",
-      "summary": "<p>When an E-3 Sentry battle management aircraft was damaged in an Iranian attack on Prince Sultan Air Base, Saudi Arabia, it sparked a host of questions about one of the Air Force’s oldest, smallest, but most critical fleets. Experts say the service doesn’t have many options to answer those questio",
-      "section": "Air & Space Forces",
-      "is_korean": false
-    },
-    {
-      "title": "Guard, Reserve Leaders Flag Concern over Recapitalizing Fighter Fleet",
-      "link": "https://www.airandspaceforces.com/national-guard-reserve-leaders-recapitalizing-fighter-fleet/",
-      "pub_date": "2026년 04월 03일 01:10 KST",
-      "summary": "<p>Air National Guard and Air Force Reserve leaders warn that the Air Force must modernize their fighter fleets along with the Active force, or they risk losing combat-tested talent and making the reserve forces irrelevant in future operations.</p>\n<p>The post <a href=\"https://www.airandspaceforces.",
+      "title": "B-52s Carrying JDAMs over Iran as US Bombers Play Growing Role in Air War",
+      "link": "https://www.airandspaceforces.com/b-52-jdams-iran-us-bombers-growing-role-air-war/",
+      "pub_date": "2026년 04월 03일 10:45 KST",
+      "summary": "<p>B-52 Stratofortress bombers marked a new first in Operation Epic Fury when some of the BUFFs flew over Iran carrying JDAM-guided gravity bombs, according to people familiar with the matter. The development signals a weakening of Iranian air defenses and a new use for the venerable bomber in the n",
       "section": "Air & Space Forces",
       "is_korean": false
     }
@@ -1164,6 +790,22 @@
     }
   ],
   "Ars Technica": [
+    {
+      "title": "CBP facility codes sure seem to have leaked via online flashcards",
+      "link": "https://arstechnica.com/security/2026/04/cbp-facility-codes-sure-seem-to-have-leaked-via-online-flashcards/",
+      "pub_date": "2026년 04월 05일 20:07 KST",
+      "summary": "Quizlet flashcards seem to include sensitive information about gate security at CBP locations.",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
+    {
+      "title": "Artemis II is going so well that we're left to talk about frozen urine",
+      "link": "https://arstechnica.com/space/2026/04/artemis-ii-is-going-so-well-that-were-left-to-talk-about-frozen-urine/",
+      "pub_date": "2026년 04월 05일 09:12 KST",
+      "summary": "\"I think the fixation on the toilet is kind of human nature.\"",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
     {
       "title": "Tech companies are trying to neuter Colorado’s landmark right-to-repair law",
       "link": "https://arstechnica.com/tech-policy/2026/04/tech-companies-are-trying-to-neuter-colorados-landmark-right-to-repair-law/",
@@ -1257,70 +899,6 @@
       "link": "https://arstechnica.com/space/2026/04/four-astronauts-are-now-inexorably-bound-for-the-moon/",
       "pub_date": "2026년 04월 03일 11:17 KST",
       "summary": "“I don’t think we could be more pleased.\"",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Perplexity's \"Incognito Mode\" is a \"sham,\" lawsuit says",
-      "link": "https://arstechnica.com/tech-policy/2026/04/perplexitys-incognito-mode-is-a-sham-lawsuit-says/",
-      "pub_date": "2026년 04월 03일 05:54 KST",
-      "summary": "Google, Meta, and Perplexity accused of sharing millions of chats to increase ad revenue.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "SpaceX tries to convince FCC that Amazon put satellites into wrong altitude",
-      "link": "https://arstechnica.com/tech-policy/2026/04/spacex-claims-amazon-leo-launches-could-crash-into-starlink-satellites/",
-      "pub_date": "2026년 04월 03일 05:32 KST",
-      "summary": "Amazon denies violation, says SpaceX caused conflict by lowering Starlink satellites.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Google Vids gets AI upgrade with Veo and Lyria models, directable AI avatars",
-      "link": "https://arstechnica.com/ai/2026/04/google-vids-gets-ai-upgrade-with-veo-and-lyria-models-directable-ai-avatars/",
-      "pub_date": "2026년 04월 03일 04:58 KST",
-      "summary": "Google Vids brings together Google's most capable AI creation tools.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Male octopuses guided through mating by female hormones",
-      "link": "https://arstechnica.com/science/2026/04/male-octopuses-guided-through-mating-by-female-hormones/",
-      "pub_date": "2026년 04월 03일 04:48 KST",
-      "summary": "A receptor that's used to find prey is also activated by progesterone.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "New fossil deposits show complex animal groups predating the Cambrian",
-      "link": "https://arstechnica.com/science/2026/04/new-fossil-deposits-show-complex-animal-groups-predating-the-cambrian/",
-      "pub_date": "2026년 04월 03일 03:00 KST",
-      "summary": "Collection of fossils includes Ediacaran, Cambrian species, suggesting a transition.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "New Rowhammer attacks give complete control of machines running Nvidia GPUs",
-      "link": "https://arstechnica.com/security/2026/04/new-rowhammer-attacks-give-complete-control-of-machines-running-nvidia-gpus/",
-      "pub_date": "2026년 04월 03일 02:00 KST",
-      "summary": "GDDRHammer, GeForge and GPUBreach hammer GPU memory in ways that hijack the CPU.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Renewables dominate 2025's newly installed generating capacity",
-      "link": "https://arstechnica.com/science/2026/04/globally-86-percent-of-the-new-generating-capacity-was-renewable-in-2025/",
-      "pub_date": "2026년 04월 03일 02:00 KST",
-      "summary": "And solar power accounted for about three quarters of the renewables.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Google announces Gemma 4 open AI models, switches to Apache 2.0 license",
-      "link": "https://arstechnica.com/ai/2026/04/google-announces-gemma-4-open-ai-models-switches-to-apache-2-0-license/",
-      "pub_date": "2026년 04월 03일 01:01 KST",
-      "summary": "Gemma 4 brings the first major update to Google's open models in a year.",
       "section": "Ars Technica",
       "is_korean": false
     }
