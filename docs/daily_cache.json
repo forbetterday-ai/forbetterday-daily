@@ -1,6 +1,54 @@
 {
   "TechCrunch": [
     {
+      "title": "Polymarket took down wagers tied to rescue of downed Air Force officer",
+      "link": "https://techcrunch.com/2026/04/05/polymarket-took-down-wagers-tied-to-rescue-of-downed-air-force-officer/",
+      "pub_date": "2026년 04월 06일 04:36 KST",
+      "summary": "A Democratic congressman had harsh criticism for Polymarket for allowing users to bet on the date the U.S. would confirm the rescue of Air Force service members shot down over Iran.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Copilot is ‘for entertainment purposes only,’ according to Microsoft’s terms of use",
+      "link": "https://techcrunch.com/2026/04/05/copilot-is-for-entertainment-purposes-only-according-to-microsofts-terms-of-service/",
+      "pub_date": "2026년 04월 06일 03:51 KST",
+      "summary": "AI skeptics aren’t the only ones warning users not to unthinkingly trust models’ outputs — that’s what the AI companies say themselves in their terms of service.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "As people look for ways to make new friends, here are the apps promising to help",
+      "link": "https://techcrunch.com/2026/04/05/as-people-look-for-ways-to-make-new-friends-here-are-the-apps-promising-to-help/",
+      "pub_date": "2026년 04월 06일 03:01 KST",
+      "summary": "We've compiled a list of friendship apps, from friend discovery platforms like BFF to event-focused ones like Timeleft.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "TechCrunch Mobility: ‘A stunning lack of transparency’",
+      "link": "https://techcrunch.com/2026/04/05/techcrunch-mobility-a-stunning-lack-of-transparency/",
+      "pub_date": "2026년 04월 06일 01:05 KST",
+      "summary": "Welcome back to TechCrunch Mobility — your central hub for news and insights on the future of transportation. T",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Can orbital data centers help justify a massive valuation for SpaceX?",
+      "link": "https://techcrunch.com/2026/04/05/can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex/",
+      "pub_date": "2026년 04월 06일 00:40 KST",
+      "summary": "On the latest episode of TechCrunch’s Equity podcast, we debated Elon Musk's vision for data centers in space.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "In Japan, the robot isn’t coming for your job; it’s filling the one nobody wants",
+      "link": "https://techcrunch.com/2026/04/05/japan-is-proving-experimental-physical-ai-is-ready-for-the-real-world/",
+      "pub_date": "2026년 04월 05일 23:00 KST",
+      "summary": "Driven by labor shortages, Japan is pushing physical AI from pilot projects into real-world deployment.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "Peter Thiel’s big bet on solar-powered cow collars",
       "link": "https://techcrunch.com/2026/04/04/unpacking-peter-thiels-big-bet-on-solar-powered-cow-collars/",
       "pub_date": "2026년 04월 05일 06:30 KST",
@@ -111,41 +159,35 @@
       "summary": "A new poll shows that the debate over data centers is far from settled.",
       "section": "TechCrunch",
       "is_korean": false
-    },
-    {
-      "title": "The final days of the Tesla Model X and S are here. All bets are on the Cybercab.",
-      "link": "https://techcrunch.com/2026/04/03/the-final-days-of-the-tesla-model-x-and-s-are-here-all-bets-are-on-the-cybercab/",
-      "pub_date": "2026년 04월 04일 01:48 KST",
-      "summary": "It's a new era for Tesla — and one that will rely on its ability to launch the Cybercab and mass-produce the Optimus robot.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Europe’s cyber agency blames hacking gangs for massive data breach and leak",
-      "link": "https://techcrunch.com/2026/04/03/europes-cyber-agency-blames-hacking-gangs-for-massive-data-breach-and-leak/",
-      "pub_date": "2026년 04월 04일 00:50 KST",
-      "summary": "CERT-EU blamed the cybercrime group TeamPCP for the recent hack on the European Commission, and said the notorious ShinyHunters gang was responsible for leaking the stolen data online.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
+    }
+  ],
+  "TC Startups": [
     {
       "title": "The Facebook insider building content moderation for the AI era",
       "link": "https://techcrunch.com/2026/04/03/moonbounce-fundraise-content-moderation-for-the-ai-era/",
       "pub_date": "2026년 04월 03일 23:00 KST",
       "summary": "Moonbounce has raised $12 million to grow its AI control engine that converts content moderation policies into consistent, predictable AI behavior.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Amazon hits sellers with ‘fuel surcharge’ as Iran war roils global energy markets",
-      "link": "https://techcrunch.com/2026/04/02/amazon-hits-sellers-with-fuel-surcharge-as-iran-war-roils-global-energy-markets/",
-      "pub_date": "2026년 04월 03일 07:56 KST",
-      "summary": "The e-commerce giant called the surcharge \"temporary\" but couldn't give a date for when the policy would be retired.",
-      "section": "TechCrunch",
+      "section": "TC Startups",
       "is_korean": false
     }
   ],
   "SpaceNews": [
+    {
+      "title": "Isaacman defends NASA budget proposal despite steep cuts",
+      "link": "https://spacenews.com/isaacman-defends-nasa-budget-proposal-despite-steep-cuts/",
+      "pub_date": "2026년 04월 06일 07:20 KST",
+      "summary": "<figure><img alt=\"Isaacman\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"727\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/55165945281_2a9ea0fb1e_k.jpg?fit=1024%2C727&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA Administrator Jared Isaacman defended a",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "NASA stops work on SLS Mobile Launcher 2",
+      "link": "https://spacenews.com/nasa-stops-work-on-sls-mobile-launcher-2/",
+      "pub_date": "2026년 04월 06일 05:29 KST",
+      "summary": "<figure><img alt=\"ML-2\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"682\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/ml2-march2026.jpeg?fit=1024%2C682&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA has stopped work on a second mobile launch platform i",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
     {
       "title": "NASA finalizes science plans for Artemis 2 lunar flyby",
       "link": "https://spacenews.com/nasa-finalizes-science-plans-for-artemis-2-lunar-flyby/",
@@ -217,25 +259,33 @@
       "summary": "<figure><img alt=\"Full-scale mockup of Space Pioneer&#039;s Tianlong-3 rocket stands vertically on a newly completed launch pad at the Dongfeng Commercial Space Innovation Test Zone, located in the desert landscape of Jiuquan Satellite Launch Center. The launch pad is equipped with support towers, f",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "Artemis 2 heads to the moon",
-      "link": "https://spacenews.com/artemis-2-heads-to-the-moon/",
-      "pub_date": "2026년 04월 03일 11:30 KST",
-      "summary": "<figure><img alt=\"Orion and crescent earth\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"576\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/art2-cresentearth.jpeg?fit=1024%2C576&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA’s Artemis 2 mission is on its",
-      "section": "SpaceNews",
-      "is_korean": false
-    },
-    {
-      "title": "Swift spacecraft reorientation buys time for reboost mission",
-      "link": "https://spacenews.com/swift-spacecraft-reorientation-buys-time-for-reboost-mission/",
-      "pub_date": "2026년 04월 03일 08:35 KST",
-      "summary": "<figure><img alt=\"LINK and Swift\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"410\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2025/09/katalyst-swift.jpeg?fit=1024%2C410&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA modified operations of an astrophysics spa",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "Artemis 2 astronauts are about to see one of the rarest skywatching sights of all — a solar eclipse from beyond the moon",
+      "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronauts-are-about-to-see-one-of-the-rarest-skywatching-sights-of-all-a-solar-eclipse-from-beyond-the-moon",
+      "pub_date": "2026년 04월 06일 04:00 KST",
+      "summary": "The four Artemis 2 astronauts will see a solar eclipse from beyond the moon's far side on Monday evening (April 6), and they'll use the opportunity to make some science observations.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "The breakout star of NASA's Artemis 2 moon mission isn't an astronaut — it's the space toilet",
+      "link": "https://www.space.com/space-exploration/artemis/the-breakout-star-of-nasas-artemis-2-mission-to-the-moon-isnt-an-astronaut-its-the-space-toilet",
+      "pub_date": "2026년 04월 06일 02:09 KST",
+      "summary": "The on-again, off-again lunar loo allows astronauts to \"go\" at the moon like no one's gone before.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "The powerful new Rubin Observatory just found 11,000 new asteroids and measured 'tens of thousands more'",
+      "link": "https://www.space.com/astronomy/asteroids/the-powerful-new-rubin-observatory-just-found-11-000-new-asteroids-and-measured-tens-of-thousands-more",
+      "pub_date": "2026년 04월 05일 23:00 KST",
+      "summary": "This offers us a glimpse of the discovery surge scientists expect to occur once full operations begin.",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "Artemis 2 moon astronauts will try to recreate Apollo 8's historic 'Earthrise' photo during April 6 flyby",
       "link": "https://www.space.com/space-exploration/artemis/artemis-2-moon-astronauts-will-try-to-recreate-apollo-8s-historic-earthrise-photo-during-april-6-flyby",
@@ -245,7 +295,7 @@
       "is_korean": false
     },
     {
-      "title": "Artemis 2 astronaut Victor Glover delivers inspiring Easter message on the way to the moon (video)",
+      "title": "This is the inspiring Easter message an Artemis 2 astronaut has for Earth while traveling to the moon (video)",
       "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronaut-victor-glover-delivers-inspiring-easter-message-on-the-way-to-the-moon-video",
       "pub_date": "2026년 04월 05일 20:00 KST",
       "summary": "NASA astronaut Victor Glover delivered an impromptu Easter message as his Artemis 2 Orion capsule sped toward the moon on Saturday (April 4).",
@@ -403,30 +453,6 @@
       "summary": "After an action-packed first two days, Flight Day 3 may bring a more relaxed pace for the Artemis 2 moon astronauts.",
       "section": "Space.com",
       "is_korean": false
-    },
-    {
-      "title": "DJI Avata 360 drone review",
-      "link": "https://www.space.com/technology/dji-avata-360-drone-review",
-      "pub_date": "2026년 04월 03일 16:00 KST",
-      "summary": "The DJI Avata 360 is DJI’s first 360-degree drone that can be flown like a camera or FPV (first-person view) drone using a motion controller and DJI FPV goggles.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Artemis 2 astronauts head for the moon after make-or-break engine burn (video)",
-      "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronauts-head-for-moon-translunar-injection-burn",
-      "pub_date": "2026년 04월 03일 09:28 KST",
-      "summary": "Artemis 2's Orion capsule aced a critical engine burn this evening (April 2) that sent it from Earth orbit outward toward the moon.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Lucky airplane passengers capture NASA's Artemis 2 moon launch from the sky",
-      "link": "https://www.space.com/space-exploration/missions/lucky-airplane-passengers-capture-nasas-artemis-2-moon-launch-from-the-sky",
-      "pub_date": "2026년 04월 03일 07:00 KST",
-      "summary": "Some airplane passengers had the best seats in the house during NASA's Artemis 2 moon rocket launch. Here are some of my favorite videos captured from the sky.",
-      "section": "Space.com",
-      "is_korean": false
     }
   ],
   "Payload Space": [
@@ -451,14 +477,6 @@
       "link": "https://payloadspace.com/charts-defining-the-space-industry-in-q1-2026/",
       "pub_date": "2026년 04월 03일 19:55 KST",
       "summary": "<p><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/04/Screenshot-2026-04-01-at-10.50.41-AM-1024x571-bvlx0K-200x200.png\" width=\"200\" />Revenge of EO<br />\nThe post Charts Defining the Space Industry in Q1 2026  a",
-      "section": "Payload Space",
-      "is_korean": false
-    },
-    {
-      "title": "CLPS Companies Excited For NASA’s ‘Opportunity Bomb’ Lunar Plan",
-      "link": "https://payloadspace.com/clps-companies-excited-for-nasas-opportunity-bomb-lunar-plan/",
-      "pub_date": "2026년 04월 03일 07:10 KST",
-      "summary": "<p><img alt=\"&quot;The lander saw her shadow, 2 more weeks of ops!&quot; Image: Firefly Aerospace\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2025/03/blue-ghost-200x200.jpg\" width=\"200\" />Last week, NASA laid out a vision f",
       "section": "Payload Space",
       "is_korean": false
     }
@@ -553,17 +571,17 @@
       "summary": "<p><a href=\"https://breakingdefense.com/2026/04/marine-corps-awards-textron-general-dynamics-second-rapid-arv-prototype-contract/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"576\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2026/04/9540646-1024x576.jpg\" sty",
       "section": "Breaking Defense",
       "is_korean": false
-    },
-    {
-      "title": "Trump proposes $1.5 trillion defense budget, banking on $350 billion from reconciliation",
-      "link": "https://breakingdefense.com/2026/04/trump-to-propose-1-5-trillion-defense-budget-banking-on-350-billion-from-reconciliation/",
-      "pub_date": "2026년 04월 03일 08:09 KST",
-      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/trump-to-propose-1-5-trillion-defense-budget-banking-on-350-billion-from-reconciliation/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"493\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2025/12/251222_trump_battl",
-      "section": "Breaking Defense",
-      "is_korean": false
     }
   ],
   "Defense News": [
+    {
+      "title": "US special forces rescue second F-15 airman from Iran",
+      "link": "https://www.defensenews.com/news/your-military/2026/04/05/us-special-forces-rescue-f-15-airman-from-iran/",
+      "pub_date": "2026년 04월 05일 22:40 KST",
+      "summary": "The airman, the weapons officer of an F-15 jet shot down on Friday, was wounded but “will be just fine,” President Trump announced.",
+      "section": "Defense News",
+      "is_korean": false
+    },
     {
       "title": "Iran leaves door open for peace talks as hunt for missing US pilot continues",
       "link": "https://www.defensenews.com/news/pentagon-congress/2026/04/04/iran-leaves-door-open-for-peace-talks-as-hunt-for-missing-us-pilot-continues/",
@@ -619,14 +637,6 @@
       "summary": "The first frigate in the class, the Amiral Ronarc’h, was delivered in October, and is currently on a long-term deployment.",
       "section": "Defense News",
       "is_korean": false
-    },
-    {
-      "title": "Hegseth asks Army’s top general to retire, fires two others as Iran war rages",
-      "link": "https://www.defensenews.com/news/pentagon-congress/2026/04/02/hegseth-asks-armys-top-general-to-retire-immediately-as-iran-war-rages/",
-      "pub_date": "2026년 04월 03일 07:25 KST",
-      "summary": "The Pentagon intends to replace him with a leader aligned with Hegseth and President Donald Trump’s vision for the Army, an official told Military Times.",
-      "section": "Defense News",
-      "is_korean": false
     }
   ],
   "Defense One": [
@@ -669,14 +679,6 @@
       "summary": "Last year, the administration halved the Office of Intelligence and Analysis. Will lawmakers preserve its independence?",
       "section": "Defense One",
       "is_korean": false
-    },
-    {
-      "title": "‘It’s drones fighting drones’: Ukrainian officer offers inside look at roboticized war",
-      "link": "https://www.defenseone.com/threats/2026/04/drones-ukraine-officer-robot-war/412597/",
-      "pub_date": "2026년 04월 03일 13:01 KST",
-      "summary": "A counter-drone leader describes front lines where humans hide, machines collaborate, and survival depends on adapting in real time.",
-      "section": "Defense One",
-      "is_korean": false
     }
   ],
   "DefenseScoop": [
@@ -703,14 +705,6 @@
       "summary": "<p>The budget proposal includes initial funding for a new class of battleships.</p>\n<p>The post <a href=\"https://defensescoop.com/2026/04/03/trump-budget-fy27-navy-shipbuilding-battleship/\">Trump’s 2027 budget request includes more than $65B for Navy shipbuilding</a> appeared first on <a href=\"https",
       "section": "DefenseScoop",
       "is_korean": false
-    },
-    {
-      "title": "Hegseth ousts Gen. George as Army chief of staff",
-      "link": "https://defensescoop.com/2026/04/02/hegseth-fired-gen-george-army-chief-of-staff/",
-      "pub_date": "2026년 04월 03일 07:01 KST",
-      "summary": "<p>The Army's chief of staff typically serves a four-year term, cutting George’s tenure short by more than a year.</p>\n<p>The post <a href=\"https://defensescoop.com/2026/04/02/hegseth-fired-gen-george-army-chief-of-staff/\">Hegseth ousts Gen. George as Army chief of staff</a> appeared first on <a hre",
-      "section": "DefenseScoop",
-      "is_korean": false
     }
   ],
   "Air & Space Forces": [
@@ -727,14 +721,6 @@
       "link": "https://www.airandspaceforces.com/iran-f-15e-downed-search-rescue/",
       "pub_date": "2026년 04월 03일 23:34 KST",
       "summary": "<p>A U.S. Air Force F-15E Strike Eagle was downed over Iran, and combat search and rescue efforts are underway, people familiar with the matter told Air &#038; Space Forces Magazine.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/iran-f-15e-downed-search-rescue/\">F-15E Downed over Iran, ",
-      "section": "Air & Space Forces",
-      "is_korean": false
-    },
-    {
-      "title": "Space Force to Create Futures-Like Group on HQ Staff",
-      "link": "https://www.airandspaceforces.com/space-force-to-create-futures-like-group-hq-staff/",
-      "pub_date": "2026년 04월 03일 09:20 KST",
-      "summary": "<p>The Space Force plans to establish a new headquarters staff group focused on force design and analysis that will oversee and guide a number of future-oriented organizations, including the Space Warfighting Analysis Center and the Chief Science Officer. </p>\n<p>The post <a href=\"https://www.airand",
       "section": "Air & Space Forces",
       "is_korean": false
     },
@@ -759,14 +745,6 @@
       "link": "https://www.airandspaceforces.com/white-house-unveils-1-5-trillion-defense-budget-what-comes-next/",
       "pub_date": "2026년 04월 04일 05:52 KST",
       "summary": "<p>President Donald Trump’s administration is seeking a record-breaking $1.5 trillion defense budget for fiscal 2027—and projecting a $1.28 trillion topline in 2028.</p>\n<p>The post <a href=\"https://www.airandspaceforces.com/white-house-unveils-1-5-trillion-defense-budget-what-comes-next/\">White Hou",
-      "section": "Air & Space Forces",
-      "is_korean": false
-    },
-    {
-      "title": "B-52s Carrying JDAMs over Iran as US Bombers Play Growing Role in Air War",
-      "link": "https://www.airandspaceforces.com/b-52-jdams-iran-us-bombers-growing-role-air-war/",
-      "pub_date": "2026년 04월 03일 10:45 KST",
-      "summary": "<p>B-52 Stratofortress bombers marked a new first in Operation Epic Fury when some of the BUFFs flew over Iran carrying JDAM-guided gravity bombs, according to people familiar with the matter. The development signals a weakening of Iranian air defenses and a new use for the venerable bomber in the n",
       "section": "Air & Space Forces",
       "is_korean": false
     }
@@ -891,14 +869,6 @@
       "link": "https://arstechnica.com/ai/2026/04/openai-takes-on-another-side-quest-buys-tech-focused-talk-show-tbpn/",
       "pub_date": "2026년 04월 03일 22:35 KST",
       "summary": "OpenAI says program will remain in Los Angeles and will be editorially independent.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Four astronauts are now inexorably bound for the Moon",
-      "link": "https://arstechnica.com/space/2026/04/four-astronauts-are-now-inexorably-bound-for-the-moon/",
-      "pub_date": "2026년 04월 03일 11:17 KST",
-      "summary": "“I don’t think we could be more pleased.\"",
       "section": "Ars Technica",
       "is_korean": false
     }
