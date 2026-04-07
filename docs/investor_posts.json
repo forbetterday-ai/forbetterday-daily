@@ -177,6 +177,14 @@
       "description": "한 사람이 숫자 하나를 바꾸면 내 적금, 내 대출, 내 투자가 달라진다",
       "artifact_url": "https://claude.site/public/artifacts/045f5bf3-3cfb-4273-8358-d6a8c61ed940/embed",
       "tags": ["금리", "한국은행", "연준 연방준비은행"]
+    },
+    {
+      "id": 23,
+      "date": "2026-04-07",
+      "title": "특별 Essay : 755%와 3% — 숫자의 온도차를 읽는 법",
+      "description": "삼성전자 57조원, 선반영에도 빠지지 않은 이유",
+      "artifact_url": "https://claude.site/public/artifacts/c446b3b8-c2d8-402d-adb0-834509ed9bd0/embed",
+      "tags": ["선반영", "주가와실적의 괴리", "이걸 알아야 중급", "삼성전자"]
     }
   ]
 }
