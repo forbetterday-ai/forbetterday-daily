@@ -1,6 +1,38 @@
 {
   "TechCrunch": [
     {
+      "title": "Atlassian launches visual AI tools and third-party agents in Confluence",
+      "link": "https://techcrunch.com/2026/04/08/atlassian-confluence-visual-ai-tools-agents/",
+      "pub_date": "2026년 04월 08일 22:00 KST",
+      "summary": "Confluence users can now create visual assets within the software in addition to new third-party agents working with Lovable, Replit, and Gamma.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "X is rolling out automatic translation and photo editing powered by Grok",
+      "link": "https://techcrunch.com/2026/04/08/x-is-rolling-out-automatic-translation-and-photo-editing-powered-by-grok/",
+      "pub_date": "2026년 04월 08일 21:06 KST",
+      "summary": "New automatic translations and photo editing on X are powered by the company's flagship AI model.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "How nuclear batteries could speed the race to fusion power",
+      "link": "https://techcrunch.com/2026/04/08/how-nuclear-batteries-could-speed-the-race-to-fusion-power/",
+      "pub_date": "2026년 04월 08일 20:30 KST",
+      "summary": "Avalanche Energy is working on an DARPA project to build a new class of materials capable of turning damaging radiation into electricity.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
+      "title": "Google quietly launched an AI dictation app that works offline",
+      "link": "https://techcrunch.com/2026/04/07/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
+      "pub_date": "2026년 04월 08일 14:40 KST",
+      "summary": "Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.",
+      "section": "TechCrunch",
+      "is_korean": false
+    },
+    {
       "title": "I can’t help rooting for tiny open source AI model maker Arcee",
       "link": "https://techcrunch.com/2026/04/07/i-cant-help-rooting-for-tiny-open-source-ai-model-maker-arcee/",
       "pub_date": "2026년 04월 08일 06:35 KST",
@@ -127,41 +159,17 @@
       "summary": "The budget proposal would force CISA to operate with a significantly lower budget than previous years, citing the government's claims that the election misinformation programs were used to \"target the President.\"",
       "section": "TechCrunch",
       "is_korean": false
-    },
+    }
+  ],
+  "TC Startups": [
     {
       "title": "Why a former AirPods engineer is now building heat pumps",
       "link": "https://techcrunch.com/2026/04/07/why-a-former-airpods-engineer-is-now-building-heat-pumps/",
       "pub_date": "2026년 04월 07일 22:00 KST",
       "summary": "Merino Energy has simplified the heat pump dramatically in a quest to make them cheaper and easier to install.",
-      "section": "TechCrunch",
+      "section": "TC Startups",
       "is_korean": false
     },
-    {
-      "title": "The AI gold rush is pulling private wealth into riskier, earlier bets",
-      "link": "https://techcrunch.com/2026/04/07/the-ai-gold-rush-is-pulling-private-wealth-into-riskier-earlier-bets/",
-      "pub_date": "2026년 04월 07일 22:00 KST",
-      "summary": "On a recent episode of Equity, we  talked to Arena Private Wealth to explore a growing trend: family offices bypassing VCs to gain direct exposure to AI startups, turning them from passive investors into active participants.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Adobe launches Acrobat-based Student Spaces, a free AI-powered study tool for students",
-      "link": "https://techcrunch.com/2026/04/07/adobe-launches-acrobat-spaces-a-free-ai-powered-study-tool-for-students/",
-      "pub_date": "2026년 04월 07일 22:00 KST",
-      "summary": "Adobe Acrobat Student Spaces is a free tool for students to use AI and create different kinds of study material from documents.",
-      "section": "TechCrunch",
-      "is_korean": false
-    },
-    {
-      "title": "Waymo opens robotaxi service in Nashville, partners with Lyft",
-      "link": "https://techcrunch.com/2026/04/07/waymo-opens-robotaxi-service-in-nashville-partners-with-lyft/",
-      "pub_date": "2026년 04월 07일 22:00 KST",
-      "summary": "Waymo now operates commercial robotaxi services in 11 cities, with various methods to hail.",
-      "section": "TechCrunch",
-      "is_korean": false
-    }
-  ],
-  "TC Startups": [
     {
       "title": "Hermeus raises $350M to build unmanned hypersonic fighters",
       "link": "https://techcrunch.com/2026/04/07/hermeus-raises-350m-to-build-unmanned-hypersonic-fighters/",
@@ -201,30 +209,22 @@
       "summary": "The company is also announcing a deal with L3Harris to build the sensors for Xoople's spacecraft.",
       "section": "TC Startups",
       "is_korean": false
-    },
-    {
-      "title": "Polymarket took down wagers tied to rescue of downed Air Force officer",
-      "link": "https://techcrunch.com/2026/04/05/polymarket-took-down-wagers-tied-to-rescue-of-downed-air-force-officer/",
-      "pub_date": "2026년 04월 06일 04:36 KST",
-      "summary": "A Democratic congressman had harsh criticism for Polymarket for allowing users to bet on the date the U.S. would confirm the rescue of Air Force service members shot down over Iran.",
-      "section": "TC Startups",
-      "is_korean": false
     }
   ],
   "TC AI": [
+    {
+      "title": "The AI gold rush is pulling private wealth into riskier, earlier bets",
+      "link": "https://techcrunch.com/2026/04/07/the-ai-gold-rush-is-pulling-private-wealth-into-riskier-earlier-bets/",
+      "pub_date": "2026년 04월 07일 22:00 KST",
+      "summary": "On a recent episode of Equity, we  talked to Arena Private Wealth to explore a growing trend: family offices bypassing VCs to gain direct exposure to AI startups, turning them from passive investors into active participants.",
+      "section": "TC AI",
+      "is_korean": false
+    },
     {
       "title": "OpenAI alums have been quietly investing from a new, potentially $100M fund",
       "link": "https://techcrunch.com/2026/04/06/openai-alums-have-been-quietly-investing-from-a-new-potentially-100m-fund/",
       "pub_date": "2026년 04월 07일 06:54 KST",
       "summary": "Zero Shot, a new venture capital fund with deep ties to OpenAI, is aiming to raise $100 million for its first fund. It has already written some checks.",
-      "section": "TC AI",
-      "is_korean": false
-    },
-    {
-      "title": "Google quietly launched an AI dictation app that works offline",
-      "link": "https://techcrunch.com/2026/04/06/google-quietly-releases-an-offline-first-ai-dictation-app-on-ios/",
-      "pub_date": "2026년 04월 07일 03:54 KST",
-      "summary": "Google's new offline-first dictation app uses Gemma AI models to take on the apps like Wispr Flow.",
       "section": "TC AI",
       "is_korean": false
     },
@@ -251,25 +251,73 @@
       "summary": "Learn how to use Spotify, Canva, Figma, Expedia, and other apps directly in ChatGPT.",
       "section": "TC AI",
       "is_korean": false
-    },
-    {
-      "title": "Copilot is ‘for entertainment purposes only,’ according to Microsoft’s terms of use",
-      "link": "https://techcrunch.com/2026/04/05/copilot-is-for-entertainment-purposes-only-according-to-microsofts-terms-of-service/",
-      "pub_date": "2026년 04월 06일 03:51 KST",
-      "summary": "AI skeptics aren’t the only ones warning users not to unthinkingly trust models’ outputs — that’s what the AI companies say themselves in their terms of service.",
-      "section": "TC AI",
-      "is_korean": false
-    },
-    {
-      "title": "Can orbital data centers help justify a massive valuation for SpaceX?",
-      "link": "https://techcrunch.com/2026/04/05/can-orbital-data-centers-help-justify-a-massive-valuation-for-spacex/",
-      "pub_date": "2026년 04월 06일 00:40 KST",
-      "summary": "On the latest episode of TechCrunch’s Equity podcast, we debated Elon Musk's vision for data centers in space.",
-      "section": "TC AI",
-      "is_korean": false
     }
   ],
   "SpaceNews": [
+    {
+      "title": "A lunar base or a lunar economy?",
+      "link": "https://spacenews.com/a-lunar-base-or-a-lunar-economy/",
+      "pub_date": "2026년 04월 08일 22:00 KST",
+      "summary": "<figure><img alt=\"NASA lunar base\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"450\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/03/moon-base1.webp?fit=800%2C450&amp;ssl=1\" width=\"800\" /></figure>\n<p>We applaud the lunar base vision laid out by NASA Ad",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "LeoLabs debuts space monitoring tool for military users",
+      "link": "https://spacenews.com/leolabs-debuts-space-monitoring-tool-for-military-users/",
+      "pub_date": "2026년 04월 08일 22:00 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"685\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/DELTA-Platform-Dashboards-March-2026_Maneuvers-scaled-e1775599848864.png?fit=1024%2C685&amp;ssl=1\" width=\"1024\" /></figure>\n<p>LeoLabs ",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Industry navigates NASA’s start-and-stop approach to commercial space stations",
+      "link": "https://spacenews.com/industry-navigates-nasas-start-and-stop-approach-to-commercial-space-stations/",
+      "pub_date": "2026년 04월 08일 20:00 KST",
+      "summary": "<figure><img alt=\"Illustration of the Orbital Reef space station. Credit: Blue Origin\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"636\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/orbitalreef.jpg?fit=1024%2C636&amp;ssl=1\" width=\"1024\" /></figure>\n<",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Artemis 2 science gets underway as Orion begins its return trip",
+      "link": "https://spacenews.com/artemis-2-science-gets-underway-as-orion-begins-its-return-trip/",
+      "pub_date": "2026년 04월 08일 19:23 KST",
+      "summary": "<figure><img alt=\"Artemis 2 earthset\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"683\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/art002e009288-large.jpg?fit=1024%2C683&amp;ssl=1\" width=\"1024\" /></figure>\n<p>As Artemis 2 begins its return to Earth",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Capella Space wins $49 million contract for military communications satellite demo",
+      "link": "https://spacenews.com/capella-space-wins-49-million-contract-for-military-communications-satellite-demo/",
+      "pub_date": "2026년 04월 08일 19:21 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"779\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/Screenshot-2026-04-08-at-6.14.58-AM.png?fit=1024%2C779&amp;ssl=1\" width=\"1024\" /></figure>\n<p>The contract was awarded by the Space Dev",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Space security moves to forefront as threats to satellites spread",
+      "link": "https://spacenews.com/space-security-moves-to-forefront-as-threats-to-satellites-spread/",
+      "pub_date": "2026년 04월 08일 19:00 KST",
+      "summary": "<figure><img alt=\"LEO objects including satellites, other spacecraft, and debris, tracked by LeoLabs. Credit: LeoLabs\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"593\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2024/01/moore-law-banner-1.jpg?fit=1024%2C59",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Inspection cubesat demo planned as first step toward orbital defense mothership",
+      "link": "https://spacenews.com/inspection-cubesat-demo-planned-as-first-step-toward-orbital-defense-mothership/",
+      "pub_date": "2026년 04월 08일 17:00 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"568\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/SpaceNews_EnduroSat-Shield-Space-_-Project-Nexus-MotherShip-2-scaled.jpg?fit=1024%2C568&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Bulgaria",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
+    {
+      "title": "Astroscale passes key design milestone for UK military space-tracking cubesats",
+      "link": "https://spacenews.com/astroscale-passes-key-design-milestone-for-uk-military-space-tracking-cubesats/",
+      "pub_date": "2026년 04월 08일 16:00 KST",
+      "summary": "<figure><img alt=\"\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"690\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/Orpheus_satellites_graphic_Apr26-scaled.png?fit=1024%2C690&amp;ssl=1\" width=\"1024\" /></figure>\n<p>Astroscale has completed the critical",
+      "section": "SpaceNews",
+      "is_korean": false
+    },
     {
       "title": "Hungary taps Northrop Grumman for first national geostationary communications satellite",
       "link": "https://spacenews.com/hungary-taps-northrop-grumman-for-first-national-geostationary-communications-satellite/",
@@ -373,17 +421,33 @@
       "summary": "<figure><img alt=\"Isaacman\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"727\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/55165945281_2a9ea0fb1e_k.jpg?fit=1024%2C727&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA Administrator Jared Isaacman defended a",
       "section": "SpaceNews",
       "is_korean": false
-    },
-    {
-      "title": "NASA stops work on SLS Mobile Launcher 2",
-      "link": "https://spacenews.com/nasa-stops-work-on-sls-mobile-launcher-2/",
-      "pub_date": "2026년 04월 06일 05:29 KST",
-      "summary": "<figure><img alt=\"ML-2\" class=\"attachment-rss-image-size size-rss-image-size wp-post-image\" height=\"682\" src=\"https://i0.wp.com/spacenews.com/wp-content/uploads/2026/04/ml2-march2026.jpeg?fit=1024%2C682&amp;ssl=1\" width=\"1024\" /></figure>\n<p>NASA has stopped work on a second mobile launch platform i",
-      "section": "SpaceNews",
-      "is_korean": false
     }
   ],
   "Space.com": [
+    {
+      "title": "Artemis 2 moon astronauts capture space history — on their iPhones",
+      "link": "https://www.space.com/space-exploration/artemis/artemis-2-moon-astronauts-capture-space-history-on-their-iphones",
+      "pub_date": "2026년 04월 08일 22:00 KST",
+      "summary": "The Artemis 2 astronauts are capturing spectacular photos of the moon and Earth on their iPhones in space.",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "Galaxy starves its supermassive black hole, loses 95% of its brightness",
+      "link": "https://www.space.com/astronomy/black-holes/galaxy-starves-its-supermassive-black-hole-loses-95-percent-of-its-brightness",
+      "pub_date": "2026년 04월 08일 21:00 KST",
+      "summary": "\"It is fascinating that an active galactic nucleus can change its brightness so dramatically over such a short period of time.\"",
+      "section": "Space.com",
+      "is_korean": false
+    },
+    {
+      "title": "'It just made it even more special': Being so far from Earth makes you appreciate our planet even more, Artemis 2 astronaut says",
+      "link": "https://www.space.com/space-exploration/artemis/it-just-made-it-even-more-special-being-so-far-from-earth-makes-you-appreciate-our-planet-even-more-artemis-2-astronaut-says",
+      "pub_date": "2026년 04월 08일 19:00 KST",
+      "summary": "Seeing Earth from space changes your perspective. And this \"overview effect\" is magnified when you're looking back from beyond the moon, according to Artemis 2's Christina Koch.",
+      "section": "Space.com",
+      "is_korean": false
+    },
     {
       "title": "The Artemis 2 space toilet is actually working fine. But there is another problem",
       "link": "https://www.space.com/space-exploration/artemis/the-artemis-2-space-toilet-is-actually-working-fine-but-there-is-another-problem",
@@ -559,65 +623,25 @@
       "summary": "The four Artemis 2 astronauts had a chance to observe the moon this weekend, and to say they were thrilled may be an understatement of cosmic proportions.",
       "section": "Space.com",
       "is_korean": false
-    },
-    {
-      "title": "Artemis 2 astronauts are about to see one of the rarest skywatching sights of all — a solar eclipse from beyond the moon",
-      "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronauts-are-about-to-see-one-of-the-rarest-skywatching-sights-of-all-a-solar-eclipse-from-beyond-the-moon",
-      "pub_date": "2026년 04월 06일 04:00 KST",
-      "summary": "The four Artemis 2 astronauts will see a solar eclipse from beyond the moon's far side on Monday evening (April 6), and they'll use the opportunity to make some science observations.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "The breakout star of NASA's Artemis 2 moon mission isn't an astronaut — it's the space toilet",
-      "link": "https://www.space.com/space-exploration/artemis/the-breakout-star-of-nasas-artemis-2-mission-to-the-moon-isnt-an-astronaut-its-the-space-toilet",
-      "pub_date": "2026년 04월 06일 02:09 KST",
-      "summary": "The on-again, off-again lunar loo allows astronauts to \"go\" at the moon like no one's gone before.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "The powerful new Rubin Observatory just found 11,000 new asteroids and measured 'tens of thousands more'",
-      "link": "https://www.space.com/astronomy/asteroids/the-powerful-new-rubin-observatory-just-found-11-000-new-asteroids-and-measured-tens-of-thousands-more",
-      "pub_date": "2026년 04월 05일 23:00 KST",
-      "summary": "This offers us a glimpse of the discovery surge scientists expect to occur once full operations begin.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Artemis 2 moon astronauts will try to recreate Apollo 8's historic 'Earthrise' photo during April 6 flyby",
-      "link": "https://www.space.com/space-exploration/artemis/artemis-2-moon-astronauts-will-try-to-recreate-apollo-8s-historic-earthrise-photo-during-april-6-flyby",
-      "pub_date": "2026년 04월 05일 21:00 KST",
-      "summary": "Plans are in place for the crew of Artemis 2 to try to replicate one of the most famous images ever taken from space — Apollo 8's shot of Earth rising over the moon's horizon.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "This is the inspiring Easter message an Artemis 2 astronaut has for Earth while traveling to the moon (video)",
-      "link": "https://www.space.com/space-exploration/artemis/artemis-2-astronaut-victor-glover-delivers-inspiring-easter-message-on-the-way-to-the-moon-video",
-      "pub_date": "2026년 04월 05일 20:00 KST",
-      "summary": "NASA astronaut Victor Glover delivered an impromptu Easter message as his Artemis 2 Orion capsule sped toward the moon on Saturday (April 4).",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Dozens of hidden star streams found in the outskirts of our Milky Way galaxy",
-      "link": "https://www.space.com/astronomy/stars/dozens-of-hidden-star-streams-found-in-the-outskirts-of-our-milky-way-galaxy",
-      "pub_date": "2026년 04월 05일 19:00 KST",
-      "summary": "Astronomers discovered dozens of stellar streams in the Milky Way using Gaia data, offering new clues about galaxy formation and dark matter.",
-      "section": "Space.com",
-      "is_korean": false
-    },
-    {
-      "title": "Lego's educational space sets are a stellar way to teach kids about the basic physics of collisions and impacts",
-      "link": "https://www.space.com/entertainment/space-toys-lego/legos-educational-space-sets-are-a-stellar-way-to-teach-kids-about-the-basic-physics-of-collisions-and-impacts",
-      "pub_date": "2026년 04월 05일 18:00 KST",
-      "summary": "Won't somebody please think of the children?",
-      "section": "Space.com",
-      "is_korean": false
     }
   ],
   "Payload Space": [
+    {
+      "title": "The State of ISAM 2026",
+      "link": "https://payloadspace.com/the-state-of-isam-2026/",
+      "pub_date": "2026년 04월 08일 21:45 KST",
+      "summary": "<p><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/04/The-State-of-ISAM-200x200.jpg\" width=\"200\" />It’s becoming increasingly impossible to cover ISAM as a single idea.</p>\n<p>The post <a href=\"https://payloadsp",
+      "section": "Payload Space",
+      "is_korean": false
+    },
+    {
+      "title": "Czech Radiation Chips on Artemis II Bring ISS Experience",
+      "link": "https://payloadspace.com/czech-radiation-chips-on-artemis-ii-bring-iss-experience/",
+      "pub_date": "2026년 04월 08일 21:30 KST",
+      "summary": "<p><img alt=\"\" class=\"attachment-thumbnail size-thumbnail wp-post-image\" height=\"200\" src=\"https://payloadspace.com/wp-content/uploads/2026/04/art002e009288orig-200x200.jpg\" width=\"200\" />With the sun at solar maximum, HERA serves as an instant warning system if a solar flare emerges. </p>\n<p>The po",
+      "section": "Payload Space",
+      "is_korean": false
+    },
     {
       "title": "Advocates Ready For NASA Science Funding Fight, Part II",
       "link": "https://payloadspace.com/advocates-ready-for-nasa-science-funding-fight-part-ii/",
@@ -751,6 +775,22 @@
   ],
   "Breaking Defense": [
     {
+      "title": "Breaking Defense expands editorial staff, with Ben Watson joining as production editor",
+      "link": "https://breakingdefense.com/2026/04/breaking-defense-expands-editorial-staff-with-ben-watson-joining-as-production-editor/",
+      "pub_date": "2026년 04월 08일 21:45 KST",
+      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/breaking-defense-expands-editorial-staff-with-ben-watson-joining-as-production-editor/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"529\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2023/05/Breaking-Defense-Atl",
+      "section": "Breaking Defense",
+      "is_korean": false
+    },
+    {
+      "title": "As more nations seek counterspace chops, GPS jamming also rises: Report",
+      "link": "https://breakingdefense.com/2026/04/as-more-nations-seek-counterspace-chops-gps-jamming-also-rises-report/",
+      "pub_date": "2026년 04월 08일 19:00 KST",
+      "summary": "<p><a href=\"https://breakingdefense.com/2026/04/as-more-nations-seek-counterspace-chops-gps-jamming-also-rises-report/\"><img alt=\"\" class=\"attachment-large size-large wp-post-image\" height=\"423\" src=\"https://breakingdefense.com/wp-content/uploads/sites/13/2022/09/space-EW-and-cyber-Army-e16626610013",
+      "section": "Breaking Defense",
+      "is_korean": false
+    },
+    {
       "title": "The HH-60W helped rescue a pilot in Iran. Here’s why the Air Force might not buy more.",
       "link": "https://breakingdefense.com/2026/04/iran-pilot-rescue-hh60-jolly-green-helicopter-trump/",
       "pub_date": "2026년 04월 08일 05:33 KST",
@@ -833,6 +873,14 @@
   ],
   "Defense News": [
     {
+      "title": "Trump says he has agreed to two-week ceasefire with Iran",
+      "link": "https://www.defensenews.com/news/your-military/2026/04/07/trump-says-he-has-agreed-to-two-week-ceasefire-with-iran/",
+      "pub_date": "2026년 04월 08일 08:35 KST",
+      "summary": "Trump said he expects an agreement to be “finalized and consummated” during the two-week ceasefire.",
+      "section": "Defense News",
+      "is_korean": false
+    },
+    {
       "title": "Russia supplies Iran with cyber support, spy imagery to hone attacks, Ukraine says",
       "link": "https://www.defensenews.com/flashpoints/middle-east/2026/04/07/russia-supplies-iran-with-cyber-support-spy-imagery-to-hone-attacks-ukraine-says/",
       "pub_date": "2026년 04월 08일 06:12 KST",
@@ -909,14 +957,6 @@
       "link": "https://www.defensenews.com/industry/techwatch/2026/04/06/us-army-wants-new-grenade-launcher-ammunition-to-be-able-to-destroy-drones/",
       "pub_date": "2026년 04월 06일 22:38 KST",
       "summary": "The Army is calling for prototype submissions that include 16 weapons, fire controls systems and around 25,000 rounds of ammunition.",
-      "section": "Defense News",
-      "is_korean": false
-    },
-    {
-      "title": "US special forces rescue second F-15 airman from Iran",
-      "link": "https://www.defensenews.com/news/your-military/2026/04/05/us-special-forces-rescue-f-15-airman-from-iran/",
-      "pub_date": "2026년 04월 05일 22:40 KST",
-      "summary": "The airman, the weapons officer of an F-15 jet shot down on Friday, was wounded but “will be just fine,” President Trump announced.",
       "section": "Defense News",
       "is_korean": false
     }
@@ -996,6 +1036,14 @@
     }
   ],
   "DefenseScoop": [
+    {
+      "title": "Inside the Army’s new data operations center and its ‘sprint’ to help fix digital headaches",
+      "link": "https://defensescoop.com/2026/04/07/army-data-operations-center-plans-adoc/",
+      "pub_date": "2026년 04월 08일 08:33 KST",
+      "summary": "<p>Billed as a “9-1-1” asset for how the service moves massive amounts of data, the Army Data Operations Center went live April 3. </p>\n<p>The post <a href=\"https://defensescoop.com/2026/04/07/army-data-operations-center-plans-adoc/\">Inside the Army’s new data operations center and its &#8216;sprint",
+      "section": "DefenseScoop",
+      "is_korean": false
+    },
     {
       "title": "Army looks to quadruple procurement for Precision Strike Missile in 2027",
       "link": "https://defensescoop.com/2026/04/07/army-procurement-precision-strike-missile-prsm-2027/",
@@ -1121,6 +1169,14 @@
   ],
   "Space & Defense": [
     {
+      "title": "Royal Canadian Navy Selects ALL.SPACE Hydra4 Mobility Terminal for Shore-Based SATCOM Trials",
+      "link": "https://spaceanddefense.io/royal-canadian-navy-selects-all-space-hydra4-mobility-terminal-for-shore-based-satcom-trials/?utm_source=rss&utm_medium=rss&utm_campaign=royal-canadian-navy-selects-all-space-hydra4-mobility-terminal-for-shore-based-satcom-trials",
+      "pub_date": "2026년 04월 08일 09:41 KST",
+      "summary": "ALL.SPACE has announced that the Royal Canadian Navy (RCN) has acquired a Hydra 4 multi-band, multi-orbit mobility terminal for shore-based testing and evaluation at Maritime Forces Pacific facilities in Victoria, BC. This supports the Navy’s next-generation SATCOM terminal program for current and f",
+      "section": "Space & Defense",
+      "is_korean": false
+    },
+    {
       "title": "NASA releases Artemis II Moon flyby images as crew heads home",
       "link": "https://spaceanddefense.io/nasa-releases-artemis-ii-moon-flyby-images-as-crew-heads-home/?utm_source=rss&utm_medium=rss&utm_campaign=nasa-releases-artemis-ii-moon-flyby-images-as-crew-heads-home",
       "pub_date": "2026년 04월 08일 06:10 KST",
@@ -1162,6 +1218,30 @@
     }
   ],
   "Ars Technica": [
+    {
+      "title": "Thousands of consumer routers hacked by Russia's military",
+      "link": "https://arstechnica.com/security/2026/04/russias-military-hacks-thousands-of-consumer-routers-to-steal-credentials/",
+      "pub_date": "2026년 04월 08일 20:00 KST",
+      "summary": "End-of-life routers in homes and small offices hacked in 120 countries.",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
+    {
+      "title": "Valve brings native Steam Link app to Apple's Vision Pro",
+      "link": "https://arstechnica.com/gaming/2026/04/valve-brings-native-steam-link-app-to-apples-vision-pro/",
+      "pub_date": "2026년 04월 08일 07:21 KST",
+      "summary": "New app can replace third-party options that were jankier to use.",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
+    {
+      "title": "Apple and Lenovo have the least repairable laptops, analysis finds",
+      "link": "https://arstechnica.com/gadgets/2026/04/apple-has-the-lowest-grades-in-laptop-phone-repairability-analysis/",
+      "pub_date": "2026년 04월 08일 07:08 KST",
+      "summary": "The MacBook Neo is a step in the right direction, though.",
+      "section": "Ars Technica",
+      "is_korean": false
+    },
     {
       "title": "What the heck is wrong with our AI overlords?",
       "link": "https://arstechnica.com/tech-policy/2026/04/what-the-heck-is-wrong-with-our-ai-overlords/",
@@ -1295,30 +1375,6 @@
       "link": "https://arstechnica.com/cars/2026/04/used-ev-sales-spike-alongside-gas-prices/",
       "pub_date": "2026년 04월 06일 22:54 KST",
       "summary": "The market for new cars has slumped as Americans look for deals on used EVs.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "Why will today's lunar flyby only beam back low-resolution video?",
-      "link": "https://arstechnica.com/space/2026/04/video-from-artemis-ii-flyby-of-the-moon-will-not-initially-look-spectacular/",
-      "pub_date": "2026년 04월 06일 21:59 KST",
-      "summary": "\"Don't expect hi-res video.\"",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "What Memento reveals about human nature, 25 years later",
-      "link": "https://arstechnica.com/culture/2026/04/memento-turns-25/",
-      "pub_date": "2026년 04월 06일 21:26 KST",
-      "summary": "Director Christopher Nolan's breakout film explores themes of the nature of memory and personal identity.",
-      "section": "Ars Technica",
-      "is_korean": false
-    },
-    {
-      "title": "CBP facility codes sure seem to have leaked via online flashcards",
-      "link": "https://arstechnica.com/security/2026/04/cbp-facility-codes-sure-seem-to-have-leaked-via-online-flashcards/",
-      "pub_date": "2026년 04월 05일 20:07 KST",
-      "summary": "Quizlet flashcards seem to include sensitive information about gate security at CBP locations.",
       "section": "Ars Technica",
       "is_korean": false
     }
