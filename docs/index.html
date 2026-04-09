@@ -124,33 +124,6 @@ body {
     color: #e0e0e0;
 }
 
-.tab-bar {
-    display: flex;
-    gap: 0.3rem;
-    margin-bottom: 0.8rem;
-}
-.tab-btn {
-    flex: 1;
-    padding: 0.5rem;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 500;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 5px;
-    background: transparent;
-    color: #8890a4;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    letter-spacing: 0.05em;
-}
-.tab-btn:hover { background: rgba(255,255,255,0.05); color: #e0e0e0; }
-.tab-btn.active {
-    background: rgba(212,160,23,0.15);
-    border-color: #d4a017;
-    color: #d4a017;
-}
-
 /* ===== 알림 벨 ===== */
 .notif-wrapper {
     margin-top: 0.8rem;
@@ -924,12 +897,8 @@ body.theater-mode .theater-close-btn { display: block; }
 
 <aside class="sidebar">
     <a href="index.html" class="sb-brand">투자자 성장기</a>
-    <div class="sb-sub">FT · Bloomberg · Reuters · WSJ<br>TechCrunch · Space · Defense</div>
+    <div class="sb-sub">투자 공부를 하면서 하나씩 정리한 기록</div>
     <hr class="sb-divider">
-    <div class="tab-bar">
-        <a href="index.html" class="tab-btn" style="text-decoration:none;text-align:center;">📰 뉴스</a>
-        <a href="investor-journey.html" class="tab-btn active" style="text-decoration:none;text-align:center;">❤️ 초보 투자자 성장기</a>
-    </div>
     <div class="sb-guide" id="guide-box">
         <strong>새 글 추가 방법</strong><br>
         GitHub에서 <code>docs/investor_posts.json</code>을 열고 <code>posts</code> 배열에 새 항목을 추가하세요.<br><br>
@@ -1063,7 +1032,6 @@ function googleLogout() {
     auth.signOut();
 }
 
-/* ★ 로그인 상태 감지 — 수정: 익명 인증 추가 */
 auth.onAuthStateChanged(function(user) {
     currentUser = user;
     var loginBtns = document.getElementById('login-btns');
@@ -1074,14 +1042,12 @@ auth.onAuthStateChanged(function(user) {
 
     if (user) {
         if (user.isAnonymous) {
-            /* ─── 익명 사용자: 로그인 버튼 유지, 방문만 추적 ─── */
             loginBtns.style.display = 'flex';
             userInfo.style.display = 'none';
             notifWrapper.style.display = 'none';
             trackVisit();
             setGreeting();
         } else {
-            /* ─── 실명 로그인 사용자: 기존 로직 그대로 ─── */
             loginBtns.style.display = 'none';
             userInfo.style.display = 'inline-flex';
             userPhoto.src = user.photoURL || '';
@@ -1098,7 +1064,6 @@ auth.onAuthStateChanged(function(user) {
             updateLastActive();
         }
     } else {
-        /* ─── 비로그인: 익명 인증 시도 ─── */
         loginBtns.style.display = 'flex';
         userInfo.style.display = 'none';
         notifWrapper.style.display = 'none';
@@ -1548,14 +1513,8 @@ function setSeasonTheme() {
     document.documentElement.style.setProperty('--bg2', s.sidebar);
     var brandEl = document.querySelector('.sb-brand');
     if (brandEl) brandEl.style.color = s.sidebarBrand;
-    document.querySelectorAll('.tab-btn.active').forEach(function(el) {
-        el.style.background = s.accent + '25';
-        el.style.borderColor = s.accent;
-        el.style.color = s.accent;
-    });
 }
 
-/* ★ 방문 카운터 — 수정: 익명 사용자도 추적, isAnonymous 필드 저장 */
 function trackVisit() {
     if (!currentUser) {
         document.getElementById('visit-msg').style.display = 'none';
