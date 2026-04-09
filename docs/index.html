@@ -124,6 +124,115 @@ body {
     color: #e0e0e0;
 }
 
+/* ===== 사이드바 최근 댓글 ===== */
+.sb-comments-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    background: transparent;
+    color: #a0a8bc;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-top: 0.8rem;
+}
+.sb-comments-toggle:hover { background: rgba(255,255,255,0.05); color: #e0e0e0; }
+.sb-comments-toggle.active {
+    background: rgba(212,160,23,0.15);
+    border-color: rgba(212,160,23,0.4);
+    color: #d4a017;
+    font-weight: 500;
+}
+.sb-comments-badge {
+    display: none;
+    min-width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    border-radius: 8px;
+    background: #e74c3c;
+    color: #fff;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    font-weight: 700;
+    padding: 0 4px;
+    margin-left: auto;
+}
+.sb-comments-badge.show { display: inline-block; }
+.sb-comments-list {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-top: 0.4rem;
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+.sb-comments-list.open { display: flex; }
+.sb-comments-list::-webkit-scrollbar { width: 3px; }
+.sb-comments-list::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.12); border-radius: 2px; }
+.sb-comment-card {
+    padding: 0.5rem;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+.sb-comment-card:first-child { background: rgba(212,160,23,0.08); }
+.sb-comment-card:hover { background: rgba(255,255,255,0.08); }
+.sb-comment-top {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-bottom: 0.2rem;
+}
+.sb-comment-avatar {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    flex-shrink: 0;
+}
+.sb-comment-name {
+    font-size: 0.65rem;
+    color: #e0e0e0;
+    font-weight: 500;
+}
+.sb-comment-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.52rem;
+    color: #8890a4;
+    margin-left: auto;
+    flex-shrink: 0;
+}
+.sb-comment-text {
+    font-size: 0.65rem;
+    color: #c0c8d8;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.sb-comment-source {
+    font-size: 0.55rem;
+    color: #8890a4;
+    margin-top: 0.2rem;
+}
+.sb-comments-empty {
+    font-size: 0.68rem;
+    color: #8890a4;
+    text-align: center;
+    padding: 0.8rem 0;
+}
+
 /* ===== 알림 벨 ===== */
 .notif-wrapper {
     margin-top: 0.8rem;
@@ -921,6 +1030,13 @@ body.theater-mode .theater-close-btn { display: block; }
             <button class="auth-logout" onclick="googleLogout()">로그아웃</button>
         </div>
     </div>
+    <button class="sb-comments-toggle" id="sb-comments-toggle" onclick="toggleSidebarComments()">
+        💬 최근 댓글
+        <span class="sb-comments-badge" id="sb-comments-badge">0</span>
+    </button>
+    <div class="sb-comments-list" id="sb-comments-list">
+        <div class="sb-comments-empty">불러오는 중...</div>
+    </div>
     <div class="notif-wrapper" id="notif-wrapper" style="display:none;">
         <button class="notif-bell-btn" id="notif-bell-btn" onclick="toggleNotifDropdown()">
             🔔 알림
@@ -1253,6 +1369,8 @@ function cancelEdit(commentId) {
 function loadComments(postId) {
     var listEl = document.getElementById('comments-list-' + postId);
     if (!listEl) return;
+
+    loadSidebarComments();
 
     db.collection('comments')
         .where('postId', '==', String(postId))
@@ -1777,7 +1895,119 @@ document.addEventListener('visibilitychange', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(trackUserSession, 1000);
+    setTimeout(loadSidebarComments, 1500);
 });
+
+/* ===== 사이드바 최근 댓글 ===== */
+var sidebarCommentsOpen = false;
+
+function toggleSidebarComments() {
+    sidebarCommentsOpen = !sidebarCommentsOpen;
+    var list = document.getElementById('sb-comments-list');
+    var btn = document.getElementById('sb-comments-toggle');
+    if (sidebarCommentsOpen) {
+        list.classList.add('open');
+        btn.classList.add('active');
+    } else {
+        list.classList.remove('open');
+        btn.classList.remove('active');
+    }
+}
+
+function loadSidebarComments() {
+    db.collection('comments')
+        .orderBy('timestamp', 'desc')
+        .limit(15)
+        .get()
+        .then(function(snapshot) {
+            var listEl = document.getElementById('sb-comments-list');
+            var badge = document.getElementById('sb-comments-badge');
+
+            if (snapshot.empty) {
+                listEl.innerHTML = '<div class="sb-comments-empty">아직 댓글이 없습니다.</div>';
+                badge.classList.remove('show');
+                return;
+            }
+
+            var comments = [];
+            snapshot.forEach(function(doc) {
+                var c = doc.data();
+                c._id = doc.id;
+                comments.push(c);
+            });
+
+            badge.textContent = String(comments.length);
+            badge.classList.add('show');
+
+            var html = '';
+            comments.forEach(function(c) {
+                var timeStr = '';
+                if (c.timestamp) {
+                    var diff = Date.now() - c.timestamp.toDate().getTime();
+                    var mins = Math.floor(diff / 60000);
+                    var hours = Math.floor(diff / 3600000);
+                    var days = Math.floor(diff / 86400000);
+                    if (mins < 1) timeStr = '방금';
+                    else if (mins < 60) timeStr = mins + '분 전';
+                    else if (hours < 24) timeStr = hours + '시간 전';
+                    else if (days < 7) timeStr = days + '일 전';
+                    else timeStr = c.timestamp.toDate().toLocaleDateString('ko-KR');
+                }
+
+                var postTitle = getPostTitleById(c.postId);
+                var fallbackAvatar = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%228%22 r=%224%22 fill=%22%23999%22/><path d=%22M4 20c0-4 3.6-7 8-7s8 3 8 7%22 fill=%22%23999%22/></svg>';
+
+                html += '<div class="sb-comment-card" onclick="goToPostComment(\'' + c.postId + '\')">' +
+                    '<div class="sb-comment-top">' +
+                        '<img class="sb-comment-avatar" src="' + (c.photo || '') + '" alt="" onerror="this.src=\'' + fallbackAvatar + '\'">' +
+                        '<span class="sb-comment-name">' + (c.name || '사용자') + '</span>' +
+                        '<span class="sb-comment-time">' + timeStr + '</span>' +
+                    '</div>' +
+                    '<div class="sb-comment-text">' + (c.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
+                    '<div class="sb-comment-source">↳ ' + postTitle + '</div>' +
+                '</div>';
+            });
+
+            listEl.innerHTML = html;
+        })
+        .catch(function(err) {
+            console.error('사이드바 댓글 로드 실패:', err);
+            document.getElementById('sb-comments-list').innerHTML = '<div class="sb-comments-empty">댓글을 불러올 수 없습니다.</div>';
+        });
+}
+
+function getPostTitleById(postId) {
+    var cards = document.querySelectorAll('.post-card[data-id="' + postId + '"]');
+    if (cards.length > 0) {
+        var titleEl = cards[0].querySelector('.post-title');
+        if (titleEl) {
+            var text = titleEl.textContent;
+            return text.length > 30 ? text.substring(0, 30) + '...' : text;
+        }
+    }
+    return '#' + (postId || '?');
+}
+
+function goToPostComment(postId) {
+    if (!postId) return;
+    var embedEl = document.getElementById('embed-' + postId);
+    if (!embedEl) return;
+
+    if (!embedEl.classList.contains('open')) {
+        togglePost(Number(postId));
+    }
+
+    setTimeout(function() {
+        var commentsSection = embedEl.querySelector('.comments-section');
+        if (commentsSection) {
+            commentsSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            commentsSection.style.background = 'rgba(166,133,50,0.1)';
+            setTimeout(function() {
+                commentsSection.style.background = '';
+            }, 1500);
+        }
+    }, 300);
+}
 </script>
 </body>
 </html>
