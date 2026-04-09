@@ -193,6 +193,14 @@
       "description": "문을 열든 열지 않든 봄은 온다 — 다만 연 사람만이 바깥의 온도를 안다",
       "artifact_url": "https://claude.site/public/artifacts/d1c51d2c-dc88-4821-935a-927a4a0a29a0/embed",
       "tags": ["선택의 기로", "용기와 인내", "후회와 물음표"]
+    },
+    {
+      "id": 25,
+      "date": "2026-04-09",
+      "title": "아는 곳이 - 생긴다는 것, 후크선장에 대해",
+      "description": "아무 데도 가보지 않은 사람에게는, 아무 데도 그리운 곳이 없다",
+      "artifact_url": "https://claude.site/public/artifacts/72213038-cf85-48f8-9533-735d26e91288/embed",
+      "tags": ["피터팬", "네버랜드", "후크선장"]
     }
   ]
 }
