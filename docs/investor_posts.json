@@ -201,6 +201,14 @@
       "description": "아무 데도 가보지 않은 사람에게는, 아무 데도 그리운 곳이 없다",
       "artifact_url": "https://claude.site/public/artifacts/72213038-cf85-48f8-9533-735d26e91288/embed",
       "tags": ["피터팬", "네버랜드", "후크선장"]
+    },
+    {
+      "id": 26,
+      "date": "2026-04-11",
+      "title": "돌아오는 길에 대하여",
+      "description": "모든 영웅은 떠났다가 돌아왔습니다 — 다만 돌아온 곳이 꼭 떠난 곳은 아니었습니다",
+      "artifact_url": "https://claude.site/public/artifacts/3d4c3583-ad19-4db3-9b47-31b994f1b40a/embed",
+      "tags": ["출발", "성장", "귀환", "영웅과 어른"]
     }
   ]
 }
