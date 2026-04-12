@@ -449,7 +449,8 @@ body {
 .comment-form {
     display: flex;
     gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.4rem;
+    align-items: flex-end;
 }
 .comment-input {
     flex: 1;
@@ -465,6 +466,24 @@ body {
 }
 .comment-input:focus { border-color: var(--accent); }
 .comment-input::placeholder { color: var(--txt3); }
+/* ===== 이미지 업로드 버튼 ===== */
+.comment-img-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--txt3);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    flex-shrink: 0;
+}
+.comment-img-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
+.comment-img-btn.has-image { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
 .comment-submit {
     padding: 0.5rem 1rem;
     border: none;
@@ -485,6 +504,120 @@ body {
     color: var(--txt3);
     padding: 0.5rem 0;
 }
+/* ===== 이미지 미리보기 ===== */
+.comment-img-preview {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg3);
+}
+.comment-img-preview img {
+    display: block;
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+.comment-img-preview .remove-img {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 0.7rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.15s;
+}
+.comment-img-preview .remove-img:hover { background: #c0392b; }
+/* ===== 업로드 진행 표시 ===== */
+.upload-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.72rem;
+    color: var(--txt3);
+}
+.upload-progress .upload-bar {
+    flex: 1;
+    height: 4px;
+    background: var(--bg4);
+    border-radius: 2px;
+    overflow: hidden;
+}
+.upload-progress .upload-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.3s;
+}
+/* ===== 댓글 내 이미지 표시 ===== */
+.comment-image {
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    display: inline-block;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.comment-image:hover { transform: scale(1.02); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+.comment-image img {
+    display: block;
+    max-width: 320px;
+    max-height: 240px;
+    object-fit: contain;
+    border-radius: 7px;
+}
+/* ===== 이미지 라이트박스 ===== */
+.img-lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+    cursor: zoom-out;
+    padding: 2rem;
+}
+.img-lightbox.open { display: flex; }
+.img-lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+}
+.img-lightbox .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-lightbox .lightbox-close:hover { background: rgba(255,255,255,0.3); }
+
 .comments-list {
     display: flex;
     flex-direction: column;
@@ -602,9 +735,11 @@ body {
     margin-top: 0.5rem;
     padding-top: 0.5rem;
     border-top: 1px solid var(--bg4);
+    flex-wrap: wrap;
 }
 .reply-form input {
     flex: 1;
+    min-width: 120px;
     padding: 0.35rem 0.6rem;
     border: 1px solid var(--border);
     border-radius: 5px;
@@ -631,6 +766,27 @@ body {
     background: var(--bg4);
     color: var(--txt3);
     border: 1px solid var(--border);
+}
+.reply-form .reply-img-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #fff;
+    color: var(--txt3);
+    font-size: 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    padding: 0;
+}
+.reply-form .reply-img-btn:hover { border-color: var(--accent); color: var(--accent); }
+.reply-form .reply-img-btn.has-image { border-color: var(--accent); color: var(--accent); background: var(--accent2); }
+.reply-img-preview-wrap {
+    width: 100%;
+    margin-top: 0.3rem;
 }
 .comments-empty {
     font-size: 0.78rem;
@@ -993,12 +1149,15 @@ body.theater-mode .theater-close-btn { display: block; }
     .footer { margin-left: 0; padding: 1rem; }
     .post-embed iframe { height: 500px; }
     .spotify-toggle-btn { right: 12px; width: 36px; height: 36px; font-size: 16px; }
-    .comment-form { flex-direction: column; }
-    .comment-submit { width: 100%; }
+    .comment-form { flex-direction: row; flex-wrap: wrap; }
+    .comment-input { min-width: 0; }
+    .comment-submit { flex-shrink: 0; }
     .comment-item.reply { margin-left: 1.2rem; }
     .notif-dropdown { position: fixed; bottom: auto; top: auto; left: 1rem; right: 1rem; }
-    .reply-form { flex-direction: column; }
-    .reply-form button { width: 100%; }
+    .reply-form { flex-direction: row; flex-wrap: wrap; }
+    .reply-form input { min-width: 100px; }
+    .reply-form button { flex-shrink: 0; }
+    .comment-image img { max-width: 220px; max-height: 180px; }
 }
 </style>
 </head>
@@ -1086,6 +1245,12 @@ body.theater-mode .theater-close-btn { display: block; }
     <span class="welcome-emoji">👋</span> 반가워요, <span class="welcome-name" id="welcome-name"></span>님!
 </div>
 
+<!-- 이미지 라이트박스 -->
+<div class="img-lightbox" id="img-lightbox" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <img id="lightbox-img" src="" alt="확대 이미지">
+</div>
+
 <div class="spotify-bottom-bar" id="spotifyBar">
     <iframe
         src="https://open.spotify.com/embed/playlist/2tjg5sKHNvPb2FgXEEXCg9?utm_source=generator&theme=0"
@@ -1096,9 +1261,13 @@ body.theater-mode .theater-close-btn { display: block; }
 </div>
 <button class="spotify-toggle-btn" id="spotifyToggle" aria-label="음악 플레이어 토글">🎵</button>
 
+<!-- 이미지 업로드용 숨겨진 파일 input -->
+<input type="file" id="comment-file-input" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none">
+
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
 
 <script>
 firebase.initializeApp({
@@ -1113,10 +1282,15 @@ firebase.initializeApp({
 
 var auth = firebase.auth();
 var db = firebase.firestore();
+var storage = firebase.storage();
 var currentUser = null;
 var notifUnsubscribe = null;
 var authReady = false;
 var ADMIN_UID = 'xv5KNd2v16QrYMiDKxxwokU84pj1';
+
+/* ===== 이미지 업로드 관련 변수 ===== */
+var _pendingImage = {};  /* key: formId, value: { file, dataUrl } */
+var _activeFormId = null; /* 현재 파일 선택 대기 중인 폼 ID */
 
 function showWelcome(name) {
     var toast = document.getElementById('welcome-toast');
@@ -1197,21 +1371,172 @@ auth.onAuthStateChanged(function(user) {
     });
 });
 
+/* ===== 댓글 폼 (이미지 버튼 포함) ===== */
 function updateCommentForm(postId) {
     var formArea = document.getElementById('comment-form-area-' + postId);
     if (!formArea) return;
 
     if (currentUser && !currentUser.isAnonymous) {
+        var formId = 'main-' + postId;
         formArea.innerHTML =
             '<div class="comment-form">' +
                 '<input type="text" class="comment-input" id="comment-input-' + postId + '" placeholder="댓글을 남겨보세요..." maxlength="500" onkeypress="if(event.key===\'Enter\')submitComment(\'' + postId + '\')">' +
+                '<button class="comment-img-btn" id="img-btn-' + formId + '" onclick="openImagePicker(\'' + formId + '\')" title="이미지 첨부">📷</button>' +
                 '<button class="comment-submit" onclick="submitComment(\'' + postId + '\')">등록</button>' +
-            '</div>';
+            '</div>' +
+            '<div id="img-preview-' + formId + '"></div>';
     } else {
         formArea.innerHTML = '<p class="comment-login-msg">💬 댓글을 남기려면 Google로 로그인해주세요.</p>';
     }
 }
 
+/* ===== 이미지 선택/미리보기/업로드 ===== */
+function openImagePicker(formId) {
+    _activeFormId = formId;
+    var fileInput = document.getElementById('comment-file-input');
+    fileInput.value = '';
+    fileInput.click();
+}
+
+document.getElementById('comment-file-input').addEventListener('change', function(e) {
+    var file = e.target.files[0];
+    if (!file || !_activeFormId) return;
+
+    /* 파일 크기 체크 (5MB) */
+    if (file.size > 5 * 1024 * 1024) {
+        alert('이미지는 5MB 이하만 첨부할 수 있습니다.');
+        return;
+    }
+
+    /* 이미지 타입 체크 */
+    if (!file.type.startsWith('image/')) {
+        alert('이미지 파일만 첨부할 수 있습니다.');
+        return;
+    }
+
+    var formId = _activeFormId;
+
+    /* 이미지 리사이즈 & 미리보기 */
+    compressImage(file, function(compressedBlob, dataUrl) {
+        _pendingImage[formId] = { file: compressedBlob, dataUrl: dataUrl };
+
+        var previewEl = document.getElementById('img-preview-' + formId);
+        if (previewEl) {
+            previewEl.innerHTML =
+                '<div class="comment-img-preview">' +
+                    '<img src="' + dataUrl + '" alt="미리보기">' +
+                    '<button class="remove-img" onclick="removeImagePreview(\'' + formId + '\')">✕</button>' +
+                '</div>';
+        }
+
+        var imgBtn = document.getElementById('img-btn-' + formId);
+        if (imgBtn) imgBtn.classList.add('has-image');
+    });
+});
+
+function compressImage(file, callback) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var img = new Image();
+        img.onload = function() {
+            var canvas = document.createElement('canvas');
+            var maxW = 1200, maxH = 1200;
+            var w = img.width, h = img.height;
+
+            if (w > maxW || h > maxH) {
+                var ratio = Math.min(maxW / w, maxH / h);
+                w = Math.round(w * ratio);
+                h = Math.round(h * ratio);
+            }
+
+            canvas.width = w;
+            canvas.height = h;
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, w, h);
+
+            canvas.toBlob(function(blob) {
+                var dataUrl = canvas.toDataURL('image/jpeg', 0.8);
+                callback(blob, dataUrl);
+            }, 'image/jpeg', 0.8);
+        };
+        img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+}
+
+function removeImagePreview(formId) {
+    delete _pendingImage[formId];
+    var previewEl = document.getElementById('img-preview-' + formId);
+    if (previewEl) previewEl.innerHTML = '';
+    var imgBtn = document.getElementById('img-btn-' + formId);
+    if (imgBtn) imgBtn.classList.remove('has-image');
+}
+
+function uploadImageToStorage(formId) {
+    return new Promise(function(resolve, reject) {
+        var pending = _pendingImage[formId];
+        if (!pending || !pending.file) {
+            resolve(null);
+            return;
+        }
+
+        var fileName = Date.now() + '_' + Math.random().toString(36).substr(2, 6) + '.jpg';
+        var path = 'comment-images/' + currentUser.uid + '/' + fileName;
+        var ref = storage.ref(path);
+
+        var previewEl = document.getElementById('img-preview-' + formId);
+        if (previewEl) {
+            previewEl.innerHTML =
+                '<div class="upload-progress">' +
+                    '<span>📤 업로드 중...</span>' +
+                    '<div class="upload-bar"><div class="upload-bar-fill" id="upload-fill-' + formId + '" style="width:0%"></div></div>' +
+                '</div>';
+        }
+
+        var uploadTask = ref.put(pending.file, { contentType: 'image/jpeg' });
+
+        uploadTask.on('state_changed',
+            function(snapshot) {
+                var pct = Math.round((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+                var fillEl = document.getElementById('upload-fill-' + formId);
+                if (fillEl) fillEl.style.width = pct + '%';
+            },
+            function(error) {
+                console.error('업로드 실패:', error);
+                if (previewEl) previewEl.innerHTML = '';
+                reject(error);
+            },
+            function() {
+                uploadTask.snapshot.ref.getDownloadURL().then(function(url) {
+                    delete _pendingImage[formId];
+                    if (previewEl) previewEl.innerHTML = '';
+                    resolve(url);
+                });
+            }
+        );
+    });
+}
+
+/* ===== 라이트박스 ===== */
+function openLightbox(imageUrl) {
+    var lb = document.getElementById('img-lightbox');
+    var img = document.getElementById('lightbox-img');
+    img.src = imageUrl;
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    var lb = document.getElementById('img-lightbox');
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+});
+
+/* ===== 스팸 필터 ===== */
 var spamWords = ['http://', 'https://', 'www.', '.com', '.net', 'casino', 'poker', 'viagra', '광고', '홍보', '클릭', '무료상담', '대출'];
 function isSpam(text) {
     var lower = text.toLowerCase();
@@ -1221,27 +1546,37 @@ function isSpam(text) {
     return false;
 }
 
+/* ===== 댓글 등록 (이미지 포함) ===== */
 function submitComment(postId) {
     if (!currentUser || currentUser.isAnonymous) return;
     var input = document.getElementById('comment-input-' + postId);
+    var formId = 'main-' + postId;
     var text = (input.value || '').trim();
-    if (!text) return;
+    var hasImage = !!_pendingImage[formId];
+
+    if (!text && !hasImage) return;
     if (text.length > 500) { alert('댓글은 500자 이내로 작성해주세요.'); return; }
-    if (isSpam(text)) { alert('링크나 광고성 내용은 등록할 수 없습니다.'); return; }
+    if (text && isSpam(text)) { alert('링크나 광고성 내용은 등록할 수 없습니다.'); return; }
 
     input.disabled = true;
 
-    db.collection('comments').add({
-        postId: String(postId),
-        parentId: null,
-        uid: currentUser.uid,
-        name: currentUser.displayName || '사용자',
-        photo: currentUser.photoURL || '',
-        text: text,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    uploadImageToStorage(formId).then(function(imageUrl) {
+        var commentData = {
+            postId: String(postId),
+            parentId: null,
+            uid: currentUser.uid,
+            name: currentUser.displayName || '사용자',
+            photo: currentUser.photoURL || '',
+            text: text,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        };
+        if (imageUrl) commentData.imageUrl = imageUrl;
+
+        return db.collection('comments').add(commentData);
     }).then(function() {
         input.value = '';
         input.disabled = false;
+        removeImagePreview(formId);
         loadComments(postId);
     }).catch(function(err) {
         alert('댓글 등록 실패: ' + err.message);
@@ -1249,26 +1584,35 @@ function submitComment(postId) {
     });
 }
 
+/* ===== 답글 등록 (이미지 포함) ===== */
 function submitReply(postId, parentId, parentUid, parentName) {
     if (!currentUser || currentUser.isAnonymous) return;
     var input = document.getElementById('reply-input-' + parentId);
     if (!input) return;
+    var formId = 'reply-' + parentId;
     var text = (input.value || '').trim();
-    if (!text) return;
+    var hasImage = !!_pendingImage[formId];
+
+    if (!text && !hasImage) return;
     if (text.length > 500) { alert('댓글은 500자 이내로 작성해주세요.'); return; }
-    if (isSpam(text)) { alert('링크나 광고성 내용은 등록할 수 없습니다.'); return; }
+    if (text && isSpam(text)) { alert('링크나 광고성 내용은 등록할 수 없습니다.'); return; }
 
     input.disabled = true;
 
-    db.collection('comments').add({
-        postId: String(postId),
-        parentId: parentId,
-        parentName: parentName,
-        uid: currentUser.uid,
-        name: currentUser.displayName || '사용자',
-        photo: currentUser.photoURL || '',
-        text: text,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    uploadImageToStorage(formId).then(function(imageUrl) {
+        var commentData = {
+            postId: String(postId),
+            parentId: parentId,
+            parentName: parentName,
+            uid: currentUser.uid,
+            name: currentUser.displayName || '사용자',
+            photo: currentUser.photoURL || '',
+            text: text,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        };
+        if (imageUrl) commentData.imageUrl = imageUrl;
+
+        return db.collection('comments').add(commentData);
     }).then(function() {
         if (parentUid && parentUid !== currentUser.uid) {
             db.collection('notifications').add({
@@ -1288,8 +1632,11 @@ function submitReply(postId, parentId, parentUid, parentName) {
     });
 }
 
+/* ===== 답글 폼 (이미지 버튼 포함) ===== */
 function showReplyForm(commentId, postId, parentUid, parentName) {
     document.querySelectorAll('.reply-form').forEach(function(el) { el.remove(); });
+    /* 답글 폼의 미리보기 wrap도 제거 */
+    document.querySelectorAll('.reply-img-preview-wrap').forEach(function(el) { el.remove(); });
 
     var commentItem = document.querySelector('[data-comment-id="' + commentId + '"]');
     if (!commentItem) return;
@@ -1300,12 +1647,15 @@ function showReplyForm(commentId, postId, parentUid, parentName) {
     }
 
     var safeParentName = parentName.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+    var formId = 'reply-' + commentId;
     var formHtml =
         '<div class="reply-form" id="reply-form-' + commentId + '">' +
             '<input type="text" id="reply-input-' + commentId + '" placeholder="' + parentName + '님에게 답글..." maxlength="500" onkeypress="if(event.key===\'Enter\')submitReply(\'' + postId + '\',\'' + commentId + '\',\'' + parentUid + '\',\'' + safeParentName + '\')">' +
+            '<button class="reply-img-btn" id="img-btn-' + formId + '" onclick="openImagePicker(\'' + formId + '\')" title="이미지 첨부">📷</button>' +
             '<button onclick="submitReply(\'' + postId + '\',\'' + commentId + '\',\'' + parentUid + '\',\'' + safeParentName + '\')">답글</button>' +
-            '<button class="reply-cancel" onclick="this.parentElement.remove()">취소</button>' +
-        '</div>';
+            '<button class="reply-cancel" onclick="removeImagePreview(\'' + formId + '\');this.parentElement.remove();var pw=document.getElementById(\'img-pw-' + formId + '\');if(pw)pw.remove();">취소</button>' +
+        '</div>' +
+        '<div class="reply-img-preview-wrap" id="img-pw-' + formId + '"><div id="img-preview-' + formId + '"></div></div>';
 
     commentItem.insertAdjacentHTML('afterend', formHtml);
     document.getElementById('reply-input-' + commentId).focus();
@@ -1435,7 +1785,17 @@ function renderComment(c, postId, isReply) {
         ? '<div class="comment-reply-to">↳ ' + c.parentName + '님에게 답글</div>'
         : '';
 
+    /* ★ 이미지가 있으면 표시 */
+    var imageHtml = '';
+    if (c.imageUrl) {
+        imageHtml = '<div class="comment-image" onclick="openLightbox(\'' + c.imageUrl.replace(/'/g, "\\'") + '\')">' +
+            '<img src="' + c.imageUrl + '" alt="첨부 이미지" loading="lazy">' +
+        '</div>';
+    }
+
     var fallbackAvatar = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%228%22 r=%224%22 fill=%22%23999%22/><path d=%22M4 20c0-4 3.6-7 8-7s8 3 8 7%22 fill=%22%23999%22/></svg>';
+
+    var textHtml = c.text ? '<div class="comment-text">' + c.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' : '';
 
     return '<div class="comment-item' + (isReply ? ' reply' : '') + '" data-comment-id="' + c._id + '">' +
         '<img class="comment-avatar" src="' + (c.photo || '') + '" alt="" onerror="this.src=\'' + fallbackAvatar + '\'">' +
@@ -1444,7 +1804,8 @@ function renderComment(c, postId, isReply) {
                 '<span class="comment-actions">' + replyBtn + editBtn + deleteBtn + '</span>' +
             '</div>' +
             replyToLabel +
-            '<div class="comment-text">' + c.text.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
+            textHtml +
+            imageHtml +
             '<div class="comment-time">' + time + edited + '</div>' +
         '</div>' +
     '</div>';
@@ -1956,6 +2317,7 @@ function loadSidebarComments() {
 
                 var postTitle = getPostTitleById(c.postId);
                 var fallbackAvatar = 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%2212%22 cy=%228%22 r=%224%22 fill=%22%23999%22/><path d=%22M4 20c0-4 3.6-7 8-7s8 3 8 7%22 fill=%22%23999%22/></svg>';
+                var imgIndicator = c.imageUrl ? ' 🖼️' : '';
 
                 html += '<div class="sb-comment-card" onclick="goToPostComment(\'' + c.postId + '\')">' +
                     '<div class="sb-comment-top">' +
@@ -1963,7 +2325,7 @@ function loadSidebarComments() {
                         '<span class="sb-comment-name">' + (c.name || '사용자') + '</span>' +
                         '<span class="sb-comment-time">' + timeStr + '</span>' +
                     '</div>' +
-                    '<div class="sb-comment-text">' + (c.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
+                    '<div class="sb-comment-text">' + ((c.text || '').replace(/</g, '&lt;').replace(/>/g, '&gt;') || '(이미지)') + imgIndicator + '</div>' +
                     '<div class="sb-comment-source">↳ ' + postTitle + '</div>' +
                 '</div>';
             });
