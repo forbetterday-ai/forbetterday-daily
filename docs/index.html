@@ -1202,19 +1202,29 @@ async function discoverNewHtmlFiles(existingPosts, gridEl) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(htmlText, 'text/html');
         var title = doc.querySelector('title') ? doc.querySelector('title').textContent : newFiles[i].name.replace('.html', '');
+        var descMeta = doc.querySelector('meta[name="post-description"]');
+        var tagsMeta = doc.querySelector('meta[name="post-tags"]');
+        var dateMeta = doc.querySelector('meta[name="post-date"]');
+
+        /* 블로그 메타 태그가 없으면 뉴스 등 다른 페이지이므로 건너뛰기 */
+        if (!dateMeta) continue;
+        var desc = descMeta ? descMeta.getAttribute('content') : '';
+        var tags = tagsMeta ? tagsMeta.getAttribute('content').split(',').map(function(t) { return t.trim(); }) : ['새 글'];
+        var postDate = dateMeta ? dateMeta.getAttribute('content') : new Date().toISOString().slice(0, 10);
 
         maxId++;
         var newId = maxId;
         var num = String(newId).padStart(2, '0');
         var color = cardColors[newId % cardColors.length];
-        var today = new Date().toISOString().slice(0, 10);
+        var tagsHtml = tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('');
 
         var cardHtml =
           '<div class="post-card" data-id="' + newId + '" data-color="' + color + '" style="animation-delay:0s">' +
             '<div class="card-face" onclick="togglePost(' + newId + ')">' +
-              '<div class="card-top"><span class="card-num">#' + num + '</span><span class="card-date">' + today + '</span></div>' +
+              '<div class="card-top"><span class="card-num">#' + num + '</span><span class="card-date">' + postDate + '</span></div>' +
               '<div class="post-title">' + title + '</div>' +
-              '<div class="card-tags"><span class="tag">새 글</span></div>' +
+              (desc ? '<div class="card-desc">' + desc + '</div>' : '') +
+              '<div class="card-tags">' + tagsHtml + '</div>' +
               '<div class="card-go">읽으러 가기</div>' +
             '</div>' +
             '<div class="post-embed" id="embed-' + newId + '">' +
