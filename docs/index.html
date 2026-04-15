@@ -1159,12 +1159,87 @@ document.addEventListener('DOMContentLoaded', async () => {
       '</div>';
     }).join('');
     window._totalPosts = posts.length;
+    window._jsonPosts = posts;
     updateProgress(posts.length);
+
+    /* ===== Auto-discover HTML files not in JSON ===== */
+    discoverNewHtmlFiles(posts, listEl);
+
   } catch (err) {
     console.error(err);
     listEl.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">⚠️</div><p>데이터를 불러올 수 없습니다.</p></div>';
   }
 });
+
+async function discoverNewHtmlFiles(existingPosts, gridEl) {
+  try {
+    var apiRes = await fetch('https://api.github.com/repos/forbetterday-ai/forbetterday-daily/contents/docs');
+    if (!apiRes.ok) return;
+    var files = await apiRes.json();
+
+    var exclude = ['index.html', 'admin.html'];
+    var existingUrls = existingPosts.map(function(p) { return p.artifact_url; });
+
+    var newFiles = files.filter(function(f) {
+      if (!f.name.endsWith('.html')) return false;
+      if (exclude.indexOf(f.name) !== -1) return false;
+      if (existingUrls.indexOf(f.name) !== -1) return false;
+      for (var i = 0; i < existingUrls.length; i++) {
+        if (existingUrls[i].indexOf(f.name) !== -1) return false;
+      }
+      return true;
+    });
+
+    if (newFiles.length === 0) return;
+
+    var maxId = Math.max.apply(null, existingPosts.map(function(p) { return p.id; }));
+
+    for (var i = 0; i < newFiles.length; i++) {
+      try {
+        var htmlRes = await fetch(newFiles[i].name);
+        if (!htmlRes.ok) continue;
+        var htmlText = await htmlRes.text();
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(htmlText, 'text/html');
+        var title = doc.querySelector('title') ? doc.querySelector('title').textContent : newFiles[i].name.replace('.html', '');
+
+        maxId++;
+        var newId = maxId;
+        var num = String(newId).padStart(2, '0');
+        var color = cardColors[newId % cardColors.length];
+        var today = new Date().toISOString().slice(0, 10);
+
+        var cardHtml =
+          '<div class="post-card" data-id="' + newId + '" data-color="' + color + '" style="animation-delay:0s">' +
+            '<div class="card-face" onclick="togglePost(' + newId + ')">' +
+              '<div class="card-top"><span class="card-num">#' + num + '</span><span class="card-date">' + today + '</span></div>' +
+              '<div class="post-title">' + title + '</div>' +
+              '<div class="card-tags"><span class="tag">새 글</span></div>' +
+              '<div class="card-go">읽으러 가기</div>' +
+            '</div>' +
+            '<div class="post-embed" id="embed-' + newId + '">' +
+              '<iframe id="iframe-' + newId + '" data-src="' + newFiles[i].name + '" loading="lazy" sandbox="allow-scripts allow-same-origin allow-popups allow-forms" title="' + title + '"></iframe>' +
+              '<div class="embed-bar">' +
+                '<a href="' + newFiles[i].name + '" target="_blank" class="embed-link">↗ 새 탭에서 열기</a>' +
+                '<button class="embed-resize" onclick="resizeEmbed(' + newId + ', event)">높이 조절</button>' +
+              '</div>' +
+              '<div class="comments-section" data-post-id="' + newId + '">' +
+                '<div class="comments-title">💬 댓글</div>' +
+                '<div id="comment-form-area-' + newId + '"></div>' +
+                '<div class="comments-list" id="comments-list-' + newId + '"><div class="comments-empty">불러오는 중...</div></div>' +
+              '</div>' +
+            '</div>' +
+          '</div>';
+
+        gridEl.insertAdjacentHTML('afterbegin', cardHtml);
+        window._totalPosts++;
+      } catch (e) { console.log('자동 감지 실패:', newFiles[i].name, e); }
+    }
+
+    document.getElementById('total-count').textContent = window._totalPosts;
+    updateProgress(window._totalPosts);
+  } catch (e) { console.log('HTML 자동 감지 실패:', e); }
+}
 
 function togglePost(id) {
   var embedEl = document.getElementById('embed-' + id);
