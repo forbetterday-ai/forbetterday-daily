@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>놓아줄 것과 잡을 것 — 물이 길을 찾는 방법</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --accent: #B8860B;
+    --accent-soft: #D4A843;
+    --accent-bg: #FDF6E3;
+    --border: #E0D5C5;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.9; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .header { background: linear-gradient(175deg, #0F0C08 0%, #1A1410 30%, #2C2318 65%, #3D3226 100%); color: #FAF7F2; padding: 80px 24px 70px; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.12) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(184,134,11,0.06) 0%, transparent 50%); }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .series-label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .header h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(26px, 5vw, 40px); line-height: 1.45; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .header-sub { font-family: var(--sans); font-weight: 300; font-size: 15px; color: #BDB3A4; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .header-meta { margin-top: 32px; font-size: 12px; color: #8A7F72; letter-spacing: 0.5px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+  .article { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
+  .article p { margin-bottom: 24px; font-size: 17px; line-height: 1.95; color: var(--text); }
+  .section-break { text-align: center; margin: 44px 0; font-size: 14px; color: var(--accent-soft); letter-spacing: 8px; }
+  .pull-quote { margin: 44px -8px; padding: 28px 24px; border-left: 3px solid var(--accent); background: var(--accent-bg); font-family: var(--serif); font-size: 17.5px; line-height: 1.85; color: #3D3226; font-style: italic; border-radius: 0 4px 4px 0; }
+  .pull-quote em { font-style: normal; color: var(--accent); }
+  .drop-cap::first-letter { font-family: var(--serif); font-size: 3.4em; float: left; line-height: 0.85; margin: 4px 12px 0 0; color: var(--accent); font-weight: 900; }
+  .takeaway { margin: 56px 0 0; padding: 32px 28px; background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; border-radius: 4px; text-align: center; }
+  .takeaway .label { font-size: 11px; letter-spacing: 3px; color: var(--accent-soft); font-weight: 500; margin-bottom: 16px; }
+  .takeaway p { font-family: var(--serif); font-size: 18px; line-height: 1.85; color: #E8E0D5; margin-bottom: 0; }
+  .takeaway strong { color: var(--accent-soft); }
+  .footer { text-align: center; padding: 40px 24px 60px; font-size: 12px; color: #A89F94; letter-spacing: 0.5px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 600px) {
+    .header { padding: 60px 20px 50px; }
+    .article { padding: 40px 20px 60px; }
+    .article p { font-size: 16px; }
+    .pull-quote { margin: 36px -10px; padding: 24px 20px; font-size: 16.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="series-label">에세이</div>
+    <h1>놓아줄 것과 잡을 것<br>— 물이 길을 찾는 방법</h1>
+    <p class="header-sub">같은 하루 안에서, 붙잡아야 할 것과 흘려보내야 할 것이 있다</p>
+    <div class="header-meta">읽는 시간 약 7분</div>
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- 1. 도입 — 퇴근길, 안 꺼지는 숫자 -->
+  <p class="drop-cap fade-in">엑셀을 닫았는데 머릿속에서 안 닫히는 숫자가 있다. 3원. 아니, 정확히는 2.7원이었던가. 다른 팀에서 보내온 자료와 내가 정리한 자료 사이에 작은 차이가 있었다. 누구도 신경 쓰지 않았다. 회의는 넘어갔고, 보고서는 올라갔다. 그런데 퇴근길 지하철에서 이어폰을 끼고 앉아 있는데, 그 숫자가 자꾸 돌아온다.</p>
+
+  <p class="fade-in">"내일 아침에 다시 확인하면 되지." 스스로 말해봐도 마음 한쪽이 놓이지 않는다. 데이터를 가져온 시점이 달라서 생긴 차이일 수도 있고, 반올림 기준이 달라서일 수도 있다. 내 실수가 아닐 확률이 훨씬 높다. 그걸 알면서도, 그 숫자가 이어폰 너머로 계속 따라온다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 2. 그건 책임감이지, 잘못이 아니다 -->
+  <p class="fade-in">이런 밤이 낯설지 않은 사람이 있다. 내 이름이 들어간 숫자가 틀리면 안 된다는 마음. 내가 넘긴 자료에 문제가 있으면 다른 사람이 곤란해진다는 걱정. 그래서 한 번 더 확인하고, 한 번 더 돌아보고, 한 번 더 되짚는다.</p>
+
+  <p class="fade-in">그것은 무능함이 아니다. 누가 시켜서 하는 것도 아니다. <strong>책임감이 깊은 사람만이 느끼는 무게</strong>다. 작은 차이에 마음이 걸린다는 건, 자기 일을 소중하게 여기고 있다는 뜻이니까. 그 마음 자체는 참 따뜻한 것이다.</p>
+
+  <p class="fade-in">다만, 그 따뜻한 마음이 3원의 차이 앞에서도 똑같은 크기로 작동하면 — 밤이 길어진다. 자꾸 길어진다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 3. 돌아가는 길은 틀린 길이 아니다 -->
+  <p class="fade-in">지도 앱에서 출발지와 도착지를 찍으면, 그 사이에 작은 곡선들이 보인다. 왼쪽으로 살짝 돌아가고, 교차로에서 한 번 꺾이고, 예상보다 조금 먼 길을 안내받기도 한다. 하지만 우리는 그 곡선 하나하나를 걱정하지 않는다. 도착지가 바뀌지 않았으니까.</p>
+
+  <p class="fade-in">실무의 3원도 비슷하다. 기관마다 데이터를 가져오는 시점이 다르고, 수정 사항이 반영되는 주기가 다르고, 소수점을 처리하는 방식이 다르다. 그 차이는 경로 위의 작은 곡선이지, 도착지를 바꾸는 사건이 아니다.</p>
+
+  <p class="fade-in">마음이 놓이지 않을 때, 두 가지만 물어보면 된다. <strong>이 차이 때문에 누군가의 판단이 달라지는가.</strong> 그리고, <strong>이걸 그냥 넘기면 내 마음이 편한가.</strong> 첫 번째 질문에 "아니"라고 답할 수 있고, 두 번째 질문에 "괜찮다"고 답할 수 있다면 — 그건 오차이지 실수가 아니다. 내일의 나에게 맡겨도 괜찮고, 맡기지 않아도 괜찮다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 4. 전환점 -->
+  <p class="fade-in">그런데 돌이켜보면 이상한 것이 있다.</p>
+
+  <p class="fade-in">3원 앞에서는 밤새 붙잡으면서, 정작 하고 싶은 한 마디 앞에서는 너무 쉽게 놓아버린다. 회의에서 떠오른 생각을 삼키고, 관심 있는 프로젝트 앞에서 "저도 해보고 싶습니다"를 말하지 못하고, 좋은 아이디어를 가슴에 묻어둔다.</p>
+
+  <p class="fade-in"><strong>놓아줘도 되는 것을 붙잡고 있었고, 잡아야 할 것을 놓고 있었다.</strong> 같은 에너지인데, 흐르는 방향이 바뀌어 있었다.</p>
+
+  <div class="pull-quote fade-in">
+    물이 모든 바위를 부수려고 하면 마른다. 하지만 <em>물이 멈추면 고인다.</em> 물이 가장 멀리 가는 방법은, 부수지 않아도 되는 바위는 돌아가고 — 흘러야 할 곳에서는 멈추지 않는 것이다.
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 5. 조용한 시간은 빈 시간이 아니었다 -->
+  <p class="fade-in">화분을 옮겨 심으려고 들어올린 적이 있는가. 겉에서 보면 잎 몇 장이 전부인 것 같았는데, 화분을 빼는 순간 뿌리가 바닥을 가득 채우고 있는 걸 발견할 때. 보이지 않는 곳에서 이만큼이나 자라고 있었구나, 하고 놀라는 순간.</p>
+
+  <p class="fade-in">사람도 그런 시간이 있다. 남들은 앞서가는 것 같은데 나만 제자리인 것 같았던 때. 하지만 그 시간에 우리는 듣고 있었고, 보고 있었고, 조용히 배우고 있었다. 맡은 자리를 지키고, 실수를 줄이고, 신중하게 판단하는 법을 몸에 익히고 있었다. 그것은 멈춤이 아니라 <strong>뿌리를 내리는 시간</strong>이었다.</p>
+
+  <p class="fade-in">그 뿌리가 지금 당신을 여기까지 데려왔다. 부족해서 조용했던 게 아니다. 쌓고 있었기 때문에 조용했던 것이다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 6. 한 마디가 바꾸는 것 -->
+  <p class="fade-in">회의에서 한 번도 손을 들어본 적 없는 사람이, 어느 날 한 마디를 보탰다. 대단한 의견이 아니었다. "이 부분은 이렇게 보면 어떨까요"라는, 짧은 한 문장이었다.</p>
+
+  <p class="fade-in">회의의 결론이 바뀌진 않았다. 하지만 그날 저녁, 퇴근길에 따라온 것은 숫자가 아니라 조금 다른 감각이었다. "말할 수 있었다"는 감각. 그리고 다음 회의에서 두 번째 한 마디는, 첫 번째보다 덜 떨렸다. 세 번째에는 손이 먼저 기억했다.</p>
+
+  <p class="fade-in">성격이 바뀐 게 아니다. 뿌리 위에 가지가 하나 더 나온 것뿐이다. 조용한 사람이 갑자기 시끄러워질 필요는 없다. 신중한 사람이 무모해질 필요도 없다. <strong>안으로만 흐르던 물줄기를 바깥으로 조금 터주는 것.</strong> 그게 전부다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 7. 닫는 문장 -->
+  <p class="fade-in">당신이 조용히 흘러온 시간을 사랑해도 좋다. 그 시간이 당신을 여기까지 데려왔으니까.</p>
+
+  <p class="fade-in">다만 오늘 밤, 머릿속에서 떠나지 않는 숫자가 있다면 — 그것이 누군가의 판단을 바꾸는 숫자인지 한 번만 물어봐 주세요. 아니라면, 그건 당신의 잘못이 아니라 세상의 오차입니다.</p>
+
+  <p class="fade-in">그리고 내일, 삼키려던 한 마디가 올라온다면 — 그걸 한 번만 밖으로 내어주세요. 뿌리가 깊은 나무에서 나온 가지는, 바람에 흔들려도 꺾이지 않으니까.</p>
+
+  <!-- Takeaway -->
+  <div class="takeaway fade-in">
+    <div class="label">오늘의 한 줄</div>
+    <p>물은 모든 바위를 부수지 않는다.<br>돌아갈 줄 알기 때문에 바다에 닿는다.<br>하지만 물은 멈추지도 않는다.<br>흘러야 할 곳을 알기 때문에.<br><br><strong>놓아줄 것을 놓아주면,<br>잡을 것을 잡을 힘이 생긴다.</strong></p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p>에세이 · 특별편</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
