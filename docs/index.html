@@ -507,7 +507,7 @@ body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
 /* ── SPOTIFY (floating mini-player) ── */
 .spotify-bottom-bar {
   position: fixed; bottom: 16px; right: 16px; z-index: 9999;
-  width: 330px; height: 300px;
+  width: 330px; height: 352px;
   background: var(--spotify-dark); border: 1px solid #333;
   border-radius: 12px; overflow: hidden;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);
@@ -518,7 +518,7 @@ body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
 }
 .spotify-bottom-bar iframe { width: 100%; height: 100%; border: none; }
 .spotify-toggle-btn {
-  position: fixed; bottom: 324px; right: 24px; z-index: 10000;
+  position: fixed; bottom: 376px; right: 24px; z-index: 10000;
   padding: 0.45rem 0.9rem; border-radius: 100px; border: none;
   background: var(--spotify-green); color: #fff;
   font-family: 'Noto Sans KR', sans-serif; font-size: 0.75rem; font-weight: 500;
@@ -532,8 +532,8 @@ body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
 .spotify-toggle-btn.collapsed { bottom: 16px; background: #282828; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
 .spotify-toggle-btn.collapsed:hover { background: var(--spotify-green); }
 @media (max-width: 700px) {
-  .spotify-bottom-bar { width: 286px; height: 255px; right: 12px; bottom: 12px; }
-  .spotify-toggle-btn { bottom: 275px; right: 16px; padding: 0.4rem 0.75rem; font-size: 0.7rem; }
+  .spotify-bottom-bar { width: 286px; height: 300px; right: 12px; bottom: 12px; }
+  .spotify-toggle-btn { bottom: 320px; right: 16px; padding: 0.4rem 0.75rem; font-size: 0.7rem; }
   .spotify-toggle-btn.collapsed { bottom: 12px; }
 }
 
