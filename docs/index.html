@@ -49,6 +49,8 @@
   --spotify-green: #1DB954;
   --spotify-dark: #121212;
   --player-h: 80px;
+  --pt-green: #1e7a3a;
+  --pt-red: #c0392b;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
@@ -57,6 +59,7 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
+  padding-bottom: 56px; /* 포트폴리오 트래커 헤더 높이 확보 */
 }
 .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
 
@@ -299,7 +302,6 @@ body {
   width: 4px; height: 100%; border-radius: 2px 0 0 2px;
   background: var(--accent); transition: opacity 0.3s;
 }
-/* Card color variants */
 .post-card[data-color="orange"]::before { background: var(--orange); }
 .post-card[data-color="blue"]::before { background: var(--blue); }
 .post-card[data-color="green"]::before { background: var(--green); }
@@ -416,26 +418,21 @@ body {
 .comment-submit:hover { opacity: 0.85; }
 .comment-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .comment-login-msg { font-size: 0.78rem; color: var(--ink-faint); padding: 0.5rem 0; }
-/* Image preview */
 .comment-img-preview { position: relative; display: inline-block; margin-bottom: 0.6rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); background: var(--paper-warm); }
 .comment-img-preview img { display: block; max-width: 200px; max-height: 150px; object-fit: cover; border-radius: 7px; }
 .comment-img-preview .remove-img { position: absolute; top: 4px; right: 4px; width: 22px; height: 22px; border-radius: 50%; border: none; background: rgba(0,0,0,0.6); color: #fff; font-size: 0.7rem; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1; transition: background 0.15s; }
 .comment-img-preview .remove-img:hover { background: #c0392b; }
-/* Upload progress */
 .upload-progress { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; font-size: 0.72rem; color: var(--ink-faint); }
 .upload-progress .upload-bar { flex: 1; height: 4px; background: var(--paper-warm); border-radius: 2px; overflow: hidden; }
 .upload-progress .upload-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; transition: width 0.3s; }
-/* Comment image display */
 .comment-image { margin-top: 0.5rem; border-radius: 8px; overflow: hidden; display: inline-block; cursor: pointer; border: 1px solid var(--border); transition: transform 0.2s, box-shadow 0.2s; }
 .comment-image:hover { transform: scale(1.02); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
 .comment-image img { display: block; max-width: 320px; max-height: 240px; object-fit: contain; border-radius: 7px; }
-/* Lightbox */
 .img-lightbox { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99999; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; cursor: zoom-out; padding: 2rem; }
 .img-lightbox.open { display: flex; }
 .img-lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 8px 40px rgba(0,0,0,0.5); }
 .img-lightbox .lightbox-close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; border: none; background: rgba(255,255,255,0.15); color: #fff; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .img-lightbox .lightbox-close:hover { background: rgba(255,255,255,0.3); }
-/* Comment items */
 .comments-list { display: flex; flex-direction: column; gap: 0.6rem; }
 .comment-item { display: flex; gap: 0.6rem; padding: 0.6rem; background: #fff; border: 1px solid var(--border); border-radius: 6px; }
 .comment-item.reply { margin-left: 2rem; background: var(--paper-warm); border-color: var(--paper-warm); }
@@ -496,6 +493,17 @@ body.theater-mode .post-card.theater-active .card-tags,
 body.theater-mode .post-card.theater-active .card-go { display: none; }
 body.theater-mode .post-card.theater-active:hover { transform: none; box-shadow: none; }
 body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
+/* 글 읽기 모드에서는 포트폴리오 바 숨기고 Spotify 위치 복원 */
+body.theater-mode { padding-bottom: 0; }
+body.theater-mode .portfolio-tracker { display: none; }
+body.theater-mode .spotify-bottom-bar { bottom: 16px; }
+body.theater-mode .spotify-toggle-btn { bottom: 189px; }
+body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
+@media (max-width: 700px) {
+  body.theater-mode .spotify-bottom-bar { bottom: 12px; }
+  body.theater-mode .spotify-toggle-btn { bottom: 163px; }
+  body.theater-mode .spotify-toggle-btn.collapsed { bottom: 12px; }
+}
 
 /* ── FOOTER ── */
 .site-footer {
@@ -504,9 +512,162 @@ body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
   font-size: 0.78rem; color: var(--ink-faint); line-height: 1.8;
 }
 
-/* ── SPOTIFY (floating mini-player) ── */
+/* ── PORTFOLIO TRACKER (floating bottom bar) ── */
+.portfolio-tracker {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9998;
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -4px 24px rgba(58,52,80,0.12);
+  font-family: 'Noto Sans KR', sans-serif;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-tracker.collapsed { max-height: 48px; }
+.pt-header {
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  min-height: 48px;
+  flex-shrink: 0;
+  gap: 0.8rem;
+}
+.pt-header:hover { background: var(--paper-warm); }
+.pt-header-left {
+  display: flex; align-items: center; gap: 0.5rem;
+  min-width: 0; flex: 1; overflow: hidden;
+}
+.pt-emoji-main { font-size: 1.1rem; flex-shrink: 0; }
+.pt-title-main {
+  font-size: 0.88rem; font-weight: 700; color: var(--ink);
+  flex-shrink: 0; white-space: nowrap;
+}
+.pt-base-date {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+  color: var(--ink-faint); flex-shrink: 0; white-space: nowrap;
+}
+.pt-header-right {
+  display: flex; align-items: center; gap: 0.7rem; flex-shrink: 0;
+}
+.pt-total-bar {
+  font-family: 'JetBrains Mono', monospace; font-size: 1rem;
+  font-weight: 700;
+}
+.pt-total-bar.positive { color: var(--pt-green); }
+.pt-total-bar.negative { color: var(--pt-red); }
+.pt-toggle-icon {
+  font-size: 0.75rem; color: var(--ink-faint);
+  transition: transform 0.2s;
+  width: 20px; text-align: center;
+}
+.portfolio-tracker.collapsed .pt-toggle-icon { transform: rotate(180deg); }
+
+.pt-body {
+  padding: 0.6rem 1rem 0.75rem;
+  border-top: 1px solid var(--border);
+  background: var(--paper);
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex: 1;
+}
+.portfolio-tracker.collapsed .pt-body { display: none; }
+
+.pt-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+}
+.pt-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+}
+.pt-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.pt-card-emoji { font-size: 1.3rem; line-height: 1; }
+.pt-weight {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.62rem;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace;
+}
+.pt-theme { font-size: 0.78rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.pt-name { font-size: 0.66rem; color: var(--ink-light); margin-bottom: 8px; line-height: 1.3; }
+.pt-prices {
+  font-size: 0.66rem; color: var(--ink-faint);
+  font-family: 'JetBrains Mono', monospace; margin-bottom: 3px;
+}
+.pt-prices .pt-current { color: var(--ink); }
+.pt-pct {
+  font-size: 1rem; font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+}
+.pt-pct.positive { color: var(--pt-green); }
+.pt-pct.negative { color: var(--pt-red); }
+
+/* Chart card */
+.pt-chart-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.pt-chart-title { font-size: 0.78rem; font-weight: 600; color: var(--ink); }
+.pt-chart-value {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600;
+}
+.pt-chart-value.positive { color: var(--pt-green); }
+.pt-chart-value.negative { color: var(--pt-red); }
+.pt-chart-svg { width: 100%; height: 64px; display: block; }
+.pt-chart-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+  color: var(--ink-faint);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 2px;
+}
+
+.pt-footer-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.62rem;
+  color: var(--ink-faint);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: 0.5rem;
+  padding-top: 0.45rem;
+  border-top: 1px dashed var(--border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.pt-loading, .pt-error {
+  grid-column: 1 / -1;
+  text-align: center; padding: 1.5rem 0;
+  color: var(--ink-faint); font-size: 0.82rem;
+}
+
+/* ── SPOTIFY (moved up to clear portfolio tracker header) ── */
 .spotify-bottom-bar {
-  position: fixed; bottom: 16px; right: 16px; z-index: 9999;
+  position: fixed; bottom: 64px; right: 16px; z-index: 9999;
   width: 330px; height: 165px;
   background: var(--spotify-dark); border: 1px solid #333;
   border-radius: 12px; overflow: hidden;
@@ -514,11 +675,11 @@ body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .spotify-bottom-bar.collapsed {
-  transform: translateY(calc(100% + 20px)); opacity: 0; pointer-events: none;
+  transform: translateY(calc(100% + 80px)); opacity: 0; pointer-events: none;
 }
 .spotify-bottom-bar iframe { width: 100%; height: 100%; border: none; }
 .spotify-toggle-btn {
-  position: fixed; bottom: 189px; right: 24px; z-index: 10000;
+  position: fixed; bottom: 237px; right: 24px; z-index: 10000;
   padding: 0.45rem 0.9rem; border-radius: 100px; border: none;
   background: var(--spotify-green); color: #fff;
   font-family: 'Noto Sans KR', sans-serif; font-size: 0.75rem; font-weight: 500;
@@ -529,12 +690,21 @@ body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
 }
 .spotify-label { font-size: 0.7rem; }
 .spotify-toggle-btn:hover { transform: scale(1.05); box-shadow: 0 5px 18px rgba(29, 185, 84, 0.5); }
-.spotify-toggle-btn.collapsed { bottom: 16px; background: #282828; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
+.spotify-toggle-btn.collapsed { bottom: 64px; background: #282828; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
 .spotify-toggle-btn.collapsed:hover { background: var(--spotify-green); }
+
 @media (max-width: 700px) {
-  .spotify-bottom-bar { width: 286px; height: 143px; right: 12px; bottom: 12px; }
-  .spotify-toggle-btn { bottom: 163px; right: 16px; padding: 0.4rem 0.75rem; font-size: 0.7rem; }
-  .spotify-toggle-btn.collapsed { bottom: 12px; }
+  body { padding-bottom: 44px; }
+  .spotify-bottom-bar { width: 286px; height: 143px; right: 12px; bottom: 60px; }
+  .spotify-toggle-btn { bottom: 211px; right: 16px; padding: 0.4rem 0.75rem; font-size: 0.7rem; }
+  .spotify-toggle-btn.collapsed { bottom: 60px; }
+  .portfolio-tracker.collapsed { max-height: 44px; }
+  .pt-header { min-height: 44px; padding: 0.45rem 0.75rem; }
+  .pt-title-main { font-size: 0.78rem; }
+  .pt-base-date { display: none; }
+  .pt-total-bar { font-size: 0.9rem; }
+  .pt-grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-tracker { max-height: 70vh; }
 }
 
 /* ── WELCOME TOAST ── */
@@ -687,6 +857,28 @@ body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
 <div class="img-lightbox" id="img-lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
   <img id="lightbox-img" src="" alt="확대 이미지">
+</div>
+
+<!-- ── PORTFOLIO TRACKER ── -->
+<div class="portfolio-tracker" id="portfolioTracker">
+  <div class="pt-header" onclick="togglePortfolio()">
+    <div class="pt-header-left">
+      <span class="pt-emoji-main">🪴</span>
+      <span class="pt-title-main">포트폴리오 성과 트래커</span>
+      <span class="pt-base-date" id="pt-base-date">기준일 —</span>
+    </div>
+    <div class="pt-header-right">
+      <span class="pt-total-bar" id="pt-total-bar">—</span>
+      <span class="pt-toggle-icon" id="pt-toggle-icon">▼</span>
+    </div>
+  </div>
+  <div class="pt-body" id="pt-body">
+    <div class="pt-grid" id="pt-grid"><div class="pt-loading">포트폴리오 데이터 불러오는 중...</div></div>
+    <div class="pt-footer-info" id="pt-footer-info" style="display:none;">
+      <span id="pt-fx">USD/KRW: —</span>
+      <span id="pt-update">업데이트: —</span>
+    </div>
+  </div>
 </div>
 
 <!-- Spotify -->
@@ -1105,6 +1297,8 @@ function markAsRead(postId) {
 /* ===== Spotify ===== */
 (function() {
   var bar = document.getElementById('spotifyBar'), btn = document.getElementById('spotifyToggle');
+  // 기본 상태: Spotify 접힘 (음악은 선택 사항)
+  bar.classList.add('collapsed'); btn.classList.add('collapsed');
   btn.addEventListener('click', function() {
     bar.classList.toggle('collapsed'); btn.classList.toggle('collapsed');
     var label = btn.querySelector('.spotify-label');
@@ -1112,11 +1306,162 @@ function markAsRead(postId) {
   });
 })();
 
+/* ===== PORTFOLIO TRACKER ===== */
+var PORTFOLIO_WORKER_URL = 'https://portfolio-tracker.forbetterday.workers.dev/portfolio';
+
+function togglePortfolio() {
+  var t = document.getElementById('portfolioTracker');
+  var collapsed = t.classList.toggle('collapsed');
+  localStorage.setItem('portfolioCollapsed', collapsed ? '1' : '0');
+}
+
+function initPortfolioState() {
+  var saved = localStorage.getItem('portfolioCollapsed');
+  // 기본값: 펼친 상태 (사용자가 이전에 접었다면 그대로 접힘)
+  if (saved === '1') {
+    document.getElementById('portfolioTracker').classList.add('collapsed');
+  }
+}
+
+function formatNum(n, isUsd) {
+  if (n == null) return '—';
+  if (isUsd) return '$' + n.toFixed(2);
+  return n.toLocaleString('ko-KR', { maximumFractionDigits: 2 });
+}
+function formatPct(p) {
+  if (p == null) return '—';
+  var sign = p >= 0 ? '+' : '';
+  return sign + p.toFixed(2) + '%';
+}
+function pctClass(p) { return (p == null) ? '' : (p >= 0 ? 'positive' : 'negative'); }
+
+function buildChartSvg(history) {
+  if (!history || history.length < 2) return '<svg viewBox="0 0 200 80" class="pt-chart-svg"></svg>';
+  var returns = history.map(function(h) { return h.returnPct; });
+  var minR = Math.min.apply(null, returns);
+  var maxR = Math.max.apply(null, returns);
+  // 0%도 항상 스케일에 포함
+  if (minR > 0) minR = 0;
+  if (maxR < 0) maxR = 0;
+  var range = maxR - minR;
+  if (range < 1) range = 1;
+  var padR = range * 0.15;
+  var chartMin = minR - padR;
+  var chartMax = maxR + padR;
+  var chartRange = chartMax - chartMin;
+
+  var n = history.length;
+  var vbW = 200, xPad = 6, yTop = 8, yBot = 68;
+  var xStep = (vbW - xPad * 2) / Math.max(1, n - 1);
+
+  function yFor(r) {
+    return yBot - ((r - chartMin) / chartRange) * (yBot - yTop);
+  }
+  var zeroY = yFor(0);
+
+  var pathPoints = history.map(function(p, i) {
+    var x = xPad + i * xStep;
+    var y = yFor(p.returnPct);
+    return (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
+  }).join(' ');
+
+  var lastX = xPad + (n - 1) * xStep;
+  var lastY = yFor(history[n-1].returnPct);
+  var lastPositive = history[n-1].returnPct >= 0;
+  var lineColor = lastPositive ? '#1e7a3a' : '#c0392b';
+
+  return '<svg viewBox="0 0 200 80" class="pt-chart-svg" preserveAspectRatio="xMidYMid meet">' +
+    '<line x1="0" y1="' + zeroY.toFixed(1) + '" x2="200" y2="' + zeroY.toFixed(1) + '" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="2,2"/>' +
+    '<path d="' + pathPoints + '" fill="none" stroke="' + lineColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
+    '<circle cx="' + lastX.toFixed(1) + '" cy="' + lastY.toFixed(1) + '" r="2.5" fill="' + lineColor + '"/>' +
+  '</svg>';
+}
+
+function formatShortDate(iso) {
+  if (!iso) return '';
+  var parts = iso.split('-');
+  return (parts[1] ? parts[1].replace(/^0/, '') : '') + '/' + (parts[2] ? parts[2].replace(/^0/, '') : '');
+}
+
+function renderPortfolio(data) {
+  if (!data || !data.etfs) return;
+  var total = data.totalChangePct;
+  var totalText = formatPct(total);
+
+  // Header
+  document.getElementById('pt-base-date').textContent = '기준일 ' + (data.baseDate || '—');
+  var totalBar = document.getElementById('pt-total-bar');
+  totalBar.textContent = totalText;
+  totalBar.className = 'pt-total-bar ' + pctClass(total);
+
+  // Grid: 5 ETF 카드 + 1 차트 카드
+  var cardsHtml = data.etfs.map(function(e) {
+    var isUsd = (e.market === 'us');
+    var priceLine = formatNum(e.basePrice, isUsd) + ' → <span class="pt-current">' + formatNum(e.currentPrice, isUsd) + '</span>';
+    return '<div class="pt-card">' +
+      '<div class="pt-card-top">' +
+        '<span class="pt-card-emoji">' + (e.emoji || '') + '</span>' +
+        '<span class="pt-weight">' + e.weight + '%</span>' +
+      '</div>' +
+      '<div class="pt-theme">' + (e.theme || '') + '</div>' +
+      '<div class="pt-name">' + (e.name || '') + '</div>' +
+      '<div class="pt-prices">' + priceLine + '</div>' +
+      '<div class="pt-pct ' + pctClass(e.changePct) + '">' + formatPct(e.changePct) + '</div>' +
+    '</div>';
+  }).join('');
+
+  var chartSvg = buildChartSvg(data.history || []);
+  var startDate = formatShortDate(data.baseDate);
+  var endDate = (data.history && data.history.length > 0) ? formatShortDate(data.history[data.history.length-1].date) : formatShortDate(new Date().toISOString().slice(0,10));
+  var chartCard =
+    '<div class="pt-card">' +
+      '<div class="pt-chart-top">' +
+        '<span class="pt-chart-title">수익률 추이</span>' +
+        '<span class="pt-chart-value ' + pctClass(total) + '">' + totalText + '</span>' +
+      '</div>' +
+      chartSvg +
+      '<div class="pt-chart-dates"><span>' + startDate + '</span><span>' + endDate + '</span></div>' +
+    '</div>';
+
+  document.getElementById('pt-grid').innerHTML = cardsHtml + chartCard;
+
+  // Footer info
+  var fx = data.exchangeRate || {};
+  var fxPct = (fx.base && fx.current) ? ((fx.current - fx.base) / fx.base) * 100 : null;
+  var fxText = 'USD/KRW: ' + (fx.base ? Math.round(fx.base).toLocaleString() : '—') + ' → ' + (fx.current ? fx.current.toFixed(2) : '—') + (fxPct != null ? ' (' + formatPct(fxPct) + ')' : '');
+  document.getElementById('pt-fx').textContent = fxText;
+  var now = new Date();
+  var timeStr = now.toLocaleString('ko-KR', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+  document.getElementById('pt-update').textContent = '업데이트 ' + timeStr;
+  document.getElementById('pt-footer-info').style.display = 'flex';
+}
+
+function loadPortfolioData() {
+  fetch(PORTFOLIO_WORKER_URL, { cache: 'no-store' }).then(function(res) {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.json();
+  }).then(function(data) {
+    if (data.error) {
+      document.getElementById('pt-grid').innerHTML = '<div class="pt-error">데이터 로드 실패. 잠시 후 다시 시도해주세요.</div>';
+      return;
+    }
+    renderPortfolio(data);
+  }).catch(function(err) {
+    console.error('포트폴리오 로드 실패:', err);
+    document.getElementById('pt-grid').innerHTML = '<div class="pt-error">포트폴리오 데이터를 불러올 수 없습니다.</div>';
+  });
+}
+
 /* ===== Load Posts ===== */
 var cardColors = ['orange','blue','green','purple','coral','teal','gold'];
 
 document.addEventListener('DOMContentLoaded', async () => {
   setGreeting(); setDailyQuote(); setSeasonTheme();
+  initPortfolioState();
+  loadPortfolioData();
+  // 5분마다 포트폴리오 자동 갱신
+  setInterval(loadPortfolioData, 5 * 60 * 1000);
+
   var listEl = document.getElementById('posts-list');
   try {
     var res = await fetch('investor_posts.json');
@@ -1206,7 +1551,6 @@ async function discoverNewHtmlFiles(existingPosts, gridEl) {
         var tagsMeta = doc.querySelector('meta[name="post-tags"]');
         var dateMeta = doc.querySelector('meta[name="post-date"]');
 
-        /* 블로그 메타 태그가 없으면 뉴스 등 다른 페이지이므로 건너뛰기 */
         if (!dateMeta) continue;
         var desc = descMeta ? descMeta.getAttribute('content') : '';
         var tags = tagsMeta ? tagsMeta.getAttribute('content').split(',').map(function(t) { return t.trim(); }) : ['새 글'];
