@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>특별강 II. 나의 첫 포트폴리오 — 다섯 개의 화분으로 가꾸는 작은 정원</title>
+<meta name="post-tags" content="포트폴리오,분산투자,자산배분,ETF,화분">
+<meta name="post-description" content="다섯 개의 화분으로 가꾸는 작은 정원 — 나의 첫 포트폴리오 구성법">
+<meta name="post-date" content="2026-04-17">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --accent: #B8860B;
+    --accent-soft: #D4A843;
+    --accent-bg: #FDF6E3;
+    --border: #E0D5C5;
+    --green: #2E7D32;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.9; font-size: 17px; -webkit-font-smoothing: antialiased; }
+
+  .header { background: linear-gradient(175deg, #0F0C08 0%, #1A1410 30%, #2C2318 65%, #3D3226 100%); color: #FAF7F2; padding: 80px 24px 70px; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(184,134,11,0.08) 0%, transparent 50%); }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .series-label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .header h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 5vw, 42px); line-height: 1.4; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .header-sub { font-family: var(--sans); font-weight: 300; font-size: 15px; color: #BDB3A4; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .header-meta { margin-top: 32px; font-size: 12px; color: #8A7F72; letter-spacing: 0.5px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+
+  .article { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
+  .article p { margin-bottom: 24px; font-size: 17px; line-height: 1.95; color: var(--text); word-break: keep-all; }
+  .article strong { font-weight: 700; color: #1A1A1A; }
+  .drop-cap::first-letter { font-family: var(--serif); font-weight: 900; font-size: 3.6em; float: left; line-height: 0.8; margin-right: 10px; margin-top: 6px; color: var(--accent); }
+  .section-break { text-align: center; margin: 48px 0; color: var(--accent-soft); font-size: 18px; letter-spacing: 12px; opacity: 0.6; }
+  .article h2 { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--text); margin: 56px 0 20px; line-height: 1.5; padding-left: 16px; border-left: 3px solid var(--accent); }
+  .pull-quote { margin: 48px -20px; padding: 32px 28px; background: var(--accent-bg); border-radius: 2px; border-left: 4px solid var(--accent); font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #3D3226; }
+  .pull-quote em { font-style: normal; color: var(--accent); font-weight: 700; }
+
+  .insight-box { margin: 48px 0; padding: 28px 24px; background: #FFFFFF; border: 1px solid var(--border); border-radius: 4px; position: relative; }
+  .insight-box::before { content: attr(data-label); position: absolute; top: -11px; left: 20px; background: var(--bg); padding: 0 10px; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+  .insight-box p { font-size: 15.5px; line-height: 1.85; margin-bottom: 12px; color: var(--text-light); }
+  .insight-box p:last-child { margin-bottom: 0; }
+
+  .garden-card { margin: 40px 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .garden-card-header { padding: 20px 24px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+  .garden-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .garden-card-header h3 { font-family: var(--serif); font-weight: 700; font-size: 17px; line-height: 1.4; color: var(--text); }
+  .garden-card-header .pct { font-family: var(--sans); font-size: 13px; color: var(--accent); font-weight: 700; }
+  .garden-card-body { padding: 18px 24px; }
+  .garden-card-body p { font-size: 15px; line-height: 1.85; color: var(--text-light); margin-bottom: 0; }
+
+  .company-card { margin: 48px 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .company-card-header { background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; padding: 24px 28px; }
+  .company-card-header .ticker { font-family: var(--sans); font-weight: 700; font-size: 11px; letter-spacing: 2px; color: var(--accent-soft); margin-bottom: 8px; }
+  .company-card-header h3 { font-family: var(--serif); font-weight: 700; font-size: 20px; line-height: 1.5; }
+  .company-card-body { padding: 24px 28px; }
+  .company-card-body p { font-size: 15.5px; line-height: 1.85; color: var(--text-light); margin-bottom: 16px; }
+  .company-card-body p:last-child { margin-bottom: 0; }
+  .think-box { margin-top: 20px; padding: 16px 20px; background: var(--accent-bg); border-radius: 3px; font-size: 14.5px; line-height: 1.8; color: #5D4E37; }
+  .think-box strong { color: var(--accent); }
+
+  .one-step { margin: 48px 0; padding: 24px 28px; background: linear-gradient(135deg, #F0FAF0, #E8F5E9); border-left: 4px solid var(--green); border-radius: 2px; }
+  .one-step .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--green); margin-bottom: 12px; }
+  .one-step p { font-size: 15.5px; line-height: 1.85; color: #2C3E2C; margin-bottom: 12px; }
+  .one-step p:last-child { margin-bottom: 0; }
+
+  .caution-box { margin: 48px 0; padding: 24px 28px; background: #FFF8F0; border-left: 4px solid #D4A843; border-radius: 2px; }
+  .caution-box .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #B8860B; margin-bottom: 12px; }
+  .caution-box p { font-size: 15.5px; line-height: 1.85; color: #5D4E37; margin-bottom: 12px; }
+  .caution-box p:last-child { margin-bottom: 0; }
+
+  .takeaway { margin: 56px 0 0; padding: 32px 28px; background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; border-radius: 4px; text-align: center; }
+  .takeaway .label { font-size: 11px; letter-spacing: 3px; color: var(--accent-soft); font-weight: 500; margin-bottom: 16px; }
+  .takeaway p { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #E8E0D5; margin-bottom: 0; }
+  .takeaway strong { color: var(--accent-soft); }
+
+  .footer { text-align: center; padding: 40px 24px 60px; font-size: 12px; color: #A89F94; letter-spacing: 0.5px; }
+  .hl { background: linear-gradient(transparent 60%, rgba(184,134,11,0.15) 60%); padding: 0 2px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 600px) {
+    .header { padding: 60px 20px 50px; }
+    .article { padding: 40px 20px 60px; }
+    .article p { font-size: 16px; }
+    .pull-quote { margin: 36px -10px; padding: 24px 20px; font-size: 16.5px; }
+    .company-card-header, .company-card-body { padding: 20px; }
+    .garden-card-header, .garden-card-body { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="series-label">투자 에세이 · 특별강 II</div>
+    <h1>나의 첫 포트폴리오<br>— 다섯 개의 화분으로 가꾸는<br>작은 정원</h1>
+    <p class="header-sub">배운 것을 직접 심어보는 시간 — 작아도 괜찮다, 시작이 전부다</p>
+    <div class="header-meta">특별강(빚의 도구화)의 후속편 · 읽는 시간 약 8분</div>
+  </div>
+</header>
+
+<article class="article">
+
+  <p class="drop-cap fade-in">정원을 가꿔 본 적이 있는 사람은 안다. 한 종류의 꽃만 심으면, 그 꽃이 시들 때 정원 전체가 황량해진다. 하지만 봄에 피는 꽃, 여름에 피는 꽃, 사철 푸른 나무를 함께 심어두면, 어느 계절에 창밖을 내다봐도 무언가는 자라고 있다. 투자도 이와 같다. 하나에만 모든 것을 거는 대신, <strong>계절이 달라도 각자의 방식으로 자라는 것들</strong>을 함께 심는 것이다.</p>
+
+  <p class="fade-in">이 에세이는 지금까지 배운 것들 — 이윤은 어디서 생기는지(3강), 오래가는 기업의 조건(4강), 시대마다 대표 주식이 바뀐다는 것(9~10강), 그리고 숫자 앞에서 감정이 판단을 흔든다는 것(특별강) — 을 한 문장으로 줄이면 이렇다. <span class="hl">"좋은 것을 고르고, 오래 들고 있어라."</span> 그 "좋은 것"을 직접 골라 담아보는 시간이다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">다섯 개의 화분, 각자의 계절</h2>
+
+  <p class="fade-in">우리의 작은 정원에는 다섯 개의 화분이 놓인다. 각 화분에는 다른 종류의 식물이 심어져 있고, 잘 자라는 계절도 다르다. 중요한 건 이것이다 — <strong>다섯 개를 한꺼번에 심되, 하나도 뽑지 않는 것.</strong></p>
+
+  <div class="garden-card fade-in">
+    <div class="garden-card-header">
+      <div class="garden-icon" style="background: #F3EDFF;">🌱</div>
+      <div><h3>KoAct 팔란티어밸류체인 — 새싹</h3><span class="pct">30%</span></div>
+    </div>
+    <div class="garden-card-body">
+      <p>가장 빠르게 자라는 화분. AI라는 새로운 시대를 이끄는 기업들 — 팔란티어, 테슬라, 알파벳 — 이 담겨 있다. 성장이 빠른 만큼 바람에 흔들리기도 쉽다. 새싹은 원래 그렇다. 하지만 뿌리를 내리면 가장 큰 나무가 된다.</p>
+    </div>
+  </div>
+
+  <div class="garden-card fade-in">
+    <div class="garden-card-header">
+      <div class="garden-icon" style="background: #E8F5E9;">🌳</div>
+      <div><h3>TIGER 미국나스닥100 — 큰 나무</h3><span class="pct">25%</span></div>
+    </div>
+    <div class="garden-card-body">
+      <p>Apple, Microsoft, Amazon, NVIDIA — 이미 거대하게 자란 나무 100그루가 모여 있는 숲. 어떤 나무가 AI 시대의 최종 승자가 될지 모르니까, 숲 전체를 산 것이다. 한 그루가 쓰러져도 숲은 무너지지 않는다.</p>
+    </div>
+  </div>
+
+  <div class="garden-card fade-in">
+    <div class="garden-card-header">
+      <div class="garden-icon" style="background: #E3F2FD;">🌿</div>
+      <div><h3>SCHD 미국배당성장 — 사철나무</h3><span class="pct">25%</span></div>
+    </div>
+    <div class="garden-card-body">
+      <p>겨울에도 푸른 사철나무. Coca-Cola, PepsiCo, Chevron 같은 기업 101개가 매 분기 배당금이라는 열매를 떨어뜨린다. AI가 뜨든 지든, 사람들은 콜라를 마시고 석유를 쓴다. 이 화분은 화려하지 않지만, <strong>정원이 가장 추울 때 살아남게 해주는 화분</strong>이다.</p>
+    </div>
+  </div>
+
+  <div class="garden-card fade-in">
+    <div class="garden-card-header">
+      <div class="garden-icon" style="background: #FFF8E1;">💡</div>
+      <div><h3>PLUS 글로벌HBM반도체 — 구근</h3><span class="pct">10%</span></div>
+    </div>
+    <div class="garden-card-body">
+      <p>땅속에서 에너지를 비축하는 구근(알뿌리) 같은 존재. 삼성전자, SK하이닉스, 마이크론 — AI가 돌아가려면 이 반도체가 있어야 한다. 눈에 잘 보이지 않지만, 다음 봄을 위해 꼭 필요한 뿌리다.</p>
+    </div>
+  </div>
+
+  <div class="garden-card fade-in">
+    <div class="garden-card-header">
+      <div class="garden-icon" style="background: #FCE4EC;">✨</div>
+      <div><h3>HANARO 글로벌생성형AI — 덩굴꽃</h3><span class="pct">10%</span></div>
+    </div>
+    <div class="garden-card-body">
+      <p>큰 나무를 타고 올라가며 꽃을 피우는 덩굴. NVIDIA, Microsoft, Adobe, Meta — AI 기술을 실제 서비스로 만들어 돈을 버는 기업들이다. 큰 나무(나스닥100)에 이미 들어 있는 기업과 겹치는 부분이 있지만, 이 화분은 AI 소프트웨어에만 집중한다는 점에서 꽃의 색이 다르다.</p>
+    </div>
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">왜 이렇게 나눴을까 — 한 송이만 심지 않는 이유</h2>
+
+  <p class="fade-in">9강에서 우리는 시대마다 승자가 바뀐다는 것을 배웠다. 철도의 시대, 석유의 시대, 브랜드의 시대. 지금은 AI의 시대가 열리고 있다. 그런데 AI라고 해서 다 같은 AI가 아니다. AI를 <strong>만드는 기업</strong>(반도체), AI를 <strong>서비스로 파는 기업</strong>(소프트웨어), AI를 <strong>현실에 적용하는 기업</strong>(팔란티어, 테슬라)은 각각 다른 타이밍에, 다른 방식으로 성장한다.</p>
+
+  <p class="fade-in">정원으로 돌아가면, 새싹(KoAct)이 아직 꽃을 피우지 못한 달에도 사철나무(SCHD)는 열매를 맺고 있고, 구근(HBM)은 땅속에서 다음 성장을 준비하고 있다. <strong>어느 달에 정원을 들여다봐도 무언가는 자라고 있다</strong>는 것이 이 구조의 핵심이다.</p>
+
+  <p class="fade-in">그리고 이 정원에서 가장 중요한 규칙이 하나 있다. <strong>잘 자란다고 해서 한 화분만 더 사고, 시든다고 해서 뽑아버리지 않는 것.</strong> 특별강에서 카너먼의 손실 회피를 배웠다. 시들어 보이는 화분을 뽑고 싶은 충동 — 그것이 바로 손실 회피다. 하지만 정원사는 안다. 겨울에 앙상한 가지가 봄에 가장 먼저 꽃을 피운다는 것을.</p>
+
+  <div class="pull-quote fade-in">
+    나심 탈레브는 이렇게 말했다. <em>"자기 돈을 걸지 않는 사람의 조언은 듣지 마라."</em> 정원 가꾸기를 유튜브로만 보는 것과, 직접 흙에 손을 넣어보는 것은 전혀 다른 경험이다. 투자도 마찬가지다. 작은 화분 하나라도 직접 심어봐야, 비로소 계절의 리듬이 느껴지기 시작한다.
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">비가 와도 괜찮을까 — 세 겹의 지붕</h2>
+
+  <p class="fade-in">정원에 비가 올 때가 있다. 주가가 떨어지고, 뉴스가 불안하고, "지금 다 팔아야 하나" 하는 생각이 드는 날. 이 정원에는 그런 날을 위한 세 겹의 지붕이 있다.</p>
+
+  <p class="fade-in"><strong>첫 번째 지붕은 사철나무(SCHD, 25%)다.</strong> AI 관련주가 일제히 빠지는 폭풍이 와도, Coca-Cola와 PepsiCo는 그날도 콜라를 팔고 배당금을 보내준다. 이 25%는 폭풍 속에서도 꿋꿋이 서 있는 정원의 울타리다. 10강에서 "감정에 뿌리를 둔 브랜드는 기술보다 오래 간다"고 배운 것 — 바로 이 화분의 이야기다.</p>
+
+  <p class="fade-in"><strong>두 번째 지붕은 환율이라는 자연 현상이다.</strong> 이 정원의 화분 대부분은 달러로 된 자산이다. 한국 시장이 흔들릴 때 달러는 오히려 강해지는 경향이 있다. 주가가 내려가는 만큼 환율이 올라서, 원화로 환산한 내 자산의 낙폭이 줄어드는 것이다. 따로 무언가를 할 필요가 없다 — 구조 자체에 들어 있는 자연스러운 지붕이다.</p>
+
+  <p class="fade-in"><strong>세 번째 지붕은 "조금씩, 꾸준히" 심는 방식 자체다.</strong> 매달 같은 금액으로 사면, 비쌀 때는 적게 사고 쌀 때는 많이 사게 된다. 비가 오는 달에 오히려 더 많은 씨앗을 뿌리게 되는 셈이다. 시간이 지나면, 비 온 달에 뿌린 씨앗이 가장 많은 꽃을 피운다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">알고 심어야 할 것들</h2>
+
+  <p class="fade-in">좋은 면만 말하면 광고가 되고, 주의할 점까지 말해야 정원 가꾸기 안내서가 된다.</p>
+
+  <p class="fade-in">이 정원은 AI라는 하나의 계절에 많이 기대고 있다. 전체의 약 68%가 AI와 관련된 화분이다. AI의 봄이 계속되면 정원은 화려하겠지만, 예상보다 봄이 늦어지면 정원의 3분의 2가 동시에 시무룩해질 수 있다. 그때 사철나무(SCHD 25%)와 큰 나무(나스닥100) 속 비AI 기업들이 버텨주긴 하지만, 정원 전체가 환해지기까지는 시간이 걸린다.</p>
+
+  <p class="fade-in">또 하나, 다섯 화분 중 큰 나무(나스닥100)와 덩굴꽃(HANARO)에는 같은 식물이 겹쳐서 들어 있다. NVIDIA, 알파벳, 마이크로소프트 같은 기업은 두 화분에 동시에 심어져 있는 셈이다. 화분은 다섯 개인데 실제 뿌리의 일부는 연결되어 있다는 뜻이니, 이 점을 기억해 두자.</p>
+
+  <div class="caution-box fade-in">
+    <div class="label">정원사의 메모</div>
+    <p><strong>세금.</strong> 해외 투자 ETF로 번 돈에는 세금이 붙는다. 연 250만 원까지는 비과세, 그 이상은 22%. 지금은 금액이 작아서 신경 쓸 일이 없지만, 정원이 커지면 ISA나 연금저축 같은 절세 화분갈이가 필요해진다. 이건 32~35강에서 자세히 다룰 예정이다.</p>
+    <p><strong>비율 되돌리기.</strong> 어떤 화분이 쑥쑥 자라서 원래 비율(30:25:25:10:10)에서 벗어나면, 6개월에 한 번쯤 잘 자란 쪽을 조금 덜어내고 덜 자란 쪽에 보태준다. "잘 자라는 걸 왜 줄여?" 싶겠지만, 이것이 정원을 오래 유지하는 비결이다.</p>
+  </div>
+
+  <!-- 중급전환질문 -->
+  <div class="insight-box fade-in" data-label="한 걸음 더 깊이">
+    <p>이 질문에 답할 수 있으면, 당신은 이미 초보를 넘어서고 있다.</p>
+    <p><strong>"AI 관련주가 한꺼번에 20% 빠졌다. 이 정원에서 비를 안 맞는 화분은 어디이고, 전체의 몇 %일까?"</strong></p>
+    <p>사철나무(SCHD) 25% + 큰 나무 속 비AI 기업 약 7.5% = 대략 <strong>34%가 비를 피한다.</strong> 이 숫자를 알고 정원을 가꾸는 것과, 모르고 가꾸는 것은 마음의 여유가 완전히 다르다.</p>
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <p class="fade-in">특별강에서 우리는 카너먼의 손실 회피를 배웠다. "잃는 것의 고통이 얻는 것의 기쁨보다 두 배 크다"는 것. 정원을 처음 시작하면 이 감정이 매일 찾아온다. 화분 하나가 시들어 보일 때마다 뽑고 싶은 충동이 든다. 하지만 경험 많은 정원사는 그 충동을 이겨내는 법을 안다 — <strong>겨울이 지나면 봄이 온다는 걸 알기 때문이다.</strong></p>
+
+  <p class="fade-in">완벽한 정원은 없다. 하지만 "이 화분에는 왜 이 식물을 심었는지" 설명할 수 있는 정원은 있다. 그리고 어떤 계절에 어떤 화분이 힘들어질 수 있는지까지 알고 있다면, 그것으로 충분하다.</p>
+
+  <!-- One Step Further -->
+  <div class="one-step fade-in">
+    <div class="label">💡 오늘 바로 할 수 있는 것</div>
+    <p>매달 30만 원이면 이렇게 나눌 수 있다. KoAct 9만 원, TIGER 나스닥100 7.5만 원, SCHD 7.5만 원, PLUS HBM 3만 원, HANARO 생성형AI 3만 원. 다섯 개 모두 한국 증권사 앱에서 원화로 살 수 있고, 1주 가격이 낮아서 매달 빠짐없이 심을 수 있다.</p>
+    <p>증권사 앱에서 "자동매수"를 설정하면, 매달 정해진 날에 알아서 심어진다. 물주는 것만 자동으로 해주는 스마트 화분이라고 생각하면 된다.</p>
+    <p><strong>처음에는 반으로 줄여서 15만 원부터 시작해도 괜찮다.</strong> 중요한 건 금액이 아니라, "심었다"는 사실이다. 작은 화분 하나가 정원의 시작이다.</p>
+  </div>
+
+  <!-- Takeaway -->
+  <div class="takeaway fade-in">
+    <div class="label">오늘의 한 줄</div>
+    <p>한 종류의 꽃만 심으면,<br>그 꽃이 시들 때 정원이 끝난다.<br>하지만 <strong>계절이 다른 다섯 개의 화분</strong>을 함께 심으면,<br>어느 날 창밖을 봐도<br><strong>무언가는 자라고 있다.</strong><br><span style="font-size:14px; color:#8A7F72; margin-top:8px; display:inline-block;">— 탈레브: "직접 흙에 손을 넣어봐야, 계절의 리듬이 느껴진다."</span></p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p>투자 에세이 시리즈 · 특별강 II<br>
+  <span style="opacity:0.6;">특별강(빚의 도구화)의 후속편 · 다음 에세이: 4강 — 경쟁과 독점</span></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
