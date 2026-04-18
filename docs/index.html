@@ -61,10 +61,10 @@ body {
   min-height: 100vh;
   padding-bottom: 56px;
 }
-.container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
 /* ── TOP HEADER ── */
 .top-header { position: sticky; top: 0; z-index: 150; background: var(--header-bg); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 1.5rem; backdrop-filter: blur(12px); }
-.top-header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 0.8rem; }
+.top-header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 0.8rem; }
 .hdr-brand { font-family: 'Noto Serif KR', serif; font-size: 1.1rem; font-weight: 900; color: var(--accent); text-decoration: none; white-space: nowrap; }
 .hdr-right { display: flex; align-items: center; gap: 0.4rem; }
 .hdr-btn { display: flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.7rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: transparent; color: #a0a8bc; font-family: 'Noto Sans KR', sans-serif; font-size: 0.72rem; cursor: pointer; transition: all 0.15s; white-space: nowrap; position: relative; }
@@ -347,24 +347,24 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
 /* === 메인 + 우측 사이드바 레이아웃 === */
 .main-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 1.5rem;
   align-items: start;
   margin-bottom: 3rem;
 }
 .main-col { min-width: 0; }
 .right-sidebar {
-  position: sticky;
-  top: 72px;
   align-self: start;
 }
 .right-sidebar .section-label { margin-bottom: 0.8rem; }
 .right-sidebar .heart-card-widget { max-width: 100%; margin-bottom: 1.2rem; }
 .right-sidebar .hcw-feed { max-width: 100%; margin-top: 0; }
 
-/* 좁아진 메인 영역에 맞춰 포스트 카드 최소 너비 조정 */
+/* 넓은 화면: 강의 카드 3열 유지 */
 .main-layout .posts-grid {
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
   margin-bottom: 0;
 }
 
@@ -372,7 +372,14 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
 body.theater-mode .main-layout { display: block; }
 body.theater-mode .right-sidebar { display: none; }
 
-/* 모바일: 세로 스택 */
+/* 중간 화면: 사이드바 유지하되 강의 2열 */
+@media (max-width: 1100px) {
+  .main-layout .posts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 모바일: 세로 스택, 사이드바를 아래로 */
 @media (max-width: 900px) {
   .main-layout {
     grid-template-columns: 1fr;
