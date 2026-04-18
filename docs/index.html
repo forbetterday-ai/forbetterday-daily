@@ -59,124 +59,41 @@ body {
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
-  padding-bottom: 56px; /* 포트폴리오 트래커 헤더 높이 확보 */
+  padding-bottom: 56px;
 }
 .container { max-width: 1080px; margin: 0 auto; padding: 0 1.5rem; }
-
 /* ── TOP HEADER ── */
-.top-header {
-  position: sticky; top: 0; z-index: 150;
-  background: var(--header-bg);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 0 1.5rem;
-  backdrop-filter: blur(12px);
-}
-.top-header-inner {
-  max-width: 1080px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 56px;
-  gap: 0.8rem;
-}
-.hdr-brand {
-  font-family: 'Noto Serif KR', serif;
-  font-size: 1.1rem;
-  font-weight: 900;
-  color: var(--accent);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.hdr-right {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.hdr-btn {
-  display: flex; align-items: center; gap: 0.35rem;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
-  background: transparent;
-  color: #a0a8bc;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.72rem;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-  position: relative;
-}
+.top-header { position: sticky; top: 0; z-index: 150; background: var(--header-bg); border-bottom: 1px solid rgba(255,255,255,0.08); padding: 0 1.5rem; backdrop-filter: blur(12px); }
+.top-header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 0.8rem; }
+.hdr-brand { font-family: 'Noto Serif KR', serif; font-size: 1.1rem; font-weight: 900; color: var(--accent); text-decoration: none; white-space: nowrap; }
+.hdr-right { display: flex; align-items: center; gap: 0.4rem; }
+.hdr-btn { display: flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.7rem; border: 1px solid rgba(255,255,255,0.12); border-radius: 8px; background: transparent; color: #a0a8bc; font-family: 'Noto Sans KR', sans-serif; font-size: 0.72rem; cursor: pointer; transition: all 0.15s; white-space: nowrap; position: relative; }
 .hdr-btn:hover { background: rgba(255,255,255,0.06); color: #e0e0e0; }
 .hdr-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
-.hdr-badge {
-  display: none;
-  min-width: 15px; height: 15px; line-height: 15px;
-  text-align: center; border-radius: 8px;
-  background: #e74c3c; color: #fff;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.5rem; font-weight: 700;
-  padding: 0 3px;
-}
+.hdr-badge { display: none; min-width: 15px; height: 15px; line-height: 15px; text-align: center; border-radius: 8px; background: #e74c3c; color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; font-weight: 700; padding: 0 3px; }
 .hdr-badge.show { display: inline-block; }
-/* Auth in header */
 .auth-area { display: flex; align-items: center; gap: 0.4rem; }
 .auth-btns { display: flex; gap: 0.3rem; }
-.auth-btn {
-  display: flex; align-items: center; gap: 0.35rem;
-  padding: 0.35rem 0.7rem;
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 8px;
-  background: rgba(255,255,255,0.06);
-  color: #e0e0e0;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.72rem; font-weight: 500;
-  cursor: pointer; transition: all 0.15s;
-  white-space: nowrap;
-}
+.auth-btn { display: flex; align-items: center; gap: 0.35rem; padding: 0.35rem 0.7rem; border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; background: rgba(255,255,255,0.06); color: #e0e0e0; font-family: 'Noto Sans KR', sans-serif; font-size: 0.72rem; font-weight: 500; cursor: pointer; transition: all 0.15s; white-space: nowrap; }
 .auth-btn:hover { border-color: var(--accent); background: rgba(196,141,176,0.15); color: var(--accent); }
 .auth-btn svg { width: 14px; height: 14px; }
 .auth-btn.kakao-btn { background: rgba(254,229,0,0.15); border-color: rgba(254,229,0,0.3); color: #3C1E1E; }
 .auth-btn.kakao-btn:hover { background: rgba(254,229,0,0.3); border-color: #FEE500; }
-.auth-user {
-  display: none; align-items: center; gap: 0.4rem;
-  font-size: 0.72rem; color: #a0a8bc;
-}
+.auth-user { display: none; align-items: center; gap: 0.4rem; font-size: 0.72rem; color: #a0a8bc; }
 .auth-user img { width: 24px; height: 24px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); }
 .auth-user-name { font-weight: 500; color: #e0e0e0; }
-.auth-logout {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.58rem;
-  color: #8890a4; background: none; border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 4px; padding: 0.2rem 0.5rem; cursor: pointer; transition: all 0.15s;
-}
+.auth-logout { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: #8890a4; background: none; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.2rem 0.5rem; cursor: pointer; transition: all 0.15s; }
 .auth-logout:hover { color: #e74c3c; border-color: #e74c3c; }
-
-/* ── DROPDOWNS (Notifications & Comments) ── */
 .dropdown-wrap { position: relative; }
-.dropdown-panel {
-  display: none; position: absolute; top: calc(100% + 8px); right: 0;
-  width: 320px; max-height: 380px; overflow-y: auto;
-  background: var(--header-bg); border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.35); z-index: 200;
-}
+.dropdown-panel { display: none; position: absolute; top: calc(100% + 8px); right: 0; width: 320px; max-height: 380px; overflow-y: auto; background: var(--header-bg); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; box-shadow: 0 12px 40px rgba(0,0,0,0.35); z-index: 200; }
 .dropdown-panel.open { display: block; }
 .dropdown-panel::-webkit-scrollbar { width: 4px; }
 .dropdown-panel::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 2px; }
-.dropdown-header {
-  padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08);
-  display: flex; justify-content: space-between; align-items: center;
-}
-.dropdown-header-title {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
-  color: #8890a4; text-transform: uppercase; letter-spacing: 0.05em;
-}
-/* Notif items */
+.dropdown-header { padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+.dropdown-header-title { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: #8890a4; text-transform: uppercase; letter-spacing: 0.05em; }
 .notif-mark-read { font-size: 0.6rem; color: var(--accent); background: none; border: none; cursor: pointer; font-family: 'Noto Sans KR', sans-serif; }
 .notif-mark-read:hover { text-decoration: underline; }
-.notif-item {
-  padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05);
-  transition: background 0.15s; cursor: pointer;
-}
+.notif-item { padding: 0.6rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.15s; cursor: pointer; }
 .notif-item:hover { background: rgba(255,255,255,0.06); }
 .notif-item:last-child { border-bottom: none; }
 .notif-item.unread { background: rgba(196,141,176,0.08); }
@@ -184,11 +101,7 @@ body {
 .notif-item-text strong { color: var(--accent); font-weight: 600; }
 .notif-item-time { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; color: #8890a4; margin-top: 0.2rem; }
 .notif-empty { padding: 1.5rem; text-align: center; font-size: 0.72rem; color: #8890a4; }
-/* Sidebar comment cards in dropdown */
-.sb-comment-card {
-  padding: 0.55rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.06);
-  cursor: pointer; transition: background 0.15s;
-}
+.sb-comment-card { padding: 0.55rem 0.8rem; border-bottom: 1px solid rgba(255,255,255,0.06); cursor: pointer; transition: background 0.15s; }
 .sb-comment-card:first-child { background: rgba(196,141,176,0.06); }
 .sb-comment-card:hover { background: rgba(255,255,255,0.08); }
 .sb-comment-top { display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.2rem; }
@@ -198,110 +111,34 @@ body {
 .sb-comment-text { font-size: 0.65rem; color: #c0c8d8; line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .sb-comment-source { font-size: 0.55rem; color: #8890a4; margin-top: 0.2rem; }
 .sb-comments-empty { font-size: 0.68rem; color: #8890a4; text-align: center; padding: 1.2rem 0; }
-
-/* ── HERO ── */
-.hero {
-  text-align: center;
-  padding: 3.5rem 1rem 2rem;
-  position: relative;
-}
-.hero::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 300px;
-  background: linear-gradient(180deg, var(--purple-soft) 0%, var(--paper) 100%);
-  z-index: -1;
-}
-.hero-greeting {
-  font-size: 0.88rem; color: var(--ink-light); margin-bottom: 0.5rem;
-}
+.hero { text-align: center; padding: 3.5rem 1rem 2rem; position: relative; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 300px; background: linear-gradient(180deg, var(--purple-soft) 0%, var(--paper) 100%); z-index: -1; }
+.hero-greeting { font-size: 0.88rem; color: var(--ink-light); margin-bottom: 0.5rem; }
 .hero-greeting .greeting-emoji { margin-right: 0.2rem; }
 .hero-greeting .greeting-name { color: var(--accent); font-weight: 600; }
-.hero h1 {
-  font-family: 'Noto Serif KR', serif;
-  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
-  font-weight: 900; line-height: 1.35; color: var(--ink); margin-bottom: 0.5rem;
-}
+.hero h1 { font-family: 'Noto Serif KR', serif; font-size: clamp(1.8rem, 4.5vw, 2.6rem); font-weight: 900; line-height: 1.35; color: var(--ink); margin-bottom: 0.5rem; }
 .hero h1 .accent { color: var(--accent); }
-.season-badge {
-  display: inline-block; font-size: 0.62rem; padding: 0.15rem 0.6rem;
-  border-radius: 100px; background: var(--accent-soft); color: var(--accent);
-  font-family: 'JetBrains Mono', monospace; vertical-align: middle; margin-left: 0.3rem;
-}
-.hero-sub {
-  font-size: 0.92rem; color: var(--ink-light); font-weight: 400;
-  line-height: 1.6; max-width: 480px; margin: 0 auto 1rem;
-}
-.quote-card {
-  max-width: 520px; margin: 0 auto 1.5rem;
-  background: var(--accent-soft); border-left: 3px solid var(--accent);
-  border-radius: 0 8px 8px 0; padding: 0.6rem 1rem;
-  font-size: 0.78rem; color: var(--ink-light); line-height: 1.65; font-style: italic;
-  text-align: left;
-}
-.quote-card .quote-author {
-  font-style: normal; font-size: 0.68rem; color: var(--ink-faint);
-  margin-top: 0.3rem; font-family: 'JetBrains Mono', monospace;
-}
-.hero-stats {
-  display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
-}
+.season-badge { display: inline-block; font-size: 0.62rem; padding: 0.15rem 0.6rem; border-radius: 100px; background: var(--accent-soft); color: var(--accent); font-family: 'JetBrains Mono', monospace; vertical-align: middle; margin-left: 0.3rem; }
+.hero-sub { font-size: 0.92rem; color: var(--ink-light); font-weight: 400; line-height: 1.6; max-width: 480px; margin: 0 auto 1rem; }
+.quote-card { max-width: 520px; margin: 0 auto 1.5rem; background: var(--accent-soft); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 0.6rem 1rem; font-size: 0.78rem; color: var(--ink-light); line-height: 1.65; font-style: italic; text-align: left; }
+.quote-card .quote-author { font-style: normal; font-size: 0.68rem; color: var(--ink-faint); margin-top: 0.3rem; font-family: 'JetBrains Mono', monospace; }
+.hero-stats { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
 .stat { display: flex; flex-direction: column; align-items: center; gap: 0.2rem; }
-.stat-num {
-  font-family: 'JetBrains Mono', monospace; font-size: 1.4rem;
-  font-weight: 600; color: var(--accent);
-}
+.stat-num { font-family: 'JetBrains Mono', monospace; font-size: 1.4rem; font-weight: 600; color: var(--accent); }
 .stat-label { font-size: 0.72rem; color: var(--ink-faint); letter-spacing: 0.03em; }
-.visit-msg {
-  font-size: 0.75rem; color: var(--ink-faint); margin-top: 0.8rem;
-}
+.visit-msg { font-size: 0.75rem; color: var(--ink-faint); margin-top: 0.8rem; }
 .visit-msg .visit-num { color: var(--accent); font-weight: 600; }
-
-/* ── PROGRESS ── */
-.progress-section {
-  background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-  padding: 1rem 1.5rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm);
-}
-.progress-header {
-  display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem;
-}
+.progress-section { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.5rem; margin-bottom: 2rem; box-shadow: var(--shadow-sm); }
+.progress-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; }
 .progress-label { font-size: 0.85rem; font-weight: 500; color: var(--ink); }
-.progress-count {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.82rem;
-  color: var(--accent); font-weight: 600;
-}
+.progress-count { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; color: var(--accent); font-weight: 600; }
 .progress-bar { height: 8px; background: var(--paper-warm); border-radius: 4px; overflow: hidden; }
-.progress-fill-bar {
-  height: 100%; background: linear-gradient(90deg, var(--accent), var(--purple));
-  border-radius: 4px; transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-/* ── SECTION LABEL ── */
-.section-label {
-  display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem;
-  font-size: 0.75rem; font-family: 'JetBrains Mono', monospace;
-  text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint);
-}
+.progress-fill-bar { height: 100%; background: linear-gradient(90deg, var(--accent), var(--purple)); border-radius: 4px; transition: width 1s cubic-bezier(0.22, 1, 0.36, 1); }
+.section-label { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.2rem; font-size: 0.75rem; font-family: 'JetBrains Mono', monospace; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-faint); }
 .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-/* ── POST CARD GRID ── */
-.posts-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 1rem;
-  margin-bottom: 3rem;
-}
-.post-card {
-  background: var(--card);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  position: relative;
-  animation: cardIn 0.5s ease both;
-}
-.post-card::before {
-  content: ''; position: absolute; top: 0; left: 0;
-  width: 4px; height: 100%; border-radius: 2px 0 0 2px;
-  background: var(--accent); transition: opacity 0.3s;
-}
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1rem; margin-bottom: 3rem; }
+.post-card { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; position: relative; animation: cardIn 0.5s ease both; }
+.post-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; border-radius: 2px 0 0 2px; background: var(--accent); transition: opacity 0.3s; }
 .post-card[data-color="orange"]::before { background: var(--orange); }
 .post-card[data-color="blue"]::before { background: var(--blue); }
 .post-card[data-color="green"]::before { background: var(--green); }
@@ -316,105 +153,38 @@ body {
 .post-card[data-color="coral"]:hover { border-color: var(--coral); }
 .post-card[data-color="teal"]:hover { border-color: var(--teal); }
 .post-card[data-color="gold"]:hover { border-color: var(--gold); }
-
-.card-face {
-  padding: 1.3rem 1.3rem 1.1rem;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  display: flex; flex-direction: column;
-}
-.post-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
-}
-.card-top {
-  display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;
-}
-.card-num {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
-  font-weight: 600; color: var(--accent);
-  background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 100px;
-}
-.card-date {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--ink-faint);
-}
-.post-title {
-  font-size: 1rem; font-weight: 700; line-height: 1.45; margin-bottom: 0.4rem; color: var(--ink);
-}
-.card-desc {
-  font-size: 0.82rem; color: var(--ink-light); line-height: 1.65; margin-bottom: 0.7rem; flex: 1;
-}
+.card-face { padding: 1.3rem 1.3rem 1.1rem; cursor: pointer; transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); display: flex; flex-direction: column; }
+.post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem; }
+.card-num { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 600; color: var(--accent); background: var(--accent-soft); padding: 0.15rem 0.55rem; border-radius: 100px; }
+.card-date { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--ink-faint); }
+.post-title { font-size: 1rem; font-weight: 700; line-height: 1.45; margin-bottom: 0.4rem; color: var(--ink); }
+.card-desc { font-size: 0.82rem; color: var(--ink-light); line-height: 1.65; margin-bottom: 0.7rem; flex: 1; }
 .card-tags { display: flex; gap: 0.35rem; flex-wrap: wrap; }
-.tag {
-  font-size: 0.65rem; padding: 0.18rem 0.55rem; border-radius: 6px;
-  background: var(--paper-warm); color: var(--ink-faint); font-weight: 500;
-}
-.card-go {
-  display: flex; align-items: center; gap: 0.3rem;
-  font-size: 0.75rem; font-weight: 600; color: var(--accent);
-  margin-top: 0.6rem; opacity: 0; transition: opacity 0.2s;
-}
+.tag { font-size: 0.65rem; padding: 0.18rem 0.55rem; border-radius: 6px; background: var(--paper-warm); color: var(--ink-faint); font-weight: 500; }
+.card-go { display: flex; align-items: center; gap: 0.3rem; font-size: 0.75rem; font-weight: 600; color: var(--accent); margin-top: 0.6rem; opacity: 0; transition: opacity 0.2s; }
 .card-go::after { content: '→'; transition: transform 0.2s; }
 .post-card:hover .card-go { opacity: 1; }
 .post-card:hover .card-go::after { transform: translateX(4px); }
-
-@keyframes cardIn {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ── POST EMBED (theater) ── */
-.post-embed {
-  display: none; border-top: 1px solid var(--border); background: #fff;
-}
+@keyframes cardIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.post-embed { display: none; border-top: 1px solid var(--border); background: #fff; }
 .post-embed.open { display: block; }
-.post-embed iframe {
-  width: 100%; height: 700px; border: none; display: block;
-}
-.embed-bar {
-  padding: 0.5rem 1.2rem; display: flex; justify-content: space-between;
-  align-items: center; background: var(--paper-warm); border-top: 1px solid var(--border);
-}
-.embed-link {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
-  color: var(--accent); text-decoration: none;
-}
+.post-embed iframe { width: 100%; height: 700px; border: none; display: block; }
+.embed-bar { padding: 0.5rem 1.2rem; display: flex; justify-content: space-between; align-items: center; background: var(--paper-warm); border-top: 1px solid var(--border); }
+.embed-link { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: var(--accent); text-decoration: none; }
 .embed-link:hover { text-decoration: underline; }
-.embed-resize {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
-  color: var(--ink-faint); background: var(--paper); border: 1px solid var(--border);
-  padding: 0.2rem 0.5rem; border-radius: 4px; cursor: pointer; transition: all 0.15s;
-}
+.embed-resize { font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--ink-faint); background: var(--paper); border: 1px solid var(--border); padding: 0.2rem 0.5rem; border-radius: 4px; cursor: pointer; transition: all 0.15s; }
 .embed-resize:hover { color: var(--ink); border-color: var(--ink-faint); }
-
-/* ── COMMENTS ── */
-.comments-section {
-  border-top: 1px solid var(--border); background: var(--paper); padding: 1rem 1.2rem;
-}
-.comments-title {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
-  color: var(--ink-faint); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;
-}
+.comments-section { border-top: 1px solid var(--border); background: var(--paper); padding: 1rem 1.2rem; }
+.comments-title { font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--ink-faint); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
 .comment-form { display: flex; gap: 0.5rem; margin-bottom: 0.4rem; align-items: flex-end; }
-.comment-input {
-  flex: 1; padding: 0.5rem 0.8rem; border: 1px solid var(--border); border-radius: 6px;
-  font-family: 'Noto Sans KR', sans-serif; font-size: 0.82rem;
-  background: #fff; color: var(--ink); outline: none; transition: border-color 0.15s;
-}
+.comment-input { flex: 1; padding: 0.5rem 0.8rem; border: 1px solid var(--border); border-radius: 6px; font-family: 'Noto Sans KR', sans-serif; font-size: 0.82rem; background: #fff; color: var(--ink); outline: none; transition: border-color 0.15s; }
 .comment-input:focus { border-color: var(--accent); }
 .comment-input::placeholder { color: var(--ink-faint); }
-.comment-img-btn {
-  width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 6px;
-  background: #fff; color: var(--ink-faint); font-size: 1.1rem; cursor: pointer;
-  display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0;
-}
+.comment-img-btn { width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 6px; background: #fff; color: var(--ink-faint); font-size: 1.1rem; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.15s; flex-shrink: 0; }
 .comment-img-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .comment-img-btn.has-image { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
-.comment-submit {
-  padding: 0.5rem 1rem; border: none; border-radius: 6px;
-  background: var(--accent); color: #fff; font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.78rem; font-weight: 500; cursor: pointer; transition: opacity 0.15s; white-space: nowrap;
-}
+.comment-submit { padding: 0.5rem 1rem; border: none; border-radius: 6px; background: var(--accent); color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 0.78rem; font-weight: 500; cursor: pointer; transition: opacity 0.15s; white-space: nowrap; }
 .comment-submit:hover { opacity: 0.85; }
 .comment-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .comment-login-msg { font-size: 0.78rem; color: var(--ink-faint); padding: 0.5rem 0; }
@@ -465,19 +235,9 @@ body {
 .reply-form .reply-img-btn.has-image { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
 .reply-img-preview-wrap { width: 100%; margin-top: 0.3rem; }
 .comments-empty { font-size: 0.78rem; color: var(--ink-faint); text-align: center; padding: 0.8rem 0; }
-
-/* ── EMPTY STATE ── */
 .empty-state { text-align: center; padding: 4rem 0; color: var(--ink-faint); font-size: 0.88rem; }
 .empty-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
-
-/* ── THEATER MODE ── */
-.theater-close-btn {
-  display: none; position: fixed; top: 68px; left: 12px; z-index: 200;
-  padding: 0.4rem 0.8rem; border: 1px solid var(--border); border-radius: 8px;
-  background: var(--header-bg); color: #e0e0e0; font-family: 'Noto Sans KR', sans-serif;
-  font-size: 0.75rem; cursor: pointer; transition: all 0.15s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-}
+.theater-close-btn { display: none; position: fixed; top: 68px; left: 12px; z-index: 200; padding: 0.4rem 0.8rem; border: 1px solid var(--border); border-radius: 8px; background: var(--header-bg); color: #e0e0e0; font-family: 'Noto Sans KR', sans-serif; font-size: 0.75rem; cursor: pointer; transition: all 0.15s; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 .theater-close-btn:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 body.theater-mode .theater-close-btn { display: block; }
 body.theater-mode .hero { display: none; }
@@ -493,7 +253,6 @@ body.theater-mode .post-card.theater-active .card-tags,
 body.theater-mode .post-card.theater-active .card-go { display: none; }
 body.theater-mode .post-card.theater-active:hover { transform: none; box-shadow: none; }
 body.theater-mode .post-embed iframe { height: calc(100vh - 220px); }
-/* 글 읽기 모드에서는 포트폴리오 바 숨기고 Spotify 위치 복원 */
 body.theater-mode { padding-bottom: 0; }
 body.theater-mode .portfolio-tracker { display: none; }
 body.theater-mode .spotify-bottom-bar { bottom: 16px; }
@@ -504,195 +263,52 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
   body.theater-mode .spotify-toggle-btn { bottom: 163px; }
   body.theater-mode .spotify-toggle-btn.collapsed { bottom: 12px; }
 }
-
-/* ── FOOTER ── */
-.site-footer {
-  text-align: center; padding: 2rem 1rem 3rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.78rem; color: var(--ink-faint); line-height: 1.8;
-}
-
-/* ── PORTFOLIO TRACKER (floating bottom bar) ── */
-.portfolio-tracker {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 9998;
-  background: var(--card);
-  border-top: 1px solid var(--border);
-  box-shadow: 0 -4px 24px rgba(58,52,80,0.12);
-  font-family: 'Noto Sans KR', sans-serif;
-  max-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
+.site-footer { text-align: center; padding: 2rem 1rem 3rem; border-top: 1px solid var(--border); font-size: 0.78rem; color: var(--ink-faint); line-height: 1.8; }
+.portfolio-tracker { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9998; background: var(--card); border-top: 1px solid var(--border); box-shadow: 0 -4px 24px rgba(58,52,80,0.12); font-family: 'Noto Sans KR', sans-serif; max-height: 60vh; display: flex; flex-direction: column; transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
 .portfolio-tracker.collapsed { max-height: 48px; }
-.pt-header {
-  padding: 0.5rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  user-select: none;
-  min-height: 48px;
-  flex-shrink: 0;
-  gap: 0.8rem;
-}
+.pt-header { padding: 0.5rem 1rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; min-height: 48px; flex-shrink: 0; gap: 0.8rem; }
 .pt-header:hover { background: var(--paper-warm); }
-.pt-header-left {
-  display: flex; align-items: center; gap: 0.5rem;
-  min-width: 0; flex: 1; overflow: hidden;
-}
+.pt-header-left { display: flex; align-items: center; gap: 0.5rem; min-width: 0; flex: 1; overflow: hidden; }
 .pt-emoji-main { font-size: 1.1rem; flex-shrink: 0; }
-.pt-title-main {
-  font-size: 0.88rem; font-weight: 700; color: var(--ink);
-  flex-shrink: 0; white-space: nowrap;
-}
-.pt-base-date {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
-  color: var(--ink-faint); flex-shrink: 0; white-space: nowrap;
-}
-.pt-header-right {
-  display: flex; align-items: center; gap: 0.7rem; flex-shrink: 0;
-}
-.pt-total-bar {
-  font-family: 'JetBrains Mono', monospace; font-size: 1rem;
-  font-weight: 700;
-}
+.pt-title-main { font-size: 0.88rem; font-weight: 700; color: var(--ink); flex-shrink: 0; white-space: nowrap; }
+.pt-base-date { font-family: 'JetBrains Mono', monospace; font-size: 0.65rem; color: var(--ink-faint); flex-shrink: 0; white-space: nowrap; }
+.pt-header-right { display: flex; align-items: center; gap: 0.7rem; flex-shrink: 0; }
+.pt-total-bar { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 700; }
 .pt-total-bar.positive { color: var(--pt-green); }
 .pt-total-bar.negative { color: var(--pt-red); }
-.pt-toggle-icon {
-  font-size: 0.75rem; color: var(--ink-faint);
-  transition: transform 0.2s;
-  width: 20px; text-align: center;
-}
+.pt-toggle-icon { font-size: 0.75rem; color: var(--ink-faint); transition: transform 0.2s; width: 20px; text-align: center; }
 .portfolio-tracker.collapsed .pt-toggle-icon { transform: rotate(180deg); }
-
-.pt-body {
-  padding: 0.6rem 1rem 0.75rem;
-  border-top: 1px solid var(--border);
-  background: var(--paper);
-  overflow-y: auto;
-  overflow-x: hidden;
-  flex: 1;
-}
+.pt-body { padding: 0.6rem 1rem 0.75rem; border-top: 1px solid var(--border); background: var(--paper); overflow-y: auto; overflow-x: hidden; flex: 1; }
 .portfolio-tracker.collapsed .pt-body { display: none; }
-
-.pt-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 8px;
-}
-.pt-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 10px 12px;
-  display: flex;
-  flex-direction: column;
-}
-.pt-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
+.pt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+.pt-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; display: flex; flex-direction: column; }
+.pt-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .pt-card-emoji { font-size: 1.3rem; line-height: 1; }
-.pt-weight {
-  background: var(--accent-soft);
-  color: var(--accent);
-  font-size: 0.62rem;
-  padding: 2px 8px;
-  border-radius: 100px;
-  font-weight: 600;
-  font-family: 'JetBrains Mono', monospace;
-}
+.pt-weight { background: var(--accent-soft); color: var(--accent); font-size: 0.62rem; padding: 2px 8px; border-radius: 100px; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
 .pt-theme { font-size: 0.78rem; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
 .pt-name { font-size: 0.66rem; color: var(--ink-light); margin-bottom: 8px; line-height: 1.3; }
-.pt-prices {
-  font-size: 0.66rem; color: var(--ink-faint);
-  font-family: 'JetBrains Mono', monospace; margin-bottom: 3px;
-}
+.pt-prices { font-size: 0.66rem; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace; margin-bottom: 3px; }
 .pt-prices .pt-current { color: var(--ink); }
-.pt-pct {
-  font-size: 1rem; font-weight: 700;
-  font-family: 'JetBrains Mono', monospace;
-  margin: 0;
-}
+.pt-pct { font-size: 1rem; font-weight: 700; font-family: 'JetBrains Mono', monospace; margin: 0; }
 .pt-pct.positive { color: var(--pt-green); }
 .pt-pct.negative { color: var(--pt-red); }
-
-/* Chart card */
-.pt-chart-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 6px;
-}
+.pt-chart-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .pt-chart-title { font-size: 0.78rem; font-weight: 600; color: var(--ink); }
-.pt-chart-value {
-  font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600;
-}
+.pt-chart-value { font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; font-weight: 600; }
 .pt-chart-value.positive { color: var(--pt-green); }
 .pt-chart-value.negative { color: var(--pt-red); }
 .pt-chart-svg { width: 100%; height: 64px; display: block; }
-.pt-chart-dates {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.6rem;
-  color: var(--ink-faint);
-  font-family: 'JetBrains Mono', monospace;
-  margin-top: 2px;
-}
-
-.pt-footer-info {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.62rem;
-  color: var(--ink-faint);
-  font-family: 'JetBrains Mono', monospace;
-  margin-top: 0.5rem;
-  padding-top: 0.45rem;
-  border-top: 1px dashed var(--border);
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.pt-loading, .pt-error {
-  grid-column: 1 / -1;
-  text-align: center; padding: 1.5rem 0;
-  color: var(--ink-faint); font-size: 0.82rem;
-}
-
-/* ── SPOTIFY (moved up to clear portfolio tracker header) ── */
-.spotify-bottom-bar {
-  position: fixed; bottom: 64px; right: 16px; z-index: 9999;
-  width: 330px; height: 165px;
-  background: var(--spotify-dark); border: 1px solid #333;
-  border-radius: 12px; overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.spotify-bottom-bar.collapsed {
-  transform: translateY(calc(100% + 80px)); opacity: 0; pointer-events: none;
-}
+.pt-chart-dates { display: flex; justify-content: space-between; font-size: 0.6rem; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace; margin-top: 2px; }
+.pt-footer-info { display: flex; justify-content: space-between; font-size: 0.62rem; color: var(--ink-faint); font-family: 'JetBrains Mono', monospace; margin-top: 0.5rem; padding-top: 0.45rem; border-top: 1px dashed var(--border); flex-wrap: wrap; gap: 8px; }
+.pt-loading, .pt-error { grid-column: 1 / -1; text-align: center; padding: 1.5rem 0; color: var(--ink-faint); font-size: 0.82rem; }
+.spotify-bottom-bar { position: fixed; bottom: 64px; right: 16px; z-index: 9999; width: 330px; height: 165px; background: var(--spotify-dark); border: 1px solid #333; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.3); transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); }
+.spotify-bottom-bar.collapsed { transform: translateY(calc(100% + 80px)); opacity: 0; pointer-events: none; }
 .spotify-bottom-bar iframe { width: 100%; height: 100%; border: none; }
-.spotify-toggle-btn {
-  position: fixed; bottom: 237px; right: 24px; z-index: 10000;
-  padding: 0.45rem 0.9rem; border-radius: 100px; border: none;
-  background: var(--spotify-green); color: #fff;
-  font-family: 'Noto Sans KR', sans-serif; font-size: 0.75rem; font-weight: 500;
-  cursor: pointer; display: flex; align-items: center; gap: 0.3rem;
-  box-shadow: 0 3px 12px rgba(29, 185, 84, 0.35);
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  white-space: nowrap;
-}
+.spotify-toggle-btn { position: fixed; bottom: 237px; right: 24px; z-index: 10000; padding: 0.45rem 0.9rem; border-radius: 100px; border: none; background: var(--spotify-green); color: #fff; font-family: 'Noto Sans KR', sans-serif; font-size: 0.75rem; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 0.3rem; box-shadow: 0 3px 12px rgba(29, 185, 84, 0.35); transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1); white-space: nowrap; }
 .spotify-label { font-size: 0.7rem; }
 .spotify-toggle-btn:hover { transform: scale(1.05); box-shadow: 0 5px 18px rgba(29, 185, 84, 0.5); }
 .spotify-toggle-btn.collapsed { bottom: 64px; background: #282828; box-shadow: 0 3px 12px rgba(0,0,0,0.3); }
 .spotify-toggle-btn.collapsed:hover { background: var(--spotify-green); }
-
 @media (max-width: 700px) {
   body { padding-bottom: 44px; }
   .spotify-bottom-bar { width: 286px; height: 143px; right: 12px; bottom: 60px; }
@@ -706,22 +322,10 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
   .pt-grid { grid-template-columns: repeat(2, 1fr); }
   .portfolio-tracker { max-height: 70vh; }
 }
-
-/* ── WELCOME TOAST ── */
-.welcome-toast {
-  position: fixed; top: 70px; left: 50%; z-index: 10001;
-  transform: translateX(-50%) translateY(-100px);
-  padding: 0.8rem 1.5rem; background: var(--header-bg); color: #e0e0e0;
-  border: 1px solid rgba(196,141,176,0.4); border-radius: 10px;
-  font-family: 'Noto Sans KR', sans-serif; font-size: 0.88rem;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3); opacity: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); white-space: nowrap;
-}
+.welcome-toast { position: fixed; top: 70px; left: 50%; z-index: 10001; transform: translateX(-50%) translateY(-100px); padding: 0.8rem 1.5rem; background: var(--header-bg); color: #e0e0e0; border: 1px solid rgba(196,141,176,0.4); border-radius: 10px; font-family: 'Noto Sans KR', sans-serif; font-size: 0.88rem; box-shadow: 0 8px 30px rgba(0,0,0,0.3); opacity: 0; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); white-space: nowrap; }
 .welcome-toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 .welcome-toast .welcome-name { color: var(--accent); font-weight: 700; }
 .welcome-toast .welcome-emoji { margin-right: 0.3rem; }
-
-/* ── RESPONSIVE ── */
 @media (max-width: 700px) {
   .posts-grid { grid-template-columns: 1fr; }
   .hero { padding: 2.5rem 0.5rem 1.5rem; }
@@ -739,10 +343,863 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
   .reply-form input { min-width: 100px; }
   .reply-form button { flex-shrink: 0; }
 }
+
+/* === 메인 + 우측 사이드바 레이아웃 === */
+.main-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+.main-col { min-width: 0; }
+.right-sidebar {
+  position: sticky;
+  top: 72px;
+  align-self: start;
+}
+.right-sidebar .section-label { margin-bottom: 0.8rem; }
+.right-sidebar .heart-card-widget { max-width: 100%; margin-bottom: 1.2rem; }
+.right-sidebar .hcw-feed { max-width: 100%; margin-top: 0; }
+
+/* 좁아진 메인 영역에 맞춰 포스트 카드 최소 너비 조정 */
+.main-layout .posts-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  margin-bottom: 0;
+}
+
+/* 독서 모드에서는 사이드바 숨김 */
+body.theater-mode .main-layout { display: block; }
+body.theater-mode .right-sidebar { display: none; }
+
+/* 모바일: 세로 스택 */
+@media (max-width: 900px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .right-sidebar {
+    position: static;
+    max-width: 420px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .main-layout .posts-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .main-layout .posts-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   HEART CARDS WIDGET (오늘의 마음 카드) - Self-contained CSS
+   Scoped with .hcw- prefix and .heart-card-widget container
+   ============================================================ */
+.heart-card-widget, .hcw-feed, .hcw-modal-backdrop {
+  
+    --accent: #d97756;
+    --accent-soft: #f3d3c0;
+    --accent-hover: #c66545;
+    --bg: #fefcf8;
+    --bg2: #f7f2ea;
+    --card-bg: #fffaf3;
+    --card-bg-back: #fff4e6;
+    --card-border: #e8dcc9;
+    --text: #3d342c;
+    --text-soft: #8f8478;
+    --shadow-sm: rgba(60, 40, 20, 0.08);
+    --shadow-md: rgba(60, 40, 20, 0.16);
+    --shadow-lg: rgba(60, 40, 20, 0.22);
+  
+}
+
+.heart-card-widget *, .hcw-feed *, .hcw-modal-backdrop * {
+  box-sizing: border-box;
+}
+
+/* ========== 마음 카드 위젯 ========== */
+  .heart-card-widget {
+    background: var(--bg);
+    border-radius: 16px;
+    padding: 18px 14px 16px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 10px var(--shadow-sm);
+  }
+
+  .hcw-header {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+  .hcw-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 3px;
+    letter-spacing: -0.3px;
+  }
+  .hcw-subtitle {
+    font-size: 11px;
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* 덱 + 썸네일 영역 */
+  .hcw-deck-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 10px;
+    padding: 4px 0;
+  }
+
+  .hcw-deck {
+    position: relative;
+    width: 56px;
+    height: 78px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    user-select: none;
+  }
+  .hcw-deck:not(.disabled):hover {
+    transform: translateY(-4px) scale(1.03);
+  }
+  .hcw-deck.drawing {
+    animation: deckPulse 0.4s ease-out;
+  }
+  @keyframes deckPulse {
+    0%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-6px) rotate(-2deg); }
+    70% { transform: translateY(-3px) rotate(2deg); }
+  }
+
+  .hcw-deck-stack {
+    position: absolute;
+    inset: 0;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--accent-soft) 0%, #f8dcc8 100%);
+    border: 1.5px solid var(--accent);
+    box-shadow: 1.5px 1.5px 3px var(--shadow-sm);
+  }
+  .hcw-deck-stack:nth-child(1) { transform: translate(-4px, -4px); opacity: 0.85; }
+  .hcw-deck-stack:nth-child(2) { transform: translate(-2px, -2px); opacity: 0.92; }
+
+  .hcw-deck-top {
+    position: absolute;
+    inset: 0;
+    border-radius: 7px;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+    border: 1.5px solid var(--accent-hover);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    box-shadow: 2px 2px 6px var(--shadow-md);
+    overflow: hidden;
+  }
+  .hcw-deck-top::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px dashed rgba(255,255,255,0.4);
+    border-radius: 4px;
+    pointer-events: none;
+  }
+  .hcw-deck-icon {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  .hcw-deck-label {
+    font-size: 9px;
+    letter-spacing: 1px;
+    opacity: 0.9;
+  }
+
+  .hcw-deck.disabled { opacity: 0.45; cursor: not-allowed; }
+  .hcw-deck.disabled .hcw-deck-top { background: linear-gradient(135deg, #b8a896 0%, #a39584 100%); border-color: #a39584; }
+
+  .hcw-thumbnails {
+    flex: 1;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 8px 2px;
+    min-height: 78px;
+    align-items: center;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-soft) transparent;
+  }
+  .hcw-thumbnails::-webkit-scrollbar { height: 4px; }
+  .hcw-thumbnails::-webkit-scrollbar-thumb { background: var(--accent-soft); border-radius: 2px; }
+  .hcw-thumbnails::-webkit-scrollbar-track { background: transparent; }
+
+  .hcw-thumb {
+    width: 36px;
+    height: 52px;
+    background: var(--card-bg);
+    border: 1.5px solid var(--card-border);
+    border-radius: 5px;
+    flex-shrink: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    color: var(--text-soft);
+    transition: all 0.2s;
+    font-weight: 600;
+    box-shadow: 1px 1px 2px var(--shadow-sm);
+  }
+  .hcw-thumb-num { font-size: 12px; color: var(--accent); font-weight: 700; }
+  .hcw-thumb-dot { font-size: 7px; margin-top: 1px; opacity: 0.7; }
+  .hcw-thumb:hover { transform: translateY(-2px); border-color: var(--accent); }
+  .hcw-thumb.active {
+    border-color: var(--accent);
+    border-width: 2px;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px var(--shadow-md);
+    background: var(--card-bg-back);
+  }
+  .hcw-thumb.new { animation: thumbEnter 0.55s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  @keyframes thumbEnter {
+    0% { transform: translateX(-30px) rotate(-8deg) scale(0.5); opacity: 0; }
+    60% { transform: translateX(2px) rotate(2deg) scale(1.05); opacity: 1; }
+    100% { transform: translateX(0) rotate(0) scale(1); opacity: 1; }
+  }
+
+  .hcw-counter {
+    text-align: center;
+    font-size: 10.5px;
+    color: var(--text-soft);
+    margin: 4px 0 12px;
+    letter-spacing: 0.3px;
+  }
+  .hcw-counter-num { font-weight: 700; color: var(--accent); }
+
+  /* 활성 카드 영역 */
+  .hcw-active {
+    min-height: 300px;
+    position: relative;
+  }
+
+  .hcw-empty {
+    text-align: center;
+    padding: 70px 18px;
+    color: var(--text-soft);
+    font-size: 13px;
+    background: var(--card-bg);
+    border: 1.5px dashed var(--card-border);
+    border-radius: 12px;
+    line-height: 1.7;
+  }
+  .hcw-empty-icon { font-size: 30px; margin-bottom: 10px; display: block; opacity: 0.6; }
+
+  /* 플립 카드 */
+  .hcw-flip {
+    perspective: 1200px;
+    width: 100%;
+    height: 320px;
+  }
+  .hcw-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .hcw-flip.flipped .hcw-flip-inner { transform: rotateY(180deg); }
+  .hcw-flip.entering .hcw-flip-inner { animation: cardEnter 0.7s ease-out; }
+  @keyframes cardEnter {
+    0% { opacity: 0; transform: rotateY(-85deg) translateX(-20px) scale(0.85); }
+    60% { opacity: 1; transform: rotateY(5deg) translateX(2px) scale(1.02); }
+    100% { opacity: 1; transform: rotateY(0) translateX(0) scale(1); }
+  }
+
+  .hcw-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 18px 16px 14px;
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid var(--card-border);
+    box-shadow: 0 4px 14px var(--shadow-sm);
+    overflow: hidden;
+  }
+  .hcw-face-front { 
+    background: linear-gradient(180deg, var(--card-bg) 0%, #fff6e8 100%);
+    justify-content: space-between;
+  }
+  .hcw-face-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(180deg, var(--card-bg-back) 0%, #fae3c4 100%);
+    justify-content: space-between;
+  }
+  .hcw-face::before {
+    content: '';
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border: 1px dashed rgba(217, 119, 86, 0.2);
+    border-radius: 8px;
+    pointer-events: none;
+  }
+
+  .hcw-card-tag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+    color: var(--accent);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+  .hcw-card-num {
+    background: var(--accent);
+    color: white;
+    padding: 2px 7px;
+    border-radius: 10px;
+    font-size: 9.5px;
+  }
+
+  .hcw-card-text {
+    font-size: 13px;
+    line-height: 1.75;
+    color: var(--text);
+    font-weight: 500;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-soft) transparent;
+    cursor: pointer;
+    max-height: 210px;
+  }
+  .hcw-card-text::-webkit-scrollbar { width: 3px; }
+  .hcw-card-text::-webkit-scrollbar-thumb { background: var(--accent-soft); border-radius: 2px; }
+
+  .hcw-card-text.message {
+    font-size: 12.5px;
+    line-height: 1.8;
+  }
+
+  .hcw-flip-hint {
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-soft);
+    margin-top: 8px;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  /* 액션 버튼 (뒷면에만) */
+  .hcw-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(217, 119, 86, 0.25);
+    position: relative;
+    z-index: 2;
+  }
+
+  .hcw-btn {
+    flex: 1;
+    padding: 10px 4px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(217, 119, 86, 0.25);
+    border-radius: 8px;
+    font-size: 11px;
+    cursor: pointer;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: all 0.15s;
+    font-family: inherit;
+    font-weight: 500;
+    min-height: 38px;
+  }
+  .hcw-btn:hover { background: white; border-color: var(--accent); transform: translateY(-1px); }
+  .hcw-btn:active { transform: translateY(0); }
+  .hcw-btn.liked { background: var(--accent); color: white; border-color: var(--accent); }
+  .hcw-btn.liked:hover { background: var(--accent-hover); }
+  .hcw-btn-icon { font-size: 13px; line-height: 1; pointer-events: none; }
+  .hcw-btn-count { font-size: 10px; font-weight: 700; margin-left: 2px; pointer-events: none; }
+
+  /* 덱 알림 메시지 */
+  .hcw-deck-msg {
+    font-size: 10.5px;
+    color: var(--text-soft);
+    text-align: center;
+    padding: 6px;
+    margin-top: 4px;
+    background: var(--bg2);
+    border-radius: 6px;
+    line-height: 1.5;
+  }
+
+  /* ============ 최근 마음 나눔 피드 ============ */
+  .hcw-feed {
+    margin-top: 14px;
+    background: var(--bg);
+    border-radius: 14px;
+    padding: 14px 14px 12px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 2px 8px var(--shadow-sm);
+  }
+  .hcw-feed-header {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .hcw-feed-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 2px;
+    letter-spacing: -0.2px;
+  }
+  .hcw-feed-subtitle {
+    font-size: 10.5px;
+    color: var(--text-soft);
+    margin: 0;
+  }
+  .hcw-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    max-height: 420px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-soft) transparent;
+    padding-right: 2px;
+  }
+  .hcw-feed-list::-webkit-scrollbar { width: 4px; }
+  .hcw-feed-list::-webkit-scrollbar-thumb { background: var(--accent-soft); border-radius: 2px; }
+
+  .hcw-feed-empty {
+    text-align: center;
+    padding: 22px 12px;
+    color: var(--text-soft);
+    font-size: 11.5px;
+    line-height: 1.7;
+  }
+
+  .hcw-feed-item {
+    padding: 9px 11px;
+    background: var(--card-bg);
+    border-radius: 9px;
+    border: 1px solid var(--card-border);
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hcw-feed-item:hover {
+    transform: translateY(-1px);
+    border-color: var(--accent);
+    box-shadow: 0 3px 8px var(--shadow-sm);
+  }
+  .hcw-feed-item.new {
+    animation: feedSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes feedSlideIn {
+    from { opacity: 0; transform: translateX(-8px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .hcw-feed-card-ref {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 10.5px;
+  }
+  .hcw-feed-card-num {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 1px 7px;
+    border-radius: 8px;
+    font-size: 9.5px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .hcw-feed-card-snippet {
+    color: var(--text-soft);
+    font-weight: 500;
+    font-size: 10.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1;
+    min-width: 0;
+    font-style: italic;
+  }
+
+  .hcw-feed-comment {
+    font-size: 12px;
+    color: var(--text);
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+  }
+  .hcw-feed-comment.is-reply::before {
+    content: '↳ ';
+    color: var(--accent);
+    opacity: 0.7;
+    font-weight: 700;
+  }
+
+  .hcw-feed-meta {
+    font-size: 10px;
+    color: var(--text-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1px;
+  }
+  .hcw-feed-author {
+    font-weight: 600;
+    color: var(--text);
+    max-width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* 공유 중 카드 배너 */
+  .hcw-shared-banner {
+    display: none;
+    background: var(--accent-soft);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 11px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+  }
+  .hcw-shared-banner.visible { display: flex; }
+  .hcw-shared-banner-text { line-height: 1.4; }
+  .hcw-shared-close {
+    background: none;
+    border: none;
+    color: var(--text-soft);
+    cursor: pointer;
+    padding: 0 2px;
+    font-size: 13px;
+    line-height: 1;
+    font-family: inherit;
+  }
+
+  /* ============ 댓글 모달 ============ */
+  .hcw-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 30, 20, 0.55);
+    z-index: 10000;
+    display: none;
+    align-items: flex-end;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  .hcw-modal-backdrop.open {
+    display: flex;
+    animation: hcwFadeIn 0.2s ease;
+  }
+  @keyframes hcwFadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .hcw-modal {
+    background: var(--bg);
+    width: 100%;
+    max-width: 520px;
+    max-height: 88vh;
+    border-radius: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
+    animation: hcwSlideUp 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+  @keyframes hcwSlideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+
+  @media (min-width: 640px) {
+    .hcw-modal-backdrop { align-items: center; padding: 20px; }
+    .hcw-modal { border-radius: 20px; max-height: 80vh; }
+  }
+
+  .hcw-modal-header {
+    padding: 18px 20px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    border-bottom: 1px solid var(--card-border);
+    flex-shrink: 0;
+  }
+  .hcw-modal-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 3px;
+  }
+  .hcw-modal-sub {
+    font-size: 11.5px;
+    color: var(--text-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+  .hcw-modal-close {
+    background: var(--bg2);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--text-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.15s;
+    font-family: inherit;
+    line-height: 1;
+  }
+  .hcw-modal-close:hover { background: var(--accent-soft); color: var(--accent); }
+
+  .hcw-modal-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 14px 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-soft) transparent;
+  }
+  .hcw-modal-body::-webkit-scrollbar { width: 6px; }
+  .hcw-modal-body::-webkit-scrollbar-thumb { background: var(--accent-soft); border-radius: 3px; }
+
+  .hcw-mode-notice {
+    font-size: 10.5px;
+    color: var(--text-soft);
+    background: var(--bg2);
+    padding: 7px 11px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .hcw-no-comments {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-soft);
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .hcw-no-comments-icon {
+    font-size: 30px;
+    display: block;
+    margin-bottom: 10px;
+    opacity: 0.6;
+  }
+
+  .hcw-comment {
+    display: flex;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #f3ebe0;
+  }
+  .hcw-comment:last-child { border-bottom: none; }
+  .hcw-comment.hcw-reply {
+    margin-left: 32px;
+    padding: 10px 0;
+    border-bottom: none;
+    border-top: 1px dashed #efe3cf;
+    position: relative;
+  }
+  .hcw-comment.hcw-reply::before {
+    content: '↳';
+    position: absolute;
+    left: -22px;
+    top: 10px;
+    color: var(--accent);
+    font-size: 13px;
+    opacity: 0.6;
+  }
+
+  .hcw-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    object-fit: cover;
+    background: var(--accent-soft);
+  }
+  .hcw-avatar-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 13px;
+  }
+
+  .hcw-comment-body { flex: 1; min-width: 0; }
+  .hcw-comment-head {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    margin-bottom: 4px;
+    flex-wrap: wrap;
+  }
+  .hcw-comment-name {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .hcw-comment-time {
+    font-size: 10.5px;
+    color: var(--text-soft);
+  }
+  .hcw-comment-text {
+    font-size: 13px;
+    line-height: 1.65;
+    color: var(--text);
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .hcw-comment-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+  }
+  .hcw-comment-actions button {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 11px;
+    color: var(--text-soft);
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.15s;
+  }
+  .hcw-comment-actions button:hover { color: var(--accent); }
+  .hcw-comment-actions .hcw-delete-btn:hover { color: #c44 !important; }
+
+  .hcw-modal-footer {
+    border-top: 1px solid var(--card-border);
+    padding: 10px 14px 12px;
+    flex-shrink: 0;
+    background: var(--bg2);
+  }
+  .hcw-reply-banner {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: var(--accent-soft);
+    padding: 6px 10px 6px 12px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    color: var(--text);
+  }
+  .hcw-reply-banner.visible { display: flex; }
+  .hcw-cancel-reply {
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--text-soft);
+    padding: 0 2px;
+    line-height: 1;
+    font-family: inherit;
+  }
+
+  .hcw-input-row {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+  }
+  .hcw-comment-input {
+    flex: 1;
+    padding: 9px 12px;
+    border: 1.5px solid var(--card-border);
+    border-radius: 10px;
+    font-size: 13px;
+    font-family: inherit;
+    background: white;
+    color: var(--text);
+    resize: none;
+    min-height: 38px;
+    max-height: 100px;
+    line-height: 1.5;
+    transition: border-color 0.15s;
+  }
+  .hcw-comment-input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .hcw-send-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    transition: all 0.15s;
+    font-family: inherit;
+  }
+  .hcw-send-btn:hover { background: var(--accent-hover); transform: scale(1.05); }
+  .hcw-send-btn:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+
+  /* 토스트 */
+  .hcw-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(60, 40, 20, 0.92);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 24px;
+    font-size: 13px;
+    z-index: 9999;
+    animation: toastIn 0.3s ease-out, toastOut 0.3s ease-in 2.2s forwards;
+    pointer-events: none;
+  }
+  @keyframes toastIn { from { opacity: 0; transform: translate(-50%, 10px); } to { opacity: 1; transform: translate(-50%, 0); } }
+  @keyframes toastOut { to { opacity: 0; transform: translate(-50%, -10px); } }
+
 </style>
 </head>
 <body>
-
 <!-- ── TOP HEADER ── -->
 <header class="top-header">
   <div class="top-header-inner">
@@ -800,7 +1257,6 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
 <button class="theater-close-btn" id="theater-close-btn" onclick="exitTheater()">◀ 목록으로</button>
 
 <div class="container">
-
   <!-- ── HERO ── -->
   <section class="hero">
     <div class="hero-greeting" id="greeting-bar"></div>
@@ -808,18 +1264,9 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
     <p class="hero-sub">투자 공부를 차근차근히 하여 성장하는 중입니다.</p>
     <div class="quote-card" id="quote-card"></div>
     <div class="hero-stats">
-      <div class="stat">
-        <span class="stat-num" id="total-count">0</span>
-        <span class="stat-label">전체 강의</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num" id="last-update">-</span>
-        <span class="stat-label">최근 업데이트</span>
-      </div>
-      <div class="stat">
-        <span class="stat-num" id="read-count">0</span>
-        <span class="stat-label">읽은 강의</span>
-      </div>
+      <div class="stat"><span class="stat-num" id="total-count">0</span><span class="stat-label">전체 강의</span></div>
+      <div class="stat"><span class="stat-num" id="last-update">-</span><span class="stat-label">최근 업데이트</span></div>
+      <div class="stat"><span class="stat-num" id="read-count">0</span><span class="stat-label">읽은 강의</span></div>
     </div>
     <div class="visit-msg" id="visit-msg" style="display:none;"></div>
   </section>
@@ -830,22 +1277,74 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
       <span class="progress-label">📖 읽기 진행률</span>
       <span class="progress-count" id="progress-text">0 / 0</span>
     </div>
-    <div class="progress-bar">
-      <div class="progress-fill-bar" id="progress-fill" style="width:0%"></div>
-    </div>
+    <div class="progress-bar"><div class="progress-fill-bar" id="progress-fill" style="width:0%"></div></div>
   </section>
 
-  <!-- ── POSTS ── -->
-  <div class="section-label">전체 강의 목록</div>
-  <section class="posts-grid" id="posts-list">
-    <div style="text-align:center; padding:3rem; color:var(--ink-faint); font-size:0.85rem; grid-column: 1/-1;">불러오는 중...</div>
-  </section>
+  <!-- ── MAIN + RIGHT SIDEBAR LAYOUT ── -->
+  <div class="main-layout">
+    <main class="main-col">
+      <!-- ── POSTS ── -->
+      <div class="section-label">전체 강의 목록</div>
+      <section class="posts-grid" id="posts-list">
+        <div style="text-align:center; padding:3rem; color:var(--ink-faint); font-size:0.85rem; grid-column: 1/-1;">불러오는 중...</div>
+      </section>
+    </main>
+
+    <aside class="right-sidebar">
+      <!-- ── HEART CARDS WIDGET ── -->
+      <div class="section-label">🌿 오늘의 마음 카드</div>
+      <div class="heart-card-widget" id="heartCardWidget">
+        <div class="hcw-header">
+          <h3 class="hcw-title">💌 오늘의 마음 카드</h3>
+          <p class="hcw-subtitle">100장 중 한 장을 뽑아 오늘의 한 마디를 만나요</p>
+        </div>
+
+        <div class="hcw-deck-row">
+          <div class="hcw-deck" id="hcwDeck">
+            <div class="hcw-deck-stack"></div>
+            <div class="hcw-deck-stack"></div>
+            <div class="hcw-deck-top">
+              <div class="hcw-deck-icon">🌿</div>
+              <div class="hcw-deck-label">MIND</div>
+            </div>
+          </div>
+
+          <div class="hcw-thumbnails" id="hcwThumbs"></div>
+        </div>
+
+        <div class="hcw-counter">
+          오늘 <span class="hcw-counter-num" id="hcwDrawnCount">0</span> / 7 뽑음
+        </div>
+
+        <div class="hcw-shared-banner" id="hcwSharedBanner">
+          <span class="hcw-shared-banner-text">👀 공유된 카드 보는 중</span>
+          <button class="hcw-shared-close" id="hcwSharedClose" aria-label="닫기">✕</button>
+        </div>
+
+        <div class="hcw-active" id="hcwActive">
+          <div class="hcw-empty">
+            <span class="hcw-empty-icon">🎴</span>
+            위의 덱을 클릭해서<br>오늘의 첫 카드를 뽑아보세요
+          </div>
+        </div>
+      </div>
+
+      <div class="hcw-feed" id="hcwFeed">
+        <div class="hcw-feed-header">
+          <h3 class="hcw-feed-title">💬 최근 마음 나눔</h3>
+          <p class="hcw-feed-subtitle">다른 분들이 공유한 마음을 만나보세요</p>
+        </div>
+        <div class="hcw-feed-list" id="hcwFeedList">
+          <div class="hcw-feed-empty">불러오는 중...</div>
+        </div>
+      </div>
+    </aside>
+  </div>
 
   <!-- ── FOOTER ── -->
   <footer class="site-footer">
     <p>초보 투자자 성장기 · Powered by Claude AI</p>
   </footer>
-
 </div>
 
 <!-- Toast -->
@@ -891,13 +1390,37 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
 <!-- Hidden file input -->
 <input type="file" id="comment-file-input" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none">
 
+<div class="hcw-modal-backdrop" id="hcwModalBackdrop">
+  <div class="hcw-modal" role="dialog" aria-modal="true" aria-labelledby="hcwModalTitle">
+    <div class="hcw-modal-header">
+      <div>
+        <h3 class="hcw-modal-title" id="hcwModalTitle">댓글</h3>
+        <p class="hcw-modal-sub" id="hcwModalSub">이 카드에 대한 생각을 나눠보세요</p>
+      </div>
+      <button class="hcw-modal-close" id="hcwModalClose" aria-label="닫기">✕</button>
+    </div>
+    <div class="hcw-modal-body" id="hcwModalBody"></div>
+    <div class="hcw-modal-footer">
+      <div class="hcw-reply-banner" id="hcwReplyBanner"></div>
+      <div class="hcw-input-row">
+        <textarea class="hcw-comment-input" id="hcwCommentInput"
+          placeholder="따뜻한 한 마디를 남겨주세요... (사이드바에 공개돼요)" rows="1" maxlength="500"></textarea>
+        <button class="hcw-send-btn" id="hcwSendBtn" title="전송" aria-label="댓글 전송">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- html2canvas (for heart card image save) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-storage-compat.js"></script>
 
-<script>
+<script id="main-script">
 firebase.initializeApp({
   apiKey: "AIzaSyDfDkIUzac4P5b9NrkxrQS1R_qY98ylWnw",
   authDomain: "forbetterday-daily.firebaseapp.com",
@@ -970,7 +1493,6 @@ auth.onAuthStateChanged(function(user) {
   });
 });
 
-/* ===== Comment Form ===== */
 function updateCommentForm(postId) {
   var formArea = document.getElementById('comment-form-area-' + postId);
   if (!formArea) return;
@@ -987,7 +1509,6 @@ function updateCommentForm(postId) {
   }
 }
 
-/* ===== Image Upload ===== */
 function openImagePicker(formId) { _activeFormId = formId; var fi = document.getElementById('comment-file-input'); fi.value = ''; fi.click(); }
 document.getElementById('comment-file-input').addEventListener('change', function(e) {
   var file = e.target.files[0];
@@ -1041,16 +1562,13 @@ function uploadImageToStorage(formId) {
   });
 }
 
-/* ===== Lightbox ===== */
 function openLightbox(url) { var lb = document.getElementById('img-lightbox'); document.getElementById('lightbox-img').src = url; lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
 function closeLightbox() { document.getElementById('img-lightbox').classList.remove('open'); document.body.style.overflow = ''; }
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
 
-/* ===== Spam Filter ===== */
 var spamWords = ['http://', 'https://', 'www.', '.com', '.net', 'casino', 'poker', 'viagra', '광고', '홍보', '클릭', '무료상담', '대출'];
 function isSpam(t) { var l = t.toLowerCase(); for (var i = 0; i < spamWords.length; i++) { if (l.indexOf(spamWords[i]) !== -1) return true; } return false; }
 
-/* ===== Submit Comment ===== */
 function submitComment(postId) {
   if (!currentUser || currentUser.isAnonymous) return;
   var input = document.getElementById('comment-input-' + postId);
@@ -1067,7 +1585,6 @@ function submitComment(postId) {
   .catch(function(err) { alert('댓글 등록 실패: ' + err.message); input.disabled = false; });
 }
 
-/* ===== Submit Reply ===== */
 function submitReply(postId, parentId, parentUid, parentName) {
   if (!currentUser || currentUser.isAnonymous) return;
   var input = document.getElementById('reply-input-' + parentId);
@@ -1089,7 +1606,6 @@ function submitReply(postId, parentId, parentUid, parentName) {
   }).catch(function(err) { alert('답글 등록 실패: ' + err.message); input.disabled = false; });
 }
 
-/* ===== Reply Form ===== */
 function showReplyForm(commentId, postId, parentUid, parentName) {
   document.querySelectorAll('.reply-form').forEach(function(el) { el.remove(); });
   document.querySelectorAll('.reply-img-preview-wrap').forEach(function(el) { el.remove(); });
@@ -1155,7 +1671,6 @@ function renderComment(c, postId, isReply) {
   return '<div class="comment-item' + (isReply ? ' reply' : '') + '" data-comment-id="' + c._id + '"><img class="comment-avatar" src="' + (c.photo || '') + '" alt="" onerror="this.src=\'' + fa + '\'"><div class="comment-body"><div class="comment-author">' + (c.name || '사용자') + '<span class="comment-actions">' + replyBtn + editBtn + delBtn + '</span></div>' + replyTo + textH + imgH + '<div class="comment-time">' + time + edited + '</div></div></div>';
 }
 
-/* ===== Notifications ===== */
 function listenNotifications() {
   if (notifUnsubscribe) notifUnsubscribe(); if (!currentUser) return;
   notifUnsubscribe = db.collection('notifications').where('recipientUid', '==', currentUser.uid).orderBy('timestamp', 'desc').limit(20).onSnapshot(function(snap) {
@@ -1183,7 +1698,6 @@ document.addEventListener('click', function(e) {
   var cw = document.getElementById('comments-dropdown-wrap'); if (cw && !cw.contains(e.target)) document.getElementById('sb-comments-list').classList.remove('open');
 });
 
-/* ===== Greeting, Quote, Season ===== */
 function setGreeting() {
   var el = document.getElementById('greeting-bar'), h = new Date().getHours(), g, em;
   if (h >= 5 && h < 9) { g = '좋은 아침이에요'; em = '☀️'; }
@@ -1294,10 +1808,8 @@ function markAsRead(postId) {
   if (read.indexOf(String(postId)) === -1) { read.push(String(postId)); localStorage.setItem('readPosts', JSON.stringify(read)); }
 }
 
-/* ===== Spotify ===== */
 (function() {
   var bar = document.getElementById('spotifyBar'), btn = document.getElementById('spotifyToggle');
-  // 기본 상태: Spotify 접힘 (음악은 선택 사항)
   bar.classList.add('collapsed'); btn.classList.add('collapsed');
   btn.addEventListener('click', function() {
     bar.classList.toggle('collapsed'); btn.classList.toggle('collapsed');
@@ -1306,7 +1818,6 @@ function markAsRead(postId) {
   });
 })();
 
-/* ===== PORTFOLIO TRACKER ===== */
 var PORTFOLIO_WORKER_URL = 'https://portfolio-tracker.forbetterday.workers.dev/portfolio';
 
 function togglePortfolio() {
@@ -1317,7 +1828,6 @@ function togglePortfolio() {
 
 function initPortfolioState() {
   var saved = localStorage.getItem('portfolioCollapsed');
-  // 기본값: 펼친 상태 (사용자가 이전에 접었다면 그대로 접힘)
   if (saved === '1') {
     document.getElementById('portfolioTracker').classList.add('collapsed');
   }
@@ -1340,7 +1850,6 @@ function buildChartSvg(history) {
   var returns = history.map(function(h) { return h.returnPct; });
   var minR = Math.min.apply(null, returns);
   var maxR = Math.max.apply(null, returns);
-  // 0%도 항상 스케일에 포함
   if (minR > 0) minR = 0;
   if (maxR < 0) maxR = 0;
   var range = maxR - minR;
@@ -1349,27 +1858,22 @@ function buildChartSvg(history) {
   var chartMin = minR - padR;
   var chartMax = maxR + padR;
   var chartRange = chartMax - chartMin;
-
   var n = history.length;
   var vbW = 200, xPad = 6, yTop = 8, yBot = 68;
   var xStep = (vbW - xPad * 2) / Math.max(1, n - 1);
-
   function yFor(r) {
     return yBot - ((r - chartMin) / chartRange) * (yBot - yTop);
   }
   var zeroY = yFor(0);
-
   var pathPoints = history.map(function(p, i) {
     var x = xPad + i * xStep;
     var y = yFor(p.returnPct);
     return (i === 0 ? 'M' : 'L') + x.toFixed(1) + ',' + y.toFixed(1);
   }).join(' ');
-
   var lastX = xPad + (n - 1) * xStep;
   var lastY = yFor(history[n-1].returnPct);
   var lastPositive = history[n-1].returnPct >= 0;
   var lineColor = lastPositive ? '#1e7a3a' : '#c0392b';
-
   return '<svg viewBox="0 0 200 80" class="pt-chart-svg" preserveAspectRatio="xMidYMid meet">' +
     '<line x1="0" y1="' + zeroY.toFixed(1) + '" x2="200" y2="' + zeroY.toFixed(1) + '" stroke="var(--border)" stroke-width="0.5" stroke-dasharray="2,2"/>' +
     '<path d="' + pathPoints + '" fill="none" stroke="' + lineColor + '" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>' +
@@ -1387,14 +1891,10 @@ function renderPortfolio(data) {
   if (!data || !data.etfs) return;
   var total = data.totalChangePct;
   var totalText = formatPct(total);
-
-  // Header
   document.getElementById('pt-base-date').textContent = '기준일 ' + (data.baseDate || '—');
   var totalBar = document.getElementById('pt-total-bar');
   totalBar.textContent = totalText;
   totalBar.className = 'pt-total-bar ' + pctClass(total);
-
-  // Grid: 5 ETF 카드 + 1 차트 카드
   var cardsHtml = data.etfs.map(function(e) {
     var isUsd = (e.market === 'us');
     var priceLine = formatNum(e.basePrice, isUsd) + ' → <span class="pt-current">' + formatNum(e.currentPrice, isUsd) + '</span>';
@@ -1409,7 +1909,6 @@ function renderPortfolio(data) {
       '<div class="pt-pct ' + pctClass(e.changePct) + '">' + formatPct(e.changePct) + '</div>' +
     '</div>';
   }).join('');
-
   var chartSvg = buildChartSvg(data.history || []);
   var startDate = formatShortDate(data.baseDate);
   var endDate = (data.history && data.history.length > 0) ? formatShortDate(data.history[data.history.length-1].date) : formatShortDate(new Date().toISOString().slice(0,10));
@@ -1422,10 +1921,7 @@ function renderPortfolio(data) {
       chartSvg +
       '<div class="pt-chart-dates"><span>' + startDate + '</span><span>' + endDate + '</span></div>' +
     '</div>';
-
   document.getElementById('pt-grid').innerHTML = cardsHtml + chartCard;
-
-  // Footer info
   var fx = data.exchangeRate || {};
   var fxPct = (fx.base && fx.current) ? ((fx.current - fx.base) / fx.base) * 100 : null;
   var fxText = 'USD/KRW: ' + (fx.base ? Math.round(fx.base).toLocaleString() : '—') + ' → ' + (fx.current ? fx.current.toFixed(2) : '—') + (fxPct != null ? ' (' + formatPct(fxPct) + ')' : '');
@@ -1452,16 +1948,13 @@ function loadPortfolioData() {
   });
 }
 
-/* ===== Load Posts ===== */
 var cardColors = ['orange','blue','green','purple','coral','teal','gold'];
 
 document.addEventListener('DOMContentLoaded', async () => {
   setGreeting(); setDailyQuote(); setSeasonTheme();
   initPortfolioState();
   loadPortfolioData();
-  // 5분마다 포트폴리오 자동 갱신
   setInterval(loadPortfolioData, 5 * 60 * 1000);
-
   var listEl = document.getElementById('posts-list');
   try {
     var res = await fetch('investor_posts.json');
@@ -1506,10 +1999,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     window._totalPosts = posts.length;
     window._jsonPosts = posts;
     updateProgress(posts.length);
-
-    /* ===== Auto-discover HTML files not in JSON ===== */
     discoverNewHtmlFiles(posts, listEl);
-
   } catch (err) {
     console.error(err);
     listEl.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">⚠️</div><p>데이터를 불러올 수 없습니다.</p></div>';
@@ -1521,10 +2011,8 @@ async function discoverNewHtmlFiles(existingPosts, gridEl) {
     var apiRes = await fetch('https://api.github.com/repos/forbetterday-ai/forbetterday-daily/contents/docs');
     if (!apiRes.ok) return;
     var files = await apiRes.json();
-
     var exclude = ['index.html', 'admin.html'];
     var existingUrls = existingPosts.map(function(p) { return p.artifact_url; });
-
     var newFiles = files.filter(function(f) {
       if (!f.name.endsWith('.html')) return false;
       if (exclude.indexOf(f.name) !== -1) return false;
@@ -1534,11 +2022,8 @@ async function discoverNewHtmlFiles(existingPosts, gridEl) {
       }
       return true;
     });
-
     if (newFiles.length === 0) return;
-
     var maxId = Math.max.apply(null, existingPosts.map(function(p) { return p.id; }));
-
     for (var i = 0; i < newFiles.length; i++) {
       try {
         var htmlRes = await fetch(newFiles[i].name);
@@ -1550,18 +2035,15 @@ async function discoverNewHtmlFiles(existingPosts, gridEl) {
         var descMeta = doc.querySelector('meta[name="post-description"]');
         var tagsMeta = doc.querySelector('meta[name="post-tags"]');
         var dateMeta = doc.querySelector('meta[name="post-date"]');
-
         if (!dateMeta) continue;
         var desc = descMeta ? descMeta.getAttribute('content') : '';
         var tags = tagsMeta ? tagsMeta.getAttribute('content').split(',').map(function(t) { return t.trim(); }) : ['새 글'];
         var postDate = dateMeta ? dateMeta.getAttribute('content') : new Date().toISOString().slice(0, 10);
-
         maxId++;
         var newId = maxId;
         var num = String(newId).padStart(2, '0');
         var color = cardColors[newId % cardColors.length];
         var tagsHtml = tags.map(function(t) { return '<span class="tag">' + t + '</span>'; }).join('');
-
         var cardHtml =
           '<div class="post-card" data-id="' + newId + '" data-color="' + color + '" style="animation-delay:0s">' +
             '<div class="card-face" onclick="togglePost(' + newId + ')">' +
@@ -1584,12 +2066,10 @@ async function discoverNewHtmlFiles(existingPosts, gridEl) {
               '</div>' +
             '</div>' +
           '</div>';
-
         gridEl.insertAdjacentHTML('afterbegin', cardHtml);
         window._totalPosts++;
       } catch (e) { console.log('자동 감지 실패:', newFiles[i].name, e); }
     }
-
     document.getElementById('total-count').textContent = window._totalPosts;
     updateProgress(window._totalPosts);
   } catch (e) { console.log('HTML 자동 감지 실패:', e); }
@@ -1630,7 +2110,6 @@ function resizeEmbed(id, event) {
   heightStates[id] = next; iframe.style.height = heights[next] + 'px';
 }
 
-/* ===== Session tracking ===== */
 var _sessionId = null;
 function trackUserSession() {
   _sessionId = sessionStorage.getItem('_sid');
@@ -1659,7 +2138,6 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(loadSidebarComments, 1500);
 });
 
-/* ===== Sidebar Comments (now in header dropdown) ===== */
 function toggleSidebarComments() {
   var list = document.getElementById('sb-comments-list');
   list.classList.toggle('open');
@@ -1699,6 +2177,990 @@ function goToPostComment(postId) {
   if (!embedEl.classList.contains('open')) togglePost(Number(postId));
   setTimeout(function() { var cs = embedEl.querySelector('.comments-section'); if (cs) { cs.scrollIntoView({ behavior: 'smooth', block: 'center' }); cs.style.background = 'rgba(196,141,176,0.1)'; setTimeout(function() { cs.style.background = ''; }, 1500); } }, 300);
 }
+
 </script>
+
+
+<!-- ============ HEART CARDS WIDGET JS ============ -->
+<script>
+/* =========================================================
+   오늘의 마음 카드 위젯 — JS
+   - 100장 카드 데이터 + 전체 로직
+   - Firebase 감지하면 Firestore, 없으면 localStorage 자동 폴백
+   - Kakao SDK 감지하면 카카오톡 공유, 없으면 Web Share API
+========================================================= */
+
+const CARDS = [
+  // ========== A. 비교와 조급함 (1~10) ==========
+  {id:1,cat:"비교와 조급함",front:"단톡방에 친구 승진 소식이 올라와서 \"축하해 🎉\" 보내고, 이상하게 한참 핸드폰을 놓지 못할 때",back:"축하하는 마음이 가짜여서가 아니에요. 한 사람 안에 여러 감정이 공존하는 건, 그만큼 자기 삶을 진지하게 살고 있다는 증거예요.\n\n비교는 적이 아니라 잠시 들르는 손님입니다. 오늘 하루 정도는 머물다 가도 괜찮아요."},
+  {id:2,cat:"비교와 조급함",front:"잠들기 전 SNS를 스크롤하다가, 다들 행복해 보이고 나만 멈춰 있는 것 같을 때",back:"SNS는 누군가의 1초를 편집한 영상이에요. 그 뒤의 99분 59초에는 똑같은 설거지와 망설임과 피곤함이 있어요.\n\n당신의 99분 59초도 그 자체로 아름답습니다. 오늘 편집해서 올릴 1초가 없었다고 해서요."},
+  {id:3,cat:"비교와 조급함",front:"오랜만에 잡힌 동창회 날짜가 다가오는데, 괜히 미리 주눅드는 나",back:"\"근황\"이라는 단어가 삶을 한 줄로 요약하라고 강요하는 것 같아요. 그런데 당신의 30년은 한 줄로 요약되지 않아요.\n\n웃으며 앉아만 있어도 충분해요. 당신이 가진 이야기들은 경력란에 안 써져 있을 뿐 사라지지 않았어요."},
+  {id:4,cat:"비교와 조급함",front:"아무 일도 없는 오후에, 문득 나만 인생 레이스에서 뒤처진 것 같을 때",back:"레이스가 아니라 정원 가꾸기라면 어떨까요? 어떤 꽃은 봄에, 어떤 꽃은 가을에 펴요.\n\n당신은 아직 꽃을 준비 중인 사람일 수 있어요. 느리게 피는 꽃이 덜 아름다운 게 아닙니다."},
+  {id:5,cat:"비교와 조급함",front:"서른이 되었는데 돌아보니 아무것도 이룬 게 없는 것 같은 날",back:"\"이룬 것\"만 헤아리면 누구나 비어 보여요. 살아남은 것, 견뎌낸 것, 누군가에게 다정했던 순간, 포기하지 않은 것들을 세어보면 당신은 이미 많은 걸 이루고 있었어요.\n\n그건 이력서에 안 쓰이지만 삶에는 기록돼 있어요."},
+  {id:6,cat:"비교와 조급함",front:"나보다 늦게 들어온 후배가 먼저 승진했다는 소식을 들을 때",back:"속도는 능력의 전부가 아니에요. 그리고 승진이 행복의 전부도 아니에요.\n\n당신이 쌓고 있는 건 어쩌면 더 깊은 뿌리예요. 뿌리는 눈에 안 보이지만, 바람이 세게 불 때 비로소 가치가 드러나요."},
+  {id:7,cat:"비교와 조급함",front:"한 살 한 살 나이 먹는 것 자체가 막연히 무서워질 때",back:"20대 때의 당신이 \"서른의 나\"를 봤다면 아마 \"멋있다, 차분하다, 이제 자기를 좀 아는구나\"라고 했을 거예요.\n\n우리는 미래의 나에겐 관대한데 지금의 나에겐 야박해요. 미래의 당신에게 당신이 주고 싶은 시선으로, 오늘의 당신을 봐주세요."},
+  {id:8,cat:"비교와 조급함",front:"주변 사람들은 다들 알아서 잘 살고 있는 것 같은데, 나만 매일 헐떡이는 것 같은 느낌",back:"당신이 보는 건 그들의 '완성된 결과'예요. 그들이 울었던 밤, 사직서 만지작거렸던 저녁, 혼자 울었던 차 안은 당신에게 보이지 않아요.\n\n모두가 헐떡이고 있어요. 누군가는 그걸 잘 숨길 뿐이에요."},
+  {id:9,cat:"비교와 조급함",front:"\"그때 그걸 했더라면…\" 하고 타이밍을 놓친 것 같은 기분이 무겁게 내려앉을 때",back:"타이밍은 달력에 적혀 있는 게 아니라, 당신이 준비되었을 때 시작돼요. 늦은 시작도 진짜 시작이에요.\n\n많은 대단한 사람들이 30대, 40대, 50대에 처음으로 무언가를 시작했어요. 당신의 시계는 지금도 정상 작동 중이에요."},
+  {id:10,cat:"비교와 조급함",front:"어렸을 때 그려둔 인생 로드맵과 지금이 너무 달라서 당황스러울 때",back:"20살의 당신이 그린 지도는 20살이 상상할 수 있는 세계까지만이에요.\n\n지금 당신이 서 있는 곳은 그때는 존재하는 줄도 몰랐던 땅일 수 있어요. 로드맵을 벗어난 게 아니라, 더 큰 지도로 이동한 거예요."},
+
+  // ========== B. 관계 속의 나 (11~20) ==========
+  {id:11,cat:"관계 속의 나",front:"부탁받으면 생각할 겨를도 없이 \"응, 될 것 같아\"가 먼저 나오는 나",back:"그건 당신의 결함이 아니라 깊이 훈련된 다정함이에요.\n\n다만 \"잠깐 생각해보고 답해도 될까?\"라는 한 문장을 연습해보세요. 배려는 즉시성이 아니에요. 진심 어린 답변이 하루 늦게 와도 충분히 다정해요."},
+  {id:12,cat:"관계 속의 나",front:"친구 고민 오래 들어주고 집에 돌아오면, 이유 없이 녹초가 될 때",back:"당신이 약해서가 아니에요. 감정을 함께 져주는 건 진짜 '일'이에요.\n\n내 에너지가 줄어든다는 신호를 무시하지 마세요. 오늘 저녁은 아무 생각 없이 따뜻한 물로 씻고, 좋아하는 이불 안에서 일찍 자도 돼요."},
+  {id:13,cat:"관계 속의 나",front:"모임에서 어색한 공기가 흐를 때, 자동으로 누가 소외되는지 살피는 나",back:"그 예민한 레이더는 희귀한 재능이에요. 하지만 모든 공기를 혼자 책임질 필요는 없어요.\n\n오늘 하루는 \"좀 어색하면 어때\" 하는 마음으로, 내 잔만 들고 앉아 있어도 괜찮아요."},
+  {id:14,cat:"관계 속의 나",front:"내가 없으면 이 일이/모임이/관계가 안 굴러갈 것 같다는 부담",back:"그 책임감 덕분에 많은 것이 지켜져왔어요. 그런데 가끔은 빠져보세요. 세상은 생각보다 튼튼해요.\n\n그리고 당신이 없는 자리에서 사람들은 당신의 존재를 비로소 선명하게 느껴요. 당신 없이도 굴러가는 건 당신의 가치가 없어서가 아니에요."},
+  {id:15,cat:"관계 속의 나",front:"어쩔 수 없이 싫은 소리를 한 뒤에, 밤새 \"그 말을 그렇게 해야 했나\" 곱씹는 나",back:"싫은 소리를 할 수 있는 사람은 관계를 정말 소중히 여기는 사람이에요. 무관심한 사람은 말하지 않아요.\n\n그 밤의 곱씹음은 당신의 죄가 아니라 당신의 책임감이에요. 스스로에게 \"나는 성의 있게 말했어\"라고 말해주세요."},
+  {id:16,cat:"관계 속의 나",front:"몇 번이나 신호를 보냈는데, 상대방이 여전히 내 마음을 알아채지 못할 때",back:"당신의 섬세함은 귀한 능력이지만, 세상 모든 사람이 같은 섬세함을 가지진 않았어요. 그들이 둔한 게 아니라 주파수가 다를 뿐이에요.\n\n신호 대신 말로 번역해주세요. \"나 이거 서운해.\" 한 문장이 열 번의 신호보다 빨라요."},
+  {id:17,cat:"관계 속의 나",front:"\"네가 더 잘하잖아, 네가 해줘\"라는 말을 여러 번 들은 날",back:"그 말은 칭찬처럼 들리지만, 오래 쌓이면 부담이 돼요.\n\n내가 잘하는 건 사실이더라도, 잘하는 사람이 계속 해야 한다는 규칙은 세상에 없어요. \"이번엔 내가 못 할 것 같아\"라고 말할 권리가 당신에게 있어요."},
+  {id:18,cat:"관계 속의 나",front:"친구를 챙기다가 그 친구의 친구, 가족, 반려동물까지 신경 쓰게 된 날",back:"당신의 마음은 원이 아니라 동심원이에요. 중심에서 바깥으로 퍼져가죠.\n\n그런데 오늘은 동심원을 조금 좁혀도 돼요. 가장 안쪽 원, 바로 당신 자신을 챙기는 것부터요."},
+  {id:19,cat:"관계 속의 나",front:"유독 가족 앞에서 내 감정을 편하게 표현하기 어려운 나",back:"가장 가까운 사람 앞에서 가장 서툰 건 당신만의 일이 아니에요. 거리가 가까울수록 상처도 깊어서예요.\n\n한 번에 다 풀려고 하지 말아요. 오늘은 그냥 옆에 앉아 있는 것만으로도 충분한 표현이에요."},
+  {id:20,cat:"관계 속의 나",front:"한때 매일 연락하던 친구와 요즘은 카톡 프로필로만 만날 때",back:"관계에도 계절이 있어요. 겨울을 맞은 관계가 죽은 관계는 아니에요. 어떤 관계는 10년 뒤 다시 봄을 만나요.\n\n멀어진 자체를 실패로 기록하지 마세요. 각자의 계절을 사는 것뿐이에요."},
+
+  // ========== C. 자기 인정과 자존감 (21~28) ==========
+  {id:21,cat:"자기 인정",front:"누군가 진심으로 칭찬하는데, \"아니에요, 제가 뭘요…\"가 반사적으로 튀어나올 때",back:"칭찬을 받는 건 기술이에요. 연습이 필요해요.\n\n오늘부터 \"감사해요\"만 말해보세요. 그 짧은 두 단어에 당신의 노력이 인정받아요. 거절하지 말고, 몸 안에 들여놓으세요."},
+  {id:22,cat:"자기 인정",front:"어떤 결정을 한 뒤에도 자꾸 누군가에게 \"이 정도면 괜찮지?\" 묻게 되는 나",back:"확인받고 싶은 마음은 당신이 신중하다는 뜻이에요.\n\n다만 그 기준점을 조금씩 바깥에서 안쪽으로 옮겨오는 연습을 해봐요. \"내가 나라서 괜찮아\"라는 말을 어색하지만 소리 내어 해보세요. 진짜가 됩니다, 천천히."},
+  {id:23,cat:"자기 인정",front:"거울을 보다가 문득 내 얼굴이 오늘따라 유독 마음에 안 들 때",back:"몸은 매일 최선을 다해 당신을 살려내고 있어요.\n\n당신을 여기까지 데려다준 이 얼굴에게 오늘만큼은 \"수고했다\"라고 말해주세요. 미운 구석보다 당신을 위해 일해준 구석이 훨씬 많아요."},
+  {id:24,cat:"자기 인정",front:"열심히 해놓고도 제출 직전에 \"이 정도로 괜찮을까…\" 망설여질 때",back:"완벽을 향한 욕망 뒤에는 잘하고 싶은 진심이 있어요. 그 진심은 이미 결과물 안에 녹아 있어요.\n\n당신이 부족하다고 느끼는 지점을 남들은 오히려 정성으로 읽어요. 제출하세요. 당신은 준비됐어요."},
+  {id:25,cat:"자기 인정",front:"\"자기 장점 세 개만 말해보라\"고 하면, 한참 멍해지는 나",back:"장점이 없는 게 아니라 스스로에게 한 번도 물어볼 시간을 못 줬을 뿐이에요.\n\n남의 장점은 그렇게 잘 찾아주는데, 당신에게도 똑같은 시선을 돌려줘요. 오늘 하나만 찾아보세요. \"나는 약속을 잘 지킨다\"든, \"나는 남의 슬픔을 알아차린다\"든요."},
+  {id:26,cat:"자기 인정",front:"누군가가 나를 좋아한다는 사실이 왠지 믿기지 않아서 의심하게 될 때",back:"누군가 당신을 좋아하는 건 \"잘못\"이 아니에요. 그건 당신이 실제로 좋은 사람이라는 조용한 증거예요.\n\n의심 대신 \"그럴 수도 있지\"라고 받아들여보세요. 사랑받을 자격은 시험 통과가 아니라 그냥 존재함이에요."},
+  {id:27,cat:"자기 인정",front:"실수한 뒤에 \"내가 그렇지 뭐…\" 하고 자조하는 습관이 튀어나올 때",back:"그 말은 보호장치예요. 더 큰 상처받기 전에 미리 깎아내리는 거죠.\n\n그런데 그 말을 자주 하면 진짜로 그런 사람이 돼요. 실수 하나로 당신을 요약하지 마세요. 당신은 훨씬 더 큰 사람이에요."},
+  {id:28,cat:"자기 인정",front:"다들 쉽게 하는 것 같은 일이 나한테만 유독 버거울 때",back:"남들이 쉬워 보이는 건 그들이 보여주는 부분만 당신이 봐서예요. 당신이 버거워하는 지점은 아마 남들도 속으로는 버거워했을 거예요.\n\n다만 당신은 정직해서 그 사실을 외면하지 않았을 뿐이에요. 정직한 버거움은 부끄러운 게 아니에요."},
+
+  // ========== D. 가족 (29~34) ==========
+  {id:29,cat:"가족",front:"오랜만에 본 부모님의 얼굴에 주름이 더 깊어져 있을 때, 심장이 쿵 하는 순간",back:"그 주름은 당신을 길러낸 시간이에요.\n\n슬퍼하는 대신 오늘 한 번 더 전화해보세요. \"밥은 드셨어?\" 한 문장이 부모님께는 오늘 하루를 덥히는 작은 난로가 돼요. 사랑은 그런 작은 반복으로 만들어져요."},
+  {id:30,cat:"가족",front:"엄마한테 괜히 짜증을 내고 돌아서서, 이불 속에서 미안해지는 밤",back:"가장 안전한 사람 앞에서 가장 서툰 모습이 나와요. 그건 엄마를 미워해서가 아니라, 엄마가 당신의 '받아주는 사람'이어서예요.\n\n내일 별말 없이 엄마가 좋아하는 걸 하나 사다 드려보세요. 사과는 꼭 말이 아니어도 돼요."},
+  {id:31,cat:"가족",front:"회사 일이 힘든데 부모님 걱정시키기 싫어서 \"나 잘 지내\"라고 거짓말한 날",back:"당신의 거짓말은 사랑의 다른 이름이에요.\n\n그런데 부모님은 당신의 모든 걸 듣고 싶어하시지, 편집된 버전만 원하시는 게 아니에요. 가끔은 \"사실 요즘 좀 힘들어\"라고 말해봐요. 듣는 것 자체가 부모님께는 역할이에요."},
+  {id:32,cat:"가족",front:"정리하다가 우연히 아빠의 젊은 시절 사진을 발견하고 멍해지는 순간",back:"아빠도 한때는 당신과 같은 30살이었어요. 꿈도 있었고 불안도 있었고 사랑도 했어요.\n\n지금의 아빠 안에도 그 청년이 여전히 살아 있어요. 오늘은 아빠에게 그 시절 이야기를 한 번 여쭤보세요. 당신이 몰랐던 아빠를 만나게 될지도 몰라요."},
+  {id:33,cat:"가족",front:"엄마의 잔소리가 귀찮지만, 돌아서서 생각하면 늘 결국은 내 걱정이었다는 걸 알 때",back:"세상에는 당신을 걱정해주는 사람이 점점 줄어들어요. 엄마의 잔소리는 그 귀한 목록에서도 가장 오래된 항목이에요.\n\n잔소리를 이기려 하지 말고, \"네, 알겠어\"로 슬쩍 넘겨보세요. 싸우지 않는 것도 사랑이에요."},
+  {id:34,cat:"가족",front:"부모님 전화에 \"응, 잘 지내, 걱정하지 마\" 하고 끊었는데, 왠지 눈물이 핑 돌 때",back:"당신은 짐이 되고 싶지 않아서 그랬어요.\n\n그 마음은 이해하지만, 부모님께 짐이 되는 건 당신의 힘듦이 아니라 당신의 부재예요. 조금 힘든 얘기를 해도 괜찮아요. 듣고 싶어 하시는 건 편집된 당신이 아니에요."},
+
+  // ========== E. 사랑과 결혼 (35~40) ==========
+  {id:35,cat:"사랑과 결혼",front:"친척 모임에서 \"결혼은 언제 할 거냐\"는 질문에 웃으며 넘긴 뒤, 혼자 있을 때 화가 올라올 때",back:"그 질문은 당신의 인생에 대한 진짜 관심이 아니라 그저 빈칸 채우기 같은 대화예요.\n\n당신의 결혼 유무는 당신의 인생을 요약하지 않아요. 다음엔 이렇게 답해보세요. \"필요할 때 할게요.\" 미소와 함께요."},
+  {id:36,cat:"사랑과 결혼",front:"이별한 뒤에도 친구들 앞에서 \"나 괜찮아\"라고 먼저 말해버린 날",back:"안 괜찮아도 돼요. 슬픔을 다루는 방식이 '빨리 괜찮아지기'일 필요는 없어요.\n\n그 사람과 있었던 시간이 진짜였다면, 슬픔도 진짜여야 공평해요. 오늘은 집에 가서 실컷 슬퍼해요. 울음도 애도예요."},
+  {id:37,cat:"사랑과 결혼",front:"금요일 밤 혼자 편의점에서 라면을 사들고 집에 가는 길이 유독 쓸쓸한 순간",back:"혼자의 금요일 밤이 처량한 게 아니에요. 당신이 피곤하고 외롭기 때문에 그렇게 느끼는 거예요.\n\n라면 맛있게 끓여 먹고, 좋아하는 영상 틀어놓고, 푹 주무세요. 외로움은 영원하지 않아요. 그냥 오늘 밤의 손님이에요."},
+  {id:38,cat:"사랑과 결혼",front:"누군가를 좋아하는데, 그 감정의 무게가 상대에게 부담이 될까 봐 스스로 줄이고 있는 나",back:"좋아하는 마음은 부끄러운 게 아니에요.\n\n다만 당신은 늘 상대의 무게까지 먼저 헤아리는 사람이라, 자기 감정이 무거워지는 걸 죄송해해요. 그 섬세함은 귀하지만, 가끔은 그냥 좋아하세요. 부담이 될지는 상대가 결정해요."},
+  {id:39,cat:"사랑과 결혼",front:"오래전 헤어진 사람이 아직도 가끔 생각날 때, 그 사실이 스스로 당황스러울 때",back:"누군가를 오래 기억하는 건 아직 마음이 거기 있어서가 아니에요. 그저 당신의 마음이 사람을 함부로 잊지 않는 종류라서 그래요.\n\n생각나도 괜찮아요. 떠오른다고 해서 돌아가야 하는 건 아니에요."},
+  {id:40,cat:"사랑과 결혼",front:"연애를 안 한 지 오래돼서, 누굴 만나도 잘할 수 있을지 자신이 없어지는 날",back:"연애의 기술이 녹슨 게 아니라, 지금 당신의 에너지가 관계보다 자기 회복에 가 있는 시기일 수 있어요.\n\n준비되면 자연스럽게 다시 열려요. 그때의 당신은 더 단단한 사람이 되어 있을 거예요. 지금의 단독 시간은 낭비가 아니에요."},
+
+  // ========== F. 일과 커리어 (41~48) ==========
+  {id:41,cat:"일과 커리어",front:"회의에서 좋은 아이디어가 떠올랐는데, 말을 못 꺼내고 지나가버린 날",back:"그 순간의 망설임은 당신이 신중하다는 뜻이지, 능력이 없다는 뜻이 아니에요.\n\n다음엔 \"저 한 가지만 말씀드려도 될까요?\"라는 다리를 미리 준비해두세요. 좋은 생각은 당신 안에만 있으면 세상에 없는 거예요. 살려주세요, 자기 아이디어를."},
+  {id:42,cat:"일과 커리어",front:"동기는 팀장이 됐는데, 나는 아직 같은 자리에 있는 것 같을 때",back:"승진 속도가 인생의 속도가 아니에요. 어떤 나무는 20년 자라고 꽃을 한 번 피워요. 어떤 꽃은 매년 피고 져요.\n\n당신이 어떤 종류의 나무인지는 아직 다 자라봐야 알아요. 지금은 뿌리를 단단히 내리는 시기일 수 있어요."},
+  {id:43,cat:"일과 커리어",front:"퇴근 지하철 창문에 비친 내 얼굴을 보고 이유 없이 눈물이 핑 도는 날",back:"이유가 없는 게 아니라, 너무 많은 이유가 압축돼서 그래요. 오늘 하루 참았던 모든 감정이 지하철의 흔들림에 풀린 거예요.\n\n집에 가서 씻고, 좋아하는 걸 먹고, 일찍 누우세요. 내일의 당신에게 오늘의 짐을 넘기지 마세요."},
+  {id:44,cat:"일과 커리어",front:"일은 그럭저럭 잘하고 있는데, 문득 \"이게 정말 내 길이 맞나?\" 의심이 드는 날",back:"그 의심은 방황이 아니라 성장의 신호예요. 지금의 일과 당신이 더 커진 속도가 달라졌을 뿐이에요.\n\n당장 답을 내지 마세요. 6개월 동안 \"내가 진짜 뭐 할 때 살아있는 느낌인지\"만 관찰해보세요. 답은 관찰 뒤에 찾아와요."},
+  {id:45,cat:"일과 커리어",front:"아침에 눈 떴는데, 왠지 오늘 출근이 무섭게 느껴지는 순간",back:"그건 게으름이 아니라 번아웃의 초기 신호예요. 몸이 \"더 이상 못 버티겠다\"고 먼저 말하는 거예요.\n\n오늘 가능하면 반차, 아니면 점심시간에 10분 햇빛 쬐기, 퇴근 후엔 아무것도 안 하기. 당신은 쉴 자격이 있어요. 자격은 이미 가지고 있어요."},
+  {id:46,cat:"일과 커리어",front:"사소한 실수 하나로 하루 종일 머릿속이 그 장면만 맴돌 때",back:"그 실수는 당신 기억에는 영화처럼 남지만, 남의 기억에는 이미 장면이 바뀌었어요. 사람들은 당신을 그 실수로 기억하지 않아요.\n\n딱 10분만 자책하고, 스스로에게 \"다음엔 이렇게 해야지\" 말한 뒤 놓아주세요."},
+  {id:47,cat:"일과 커리어",front:"상사의 피드백이 애매해서, 좋은 건지 나쁜 건지 한참 곱씹게 될 때",back:"상사도 자기 감정을 정확히 말하는 사람이 아닐 수 있어요. 그 애매함은 당신에 대한 평가가 아니라 그 사람의 표현 방식이에요.\n\n다음엔 용기 내어 물어보세요. \"어떤 부분이 가장 좋았고, 어떤 부분이 아쉬웠나요?\" 명료함은 요청하면 주어져요."},
+  {id:48,cat:"일과 커리어",front:"커리어 전환을 고민만 1년째, 실행은 못 하고 있는 나",back:"1년의 고민은 게으름이 아니라 신중함이에요. 다만 신중함이 너무 길어지면 두려움으로 변해요.\n\n작게 시작해봐요. 관련 강의 1개, 관련 사람 1명 만나기, 관련 책 1권 읽기. 실행은 큰 점프가 아니라 작은 발짓의 누적이에요."},
+
+  // ========== G. 자기 돌봄과 쉼 (49~54) ==========
+  {id:49,cat:"자기 돌봄",front:"주말에 쉬는 것조차, 왠지 남들이 더 열심히 살고 있을까 봐 눈치 보이는 나",back:"쉼은 게으름이 아니라 생산성의 일부예요. 공장도 정비 시간이 있어야 오래 돌아가요.\n\n당신이라는 귀한 기계도 마찬가지예요. 오늘 쉬는 건 미래의 당신에게 주는 선물이에요. 죄책감 대신 고마워하세요, 쉬고 있는 자신에게."},
+  {id:50,cat:"자기 돌봄",front:"몸이 아픈데도 \"이 정도는 괜찮아\"라며 출근해버리는 나",back:"그 \"괜찮아\"가 쌓여서 큰 병이 돼요.\n\n당신이 없어도 회사는 돌아가지만, 당신이 없으면 당신의 인생은 안 돌아가요. 어느 쪽이 더 중요한지 분명하죠? 아프면 쉬세요. 그건 약함이 아니라 지혜예요."},
+  {id:51,cat:"자기 돌봄",front:"남한테는 한없이 너그러운데, 나한테만 유독 엄격한 나",back:"자신에게 친절한 건 이기심이 아니라 연습이에요. 오늘부터 하루 한 번만, 남에게 말하듯 자신에게 말해보세요.\n\n\"괜찮아, 오늘 고생했어, 그 정도면 잘했어.\" 어색하지만 반복하면 진짜가 돼요. 가장 오래 같이 살 사람은 결국 자기 자신이에요."},
+  {id:52,cat:"자기 돌봄",front:"\"나중에 할게\"라고 미뤄둔 것들이 쌓여서 묘하게 마음이 무거울 때",back:"미뤄둔 건 모두 언젠가는 처리해야 할 숙제가 아니에요. 어떤 건 미룬 채로 잊혀도 괜찮아요. 진짜 중요한 건 결국 돌아와요.\n\n오늘은 미뤄둔 목록에서 하나를 '삭제'하는 날로 해보세요. 줄어드는 것도 정리예요."},
+  {id:53,cat:"자기 돌봄",front:"\"요즘 취미가 뭐야?\"라는 질문에, 선뜻 답할 말이 없어서 당황한 순간",back:"취미는 거창한 게 아니어도 돼요. 자기 전 웹툰 보기, 주말 아침 커피 내리기, 좋아하는 유튜버 영상 보기 — 이것도 다 취미예요.\n\n당신은 취미가 없는 게 아니라 그것들을 취미로 인정 안 해줬을 뿐이에요. 오늘부터는 인정해주세요."},
+  {id:54,cat:"자기 돌봄",front:"누구와도 말하고 싶지 않은, 그냥 혼자 있고 싶은 날",back:"그건 외로움이 아니라 당신의 몸이 회복을 요청하는 신호예요. 특히 당신처럼 감정을 많이 흡수하는 사람에겐 '충전 시간'이 꼭 필요해요.\n\n약속 한 번 취소하는 건 무례가 아니에요. 자기 보호예요. 오늘은 전화기 무음 모드로 두세요."},
+
+  // ========== H. 감정과 내면 (55~60) ==========
+  {id:55,cat:"감정과 내면",front:"하루 종일 참다가, 따뜻한 샤워 물줄기 아래에서 갑자기 눈물이 쏟아진 날",back:"몸이 알아요. 안전한 순간에, 참아둔 것을 풀어놓는 거예요. 샤워실은 당신의 작은 성소예요.\n\n거기서 운 것은 약함이 아니라 몸이 당신을 돌보는 방식이에요. 다 울고, 수건으로 감싸고, 스스로에게 말해주세요. \"오늘 정말 수고했어.\""},
+  {id:56,cat:"감정과 내면",front:"속상한 일이 있어도 누구에게도 털어놓지 못하고 혼자 삭이고 있는 나",back:"당신은 남의 감정을 다 받아주면서, 자기 감정은 짐이 될까 봐 꺼내지 않아요.\n\n그 마음은 이해하지만, 이제는 1명만이라도 정해두세요. \"이 사람에게는 투정 부려도 돼\" 하고요. 감정은 나누면 무게가 반이 되고, 참으면 열 배가 돼요."},
+  {id:57,cat:"감정과 내면",front:"하루에 \"괜찮아\"를 몇 번이나 말했는지 세어보면 놀랄 만큼 많을 때",back:"\"괜찮아\"는 마법의 단어가 아니라 가끔은 탈출 단어예요.\n\n오늘 한 번쯤은 \"사실 안 괜찮아\"를 말해보세요. 세상은 무너지지 않아요. 오히려 그 말 한 마디로 당신과 상대 사이에 진짜 연결이 생길 수도 있어요."},
+  {id:58,cat:"감정과 내면",front:"화가 나는 게 당연한 상황에서, 화를 냈다는 사실에 되려 죄책감을 느끼는 나",back:"화는 당신이 나쁜 사람이어서가 아니라, 당신이 존중받지 못했다는 신호예요. 감정 자체는 중립이에요. 문제는 그 감정을 어떻게 표현하느냐예요.\n\n화낸 것 자체를 반성하지 말고, 화낸 이유에 귀 기울여주세요. 당신의 화는 당신을 보호하려는 거예요."},
+  {id:59,cat:"감정과 내면",front:"마음속에는 뭔가 있는데, 막상 말로 옮기려면 말문이 막힐 때",back:"당신의 감정은 언어 이전에 먼저 존재해요. 모든 감정을 말로 설명해야 하는 건 아니에요.\n\n\"뭔지 모르겠는데 힘들어\" 이 한 줄도 충분한 표현이에요. 꼭 정확하지 않아도 돼요. 중요한 건 '있다고 말하는 것' 자체예요."},
+  {id:60,cat:"감정과 내면",front:"누군가 \"많이 힘들지?\"라고 물어줬을 때, 울컥해서 고개를 숙인 순간",back:"당신은 잘 버티고 있어요. 다만 '알아봐주는 사람'이 나타났을 때 잠깐 무너지는 거예요.\n\n그건 약한 게 아니라, 지금까지 너무 잘 참고 있었다는 증거예요. 오늘은 그 사람에게 \"응, 좀 힘들어\"라고 솔직히 답해봐요."},
+
+  // ========== I. 과거와 미래 (61~68) ==========
+  {id:61,cat:"과거와 미래",front:"과거의 어떤 선택을 돌이키며 \"그때 다른 선택을 했다면…\" 하고 오래 멈춰 서는 나",back:"그때의 당신은 그때의 정보와 에너지로 최선을 다했어요. 지금의 관점으로 그때를 평가하는 건 공평하지 않아요.\n\n다른 선택을 했다면 또 다른 후회를 하고 있었을 거예요. 후회는 '더 잘 살고 싶다'는 마음의 다른 이름이에요. 그 마음만 오늘로 가져오세요."},
+  {id:62,cat:"과거와 미래",front:"누군가에게 꼭 해줬어야 할 말을 못 했다는 후회가 무겁게 올라올 때",back:"말하지 않은 것도 하나의 소통이었을 수 있어요. 그 사람은 당신의 침묵에서 다른 걸 들었을 수 있고요.\n\n지금이라도 괜찮다면 말하세요. 늦지 않았어요. 정말 늦었다면, 편지로 써서 서랍에 넣어두세요. 그것도 하나의 완결이에요."},
+  {id:63,cat:"과거와 미래",front:"나를 스쳐 지나간 사람들을 문득 떠올리며, 이유 없이 마음이 텅 비어지는 날",back:"모든 관계가 영원할 순 없어요. 어떤 사람은 한 챕터의 주인공이고, 어떤 사람은 에피소드였어요.\n\n떠난 사람이 많다는 건, 당신이 그만큼 많은 사람과 진심으로 연결됐었다는 뜻이에요. 그 사실은 사라지지 않아요."},
+  {id:64,cat:"과거와 미래",front:"20대의 나를 떠올리며 \"그땐 뭐든 할 수 있을 것 같았는데…\"라는 생각이 드는 날",back:"20대는 가능성이 많았지만 동시에 혼란도 많았어요.\n\n지금의 당신은 가능성이 줄어든 게 아니라, 집중할 대상이 선명해진 거예요. 덜 빛나는 게 아니라, 다르게 빛나고 있는 거예요. 30대의 빛은 은은해서 가까이 있어야 보여요."},
+  {id:65,cat:"과거와 미래",front:"뉴스에서 노후 준비 얘기가 나올 때마다 마음이 가라앉는 순간",back:"노후는 갑자기 오는 게 아니라 매일의 선택이 쌓여서 만들어져요.\n\n지금 당장 완벽한 계획을 세우지 못해도 괜찮아요. 오늘 할 수 있는 한 가지 — 소액 적립식 투자, 건강검진 예약, 연금 확인 — 만 하세요. 완벽한 내일보다 작은 오늘이 더 힘이 세요."},
+  {id:66,cat:"과거와 미래",front:"세워둔 계획이 어그러질 수도 있다는 생각에, 새벽에 잠이 달아나는 날",back:"계획은 미래를 통제하는 도구가 아니라 오늘의 방향을 잡는 도구예요. 어그러지면 수정하면 돼요.\n\n인생에서 가장 좋은 일들 중 많은 게 계획 밖이에요. 지금의 당신이 가진 적응력은, 20대의 당신이 가지지 못했던 자산이에요."},
+  {id:67,cat:"과거와 미래",front:"밤샘 후 회복이 예전 같지 않다는 걸 몸으로 느끼는 날",back:"몸이 이제는 당신에게 협조보다 '협상'을 요구하고 있어요. 그건 나빠지는 게 아니라, 더 세심해지는 거예요.\n\n몸의 말을 듣는 30대는 몸과 계약을 다시 쓰는 시기예요. 새로운 계약은 더 지속 가능해요. 두려워하지 말고 귀 기울여주세요."},
+  {id:68,cat:"과거와 미래",front:"새벽 3시, 모든 게 다 무너질 것 같은 순간",back:"새벽 3시의 세상은 실제보다 늘 더 어둡게 보여요. 그건 당신의 판단력이 약해져서가 아니라 뇌의 생화학 상태가 그래서예요.\n\n지금은 중대한 결정을 하지 마세요. 따뜻한 차 한 잔, 좋아하는 소설 한 페이지, 그리고 내일 아침. 해가 뜨면 달라져요."},
+
+  // ========== J. 작은 기쁨과 감사 (69~70) ==========
+  {id:69,cat:"작은 기쁨",front:"오늘 하루를 돌아보며, 좋았던 순간을 억지로라도 세 개 찾아보기로 한 날",back:"세 개 찾는 건 사실 세뇌가 아니라 눈의 훈련이에요. 나쁜 일은 저절로 보이지만 좋은 일은 연습해야 보여요.\n\n오늘의 세 가지 — 따뜻한 커피 한 잔, 누군가의 미소, 퇴근 길의 바람. 당신의 하루는 생각보다 풍성했어요."},
+  {id:70,cat:"작은 기쁨",front:"특별한 일 없이 지나간 평범한 하루가, 어쩐지 고마운 순간",back:"평범함은 기적의 다른 이름이에요. 누군가에게는 오늘 같은 평범한 하루가 간절한 꿈일 수 있어요.\n\n당신의 건강, 당신의 집, 당신의 따뜻한 이불 — 이 모든 게 당연한 게 아니에요. 평범을 알아보는 눈을 가졌다는 것 자체가 성숙의 증거예요."},
+
+  // ========== K. 복리 (71~73) ==========
+  {id:71,cat:"투자 × 복리",front:"\"오늘 한 번의 친절이 무슨 의미가 있을까\" 싶은 날",back:"복리의 마법은 매일 1%예요. 1.01의 365제곱은 37.8. 하루의 작은 친절이 1년이면 삶을 37배 바꿀 수 있어요.\n\n엄마에게 한 통의 전화, 동료에게 한 마디 칭찬 — 그게 당신의 장기 포트폴리오예요. 친절은 가장 높은 수익률을 주는 투자예요."},
+  {id:72,cat:"투자 × 복리",front:"\"하루 5분 나를 돌보는 게 의미가 있을까?\"",back:"연 5%의 수익률이 20년 복리면 원금의 2.65배가 돼요. 매일 5분의 독서, 스트레칭, 일기 — 이게 20년 누적되면 완전히 다른 사람이 되어 있어요.\n\n작아 보이는 씨앗이 가장 오래 자라요. 오늘 5분만, 당신 자신에게 복리로 투자해보세요."},
+  {id:73,cat:"투자 × 복리",front:"한동안 연락을 못한 사람이 떠오르는 날",back:"관계도 복리예요. 한 번의 안부는 작아 보이지만, 10년 동안 반복된 한 통의 연락은 우정의 원금을 복리로 키워요.\n\n오늘 그 사람에게 \"잘 지내?\" 한 줄 보내세요. 30초가 10년을 살려내요."},
+
+  // ========== L. 장기투자 (74~76) ==========
+  {id:74,cat:"투자 × 장기",front:"\"빨리 결과가 안 나와서 조급해진다\"는 생각이 드는 날",back:"S&P 500의 연평균 수익률은 약 10%지만, 그 10%를 잡으려면 변동을 참아내는 근육이 필요해요.\n\n당신의 꿈도 마찬가지예요. 1년 단위로 보면 잘 안 보이지만, 10년 단위로 보면 분명히 자라고 있어요. 기다림은 무의미한 정지가 아니라 숙성이에요."},
+  {id:75,cat:"투자 × 장기",front:"오랜 친구가 최근 바뀐 것 같아서 섭섭해질 때",back:"장기 보유 종목은 단기 변동에 일희일비하지 않는 것이 원칙이에요. 관계도 그래요.\n\n10년 가는 친구에게 요즘 몇 달의 모습만으로 매도 결정을 내리지 마세요. 사람은 변동성이 있는 종목이지만, 본질은 잘 변하지 않아요. 조금 더 지켜봐 주세요."},
+  {id:76,cat:"투자 × 장기",front:"\"이 공부/배움/준비가 과연 쓸모 있을까?\" 의심이 드는 날",back:"당신이 지금 하는 배움은 '미래의 당신'에게 하는 장기 투자예요. 단기 수익률은 0일 수 있어도, 5년 뒤 이 배움이 어디서 꽃필지는 아무도 몰라요.\n\n투자 천재들도 종목 하나하나의 미래를 다 맞추진 못해요. 분산하고, 계속하세요. 그게 이기는 방법이에요."},
+
+  // ========== M. 분산투자 (77~79) ==========
+  {id:77,cat:"투자 × 분산",front:"일이 흔들리면 내 존재 전체가 흔들리는 것 같은 날",back:"한 종목에 올인하면 그 종목이 흔들릴 때 포트폴리오 전체가 흔들려요. 당신의 정체성도 그래요.\n\n'회사원인 나' 외에 '글을 쓰는 나', '친구인 나', '딸인 나', '취미가 있는 나' — 여러 개로 분산해두세요. 한 영역이 어려워도 다른 영역이 당신을 지켜줘요."},
+  {id:78,cat:"투자 × 분산",front:"한 사람에게 너무 많은 걸 기대고 있다는 느낌이 드는 날",back:"모든 기대를 한 사람에게 올인하면, 그 사람도 지치고 당신도 위험해요. 관계도 포트폴리오예요.\n\n일 이야기할 친구, 고민 나눌 친구, 웃고 놀 친구 — 각자 다른 역할이에요. 분산은 사랑이 옅어지는 게 아니라, 각자를 덜 부담스럽게 만드는 일이에요."},
+  {id:79,cat:"투자 × 분산",front:"하루 종일 한 가지 일/사람/걱정에 감정을 쏟아부은 날",back:"감정 에너지도 자본이에요. 하나에 100%를 쓰면 그 결과에 따라 내일이 천국이 되거나 지옥이 돼요.\n\n오늘의 에너지를 걱정 30%, 감사 30%, 기쁨 20%, 휴식 20%로 분산해보세요. 삶의 변동성이 눈에 띄게 줄어들어요."},
+
+  // ========== N. 가치투자 (80~82) ==========
+  {id:80,cat:"투자 × 가치",front:"SNS의 반짝이는 것들에 마음이 흔들리는 순간",back:"가치투자의 핵심은 '시장 가격'이 아니라 '내재 가치'를 보는 거예요. 사람도 그래요. 보여지는 포장보다 그 안의 본질이 중요해요.\n\n타인의 포장에 흔들리지 말고, 당신이 찾은 '진짜 가치'에 머무르세요. 그게 결국 이기는 전략이에요."},
+  {id:81,cat:"투자 × 가치",front:"스스로의 가치를 낮게 평가하고 있는 것 같은 날",back:"시장이 저평가했다고 해서 그 기업의 내재 가치가 낮은 건 아니에요. 오히려 좋은 투자 기회죠.\n\n당신도 같아요. 오늘의 자기 평가가 낮다고 해서 당신의 진짜 가치가 낮은 건 아니에요. 자신에게 장기 투자하세요. 언젠가 시장이 알아봐요."},
+  {id:82,cat:"투자 × 가치",front:"누군가의 첫인상에 휘둘려 판단을 서두른 적이 있는 날",back:"워런 버핏은 \"시장이 1주일 뒤 뭘 할지는 모르지만 10년 뒤에 뭘 할지는 안다\"고 했어요. 사람도 그래요.\n\n오늘 하루의 언행으로 판단하지 말고, 5년을 봐주세요. 당신의 느린 관찰력은 사실 가장 정확한 투자 도구예요."},
+
+  // ========== O. 리스크 관리 (83~85) ==========
+  {id:83,cat:"투자 × 리스크",front:"\"오늘도 쉬지 않고 달려야 해\"라는 마음이 올라오는 날",back:"투자에서 가장 중요한 건 수익률이 아니라 '잃지 않는 것'이에요. 인생도 그래요. 번아웃은 한 방에 당신의 모든 수익을 날릴 수 있어요.\n\n오늘의 쉼은 리스크 헤지예요. 쉬는 시간은 낭비가 아니라 보험이에요."},
+  {id:84,cat:"투자 × 리스크",front:"나에게 자꾸 무리한 부탁을 하는 사람 앞에서 망설여지는 순간",back:"모든 요청을 다 받는 건, 위험한 레버리지예요. 거기서 한 번 삐끗하면 관계 전체가 손상돼요.\n\n\"이번엔 어려워요\"는 거절이 아니라 관계의 지속 가능성을 지키는 리스크 관리예요. 건강한 거절은 장기적으로 관계를 더 튼튼하게 만들어요."},
+  {id:85,cat:"투자 × 리스크",front:"안 좋은 일이 연이어 생기면 무너질까 봐 두려워지는 날",back:"투자자는 현금 비중, 헤지 자산, 안전 자산을 미리 둬요. 감정도 같아요.\n\n좋아하는 카페, 위로되는 책, 안전한 친구 한 명 — 이게 당신의 감정 안전망이에요. 평소에 만들어두면 위기가 왔을 때 당신을 지켜줘요. 준비는 소심함이 아니라 지혜예요."},
+
+  // ========== P. 시장 변동성 (86~88) ==========
+  {id:86,cat:"투자 × 변동성",front:"어제는 괜찮았는데 오늘은 다시 가라앉는, 나 자신의 감정 기복이 피곤한 날",back:"주식 시장은 매일 오르내려요. 장기 차트로 보면 상승이지만, 일일 차트로 보면 변동 그 자체예요.\n\n당신의 감정도 그래요. 오늘의 기분이 당신의 인생 차트가 아니에요. 장기 평균을 보세요. 당신은 분명 성장하고 있어요."},
+  {id:87,cat:"투자 × 변동성",front:"오늘이 인생의 바닥 같은 날",back:"역사상 가장 길었던 베어마켓도 끝났어요. 블랙 먼데이, 닷컴 버블, 2008년 금융위기 — 모두 회복됐어요.\n\n당신의 바닥도 반드시 끝나요. 지금은 매도할 때가 아니라 견딜 때예요. 아무것도 하지 않는 것도 훌륭한 선택이에요."},
+  {id:88,cat:"투자 × 변동성",front:"오늘 유독 기분이 좋은데, 왠지 조만간 또 나빠질까 봐 불안할 때",back:"좋은 날은 그 자체로 온전히 누려요. 다음 변동성을 미리 걱정하느라 오늘의 상승장을 놓치지 마세요.\n\n감사는 지금 여기에 멈춰 서는 일이에요. 좋은 날은 마음껏 기뻐해도 돼요. 그게 내일의 하락장을 버티는 저축이에요."},
+
+  // ========== Q. 현금 비중 (89~90) ==========
+  {id:89,cat:"투자 × 현금",front:"모든 시간과 에너지가 꽉 차 있어서 숨 쉴 틈이 없는 날",back:"현금 100%는 수익이 없지만, 현금 0%는 위기에 무너져요. 시간도 같아요.\n\n일정을 100% 채우지 마세요. 20%의 여백은 생산성이 아니라 대응력이에요. 갑작스러운 기회나 위기에 당신을 구해줘요."},
+  {id:90,cat:"투자 × 현금",front:"\"쉴 시간에도 뭔가 생산적인 걸 해야 할 것 같아\" 조급한 날",back:"현금을 들고 있는 건 '놓치고 있는' 게 아니라 '준비하고 있는' 거예요. 아무것도 안 하는 오후도 같아요.\n\n그 시간은 창의성이 발효되는 시간이에요. 가장 좋은 아이디어는 샤워할 때, 산책할 때, 아무것도 안 할 때 찾아와요."},
+
+  // ========== R. 리밸런싱 (91~92) ==========
+  {id:91,cat:"투자 × 리밸런싱",front:"요즘 일에 너무 치우쳐 있다는 걸 알면서도 멈추지 못할 때",back:"포트폴리오는 시간이 지나면 한쪽이 커지면서 균형이 무너져요. 그때 리밸런싱을 해요.\n\n일과 삶도 같아요. 3개월에 한 번 자문해보세요. \"지금 나의 시간 비중은 내가 원하는 모습인가?\" 답이 '아니다'라면 의식적으로 재조정하세요."},
+  {id:92,cat:"투자 × 리밸런싱",front:"관계의 어떤 부분이 무거워졌는데, 정리하기도 껄끄러운 날",back:"리밸런싱은 좋은 종목을 버리는 게 아니에요. 비중을 조정하는 거예요. 관계도 그래요.\n\n줄여야 할 관계가 있고, 더 키워야 할 관계가 있어요. 멀어지는 건 배신이 아니라 재조정이에요. 모두에게 같은 비중을 두는 건 오히려 진심의 희석이에요."},
+
+  // ========== S. 저점매수 (93~94) ==========
+  {id:93,cat:"투자 × 저점",front:"지금이 인생의 저점 같아서 아무것도 할 수 없다는 기분이 드는 날",back:"워런 버핏은 \"남들이 두려워할 때 욕심내라\"고 했어요. 당신의 지금 이 낮음은 매도 시점이 아니라 매수 시점일 수 있어요.\n\n이 시기에 읽은 책, 이 시기에 만난 사람, 이 시기에 한 결정이 10년 뒤 당신에게 가장 큰 수익을 줄 수 있어요."},
+  {id:94,cat:"투자 × 저점",front:"뭘 해도 안 될 것 같은, 무력한 순간",back:"씨앗은 어둠 속에서 자라요. 빛이 필요한 건 꽃이에요.\n\n지금의 어둠은 당신이 실패해서가 아니라 뭔가 중요한 것이 뿌리를 내리고 있어서일지 몰라요. 어둠을 피하지 말고, 그 안에서 조용히 자라세요. 봄은 반드시 와요."},
+
+  // ========== T. 재투자 (95~96) ==========
+  {id:95,cat:"투자 × 재투자",front:"같은 실수를 또 반복했다는 자책이 드는 날",back:"실수에서 배운 게 있다면 그건 '실수'가 아니라 '학습'이에요. 배당금을 재투자하듯, 경험을 다음 선택에 재투자하세요.\n\n같은 상황이 오면 1% 다르게 대응하면 충분해요. 완벽한 변화가 아니라 1% 재투자의 복리가 당신을 바꿔요."},
+  {id:96,cat:"투자 × 재투자",front:"후배나 어린 사람에게 도움을 주는 게 손해처럼 느껴질 때",back:"진짜 투자 고수는 자기 수익을 다음 세대에 재투자해요. 당신이 후배에게 주는 조언, 동생에게 나누는 경험 — 그건 당신의 '성장 배당'을 세상에 재투자하는 거예요.\n\n언젠가 복리로 당신에게 돌아와요. 때로는 예상 못 한 방식으로요."},
+
+  // ========== U. 포트폴리오 (97~98) ==========
+  {id:97,cat:"투자 × 포트폴리오",front:"\"나는 어떤 사람인가?\"라는 질문에 한 줄로 답하기 어려운 날",back:"좋은 포트폴리오는 한 종목으로 설명되지 않아요. 여러 자산의 조합이죠. 당신도 그래요.\n\n한 단어로 정의되지 않는다는 건 결함이 아니라 풍성함이에요. \"딸이자, 친구이자, 직장인이자, 글쓰는 사람이자, 투자자\"인 당신은 이미 충분히 설명돼요."},
+  {id:98,cat:"투자 × 포트폴리오",front:"하루가 어떻게 지나갔는지 모르게 흘러간 날",back:"포트폴리오 리포트를 보듯, 일주일의 시간 배분을 한번 봐보세요. 일, 휴식, 관계, 자기계발, 오락 — 비중이 당신이 원하는 대로인가요?\n\n시간은 재생되지 않는 자산이에요. 의식하지 않으면 어느새 한쪽으로 쏠려요. 주 1회 점검을 습관으로 해보세요."},
+
+  // ========== V. 종목 발굴 (99~100) ==========
+  {id:99,cat:"투자 × 발굴",front:"\"내가 진짜 뭘 좋아하는 사람인지 모르겠다\"는 허전함이 드는 날",back:"좋은 종목은 남들이 아직 안 본 곳에 있어요. 당신도 그래요. 당신의 진짜 관심사는 '남들이 정해준 목록' 밖에 있을 수 있어요.\n\n이번 달은 '이상하게 눈이 가는 것'들을 메모해보세요. 일관되게 끌리는 게 있다면, 거기가 당신의 진짜 종목이에요."},
+  {id:100,cat:"투자 × 발굴",front:"사람 때문에 지친 마음이 다 녹는 듯한 따뜻한 누군가를 만난 날",back:"훌륭한 투자자는 좋은 종목을 발견했을 때 크게 베팅해요. 관계도 같아요.\n\n당신을 알아봐 주고, 무조건 당신 편인 사람을 찾았다면 그 관계에 깊이 투자하세요. 그런 사람은 흔하지 않아요. 그리고 그 사람도 당신이 자기의 좋은 발견이라는 걸 알게 해주세요."}
+];
+
+/* =========================================================
+   상수 및 유틸
+========================================================= */
+const DAILY_LIMIT = 7;
+const LS_TODAY_PREFIX = 'hcw_day_';   // hcw_day_YYYY-MM-DD → [{id, drawnAt}]
+const LS_LIKED = 'hcw_liked';          // [id1, id2, ...] 사용자가 ❤️한 카드들
+const LS_LIKES_LOCAL = 'hcw_likes_local'; // Firestore 없을 때 로컬 카운트: {id: count}
+const LS_ACTIVE = 'hcw_active_today';  // 현재 활성 카드 id (오늘 기준)
+
+function todayKey() {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return LS_TODAY_PREFIX + y + '-' + m + '-' + day;
+}
+
+function getTodayDrawn() {
+  try { return JSON.parse(localStorage.getItem(todayKey()) || '[]'); }
+  catch (e) { return []; }
+}
+
+function saveTodayDrawn(list) {
+  try { localStorage.setItem(todayKey(), JSON.stringify(list)); } catch (e) {}
+}
+
+function getLikedSet() {
+  try {
+    const arr = JSON.parse(localStorage.getItem(LS_LIKED) || '[]');
+    return new Set(arr);
+  } catch (e) { return new Set(); }
+}
+
+function addLiked(id) {
+  const s = getLikedSet(); s.add(id);
+  try { localStorage.setItem(LS_LIKED, JSON.stringify([...s])); } catch (e) {}
+}
+
+function cleanupOldKeys() {
+  try {
+    const keys = Object.keys(localStorage).filter(k => k.startsWith(LS_TODAY_PREFIX));
+    const now = new Date();
+    keys.forEach(k => {
+      const datePart = k.substring(LS_TODAY_PREFIX.length);
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(datePart)) return;
+      const d = new Date(datePart + 'T00:00:00');
+      const diff = (now - d) / (24 * 3600 * 1000);
+      if (diff > 7) localStorage.removeItem(k);
+    });
+  } catch (e) {}
+}
+
+function hasFirebase() {
+  return typeof window !== 'undefined'
+    && typeof window.firebase !== 'undefined'
+    && window.firebase.firestore;
+}
+
+async function fetchLikeCount(id) {
+  if (hasFirebase()) {
+    try {
+      const doc = await firebase.firestore().collection('cardLikes').doc('card_' + id).get();
+      return doc.exists ? (doc.data().count || 0) : 0;
+    } catch (e) { console.warn('Firestore read failed, fallback local:', e); }
+  }
+  // local fallback
+  try {
+    const m = JSON.parse(localStorage.getItem(LS_LIKES_LOCAL) || '{}');
+    return m[id] || 0;
+  } catch (e) { return 0; }
+}
+
+async function incrementLike(id) {
+  if (hasFirebase()) {
+    try {
+      await firebase.firestore().collection('cardLikes').doc('card_' + id).set({
+        count: firebase.firestore.FieldValue.increment(1),
+        lastUpdated: firebase.firestore.FieldValue.serverTimestamp()
+      }, { merge: true });
+      return true;
+    } catch (e) { console.warn('Firestore write failed, fallback local:', e); }
+  }
+  // local fallback
+  try {
+    const m = JSON.parse(localStorage.getItem(LS_LIKES_LOCAL) || '{}');
+    m[id] = (m[id] || 0) + 1;
+    localStorage.setItem(LS_LIKES_LOCAL, JSON.stringify(m));
+    return true;
+  } catch (e) { return false; }
+}
+
+function toast(msg) {
+  const el = document.createElement('div');
+  el.className = 'hcw-toast';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2600);
+}
+
+/* =========================================================
+   상태 + 렌더링
+========================================================= */
+let activeCardId = null;
+
+function renderThumbnails() {
+  const list = getTodayDrawn();
+  const container = document.getElementById('hcwThumbs');
+  const countEl = document.getElementById('hcwDrawnCount');
+  countEl.textContent = list.length;
+
+  container.innerHTML = '';
+  list.forEach((entry, idx) => {
+    const card = CARDS.find(c => c.id === entry.id);
+    if (!card) return;
+    const thumb = document.createElement('div');
+    thumb.className = 'hcw-thumb' + (entry.id === activeCardId ? ' active' : '');
+    thumb.setAttribute('data-id', entry.id);
+    thumb.innerHTML = '<div class="hcw-thumb-num">' + card.id + '</div><div class="hcw-thumb-dot">●</div>';
+    thumb.addEventListener('click', () => {
+      if (viewingFromFeed) {
+        viewingFromFeed = false;
+        previousActiveCardId = null;
+        document.getElementById('hcwSharedBanner').classList.remove('visible');
+      }
+      activeCardId = entry.id;
+      try { localStorage.setItem(LS_ACTIVE, JSON.stringify({ date: todayKey(), id: entry.id })); } catch (e) {}
+      renderThumbnails();
+      renderActive(false);
+    });
+    container.appendChild(thumb);
+  });
+
+  // 덱 상태
+  const deck = document.getElementById('hcwDeck');
+  if (list.length >= DAILY_LIMIT) {
+    deck.classList.add('disabled');
+    deck.title = '내일 다시 만나요';
+  } else {
+    deck.classList.remove('disabled');
+    deck.title = '클릭해서 카드 뽑기';
+  }
+}
+
+async function renderActive(animateEnter) {
+  const active = document.getElementById('hcwActive');
+  if (!activeCardId) {
+    active.innerHTML = '<div class="hcw-empty"><span class="hcw-empty-icon">🎴</span>위의 덱을 클릭해서<br>오늘의 첫 카드를 뽑아보세요</div>';
+    return;
+  }
+  const card = CARDS.find(c => c.id === activeCardId);
+  if (!card) return;
+
+  const liked = getLikedSet().has(card.id);
+  const [likeCount, commentCount] = await Promise.all([
+    fetchLikeCount(card.id),
+    fetchCommentCount(card.id)
+  ]);
+
+  active.innerHTML = `
+    <div class="hcw-flip ${animateEnter ? 'entering' : ''}" id="hcwFlip">
+      <div class="hcw-flip-inner">
+        <div class="hcw-face hcw-face-front">
+          <div class="hcw-card-tag" data-flip-zone="true">
+            <span>${escapeHtml(card.cat)}</span>
+            <span class="hcw-card-num">No.${card.id}</span>
+          </div>
+          <div class="hcw-card-text" data-flip-zone="true">${escapeHtml(card.front)}</div>
+          <div class="hcw-flip-hint" data-flip-zone="true">👆 카드를 눌러 뒷면 보기</div>
+        </div>
+        <div class="hcw-face hcw-face-back">
+          <div class="hcw-card-tag" data-flip-zone="true">
+            <span>💌 마음 한 마디</span>
+            <span class="hcw-card-num">No.${card.id}</span>
+          </div>
+          <div class="hcw-card-text message" data-flip-zone="true">${escapeHtml(card.back)}</div>
+          <div class="hcw-actions" id="hcwActions">
+            <button class="hcw-btn ${liked ? 'liked' : ''}" id="hcwLikeBtn">
+              <span class="hcw-btn-icon">${liked ? '❤️' : '🤍'}</span>
+              <span class="hcw-btn-count">${likeCount}</span>
+            </button>
+            <button class="hcw-btn" id="hcwSaveBtn" title="이미지로 저장">
+              <span class="hcw-btn-icon">💾</span>
+            </button>
+            <button class="hcw-btn" id="hcwCommentBtn" title="댓글">
+              <span class="hcw-btn-icon">💬</span>
+              <span class="hcw-btn-count" id="hcwCommentCount">${commentCount}</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const flipEl = document.getElementById('hcwFlip');
+
+  // 플립 트리거: data-flip-zone 속성이 있는 요소 클릭 시에만
+  flipEl.querySelectorAll('[data-flip-zone]').forEach(zone => {
+    zone.addEventListener('click', () => {
+      flipEl.classList.toggle('flipped');
+    });
+  });
+
+  document.getElementById('hcwLikeBtn').addEventListener('click', async (e) => {
+    e.stopPropagation();
+    const btn = e.currentTarget;
+    if (btn.classList.contains('liked')) {
+      toast('이미 위로받은 카드예요 💗');
+      return;
+    }
+    btn.classList.add('liked');
+    const iconEl = btn.querySelector('.hcw-btn-icon');
+    const countEl = btn.querySelector('.hcw-btn-count');
+    iconEl.textContent = '❤️';
+    countEl.textContent = (parseInt(countEl.textContent || '0', 10) + 1);
+    addLiked(card.id);
+    const ok = await incrementLike(card.id);
+    if (ok) toast('마음이 전해졌어요 💗');
+  });
+
+  document.getElementById('hcwSaveBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    saveCardAsImage(card);
+  });
+
+  document.getElementById('hcwCommentBtn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    openCommentModal(card);
+  });
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+/* =========================================================
+   카드 뽑기
+========================================================= */
+function drawCard() {
+  const deck = document.getElementById('hcwDeck');
+  if (deck.classList.contains('disabled')) {
+    toast('오늘의 7장을 다 뽑으셨어요 🌙');
+    return;
+  }
+
+  // 공유 카드 보기 중이면 종료
+  if (viewingFromFeed) {
+    viewingFromFeed = false;
+    previousActiveCardId = null;
+    document.getElementById('hcwSharedBanner').classList.remove('visible');
+  }
+
+  const drawn = getTodayDrawn();
+  if (drawn.length >= DAILY_LIMIT) {
+    renderThumbnails();
+    toast('오늘의 7장을 다 뽑으셨어요 🌙');
+    return;
+  }
+
+  const drawnIds = new Set(drawn.map(d => d.id));
+  const available = CARDS.filter(c => !drawnIds.has(c.id));
+  if (available.length === 0) {
+    toast('카드를 다 만났어요 ✨');
+    return;
+  }
+  const pick = available[Math.floor(Math.random() * available.length)];
+
+  drawn.push({ id: pick.id, drawnAt: Date.now() });
+  saveTodayDrawn(drawn);
+  activeCardId = pick.id;
+  try { localStorage.setItem(LS_ACTIVE, JSON.stringify({ date: todayKey(), id: pick.id })); } catch (e) {}
+
+  // 애니메이션
+  deck.classList.add('drawing');
+  setTimeout(() => deck.classList.remove('drawing'), 400);
+
+  renderThumbnails();
+  renderActive(true);
+
+  // 새로 추가된 썸네일에 애니메이션
+  setTimeout(() => {
+    const thumbs = document.querySelectorAll('#hcwThumbs .hcw-thumb');
+    const last = thumbs[thumbs.length - 1];
+    if (last) {
+      last.classList.add('new');
+      last.scrollIntoView({ behavior: 'smooth', inline: 'end', block: 'nearest' });
+      setTimeout(() => last.classList.remove('new'), 600);
+    }
+  }, 30);
+}
+
+/* =========================================================
+   이미지 저장
+========================================================= */
+async function saveCardAsImage(card) {
+  if (typeof html2canvas === 'undefined') {
+    toast('이미지 저장 기능을 불러오지 못했어요');
+    return;
+  }
+
+  // 임시 DOM에 예쁜 형태로 카드 렌더
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'position:fixed;left:-9999px;top:0;width:520px;padding:40px;background:linear-gradient(180deg,#fff6e8 0%,#fae3c4 100%);font-family:\"Apple SD Gothic Neo\",-apple-system,sans-serif;color:#3d342c;border-radius:20px;';
+  wrap.innerHTML = `
+    <div style="text-align:center;font-size:13px;color:#d97756;font-weight:700;letter-spacing:2px;margin-bottom:6px;">💌 MIND CARD · No.${card.id}</div>
+    <div style="text-align:center;font-size:12px;color:#8f8478;margin-bottom:28px;">${escapeHtml(card.cat)}</div>
+    <div style="font-size:16px;line-height:1.85;color:#3d342c;white-space:pre-wrap;padding:20px 10px;background:rgba(255,255,255,0.5);border:1px dashed rgba(217,119,86,0.3);border-radius:12px;margin-bottom:20px;">${escapeHtml(card.front)}</div>
+    <div style="text-align:center;font-size:18px;color:#d97756;margin:16px 0;">❀ ❀ ❀</div>
+    <div style="font-size:15px;line-height:1.9;color:#3d342c;white-space:pre-wrap;font-weight:500;">${escapeHtml(card.back)}</div>
+    <div style="text-align:right;margin-top:24px;font-size:11px;color:#8f8478;letter-spacing:0.5px;">— 초보 투자자 성장기 · 오늘의 마음 카드</div>
+  `;
+  document.body.appendChild(wrap);
+
+  try {
+    const canvas = await html2canvas(wrap, { backgroundColor: null, scale: 2 });
+    const link = document.createElement('a');
+    link.download = `마음카드_${card.id}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+    toast('이미지를 저장했어요 💾');
+  } catch (e) {
+    console.error(e);
+    toast('이미지 저장에 실패했어요');
+  } finally {
+    wrap.remove();
+  }
+}
+
+/* =========================================================
+   댓글 기능 (Firestore / localStorage 자동 폴백)
+========================================================= */
+const LS_COMMENTS_LOCAL = 'hcw_comments_local';
+let commentsUnsubscribe = null;
+let currentCommentCardId = null;
+let currentReplyTarget = null;
+
+function getCurrentUser() {
+  if (hasFirebase() && firebase.auth && firebase.auth().currentUser) {
+    return firebase.auth().currentUser;
+  }
+  // 미리보기 모드: 로컬 저장 가짜 사용자
+  return { uid: 'preview_user', displayName: '미리보기 사용자', photoURL: '' };
+}
+
+async function fetchCommentCount(cardId) {
+  if (hasFirebase()) {
+    try {
+      const snap = await firebase.firestore().collection('cardComments')
+        .where('cardId', '==', 'card_' + cardId).get();
+      return snap.size;
+    } catch (e) { return 0; }
+  }
+  try {
+    const all = JSON.parse(localStorage.getItem(LS_COMMENTS_LOCAL) || '{}');
+    return (all['card_' + cardId] || []).length;
+  } catch (e) { return 0; }
+}
+
+async function refreshCommentCount() {
+  if (!activeCardId) return;
+  const el = document.getElementById('hcwCommentCount');
+  if (!el) return;
+  const count = await fetchCommentCount(activeCardId);
+  el.textContent = count;
+}
+
+function openCommentModal(card) {
+  currentCommentCardId = card.id;
+  currentReplyTarget = null;
+  document.getElementById('hcwModalTitle').textContent = `💬 카드 No.${card.id}`;
+  document.getElementById('hcwModalSub').textContent = card.cat;
+  document.getElementById('hcwReplyBanner').classList.remove('visible');
+  const input = document.getElementById('hcwCommentInput');
+  input.value = '';
+  input.placeholder = '따뜻한 한 마디를 남겨주세요...';
+  input.style.height = 'auto';
+
+  document.getElementById('hcwModalBackdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  subscribeToComments(card.id);
+}
+
+function closeCommentModal() {
+  if (commentsUnsubscribe) {
+    commentsUnsubscribe();
+    commentsUnsubscribe = null;
+  }
+  document.getElementById('hcwModalBackdrop').classList.remove('open');
+  document.body.style.overflow = '';
+  const cardBeingClosed = currentCommentCardId;
+  currentCommentCardId = null;
+  currentReplyTarget = null;
+  if (cardBeingClosed && cardBeingClosed === activeCardId) refreshCommentCount();
+}
+
+function subscribeToComments(cardId) {
+  if (commentsUnsubscribe) { commentsUnsubscribe(); commentsUnsubscribe = null; }
+
+  if (hasFirebase()) {
+    commentsUnsubscribe = firebase.firestore().collection('cardComments')
+      .where('cardId', '==', 'card_' + cardId)
+      .orderBy('timestamp', 'asc')
+      .onSnapshot(snap => {
+        const comments = [];
+        snap.forEach(doc => comments.push({ id: doc.id, ...doc.data() }));
+        renderComments(comments);
+      }, err => {
+        console.error('Comments subscription error:', err);
+        renderComments([]);
+      });
+  } else {
+    try {
+      const all = JSON.parse(localStorage.getItem(LS_COMMENTS_LOCAL) || '{}');
+      renderComments(all['card_' + cardId] || []);
+    } catch (e) { renderComments([]); }
+    commentsUnsubscribe = () => {};
+  }
+}
+
+function formatTimeAgo(ts) {
+  if (!ts) return '방금';
+  let d;
+  if (ts && typeof ts.toDate === 'function') d = ts.toDate();
+  else if (ts instanceof Date) d = ts;
+  else d = new Date(ts);
+  if (isNaN(d.getTime())) return '방금';
+  const diff = (Date.now() - d.getTime()) / 1000;
+  if (diff < 60) return '방금';
+  if (diff < 3600) return Math.floor(diff / 60) + '분 전';
+  if (diff < 86400) return Math.floor(diff / 3600) + '시간 전';
+  if (diff < 2592000) return Math.floor(diff / 86400) + '일 전';
+  return d.toLocaleDateString('ko-KR');
+}
+
+function renderComments(comments) {
+  const body = document.getElementById('hcwModalBody');
+  const topLevel = comments.filter(c => !c.parentId);
+  const repliesByParent = {};
+  comments.filter(c => c.parentId).forEach(c => {
+    (repliesByParent[c.parentId] = repliesByParent[c.parentId] || []).push(c);
+  });
+
+  let html = '';
+  if (!hasFirebase()) {
+    html += '<div class="hcw-mode-notice">🔌 미리보기 모드 — 댓글이 이 기기에만 저장돼요. 실제 사이트에서는 Firestore로 모든 방문자와 실시간 공유됩니다.</div>';
+  }
+
+  if (topLevel.length === 0) {
+    html += '<div class="hcw-no-comments"><span class="hcw-no-comments-icon">💌</span>아직 댓글이 없어요<br>첫 마음을 남겨보세요</div>';
+  } else {
+    html += topLevel.map(c => {
+      const replies = repliesByParent[c.id] || [];
+      return renderSingleComment(c, false) +
+             replies.map(r => renderSingleComment(r, true)).join('');
+    }).join('');
+  }
+
+  body.innerHTML = html;
+  bindCommentEvents();
+}
+
+function renderSingleComment(c, isReply) {
+  const time = formatTimeAgo(c.timestamp);
+  const currentUid = getCurrentUser().uid;
+  const isOwn = currentUid && c.uid === currentUid;
+  const name = c.name || '익명';
+  const avatar = c.photo
+    ? `<img src="${escapeHtml(c.photo)}" class="hcw-avatar" alt="">`
+    : `<div class="hcw-avatar hcw-avatar-placeholder">${escapeHtml(name.charAt(0))}</div>`;
+
+  return `
+    <div class="hcw-comment${isReply ? ' hcw-reply' : ''}">
+      ${avatar}
+      <div class="hcw-comment-body">
+        <div class="hcw-comment-head">
+          <span class="hcw-comment-name">${escapeHtml(name)}</span>
+          <span class="hcw-comment-time">${time}</span>
+        </div>
+        <div class="hcw-comment-text">${escapeHtml(c.content || '')}</div>
+        <div class="hcw-comment-actions">
+          ${!isReply ? `<button class="hcw-reply-btn" data-comment-id="${escapeHtml(c.id)}" data-author="${escapeHtml(name)}">답글</button>` : ''}
+          ${isOwn ? `<button class="hcw-delete-btn" data-comment-id="${escapeHtml(c.id)}">삭제</button>` : ''}
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function bindCommentEvents() {
+  document.querySelectorAll('#hcwModalBody .hcw-reply-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      startReply(btn.getAttribute('data-comment-id'), btn.getAttribute('data-author'));
+    });
+  });
+  document.querySelectorAll('#hcwModalBody .hcw-delete-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-comment-id');
+      if (confirm('댓글을 삭제하시겠어요?\n(답글이 함께 삭제됩니다)')) deleteComment(id);
+    });
+  });
+}
+
+function startReply(commentId, authorName) {
+  currentReplyTarget = { id: commentId, name: authorName };
+  const banner = document.getElementById('hcwReplyBanner');
+  banner.innerHTML = `
+    <span>↳ <b>${escapeHtml(authorName)}</b>님에게 답글</span>
+    <button class="hcw-cancel-reply" id="hcwCancelReply" aria-label="답글 취소">✕</button>
+  `;
+  banner.classList.add('visible');
+  document.getElementById('hcwCancelReply').addEventListener('click', cancelReply);
+  const input = document.getElementById('hcwCommentInput');
+  input.placeholder = `@${authorName} 에게 답글...`;
+  input.focus();
+}
+
+function cancelReply() {
+  currentReplyTarget = null;
+  document.getElementById('hcwReplyBanner').classList.remove('visible');
+  document.getElementById('hcwCommentInput').placeholder = '따뜻한 한 마디를 남겨주세요...';
+}
+
+async function submitComment() {
+  const input = document.getElementById('hcwCommentInput');
+  const content = input.value.trim();
+  if (!content) return;
+  if (content.length > 500) { toast('댓글은 500자 이내로 작성해주세요'); return; }
+  if (!currentCommentCardId) return;
+
+  const sendBtn = document.getElementById('hcwSendBtn');
+  sendBtn.disabled = true;
+
+  try {
+    // 실제 사이트: 로그인 필요
+    if (hasFirebase() && firebase.auth) {
+      if (!firebase.auth().currentUser) {
+        const confirmed = confirm('댓글을 작성하려면 Google 로그인이 필요해요. 로그인하시겠어요?');
+        if (!confirmed) { sendBtn.disabled = false; return; }
+        await signInWithGoogle();
+        if (!firebase.auth().currentUser) { sendBtn.disabled = false; return; }
+      }
+    }
+
+    const user = getCurrentUser();
+    const commentData = {
+      cardId: 'card_' + currentCommentCardId,
+      parentId: currentReplyTarget ? currentReplyTarget.id : null,
+      uid: user.uid,
+      name: user.displayName || '익명',
+      photo: user.photoURL || '',
+      content: content
+    };
+
+    if (hasFirebase()) {
+      commentData.timestamp = firebase.firestore.FieldValue.serverTimestamp();
+      await firebase.firestore().collection('cardComments').add(commentData);
+      // onSnapshot이 자동 리렌더
+    } else {
+      // 미리보기 모드: localStorage
+      commentData.id = 'local_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
+      commentData.timestamp = new Date().toISOString();
+      const all = JSON.parse(localStorage.getItem(LS_COMMENTS_LOCAL) || '{}');
+      const key = 'card_' + currentCommentCardId;
+      if (!all[key]) all[key] = [];
+      all[key].push(commentData);
+      localStorage.setItem(LS_COMMENTS_LOCAL, JSON.stringify(all));
+      renderComments(all[key]);
+      refreshLocalFeed();
+    }
+
+    input.value = '';
+    input.style.height = 'auto';
+    cancelReply();
+    toast('댓글이 등록됐어요 💌');
+  } catch (e) {
+    console.error('Comment submit error:', e);
+    toast('댓글 등록에 실패했어요');
+  } finally {
+    sendBtn.disabled = false;
+  }
+}
+
+async function deleteComment(commentId) {
+  try {
+    if (hasFirebase()) {
+      const commentRef = firebase.firestore().collection('cardComments').doc(commentId);
+      const repliesSnap = await firebase.firestore().collection('cardComments')
+        .where('parentId', '==', commentId).get();
+      const batch = firebase.firestore().batch();
+      batch.delete(commentRef);
+      repliesSnap.forEach(doc => batch.delete(doc.ref));
+      await batch.commit();
+    } else {
+      const all = JSON.parse(localStorage.getItem(LS_COMMENTS_LOCAL) || '{}');
+      const key = 'card_' + currentCommentCardId;
+      if (all[key]) {
+        all[key] = all[key].filter(c => c.id !== commentId && c.parentId !== commentId);
+        localStorage.setItem(LS_COMMENTS_LOCAL, JSON.stringify(all));
+        renderComments(all[key]);
+        refreshLocalFeed();
+      }
+    }
+    toast('댓글이 삭제됐어요');
+  } catch (e) {
+    console.error('Delete error:', e);
+    toast('삭제에 실패했어요');
+  }
+}
+
+async function signInWithGoogle() {
+  if (!hasFirebase() || !firebase.auth) return;
+  try {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    await firebase.auth().signInWithPopup(provider);
+  } catch (e) {
+    console.error('Sign-in failed:', e);
+    toast('로그인에 실패했어요');
+  }
+}
+
+/* =========================================================
+   최근 마음 나눔 피드
+========================================================= */
+let feedUnsubscribe = null;
+let viewingFromFeed = false;
+let previousActiveCardId = null;
+
+function subscribeToFeed() {
+  if (feedUnsubscribe) { feedUnsubscribe(); feedUnsubscribe = null; }
+
+  if (hasFirebase()) {
+    feedUnsubscribe = firebase.firestore().collection('cardComments')
+      .orderBy('timestamp', 'desc')
+      .limit(10)
+      .onSnapshot(snap => {
+        const items = [];
+        snap.forEach(doc => items.push({ id: doc.id, ...doc.data() }));
+        renderFeed(items);
+      }, err => {
+        console.error('Feed subscription error:', err);
+        renderFeed([]);
+      });
+  } else {
+    refreshLocalFeed();
+    feedUnsubscribe = () => {};
+  }
+}
+
+function refreshLocalFeed() {
+  try {
+    const all = JSON.parse(localStorage.getItem(LS_COMMENTS_LOCAL) || '{}');
+    const items = [];
+    Object.values(all).forEach(arr => items.push(...arr));
+    items.sort((a, b) => {
+      const ta = new Date(a.timestamp || 0).getTime();
+      const tb = new Date(b.timestamp || 0).getTime();
+      return tb - ta;
+    });
+    renderFeed(items.slice(0, 10));
+  } catch (e) { renderFeed([]); }
+}
+
+function renderFeed(items) {
+  const list = document.getElementById('hcwFeedList');
+  if (!list) return;
+
+  if (items.length === 0) {
+    list.innerHTML = '<div class="hcw-feed-empty">아직 공유된 마음이 없어요<br>첫 댓글을 남겨보세요 💌</div>';
+    return;
+  }
+
+  const prevFirstId = list.firstElementChild ? list.firstElementChild.getAttribute('data-comment-id') : null;
+
+  list.innerHTML = items.map(c => {
+    const cardIdNum = parseInt(String(c.cardId || '').replace('card_', ''), 10);
+    const card = CARDS.find(cc => cc.id === cardIdNum);
+    if (!card) return '';
+
+    const time = formatTimeAgo(c.timestamp);
+    const snippet = card.front.length > 28 ? card.front.substring(0, 28) + '…' : card.front;
+    const isReply = !!c.parentId;
+
+    return `
+      <div class="hcw-feed-item" data-card-id="${card.id}" data-comment-id="${escapeHtml(c.id || '')}">
+        <div class="hcw-feed-card-ref">
+          <span class="hcw-feed-card-num">No.${card.id}</span>
+          <span class="hcw-feed-card-snippet">"${escapeHtml(snippet)}"</span>
+        </div>
+        <div class="hcw-feed-comment${isReply ? ' is-reply' : ''}">${escapeHtml(c.content || '')}</div>
+        <div class="hcw-feed-meta">
+          <span class="hcw-feed-author">${escapeHtml(c.name || '익명')}</span>
+          <span>${time}</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  list.querySelectorAll('.hcw-feed-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const cardId = parseInt(el.getAttribute('data-card-id'), 10);
+      openCardFromFeed(cardId);
+    });
+  });
+
+  // 새 댓글이 들어오면 첫 아이템에 애니메이션
+  const newFirst = list.firstElementChild;
+  if (newFirst && prevFirstId && newFirst.getAttribute('data-comment-id') !== prevFirstId) {
+    newFirst.classList.add('new');
+    setTimeout(() => newFirst.classList.remove('new'), 600);
+  }
+}
+
+function openCardFromFeed(cardId) {
+  const card = CARDS.find(c => c.id === cardId);
+  if (!card) return;
+
+  // 이미 오늘 뽑은 카드면 평범하게 활성화
+  const alreadyDrawn = getTodayDrawn().some(d => d.id === cardId);
+
+  if (!alreadyDrawn) {
+    // 공유된 카드 보기 모드
+    if (!viewingFromFeed) previousActiveCardId = activeCardId;
+    viewingFromFeed = true;
+    document.getElementById('hcwSharedBanner').classList.add('visible');
+  } else {
+    viewingFromFeed = false;
+    document.getElementById('hcwSharedBanner').classList.remove('visible');
+  }
+
+  activeCardId = cardId;
+  renderThumbnails();
+  renderActive(true);
+
+  // 카드 애니메이션 끝난 뒤 모달 열기
+  setTimeout(() => openCommentModal(card), 400);
+}
+
+function exitSharedView() {
+  viewingFromFeed = false;
+  document.getElementById('hcwSharedBanner').classList.remove('visible');
+  // 이전 활성 카드로 복귀 (없으면 오늘 마지막 카드)
+  const drawn = getTodayDrawn();
+  if (previousActiveCardId && drawn.some(d => d.id === previousActiveCardId)) {
+    activeCardId = previousActiveCardId;
+  } else if (drawn.length > 0) {
+    activeCardId = drawn[drawn.length - 1].id;
+  } else {
+    activeCardId = null;
+  }
+  previousActiveCardId = null;
+  renderThumbnails();
+  renderActive(false);
+}
+
+
+function initCommentEvents() {
+  document.getElementById('hcwModalClose').addEventListener('click', closeCommentModal);
+  document.getElementById('hcwModalBackdrop').addEventListener('click', (e) => {
+    if (e.target.id === 'hcwModalBackdrop') closeCommentModal();
+  });
+  document.getElementById('hcwSendBtn').addEventListener('click', submitComment);
+
+  // 공유된 카드 보기 닫기
+  document.getElementById('hcwSharedClose').addEventListener('click', exitSharedView);
+
+  const input = document.getElementById('hcwCommentInput');
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      submitComment();
+    }
+  });
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 100) + 'px';
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.getElementById('hcwModalBackdrop').classList.contains('open')) {
+      closeCommentModal();
+    }
+  });
+}
+
+/* =========================================================
+   초기화
+========================================================= */
+function init() {
+  cleanupOldKeys();
+  initCommentEvents();
+
+  // 덱 클릭
+  document.getElementById('hcwDeck').addEventListener('click', drawCard);
+
+  // 오늘 뽑은 카드가 이미 있으면 복원
+  const drawn = getTodayDrawn();
+  if (drawn.length > 0) {
+    // 마지막 활성 카드 복원 시도
+    try {
+      const saved = JSON.parse(localStorage.getItem(LS_ACTIVE) || 'null');
+      if (saved && saved.date === todayKey() && drawn.some(d => d.id === saved.id)) {
+        activeCardId = saved.id;
+      } else {
+        activeCardId = drawn[drawn.length - 1].id;
+      }
+    } catch (e) {
+      activeCardId = drawn[drawn.length - 1].id;
+    }
+  }
+
+  renderThumbnails();
+  renderActive(false);
+
+  // 최근 마음 나눔 피드 구독
+  subscribeToFeed();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+</script>
+
 </body>
 </html>
