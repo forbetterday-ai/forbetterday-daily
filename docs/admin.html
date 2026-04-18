@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-:root { --bg0:#0a0b0d;--bg1:#12141a;--bg2:#1a1d26;--bg3:#242834;--border:#2a2e3a;--text1:#e8e8ec;--text2:#9a9bb0;--text3:#6b6c80;--gold:#d4a017;--gold-dim:rgba(212,160,23,0.15);--green:#34d399;--green-dim:rgba(52,211,153,0.12);--red:#f87171;--blue:#60a5fa;--blue-dim:rgba(96,165,250,0.12); }
+:root { --bg0:#0a0b0d;--bg1:#12141a;--bg2:#1a1d26;--bg3:#242834;--border:#2a2e3a;--text1:#e8e8ec;--text2:#9a9bb0;--text3:#6b6c80;--gold:#d4a017;--gold-dim:rgba(212,160,23,0.15);--green:#34d399;--green-dim:rgba(52,211,153,0.12);--red:#f87171;--blue:#60a5fa;--blue-dim:rgba(96,165,250,0.12);--yellow:#fbbf24; }
 body { font-family:'Noto Sans KR',sans-serif; background:var(--bg0); color:var(--text1); min-height:100vh; }
 .header { background:var(--bg1); border-bottom:1px solid var(--border); padding:1rem 2rem; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; }
 .header-left { display:flex; align-items:center; gap:0.75rem; }
@@ -33,31 +33,72 @@ body { font-family:'Noto Sans KR',sans-serif; background:var(--bg0); color:var(-
 .tab-item.active { color:var(--gold); border-bottom-color:var(--gold); }
 .tab-content { display:none; }
 .tab-content.active { display:block; }
-.stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; padding:1.5rem 2rem; }
+.stats-row { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem; padding:1.5rem 2rem; }
 .stat-card { background:var(--bg1); border:1px solid var(--border); border-radius:10px; padding:1.2rem; }
+.stat-card.pulse { border-color: var(--green); box-shadow: 0 0 0 1px var(--green-dim); }
 .stat-label { font-size:0.72rem; color:var(--text3); text-transform:uppercase; letter-spacing:0.06em; margin-bottom:0.4rem; }
 .stat-value { font-size:1.8rem; font-weight:700; }
 .stat-value.gold { color:var(--gold); }
 .stat-value.green { color:var(--green); }
 .stat-value.blue { color:var(--blue); }
+
+/* Live viewers panel */
+.live-panel { margin: 0 2rem 1.5rem; background:var(--bg1); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; }
+.live-panel-header { display:flex; align-items:center; gap:0.5rem; margin-bottom:0.8rem; font-size:0.88rem; font-weight:600; }
+.live-panel-header .dot-live { width:8px; height:8px; border-radius:50%; background:var(--green); box-shadow:0 0 0 0 var(--green); animation:pulse 2s infinite; }
+.live-panel-count { color:var(--green); font-family:'Noto Sans KR',sans-serif; }
+.live-panel-empty { color:var(--text3); font-size:0.82rem; padding:0.5rem 0; }
+.live-viewer-row { display:flex; align-items:center; gap:0.8rem; padding:0.6rem 0; border-bottom:1px solid var(--border); }
+.live-viewer-row:last-child { border-bottom:none; }
+.live-viewer-photo { width:32px; height:32px; border-radius:50%; border:2px solid var(--green); object-fit:cover; }
+.live-viewer-photo.idle { border-color:var(--yellow); }
+.live-viewer-photo-placeholder { width:32px; height:32px; border-radius:50%; border:2px solid var(--green); background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:0.75rem; color:var(--text3); }
+.live-viewer-photo-placeholder.idle { border-color:var(--yellow); }
+.live-viewer-main { flex:1; min-width:0; }
+.live-viewer-name { font-size:0.85rem; font-weight:500; margin-bottom:0.15rem; }
+.live-viewer-activity { font-size:0.76rem; color:var(--text2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.live-viewer-activity .reading { color: var(--blue); }
+.live-viewer-activity .browsing { color: var(--text3); }
+.live-viewer-time { font-size:0.72rem; color:var(--text3); white-space:nowrap; font-family:'Noto Sans KR',sans-serif; }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(52,211,153,0.6); }
+  70% { box-shadow: 0 0 0 8px rgba(52,211,153,0); }
+  100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+}
+
 .controls { padding:0 2rem 1rem; display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
 .controls label { font-size:0.78rem; color:var(--text3); }
 .controls input[type="date"] { font-family:inherit; font-size:0.82rem; padding:0.4rem 0.6rem; background:var(--bg2); border:1px solid var(--border); border-radius:6px; color:var(--text1); outline:none; }
 .controls input[type="date"]:focus { border-color:var(--gold); }
 .btn-refresh { font-size:0.78rem; padding:0.4rem 1rem; background:var(--gold-dim); border:1px solid rgba(212,160,23,0.3); color:var(--gold); border-radius:6px; cursor:pointer; font-family:inherit; transition:all 0.2s; }
 .btn-refresh:hover { background:rgba(212,160,23,0.25); }
+.realtime-indicator { display:flex; align-items:center; gap:0.4rem; font-size:0.72rem; color:var(--green); margin-left:auto; }
+.realtime-indicator .dot { width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
 .table-wrap { padding:0 2rem 2rem; overflow-x:auto; }
 table { width:100%; border-collapse:collapse; font-size:0.82rem; }
 thead th { text-align:left; padding:0.7rem 1rem; background:var(--bg2); color:var(--text3); font-weight:500; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; border-bottom:1px solid var(--border); white-space:nowrap; }
 tbody td { padding:0.8rem 1rem; border-bottom:1px solid var(--border); vertical-align:top; }
 tbody tr:hover { background:var(--bg2); }
+tbody tr.row-active { background: rgba(52,211,153,0.04); }
+tbody tr.row-active:hover { background: rgba(52,211,153,0.08); }
 .user-cell { display:flex; align-items:center; gap:0.6rem; }
 .user-photo { width:28px; height:28px; border-radius:50%; object-fit:cover; border:1px solid var(--border); }
 .user-photo-placeholder { width:28px; height:28px; border-radius:50%; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:0.65rem; color:var(--text3); }
+.status-dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--text3); flex-shrink:0; }
+.status-dot.active { background:var(--green); animation:pulse 2s infinite; }
+.status-dot.idle { background:var(--yellow); }
+.status-dot.away { background:var(--text3); }
 .time-badge { display:inline-block; font-size:0.75rem; padding:0.15rem 0.5rem; background:var(--bg3); border-radius:4px; color:var(--text2); }
+.time-relative { display:inline-block; font-size:0.78rem; color:var(--text2); }
+.time-relative.active { color:var(--green); }
+.time-relative.idle { color:var(--yellow); }
 .duration-badge { display:inline-block; font-size:0.75rem; padding:0.15rem 0.5rem; background:var(--green-dim); border-radius:4px; color:var(--green); }
 .pages-list { display:flex; flex-wrap:wrap; gap:0.3rem; }
 .page-tag { font-size:0.7rem; padding:0.15rem 0.45rem; background:var(--blue-dim); border-radius:4px; color:var(--blue); max-width:180px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.current-post { font-size:0.78rem; color:var(--blue); max-width:200px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.current-post .current-dot { display:inline-block; width:6px; height:6px; border-radius:50%; background:var(--blue); margin-right:0.3rem; animation:pulse 2s infinite; }
+.current-post-dim { font-size:0.78rem; color:var(--text3); }
 .device-text { font-size:0.72rem; color:var(--text3); }
 .comment-card { background:var(--bg1); border:1px solid var(--border); border-radius:8px; padding:1rem; margin-bottom:0.6rem; transition:border-color 0.2s; }
 .comment-card:hover { border-color:var(--gold); }
@@ -79,7 +120,64 @@ tbody tr:hover { background:var(--bg2); }
 .loading-state { text-align:center; padding:3rem; color:var(--text3); font-size:0.85rem; }
 .spinner { display:inline-block; width:20px; height:20px; border:2px solid var(--border); border-top-color:var(--gold); border-radius:50%; animation:spin 0.8s linear infinite; margin-right:0.5rem; vertical-align:middle; }
 @keyframes spin { to { transform:rotate(360deg); } }
-@media (max-width:768px) { .header{padding:0.8rem 1rem;flex-wrap:wrap;gap:0.5rem;} .stats-row{padding:1rem;grid-template-columns:1fr 1fr;} .controls{padding:0 1rem 1rem;} .table-wrap,.comment-list-wrap{padding:0 1rem 1rem;} .stat-value{font-size:1.4rem;} .tab-bar{padding:0 1rem;} .tab-item{padding:0.6rem 1rem;font-size:0.78rem;} .comment-card.is-reply{margin-left:1rem;} }
+@media (max-width:768px) { .header{padding:0.8rem 1rem;flex-wrap:wrap;gap:0.5rem;} .stats-row{padding:1rem;grid-template-columns:1fr 1fr;} .controls{padding:0 1rem 1rem;} .live-panel{margin:0 1rem 1rem;} .table-wrap,.comment-list-wrap{padding:0 1rem 1rem;} .stat-value{font-size:1.4rem;} .tab-bar{padding:0 1rem;} .tab-item{padding:0.6rem 1rem;font-size:0.78rem;} .comment-card.is-reply{margin-left:1rem;} }
+
+/* ── USER PROFILE MODAL ── */
+.profile-backdrop { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px); z-index:1000; align-items:flex-start; justify-content:flex-end; }
+.profile-backdrop.open { display:flex; }
+.profile-panel { background:var(--bg1); width:min(520px, 100vw); height:100vh; overflow-y:auto; border-left:1px solid var(--border); display:flex; flex-direction:column; animation:slideIn 0.25s cubic-bezier(0.22,1,0.36,1); }
+@keyframes slideIn { from { transform:translateX(30px); opacity:0; } to { transform:translateX(0); opacity:1; } }
+.profile-header { padding:1.2rem 1.5rem; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:1rem; position:sticky; top:0; background:var(--bg1); z-index:1; }
+.profile-photo-lg { width:56px; height:56px; border-radius:50%; object-fit:cover; border:2px solid var(--gold); }
+.profile-photo-lg-placeholder { width:56px; height:56px; border-radius:50%; background:var(--bg3); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; font-size:1.3rem; }
+.profile-head-info { flex:1; min-width:0; }
+.profile-name-lg { font-size:1.05rem; font-weight:700; margin-bottom:0.2rem; }
+.profile-email { font-size:0.75rem; color:var(--text3); font-family:monospace; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.btn-close-profile { background:transparent; border:1px solid var(--border); color:var(--text2); font-size:1.1rem; width:34px; height:34px; border-radius:8px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.15s; }
+.btn-close-profile:hover { border-color:var(--red); color:var(--red); }
+.profile-body { padding:1.2rem 1.5rem 2rem; }
+.profile-loading { text-align:center; padding:3rem; color:var(--text3); }
+.profile-stats-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:0.75rem; margin-bottom:1.5rem; }
+.profile-stat { background:var(--bg2); border:1px solid var(--border); border-radius:8px; padding:0.8rem 1rem; }
+.profile-stat-label { font-size:0.68rem; color:var(--text3); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem; }
+.profile-stat-value { font-size:1.1rem; font-weight:600; color:var(--gold); }
+.profile-stat-value.blue { color:var(--blue); }
+.profile-stat-value.green { color:var(--green); }
+.profile-section { margin-bottom:1.5rem; }
+.profile-section-title { font-size:0.78rem; font-weight:600; color:var(--text2); margin-bottom:0.6rem; text-transform:uppercase; letter-spacing:0.05em; display:flex; align-items:center; gap:0.4rem; }
+.profile-tag-list { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.profile-tag { font-size:0.75rem; padding:0.3rem 0.7rem; background:var(--gold-dim); color:var(--gold); border-radius:100px; display:inline-flex; align-items:center; gap:0.4rem; }
+.profile-tag .tag-count { font-size:0.7rem; opacity:0.7; font-family:monospace; }
+.profile-tag.top { background:var(--gold); color:var(--bg0); }
+.profile-page-list { display:flex; flex-direction:column; gap:0.3rem; max-height:280px; overflow-y:auto; padding-right:0.3rem; }
+.profile-page-item { display:flex; justify-content:space-between; align-items:center; padding:0.5rem 0.8rem; background:var(--bg2); border:1px solid var(--border); border-radius:6px; font-size:0.8rem; }
+.profile-page-item .page-title { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:var(--text1); }
+.profile-page-item .page-visits { font-size:0.7rem; color:var(--text3); margin-left:0.5rem; font-family:monospace; flex-shrink:0; }
+.profile-page-item .page-visits.hot { color:var(--gold); font-weight:600; }
+.profile-session-list { display:flex; flex-direction:column; gap:0.4rem; }
+.profile-session { padding:0.7rem 0.9rem; background:var(--bg2); border:1px solid var(--border); border-radius:6px; font-size:0.78rem; display:flex; justify-content:space-between; align-items:center; gap:0.5rem; flex-wrap:wrap; }
+.profile-session-time { color:var(--text2); font-weight:500; }
+.profile-session-meta { color:var(--text3); font-size:0.72rem; }
+.profile-session-duration { color:var(--green); font-family:monospace; font-size:0.75rem; }
+.profile-comment-list { display:flex; flex-direction:column; gap:0.5rem; max-height:320px; overflow-y:auto; padding-right:0.3rem; }
+.profile-comment { padding:0.7rem 0.9rem; background:var(--bg2); border:1px solid var(--border); border-radius:6px; font-size:0.82rem; }
+.profile-comment-text { color:var(--text1); line-height:1.5; margin-bottom:0.3rem; word-break:break-word; }
+.profile-comment-meta { font-size:0.68rem; color:var(--text3); display:flex; justify-content:space-between; }
+.profile-comment-post-tag { color:var(--blue); }
+.profile-empty { color:var(--text3); font-size:0.8rem; padding:0.5rem; text-align:center; }
+.profile-clickable { cursor:pointer; }
+.profile-clickable:hover .user-name-text { color:var(--gold); text-decoration:underline; }
+
+/* Scrollbar for inner scroll areas */
+.profile-panel::-webkit-scrollbar, .profile-page-list::-webkit-scrollbar, .profile-comment-list::-webkit-scrollbar { width:6px; }
+.profile-panel::-webkit-scrollbar-thumb, .profile-page-list::-webkit-scrollbar-thumb, .profile-comment-list::-webkit-scrollbar-thumb { background:var(--bg3); border-radius:3px; }
+
+@media (max-width:640px) {
+  .profile-stats-grid { grid-template-columns:1fr 1fr; }
+  .profile-panel { width:100vw; }
+  .profile-header { padding:1rem; }
+  .profile-body { padding:1rem 1rem 2rem; }
+}
 </style>
 </head>
 <body>
@@ -95,27 +193,58 @@ tbody tr:hover { background:var(--bg2); }
         <div class="header-right"><span class="admin-name" id="admin-name"></span><a class="btn-back" href="index.html">← 사이트로</a><button class="btn-logout" onclick="googleLogout()">로그아웃</button></div>
     </div>
     <div class="tab-bar">
-        <div class="tab-item active" onclick="switchTab('logs')">📊 접속 로그</div>
-        <div class="tab-item" onclick="switchTab('comments')">💬 댓글 관리</div>
+        <div class="tab-item active" onclick="switchTab('logs', event)">📊 접속 로그</div>
+        <div class="tab-item" onclick="switchTab('comments', event)">💬 댓글 관리</div>
     </div>
     <div class="tab-content active" id="tab-logs">
         <div class="stats-row">
+            <div class="stat-card pulse"><div class="stat-label">🟢 지금 접속중</div><div class="stat-value green" id="stat-active-now">-</div></div>
             <div class="stat-card"><div class="stat-label">오늘 방문자</div><div class="stat-value gold" id="stat-today">-</div></div>
             <div class="stat-card"><div class="stat-label">총 세션 (조회 기간)</div><div class="stat-value blue" id="stat-sessions">-</div></div>
-            <div class="stat-card"><div class="stat-label">고유 사용자</div><div class="stat-value green" id="stat-users">-</div></div>
+            <div class="stat-card"><div class="stat-label">고유 사용자</div><div class="stat-value" id="stat-users">-</div></div>
             <div class="stat-card"><div class="stat-label">총 등록 사용자</div><div class="stat-value" id="stat-total-users">-</div></div>
         </div>
+
+        <!-- Live viewers panel -->
+        <div class="live-panel">
+            <div class="live-panel-header">
+                <span class="dot-live"></span>
+                <span>지금 보고 있는 사람 <span class="live-panel-count" id="live-panel-count">0</span>명</span>
+            </div>
+            <div id="live-panel-body">
+                <div class="live-panel-empty">아직 접속 중인 사람이 없어요.</div>
+            </div>
+        </div>
+
         <div class="controls">
             <label>시작일</label><input type="date" id="date-from">
             <label>종료일</label><input type="date" id="date-to">
-            <button class="btn-refresh" onclick="loadLogs()">🔄 조회</button>
+            <button class="btn-refresh" onclick="loadLogs()">🔄 기간 변경 적용</button>
+            <div class="realtime-indicator"><span class="dot"></span><span>실시간 업데이트 중</span></div>
         </div>
-        <div class="table-wrap"><table><thead><tr><th>사용자</th><th>접속일</th><th>접속</th><th>마지막 활동</th><th>체류</th><th>열람한 글</th><th>기기</th></tr></thead><tbody id="log-body"><tr><td colspan="7" class="loading-state"><span class="spinner"></span>로딩 중...</td></tr></tbody></table></div>
+        <div class="table-wrap"><table><thead><tr><th>상태</th><th>사용자</th><th>접속일</th><th>마지막 활동</th><th>체류</th><th>지금 보는 글</th><th>열람한 글</th><th>기기</th></tr></thead><tbody id="log-body"><tr><td colspan="8" class="loading-state"><span class="spinner"></span>로딩 중...</td></tr></tbody></table></div>
     </div>
     <div class="tab-content" id="tab-comments">
         <div class="comment-stats" id="comment-stats"></div>
         <div class="controls"><button class="btn-refresh" onclick="loadAllComments()">🔄 새로고침</button></div>
         <div class="comment-list-wrap" id="comment-list"><div class="loading-state"><span class="spinner"></span>댓글 불러오는 중...</div></div>
+    </div>
+</div>
+
+<!-- ── USER PROFILE MODAL ── -->
+<div class="profile-backdrop" id="profile-backdrop" onclick="if(event.target===this)closeUserProfile()">
+    <div class="profile-panel">
+        <div class="profile-header">
+            <div id="profile-photo-wrap"></div>
+            <div class="profile-head-info">
+                <div class="profile-name-lg" id="profile-name">-</div>
+                <div class="profile-email" id="profile-email"></div>
+            </div>
+            <button class="btn-close-profile" onclick="closeUserProfile()" aria-label="닫기">✕</button>
+        </div>
+        <div class="profile-body" id="profile-body">
+            <div class="profile-loading"><span class="spinner"></span>프로필 불러오는 중...</div>
+        </div>
     </div>
 </div>
 <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
@@ -124,29 +253,622 @@ tbody tr:hover { background:var(--bg2); }
 <script>
 firebase.initializeApp({apiKey:"AIzaSyDfDkIUzac4P5b9NrkxrQS1R_qY98ylWnw",authDomain:"forbetterday-daily.firebaseapp.com",projectId:"forbetterday-daily",storageBucket:"forbetterday-daily.firebasestorage.app",messagingSenderId:"143728638736",appId:"1:143728638736:web:e29eb25a3bc68f66d14395"});
 var auth=firebase.auth(),db=firebase.firestore(),ADMIN_UID='xv5KNd2v16QrYMiDKxxwokU84pj1';
+var _logsUnsubscribe = null;
+var _cachedLogs = [];  // 최근 조회한 세션 목록 (실시간 표시용)
+var _postsMap = null;  // title -> {id, tags, date} (프로필 태그 분석용)
 
-function switchTab(t){document.querySelectorAll('.tab-item').forEach(function(e){e.classList.remove('active')});document.querySelectorAll('.tab-content').forEach(function(e){e.classList.remove('active')});event.target.classList.add('active');document.getElementById('tab-'+t).classList.add('active');if(t==='comments')loadAllComments();}
+// 활동 상태 기준 (밀리초)
+var ACTIVE_THRESHOLD_MS = 60 * 1000;      // 1분 이내 = 🟢 활동중
+var IDLE_THRESHOLD_MS = 5 * 60 * 1000;    // 5분 이내 = 🟡 대기중
+// 5분 초과 = ⚪ 자리비움
+
+function switchTab(t, ev){
+  document.querySelectorAll('.tab-item').forEach(function(e){e.classList.remove('active')});
+  document.querySelectorAll('.tab-content').forEach(function(e){e.classList.remove('active')});
+  if (ev && ev.target) ev.target.classList.add('active');
+  document.getElementById('tab-'+t).classList.add('active');
+  if(t==='comments') loadAllComments();
+}
 function googleLogin(){auth.signInWithPopup(new firebase.auth.GoogleAuthProvider()).catch(function(e){if(e.code!=='auth/popup-closed-by-user')alert(e.message)});}
 function googleLogout(){auth.signOut();}
 
-auth.onAuthStateChanged(function(u){if(u){if(u.uid===ADMIN_UID){document.getElementById('login-screen').style.display='none';document.getElementById('dashboard').style.display='block';document.getElementById('admin-name').textContent=u.displayName||u.email;initDashboard();}else{document.getElementById('access-denied').style.display='block';auth.signOut();}}else{document.getElementById('login-screen').style.display='flex';document.getElementById('dashboard').style.display='none';document.getElementById('access-denied').style.display='none';}});
+auth.onAuthStateChanged(function(u){
+  if(u){
+    if(u.uid===ADMIN_UID){
+      document.getElementById('login-screen').style.display='none';
+      document.getElementById('dashboard').style.display='block';
+      document.getElementById('admin-name').textContent=u.displayName||u.email;
+      initDashboard();
+    } else {
+      document.getElementById('access-denied').style.display='block';
+      auth.signOut();
+    }
+  } else {
+    document.getElementById('login-screen').style.display='flex';
+    document.getElementById('dashboard').style.display='none';
+    document.getElementById('access-denied').style.display='none';
+    if (_logsUnsubscribe) { _logsUnsubscribe(); _logsUnsubscribe = null; }
+  }
+});
 
-function initDashboard(){var t=new Date(),w=new Date();w.setDate(t.getDate()-7);document.getElementById('date-to').value=fmtD(t);document.getElementById('date-from').value=fmtD(w);loadLogs();db.collection('visits').get().then(function(s){document.getElementById('stat-total-users').textContent=s.size}).catch(function(){document.getElementById('stat-total-users').textContent='?'});}
+function initDashboard(){
+  var t=new Date(),w=new Date();
+  w.setDate(t.getDate()-7);
+  document.getElementById('date-to').value=fmtD(t);
+  document.getElementById('date-from').value=fmtD(w);
+  loadLogs();
+  loadPostsMap();
+  db.collection('visits').get().then(function(s){document.getElementById('stat-total-users').textContent=s.size}).catch(function(){document.getElementById('stat-total-users').textContent='?'});
+
+  // 1초마다 상대 시각 갱신 ("30초 전" 같은 표현)
+  setInterval(updateRelativeTimes, 1000);
+  // 5초마다 상태 뱃지 갱신 (🟢🟡⚪)
+  setInterval(updateStatusBadges, 5000);
+}
+
+// 게시글 목록 로드 (태그 분석용)
+function loadPostsMap() {
+  fetch('investor_posts.json').then(function(r) { return r.json(); }).then(function(data) {
+    _postsMap = {};
+    (data.posts || []).forEach(function(p) {
+      _postsMap[p.title] = { id: p.id, tags: p.tags || [], date: p.date };
+    });
+  }).catch(function() {
+    _postsMap = {};
+  });
+}
+
 function fmtD(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');}
 
-function loadLogs(){var f=document.getElementById('date-from').value,t=document.getElementById('date-to').value;if(!f||!t)return;var fd=new Date(f+'T00:00:00+09:00'),td=new Date(t+'T23:59:59+09:00'),tb=document.getElementById('log-body');tb.innerHTML='<tr><td colspan="7" class="loading-state"><span class="spinner"></span>조회 중...</td></tr>';db.collection('user_logs').where('loginTime','>=',fd).where('loginTime','<=',td).orderBy('loginTime','desc').limit(200).get().then(function(s){if(s.empty){tb.innerHTML='<tr><td colspan="7" class="empty-state">📭 해당 기간에 로그가 없습니다.</td></tr>';updS([]);return;}var l=[];s.forEach(function(d){l.push(d.data())});updS(l);renL(l);}).catch(function(e){tb.innerHTML='<tr><td colspan="7" class="empty-state">⚠️ '+e.message+'</td></tr>';});}
+// 실시간 구독으로 로그 로드
+function loadLogs(){
+  if (_logsUnsubscribe) _logsUnsubscribe();
+  var f=document.getElementById('date-from').value, t=document.getElementById('date-to').value;
+  if(!f||!t) return;
+  var fd=new Date(f+'T00:00:00+09:00'), td=new Date(t+'T23:59:59+09:00');
+  var tb=document.getElementById('log-body');
+  tb.innerHTML='<tr><td colspan="8" class="loading-state"><span class="spinner"></span>실시간 데이터 구독 중...</td></tr>';
 
-function updS(l){var ts=fmtD(new Date()),tS=new Set(),uS=new Set();l.forEach(function(g){var d=g.loginTime&&g.loginTime.toDate?g.loginTime.toDate():new Date();if(fmtD(d)===ts)tS.add(g.uid||g.name);uS.add(g.uid||g.name);});document.getElementById('stat-today').textContent=tS.size;document.getElementById('stat-sessions').textContent=l.length;document.getElementById('stat-users').textContent=uS.size;}
+  _logsUnsubscribe = db.collection('user_logs')
+    .where('loginTime','>=',fd)
+    .where('loginTime','<=',td)
+    .orderBy('loginTime','desc')
+    .limit(200)
+    .onSnapshot(function(s){
+      if(s.empty){
+        tb.innerHTML='<tr><td colspan="8" class="empty-state">📭 해당 기간에 로그가 없습니다.</td></tr>';
+        _cachedLogs = [];
+        updS([]);
+        renderLivePanel([]);
+        return;
+      }
+      var l=[];
+      s.forEach(function(d){
+        var data = d.data();
+        data._id = d.id;
+        l.push(data);
+      });
+      _cachedLogs = l;
+      updS(l);
+      renL(l);
+      renderLivePanel(l);
+    }, function(e){
+      tb.innerHTML='<tr><td colspan="8" class="empty-state">⚠️ '+e.message+'</td></tr>';
+    });
+}
 
-function renL(l){var tb=document.getElementById('log-body'),h='';l.forEach(function(g){var lt=g.loginTime&&g.loginTime.toDate?g.loginTime.toDate():null,la=g.lastActive&&g.lastActive.toDate?g.lastActive.toDate():null;var ph=g.photo?'<img class="user-photo" src="'+esc(g.photo)+'" alt="">':'<div class="user-photo-placeholder">👤</div>';var ds=lt?fmtK(lt,'d'):'-',ls=lt?'<span class="time-badge">'+fmtK(lt,'t')+'</span>':'-',as=la?'<span class="time-badge">'+fmtK(la,'t')+'</span>':'-';var dur='-';if(lt&&la){var m=Math.floor((la-lt)/60000);if(m<1)dur='<span class="duration-badge">&lt;1분</span>';else if(m<60)dur='<span class="duration-badge">'+m+'분</span>';else dur='<span class="duration-badge">'+Math.floor(m/60)+'시간 '+(m%60)+'분</span>';}var pg='-';if(g.pagesViewed&&g.pagesViewed.length>0){pg='<div class="pages-list">'+g.pagesViewed.map(function(p){return'<span class="page-tag">'+esc(p)+'</span>'}).join('')+'</div>';}h+='<tr><td><div class="user-cell">'+ph+'<span class="user-name-text">'+esc(g.name||'비회원')+'</span></div></td><td>'+ds+'</td><td>'+ls+'</td><td>'+as+'</td><td>'+dur+'</td><td>'+pg+'</td><td><span class="device-text">'+pDev(g.device)+'</span></td></tr>';});tb.innerHTML=h;}
+function updS(l){
+  var ts=fmtD(new Date()), tS=new Set(), uS=new Set(), activeNow=0;
+  var now = Date.now();
+  l.forEach(function(g){
+    var d = g.loginTime && g.loginTime.toDate ? g.loginTime.toDate() : new Date();
+    if(fmtD(d)===ts) tS.add(g.uid||g.name);
+    uS.add(g.uid||g.name);
+    // 현재 접속중 판정
+    if (g.lastActive && g.lastActive.toDate) {
+      var diff = now - g.lastActive.toDate().getTime();
+      if (diff < IDLE_THRESHOLD_MS) activeNow++;
+    }
+  });
+  document.getElementById('stat-today').textContent = tS.size;
+  document.getElementById('stat-sessions').textContent = l.length;
+  document.getElementById('stat-users').textContent = uS.size;
+  document.getElementById('stat-active-now').textContent = activeNow;
+}
 
-function loadAllComments(){var el=document.getElementById('comment-list');el.innerHTML='<div class="loading-state"><span class="spinner"></span>댓글 불러오는 중...</div>';db.collection('comments').orderBy('timestamp','desc').limit(200).get().then(function(s){if(s.empty){el.innerHTML='<div class="empty-state">💬 아직 댓글이 없습니다.</div>';document.getElementById('comment-stats').innerHTML='총 <span>0</span>개 댓글';return;}var c=[];s.forEach(function(d){var o=d.data();o._id=d.id;c.push(o);});var rc=c.filter(function(x){return x.parentId}).length;document.getElementById('comment-stats').innerHTML='총 <span>'+c.length+'</span>개 댓글 · 답글 <span>'+rc+'</span>개';var h='';c.forEach(function(x){var ir=!!x.parentId,tm=x.timestamp?new Date(x.timestamp.toDate()).toLocaleString('ko-KR'):'',ed=x.editedAt?' (수정됨)':'',ph=x.photo?'<img src="'+esc(x.photo)+'" alt="" onerror="this.outerHTML=\'<div class=user-photo-placeholder>👤</div>\'">':'<div class="user-photo-placeholder">👤</div>',rl=ir&&x.parentName?'<div class="comment-reply-label">↳ '+esc(x.parentName)+'님에게 답글</div>':'';h+='<div class="comment-card'+(ir?' is-reply':'')+'"><div class="comment-header">'+ph+'<span class="comment-author">'+esc(x.name||'사용자')+'</span><span class="comment-post-tag">글 #'+esc(x.postId||'?')+'</span></div>'+rl+'<div class="comment-text">'+esc(x.text||'')+'</div><div class="comment-time">'+tm+ed+'</div><div class="comment-actions"><button class="btn-delete-comment" onclick="delC(\''+x._id+'\')">🗑 삭제</button></div></div>';});el.innerHTML=h;}).catch(function(e){el.innerHTML='<div class="empty-state">⚠️ '+e.message+'</div>';});}
+function statusClass(lastActiveMs) {
+  if (!lastActiveMs) return 'away';
+  var diff = Date.now() - lastActiveMs;
+  if (diff < ACTIVE_THRESHOLD_MS) return 'active';
+  if (diff < IDLE_THRESHOLD_MS) return 'idle';
+  return 'away';
+}
 
-function delC(id){if(!confirm('이 댓글을 삭제하시겠습니까?'))return;db.collection('comments').doc(id).delete().then(function(){loadAllComments()}).catch(function(e){alert('삭제 실패: '+e.message)});}
+function statusEmoji(cls) {
+  if (cls === 'active') return '🟢';
+  if (cls === 'idle') return '🟡';
+  return '⚪';
+}
 
-function fmtK(d,m){var k=new Date(d.getTime()+(9*3600000));if(m==='d')return k.getUTCFullYear()+'.'+String(k.getUTCMonth()+1).padStart(2,'0')+'.'+String(k.getUTCDate()).padStart(2,'0');return String(k.getUTCHours()).padStart(2,'0')+':'+String(k.getUTCMinutes()).padStart(2,'0')+':'+String(k.getUTCSeconds()).padStart(2,'0');}
-function pDev(u){if(!u)return'-';if(/iPhone/i.test(u))return'📱 iPhone';if(/iPad/i.test(u))return'📱 iPad';if(/Android/i.test(u))return'📱 Android';if(/Macintosh/i.test(u))return'💻 Mac';if(/Windows/i.test(u))return'💻 Windows';return'🖥️ 기타';}
-function esc(s){if(!s)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function relativeTime(ms) {
+  if (!ms) return '-';
+  var diff = Date.now() - ms;
+  if (diff < 0) diff = 0;
+  var s = Math.floor(diff / 1000);
+  if (s < 10) return '방금';
+  if (s < 60) return s + '초 전';
+  var m = Math.floor(s / 60);
+  if (m < 60) return m + '분 전';
+  var h = Math.floor(m / 60);
+  if (h < 24) return h + '시간 전';
+  var d = Math.floor(h / 24);
+  return d + '일 전';
+}
+
+function renL(l){
+  var tb=document.getElementById('log-body'), h='';
+  var now = Date.now();
+  l.forEach(function(g){
+    var lt = g.loginTime && g.loginTime.toDate ? g.loginTime.toDate() : null;
+    var la = g.lastActive && g.lastActive.toDate ? g.lastActive.toDate() : null;
+    var laMs = la ? la.getTime() : null;
+    var cls = statusClass(laMs);
+
+    var ph = g.photo ? '<img class="user-photo" src="'+esc(g.photo)+'" alt="">' : '<div class="user-photo-placeholder">👤</div>';
+    var ds = lt ? fmtK(lt,'d')+' <span class="time-badge">'+fmtK(lt,'t')+'</span>' : '-';
+
+    // 마지막 활동: 상대 시각 (live 갱신용 속성 포함)
+    var laCell = la
+      ? '<span class="time-relative '+cls+'" data-ts="'+laMs+'">'+relativeTime(laMs)+'</span>'
+      : '-';
+
+    // 체류시간
+    var dur = '-';
+    if (lt && la) {
+      var m = Math.floor((la - lt) / 60000);
+      if (m < 1) dur = '<span class="duration-badge">&lt;1분</span>';
+      else if (m < 60) dur = '<span class="duration-badge">'+m+'분</span>';
+      else dur = '<span class="duration-badge">'+Math.floor(m/60)+'시간 '+(m%60)+'분</span>';
+    }
+
+    // 지금 보는 글
+    var currentPost = '-';
+    var isViewingNow = (cls !== 'away') && g.currentPostTitle;
+    if (isViewingNow) {
+      var sinceMs = g.currentPostSince && g.currentPostSince.toDate ? g.currentPostSince.toDate().getTime() : null;
+      var sinceText = sinceMs ? ' (' + relativeTime(sinceMs) + ')' : '';
+      currentPost = '<div class="current-post" title="'+esc(g.currentPostTitle)+'"><span class="current-dot"></span>'+esc(truncate(g.currentPostTitle, 25))+'</div>';
+    } else if (cls !== 'away') {
+      currentPost = '<span class="current-post-dim">📄 둘러보는 중</span>';
+    } else {
+      currentPost = '<span class="current-post-dim">-</span>';
+    }
+
+    // 열람한 글
+    var pg = '-';
+    if (g.pagesViewed && g.pagesViewed.length > 0) {
+      pg = '<div class="pages-list">'+g.pagesViewed.map(function(p){return '<span class="page-tag" title="'+esc(p)+'">'+esc(truncate(p, 20))+'</span>';}).join('')+'</div>';
+    }
+
+    var statusBadge = '<span class="status-dot '+cls+'" data-ts="'+laMs+'"></span>';
+    var rowCls = (cls === 'active' || cls === 'idle') ? 'row-active' : '';
+
+    // 로그인한 사용자는 클릭 가능 (프로필 열기)
+    var userCellAttrs = '';
+    if (g.uid) {
+      var safeName = esc((g.name||'').replace(/'/g, '\\\''));
+      userCellAttrs = ' class="profile-clickable" onclick="openUserProfile(\''+g.uid+'\',\''+safeName+'\')" title="클릭하여 프로필 보기"';
+    }
+
+    h += '<tr class="'+rowCls+'"><td>'+statusBadge+'</td>' +
+         '<td'+userCellAttrs+'><div class="user-cell">'+ph+'<span class="user-name-text">'+esc(g.name||'비회원')+'</span></div></td>' +
+         '<td>'+ds+'</td>' +
+         '<td>'+laCell+'</td>' +
+         '<td>'+dur+'</td>' +
+         '<td>'+currentPost+'</td>' +
+         '<td>'+pg+'</td>' +
+         '<td><span class="device-text">'+pDev(g.device)+'</span></td></tr>';
+  });
+  tb.innerHTML = h;
+}
+
+// 지금 접속중인 사용자 패널
+function renderLivePanel(logs) {
+  var panel = document.getElementById('live-panel-body');
+  var countEl = document.getElementById('live-panel-count');
+  var now = Date.now();
+  var active = logs.filter(function(g) {
+    if (!g.lastActive || !g.lastActive.toDate) return false;
+    return now - g.lastActive.toDate().getTime() < IDLE_THRESHOLD_MS;
+  });
+  // 마지막 활동 최신순 정렬
+  active.sort(function(a, b) {
+    return b.lastActive.toDate().getTime() - a.lastActive.toDate().getTime();
+  });
+  countEl.textContent = active.length;
+  if (active.length === 0) {
+    panel.innerHTML = '<div class="live-panel-empty">아직 접속 중인 사람이 없어요.</div>';
+    return;
+  }
+  var h = '';
+  active.forEach(function(g) {
+    var la = g.lastActive.toDate();
+    var laMs = la.getTime();
+    var cls = statusClass(laMs);
+    var photoCls = cls === 'active' ? '' : 'idle';
+    var ph = g.photo
+      ? '<img class="live-viewer-photo '+photoCls+'" src="'+esc(g.photo)+'" alt="">'
+      : '<div class="live-viewer-photo-placeholder '+photoCls+'">👤</div>';
+    var activity;
+    if (g.currentPostTitle) {
+      var sinceMs = g.currentPostSince && g.currentPostSince.toDate ? g.currentPostSince.toDate().getTime() : null;
+      var sinceText = sinceMs ? ' · '+relativeTime(sinceMs)+'부터' : '';
+      activity = '<span class="reading">📖 '+esc(truncate(g.currentPostTitle, 30))+'</span><span class="browsing">'+sinceText+'</span>';
+    } else {
+      activity = '<span class="browsing">🏠 메인 페이지 둘러보는 중</span>';
+    }
+    h += '<div class="live-viewer-row">'+ph+
+         '<div class="live-viewer-main"><div class="live-viewer-name">'+esc(g.name||'비회원')+'</div>'+
+         '<div class="live-viewer-activity">'+activity+'</div></div>'+
+         '<span class="live-viewer-time" data-ts="'+laMs+'">'+relativeTime(laMs)+'</span></div>';
+  });
+  panel.innerHTML = h;
+}
+
+// 1초마다 상대 시각 텍스트 업데이트
+function updateRelativeTimes() {
+  document.querySelectorAll('[data-ts]').forEach(function(el) {
+    var ts = parseInt(el.getAttribute('data-ts'), 10);
+    if (!isNaN(ts)) {
+      var text = relativeTime(ts);
+      if (el.textContent !== text && !el.classList.contains('status-dot')) {
+        el.textContent = text;
+      }
+    }
+  });
+}
+
+// 5초마다 상태 뱃지 색상 재계산 (status-dot, time-relative 클래스)
+function updateStatusBadges() {
+  var now = Date.now();
+  // Stat card "지금 접속중" 갱신
+  var activeNow = 0;
+  _cachedLogs.forEach(function(g) {
+    if (g.lastActive && g.lastActive.toDate) {
+      var diff = now - g.lastActive.toDate().getTime();
+      if (diff < IDLE_THRESHOLD_MS) activeNow++;
+    }
+  });
+  document.getElementById('stat-active-now').textContent = activeNow;
+
+  // 행 상태 업데이트
+  document.querySelectorAll('.status-dot[data-ts]').forEach(function(el) {
+    var ts = parseInt(el.getAttribute('data-ts'), 10);
+    if (!isNaN(ts)) {
+      var cls = statusClass(ts);
+      el.className = 'status-dot ' + cls;
+    }
+  });
+  document.querySelectorAll('.time-relative[data-ts]').forEach(function(el) {
+    var ts = parseInt(el.getAttribute('data-ts'), 10);
+    if (!isNaN(ts)) {
+      var cls = statusClass(ts);
+      el.className = 'time-relative ' + cls;
+    }
+  });
+
+  // 라이브 패널 자체는 데이터가 바뀔 때 재렌더되므로 여기선 count만 갱신
+  if (_cachedLogs.length > 0) {
+    renderLivePanel(_cachedLogs);
+  }
+}
+
+function loadAllComments(){
+  var el=document.getElementById('comment-list');
+  el.innerHTML='<div class="loading-state"><span class="spinner"></span>댓글 불러오는 중...</div>';
+  db.collection('comments').orderBy('timestamp','desc').limit(200).get().then(function(s){
+    if(s.empty){
+      el.innerHTML='<div class="empty-state">💬 아직 댓글이 없습니다.</div>';
+      document.getElementById('comment-stats').innerHTML='총 <span>0</span>개 댓글';
+      return;
+    }
+    var c=[];
+    s.forEach(function(d){var o=d.data();o._id=d.id;c.push(o);});
+    var rc=c.filter(function(x){return x.parentId}).length;
+    document.getElementById('comment-stats').innerHTML='총 <span>'+c.length+'</span>개 댓글 · 답글 <span>'+rc+'</span>개';
+    var h='';
+    c.forEach(function(x){
+      var ir=!!x.parentId;
+      var tm=x.timestamp?new Date(x.timestamp.toDate()).toLocaleString('ko-KR'):'';
+      var ed=x.editedAt?' (수정됨)':'';
+      var ph=x.photo?'<img src="'+esc(x.photo)+'" alt="" onerror="this.outerHTML=\'<div class=user-photo-placeholder>👤</div>\'">':'<div class="user-photo-placeholder">👤</div>';
+      var rl=ir&&x.parentName?'<div class="comment-reply-label">↳ '+esc(x.parentName)+'님에게 답글</div>':'';
+      h+='<div class="comment-card'+(ir?' is-reply':'')+'">'+
+         '<div class="comment-header">'+ph+
+         '<span class="comment-author">'+esc(x.name||'사용자')+'</span>'+
+         '<span class="comment-post-tag">글 #'+esc(x.postId||'?')+'</span></div>'+
+         rl+
+         '<div class="comment-text">'+esc(x.text||'')+'</div>'+
+         '<div class="comment-time">'+tm+ed+'</div>'+
+         '<div class="comment-actions"><button class="btn-delete-comment" onclick="delC(\''+x._id+'\')">🗑 삭제</button></div>'+
+         '</div>';
+    });
+    el.innerHTML=h;
+  }).catch(function(e){el.innerHTML='<div class="empty-state">⚠️ '+e.message+'</div>';});
+}
+
+function delC(id){
+  if(!confirm('이 댓글을 삭제하시겠습니까?')) return;
+  db.collection('comments').doc(id).delete().then(function(){loadAllComments()}).catch(function(e){alert('삭제 실패: '+e.message)});
+}
+
+function truncate(s, n) {
+  if (!s) return '';
+  if (s.length <= n) return s;
+  return s.substring(0, n) + '…';
+}
+
+function fmtK(d,m){
+  var k=new Date(d.getTime()+(9*3600000));
+  if(m==='d') return k.getUTCFullYear()+'.'+String(k.getUTCMonth()+1).padStart(2,'0')+'.'+String(k.getUTCDate()).padStart(2,'0');
+  return String(k.getUTCHours()).padStart(2,'0')+':'+String(k.getUTCMinutes()).padStart(2,'0')+':'+String(k.getUTCSeconds()).padStart(2,'0');
+}
+
+function pDev(u){
+  if(!u) return '-';
+  if(/iPhone/i.test(u)) return '📱 iPhone';
+  if(/iPad/i.test(u)) return '📱 iPad';
+  if(/Android/i.test(u)) return '📱 Android';
+  if(/Macintosh/i.test(u)) return '💻 Mac';
+  if(/Windows/i.test(u)) return '💻 Windows';
+  return '🖥️ 기타';
+}
+
+/* =====================================================
+   USER PROFILE MODAL
+===================================================== */
+
+function openUserProfile(uid, name) {
+  if (!uid) return;
+  var backdrop = document.getElementById('profile-backdrop');
+  backdrop.classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // 헤더 먼저 표시 (로딩 중)
+  document.getElementById('profile-name').textContent = name || '사용자';
+  document.getElementById('profile-email').textContent = '';
+  document.getElementById('profile-photo-wrap').innerHTML = '<div class="profile-photo-lg-placeholder">👤</div>';
+  document.getElementById('profile-body').innerHTML = '<div class="profile-loading"><span class="spinner"></span>프로필 불러오는 중...</div>';
+
+  // 데이터 fetch
+  fetchUserProfile(uid).then(function(data) {
+    renderProfile(uid, name, data);
+  }).catch(function(err) {
+    document.getElementById('profile-body').innerHTML = '<div class="empty-state">⚠️ 프로필 로드 실패: ' + esc(err.message) + '</div>';
+  });
+}
+
+function closeUserProfile() {
+  document.getElementById('profile-backdrop').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ESC로 닫기
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && document.getElementById('profile-backdrop').classList.contains('open')) {
+    closeUserProfile();
+  }
+});
+
+function fetchUserProfile(uid) {
+  // uid 기반 쿼리는 복합 인덱스를 피하기 위해 orderBy 없이 가져와서 클라이언트 정렬
+  var sessionsPromise = db.collection('user_logs').where('uid', '==', uid).limit(200).get()
+    .then(function(s) { var arr = []; s.forEach(function(d) { var x = d.data(); x._id = d.id; arr.push(x); }); return arr; });
+  var commentsPromise = db.collection('comments').where('uid', '==', uid).limit(100).get()
+    .then(function(s) { var arr = []; s.forEach(function(d) { var x = d.data(); x._id = d.id; arr.push(x); }); return arr; })
+    .catch(function() { return []; });
+  var cardCommentsPromise = db.collection('cardComments').where('uid', '==', uid).limit(100).get()
+    .then(function(s) { var arr = []; s.forEach(function(d) { var x = d.data(); x._id = d.id; arr.push(x); }); return arr; })
+    .catch(function() { return []; });  // 인덱스/컬렉션 없을 수 있음
+  var visitPromise = db.collection('visits').doc(uid).get()
+    .then(function(d) { return d.exists ? d.data() : null; })
+    .catch(function() { return null; });
+
+  return Promise.all([sessionsPromise, commentsPromise, cardCommentsPromise, visitPromise]).then(function(results) {
+    return {
+      sessions: results[0],
+      comments: results[1],
+      cardComments: results[2],
+      visit: results[3]
+    };
+  });
+}
+
+function renderProfile(uid, name, data) {
+  var sessions = data.sessions || [];
+  var comments = data.comments || [];
+  var cardComments = data.cardComments || [];
+  var visit = data.visit;
+
+  // 최신 세션에서 프로필 사진/이메일 찾기
+  var latestSession = sessions[0];
+  sessions.forEach(function(s) {
+    var lt = s.loginTime && s.loginTime.toDate ? s.loginTime.toDate() : null;
+    var latestLt = latestSession && latestSession.loginTime && latestSession.loginTime.toDate ? latestSession.loginTime.toDate() : null;
+    if (lt && latestLt && lt > latestLt) latestSession = s;
+  });
+
+  // 헤더 업데이트
+  var photo = (visit && visit.photoURL) || (latestSession && latestSession.photo) || '';
+  var email = (visit && visit.email) || '';
+  var displayName = (visit && visit.displayName) || name || (latestSession && latestSession.name) || '사용자';
+  document.getElementById('profile-name').textContent = displayName;
+  document.getElementById('profile-email').textContent = email || 'UID: ' + uid.substring(0, 16) + '…';
+  document.getElementById('profile-photo-wrap').innerHTML = photo
+    ? '<img class="profile-photo-lg" src="'+esc(photo)+'" alt="" onerror="this.outerHTML=\'<div class=profile-photo-lg-placeholder>👤</div>\'">'
+    : '<div class="profile-photo-lg-placeholder">👤</div>';
+
+  // 집계
+  var totalMs = 0;
+  var firstVisit = null;
+  var lastActive = null;
+  var allPages = [];
+  sessions.forEach(function(s) {
+    var lt = s.loginTime && s.loginTime.toDate ? s.loginTime.toDate() : null;
+    var la = s.lastActive && s.lastActive.toDate ? s.lastActive.toDate() : null;
+    if (lt && la) totalMs += Math.max(0, la.getTime() - lt.getTime());
+    if (lt && (!firstVisit || lt < firstVisit)) firstVisit = lt;
+    if (la && (!lastActive || la > lastActive)) lastActive = la;
+    (s.pagesViewed || []).forEach(function(p) { allPages.push(p); });
+  });
+
+  var pageCounts = {};
+  allPages.forEach(function(p) { pageCounts[p] = (pageCounts[p] || 0) + 1; });
+  var sortedPages = Object.keys(pageCounts).map(function(k) { return [k, pageCounts[k]]; });
+  sortedPages.sort(function(a, b) { return b[1] - a[1]; });
+
+  var tagCounts = {};
+  allPages.forEach(function(title) {
+    var post = _postsMap && _postsMap[title];
+    if (post && post.tags) {
+      post.tags.forEach(function(t) { tagCounts[t] = (tagCounts[t] || 0) + 1; });
+    }
+  });
+  var sortedTags = Object.keys(tagCounts).map(function(k) { return [k, tagCounts[k]]; });
+  sortedTags.sort(function(a, b) { return b[1] - a[1]; });
+
+  // 세션 최신순 정렬
+  sessions.sort(function(a, b) {
+    var at = a.loginTime && a.loginTime.toDate ? a.loginTime.toDate().getTime() : 0;
+    var bt = b.loginTime && b.loginTime.toDate ? b.loginTime.toDate().getTime() : 0;
+    return bt - at;
+  });
+
+  // 댓글 최신순 정렬
+  comments.sort(function(a, b) {
+    var at = a.timestamp && a.timestamp.toDate ? a.timestamp.toDate().getTime() : 0;
+    var bt = b.timestamp && b.timestamp.toDate ? b.timestamp.toDate().getTime() : 0;
+    return bt - at;
+  });
+  cardComments.sort(function(a, b) {
+    var at = a.timestamp && a.timestamp.toDate ? a.timestamp.toDate().getTime() : 0;
+    var bt = b.timestamp && b.timestamp.toDate ? b.timestamp.toDate().getTime() : 0;
+    return bt - at;
+  });
+
+  // 렌더링
+  var hours = Math.floor(totalMs / 3600000);
+  var mins = Math.floor((totalMs % 3600000) / 60000);
+  var totalTimeText = hours > 0 ? hours + '시간 ' + mins + '분' : (mins > 0 ? mins + '분' : '<1분');
+
+  var firstText = firstVisit ? fmtK(firstVisit, 'd') : '-';
+  var lastText = lastActive ? relativeTime(lastActive.getTime()) : '-';
+  var uniquePagesCount = Object.keys(pageCounts).length;
+
+  var html = '';
+
+  // 통계 그리드
+  html += '<div class="profile-stats-grid">';
+  html += '<div class="profile-stat"><div class="profile-stat-label">총 방문</div><div class="profile-stat-value">' + sessions.length + '회</div></div>';
+  html += '<div class="profile-stat"><div class="profile-stat-label">누적 체류</div><div class="profile-stat-value blue">' + totalTimeText + '</div></div>';
+  html += '<div class="profile-stat"><div class="profile-stat-label">첫 방문</div><div class="profile-stat-value" style="font-size:0.85rem;">' + firstText + '</div></div>';
+  html += '<div class="profile-stat"><div class="profile-stat-label">마지막 활동</div><div class="profile-stat-value green" style="font-size:0.85rem;">' + lastText + '</div></div>';
+  html += '<div class="profile-stat"><div class="profile-stat-label">읽은 글 (고유)</div><div class="profile-stat-value">' + uniquePagesCount + '개</div></div>';
+  html += '<div class="profile-stat"><div class="profile-stat-label">남긴 댓글</div><div class="profile-stat-value blue">' + (comments.length + cardComments.length) + '개</div></div>';
+  html += '</div>';
+
+  // 좋아하는 태그
+  html += '<div class="profile-section">';
+  html += '<div class="profile-section-title">📚 가장 많이 읽은 주제</div>';
+  if (sortedTags.length === 0) {
+    html += '<div class="profile-empty">아직 태그 정보가 없어요</div>';
+  } else {
+    html += '<div class="profile-tag-list">';
+    sortedTags.slice(0, 8).forEach(function(t, idx) {
+      var cls = idx === 0 ? 'profile-tag top' : 'profile-tag';
+      html += '<span class="'+cls+'">#'+esc(t[0])+' <span class="tag-count">'+t[1]+'</span></span>';
+    });
+    html += '</div>';
+    if (sortedTags.length > 0) {
+      var favTag = sortedTags[0][0];
+      html += '<div style="font-size:0.78rem;color:var(--text2);margin-top:0.6rem;">💡 주로 <b style="color:var(--gold)">#'+esc(favTag)+'</b> 글을 좋아하시네요</div>';
+    }
+  }
+  html += '</div>';
+
+  // 자주 읽은 글
+  html += '<div class="profile-section">';
+  html += '<div class="profile-section-title">📖 자주 읽은 글 TOP 10</div>';
+  if (sortedPages.length === 0) {
+    html += '<div class="profile-empty">아직 읽은 글이 없어요</div>';
+  } else {
+    html += '<div class="profile-page-list">';
+    sortedPages.slice(0, 10).forEach(function(p) {
+      var hotCls = p[1] >= 3 ? ' hot' : '';
+      html += '<div class="profile-page-item"><span class="page-title" title="'+esc(p[0])+'">'+esc(p[0])+'</span><span class="page-visits'+hotCls+'">'+p[1]+'회</span></div>';
+    });
+    if (sortedPages.length > 10) {
+      html += '<div style="font-size:0.72rem;color:var(--text3);text-align:center;padding:0.4rem;">... 외 ' + (sortedPages.length - 10) + '개 더</div>';
+    }
+    html += '</div>';
+  }
+  html += '</div>';
+
+  // 댓글
+  if (comments.length > 0 || cardComments.length > 0) {
+    html += '<div class="profile-section">';
+    html += '<div class="profile-section-title">💬 남긴 댓글 ('+ (comments.length + cardComments.length) +')</div>';
+    html += '<div class="profile-comment-list">';
+    // 일반 댓글
+    comments.slice(0, 20).forEach(function(c) {
+      var time = c.timestamp && c.timestamp.toDate ? c.timestamp.toDate() : null;
+      var timeText = time ? relativeTime(time.getTime()) : '';
+      html += '<div class="profile-comment"><div class="profile-comment-text">'+esc(c.text || '(이미지만)')+'</div>'+
+              '<div class="profile-comment-meta"><span class="profile-comment-post-tag">→ 글 #'+esc(c.postId || '?')+'</span><span>'+timeText+'</span></div></div>';
+    });
+    // 카드 댓글
+    cardComments.slice(0, 10).forEach(function(c) {
+      var time = c.timestamp && c.timestamp.toDate ? c.timestamp.toDate() : null;
+      var timeText = time ? relativeTime(time.getTime()) : '';
+      html += '<div class="profile-comment"><div class="profile-comment-text">'+esc(c.content || '')+'</div>'+
+              '<div class="profile-comment-meta"><span class="profile-comment-post-tag">→ 마음카드 #'+esc(c.cardId || '?')+'</span><span>'+timeText+'</span></div></div>';
+    });
+    html += '</div></div>';
+  }
+
+  // 최근 세션 기록
+  html += '<div class="profile-section">';
+  html += '<div class="profile-section-title">🕒 최근 방문 기록 ('+ sessions.length +')</div>';
+  html += '<div class="profile-session-list">';
+  sessions.slice(0, 15).forEach(function(s) {
+    var lt = s.loginTime && s.loginTime.toDate ? s.loginTime.toDate() : null;
+    var la = s.lastActive && s.lastActive.toDate ? s.lastActive.toDate() : null;
+    var dateStr = lt ? fmtK(lt, 'd') + ' ' + fmtK(lt, 't').substring(0, 5) : '-';
+    var dur = '';
+    if (lt && la) {
+      var m = Math.floor((la - lt) / 60000);
+      if (m < 1) dur = '<1분';
+      else if (m < 60) dur = m + '분';
+      else dur = Math.floor(m/60)+'h '+(m%60)+'m';
+    }
+    var pageCount = (s.pagesViewed || []).length;
+    var deviceText = pDev(s.device);
+    html += '<div class="profile-session"><span class="profile-session-time">'+dateStr+'</span>'+
+            '<span class="profile-session-meta">'+deviceText+' · '+pageCount+'개 글 열람</span>'+
+            '<span class="profile-session-duration">'+dur+'</span></div>';
+  });
+  if (sessions.length > 15) {
+    html += '<div style="font-size:0.72rem;color:var(--text3);text-align:center;padding:0.4rem;">... 외 ' + (sessions.length - 15) + '개 더</div>';
+  }
+  html += '</div></div>';
+
+  document.getElementById('profile-body').innerHTML = html;
+}
+
+function esc(s){
+  if(!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
 </script>
 </body>
 </html>
