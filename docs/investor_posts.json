@@ -217,6 +217,38 @@
       "description": "같은 금리 뉴스에 어떤 주식은 오르고 어떤 주식은 내린다",
       "artifact_url": "https://claude.site/public/artifacts/3d4e2485-5ba0-4613-9392-ac6cb9e1c875/embed",
       "tags": ["금리", "성장주", "가치주", "금리를 무시하는 시대를 대표하는 기업의 힘"]
+    },
+    {
+      "id": 28,
+      "date": "2026-04-15",
+      "title": "온톨로지 — 팔란티어가 가진 '보이지 않는 설계도'",
+      "description": "AI 시대의 가장 깊은 해자는 데이터를 '이해하는 구조'에 있다 — 팔란티어 온톨로지를 초보 투자자와 인사팀 실무자 관점에서 쉽게 설명합니다.",
+      "artifact_url": "essay-ontology.html",
+      "tags": ["팔란티어", "온톨로지", "AI인프라"]
+    },
+    {
+      "id": 29,
+      "date": "2026-04-15",
+      "title": "놓아줄 것과 잡을 것 — 물이 길을 찾는 방법",
+      "description": "같은 하루 안에서, 붙잡아야 할 것과 흘려보내야 할 것이 있다",
+      "artifact_url": "essay-special-let-go-hold.html",
+      "tags": ["책임감", "놓아줌", "뿌리", "물"]
+    },
+    {
+      "id": 30,
+      "date": "2026-04-17",
+      "title": "특별강 II. 나의 첫 포트폴리오 — 다섯 개의 화분으로 가꾸는 작은 정원",
+      "description": "다섯 개의 화분으로 가꾸는 작은 정원 — 나의 첫 포트폴리오 구성법",
+      "artifact_url": "essay-special-portfolio-v3.html",
+      "tags": ["포트폴리오", "분산투자", "자산배분", "ETF", "화분"]
+    },
+    {
+      "id": 31,
+      "date": "2026-04-19",
+      "title": "특별강 V. 덩굴은 기대어 오른다 — 지금까지 배운 것을 엮는 시간",
+      "description": "1강부터 16강까지의 지식을 하나의 지지대로 엮는 시간 — 찰리 멍거의 격자 모델을 쉽게 풀어낸 리캡 에세이",
+      "artifact_url": "essay-special-lattice.html",
+      "tags": ["특별강", "리캡", "멍거", "지지대", "프레임워크"]
     }
   ]
 }
