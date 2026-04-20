@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-04-20">
+<meta name="post-description" content="금리는 반복된다. 예측은 전문가도 틀린다. 그러나 지금 어디쯤 서 있는지는 알 수 있다 — 뉴스의 엇박자를 넘어서는 사이클 사고법.">
+<meta name="post-tags" content="금리, 사이클, 하워드 막스, JPMorgan, 2020 팬데믹">
+<title>19. 금리는 밀물과 썰물처럼 — 예측 대신 대비하는 법</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --accent: #B8860B;
+    --accent-soft: #D4A843;
+    --accent-bg: #FDF6E3;
+    --border: #E0D5C5;
+    --green: #2E7D32;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.9; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .header { background: linear-gradient(175deg, #0F0C08 0%, #1A1410 30%, #2C2318 65%, #3D3226 100%); color: #FAF7F2; padding: 80px 24px 70px; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(184,134,11,0.08) 0%, transparent 50%); }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .series-label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .header h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 5vw, 42px); line-height: 1.4; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .header-sub { font-family: var(--sans); font-weight: 300; font-size: 15px; color: #BDB3A4; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .header-meta { margin-top: 32px; font-size: 12px; color: #8A7F72; letter-spacing: 0.5px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+  .article { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
+  .article p { margin-bottom: 24px; font-size: 17px; line-height: 1.95; color: var(--text); word-break: keep-all; }
+  .article strong { font-weight: 700; color: #1A1A1A; }
+  .drop-cap::first-letter { font-family: var(--serif); font-weight: 900; font-size: 3.6em; float: left; line-height: 0.8; margin-right: 10px; margin-top: 6px; color: var(--accent); }
+  .section-break { text-align: center; margin: 48px 0; color: var(--accent-soft); font-size: 18px; letter-spacing: 12px; opacity: 0.6; }
+  .article h2 { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--text); margin: 56px 0 20px; line-height: 1.5; padding-left: 16px; border-left: 3px solid var(--accent); }
+  .pull-quote { margin: 48px -20px; padding: 32px 28px; background: var(--accent-bg); border-radius: 2px; border-left: 4px solid var(--accent); font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #3D3226; }
+  .pull-quote em { font-style: normal; color: var(--accent); font-weight: 700; }
+  .insight-box { margin: 48px 0; padding: 28px 24px; background: #FFFFFF; border: 1px solid var(--border); border-radius: 4px; position: relative; }
+  .insight-box::before { content: attr(data-label); position: absolute; top: -11px; left: 20px; background: var(--bg); padding: 0 10px; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+  .insight-box p { font-size: 15.5px; line-height: 1.85; margin-bottom: 12px; color: var(--text-light); }
+  .insight-box p:last-child { margin-bottom: 0; }
+  .cycle-table { margin: 32px 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .cycle-row { display: grid; grid-template-columns: 110px 1fr; padding: 14px 20px; border-bottom: 1px solid var(--border); font-size: 15.5px; }
+  .cycle-row:last-child { border-bottom: none; }
+  .cycle-row .phase { font-family: var(--serif); font-weight: 700; color: var(--accent); letter-spacing: 0.5px; }
+  .cycle-row .desc { color: var(--text-light); line-height: 1.75; }
+  .company-card { margin: 48px 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .company-card-header { background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; padding: 24px 28px; }
+  .company-card-header .ticker { font-family: var(--sans); font-weight: 700; font-size: 11px; letter-spacing: 2px; color: var(--accent-soft); margin-bottom: 8px; }
+  .company-card-header h3 { font-family: var(--serif); font-weight: 700; font-size: 20px; line-height: 1.5; }
+  .company-card-body { padding: 24px 28px; }
+  .company-card-body p { font-size: 15.5px; line-height: 1.85; color: var(--text-light); margin-bottom: 16px; }
+  .company-card-body p:last-child { margin-bottom: 0; }
+  .think-box { margin-top: 20px; padding: 16px 20px; background: var(--accent-bg); border-radius: 3px; font-size: 14.5px; line-height: 1.8; color: #5D4E37; }
+  .think-box strong { color: var(--accent); }
+  .one-step { margin: 48px 0; padding: 24px 28px; background: linear-gradient(135deg, #F0FAF0, #E8F5E9); border-left: 4px solid var(--green); border-radius: 2px; }
+  .one-step .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--green); margin-bottom: 12px; }
+  .one-step p { font-size: 15.5px; line-height: 1.85; color: #2C3E2C; margin-bottom: 12px; }
+  .one-step p:last-child { margin-bottom: 0; }
+  .takeaway { margin: 56px 0 0; padding: 32px 28px; background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; border-radius: 4px; text-align: center; }
+  .takeaway .label { font-size: 11px; letter-spacing: 3px; color: var(--accent-soft); font-weight: 500; margin-bottom: 16px; }
+  .takeaway p { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #E8E0D5; margin-bottom: 0; }
+  .takeaway strong { color: var(--accent-soft); }
+  .footer { text-align: center; padding: 40px 24px 60px; font-size: 12px; color: #A89F94; letter-spacing: 0.5px; }
+  .hl { background: linear-gradient(transparent 60%, rgba(184,134,11,0.15) 60%); padding: 0 2px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 600px) {
+    .header { padding: 60px 20px 50px; }
+    .article { padding: 40px 20px 60px; }
+    .article p { font-size: 16px; }
+    .pull-quote { margin: 36px -10px; padding: 24px 20px; font-size: 16.5px; }
+    .company-card-header, .company-card-body { padding: 20px; }
+    .cycle-row { grid-template-columns: 80px 1fr; padding: 12px 16px; font-size: 14.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="series-label">투자 에세이 · 열아홉 번째</div>
+    <h1>금리는 밀물과 썰물처럼<br>— 예측 대신 대비하는 법</h1>
+    <p class="header-sub">사이클을 아는 사람이 뉴스의 엇박자를 넘어선다</p>
+    <div class="header-meta">PART 5. 경제지표와 금리 — 읽는 시간 약 9분</div>
+  </div>
+</header>
+
+<article class="article">
+
+  <p class="drop-cap fade-in">2020년 여름, 신문 경제면의 제목은 이랬다. "저금리 시대, 지금이 집 살 때." 그 두 해 뒤인 2022년 말, 같은 신문의 제목은 이렇게 바뀌었다. "영끌의 후회 — 이자 폭탄에 잠 못 드는 30대." 같은 언론사가, 같은 필자가, 같은 경제면에서, 2년 사이에 정반대의 메시지를 실었다. 무엇이 바뀌었을까. 사람은 바뀌지 않았다. <strong>금리가 바뀌었다.</strong></p>
+
+  <p class="fade-in">17강에서 금리가 무엇인지 배웠고, 18강에서 금리가 주가를 어떻게 흔드는지 보았다. 오늘의 질문은 조금 다르다 — <strong>금리는 왜 자꾸 바뀌는가, 그리고 우리는 그 앞에서 어떻게 서 있어야 하는가.</strong> 뉴스 제목은 금리와 함께 오르내린다. 그러나 우리가 따라가야 할 것은 뉴스 제목이 아니라, 그 뒤에 있는 <strong>리듬</strong>이다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">금리는 네 개의 계절을 돈다</h2>
+
+  <p class="fade-in">금리는 한 방향으로만 가지 않는다. 오르면 언젠가 멈추고, 멈추면 언젠가 내린다. 이 반복을 <strong>금리 사이클</strong>이라고 부른다. 바다의 밀물과 썰물처럼, 계절이 바뀌듯이, 정해진 순서대로 돈다.</p>
+
+  <div class="cycle-table fade-in">
+    <div class="cycle-row"><div class="phase">인상기</div><div class="desc">물가가 너무 오른다 → 한국은행이 금리를 올린다. 대출이 비싸진다. 소비와 투자가 식는다.</div></div>
+    <div class="cycle-row"><div class="phase">정점</div><div class="desc">물가는 잡혔지만 경기가 숨이 차다. "이제 그만 올려야 한다"는 목소리가 커진다.</div></div>
+    <div class="cycle-row"><div class="phase">인하기</div><div class="desc">경기를 살리기 위해 금리를 내린다. 대출이 싸진다. 돈이 다시 움직이기 시작한다.</div></div>
+    <div class="cycle-row"><div class="phase">바닥</div><div class="desc">경기는 살아났는데 물가가 다시 오를 조짐. "이제 내리는 건 그만"이라는 신호가 나온다.</div></div>
+  </div>
+
+  <p class="fade-in">2000년 이후 미국만 해도 이 사이클이 네 번 돌았다. 2004~2006년 인상, 2008년 금융위기로 급격 인하, 2015~2018년 완만한 인상, 2020년 팬데믹으로 다시 바닥, 2022~2023년 급격 인상, 그리고 <strong>2024~2026년 지금, 인하 사이클의 한가운데</strong>다. 한국은행도 같은 리듬으로 움직인다. 2024년 10월부터 금리를 내리기 시작해 총 1%p 인하한 뒤, 2025년 5월 이후 2.5%에서 멈춰 있다.</p>
+
+  <p class="fade-in">주목할 점은 이것이다. <strong>이 사이클들은 대략 5~8년 주기로 반복된다.</strong> 30대 투자자가 앞으로 30년을 투자한다면, 이런 사이클을 <span class="hl">네다섯 번은 더 만나게 된다</span>는 뜻이다. 한 번의 상승장이 영원하지 않고, 한 번의 하락장도 영원하지 않다. 영원한 것은 오직 <strong>이 반복이 계속된다는 사실</strong>뿐이다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">예측은 전문가도 틀린다</h2>
+
+  <p class="fade-in">여기서 한 가지 솔직한 이야기를 해야 한다. <strong>이 사이클을 정확히 예측할 수 있는 사람은 아무도 없다.</strong> 연준도 틀린다. 한국은행도 틀린다. 월가의 최고 애널리스트들도 틀린다.</p>
+
+  <p class="fade-in">2024년 초, 시장은 올해 연준이 금리를 여섯 번 내릴 거라고 예상했다. 실제로는 세 번이었다. 2022년 초에는 "올해 인상은 0~1번"이라고 많은 이들이 전망했다. 실제로는 일곱 번이었다. 금리 결정을 하는 사람들조차 <strong>반년 앞을 정확히 맞히지 못한다.</strong></p>
+
+  <p class="fade-in">그렇다면 우리 같은 개인 투자자가 금리 사이클을 예측해서 매매 타이밍을 잡겠다는 건 — 솔직히 말하면 불가능한 일에 가깝다. <strong>예측은 놓아야 한다.</strong> 그런데 놓아야 할 것을 놓으면, 비로소 잡아야 할 것이 보인다. 예측할 수는 없지만, <strong>"지금 어디쯤 있는지"는 알 수 있다.</strong></p>
+
+  <div class="pull-quote fade-in">
+    투자자 하워드 막스는 이렇게 말했다. <em>"우리는 어디로 갈지 모르지만, 지금 어디에 있는지는 알아야 한다."</em> 미래는 알 수 없다. 그러나 현재의 위치는 — 조금만 공부하면 — 읽을 수 있다. 그리고 그것만으로도 충분히 다른 투자자가 된다.
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">뉴스는 왜 늘 엇박자인가</h2>
+
+  <p class="fade-in">도입부에서 본 2020년과 2022년의 신문 헤드라인 — 그 엇박자는 우연이 아니다. <strong>거의 모든 경제 뉴스는 구조적으로 엇박자를 낸다.</strong></p>
+
+  <p class="fade-in">패턴을 관찰해보자. 금리가 한참 인상되고 주가가 오를 대로 올랐을 때, 경제면의 분위기는 어떤가? "증시 연일 신고가", "이번엔 다르다", "이제라도 늦지 않았다". 반대로 금리가 급격히 내려가고 주가가 바닥을 칠 때는? "공포의 확산", "수십 년만의 위기", "당분간 섣불리 들어가지 말아야". <span class="hl">경기의 고점에서는 매수를 외치고, 저점에서는 매도를 부추긴다.</span> 신문에 나온 흐름은 대부분 아주 심한 엇박자다.</p>
+
+  <p class="fade-in">왜 그럴까. 기자들이 나쁜 사람이어서가 아니다. 뉴스는 기본적으로 <strong>"지금 일어나고 있는 일"을 보도</strong>한다. 지금 주가가 오르고 있으면 그 이야기를 쓰고, 지금 공포에 빠져 있으면 그 분위기를 전한다. 그런데 투자의 시간은 반대로 흐른다. 지금의 분위기가 꼭대기일 때가 가장 위험하고, 지금의 분위기가 바닥일 때가 가장 기회다. <strong>뉴스는 현재를 말하고, 투자는 미래로 간다.</strong> 이 시차가 엇박자를 만든다.</p>
+
+  <p class="fade-in">이것은 단순한 차이가 아니다. 주식시장에서 가격을 움직이는 사람들 — 기관 투자자든 개인이든 — 은 <strong>지금 벌어지고 있는 일이 아니라, 앞으로 벌어질 일을 상상하며</strong> 사고판다. 삼성전자의 주가가 오늘 오른 것은 오늘 좋은 일이 있어서가 아니라, 6개월 뒤 실적이 좋을 거라고 누군가가 <strong>상상했기 때문</strong>이다. 특별강 IV에서 삼성전자가 좋은 실적을 발표했는데도 주가가 안 움직인 이유가 여기에 있었다 — 시장은 이미 그 미래를 상상하고 가격에 반영해둔 뒤였다. 뉴스는 "오늘 실적 발표"를 보도하지만, 시장은 이미 <strong>6개월 뒤를 보고 있다.</strong> 같은 시간 위에 서 있는데 보는 방향이 다르다. 이 차이를 모르면 뉴스를 읽을수록 오히려 판단이 흐려진다.</p>
+
+  <p class="fade-in">그래서 뉴스를 그대로 따라가면, 늘 한 박자 늦게 산다. 모두가 환호할 때 사고, 모두가 공포에 떨 때 판다. 그런데 반대로 움직이기도 쉽지 않다. 신문이 희망을 말하는데 두려워하고, 신문이 공포를 말하는데 용기 내는 것 — 그건 사람 본성에 반하는 일이기 때문이다. 여기서 금리 사이클이 도움을 준다. 뉴스의 분위기에 흔들리는 대신, <strong>지금 사이클의 어디에 와 있는지</strong>를 한 번 점검하면 된다. 그 한 번의 점검이 엇박자를 바로잡아준다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">두 개의 신호 — 조심할 때와 용기 낼 때</h2>
+
+  <p class="fade-in">복잡한 지표를 다 볼 필요는 없다. 기억할 신호는 딱 두 개다.</p>
+
+  <p class="fade-in"><strong>첫 번째 — 은행장들이 더 이상 금리를 올리지 못하고, 인하를 검토하는 뉘앙스를 풍길 때.</strong> 이것이 사이클의 정점에 가까워졌다는 신호다. 의외로 이 지점에서 주가는 가장 뜨겁다. 지난 몇 년간의 저금리로 풀린 돈이 아직 시장에 남아 있고, 기업 실적은 최고치이고, 신문은 "이번엔 다르다"를 쓴다. 모두가 낙관적이다. <span class="hl">바로 그때가 조심할 때다.</span> 이 지점에서 무리하게 레버리지를 늘리거나, 평소보다 큰 금액을 한꺼번에 투자에 쏟아붓는 것은 위험하다. 특별강에서 배운 "빚의 도구화"는 도구가 쌀 때의 이야기였다 — 도구가 비싸지려는 시점에 빌리는 건 다른 게임이다.</p>
+
+  <p class="fade-in"><strong>두 번째 — 금리의 하락이 마무리에 다다랐을 때.</strong> 금리가 한참 내려간 뒤, "더 내릴 이유가 없다"는 분위기가 형성될 때. 이 지점의 뉴스 분위기는 첫 번째와 정반대다. 경기는 식어 있고, 주가는 많이 빠져 있고, 신문은 "장기 침체"를 말한다. 모두가 비관적이다. <span class="hl">바로 그때가 용기 낼 때다.</span> 이 지점에서 시작한 적립식 투자는 — 쌀 때 많이 사게 되는 구조가 그대로 작동하기 때문에 — 5년 뒤, 10년 뒤를 돌아봤을 때 가장 큰 차이를 만든다.</p>
+
+  <p class="fade-in">이 두 신호를 반대로 기억하면 안 된다. <strong>금리 인하 초기</strong>는 아직 "조심할 때"일 수 있다 — 중앙은행이 처음으로 인하를 시작할 때는, 경제가 본격적으로 나빠지기 직전인 경우가 많기 때문이다. 반대로 <strong>금리 인상 초기</strong>는 오히려 경기가 살아나고 있다는 신호이므로, 두려워할 이유가 적다. 중요한 것은 "인상이냐 인하냐"가 아니라, <strong>"사이클의 어느 지점이냐"</strong>다. 스스로 공부하여 이것을 읽을 수 있게 되면, 뉴스의 엇박자에 더 이상 끌려다니지 않는다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">한 단계 더 깊이 — 중급 전환 질문</h2>
+
+  <p class="fade-in"><strong>"2020년 3월, 코로나로 세계가 멈춰 섰다. 뉴욕 증시는 한 달 만에 34% 급락했다. 그리고 3월 15일 일요일 — 일요일이다 — 연준 의장 제롬 파월이 이례적으로 주말에 기자회견을 열어 긴급 금리 인하(0%대로)와 대규모 유동성 주입을 발표했다. 이론대로라면 이건 명백한 위기 신호였다. 그런데 그 뒤에 무슨 일이 벌어졌을까?"</strong></p>
+
+  <p class="fade-in" style="color: var(--text-light); font-size: 15.5px;">해설 — 그 주말의 긴급 발표 이후, S&P 500은 3월 23일 바닥을 찍고 <strong>불과 5개월 만에 사상 최고치를 돌파했다.</strong> 1년 뒤에는 70% 넘게 올랐다. 일반인들은 상상도 못할 방향 전환이었다. 대부분의 개인 투자자들은 그 시기에 주식을 팔고 있었다. "세상이 끝나는 것 같아서", "지금 들어가면 더 빠질 것 같아서". 신문의 헤드라인도 그렇게 말하고 있었기 때문이다. 그러나 그 지점에서 매도한 사람은 <strong>지난 30년 중 가장 극적인 상승을 통째로 놓쳤다.</strong></p>
+
+  <p class="fade-in" style="color: var(--text-light); font-size: 15.5px;">무엇이 방향을 바꾸었나. 파월의 긴급 인하 자체가 <strong>사이클이 바닥에 도달했다는 선언</strong>이었기 때문이다. 돈의 가격(금리)이 0%로 내려가는 순간 — 기업의 차입 비용, 할인율, 기대 수익률이 모두 뒤집혔다. 경제 지표는 아직 나빠지기도 전이었지만, 시장은 지표를 따라가지 않고 <strong>돈의 방향을 먼저 따라갔다.</strong></p>
+
+  <p class="fade-in" style="color: var(--text-light); font-size: 15.5px;">여기서 이론과 실제의 괴리가 선명하게 드러난다. 교과서는 "금리 인하 = 주가 상승"이라고 가르친다. 하지만 현실은 더 복잡하다. 2008년의 인하는 주가를 더 떨어뜨렸고, 2020년의 인하는 주가를 바닥에서 끌어올렸다. <strong>같은 약이지만 처방의 시점이 달랐다.</strong> 2008년에는 위기가 아직 진행 중이었고, 2020년에는 파월이 위기의 시작점에서 선제적으로 모든 카드를 꺼냈다. 인하의 "이유"와 "타이밍"이 결과를 가른 것이다. 그래서 우리는 <strong>"금리가 올랐다/내렸다"가 아니라 "사이클의 어디에서 올랐고 내렸는가"</strong>를 봐야 한다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- News Insight -->
+  <div class="insight-box fade-in" data-label="지금 우리는 어느 자리인가">
+    <p>2026년 4월 현재 금리 사이클의 위치:</p>
+    <p><strong>미국 연준</strong>: 기준금리 3.5~3.75%. 2024년 9월부터 인하를 시작해 2025년 세 차례 추가 인하 후 동결. 2026년에 한 차례 추가 인하 예상되나 이란 전쟁으로 시기 불확실.</p>
+    <p><strong>한국은행</strong>: 기준금리 2.5%. 2024년 10월부터 총 1%p 인하 후 2025년 5월부터 7회 연속 동결. 유가 상승으로 물가 상방 압력 확대, 추가 인하 유보.</p>
+    <p>사이클로 보면 — 한미 모두 <strong>인하 사이클의 후반부</strong>에 있다. 금리 바닥에 가까워졌지만 완전히 바닥은 아닌, 애매한 위치. 두 신호로 해석하면: 이번 사이클에서 "용기 낼 때"의 가장 선명한 순간은 이미 지나갔을 가능성이 있다(2024년 하반기가 그랬다). 지금은 <strong>꾸준한 적립을 이어가되, 큰 베팅은 하지 않는 구간</strong>이다.</p>
+  </div>
+
+  <!-- Company Card -->
+  <div class="company-card fade-in">
+    <div class="company-card-header">
+      <div class="ticker">JPM · NYSE</div>
+      <h3>JPMorgan — 사이클을 타는 은행</h3>
+    </div>
+    <div class="company-card-body">
+      <p>17강에서 "은행은 기준금리 위에 마진을 얹어 대출 금리를 정하고, 기준금리보다 낮게 예금 금리를 정해서 그 차이로 먹고 산다"고 배웠다. 이 차이를 <strong>예대 스프레드</strong>라고 부른다. 그런데 금리가 오르면 재미있는 일이 벌어진다 — 대출 금리는 빠르게 오르는데, 예금 금리는 천천히 오른다. 고객이 예금을 옮기기까지 시차가 있기 때문이다. 이 시차 동안 은행은 <strong>마진이 벌어진다.</strong> 반대로 금리가 내리면, 대출 금리는 빠르게 내리고 예금 금리는 천천히 내려서 마진이 좁아진다.</p>
+      <p>JPMorgan은 이 구조를 가장 잘 활용하는 미국 최대 은행이다. 2022~2023년 급격한 금리 인상기에 순이자 수익이 사상 최고치를 찍었다. 그런데 CEO 제이미 다이먼은 그 시기에 현금을 쌓으면서 "경기가 꺾일 것에 대비해야 한다"고 반복해서 말했다. 지금 벌고 있는 돈 이야기가 아니라, <strong>지금의 구조가 다음에 어떻게 바뀔지</strong>를 보고 있었던 것이다. 이것이 사이클을 아는 경영자의 사고방식이다.</p>
+      <p>17강에서 KB금융으로 한국 은행주를 봤다면, JPMorgan은 같은 구조의 글로벌 버전이다. 기억할 것은 하나 — <strong>"은행은 금리 그 자체보다 금리의 방향과 속도에 더 민감하다."</strong> 너무 빨리 오르면 대출 부실이 늘어 부담이 되고, 너무 오래 낮으면 마진이 말라버린다. 은행이 가장 좋아하는 환경은 <strong>완만하게 오르는 금리</strong> — 즉 경기가 건강하게 살아나는 구간이다.</p>
+      <div class="think-box">
+        <strong>생각거리</strong> — JPMorgan이 좋은 투자처인지 아닌지를 묻기 전에, 이렇게 질문을 바꿔보자. "사이클의 어느 시점에 이 회사가 가장 빛나는가?" 2022~2023년 급격한 인상기에 최고 실적을 냈고, 2020년 급격한 인하기에는 실적이 크게 줄었다. 그렇다면 지금 — 인하 후반부, 완만한 동결 — 은 어느 쪽에 가까울까. 한 회사를 봐도, 결국 보게 되는 것은 그 회사가 서 있는 사이클의 위치다.
+      </div>
+    </div>
+  </div>
+
+  <!-- One Step Further -->
+  <div class="one-step fade-in">
+    <div class="label">한 걸음 더 — 뉴스를 볼 때 20초만 멈춰보기</div>
+    <p>앞으로 경제 뉴스 제목을 볼 때, 20초만 이렇게 멈춰보자. <strong>"이 기사의 분위기는 사이클의 어느 단계에 가까울까?"</strong> 흥분과 낙관이 넘치면 정점 근처일 가능성, 공포와 비관이 가득하면 바닥 근처일 가능성이다. 정답을 맞힐 필요는 없다. <strong>한 번 멈춰서 묻는 것 자체</strong>가, 뉴스의 엇박자에 그대로 휩쓸리지 않게 해준다.</p>
+    <p>그리고 17강에서 금리 발표일을 캘린더에 넣어두자고 했다. 그 습관이 이어지고 있다면, 발표일마다 "동결/인상/인하"를 확인하면서 한 가지만 더 물어보자 — <strong>"이게 사이클의 어디쯤이지?"</strong> 이 물음이 쌓이면, 어느 날 뉴스에서 "기준금리 인하 검토"라는 제목이 나왔을 때 — 그 신호가 사이클의 어느 자리에서 오는 말인지 감이 잡히기 시작한다.</p>
+  </div>
+
+  <!-- Takeaway -->
+  <div class="takeaway fade-in">
+    <div class="label">오늘의 한 줄</div>
+    <p>금리는 밀물과 썰물처럼 <strong>오고 간다.</strong><br>
+    예측하는 대신 <strong>지금 어디 있는지</strong>를 보는 사람이,<br>
+    사이클 전체에서 <strong>살아남는다.</strong><br>
+    <span style="font-size:14px; color:#8A7F72; margin-top:12px; display:inline-block;">— 하워드 막스: "우리는 어디로 갈지 모르지만, 지금 어디에 있는지는 알아야 한다."</span></p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p>투자 에세이 시리즈 · 19/37<br>
+  <span style="opacity:0.6;">PART 5 마무리 · 다음 에세이: 20강 — 채권은 계약, 주식은 권리</span></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
