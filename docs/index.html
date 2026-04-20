@@ -369,7 +369,7 @@ body.theater-mode .spotify-toggle-btn.collapsed { bottom: 16px; }
 }
 
 /* 독서 모드에서는 사이드바 숨김 */
-body.theater-mode .main-layout { display: block; }
+body.theater-mode .main-layout { grid-template-columns: 1fr; }
 body.theater-mode .right-sidebar { display: none; }
 
 /* 중간 화면: 사이드바 유지하되 강의 2열 */
@@ -1683,7 +1683,20 @@ function listenNotifications() {
   notifUnsubscribe = db.collection('notifications').where('recipientUid', '==', currentUser.uid).orderBy('timestamp', 'desc').limit(20).onSnapshot(function(snap) {
     var badge = document.getElementById('notif-badge'), listEl = document.getElementById('notif-list'), uc = 0, html = '';
     if (snap.empty) { listEl.innerHTML = '<div class="notif-empty">알림이 없습니다.</div>'; badge.textContent = '0'; badge.classList.remove('show'); return; }
-    snap.forEach(function(doc) { var n = doc.data(); if (!n.read) uc++; var t = n.timestamp ? new Date(n.timestamp.toDate()).toLocaleString('ko-KR') : ''; html += '<div class="notif-item' + (!n.read ? ' unread' : '') + '" onclick="goToComment(\'' + (n.postId || '') + '\',\'' + doc.id + '\')"><div class="notif-item-text"><strong>' + (n.senderName || '사용자') + '</strong>님이 답글을 남겼어요: ' + (n.text || '') + '</div><div class="notif-item-time">' + t + '</div></div>'; });
+    snap.forEach(function(doc) {
+      var n = doc.data(); if (!n.read) uc++;
+      var t = n.timestamp ? new Date(n.timestamp.toDate()).toLocaleString('ko-KR') : '';
+      var isCard = (n.type === 'card');
+      var clickFn = isCard
+        ? 'goToCardComment(\'' + (n.cardId || '') + '\',\'' + doc.id + '\')'
+        : 'goToComment(\'' + (n.postId || '') + '\',\'' + doc.id + '\')';
+      var label = isCard
+        ? '마음카드 No.' + (n.cardId || '?') + '에 답글을 남겼어요: '
+        : '답글을 남겼어요: ';
+      html += '<div class="notif-item' + (!n.read ? ' unread' : '') + '" onclick="' + clickFn + '">'
+        + '<div class="notif-item-text"><strong>' + (n.senderName || '사용자') + '</strong>님이 ' + label + (n.text || '') + '</div>'
+        + '<div class="notif-item-time">' + t + '</div></div>';
+    });
     listEl.innerHTML = html; badge.textContent = String(uc); uc > 0 ? badge.classList.add('show') : badge.classList.remove('show');
   }, function(err) { console.error('알림 로드 실패:', err); });
 }
@@ -1699,6 +1712,20 @@ function goToComment(postId, notifId) {
   var embedEl = document.getElementById('embed-' + postId); if (!embedEl) return;
   if (!embedEl.classList.contains('open')) togglePost(Number(postId));
   setTimeout(function() { var cs = embedEl.querySelector('.comments-section'); if (cs) { cs.scrollIntoView({ behavior: 'smooth', block: 'center' }); cs.style.background = 'rgba(196,141,176,0.1)'; setTimeout(function() { cs.style.background = ''; }, 1500); } }, 300);
+}
+function goToCardComment(cardId, notifId) {
+  document.getElementById('notif-dropdown').classList.remove('open');
+  if (notifId && currentUser) db.collection('notifications').doc(notifId).update({ read: true }).catch(function() {});
+  if (!cardId) return;
+  // 독서 모드 해제
+  if (document.body.classList.contains('theater-mode')) exitTheater();
+  // 사이드바로 스크롤 후 카드 열기
+  var widget = document.getElementById('heartCardWidget');
+  if (widget) widget.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // openCardFromFeed는 위젯 JS에서 정의됨 — 해당 카드 활성화 + 댓글 모달 열기
+  setTimeout(function() {
+    if (typeof openCardFromFeed === 'function') openCardFromFeed(parseInt(cardId, 10));
+  }, 400);
 }
 document.addEventListener('click', function(e) {
   var nw = document.getElementById('notif-wrapper'); if (nw && !nw.contains(e.target)) document.getElementById('notif-dropdown').classList.remove('open');
@@ -2952,7 +2979,28 @@ async function hcwSubmitComment() {
     if (hasFirebase()) {
       commentData.timestamp = firebase.firestore.FieldValue.serverTimestamp();
       await firebase.firestore().collection('cardComments').add(commentData);
-      // onSnapshot이 자동 리렌더
+      // 답글이면 원댓글 작성자에게 알림 전송
+      if (currentReplyTarget && firebase.auth().currentUser) {
+        try {
+          var parentDoc = await firebase.firestore().collection('cardComments').doc(currentReplyTarget.id).get();
+          if (parentDoc.exists) {
+            var parentUid = parentDoc.data().uid;
+            var myUid = firebase.auth().currentUser.uid;
+            if (parentUid && parentUid !== myUid) {
+              firebase.firestore().collection('notifications').add({
+                recipientUid: parentUid,
+                senderName: firebase.auth().currentUser.displayName || '사용자',
+                senderPhoto: firebase.auth().currentUser.photoURL || '',
+                type: 'card',
+                cardId: String(currentCommentCardId),
+                text: content.length > 60 ? content.substring(0, 60) + '...' : content,
+                read: false,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+              }).catch(function() {});
+            }
+          }
+        } catch (ne) { console.log('Card notification error:', ne); }
+      }
     } else {
       // 미리보기 모드: localStorage
       commentData.id = 'local_' + Date.now() + '_' + Math.random().toString(36).slice(2, 7);
