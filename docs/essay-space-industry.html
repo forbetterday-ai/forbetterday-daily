@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-04-22">
+<meta name="post-description" content="발사체에서 위성통신, 지구관측, 미사일 방어까지 — 우주 산업의 다섯 개 층을 일상의 언어로 풀어낸 특별강. SpaceX IPO를 앞두고, 이 산업이 왜 이미 개화했는지를 조망한다">
+<meta name="post-tags" content="특별강, 우주산업, SpaceX, Starlink, 발사체, 위성통신, 지구관측, 골든돔, Rocket Lab">
+<title>특별강 VI. 보이지 않는 인프라 — 머리 위 550km에서 벌어지고 있는 일</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --accent: #B8860B;
+    --accent-soft: #D4A843;
+    --accent-bg: #FDF6E3;
+    --border: #E0D5C5;
+    --green: #2E7D32;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.9; font-size: 17px; -webkit-font-smoothing: antialiased; }
+
+  .header { background: linear-gradient(175deg, #0F0C08 0%, #1A1410 30%, #2C2318 65%, #3D3226 100%); color: #FAF7F2; padding: 80px 24px 70px; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(184,134,11,0.08) 0%, transparent 50%); }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .series-label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .header h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 5vw, 42px); line-height: 1.4; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .header-sub { font-family: var(--sans); font-weight: 300; font-size: 15px; color: #BDB3A4; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .header-meta { margin-top: 32px; font-size: 12px; color: #8A7F72; letter-spacing: 0.5px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+
+  .article { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
+  .article p { margin-bottom: 24px; font-size: 17px; line-height: 1.95; color: var(--text); word-break: keep-all; }
+  .article strong { font-weight: 700; color: #1A1A1A; }
+  .drop-cap::first-letter { font-family: var(--serif); font-weight: 900; font-size: 3.6em; float: left; line-height: 0.8; margin-right: 10px; margin-top: 6px; color: var(--accent); }
+  .section-break { text-align: center; margin: 48px 0; color: var(--accent-soft); font-size: 18px; letter-spacing: 12px; opacity: 0.6; }
+  .article h2 { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--text); margin: 56px 0 20px; line-height: 1.5; padding-left: 16px; border-left: 3px solid var(--accent); }
+  .pull-quote { margin: 48px -20px; padding: 32px 28px; background: var(--accent-bg); border-radius: 2px; border-left: 4px solid var(--accent); font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #3D3226; }
+  .pull-quote em { font-style: normal; color: var(--accent); font-weight: 700; }
+
+  .insight-box { margin: 48px 0; padding: 28px 24px; background: #FFFFFF; border: 1px solid var(--border); border-radius: 4px; position: relative; }
+  .insight-box::before { content: attr(data-label); position: absolute; top: -11px; left: 20px; background: var(--bg); padding: 0 10px; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+  .insight-box p { font-size: 15.5px; line-height: 1.85; margin-bottom: 12px; color: var(--text-light); }
+  .insight-box p:last-child { margin-bottom: 0; }
+
+  .company-card { margin: 48px 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .company-card-header { background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; padding: 24px 28px; }
+  .company-card-header .ticker { font-family: var(--sans); font-weight: 700; font-size: 11px; letter-spacing: 2px; color: var(--accent-soft); margin-bottom: 8px; }
+  .company-card-header h3 { font-family: var(--serif); font-weight: 700; font-size: 20px; line-height: 1.5; }
+  .company-card-body { padding: 24px 28px; }
+  .company-card-body p { font-size: 15.5px; line-height: 1.85; color: var(--text-light); margin-bottom: 16px; }
+  .company-card-body p:last-child { margin-bottom: 0; }
+  .think-box { margin-top: 20px; padding: 16px 20px; background: var(--accent-bg); border-radius: 3px; font-size: 14.5px; line-height: 1.8; color: #5D4E37; }
+  .think-box strong { color: var(--accent); }
+
+  .one-step { margin: 48px 0; padding: 24px 28px; background: linear-gradient(135deg, #F0FAF0, #E8F5E9); border-left: 4px solid var(--green); border-radius: 2px; }
+  .one-step .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--green); margin-bottom: 12px; }
+  .one-step p { font-size: 15.5px; line-height: 1.85; color: #2C3E2C; margin-bottom: 12px; }
+  .one-step p:last-child { margin-bottom: 0; }
+
+  .takeaway { margin: 56px 0 0; padding: 32px 28px; background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; border-radius: 4px; text-align: center; }
+  .takeaway .label { font-size: 11px; letter-spacing: 3px; color: var(--accent-soft); font-weight: 500; margin-bottom: 16px; }
+  .takeaway p { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #E8E0D5; margin-bottom: 0; }
+  .takeaway strong { color: var(--accent-soft); }
+
+  .footer { text-align: center; padding: 40px 24px 60px; font-size: 12px; color: #A89F94; letter-spacing: 0.5px; }
+  .hl { background: linear-gradient(transparent 60%, rgba(184,134,11,0.15) 60%); padding: 0 2px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 600px) {
+    .header { padding: 60px 20px 50px; }
+    .article { padding: 40px 20px 60px; }
+    .article p { font-size: 16px; }
+    .pull-quote { margin: 36px -10px; padding: 24px 20px; font-size: 16.5px; }
+    .company-card-header, .company-card-body { padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="series-label">투자 에세이 · 특별강 VI</div>
+    <h1>보이지 않는 인프라<br>— 머리 위 550km에서 벌어지고 있는 일</h1>
+    <p class="header-sub">발사체, 위성, 통신, 관측, 방어 — 다섯 개의 층이 하나의 산업이 되기까지</p>
+    <div class="header-meta">9강(시대의 인프라)과 13강(대체 불가능한 기업)의 확장편 — 읽는 시간 약 10분</div>
+  </div>
+</header>
+
+<article class="article">
+
+  <p class="drop-cap fade-in">오늘 아침, 스마트폰으로 날씨를 확인했을 것이다. 지도 앱을 열어 출근 경로를 봤을 수도 있다. 그 데이터가 어디에서 왔는지 생각해 본 적 있을까. 기상청 서버? 통신사 기지국? 맞다. 하지만 그보다 한 단계 전에, <strong>머리 위 550킬로미터를 돌고 있는 위성</strong>이 그 데이터를 지구로 내려보냈다. 우리는 매일 우주 인프라를 쓰면서도, 그 사실을 잊고 산다.</p>
+
+  <p class="fade-in">이 에세이는 "우주 산업"이라는 말이 들려올 때 막연하게 느껴지는 거리감을 좁히기 위해 쓰였다. 결론부터 말하면, 우주 산업은 <span class="hl">"미래에 올 것"이 아니라 이미 와 있는 것</span>이다. 2025년 한 해에만 전 세계에서 250회 이상의 로켓이 발사됐고, 그중 절반 이상은 한 민간 기업이 수행했다. 이것은 실험이 아니라 산업이다.</p>
+
+  <p class="fade-in">9강에서 대륙횡단 철도를 만났다. 1869년 철도가 대륙을 잇자, 그 위에 석유가 올라타고, 철강이 올라타고, 금융이 올라탔다. 철도 자체보다 <strong>철도 위에서 피어난 산업들</strong>이 더 컸다. 지금 머리 위에서 같은 일이 벌어지고 있다. 오늘은 그 이야기를 다섯 겹으로 나누어 볼 것이다. 전문가가 될 필요 없다. 다만 이 다섯 겹이 서로 어떻게 이어져 있는지를 한 번 느껴두면, 앞으로 뉴스에서 "위성", "발사체", "우주 방어"가 나왔을 때 흘려보내지 않게 된다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">첫 번째 층 — 발사체: 궤도로 가는 철도</h2>
+
+  <p class="fade-in">모든 것은 <strong>"물건을 궤도에 올릴 수 있는가"</strong>에서 시작된다. 아무리 뛰어난 위성을 만들어도, 쏘아 올릴 수단이 없으면 땅에서 먼지를 뒤집어쓸 뿐이다. 19세기의 철도가 물리적 거리를 없앤 인프라였다면, 21세기의 발사체는 <span class="hl">지구와 궤도 사이의 거리를 없앤 인프라</span>다.</p>
+
+  <p class="fade-in">여기서 일어난 가장 큰 변화는 <strong>재사용</strong>이다. 예전에는 로켓을 한 번 쏘면 바다에 빠뜨렸다. 비행기를 한 번 타면 부수는 것과 같은 셈이니, 당연히 비쌌다. 그런데 지금은 한 대의 로켓이 서른 번 넘게 발사와 착륙을 반복한다. 발사 비용이 십분의 일 가까이 떨어졌다. 택배비가 극적으로 싸져야 온라인 쇼핑 생태계가 폭발했듯, <strong>발사가 싸져야 우주 경제가 가능해진다.</strong> 그리고 실제로 그렇게 됐다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">두 번째 층 — 위성: 궤도 위의 화물</h2>
+
+  <p class="fade-in">철도 위에 실리는 것은 화물이다. 발사체 위에 실리는 화물은 위성이다. 여기에서도 "옛것과 지금"이 완전히 다르다. 과거의 위성은 수 톤짜리 거대한 기계로, 한 기를 만드는 데 수천억 원이 들었다. 지금은 세탁기보다 작은 위성을 수백, 수천 기씩 궤도에 올린다. 이걸 <strong>군집(constellation)</strong>이라고 부른다.</p>
+
+  <p class="fade-in">군집이 가져온 변화는 단순히 "많아졌다"가 아니다. 하나가 고장 나도 전체가 멈추지 않는 <strong>분산 구조</strong>가 됐다는 뜻이다. 13-3강에서 TSMC가 "대체 불가능한 한 곳"이기 때문에 오히려 리스크가 된다고 했던 것을 기억할 것이다. 위성 산업은 정반대 방향으로 진화했다. 한 기를 잃어도 나머지 수천 기가 서비스를 유지한다. 현재 궤도 위의 운용 위성 중 절반 이상이 단 한 회사의 통신 위성이다. 그 이야기가 다음 층으로 이어진다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">세 번째 층 — 위성통신: 하늘에서 내려오는 인터넷</h2>
+
+  <p class="fade-in">궤도 위에 올라간 수천 기의 위성이 하는 일 중 가장 큰 것이 <strong>통신</strong>이다. 스타링크(Starlink)라는 이름을 들어봤을 것이다. 7,000기가 넘는 소형 위성이 지구 전체를 감싸며, 기지국이 없는 곳에도 인터넷을 내려준다. 아프리카 오지, 태평양 한가운데, 히말라야 산기슭 — 땅에 케이블을 깔 수 없는 곳에서 처음으로 인터넷 접속이 가능해졌다.</p>
+
+  <p class="fade-in">여기서 잠깐, 숫자 이야기를 해보자. "우주 산업"이라고 하면 막연히 돈을 태우는 사업이라고 생각하기 쉽다. 실제로 로켓을 만들어 쏘는 발사 사업은 수익성이 그리 높지 않다. <strong>그런데 Starlink은 완전히 다른 세계다.</strong></p>
+
+  <p class="fade-in">2025년 기준 Starlink의 매출은 약 <strong>15조 원</strong>(114억 달러), 전년 대비 <strong>50% 성장</strong>했다. 더 놀라운 건 이익이다. EBITDA(영업활동으로 벌어들인 현금에 가까운 수치) 마진이 <strong>63%</strong>에 달한다. 이게 어느 정도냐면 — SK하이닉스가 HBM 호황에 힘입어 50%대 마진을 기록한 것이 업계 역대급으로 회자되고 있다. Starlink의 63%는 그것을 훌쩍 넘는 수준이다. 가입자는 <strong>1,000만 명</strong>을 돌파했고, 하루에 약 2만 명씩 순증하고 있다.</p>
+
+  <p class="fade-in">이런 수익성이 가능한 이유는 구조에 있다. 지상 통신은 기지국을 세우고, 케이블을 깔고, 부지를 확보해야 한다. 한 지역에 가입자가 늘면 기지국도 추가로 세워야 한다. 그런데 <span class="hl">위성은 한번 궤도에 올리면 전 세계가 서비스 영역</span>이다. 가입자가 100만 명이든 1,000만 명이든, 위성이 추가로 필요하지 않다. 매출은 늘어나는데 비용은 거의 그대로인 구조. 13-3강에서 TSMC의 높은 마진이 "대체 불가능한 위치"에서 나왔다면, Starlink의 높은 마진은 <strong>"하늘에 이미 깔아놓은 인프라 위에 사용자만 올라타는 구조"</strong>에서 나온다.</p>
+
+  <p class="fade-in">그리고 이 현금이 흘러가는 곳이 중요하다. Starlink이 벌어들인 돈은 다시 차세대 발사체 개발과 군사용 위성(Starshield) 사업에 재투자된다. <strong>통신이 번 돈으로 발사체를 개량하고, 개량된 발사체로 더 많은 위성을 올리고, 더 많은 위성이 더 많은 가입자를 끌어들인다.</strong> 9강에서 본 철도와 석유의 순환 — 철도가 석유를 실어 나르고, 석유가 철도 엔진을 돌리던 그 구조가, 궤도 위에서 반복되고 있다.</p>
+
+  <div class="pull-quote fade-in">
+    전쟁터에서도 이 인프라는 작동했다. 우크라이나 전쟁에서 지상 통신탑이 파괴된 뒤, 위성 인터넷이 <em>우크라이나군의 핵심 통신망</em>이 되었다. 기지국은 폭격으로 무너지지만, 궤도 위의 위성은 닿을 수 없다. 통신의 의미가 "편의"에서 "안보"로 바뀌는 순간이었다.
+  </div>
+
+  <p class="fade-in">여기서 한 가지 더. 지금까지 위성통신은 특수 안테나가 필요했다. 하지만 곧 <strong>일반 스마트폰이 위성과 직접 연결되는 시대</strong>가 열린다. T-Mobile 같은 통신사가 이 기술을 상용화하고 있다. 산속에서, 바다 위에서, 어디서든 스마트폰이 연결된다. "음영 지역"이라는 개념 자체가 사라지는 것이다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">네 번째 층 — 지구관측: 하늘에서 내려다보는 눈</h2>
+
+  <p class="fade-in">위성이 하는 일이 통신만은 아니다. <strong>카메라를 달고 지구를 내려다보는 위성</strong>들이 있다. 지구관측(Earth Observation)이라고 부른다. 이 위성들이 매일 촬영하는 것은 놀라울 정도로 다양하다. 농작물의 생육 상태, 홍수 피해 범위, 산불 확산 경로, 도시 개발 속도 — 그리고 군사 시설의 이동.</p>
+
+  <p class="fade-in">Planet Labs라는 회사는 150기가 넘는 소형 위성으로 지구 전체를 <strong>매일</strong> 촬영한다. 독일 정부가 이 회사에 약 3,800억 원 규모의 계약을 맺은 것은 환경 감시와 안보를 위해서다. ICEYE라는 회사는 레이더 위성을 운용하는데, 이 위성은 구름이 있든 한밤중이든 상관없이 지표면을 투과해서 촬영한다. 보험사들이 홍수 피해를 실시간으로 파악할 때 이 데이터를 쓴다.</p>
+
+  <p class="fade-in">2026년 초, 한 가지 상징적인 사건이 있었다. 미국 정부의 요청으로 Planet Labs가 중동 지역의 위성 이미지 공개를 전면 차단한 것이다. <span class="hl">위성 사진이 국가 안보 자산이 된 순간</span>이었다. 이것은 우주에서 찍은 사진이 더 이상 과학자들의 연구 도구에 머무르지 않고, 전쟁과 외교의 도구가 되었다는 뜻이다. 지구관측 시장은 2025년 약 9조 원 규모에서 10년 안에 두 배로 성장할 전망인데, 그 성장의 거의 절반이 정부와 군사 수요에서 나온다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">다섯 번째 층 — 하늘 위의 울타리</h2>
+
+  <p class="fade-in">마지막 층은 조금 무겁지만, 이 산업을 이해하려면 빠뜨릴 수 없다. 미국은 지금 <strong>"골든돔(Golden Dome)"</strong>이라는 이름의 미사일 방어 체계를 구축하고 있다. 이것이 기존 방어와 다른 점은 <strong>우주를 활용한다</strong>는 것이다.</p>
+
+  <p class="fade-in">쉽게 말하면 이렇다. 기존의 미사일 방어는 날아오는 것을 지상에서 맞추는 방식이었다. 총알을 총알로 맞추는 것이다. 성공률이 높기 어렵다. 골든돔은 접근을 바꿨다 — 위성으로 미사일이 <strong>발사되는 순간</strong>을 감지하고, 아직 속도가 느린 초기 단계에서 대응하려는 전략이다. 총구를 막는 것에 가깝다.</p>
+
+  <p class="fade-in">이 프로젝트의 규모가 놀랍다. 미국 의회가 승인한 예산만 해도 수십조 원이고, 20년간 총비용 추정치는 수백조 원에서 수천조 원까지 올라간다. 여기에 2,400개 이상의 기업이 사전 승인을 받고 참여 자격을 확보했다. 발사체 회사, 위성 제조사, 소프트웨어 기업, 센서 업체 — 이 모든 기업이 골든돔이라는 하나의 우산 아래 모여 있다.</p>
+
+  <p class="fade-in">왜 이 이야기를 꺼냈을까. 우주 산업이 단순히 "민간 기업의 사업"이 아니라 <strong>국가가 생존을 위해 투자하는 인프라</strong>라는 점을 보여주기 위해서다. 9강에서 철도가 그랬다. 철도는 처음에 민간 투자로 시작됐지만, 결국 모든 정부가 철도를 국가 핵심 인프라로 분류했다. 궤도도 같은 길을 걷고 있다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">다섯 겹은 하나의 몸이다</h2>
+
+  <p class="fade-in">이제 한 발짝 물러서서 전체를 보자. ①발사체가 없으면 ②위성을 올릴 수 없다. ②위성이 없으면 ③통신도 ④관측도 ⑤방어도 불가능하다. 반대로, ⑤국방 수요가 ①발사체의 수요를 만들고, ③통신이 벌어들인 현금이 ①발사체 개발을 지원한다. 13강에서 GPU-HBM-TSMC가 <strong>"AI의 몸"</strong>이었듯, 이 다섯 개 층은 <strong>"우주 산업의 몸"</strong>이다. 어느 하나만 떼어내서 볼 수 없다.</p>
+
+  <p class="fade-in">Starlink이 연간 약 9.5조 원의 현금(EBITDA)을 만들어내고, 이 돈이 차세대 로켓과 군사용 위성에 재투자되는 구조. <span class="hl">돈이 궤도를 따라 순환하고 있다</span> — 이것이 우주 산업이 "꿈"이 아니라 "사업"이 된 결정적 전환점이다. 그리고 각국 정부가 수백조 원의 예산을 이 산업에 쏟기로 결정한 이유이기도 하다.</p>
+
+  <div class="pull-quote fade-in">
+    "도로가 놓이면 그 위에 경제가 자란다." 피터 드러커가 말한 이 원리는 땅 위에만 적용되지 않는다. <em>궤도가 놓이면 그 위에도 경제가 자란다.</em> 그리고 지금, 궤도는 이미 놓여 있다.
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">한 단계 더 깊이 — 중급 전환 질문</h2>
+
+  <p class="fade-in"><strong>"2025년 SpaceX의 로켓 발사 부문 매출은 약 5.5조 원인데, 전년 대비 오히려 8% 줄었다. 우주 산업이 성장하고 있다면, 왜 로켓을 만드는 회사의 발사 매출은 줄었을까?"</strong></p>
+
+  <p class="fade-in" style="color: var(--text-light); font-size: 15.5px;">해설 — 답은 단순하다. <strong>발사 가격이 계속 하락하고 있기 때문이다.</strong> 발사 횟수는 역대 최고인데, 한 번 쏘는 데 드는 비용이 낮아지면서 매출은 줄었다. 이것은 실패가 아니라 인프라 산업의 전형적 패턴이다. 19세기 철도 요금이 낮아질수록 철도 위에 올라타는 산업(석유, 철강, 금융)이 폭발적으로 성장했다. 지금도 마찬가지다. 발사 비용의 하락이 Starlink(마진 63%)과 지구관측, 골든돔의 성장을 가능하게 만들고 있다.</p>
+
+  <p class="fade-in" style="color: var(--text-light); font-size: 15.5px;">경제 이론상 "산업이 성장하면 매출도 성장"이다. 하지만 실제로는 <strong>가치사슬의 어느 층에서 돈을 버는가</strong>가 다르다. SpaceX 안에서도 발사가 아니라 통신(Starlink)에서 이익이 나온다. 16강에서 GDP 같은 거시 지표가 "지금의 온도"를 보여줄 뿐 "다음 엔진이 어디 있는지"는 알려주지 않는다고 했다. 산업 매출 총액만 보면 놓치게 되는 것이 있고, 그 아래의 구조를 읽어야 투자 기회가 보인다 — 이것이 격자적 사고의 힘이다.</p>
+
+  <!-- News Insight -->
+  <div class="insight-box fade-in" data-label="지금 벌어지고 있는 일">
+    <p>SpaceX가 2026년 중반 기업공개(IPO)를 준비하고 있다. 250억 달러(약 33조 원) 이상을 조달하고, 기업 가치는 1조~2조 달러(약 1,300조~2,600조 원)에 이를 수 있다는 전망이 나온다.</p>
+    <p>이것이 왜 중요할까. 9강에서 19세기 철도 IPO 붐을 봤고, 12강에서 1990년대 닷컴 IPO를 봤다. <strong>한 산업의 대표 기업이 주식시장에 진입하는 순간은, 그 산업이 "실험"에서 "경제"로 넘어가는 상징적 전환점</strong>이다. 이번 IPO가 실현되면, 일반 투자자도 처음으로 우주 산업의 핵심 기업에 직접 참여할 수 있는 길이 열린다.</p>
+    <p>다만, 밸류에이션이 매우 높다는 점은 기억해두자. Starlink의 성장성이 아무리 뛰어나도, "지금 사도 되는가"와 "좋은 회사인가"는 다른 질문이다 — 특별강 IV에서 기준점 이론을 통해 배운 그 구분이다.</p>
+  </div>
+
+  <!-- Company Card -->
+  <div class="company-card fade-in">
+    <div class="company-card-header">
+      <div class="ticker">RKLB · NASDAQ</div>
+      <h3>Rocket Lab — 우주 산업의 공개 시장 관문</h3>
+    </div>
+    <div class="company-card-body">
+      <p>SpaceX가 비상장 기업인 동안, 일반 투자자가 우주 산업에 접근할 수 있는 가장 직접적인 통로가 <strong>Rocket Lab(로켓랩)</strong>이다. 미국에서 SpaceX 다음으로 많이 로켓을 쏘는 민간 기업이다.</p>
+      <p>이 회사의 특징은 <strong>수직통합</strong>이다. 발사체(Electron, 개발 중인 Neutron)를 직접 만들 뿐 아니라, 위성에 들어가는 태양전지(SolAero), 위성 부품, 우주용 광통신 장비(Mynaric 인수)까지 자체 생산한다. 9강에서 록펠러가 석유의 "정제만"이 아니라 운송과 판매까지 수직통합해서 독점적 위치를 만들었다고 했는데, Rocket Lab은 우주 산업에서 비슷한 전략을 쓰고 있는 셈이다.</p>
+      <p>골든돔의 SHIELD 계약에도 사전 승인 업체로 참여하고 있다. 발사 + 위성 제조 + 부품 공급을 한 곳에서 할 수 있는 회사는 많지 않기 때문이다. 물론 SpaceX에 비하면 규모가 훨씬 작고, 아직 흑자 전환 전이라는 리스크가 있다. <strong>하지만 "상장된 유일한 종합 우주 기업"이라는 위치 자체가 희소하다.</strong> SpaceX IPO가 실현되면, 우주 산업 전체에 대한 관심이 커지면서 이 회사도 재조명될 수 있다.</p>
+      <div class="think-box">
+        <strong>생각거리</strong> — 9강에서 철도 시대에 "철도 회사 주식"이 아닌 "철도 위에 올라탄 석유 회사 주식"이 더 큰 부를 만들었다고 했다. 우주 산업에서도 같은 질문을 해볼 수 있다. 발사체를 만드는 회사, 위성을 만드는 회사, 위성 데이터를 분석하는 회사 — <strong>가치사슬의 어느 층이 가장 큰 이익을 가져갈까?</strong> Starlink의 마진 63%가 하나의 힌트가 될 수 있다.
+      </div>
+    </div>
+  </div>
+
+  <!-- One Step Further -->
+  <div class="one-step fade-in">
+    <div class="label">💡 한 걸음 더 — 뉴스를 읽는 새로운 눈</div>
+    <p>오늘의 에세이를 읽고 나면, 뉴스에서 "SpaceX 발사 성공", "Starlink 가입자 증가", "골든돔 예산 승인"이라는 기사가 나올 때, 그것이 <strong>다섯 겹의 어느 층에 해당하는 이야기인지</strong> 자연스럽게 떠오를 것이다.</p>
+    <p>"발사체 뉴스구나 — 이건 첫 번째 층, 인프라 비용의 이야기." "Starlink 실적 — 이건 세 번째 층, 현금 엔진의 이야기." "골든돔 예산 — 이건 다섯 번째 층, 정부가 우주를 필수 안보로 보고 있다는 신호." 이렇게 읽으면, 개별 기사가 조각이 아니라 하나의 그림 속에서 제자리를 찾는다.</p>
+    <p>13강에서 GPU-HBM-TSMC의 "AI의 몸"을 이해하고 나니 반도체 뉴스가 다르게 보이기 시작했듯, 오늘의 다섯 겹을 알고 나면 우주 뉴스가 다르게 보이기 시작할 것이다. <strong>알면 덜 흔들리고, 더 멀리 본다.</strong></p>
+  </div>
+
+  <!-- Takeaway -->
+  <div class="takeaway fade-in">
+    <div class="label">오늘의 한 줄</div>
+    <p>머리 위 <strong>550킬로미터</strong>에는<br>이미 철도가 놓여 있고,<br>그 위에서 <strong>경제가 자라고 있다.</strong><br><span style="font-size:14px; color:#8A7F72; margin-top:8px; display:inline-block;">— 어느 시대든, 새 인프라를 알아본 사람이 그 위에 올라탔다.</span></p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p>투자 에세이 시리즈 · 특별강 VI<br>
+  <span style="opacity:0.6;">9강(시대의 인프라)과 13강(대체 불가능한 기업)의 확장편 · 다음 에세이로 본편이 이어집니다</span></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
