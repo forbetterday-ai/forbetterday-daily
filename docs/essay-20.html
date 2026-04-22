@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-04-21">
+<meta name="post-description" content="채권은 약속이고 주식은 권리다. 그런데 이 둘은 따로 사는 게 아니라 저울의 양쪽에 앉아 있다 — 채권 금리가 바뀌면 주식의 매력도 바뀌는 구조.">
+<meta name="post-tags" content="채권, 주식, 할인율, Bank of America, 코스톨라니">
+<title>20. 채권은 계약, 주식은 권리 — 저울의 양쪽에 앉은 두 자산</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --accent: #B8860B;
+    --accent-soft: #D4A843;
+    --accent-bg: #FDF6E3;
+    --border: #E0D5C5;
+    --green: #2E7D32;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.9; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .header { background: linear-gradient(175deg, #0F0C08 0%, #1A1410 30%, #2C2318 65%, #3D3226 100%); color: #FAF7F2; padding: 80px 24px 70px; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(184,134,11,0.08) 0%, transparent 50%); }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .series-label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .header h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 5vw, 42px); line-height: 1.4; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .header-sub { font-family: var(--sans); font-weight: 300; font-size: 15px; color: #BDB3A4; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .header-meta { margin-top: 32px; font-size: 12px; color: #8A7F72; letter-spacing: 0.5px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+  .article { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
+  .article p { margin-bottom: 24px; font-size: 17px; line-height: 1.95; color: var(--text); word-break: keep-all; }
+  .article strong { font-weight: 700; color: #1A1A1A; }
+  .drop-cap::first-letter { font-family: var(--serif); font-weight: 900; font-size: 3.6em; float: left; line-height: 0.8; margin-right: 10px; margin-top: 6px; color: var(--accent); }
+  .section-break { text-align: center; margin: 48px 0; color: var(--accent-soft); font-size: 18px; letter-spacing: 12px; opacity: 0.6; }
+  .article h2 { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--text); margin: 56px 0 20px; line-height: 1.5; padding-left: 16px; border-left: 3px solid var(--accent); }
+  .pull-quote { margin: 48px -20px; padding: 32px 28px; background: var(--accent-bg); border-radius: 2px; border-left: 4px solid var(--accent); font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #3D3226; }
+  .pull-quote em { font-style: normal; color: var(--accent); font-weight: 700; }
+  .insight-box { margin: 48px 0; padding: 28px 24px; background: #FFFFFF; border: 1px solid var(--border); border-radius: 4px; position: relative; }
+  .insight-box::before { content: attr(data-label); position: absolute; top: -11px; left: 20px; background: var(--bg); padding: 0 10px; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+  .insight-box p { font-size: 15.5px; line-height: 1.85; margin-bottom: 12px; color: var(--text-light); }
+  .insight-box p:last-child { margin-bottom: 0; }
+  .compare-box { margin: 32px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .compare-col { padding: 20px 24px; }
+  .compare-col:first-child { border-right: 1px solid var(--border); }
+  .compare-col .col-title { font-family: var(--serif); font-weight: 700; font-size: 15px; color: var(--accent); margin-bottom: 12px; letter-spacing: 0.5px; }
+  .compare-col p { font-size: 14.5px; line-height: 1.75; color: var(--text-light); margin-bottom: 8px; }
+  .compare-col p:last-child { margin-bottom: 0; }
+  .company-card { margin: 48px 0; background: #FFFFFF; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+  .company-card-header { background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; padding: 24px 28px; }
+  .company-card-header .ticker { font-family: var(--sans); font-weight: 700; font-size: 11px; letter-spacing: 2px; color: var(--accent-soft); margin-bottom: 8px; }
+  .company-card-header h3 { font-family: var(--serif); font-weight: 700; font-size: 20px; line-height: 1.5; }
+  .company-card-body { padding: 24px 28px; }
+  .company-card-body p { font-size: 15.5px; line-height: 1.85; color: var(--text-light); margin-bottom: 16px; }
+  .company-card-body p:last-child { margin-bottom: 0; }
+  .think-box { margin-top: 20px; padding: 16px 20px; background: var(--accent-bg); border-radius: 3px; font-size: 14.5px; line-height: 1.8; color: #5D4E37; }
+  .think-box strong { color: var(--accent); }
+  .one-step { margin: 48px 0; padding: 24px 28px; background: linear-gradient(135deg, #F0FAF0, #E8F5E9); border-left: 4px solid var(--green); border-radius: 2px; }
+  .one-step .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--green); margin-bottom: 12px; }
+  .one-step p { font-size: 15.5px; line-height: 1.85; color: #2C3E2C; margin-bottom: 12px; }
+  .one-step p:last-child { margin-bottom: 0; }
+  .takeaway { margin: 56px 0 0; padding: 32px 28px; background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; border-radius: 4px; text-align: center; }
+  .takeaway .label { font-size: 11px; letter-spacing: 3px; color: var(--accent-soft); font-weight: 500; margin-bottom: 16px; }
+  .takeaway p { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #E8E0D5; margin-bottom: 0; }
+  .takeaway strong { color: var(--accent-soft); }
+  .footer { text-align: center; padding: 40px 24px 60px; font-size: 12px; color: #A89F94; letter-spacing: 0.5px; }
+  .hl { background: linear-gradient(transparent 60%, rgba(184,134,11,0.15) 60%); padding: 0 2px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 600px) {
+    .header { padding: 60px 20px 50px; }
+    .article { padding: 40px 20px 60px; }
+    .article p { font-size: 16px; }
+    .pull-quote { margin: 36px -10px; padding: 24px 20px; font-size: 16.5px; }
+    .company-card-header, .company-card-body { padding: 20px; }
+    .compare-box { grid-template-columns: 1fr; }
+    .compare-col:first-child { border-right: none; border-bottom: 1px solid var(--border); }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="series-label">투자 에세이 · 스무 번째</div>
+    <h1>채권은 계약, 주식은 권리<br>— 저울의 양쪽에 앉은 두 자산</h1>
+    <p class="header-sub">채권 금리가 바뀌면 주식의 매력도 바뀐다 — 둘은 따로 사는 게 아니다</p>
+    <div class="header-meta">PART 6. 채권과 주식 — 읽는 시간 약 9분</div>
+  </div>
+</header>
+
+<article class="article">
+
+  <p class="drop-cap fade-in">가게를 하나 열었는데, 옆자리에 치킨집이 있었다고 해보자. 내 가게는 그럭저럭 잘 되고 있었다. 그런데 어느 날 옆 치킨집이 문을 닫고, 그 자리에 미슐랭 레스토랑이 들어왔다. 내 가게는 하나도 바뀌지 않았는데, 손님의 기대가 달라졌다. "옆에 미슐랭이 있는데 여기는 뭐가 좋지?" 반대로 미슐랭이 떠나고 빈 가게가 되면? 갑자기 내 가게가 다시 괜찮아 보인다. <strong>옆자리가 바뀌면 내 가게의 매력이 달라진다.</strong></p>
+
+  <p class="fade-in">투자의 세계에서 주식 옆에 앉아 있는 것이 <strong>채권</strong>이다. 채권의 금리가 바뀌면, 주식은 아무것도 변하지 않았는데 매력이 달라진다. 오늘은 이 두 자산이 어떻게 저울의 양쪽에 앉아 서로의 무게를 바꾸는지를 이야기한다. 18강에서 "금리가 내리면 성장주가 오른다"고 했는데, 왜 그런지 오늘에서야 비로소 그 구조가 완성된다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">채권이라는 약속</h2>
+
+  <p class="fade-in">채권은 복잡한 것이 아니다. <strong>누군가에게 돈을 빌려주고, 이자를 받고, 만기에 원금을 돌려받는 계약서</strong>다. 이 계약서에는 딱 세 줄만 적혀 있다.</p>
+
+  <p class="fade-in">첫째, <strong>누가 빌렸는가.</strong> 정부가 빌리면 국채, 기업이 빌리면 회사채다. 정부는 세금을 걷을 수 있으니 못 갚을 가능성이 가장 낮다. 그래서 국채를 "가장 안전한 자산"이라고 부른다. 17강에서 배운 기준금리의 가장 직접적인 반영이 바로 이 국채 금리다.</p>
+
+  <p class="fade-in">둘째, <strong>언제까지.</strong> 1년짜리도 있고, 10년짜리도 있고, 30년짜리도 있다. 오래 빌려줄수록 불확실성이 커지니 이자가 조금 더 높다.</p>
+
+  <p class="fade-in">셋째, <strong>얼마를 주는가.</strong> 매년 받는 이자율. 미국 10년 국채가 "4.5%"라는 뉴스를 봤다면, 미국 정부에게 돈을 빌려주면 매년 4.5%의 이자를 10년간 받을 수 있다는 뜻이다.</p>
+
+  <p class="fade-in">채권의 본질은 이것이 전부다. <strong>"빌려주고, 기다리고, 돌려받는다."</strong> 가만히 앉아 있으면 약속된 이자가 들어온다. 기업이 잘되든 못되든, 주가가 오르든 내리든, 계약서에 적힌 이자는 바뀌지 않는다. 이것이 채권이 "안전하다"고 불리는 이유다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">주식이라는 권리 — 다시 한번</h2>
+
+  <p class="fade-in">주식은 이미 잘 알고 있다. 2강에서 동인도회사의 지분을 샀던 이야기, 3강에서 "매출 − 비용 = 이윤"의 구조, 9~13강에서 시대마다 주인공이 바뀌었던 역사. 주식은 <strong>기업의 이윤을 나눠 가질 권리</strong>다. 채권과 결정적으로 다른 점은 — <strong>약속된 숫자가 없다</strong>는 것이다.</p>
+
+  <div class="compare-box fade-in">
+    <div class="compare-col">
+      <div class="col-title">채권 — 계약</div>
+      <p>받을 금액이 <strong>정해져 있다.</strong></p>
+      <p>천장이 있다. 이자 이상은 못 받는다.</p>
+      <p>바닥이 있다. 원금을 돌려받는다.</p>
+      <p>기업이 잘되든 못되든 이자는 같다.</p>
+    </div>
+    <div class="compare-col">
+      <div class="col-title">주식 — 권리</div>
+      <p>받을 금액이 <strong>정해져 있지 않다.</strong></p>
+      <p>천장이 없다. 기업이 크면 함께 큰다.</p>
+      <p>바닥이 없다. 0원이 될 수도 있다.</p>
+      <p>기업이 잘되면 이익, 못되면 손해.</p>
+    </div>
+  </div>
+
+  <p class="fade-in">채권은 "잠을 잘 자게 해주는 자산"이고, 주식은 "잘 먹게 해주는 자산"이라는 말이 있다. 안전함 대신 성장의 가능성을 포기한 것이 채권이고, 불확실함을 감수하는 대신 무한한 상승을 품은 것이 주식이다. 그런데 이 둘은 따로 사는 것이 아니라, <strong>같은 저울의 양쪽에 앉아 있다.</strong></p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">옆자리가 바뀌면 매력이 달라진다</h2>
+
+  <p class="fade-in">여기서부터가 이 에세이의 핵심이다.</p>
+
+  <p class="fade-in">지금 미국 10년 국채 금리가 5%라고 해보자. 미국 정부에게 돈을 빌려주면, 아무것도 안 하고 매년 5%를 받을 수 있다는 뜻이다. 거의 위험 없이. 그 옆에 어떤 주식이 있다. 이 주식은 잘되면 연 10%를 벌 수도 있지만, 못되면 원금의 반이 날아갈 수도 있다. 이런 상황에서 투자자는 이렇게 생각한다 — <strong>"안전하게 5%를 받을 수 있는데, 굳이 위험을 감수하면서 주식을 살 이유가 있나?"</strong></p>
+
+  <p class="fade-in">주식이 매력적으로 보이려면, 5% "이상"의 기대 수익이 필요하다. 위험을 감수하는 대가로 더 높은 수익을 기대할 수 있어야 한다. 그래서 투자자들은 주식을 평가할 때, 무의식적으로든 의식적으로든 <strong>국채 금리를 기준점</strong>으로 놓는다. "안전하게 받을 수 있는 수익률이 이만큼인데, 이 주식은 그 이상을 줄 수 있는가?"</p>
+
+  <p class="fade-in">이제 상황을 바꿔보자. 경기가 나빠져서 중앙은행이 금리를 내렸다. 국채 금리가 5%에서 <strong>1%</strong>로 떨어졌다. 갑자기 세상이 달라진다. 국채에 돈을 넣어봤자 1%밖에 못 받는다. 예금도 마찬가지다. 그러면 아까 그 주식 — 잘되면 10%, 못되면 원금 반 — 이 <span class="hl">갑자기 훨씬 매력적으로 보이기 시작한다.</span> 주식은 아무것도 변하지 않았다. 같은 회사, 같은 사업, 같은 사람들. <strong>옆자리(채권)가 바뀌었을 뿐인데, 주식의 매력이 달라진 것이다.</strong></p>
+
+  <p class="fade-in">이것이 채권과 주식이 저울의 양쪽에 앉아 있다는 말의 뜻이다. 채권 쪽이 무거워지면(금리가 높으면) 주식 쪽이 가벼워 보이고, 채권 쪽이 가벼워지면(금리가 낮으면) 주식 쪽이 무거워 보인다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">18강의 그 이야기가 이런 구조였다</h2>
+
+  <p class="fade-in">18강에서 "금리가 내리면 성장주가 오른다"고 했다. 그때는 "할인율이 내려가면 미래 이익의 현재 가치가 올라간다"는 설명이었는데, 솔직히 한 번 읽고 바로 이해하기 어려웠을 수 있다. 오늘의 이야기를 거치면 그 구조가 한결 선명해진다.</p>
+
+  <p class="fade-in">18강에서 말한 <strong>"할인율"</strong>의 정체가 바로 여기에 있다. 할인율이란, 투자자가 주식에 기대하는 최소한의 수익률이다. 그리고 그 최소한의 수익률은 <strong>"안전하게 받을 수 있는 금리 + 위험을 감수하는 대가"</strong>로 구성된다. 공식을 외울 필요는 없다. 구조만 기억하면 된다.</p>
+
+  <p class="fade-in">안전하게 받을 수 있는 금리 — 이것이 바로 <strong>국채 금리</strong>다. 이 금리가 내려가면, 투자자가 주식에 요구하는 최소 수익률도 함께 내려간다. 최소 수익률이 내려가면, 같은 기업의 미래 이익이 <strong>더 높은 값</strong>으로 평가된다. 기업은 아무것도 안 변했는데, 채권 금리가 내려갔다는 이유만으로 주식의 가치가 올라가는 것이다.</p>
+
+  <p class="fade-in">특히 성장주 — 이익의 대부분이 먼 미래에 있는 기업 — 는 이 효과가 크다. 먼 미래의 이익일수록 할인율의 변화에 민감하기 때문이다. 그래서 18강에서 "금리가 내리면 성장주가 더 많이 오르고, 금리가 오르면 성장주가 더 많이 빠진다"고 한 것이었다. <strong>그 이유가 바로 옆자리 — 채권 — 의 매력이 달라졌기 때문이다.</strong></p>
+
+  <div class="pull-quote fade-in">
+    투자자 앙드레 코스톨라니는 이렇게 말했다. <em>"채권은 잠을 잘 자게 해주고, 주식은 잘 먹게 해준다."</em> 그런데 잠자리(채권)의 이자가 거의 0%가 되면, 잠만 자서는 먹고살 수 없다. 사람들은 잘 먹기 위해 주식 쪽으로 움직인다. 반대로 잠자리가 5%의 이자를 보장해주면, 굳이 위험한 식탁(주식)에 앉을 이유가 줄어든다. 이 이동이 시장 전체를 움직인다.
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">채권 가격은 왜 금리와 반대로 움직이는가</h2>
+
+  <p class="fade-in">하나만 더 짚고 가자. 뉴스에서 "금리가 오르면 채권 가격이 내린다"는 말을 종종 듣는데, 처음에는 이것이 직관적이지 않다. 왜 금리가 올라가는데 채권 가격이 내릴까?</p>
+
+  <p class="fade-in">중고 거래를 떠올리면 바로 이해된다. 지금 내가 가지고 있는 채권은 연 3%짜리다. 그런데 오늘 새로 발행된 채권은 연 5%를 준다. 누군가가 내 3%짜리를 사려 할까? <strong>원래 가격으로는 사지 않는다.</strong> 같은 돈이면 5%짜리를 사지, 왜 3%짜리를 원래 가격에 사겠는가. 그래서 내 채권을 팔려면 가격을 깎아야 한다. 이것이 "금리가 오르면 기존 채권 가격이 내린다"의 전부다.</p>
+
+  <p class="fade-in">반대도 마찬가지다. 새 채권이 1%밖에 안 주는 세상이 되면, 내가 가진 3%짜리 채권은 갑자기 귀해진다. 사려는 사람이 많아지니 <strong>가격이 올라간다.</strong> 금리가 내리면 기존 채권 가격이 오르는 이유다.</p>
+
+  <p class="fade-in">이 원리를 이해하면, 19강에서 배운 금리 사이클이 채권 투자자에게 어떤 의미인지도 보인다. <strong>금리가 정점에서 내려오기 시작하면, 그 시점에 산 채권의 가격은 올라간다.</strong> 채권도 "사는 타이밍"이 있다는 뜻이다. 가만히 이자만 받는 것 같지만, 금리 사이클을 이해하면 채권에서도 시세 차익을 노릴 수 있다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <h2 class="fade-in">한 단계 더 깊이 — 중급 전환 질문</h2>
+
+  <p class="fade-in"><strong>"이론적으로, 채권은 주식과 반대로 움직인다. 주식이 빠지면 안전자산인 채권으로 돈이 몰리니까 채권 가격은 오른다 — 그래서 둘을 섞으면 안전하다. 그런데 2022년에는 주식도 빠지고 채권도 빠졌다. 40년 만에 처음 있는 일이었다. 왜?"</strong></p>
+
+  <p class="fade-in" style="color: var(--text-light); font-size: 15.5px;">해설 — 세상은 항상 교과서대로 굴러가지 않는다. 2022년은 여러 가지가 동시에 겹친 해였다. 코로나 시기에 0%대까지 급격히 내린 금리가 다시 급격히 오르기 시작했고, 전 세계 컨테이너 물류가 병목에 걸리면서 공급 쪽 인플레이션까지 겹쳤다. 러시아-우크라이나 전쟁은 에너지 가격을 밀어올렸다. 이런 복합적인 상황에서 연준은 역사적으로도 유례없는 속도로 금리를 올렸고, 그 결과 채권 가격이 급락했다. 동시에 경기 둔화 우려로 주식도 빠졌다.</p>
+
+  <p class="fade-in" style="color: var(--text-light); font-size: 15.5px;">"채권은 안전하니까 섞으면 된다"는 교과서의 이론이 맞는 때가 대부분이지만, <strong>모든 때에 맞지는 않는다.</strong> 특히 금리가 급격히 방향을 바꾸는 전환기에는 — 채권도 주식도 같은 방향으로 움직일 수 있다. 코로나로 인한 급격한 금리 인하, 글로벌 공급망 교란, 전쟁이라는 외부 충격이 동시에 찾아온 2022년은 그런 예외적 순간이었다. 이 사례가 말해주는 것은 "채권이 쓸모없다"가 아니라, <strong>"어떤 이론도 100%가 아니며, 세상은 늘 복합적이다"</strong>는 것이다. 그래서 우리는 이론을 배우되, 이론 너머를 보는 눈도 함께 길러야 한다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- News Insight -->
+  <div class="insight-box fade-in" data-label="지금 채권과 주식의 저울은 어디에">
+    <p>2026년 4월 현재, 미국 10년 국채 금리는 약 4% 내외다. 이 말은 "아무것도 안 하고 미국 정부에게 돈을 빌려주면 연 4%를 받을 수 있다"는 뜻이다. 이 옆자리가 주식에 어떤 영향을 주는가?</p>
+    <p>4%는 결코 낮지 않다. 2020~2021년 국채 금리가 1% 미만이었을 때와 비교하면, 지금의 주식은 <strong>상대적으로 덜 매력적인 환경</strong>에 있다. 1%짜리 세상에서 주식이 빛났던 것은 "다른 선택지가 없어서"였고, 4%짜리 세상에서는 "채권도 괜찮은 선택지"가 되었기 때문이다.</p>
+    <p>그래서 지금은 주식 일변도보다 <strong>채권과 주식의 비율을 의식하기 시작해야 할 시점</strong>이다. 다음 21강에서 이 비율 — 자산 배분 — 을 본격적으로 다룬다.</p>
+  </div>
+
+  <!-- Company Card -->
+  <div class="company-card fade-in">
+    <div class="company-card-header">
+      <div class="ticker">BAC · NYSE</div>
+      <h3>Bank of America — 채권과 주식, 저울의 한가운데 선 은행</h3>
+    </div>
+    <div class="company-card-body">
+      <p>19강에서 JPMorgan을 통해 "은행은 금리 사이클을 가장 직접적으로 겪는 산업"이라고 배웠다. Bank of America는 그 이야기의 다른 얼굴이다 — 이 은행은 <strong>채권과 주식의 저울</strong>이 실제로 어떻게 작동하는지를 몸으로 보여준 기업이다.</p>
+      <p>은행은 고객의 예금을 받아서 대출도 하지만, <strong>남는 돈의 상당 부분을 채권에 투자</strong>한다. 특히 미국 국채. Bank of America는 코로나 시기, 금리가 바닥이었을 때 대규모로 저금리 국채를 매입했다. 당시에는 합리적인 판단이었다 — 안전한 자산에 넣어두는 것이니까.</p>
+      <p>그런데 2022년, 금리가 급격히 오르면서 이 저금리 채권들의 가격이 크게 떨어졌다. 오늘 에세이에서 배운 그 원리 — "새 채권이 5%를 주는데, 내 1%짜리를 누가 원래 가격에 사겠는가" — 가 그대로 적용된 것이다. Bank of America는 이 <strong>채권 평가 손실만 수백억 달러</strong>에 달했다. 같은 해 실리콘밸리은행(SVB)은 비슷한 구조로 파산했다.</p>
+      <p>Bank of America는 규모와 예금 기반이 탄탄해서 버텼지만, 이 사례는 중요한 것을 알려준다. <strong>채권이 "안전하다"는 말은 "만기까지 들고 있으면 원금을 돌려받는다"는 뜻이지, "가격이 떨어지지 않는다"는 뜻이 아니다.</strong> 금리가 급격히 오르면, 그 안전한 채권도 가격은 빠진다. 그리고 그 채권 가격의 하락은 — 저울의 반대쪽인 — 주식 시장에도 영향을 준다.</p>
+      <div class="think-box">
+        <strong>생각거리</strong> — Bank of America의 사례에서 보이는 것은 은행이라는 존재 자체가 <strong>채권과 주식의 저울 위에 서 있다</strong>는 사실이다. 금리가 내리면 채권 가격이 올라 은행의 자산이 늘어나지만, 예대 스프레드(19강에서 배운)는 줄어든다. 금리가 오르면 예대 스프레드는 벌어지지만, 보유 채권의 가격이 떨어진다. 한쪽이 좋아지면 다른 쪽이 나빠지는 구조 — 이것이 저울이다. 은행주를 볼 때는 이 저울의 양쪽을 모두 봐야 한다.
+      </div>
+    </div>
+  </div>
+
+  <!-- One Step Further -->
+  <div class="one-step fade-in">
+    <div class="label">한 걸음 더 — 옆자리의 가격을 한 번 확인해보기</div>
+    <p>네이버에서 "미국 10년 국채 금리"를 검색해보자. 지금 그 숫자가 몇 %인지 확인하는 데 10초면 된다. 그 숫자가 바로 <strong>주식의 옆자리 가격</strong>이다.</p>
+    <p>이 숫자가 높으면 높을수록, 주식은 더 높은 성과를 보여줘야 매력적이다. 낮으면 낮을수록, 주식의 상대적 매력이 올라간다. "지금 옆자리가 몇 %인가" — 이 하나만 기억해도, 경제 뉴스에서 "채권 금리 상승으로 증시 하락"이라는 제목이 나왔을 때 그 뜻이 바로 읽힌다.</p>
+  </div>
+
+  <!-- Takeaway -->
+  <div class="takeaway fade-in">
+    <div class="label">오늘의 한 줄</div>
+    <p>채권은 <strong>잠을 잘 자게</strong> 해주고,<br>
+    주식은 <strong>잘 먹게</strong> 해준다.<br>
+    잠자리의 가격이 바뀌면, 식탁의 매력도 달라진다.<br>
+    <span style="font-size:14px; color:#8A7F72; margin-top:12px; display:inline-block;">— 앙드레 코스톨라니</span></p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p>투자 에세이 시리즈 · 20/37<br>
+  <span style="opacity:0.6;">PART 6 · 다음 에세이: 21강 — 리스크의 본질과 자산 배분</span></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
