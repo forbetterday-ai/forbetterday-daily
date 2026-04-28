@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-04-28">
+<meta name="post-description" content="생명, AI, 지혜, 시장 — 네 영역에서 같은 원리가 작동한다. 연결이 임계점을 넘으면 이전에 없던 무언가가 탄생하는 순간, '창발'을 여섯 가지 체험으로 만나는 시간">
+<meta name="post-tags" content="특별강, 창발, 격자형사고, 멍거, LLM, 임계점, 복잡계, 양자역학">
+<title>특별강 VIII. 부분은 전체를 설명하지 못한다 — 생명, 기계, 지혜의 창발</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--text:#2C2C2C;--text-light:#6B6560;--accent:#B8860B;--accent-soft:#D4A843;--accent-bg:#FDF6E3;--border:#E0D5C5;--green:#2E7D32;--red:#B71C1C;--serif:'Noto Serif KR',Georgia,serif;--sans:'Noto Sans KR',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+.header{background:linear-gradient(175deg,#0F0C08 0%,#1A1410 30%,#2C2318 65%,#3D3226 100%);color:#FAF7F2;padding:80px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(184,134,11,.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(184,134,11,.08) 0%,transparent 50%)}
+.header-inner{position:relative;max-width:680px;margin:0 auto}
+.series-label{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-soft);margin-bottom:28px;opacity:0;animation:fu .8s ease forwards .2s}
+.header h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.4;margin-bottom:20px;opacity:0;animation:fu .8s ease forwards .4s}
+.header-sub{font-family:var(--sans);font-weight:300;font-size:15px;color:#BDB3A4;line-height:1.7;opacity:0;animation:fu .8s ease forwards .6s}
+.header-meta{margin-top:32px;font-size:12px;color:#8A7F72;letter-spacing:.5px;opacity:0;animation:fu .8s ease forwards .8s}
+.article{max-width:680px;margin:0 auto;padding:56px 24px 80px}
+.article p{margin-bottom:24px;font-size:17px;line-height:1.95;color:var(--text);word-break:keep-all}
+.article strong{font-weight:700;color:#1A1A1A}
+.drop-cap::first-letter{font-family:var(--serif);font-weight:900;font-size:3.6em;float:left;line-height:.8;margin-right:10px;margin-top:6px;color:var(--accent)}
+.sb{text-align:center;margin:48px 0;color:var(--accent-soft);font-size:18px;letter-spacing:12px;opacity:.6}
+.article h2{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--text);margin:56px 0 20px;line-height:1.5;padding-left:16px;border-left:3px solid var(--accent)}
+.pq{margin:48px -20px;padding:32px 28px;background:var(--accent-bg);border-radius:2px;border-left:4px solid var(--accent);font-family:var(--serif);font-size:18px;line-height:1.8;color:#3D3226}
+.pq em{font-style:normal;color:var(--accent);font-weight:700}
+.hl{background:linear-gradient(transparent 60%,rgba(184,134,11,.15) 60%);padding:0 2px}
+.hint{font-family:var(--serif);font-size:13.5px;color:var(--text-light);text-align:center;margin:8px 0 4px;font-style:italic}
+
+/* ─── Interactive ─── */
+.iz{margin:48px -12px;padding:28px 20px 20px;background:#fff;border:1px solid var(--border);border-radius:8px;position:relative;overflow:hidden}
+.iz .lbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:16px;text-align:center}
+.iz canvas{display:block;margin:0 auto;border-radius:4px;touch-action:none;background:rgba(250,247,242,.5)}
+.iz-btn{display:block;margin:16px auto 0;padding:11px 32px;font-family:var(--sans);font-size:14px;font-weight:500;color:#fff;background:var(--accent);border:none;border-radius:24px;cursor:pointer;letter-spacing:.5px;transition:all .3s}
+.iz-btn:hover{background:var(--accent-soft);transform:translateY(-1px)}
+.iz-btn:active{transform:scale(.97)}
+.iz-btn:disabled{opacity:.4;cursor:default;transform:none}
+.ct{text-align:center;font-family:var(--sans);font-size:13px;color:var(--text-light);margin-top:10px;letter-spacing:.3px;min-height:20px}
+.ct b{color:var(--accent);font-weight:700}
+/* phase flash overlay */
+.flash{position:absolute;inset:0;background:radial-gradient(circle,rgba(184,134,11,.25),transparent 70%);opacity:0;pointer-events:none;transition:opacity .3s}
+.flash.on{opacity:1}
+
+/* ─── Merge ─── */
+.ma{position:relative;width:100%;height:280px}
+.mn{position:absolute;width:74px;height:74px;border-radius:50%;background:var(--accent-bg);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:500;color:var(--text);text-align:center;cursor:pointer;transition:all .5s cubic-bezier(.4,0,.2,1);user-select:none;line-height:1.3;padding:4px}
+.mn:hover{border-color:var(--accent-soft);transform:scale(1.06)}
+.mn.on{border-color:var(--accent);background:linear-gradient(135deg,#FDF6E3,#F5E6C8);box-shadow:0 0 16px rgba(184,134,11,.35)}
+.mn.gone{opacity:0;transform:scale(0)!important;pointer-events:none}
+.mr{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,#B8860B,#D4A843);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px;font-weight:700;color:#fff;transition:all .9s cubic-bezier(.17,.67,.29,1.2);box-shadow:0 0 0 0 rgba(184,134,11,0)}
+.mr.show{transform:translate(-50%,-50%) scale(1);box-shadow:0 0 60px rgba(184,134,11,.5)}
+
+/* ─── Slider ─── */
+.sz{text-align:center}
+.sz input[type=range]{-webkit-appearance:none;width:100%;max-width:420px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--border) 0%,var(--accent) 100%);outline:none;margin:16px 0;opacity:.8}
+.sz input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:var(--accent);cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+.wc{position:relative;height:220px;margin:16px 0;overflow:hidden}
+.wc .w{position:absolute;font-family:var(--serif);font-weight:400;transition:all 1s cubic-bezier(.4,0,.2,1);white-space:nowrap;opacity:.7}
+.sr{font-family:var(--serif);font-size:16.5px;line-height:2;color:var(--text);text-align:left;padding:24px;background:var(--accent-bg);border-radius:4px;border-left:4px solid var(--accent);opacity:0;max-height:0;overflow:hidden;transition:all 1s cubic-bezier(.4,0,.2,1);margin-top:8px}
+.sr.show{opacity:1;max-height:200px;padding:24px}
+
+/* ─── Grid ─── */
+.gm{position:relative;width:100%;max-width:520px;height:340px;margin:0 auto}
+.gm svg{width:100%;height:100%}
+.gm-msg{text-align:center;font-family:var(--serif);font-size:14px;color:var(--accent);margin-top:12px;min-height:22px;transition:opacity .5s}
+
+/* ─── Crowd ─── */
+.cz{text-align:center}
+.cz input[type=range]{-webkit-appearance:none;width:100%;max-width:420px;height:6px;border-radius:3px;background:linear-gradient(90deg,var(--border) 0%,var(--red) 100%);outline:none;margin:16px 0}
+.cz input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;border-radius:50%;background:#C62828;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.2)}
+
+/* ─── Search compare ─── */
+.sc{display:flex;gap:12px;margin:16px 0}
+.sp{flex:1;border:1px solid var(--border);border-radius:6px;overflow:hidden;cursor:pointer;transition:all .3s}
+.sp.on{border-color:var(--accent);box-shadow:0 2px 12px rgba(184,134,11,.15)}
+.sph{padding:12px 16px;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:1px;text-align:center}
+.sp:first-child .sph{background:#f5f0ea;color:var(--text-light)}
+.sp:last-child .sph{background:linear-gradient(135deg,#1A1410,#2C2318);color:var(--accent-soft)}
+.spb{padding:16px;min-height:200px;font-size:13.5px;line-height:1.85;color:var(--text-light)}
+.spb .st{margin-bottom:8px;opacity:0;transform:translateY(6px);transition:all .5s ease}
+.spb .st.show{opacity:1;transform:translateY(0)}
+.spb .st.dim{opacity:.25}
+.spb .st strong{color:var(--text)}
+.spb .vd{margin-top:12px;padding:10px 14px;border-radius:4px;font-weight:500;font-size:13px;opacity:0;transition:all .6s}
+.spb .vd.show{opacity:1}
+.vd-l{background:#fce4ec;color:var(--red)}
+.vd-f{background:#e8f5e9;color:var(--green)}
+
+/* ─── Boxes ─── */
+.ib{margin:48px 0;padding:28px 24px;background:#fff;border:1px solid var(--border);border-radius:4px;position:relative}
+.ib::before{content:attr(data-label);position:absolute;top:-11px;left:20px;background:var(--bg);padding:0 10px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+.ib p{font-size:15.5px;line-height:1.85;margin-bottom:12px;color:var(--text-light)}
+.ib p:last-child{margin-bottom:0}
+.os{margin:56px 0 0;padding:28px 24px;background:#F1F8E9;line-height:1.9;border-left:4px solid var(--green);border-radius:2px}
+.os .olbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:12px}
+.os p{font-size:15.5px;line-height:1.85;color:#2C3E2C;margin-bottom:12px}
+.os p:last-child{margin-bottom:0}
+.tk{margin:56px 0 0;padding:32px 28px;background:linear-gradient(135deg,#1A1410,#2C2318);color:#FAF7F2;border-radius:4px;text-align:center}
+.tk .tlbl{font-size:11px;letter-spacing:3px;color:var(--accent-soft);font-weight:500;margin-bottom:16px}
+.tk p{font-family:var(--serif);font-size:18px;line-height:1.8;color:#E8E0D5}
+.tk strong{color:var(--accent-soft)}
+.footer{text-align:center;padding:40px 24px 60px;font-size:12px;color:#A89F94;letter-spacing:.5px}
+
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(184,134,11,0)}50%{box-shadow:0 0 20px 4px rgba(184,134,11,.3)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:600px){
+  .header{padding:60px 20px 50px}
+  .article{padding:40px 20px 60px}
+  .article p{font-size:16px}
+  .pq{margin:36px -10px;padding:24px 20px;font-size:16.5px}
+  .iz{margin:36px -8px;padding:20px 14px 16px}
+  .mn{width:60px;height:60px;font-size:10px}
+  .sc{flex-direction:column}
+  .ma{height:260px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="header-inner">
+  <div class="series-label">투자 에세이 · 특별강 VIII</div>
+  <h1>부분은 전체를<br>설명하지 못한다</h1>
+  <p class="header-sub">생명, 기계, 지혜의 창발 — 그리고 시장이라는 군중</p>
+  <div class="header-meta">특별강 V 심화 · 읽는 시간 약 16분 · 직접 체험하는 시간 포함</div>
+</div>
+</header>
+
+<article class="article">
+
+<!-- ═══ 도입 ═══ -->
+<p class="drop-cap fade-in">된장 한 숟갈은 짜다. 두부 한 모는 심심하다. 애호박은 그냥 채소고, 고추는 맵다. 이 네 가지를 접시에 나란히 놓으면 — 네 가지 재료가 놓인 접시일 뿐이다. 그런데 냄비에 넣고 물을 붓고 불을 켜면, 어느 순간 부엌에 냄새가 퍼진다. 그 냄새는 된장의 냄새도, 두부의 냄새도, 애호박의 냄새도 아니다. 넷이 합쳐져서 만들어진, 이전에 없던 무언가다.</p>
+<p class="fade-in">재료가 바뀐 것이 아니다. <span class="hl">연결이 바뀐 것이다.</span></p>
+<p class="fade-in">오늘은 이 현상이 부엌 밖에서도 — 생명에서, 기계에서, 당신의 머릿속에서, 그리고 투자의 세계에서 — 똑같이 일어나고 있다는 이야기를 하려 한다. 새로운 지식을 배우는 시간이 아니다. 이미 알고 있는 것들의 <strong>연결이 바뀌는</strong> 시간이다.</p>
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 1층: 생명 ═══ -->
+<h2 class="fade-in">밀가루 반죽이 살아 움직이는 순간</h2>
+<p class="fade-in">빵을 만들어 본 적이 있을까. 밀가루는 가루다. 물은 액체다. 이스트는 눈에 보이지도 않는 미세한 분말이다. 소금은 그냥 결정. 이 넷은 각자 아무 일도 하지 않는다.</p>
+<p class="fade-in">그런데 이것들을 섞고, 반죽하고, 따뜻한 곳에 두면 — 한 시간 뒤에 반죽이 부풀어 있다. 뚜껑을 열면 발효 냄새가 난다. 반죽이 <strong>살아 있는 것처럼</strong> 움직인다. 이스트가 밀가루의 당분을 먹고, 이산화탄소를 내뿜고, 그 가스가 글루텐 그물에 갇혀서 반죽을 밀어 올린다. 네 가지 재료 사이에 순환이 생긴 것이다. 먹고 → 내뿜고 → 잡히고 → 부풀고. 이 순환 자체가, 밀가루에도 물에도 이스트에도 소금에도 없던 능력이다.</p>
+
+<p class="fade-in">이제 시간을 아주 멀리 되감아 보자. 38억 년 전 지구로.</p>
+
+<p class="fade-in">그때 지구는 지금과 완전히 다른 세상이었다. 하늘에는 산소가 없었다. 바다는 철분이 녹아들어 녹갈색이었다. 육지에는 생명은커녕 풀 한 포기 없었다. 대신 바다 깊은 곳, 해저 화산이 뿜어내는 뜨거운 물이 솟아오르는 곳 — <strong>열수구(hydrothermal vent)</strong>라는 틈이 있었다. 수백 도의 뜨거운 물이 바닷물과 만나는 경계에서, 미네랄과 에너지가 끊임없이 쏟아져 나왔다.</p>
+
+<p class="fade-in">이 뜨거운 물속에, 아주 단순한 분자들이 떠다니고 있었다. 아미노산 — 단백질의 조각. 지방산 — 기름기 있는 긴 사슬. 뉴클레오타이드 — 훗날 DNA가 될 작은 조각. 이것들은 각자 그냥 <strong>화학물질</strong>이었다. 아미노산은 아미노산일 뿐이고, 지방산은 지방산일 뿐이었다. 냄비에 넣기 전의 된장과 두부처럼, 각자 아무 일도 하지 않았다.</p>
+
+<p class="fade-in">그런데 열수구의 바위에는 작은 구멍들이 있었다. 수없이 많은, 머리카락보다 가는 미세한 틈. 뜨거운 물이 이 틈을 통과하면서, 분자들이 <strong>좁은 공간에 밀려 들어갔다.</strong> 넓은 바다에서 멀리 떨어져 있던 분자들이, 이 작은 방 안에서 갑자기 이웃이 되었다. 부딪히기 시작했다. 대부분의 충돌은 아무 결과도 낳지 않았다. 그런데 가끔 — 아주 가끔 — 한 분자가 다른 분자와 결합하면서 <strong>새로운 분자</strong>를 만들어 냈다.</p>
+
+<p class="fade-in">여기까지는 그냥 화학이다. 그런데 놀라운 일이 일어났다. 어느 순간, 분자 A가 분자 B를 만드는 것을 도왔다. 그리고 그 B가 분자 C를 만드는 것을 도왔다. 그리고 — 여기가 핵심이다 — <strong>그 C가 다시 A를 만드는 것을 도왔다.</strong> A → B → C → A. 순환이 생긴 것이다. 빵 반죽에서 이스트가 당분을 먹고 → 가스를 내뿜고 → 글루텐이 잡고 → 반죽이 부풀듯이.</p>
+
+<p class="fade-in">이 순환은 스스로를 유지했다. 바깥에서 재료(단순한 분자)가 들어오면, 순환이 그것을 처리해서 자기 자신을 다시 만들었다. 먹이가 있는 한, 멈추지 않았다.</p>
+
+<p class="fade-in">그런데 여기에 치명적인 문제가 있었다. 이 순환은 <strong>기억이 없었다.</strong> A → B → C → A가 돌아가는 동안, 어떤 순서로 만들어야 하는지, 어떤 비율이 최적인지를 기록하는 곳이 어디에도 없었다. 그래서 순환은 매번 처음부터 우연에 의존해야 했다. 운이 좋으면 계속 돌아가고, 운이 나쁘면 그냥 멈췄다. 설계도 없이 매번 새로 짓는 집과 같았다.</p>
+
+<p class="fade-in">이때, 뜨거운 물속에서 떠다니던 뉴클레오타이드들에게 신비로운 일이 일어나고 있었다.</p>
+
+<p class="fade-in">뉴클레오타이드는 작은 분자다 — 당(리보스)에 염기 하나가 붙고, 인산이 꼬리처럼 달려 있는 구조. 네 종류가 있었다. A(아데닌), U(유라실), G(구아닌), C(시토신). 이 넷은 각자 아무 의미도 없는 화학물질이었다. 그런데 열수구의 바위틈 — 뜨거운 물과 차가운 물이 반복적으로 오가는 그 경계에서 — 이 뉴클레오타이드들이 한 줄로 연결되기 시작했다. 인산 꼬리가 옆 뉴클레오타이드의 당에 붙고, 그 당의 인산이 또 다음 것에 붙고. <strong>사슬이 만들어진 것이다.</strong></p>
+
+<p class="fade-in">이것이 <strong>RNA</strong>다. 생명의 최초의 기억 장치.</p>
+
+<p class="fade-in">그런데 RNA는 보통의 사슬이 아니었다. 여기서 정말로 놀라운 일이 벌어진다. 이 사슬은 <strong>스스로 접혔다.</strong> A·U·G·C 네 글자가 특정 순서로 나열되면, 사슬이 자기 자신에게 달라붙으면서 복잡한 3차원 모양을 만들었다. 마치 종이학을 접듯이 — 같은 종이인데, 접는 방식에 따라 완전히 다른 형태가 되는 것처럼.</p>
+
+<p class="fade-in">그리고 이 접힌 모양이, <strong>화학 반응을 일으키는 능력</strong>을 가지고 있었다. 과학자들은 이것을 '리보자임(ribozyme)'이라고 부른다 — RNA로 만들어진 효소. 1980년대에 토머스 체크와 시드니 알트먼이 이것을 발견했을 때, 학계는 충격에 빠졌다. 그때까지 모든 효소는 단백질이라고 알려져 있었기 때문이다. RNA가 정보를 저장하면서 <strong>동시에</strong> 화학 반응을 촉진한다? 이것은 닭이 먼저냐 달걀이 먼저냐의 수수께끼를 풀어 버린 것이었다. <span class="hl">RNA는 닭이면서 동시에 달걀이었다.</span></p>
+
+<p class="fade-in">더 놀라운 발견이 있었다. 특정한 접힘 구조를 가진 RNA는 — 자기 자신을 <strong>복사</strong>할 수 있었다. A·U·G·C 순서를 읽고, 그 순서대로 새로운 RNA를 만들어 내는 것이다. 완벽하지는 않았다. 복사할 때 오류가 생겼다. 그런데 바로 이 오류가 결정적이었다 — <strong>변이(variation)</strong>가 생긴 것이다. 어떤 변이는 원래보다 더 잘 접히고, 더 효율적으로 반응을 촉진했다. 그런 RNA는 더 많이 복사되었다. 잘 못 접히는 변이는 사라졌다.</p>
+
+<p class="fade-in"><strong>이것이 최초의 진화다.</strong> 38억 년 전 바위틈 안에서, 다윈의 자연선택이 — 생명이 탄생하기도 전에 — 이미 작동하고 있었다.</p>
+
+<p class="fade-in">과학자들은 이 시기를 <strong>「RNA 세계(RNA World)」</strong>라고 부른다. 오늘날 모든 생명체의 세포 안에 그 흔적이 남아 있다. 당신의 세포 안에서 단백질을 만드는 공장인 리보솜(ribosome) — 그것의 핵심 부품은 단백질이 아니라 <strong>RNA</strong>다. 38억 년이 지났는데도 교체되지 않은 것이다. 너무 근본적이어서 바꿀 수 없었던, 생명의 원본 설계.</p>
+
+<p class="fade-in">그런데 RNA에는 약점이 있었다. 불안정했다. 쉽게 끊어졌다. 열에 약했다 — 아이러니하게도, 자신이 태어난 뜨거운 열수구 환경이 자신을 파괴하기도 했다. 기억을 담고 있지만 그 기억이 자주 손상되는 도서관과 같았다.</p>
+
+<p class="fade-in">그래서 어느 시점에서 — 아마도 수억 년에 걸쳐 — RNA는 자신의 정보를 <strong>더 안정적인 사본</strong>에 옮겨 적기 시작했다. 리보스(RNA의 당) 대신 디옥시리보스(산소가 하나 빠진 당)를 사용한 사슬. 우라실(U) 대신 티민(T)을 사용한 글자. 그리고 한 줄이 아닌 <strong>두 줄이 서로 감겨 있는 이중 나선</strong> — 한쪽이 손상되어도 다른 한쪽에서 복구할 수 있는 구조.</p>
+
+<p class="fade-in"><strong>이것이 DNA다.</strong> RNA가 만들어 낸, 더 단단한 기억 장치. 생명의 하드디스크.</p>
+
+<p class="fade-in">RNA는 자기의 기억을 DNA에 넘기고, 자기는 메신저 역할로 물러났다. 그리고 화학 반응을 촉진하는 일은 점점 더 정교한 단백질에게 넘겨졌다. RNA → DNA → 단백질. 이 순서가 지금 당신 몸 안 모든 세포에서 매 순간 일어나고 있는 <strong>「센트럴 도그마(Central Dogma)」</strong>다. 38억 년 전 바위틈에서 시작된 분업 체계가, 한 번도 중단되지 않고 지금까지 이어지고 있는 것이다.</p>
+
+<p class="fade-in">이제 마지막 한 단계만 남았다. 지방산은 기름기가 있다 — 물을 싫어하는 성질이 있다. 이 지방산들이 물속에서 자연스럽게 하는 일이 있다. <strong>서로 모여서 둥근 막을 형성한다.</strong> 비눗방울이 저절로 둥글어지는 것과 같은 원리다. 이 지방산 방울이, 순환하는 분자들과 RNA와 단백질을 <strong>안에 가두었다.</strong></p>
+
+<p class="fade-in">이 순간을 상상해 보자. 38억 년 전 깊은 바닷속, 뜨거운 물이 솟아오르는 바위틈에서, 지방산 방울 하나가 만들어졌다. 그 안에 순환이 돌고 있고, RNA가 설계도를 보관하고 있고, 단백질이 일을 하고 있다. 바깥에서 작은 분자가 막을 통해 들어오면, 이 시스템이 자동으로 처리해서 자기 자신을 유지한다. 방울은 커지다가 어느 지점에서 둘로 갈라진다 — 두 개의 방울이 되고, 각각에서 순환이 계속되고, <strong>RNA가 설계도를 복사해서 양쪽에 나눠 준다.</strong></p>
+
+<p class="fade-in"><strong>이것이 최초의 세포다.</strong></p>
+
+<p class="fade-in">아미노산은 변하지 않았다. 뉴클레오타이드도 변하지 않았다. 지방산도 변하지 않았다. 어떤 분자도 혼자서는 "살아 있지" 않았다. 그런데 이것들이 — 순환하고, 기억하고, 복사하고, 감싸이는 — 특정한 방식으로 연결된 순간, 화학이 생물학이 되었다. <span class="hl">"살아 있음"이라는, 어떤 분자에도 없던 능력이 전체에서 나타난 것이다.</span></p>
+
+<p class="fade-in">당신 몸 안의 37조 개 세포가, 지금 이 순간에도 이것을 하고 있다. 38억 년 전 바닷속에서 시작된 그 순환이, 한 번도 멈추지 않고 지금 당신의 심장을 뛰게 하고, 눈으로 이 글자를 읽게 하고 있다. 그리고 당신의 세포 안 리보솜의 핵심 부품은 아직도 RNA다 — 38억 년 전 그 최초의 설계가, <strong>한 번도 교체되지 않고</strong> 지금 당신 안에서 작동하고 있다.</p>
+<p class="hint fade-in">아래 화면에서 그 과정을 축소판으로 직접 만들어 보자. 「연결하기」를 천천히, 여러 번 눌러 보세요.</p>
+
+<!-- ★ ① 순환 시뮬레이션 -->
+<div class="iz fade-in" id="z1">
+  <div class="lbl">체험 ① · 연결이 만드는 순환</div>
+  <canvas id="c1" width="600" height="340"></canvas>
+  <button class="iz-btn" id="b1">연결하기</button>
+  <div class="ct" id="ct1">연결 <b id="n1">0</b>개 — <span id="s1">흩어진 분자들</span></div>
+  <div class="flash" id="f1"></div>
+</div>
+
+<p class="fade-in">방금 당신이 만든 것이, 38억 년 전 바닷속 열수구의 작은 바위틈에서 일어난 일이다. 흩어진 분자들 사이에 연결이 생기고, 연결이 순환이 되고, RNA가 그 순환에 기억을 부여하고, 막이 전부를 감싸는 순간 — 화학은 생물학이 되었다. 그리고 그 설계도는 38억 년이 지난 지금도, 당신 안에서 <strong>한 글자도 지워지지 않은 채</strong> 작동하고 있다.</p>
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 2층: 지식 ═══ -->
+<h2 class="fade-in">운전을 배우던 날을 떠올려 보자</h2>
+<p class="fade-in">처음 운전석에 앉았을 때를 기억하는가. 사이드미러를 확인하고, 깜빡이를 켜고, 브레이크를 밟고, 핸들을 돌리고, 가속 페달을 밟는다. 다섯 가지 동작이 전부 <strong>따로따로</strong>였다. 미러를 보는 동안 핸들이 틀어지고, 깜빡이를 켜다가 브레이크를 놓치고. 머릿속이 가득 차 있는데 차는 제대로 안 움직였다.</p>
+<p class="fade-in">그런데 한 달이 지나면? 음악을 들으며, 옆사람과 이야기하면서, 끼어드는 차를 피하는 판단을 0.3초 만에 내린다. 다섯 가지 동작이 언제부터인지 <strong>하나로 합쳐졌다.</strong> 각각의 기억이 늘어난 게 아니다. <span class="hl">연결이 생긴 것이다.</span></p>
+<p class="hint fade-in">아래 동그라미를 하나씩 눌러 보세요. 연결이 쌓여가는 과정을 지켜보세요.</p>
+
+<!-- ★ ② 따로→하나 (운전) -->
+<div class="iz fade-in" id="z2a">
+  <div class="lbl">체험 ② · 다섯 동작이 하나가 되는 순간</div>
+  <div class="ma" id="ma1">
+    <svg id="sv1" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></svg>
+    <div class="mn" data-g="1" style="top:20px;left:8%">미러<br>확인</div>
+    <div class="mn" data-g="1" style="top:12px;right:12%">깜빡이</div>
+    <div class="mn" data-g="1" style="top:55%;left:3%">브레이크</div>
+    <div class="mn" data-g="1" style="bottom:20px;left:36%">핸들</div>
+    <div class="mn" data-g="1" style="top:48%;right:5%">가속</div>
+    <div class="mr" id="mr1">운전</div>
+  </div>
+  <div class="ct" id="ct2a">연결 <b id="n2a">0</b>/5</div>
+  <div class="flash" id="f2a"></div>
+</div>
+
+<p class="fade-in">같은 구조가 당신의 학습에서도 일어나고 있다.</p>
+
+<!-- ★ ②-b 따로→하나 (투자) -->
+<div class="iz fade-in" id="z2b">
+  <div class="lbl">체험 ②-b · 당신의 지식이 하나가 되는 순간</div>
+  <div class="ma" id="ma2">
+    <svg id="sv2" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none"></svg>
+    <div class="mn" data-g="2" style="top:15px;left:5%">자본<br>주의</div>
+    <div class="mn" data-g="2" style="top:8px;right:8%">레버<br>리지</div>
+    <div class="mn" data-g="2" style="top:58%;left:1%">GPU</div>
+    <div class="mn" data-g="2" style="bottom:15px;left:38%">인플레<br>이션</div>
+    <div class="mn" data-g="2" style="top:45%;right:3%">금리</div>
+    <div class="mr" id="mr2">투자의 눈</div>
+  </div>
+  <div class="ct" id="ct2b">연결 <b id="n2b">0</b>/5</div>
+  <div class="flash" id="f2b"></div>
+</div>
+
+<p class="fade-in"><strong>뇌과학자 칼 프리스턴</strong>은 이것을 이렇게 설명한다 — 뇌는 예측 기계다. 격자가 촘촘할수록 새 정보를 흡수하는 속도가 빨라진다. 같은 뉴스를 읽어도 다른 것이 보이는 이유는, <strong>연결의 격자가 다르기 때문이다.</strong></p>
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 2.5층: LLM ═══ -->
+<h2 class="fade-in">이 글을 읽고 있는 AI는 어떻게 똑똑해졌을까</h2>
+<p class="fade-in">혹시 AI 챗봇에게 질문을 해 본 적이 있을까. 간단한 것이라도 좋다 — 레시피를 물어봤거나, 번역을 시켰거나, 여행 계획을 세워 달라고 했거나. 그때 돌아온 답이 <strong>꽤 그럴듯해서</strong> 놀란 적이 있다면, 지금 이야기가 더 재미있을 것이다.</p>
+<p class="fade-in">그 AI는 어떻게 그런 답을 할 수 있었을까? 학교에 다닌 것이 아니다. 누군가 '이렇게 대답해'라고 가르친 것도 아니다. AI가 한 일은 단 하나 — <strong>글을 읽은 것이다.</strong> 인터넷에 있는 수천억 개의 문장을. 하나하나는 그냥 문장이다.</p>
+<p class="fade-in">재미있는 일은 그다음에 일어났다. 문장의 수가 충분히 많아지고, 문장들 사이의 연결이 충분히 촘촘해지자 — AI가 <strong>아무도 가르치지 않은 것을 하기 시작했다.</strong> 수학 문제를 풀고, 시를 쓰고, 코드를 짜기 시작한 것이다. 2020년에 만들어진 AI는 간단한 수학도 못 풀었다. 2023년에 나온 AI는 풀었다. 달라진 것은 '수학을 가르쳤느냐'가 아니라, <span class="hl">연결의 밀도가 어떤 지점을 넘었느냐</span>다.</p>
+<p class="hint fade-in">아래 슬라이더를 아주 천천히 오른쪽으로 밀어 보세요.</p>
+
+<!-- ★ ③ 임계점 슬라이더 -->
+<div class="iz fade-in sz" id="z3">
+  <div class="lbl">체험 ③ · 연결 밀도가 임계점을 넘는 순간</div>
+  <input type="range" id="ds" min="0" max="100" value="0">
+  <div class="ct">연결 밀도 <b id="dv">0</b>% — <span id="dp">흩어진 단어들</span></div>
+  <div class="wc" id="wc"></div>
+  <div class="sr" id="sr">가을 햇살 아래, 할머니 시골집 마당의 사과나무에서 빨간 사과를 바구니에 담았다. 한 입 베어 물면 아삭한 소리와 함께 향기가 퍼졌다. 그 추억은 지금도 사과를 볼 때마다 돌아온다.</div>
+  <div class="flash" id="f3"></div>
+</div>
+
+<p class="fade-in">방금 슬라이더로 한 것을, AI는 수천억 개의 문장으로 한다. 빵 반죽이 부풀어 오르듯, 운전이 몸에 붙듯, 문장들의 연결이 어느 순간 <strong>추론</strong>이 된 것이다.</p>
+<p class="fade-in">그리고 이 연결을 물리적으로 가능하게 하는 것이 13강에서 배운 하드웨어다 — 엔비디아의 GPU, SK하이닉스의 HBM, TSMC의 패키징. AI 기업들이 올해에만 약 280조 원을 데이터센터에 쏟는 이유는, <strong>이 연결의 밀도를 한 단계 더 끌어올리기 위해서다.</strong></p>
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 3층: 격자 ═══ -->
+<h2 class="fade-in">당신 안에서 이미 자라고 있는 것</h2>
+<p class="fade-in">여기서 잠깐 멈추고, 자신에게 물어보자. 1강을 읽을 때의 나와, 지금 이 에세이를 읽고 있는 나는 같은 사람일까?</p>
+<p class="fade-in">1강에서 '자본주의'를 읽었을 때, 그건 하나의 사실이었다. 7강에서 '레버리지'를 읽었을 때, 그것도 하나의 사실이었다. 13강에서 GPU를 읽었을 때, 역시 하나의 사실. 하나하나는 따로 떨어진 화분이었다.</p>
+<p class="fade-in">그런데 지금 '280조 원'이라는 문장을 보았을 때 — 13강의 GPU가 떠올랐을 수도, 특별강 III의 불확실한 시기가 스쳤을 수도, 16강의 경제지표가 겹쳤을 수도 있다. 만약 그런 일이 <strong>조금이라도</strong> 일어났다면 — 바로 그것이다.</p>
+<p class="hint fade-in">읽은 적 있는 강의를 하나씩 눌러 보세요. 처음에는 느리지만 — 계속 눌러 보세요. 무언가가 달라집니다.</p>
+
+<!-- ★ ④ 나의 격자 맵 -->
+<div class="iz fade-in" id="z4">
+  <div class="lbl">체험 ④ · 나의 격자를 눈으로 보는 순간</div>
+  <div class="gm"><svg id="gs" viewBox="0 0 520 340"></svg></div>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding:0 8px">
+    <div class="ct" style="margin:0">클릭 <b id="gClk">0</b>회</div>
+    <div class="ct" style="margin:0">연결 <b id="gConn">0</b>개</div>
+    <div class="ct" style="margin:0">흡수 효율 <b id="gEff" style="color:var(--green)">—</b></div>
+  </div>
+  <div class="gm-msg" id="gm"></div>
+  <div class="flash" id="f4"></div>
+</div>
+
+<p class="fade-in">방금 무엇을 느꼈는가? 처음 세 번의 클릭은 연결이 한두 개밖에 생기지 않았다. 느리고 뜸했다. 그런데 일곱 번째, 여덟 번째 클릭부터는? <strong>한 번의 클릭이 만드는 연결의 수가 눈에 띄게 늘어났을 것이다.</strong> 열 번째를 넘기면 격자가 스스로 인근의 노드를 끌어당기기 시작했을 수도 있다. 같은 한 번의 클릭인데, 격자가 촘촘해질수록 결과가 폭발적으로 커진다. 이것이 바로 학습의 복리다 — <span class="hl">격자가 일정 밀도를 넘으면, 새 지식을 흡수하는 데 드는 노력이 줄어든다.</span></p>
+
+<p class="fade-in">과학자들은 이것을 <strong>「창발(emergence)」</strong>이라고 부른다 — 부분에는 없던 성질이, 부분들이 연결되면서 전체에서 나타나는 현상. 그리고 찰리 멍거가 「격자형 사고」라고 부른 것이 바로, <span class="hl">인간이 의도적으로 만드는 창발</span>이다.</p>
+
+<div class="pq fade-in">
+빵의 창발은 자연이 알아서 한다. AI의 창발은 공학자가 설계한다. 그런데 격자형 사고의 창발은 <em>당신이 직접 만드는 것이다.</em> 가장 느리지만 가장 강력한 창발이다. 한 번 형성된 격자는, 새 정보가 들어와도 자동으로 올바른 자리에 배치하는 능력을 갖기 때문이다.
+</div>
+
+<p class="fade-in" style="font-family:var(--serif);font-size:15px;color:var(--text-light);text-align:right;margin:36px 0 8px;line-height:1.85;">방금 무언가 아찔한 느낌이 스쳐지나갔다면 —<br>그것 자체가 창발이다.<br>이 에세이의 첫 문장을 읽던 당신과<br>지금 이 문장을 읽고 있는 당신은<br>같은 사람이 아니다.<br>연결이 바뀌었으니까.</p>
+<p class="fade-in" style="font-family:var(--sans);font-size:12px;color:#A89F94;text-align:right;letter-spacing:.5px;margin-bottom:0;line-height:1.7;">From 강성구 to 강보미<br>'26. 4. 27 점심시간의 대화에서 떠올린 주제를 바탕으로</p>
+
+<div class="sb fade-in">· · ·</div>
+<h2 class="fade-in">이 원리는 얼마나 깊이까지 내려갈까</h2>
+<p class="fade-in">동전을 던져 보자. 한 번 던지면 앞면이 나올지 뒷면이 나올지 알 수 없다. 확률은 반반이다. 그런데 동전을 1만 번 던지면? 앞면이 대략 5,000번 나온다는 것을 <strong>확신</strong>할 수 있다. 한 번의 결과는 확률이지만, 충분히 많이 모이면 확률이 <strong>법칙</strong>이 된다.</p>
+<p class="fade-in">물리학자들이 발견한 것도 같은 구조다. 원자 하나는 여러 상태가 동시에 겹쳐 있는 확률로 존재한다 — 여기에 있으면서 동시에 저기에 있다. 상식으로는 말이 안 되지만, 양자의 세계에서는 이것이 현실이다. 그런데 이 원자가 주변의 수없이 많은 원자들과 부딪히고 연결되면, 겹쳐 있던 상태가 무너지고 <strong>하나의 확정된 위치</strong>가 나타난다. 확률이 사건이 된다.</p>
+<p class="fade-in">동전 한 번은 예측 불가능하지만, 만 번이 모이면 법칙이 되듯이. 양자 하나는 확률이지만, 10의 23승 개가 모이면 <strong>우리가 사는 단단한 현실</strong>이 된다. 당신이 지금 앉아 있는 의자, 들고 있는 스마트폰, 마시고 있는 커피 — 전부 확률이 충분히 모여서 현실이 된 것이다.</p>
+<p class="fade-in">노벨 물리학상 수상자 필립 앤더슨은 이것을 한 문장으로 정리했다 — <strong>"많다는 것은 다르다는 것이다(More is different)."</strong></p>
+<p class="fade-in">이 문장이 오늘 에세이의 가장 깊은 바닥이다. 빵도, 생명도, AI도, 당신의 격자도, 그리고 <span class="hl">당신이 앉아 있는 의자도</span> — 전부 같은 원리 위에 서 있다.</p>
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 경고: 군중 ═══ -->
+<h2 class="fade-in">같은 원리, 정반대의 결과</h2>
+<p class="fade-in">여기서 잠깐 멈추자. 방금까지 우리는 연결이 임계점을 넘으면 아름다운 것이 탄생하는 이야기를 했다. 생명이, 지능이, 지혜가, 심지어 현실 세계 자체가. 그런데 같은 원리가 <strong>정반대의 결과</strong>를 만들 수도 있다.</p>
+<p class="fade-in">사람이 모인 공간을 떠올려 보자. 콘서트, 축제, 불꽃놀이. 사람이 적을 때는 각자 걷고, 멈추고, 방향을 바꿀 수 있다. 개인의 판단이 작동하는 상태다. 그런데 밀도가 올라간다. 한 평에 4명, 5명, 6명...</p>
+<p class="fade-in">물리학자 디르크 헬빙이 발견한 것은 놀라운 사실이다 — <strong>한 평에 6명을 넘는 순간, 개인의 의지가 사라진다.</strong> 팔을 올릴 수도, 방향을 바꿀 수도, 멈출 수도 없다. 이 순간부터 군중은 사람들의 모임이 아니라 하나의 유체가 된다.</p>
+<p class="hint fade-in">아래 슬라이더로 밀도를 직접 올려 보세요.</p>
+
+<!-- ★ ⑤ 군중 밀도 -->
+<div class="iz fade-in cz" id="z5">
+  <div class="lbl">체험 ⑤ · 밀도가 임계점을 넘으면</div>
+  <canvas id="c5" width="600" height="300"></canvas>
+  <input type="range" id="cs" min="0" max="100" value="8">
+  <div class="ct">밀도 <b id="cd">낮음</b> — <span id="css">각자 자유롭게 걷는다</span></div>
+  <div class="flash" id="f5"></div>
+</div>
+
+<p class="fade-in"><strong>시장도 같다.</strong> 개별 투자자는 각자 분석하고 판단한다. 그런데 공포나 탐욕의 밀도가 임계점을 넘으면 — 2008년 금융위기, 2020년 3월 — 시장 전체가 하나의 유체가 된다. 매도가 매도를 부르고, 한 사람이 멈추려 해도 흐름에 밀린다.</p>
+<p class="fade-in">이때 <strong>격자를 가진 사람</strong>은 무엇이 다른가? 유체 안에서도 자기 판단을 유지할 수 있다. 격자라는 내부 구조가, 외부 압력에 저항하는 골격 역할을 한다. 특별강 V에서 '지지대'라고 불렀던 것이, 바로 이 순간을 위한 것이다.</p>
+<p class="fade-in">창발은 좋은 것만이 아니다. <span class="hl">어떤 연결이, 어떤 조건에서 임계점을 넘느냐</span>에 따라 생명이 되기도 하고 재난이 되기도 한다. 그래서 연결의 질이 중요하고, 그래서 격자의 구조가 중요하다.</p>
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 4층: 외주화 ═══ -->
+<h2 class="fade-in">레시피 책은 버려도 되는가</h2>
+<p class="fade-in">20년 경력의 요리사에게 스마트폰을 주면, 그는 특정 향신료의 비율을 검색한다. 어떤 맛이 어떤 맛과 어울리는지는 이미 머릿속에 있으므로, 세부 수치만 확인하면 된다. 검색 한 번으로 완벽한 요리가 나온다.</p>
+<p class="fade-in">요리를 한 번도 안 해 본 사람에게 같은 스마트폰을 주면? 레시피를 검색하고 그대로 따라한다. 그런데 <strong>재료가 하나 빠지면 어떻게 해야 할지 모른다.</strong> 매번 새로 검색해야 한다. 같은 스마트폰, 같은 검색 엔진, 완전히 다른 결과.</p>
+<p class="hint fade-in">각 패널을 눌러 비교해 보세요.</p>
+
+<!-- ★ ⑥ 같은 검색 다른 결과 -->
+<div class="iz fade-in" id="z6">
+  <div class="lbl">체험 ⑥ · 같은 숫자, 다른 결과</div>
+  <div style="text-align:center;padding:10px 16px;background:var(--accent-bg);border-radius:4px;margin-bottom:16px;font-size:14px">검색: <strong>「삼성전자 PER 12배」</strong></div>
+  <div class="sc">
+    <div class="sp" id="pA"><div class="sph">격자 없이 보면</div><div class="spb" id="pAb">
+      <div class="st">PER 12배... 높은 건가? 낮은 건가?</div>
+      <div class="st">→ 다시 검색: "반도체 평균 PER"</div>
+      <div class="st">→ 다시 검색: "삼성전자 전망"</div>
+      <div class="st">→ 다시 검색: "지금 사도 되나?"</div>
+      <div class="st dim">→ 다시 검색: "전문가 추천..."</div>
+      <div class="vd vd-l">답을 모른다. 검색만 반복.</div>
+    </div></div>
+    <div class="sp" id="pB"><div class="sph">격자 위에서 보면</div><div class="spb" id="pBb">
+      <div class="st"><strong>PER 12배</strong> — 반도체 사이클 어디? <small style="color:var(--accent)">(17~19강)</small></div>
+      <div class="st">→ AI CapEx 지속? <small style="color:var(--accent)">(13강)</small></div>
+      <div class="st">→ 컨센서스 대비 어닝? <small style="color:var(--accent)">(특별강IV)</small></div>
+      <div class="st">→ 경기 둔화 시 방어력? <small style="color:var(--accent)">(16강)</small></div>
+      <div class="st"><strong>→ 사이클 초입 + AI 수요 = PER 12배는 낮다</strong></div>
+      <div class="vd vd-f">판단 도출. 검색은 한 번이면 충분.</div>
+    </div></div>
+  </div>
+</div>
+
+<p class="fade-in"><strong>순서가 전부다.</strong> 먼저 격자를 만들고, 그다음에 세부사항을 검색에 맡겨라. 이 순서를 뒤집으면 — 줄기 없는 잎사귀만 쌓이고, 바람이 불면 흩날린다.</p>
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 중급전환질문 ═══ -->
+<h2 class="fade-in">한 단계 더 깊이 — 중급 전환 질문</h2>
+<p class="fade-in"><strong>"AI가 더 커지면 더 똑똑해진다는 법칙이 있다. 그렇다면 AI에 가장 많은 돈을 쏟는 기업의 주가가 항상 가장 많이 올라야 하지 않을까? 그런데 2024~2025년, AI 투자 1위 마이크로소프트의 주가 수익률은 엔비디아의 1/3에도 못 미쳤다. 왜일까?"</strong></p>
+<p class="fade-in" style="color:var(--text-light);font-size:15.5px">해설 — 과학적 진실이 곧바로 투자 수익이 되지 않는다. AI 인프라에 가장 많은 돈을 쏟는 기업의 수익은 긴 시차를 거쳐 나타난다. 반면 그 인프라를 공급하는 기업의 수익은 즉시 나타난다. 13강에서 "골드러시에서 곡괭이 파는 회사가 먼저 번다"고 했던 것이 바로 이것이다. 이론과 현실의 괴리를 읽는 것 — 이것이 격자형 사고가 하는 일이다.</p>
+
+<div class="ib fade-in" data-label="2026년, 창발의 물리적 증거">
+  <p>올해 1분기 미국 데이터센터 임대가 <strong>9.4GW</strong>를 기록했다 — 전년 대비 5배. 아마존 CEO 제시는 올해 약 <strong>2,000억 달러(약 280조 원)</strong>의 투자를 확정하면서 "감이 아니라 고객 약속 기반"이라고 못 박았다.</p>
+  <p>이 숫자는 추상적인 '미래 전망'이 아니라, <strong>지금 땅 위에 세워지고 있는 물리적 건물</strong>이다. AI의 창발적 임계점을 한 단계 더 끌어올리기 위한 투자가, 숫자로 보이고 있다.</p>
+</div>
+
+<div class="os fade-in">
+  <div class="olbl">한 걸음 더</div>
+  <p>오늘 에세이의 모든 층을 관통하는 한 문장 — <strong>양이 아니라 연결이 임계점을 결정한다.</strong></p>
+  <p>당신이 1강부터 지금까지 읽어온 것도 같은 구조다. 그 격자가, 시장이 유체가 되는 순간에도 당신의 판단을 지켜줄 골격이 될 것이다. 그리고 그 원리는, 의자를 의자이게 하는 양자의 바닥에서부터, 우주의 꼭대기까지 이어져 있다.</p>
+</div>
+
+<div class="tk fade-in">
+  <div class="tlbl">오늘의 한 줄</div>
+  <p>확률은 모이면 현실이 되고,<br>
+  분자는 모이면 생명이 되고,<br>
+  단어는 모이면 지능이 되고,<br>
+  지식은 모이면 <strong>지혜</strong>가 된다.<br>
+  같은 원리가 군중이 되면 <strong>재난</strong>이 된다.<br><br>
+  <span style="font-size:14px;color:#8A7F72">앤더슨: "많다는 것은 다르다는 것이다."<br>멍거: "경험을 격자 위에 걸어놓아야 사용 가능한 지식이 된다."</span></p>
+</div>
+
+</article>
+
+<footer class="footer">
+  <p>투자 에세이 시리즈 · 특별강 VIII<br>
+  <span style="opacity:.6">생명, 기계, 지혜의 창발 · 특별강 V 심화</span></p>
+</footer>
+
+<script>
+/* ═══ Observer ═══ */
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')})},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+
+function flash(id,dur){const e=document.getElementById(id);e.classList.add('on');setTimeout(()=>e.classList.remove('on'),dur||600)}
+
+/* ═══ ① 순환 시뮬레이션 ═══ */
+(function(){
+const cv=document.getElementById('c1'),ctx=cv.getContext('2d');
+let dpr=Math.min(window.devicePixelRatio||1,2);
+function rs(){let w=Math.min(cv.parentElement.clientWidth-40,600),h=w*340/600;cv.style.width=w+'px';cv.style.height=h+'px';cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+rs();window.addEventListener('resize',rs);
+
+const cols=['#B8860B','#D4A843','#8B7355','#A0522D','#CD853F','#DAA520','#C49B3B','#9A7B4F'];
+const N=22;let ps=[],conns=[],cc=0,phase=0,phaseT=0;
+for(let i=0;i<N;i++){let cw=parseInt(cv.style.width),ch=parseInt(cv.style.height);ps.push({x:Math.random()*cw*.85+cw*.075,y:Math.random()*ch*.85+ch*.075,vx:(Math.random()-.5)*.8,vy:(Math.random()-.5)*.8,r:4.5+Math.random()*2.5,c:cols[i%cols.length],a:Math.random()*Math.PI*2,glow:0})}
+
+// Animated line state
+let animLines=[];
+
+function addOne(){
+  if(cc>=15)return;
+  let best=null,bestD=9999;
+  for(let i=0;i<N;i++)for(let j=i+1;j<N;j++){
+    if(conns.some(c=>c[0]===i&&c[1]===j))continue;
+    let dx=ps[i].x-ps[j].x,dy=ps[i].y-ps[j].y,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<bestD){bestD=d;best=[i,j]}
+  }
+  if(!best)return;
+  conns.push(best);cc++;
+  ps[best[0]].glow=1;ps[best[1]].glow=1;
+  animLines.push({a:best[0],b:best[1],prog:0,speed:.025});
+  document.getElementById('n1').textContent=cc;
+  if(cc<5)document.getElementById('s1').textContent='연결이 생기기 시작한다';
+  else if(cc<10)document.getElementById('s1').textContent='구조가 보이기 시작한다';
+  else if(cc<13)document.getElementById('s1').textContent='밀도가 높아지고 있다';
+  else{
+    document.getElementById('s1').textContent='✦ 순환이 시작되었다';
+    if(phase===0){phase=1;phaseT=performance.now();flash('f1',800);document.getElementById('b1').disabled=true}
+  }
+}
+document.getElementById('b1').onclick=()=>{addOne()};
+
+function draw(){
+  let cw=parseInt(cv.style.width)||600,ch=parseInt(cv.style.height)||340;
+  ctx.clearRect(0,0,cw,ch);
+
+  // Animate lines
+  animLines.forEach(al=>{if(al.prog<1)al.prog=Math.min(1,al.prog+al.speed)});
+
+  // Draw lines
+  animLines.forEach(al=>{
+    let pa=ps[al.a],pb=ps[al.b];
+    let ex=pa.x+(pb.x-pa.x)*al.prog,ey=pa.y+(pb.y-pa.y)*al.prog;
+    ctx.strokeStyle=phase?'rgba(184,134,11,0.35)':'rgba(184,134,11,0.2)';
+    ctx.lineWidth=phase?2:1.5;
+    ctx.beginPath();ctx.moveTo(pa.x,pa.y);ctx.lineTo(ex,ey);ctx.stroke();
+  });
+
+  // Boundary in phase 1
+  if(phase){
+    let cx=cw/2,cy=ch/2,rad=Math.min(cw,ch)*.37;
+    let t=(performance.now()-phaseT)/1000;
+    ctx.strokeStyle=`rgba(184,134,11,${.15+Math.sin(t*2)*.08})`;
+    ctx.lineWidth=2.5;ctx.setLineDash([4,4]);ctx.lineDashOffset=-t*20;
+    ctx.beginPath();ctx.arc(cx,cy,rad,0,Math.PI*2);ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  ps.forEach((p,i)=>{
+    if(phase){
+      let cx=cw/2,cy=ch/2,rad=Math.min(cw,ch)*.28;
+      p.a+=.006+i*.0008;
+      let tx=cx+Math.cos(p.a)*rad*(.5+i%4*.17),ty=cy+Math.sin(p.a)*rad*(.5+i%4*.17);
+      p.x+=(tx-p.x)*.04;p.y+=(ty-p.y)*.04;
+    } else {
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<10||p.x>cw-10)p.vx*=-1;
+      if(p.y<10||p.y>ch-10)p.vy*=-1;
+    }
+    p.glow=Math.max(0,p.glow-.008);
+    if(p.glow>0){ctx.shadowColor='rgba(184,134,11,.6)';ctx.shadowBlur=p.glow*20}
+    ctx.fillStyle=p.c;ctx.globalAlpha=phase?.95:.7+p.glow*.3;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r+(phase?1:0),0,Math.PI*2);ctx.fill();
+    ctx.shadowBlur=0;ctx.globalAlpha=1;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+})();
+
+/* ═══ ② Merge nodes ═══ */
+function setupMerge(gNum,svgId,mrId,ctId,fId){
+  const nodes=document.querySelectorAll(`.mn[data-g="${gNum}"]`);
+  const svg=document.getElementById(svgId);
+  const mr=document.getElementById(mrId);
+  const ctEl=document.getElementById(ctId);
+  let activated=[],cnt=0;
+
+  function getCenter(el){const r=el.getBoundingClientRect(),pr=el.parentElement.getBoundingClientRect();return{x:r.left-pr.left+r.width/2,y:r.top-pr.top+r.height/2}}
+
+  function drawLine(from,to){
+    const ns='http://www.w3.org/2000/svg';
+    let line=document.createElementNS(ns,'line');
+    line.setAttribute('x1',from.x);line.setAttribute('y1',from.y);
+    line.setAttribute('x2',from.x);line.setAttribute('y2',from.y);
+    line.setAttribute('stroke','rgba(184,134,11,0.5)');line.setAttribute('stroke-width','2');
+    line.setAttribute('stroke-linecap','round');
+    let len=Math.sqrt((to.x-from.x)**2+(to.y-from.y)**2);
+    line.setAttribute('stroke-dasharray',len);line.setAttribute('stroke-dashoffset',len);
+    svg.appendChild(line);
+    // Animate
+    let start=null;
+    function anim(ts){
+      if(!start)start=ts;let p=Math.min(1,(ts-start)/400);
+      line.setAttribute('stroke-dashoffset',len*(1-p));
+      line.setAttribute('x2',from.x+(to.x-from.x)*p);line.setAttribute('y2',from.y+(to.y-from.y)*p);
+      if(p<1)requestAnimationFrame(anim);
+    }
+    requestAnimationFrame(anim);
+  }
+
+  nodes.forEach(n=>{
+    n.addEventListener('click',()=>{
+      if(n.classList.contains('on'))return;
+      n.classList.add('on');
+      let center=getCenter(n);
+      // Draw lines to all previously activated
+      activated.forEach(prev=>{let pc=getCenter(prev);drawLine(pc,center)});
+      activated.push(n);cnt++;ctEl.textContent=cnt;
+      if(cnt>=5){
+        setTimeout(()=>{
+          flash(fId,900);
+          nodes.forEach(nd=>nd.classList.add('gone'));
+          setTimeout(()=>mr.classList.add('show'),300);
+        },500);
+      }
+    });
+  });
+}
+setupMerge('1','sv1','mr1','n2a','f2a');
+setupMerge('2','sv2','mr2','n2b','f2b');
+
+/* ═══ ③ 임계점 슬라이더 ═══ */
+(function(){
+const words=['사과','빨간','나무','가을','향기','한 입','아삭','추억','할머니','시골','바구니','햇살'];
+const cloud=document.getElementById('wc');
+const slider=document.getElementById('ds');
+const valEl=document.getElementById('dv'),phEl=document.getElementById('dp');
+const storyEl=document.getElementById('sr');
+let wEls=[];
+const rp=words.map((_,i)=>({x:8+Math.random()*78,y:8+Math.random()*72,s:14+Math.random()*4}));
+const pp=[[12,18],[22,18],[50,12],[60,12],[82,20],[88,20],[15,55],[25,55],[55,52],[65,52],[82,58],[88,58]];
+words.forEach((w,i)=>{let e=document.createElement('div');e.className='w';e.textContent=w;e.style.left=rp[i].x+'%';e.style.top=rp[i].y+'%';e.style.fontSize=rp[i].s+'px';e.style.color='var(--text-light)';cloud.appendChild(e);wEls.push(e)});
+
+let prevPhase=-1;
+slider.addEventListener('input',()=>{
+  let v=+slider.value;valEl.textContent=v;
+  if(v<25){
+    if(prevPhase!==0){prevPhase=0;phEl.textContent='흩어진 단어들';
+    wEls.forEach((e,i)=>{e.style.left=rp[i].x+'%';e.style.top=rp[i].y+'%';e.style.fontSize=rp[i].s+'px';e.style.color='var(--text-light)';e.style.opacity='.7';e.style.fontWeight='400'})}
+    storyEl.classList.remove('show');
+  } else if(v<55){
+    if(prevPhase!==1){prevPhase=1;phEl.textContent='단편적 연결이 보인다';
+    wEls.forEach((e,i)=>{e.style.left=pp[i][0]+'%';e.style.top=pp[i][1]+'%';e.style.fontSize='15px';e.style.color='var(--text)';e.style.opacity='.85';e.style.fontWeight='400'})}
+    storyEl.classList.remove('show');
+  } else if(v<80){
+    if(prevPhase!==2){prevPhase=2;phEl.textContent='문장이 만들어지려 한다';
+    wEls.forEach((e,i)=>{e.style.left=(5+i*7.5)+'%';e.style.top='48%';e.style.fontSize='14px';e.style.color='var(--accent)';e.style.opacity='1';e.style.fontWeight='500'})}
+    storyEl.classList.remove('show');
+  } else {
+    if(prevPhase!==3){prevPhase=3;phEl.textContent='✦ 이야기가 탄생했다';
+    flash('f3',800);
+    wEls.forEach(e=>{e.style.opacity='0';e.style.top='35%'})}
+    storyEl.classList.add('show');
+  }
+});
+})();
+
+/* ═══ ④ 격자 맵 — 흡수 효율 체감 ═══ */
+(function(){
+const lecs=[
+  {id:'1',l:'1강',x:55,y:45,p:1},{id:'2',l:'2강',x:100,y:55,p:1},{id:'3',l:'3강',x:145,y:42,p:1},
+  {id:'6',l:'6강',x:60,y:115,p:2},{id:'7',l:'7강',x:108,y:128,p:2},{id:'8',l:'8강',x:156,y:115,p:2},
+  {id:'9',l:'9강',x:210,y:52,p:3},{id:'10',l:'10강',x:258,y:42,p:3},{id:'11',l:'11강',x:306,y:56,p:3},
+  {id:'12',l:'12강',x:258,y:95,p:3},{id:'13',l:'13강',x:306,y:108,p:3},
+  {id:'14',l:'14강',x:365,y:48,p:4},{id:'15',l:'15강',x:413,y:62,p:4},
+  {id:'16',l:'16강',x:365,y:140,p:5},{id:'17',l:'17강',x:413,y:155,p:5},{id:'18',l:'18강',x:458,y:138,p:5},{id:'19',l:'19강',x:458,y:178,p:5},
+  {id:'s5',l:'특별V',x:265,y:185,p:6},{id:'s3',l:'특별III',x:448,y:62,p:6},{id:'s4',l:'특별IV',x:480,y:98,p:6}
+];
+const svg=document.getElementById('gs');const msgEl=document.getElementById('gm');
+const clkEl=document.getElementById('gClk'),connEl=document.getElementById('gConn'),effEl=document.getElementById('gEff');
+const ns='http://www.w3.org/2000/svg';
+let lit=[],totalClicks=0,totalConns=0;
+let gEls={}; // store g elements by id
+
+lecs.forEach(l=>{
+  let g=document.createElementNS(ns,'g');g.style.cursor='pointer';g.dataset.id=l.id;
+  let c=document.createElementNS(ns,'circle');
+  c.setAttribute('cx',l.x);c.setAttribute('cy',l.y);c.setAttribute('r',15);
+  c.setAttribute('fill','#F5F0EA');c.setAttribute('stroke','#E0D5C5');c.setAttribute('stroke-width','1.5');
+  c.style.transition='all .4s';
+  let t=document.createElementNS(ns,'text');
+  t.setAttribute('x',l.x);t.setAttribute('y',l.y+3.5);t.setAttribute('text-anchor','middle');
+  t.setAttribute('font-family','Noto Sans KR, sans-serif');t.setAttribute('font-size','9.5');
+  t.setAttribute('fill','#6B6560');t.textContent=l.l;
+  g.appendChild(c);g.appendChild(t);svg.appendChild(g);
+  gEls[l.id]={g,c,t,lec:l};
+
+  g.addEventListener('click',()=>activateNode(l.id));
+});
+
+function activateNode(id){
+  let entry=gEls[id];if(!entry||entry.g.dataset.lit)return;
+  entry.g.dataset.lit='1';
+  entry.c.setAttribute('fill','#B8860B');entry.c.setAttribute('stroke','#B8860B');
+  entry.t.setAttribute('fill','#fff');entry.t.setAttribute('font-weight','700');
+  totalClicks++;clkEl.textContent=totalClicks;
+
+  let l=entry.lec;
+  // Line speed depends on how many are already lit — lattice absorbs faster
+  let n=lit.length;
+  let lineSpeed=n<3?500:n<6?320:n<9?180:100; // ms per line animation
+  let newConns=0;
+
+  lit.forEach((prev,idx)=>{
+    let line=document.createElementNS(ns,'line');
+    let len=Math.sqrt((l.x-prev.x)**2+(l.y-prev.y)**2);
+    line.setAttribute('x1',prev.x);line.setAttribute('y1',prev.y);
+    line.setAttribute('x2',prev.x);line.setAttribute('y2',prev.y);
+    line.setAttribute('stroke','rgba(184,134,11,0.18)');line.setAttribute('stroke-width','1.5');
+    svg.insertBefore(line,svg.firstChild);
+    newConns++;totalConns++;
+    let op=Math.min(.4,.06+totalConns*.008);
+    // Stagger start so lines draw one after another (early) or simultaneously (late)
+    let stagger=n<5?idx*120:n<8?idx*40:0;
+    setTimeout(()=>{
+      let start=null;
+      function anim(ts){if(!start)start=ts;let p=Math.min(1,(ts-start)/lineSpeed);
+        line.setAttribute('x2',prev.x+(l.x-prev.x)*p);line.setAttribute('y2',prev.y+(l.y-prev.y)*p);
+        line.setAttribute('stroke',`rgba(184,134,11,${op*p})`);
+        if(p<1)requestAnimationFrame(anim)}
+      requestAnimationFrame(anim);
+    },stagger);
+  });
+
+  lit.push(l);
+  connEl.textContent=totalConns;
+
+  // Efficiency display
+  if(totalClicks>0){
+    let ratio=totalConns/totalClicks;
+    if(ratio<2)effEl.textContent='낮음';
+    else if(ratio<5)effEl.textContent='보통';
+    else if(ratio<10){effEl.textContent='높음';effEl.style.color='var(--accent)'}
+    else{effEl.textContent='✦ 폭발적';effEl.style.color='var(--green)'}
+  }
+
+  // After 10+ nodes: auto-pulse nearby unlit nodes (lattice pulling in)
+  let litCount=lit.length;
+  if(litCount>=10){
+    lecs.forEach(other=>{
+      if(gEls[other.id].g.dataset.lit)return;
+      let dx=l.x-other.x,dy=l.y-other.y,dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){
+        let oc=gEls[other.id].c;
+        oc.setAttribute('stroke','rgba(184,134,11,0.5)');oc.setAttribute('stroke-width','2.5');
+        // Auto-activate after delay if lattice is very dense
+        if(litCount>=14){
+          setTimeout(()=>activateNode(other.id),600+Math.random()*400);
+        } else {
+          setTimeout(()=>{oc.setAttribute('stroke','#E0D5C5');oc.setAttribute('stroke-width','1.5')},1500);
+        }
+      }
+    });
+  }
+
+  // Flash at milestones
+  if(litCount===10||litCount===15)flash('f4',700);
+
+  // Messages
+  if(litCount<3)msgEl.textContent='';
+  else if(litCount<6)msgEl.textContent='연결이 생기기 시작합니다';
+  else if(litCount<10)msgEl.textContent='격자가 형성되고 있습니다... 흡수 속도가 빨라집니다';
+  else if(litCount<15)msgEl.textContent='✦ 당신의 격자가 새 지식을 끌어당기기 시작합니다';
+  else msgEl.textContent='✦ 격자가 스스로 확장하고 있습니다 — 한 번의 클릭이 폭발적 연결을 만듭니다';
+}
+})();
+
+/* ═══ ⑤ 군중 밀도 ═══ */
+(function(){
+const cv=document.getElementById('c5'),ctx=cv.getContext('2d');
+const slider=document.getElementById('cs');
+const cdEl=document.getElementById('cd'),csEl=document.getElementById('css');
+let dpr=Math.min(window.devicePixelRatio||1,2);
+function rs(){let w=Math.min(cv.parentElement.clientWidth-40,600),h=w*300/600;cv.style.width=w+'px';cv.style.height=h+'px';cv.width=w*dpr;cv.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+rs();window.addEventListener('resize',rs);
+
+const cols=['#B8860B','#D4A843','#8B7355','#A0522D','#CD853F','#DAA520','#C49B3B','#9A7B4F'];
+let dots=[];for(let i=0;i<70;i++)dots.push({x:Math.random(),y:Math.random(),vx:(Math.random()-.5)*.004,vy:(Math.random()-.5)*.004,c:cols[i%cols.length],r:3.5+Math.random()*2});
+let prevCritical=false;
+
+function draw(){
+  let cw=parseInt(cv.style.width)||600,ch=parseInt(cv.style.height)||300;
+  let v=+slider.value/100;ctx.clearRect(0,0,cw,ch);
+  let mg=v*.38,ax=mg*cw,ay=mg*ch,aw=cw-2*ax,ah=ch-2*ay;
+  if(v>.25){ctx.strokeStyle=`rgba(${v>.65?'183,28,28':'184,134,11'},${v*.4})`;ctx.lineWidth=v>.65?2.5:1.5;ctx.strokeRect(ax,ay,aw,ah)}
+  let wx=v>.6?Math.sin(Date.now()*.002)*v*.02:0,wy=v>.6?Math.cos(Date.now()*.0015)*v*.015:0;
+  let critical=v>.65;
+  if(critical&&!prevCritical)flash('f5',700);
+  prevCritical=critical;
+
+  dots.forEach((d,i)=>{
+    if(!critical){d.x+=d.vx;d.y+=d.vy;if(d.x<mg+.02||d.x>1-mg-.02)d.vx*=-1;if(d.y<mg+.02||d.y>1-mg-.02)d.vy*=-1;d.x=Math.max(mg+.02,Math.min(1-mg-.02,d.x));d.y=Math.max(mg+.02,Math.min(1-mg-.02,d.y))}
+    else{d.x+=wx+Math.sin(Date.now()*.001+i*.5)*.003;d.y+=wy+Math.cos(Date.now()*.0012+i*.5)*.003;d.x=Math.max(mg+.03,Math.min(1-mg-.03,d.x));d.y=Math.max(mg+.03,Math.min(1-mg-.03,d.y))}
+    let px=d.x*cw,py=d.y*ch,gray=critical?Math.min(1,(v-.65)/.35):0;
+    let r=d.r*(1-v*.35);
+    ctx.fillStyle=gray>.4?`rgba(130,125,118,${.5+gray*.4})`:d.c;
+    ctx.globalAlpha=critical?.6+gray*.2:.75;
+    ctx.beginPath();ctx.arc(px,py,Math.max(2,r),0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+  });
+  requestAnimationFrame(draw);
+}
+draw();
+slider.addEventListener('input',()=>{let v=+slider.value;
+  if(v<25){cdEl.textContent='낮음';csEl.textContent='각자 자유롭게 걷는다'}
+  else if(v<50){cdEl.textContent='보통';csEl.textContent='움직임이 제한되기 시작'}
+  else if(v<65){cdEl.textContent='높음';csEl.textContent='개인의 방향 선택이 어려워진다'}
+  else{cdEl.textContent='임계점 돌파';csEl.textContent='✦ 유체가 되었다 — 개인이 사라진다'}
+});
+})();
+
+/* ═══ ⑥ 검색 비교 ═══ */
+['pA','pB'].forEach(id=>{
+  document.getElementById(id).addEventListener('click',()=>{
+    document.getElementById(id).classList.add('on');
+    let body=document.getElementById(id+'b');
+    let steps=body.querySelectorAll('.st'),vd=body.querySelector('.vd');
+    steps.forEach((s,i)=>setTimeout(()=>s.classList.add('show'),i*450));
+    setTimeout(()=>vd.classList.add('show'),steps.length*450+300);
+  });
+});
+</script>
+</body>
+</html>
