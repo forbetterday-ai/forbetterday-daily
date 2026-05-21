@@ -321,6 +321,14 @@
       "description": "무의식이 보내는 불편한 신호 속에 구원이 있다 — 칼 융의 통찰을 일상의 언어로 풀어낸 에세이. 순간을 소중히 한다는 말의 진짜 의미를 읊조린다.",
       "tags": ["에세이", "무의식", "칼융", "순간", "삶"],
       "artifact_url": "essay-unconscious-calling.html"
-   }
+   },
+   {
+  "id": 41,
+  "date": "2026-05-21",
+  "title": "의미 없음을 껴안은 채로",
+  "description": "삶에 의미가 없다는 것을 받아들인 뒤에야 비로소 시작된 것들에 대하여",
+  "artifact_url": "essay-meaning-of-life.html",
+  "tags": ["에세이", "철학", "실존", "삶의의미"]
+}
   ]
 }
