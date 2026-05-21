@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-05-21">
+<meta name="post-description" content="삶에 의미가 없다는 것을 받아들인 뒤에야 비로소 시작된 것들에 대하여">
+<meta name="post-tags" content="에세이,철학,실존,삶의의미">
+<title>의미 없음을 껴안은 채로</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --accent: #B8860B;
+    --accent-soft: #D4A843;
+    --accent-bg: #FDF6E3;
+    --border: #E0D5C5;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.9; font-size: 17px; -webkit-font-smoothing: antialiased; }
+
+  .header { color: #FAF7F2; text-align: center; position: relative; overflow: hidden; }
+  .header-img { width: 100%; display: block; }
+  .header-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.8) 100%); display: flex; align-items: flex-end; justify-content: center; padding: 0 24px 40px; }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .series-label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .header h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 5vw, 42px); line-height: 1.4; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .header-sub { font-family: var(--sans); font-weight: 300; font-size: 15px; color: #BDB3A4; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .header-meta { margin-top: 32px; font-size: 12px; color: #8A7F72; letter-spacing: 0.5px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+
+  .article { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
+  .article p { margin-bottom: 24px; font-size: 17px; line-height: 1.95; color: var(--text); word-break: keep-all; }
+  .article strong { font-weight: 700; color: #1A1A1A; }
+  .drop-cap::first-letter { font-family: var(--serif); font-weight: 900; font-size: 3.6em; float: left; line-height: 0.8; margin-right: 10px; margin-top: 6px; color: var(--accent); }
+  .section-break { text-align: center; margin: 48px 0; color: var(--accent-soft); font-size: 18px; letter-spacing: 12px; opacity: 0.6; }
+  .pull-quote { margin: 48px -20px; padding: 32px 28px; background: var(--accent-bg); border-radius: 2px; border-left: 4px solid var(--accent); font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #3D3226; }
+  .pull-quote em { font-style: normal; color: var(--accent); font-weight: 700; }
+
+  .takeaway { margin: 56px 0 0; padding: 32px 28px; background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; border-radius: 4px; text-align: center; }
+  .takeaway .label { font-size: 11px; letter-spacing: 3px; color: var(--accent-soft); font-weight: 500; margin-bottom: 16px; }
+  .takeaway p { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #E8E0D5; margin-bottom: 0; }
+  .takeaway strong { color: var(--accent-soft); }
+
+  .hl { background: linear-gradient(transparent 60%, rgba(184,134,11,0.15) 60%); padding: 0 2px; }
+
+  .footer { text-align: center; padding: 40px 24px 60px; font-size: 12px; color: #A89F94; letter-spacing: 0.5px; }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 600px) {
+    .header { padding: 60px 20px 50px; }
+    .article { padding: 40px 20px 60px; }
+    .article p { font-size: 16px; }
+    .pull-quote { margin: 36px -10px; padding: 24px 20px; font-size: 16.5px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img class="header-img" src="essay-meaning-of-life-thumbnail.jpg" alt="의미 없음을 껴안은 채로 — 썸네일">
+  <div class="header-overlay">
+    <div class="header-inner">
+      <div class="series-label">에세이</div>
+      <h1>의미 없음을 껴안은 채로</h1>
+      <p class="header-sub">삶에 의미가 없다는 것을 받아들인 뒤에야 비로소 시작된 것들에 대하여</p>
+      <div class="header-meta">읽는 시간 약 10분</div>
+    </div>
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- 1부: 질문의 시작 -->
+
+  <p class="drop-cap fade-in">왜 태어났을까. 이 질문이 처음 떠오른 게 언제인지 정확히 기억나지 않는다. 다만 꽤 어렸다는 건 안다.</p>
+
+  <p class="fade-in">기억나는 건 여덟 살쯤이었던 것 같다. 역사책을 읽고 있었다. 신라의 어떤 왕이 죽었다. 그리고 다음 왕이 이어갔다. 그냥 그런 문장이었는데, 순간 공포가 왔다. 죽는다고? 없어진다고? 내가 이 세상에 없다는 건가? 그 질문이 갑자기 엄습해왔다. 책을 덮었는지, 계속 읽었는지는 기억나지 않는다. 다만 그날 이후로 가끔씩 죽음과 삶, 유한함이란 것에 대해 생각했다. 누군가에게 이런 생각을 펼쳐보이지는 않았다. 아이가 품기에는 좀 무거운 질문이었지만, 그것이 무겁다는 것조차 몰랐으니 그냥 안고 살았다.</p>
+
+  <p class="fade-in">왜 태어났나. 왜 사는가. 삶에 이유가 있는가. 없다면 허무하지 않은가. 질문은 하나가 다음 하나를 불렀고, 그 끝에는 늘 같은 곳이 기다리고 있었다.</p>
+
+  <p class="fade-in">청소년기부터 이것저것 읽었다. 철학서를 봤고, 과학서를 봤고, 일상 에세이를 봤고, 불교 서적도 봤다. 삶의 목적에 대해 다들 무언가를 말하고 있었지만, 들여다보면 하나같이 두루뭉술했다. <span class="hl">아름답지 않은가? 소중한 생명 아닌가? 하늘이 부여해준 선물 아닌가?</span> 설명이라기보다는 위로에 가까운 말들이었다. 그 위로가 나쁘다는 게 아니다. 다만 나는 위로가 아니라 답을 원했다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 2부: 위안을 찾고 있었다는 고백 -->
+
+  <p class="fade-in">돌이켜보면, 답이 없다는 것을 이미 알고 있었던 것 같다.</p>
+
+  <p class="fade-in">무의식 어딘가에서 이미 감지하고 있었는데, 그것을 인정하고 싶지 않았다. 그래서 책을 펼쳤다. 찾고 있던 것은 진리가 아니었다. <strong>알고 있는 사실을 애써 무시할 수 있게 해줄 지식, 또는 지혜를 찾고 있었던 것이다.</strong> 어딘가에서 짜잔, 하고 명확한 답이 나와주기를. 당신이 태어난 이유는 이것입니다, 하고 누군가 선언해주기를.</p>
+
+  <p class="fade-in">하지만 마음속의 경종은 계속 울리고 있었다. 이건 답을 찾는 행위가 아니라 답이 없다는 사실을 회피하는 행위가 아닌가. 그 경종을 무시하며 한 권, 두 권, 몇 년을 더 읽었다. 점진적으로 임계점에 가까워지고 있었다는 걸, 그때는 몰랐다.</p>
+
+  <p class="fade-in">어느 순간 넘었다. 조용히, 별다른 사건 없이. 답이 없다고 증명한 것은 아니다. 다만 <span class="hl">답을 기다리는 것 자체가 삶을 유보하는 행위</span>라는 것을 더 이상 외면할 수 없었다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 3부: 직면 -->
+
+  <p class="fade-in">삶에 의미가 없다.</p>
+
+  <p class="fade-in">이 문장을 입 밖에 꺼내면 사람들은 불편해한다. 위험한 생각이라고, 너무 극단적이라고, 그런 생각을 하면 안 된다고. 하지만 나는 이것이 위험한 생각이라고 생각하지 않는다. 위험한 것은 이 질문을 끝까지 밀어보지 않고 중간에 예쁜 말로 덮어버리는 것이다.</p>
+
+  <p class="fade-in">끝까지 밀어보면 이런 곳에 도달한다. 의미가 없다면 허무하지 않은가. 허무하다면 — 그렇다면 자살은? 논리를 따라가면 여기까지 오는 것이 자연스럽다. 생각이 멈칫하는 지점은 의미가 없다는 것이 아니라, 의미가 없는데 왜 살아야 하느냐는 물음이다.</p>
+
+  <div class="pull-quote fade-in">
+    논리는 여기까지밖에 데려다주지 못했다.<br>
+    의미가 없다 — 맞다. 그렇다면 죽어야 하는가?<br>
+    <em>논리는 대답하지 못했다.</em>
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 4부: 체념 → 분노 → 오기 -->
+
+  <p class="fade-in">대답한 것은 논리가 아니었다.</p>
+
+  <p class="fade-in">직감이었다. 배운 것이 아니라 속에서 올라온 것이었다. 그래서, 자살이 선택지라면 그냥 행하는 게 맞는 거냐? 어차피 이래도 고통이고 저래도 고통이라면, <strong>최소한 무엇이라도 해야 하지 않겠는가?</strong></p>
+
+  <p class="fade-in">체념이 먼저였다. 의미는 없다. 받아들인다. 여기까지는 조용했다.</p>
+
+  <p class="fade-in">그다음에 온 것은 의지였다. 그래도 한다. 왜 하느냐고 묻지 마라. 그냥 한다.</p>
+
+  <p class="fade-in">그리고 그다음에 온 것은 오기였다. 한번 안 된다고 포기하고 죽어? 아니다. <span class="hl">안 되면 또 하고, 또 하는 거다. 될 때까지 하는 거다.</span></p>
+
+  <p class="fade-in">이것은 논리적 사고가 아니다. 꼭 논리적 사고일 필요도 없다. 체념의 반작용으로 올라온 분노 — 삶이 무의미하다는 것에 대한, 그리고 그 무의미함에 그냥 무릎 꿇어야 하느냐는 것에 대한 분노. 삶에 다양한 감정이 있는데 언제나 차분할 수는 없다. 이건 차분할 수 없는 지점이었다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 5부: 가장 작은 일부터 -->
+
+  <p class="fade-in">어차피 고통이라면, 할 수 있는 가장 작은 일부터 한다.</p>
+
+  <p class="fade-in">나를 가꾸는 것. 나를 일으켜 세우는 것. 나를 단련시키는 것. 그거 말고 무엇을 해야 하는가. 오히려 반문한다. 불평할 것인가? 남을 조롱할 것인가? 사회를 바꾸자고 목소리를 높일 것인가?</p>
+
+  <p class="fade-in">사회에 목소리를 내는 것이 틀렸다는 말이 아니다. 다만 <strong>자기 방도 치우지 않은 사람이 세상의 질서를 논하는 것은 순서가 뒤집힌 것이다.</strong> 나를 어찌하지 못하면서 남을, 사회를 어떻게 말하고 주장할 수 있는가. 나는 그것이 이해되지 않는다.</p>
+
+  <p class="fade-in">아무것도 믿지 않기 때문에, 나에게 남은 것은 <span class="hl">내가 진짜로 할 수 있는 일</span>뿐이다. 거창한 구호가 아니라 지금 여기서 내가 할 수 있는 가장 작은 한 가지. 그것부터 시작한다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 6부: 반복 자체가 의미 -->
+
+  <p class="fade-in">조건은 사람마다 다르다.</p>
+
+  <p class="fade-in">나보다 늙은 사람, 몸이 불편한 사람, 나보다 똑똑하지 못한 사람. 또 반대로 나보다 젊은 사람, 건강한 사람, 똑똑한 사람. 모두가 같은 고민을 한다. 내가 다른 사람보다 조건이 좋지 못하다고 불평을 해야 한다면, <strong>이 세상에 불평하지 않아도 될 사람이 누가 있겠는가.</strong></p>
+
+  <p class="fade-in">언젠가 반드시 죽는다. 그 전까지 할 수 있는 것을 다하는 것뿐이다. 전부를 걸 수밖에 없다. 선택지가 없으니까.</p>
+
+  <p class="fade-in">의미가 없는 줄 안다. 알면서도 한다. 안 되면 또 한다. 또 안 되면 또 한다. 이 반복 — 의미 없음을 껴안은 채로 그래도 계속하는 이 행위의 반복 자체가 <span class="hl">내가 만든 유일한 의미</span>다.</p>
+
+  <p class="fade-in">논리적으로는 모순이다. 의미가 없다고 해놓고 의미를 만든다고 말하고, 주어진 것은 없다고 해놓고 숙명이라는 단어를 쓴다. 알고 있다. 하지만 받아들인다. 직감으로 사는 사람이 깔끔한 일관성을 추구할 필요는 없다. 이것은 논문이 아니라 삶이니까.</p>
+
+  <div class="pull-quote fade-in">
+    의미 없음을 껴안은 채로 그래도 굴린다.<br>
+    그 반복 자체가 내가 만든 의미다.<br>
+    <em>거창한 가치 체계가 아니라, 될 때까지 하는 그 행위.</em>
+  </div>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 7부: 에필로그 — 먼저 고민한 사람들 -->
+
+  <p class="fade-in">이런 생각들을 혼자 오래 품고 살았는데, 나중에야 알게 되었다. 비슷한 고민을 나보다 훨씬 먼저 한 사람들이 있었다.</p>
+
+  <p class="fade-in">바위를 산꼭대기까지 굴려 올리면 다시 굴러떨어지고, 또 굴려 올리고, 또 굴러떨어지는 이야기를 쓴 사람이 있었다. 그는 그래도 행복하다고 상상해야 한다고 썼다. 신이 죽었다고 선언한 사람도 있었다. 그는 그렇기 때문에 이제 스스로 가치를 만들어야 한다고 말했다. 방부터 치우라고 한 사람도 있었고, 수천 년 전에 너 자신부터 다스리라고 한 사람들도 있었다.</p>
+
+  <p class="fade-in">대단한 공부를 해서 안 게 아니다. <span class="hl">내 고민의 끝에서 돌아보니, 이미 그 자리에 서 있던 사람들이 보였을 뿐이다.</span></p>
+
+  <p class="fade-in">흥미로운 건, 이 사람들의 출발점이 모두 달랐다는 것이다. 어떤 사람은 질서를 믿었기 때문에 자기를 먼저 세웠고, 어떤 사람은 도덕을 믿었기 때문에 수신을 말했다. 나는 아무것도 믿지 않기 때문에 — 그래서 할 수 있는 가장 작은 일부터 했다. 출발점이 정반대인데 도착한 곳은 같았다. 이것이 우연인지, 아니면 인간이라는 조건이 결국 같은 곳으로 이끄는 것인지는 모르겠다.</p>
+
+  <p class="fade-in">다만 한 가지, 이것만은 느꼈다.</p>
+
+  <p class="fade-in">허무는 머무는 곳이 아니다. 통과하는 곳이다. 허무에 멈추면 아무것도 남지 않지만, 허무를 지나면 — 체념이 분노가 되고, 분노가 오기가 되고, 오기가 행위가 되고, 행위가 반복이 되고, 그 반복이 어느 순간 의미를 닮기 시작한다.</p>
+
+  <p class="fade-in">그것이 진짜 의미인지는 여전히 모른다. 아마 끝까지 모를 것이다. 하지만 상관없다.</p>
+
+  <p class="fade-in"><strong>될 때까지 하는 거다.</strong></p>
+
+  <!-- Takeaway -->
+  <div class="takeaway fade-in">
+    <div class="label">의미 없음을 껴안은 채로</div>
+    <p>아무런 방향도 도덕도 나침반도 주어지지 않았다.<br>
+    그것은 오롯이 내가 만들어 가야 한다.<br><br>
+    체념에서 분노로, 분노에서 오기로,<br>
+    오기에서 행위로, 행위에서 반복으로.<br><br>
+    <strong>반복이 의미를 닮기 시작할 때까지.</strong></p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p>2026년 봄</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
