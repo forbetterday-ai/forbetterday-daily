@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-05-25">
+<meta name="post-description" content="근면성실과 투자는 같은 직선 위의 양 끝이 아니다. 축이 다른 두 세계를 하나의 줄 위에 올려놓고 판단하던 오래된 습관을 해체하는 시간.">
+<meta name="post-tags" content="특별강, 근면성실, 투자, 니체, 노예도덕, 리스크, 4사분면, 자본배분">
+<title>특별강 IX. 축이 다른 두 세계 — 근면성실과 투자를 같은 줄 위에 놓지 않는다</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--text:#2C2C2C;--text-light:#6B6560;--accent:#B8860B;--accent-soft:#D4A843;--accent-bg:#FDF6E3;--border:#E0D5C5;--green:#2E7D32;--red:#B71C1C;--serif:'Noto Serif KR',Georgia,serif;--sans:'Noto Sans KR',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+
+/* ─── Header ─── */
+.header{background:linear-gradient(175deg,#0F0C08 0%,#1A1410 30%,#2C2318 65%,#3D3226 100%);color:#FAF7F2;padding:80px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(184,134,11,.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(184,134,11,.08) 0%,transparent 50%)}
+.header-inner{position:relative;max-width:680px;margin:0 auto}
+.series-label{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-soft);margin-bottom:28px;opacity:0;animation:fu .8s ease forwards .2s}
+.header h1{font-family:var(--serif);font-weight:900;font-size:clamp(26px,5vw,40px);line-height:1.4;margin-bottom:20px;opacity:0;animation:fu .8s ease forwards .4s}
+.header-sub{font-family:var(--sans);font-weight:300;font-size:15px;color:#BDB3A4;line-height:1.7;opacity:0;animation:fu .8s ease forwards .6s}
+.header-meta{margin-top:32px;font-size:12px;color:#8A7F72;letter-spacing:.5px;opacity:0;animation:fu .8s ease forwards .8s}
+
+/* ─── Article ─── */
+.article{max-width:680px;margin:0 auto;padding:56px 24px 80px}
+.article p{margin-bottom:24px;font-size:17px;line-height:1.95;color:var(--text);word-break:keep-all}
+.article strong{font-weight:700;color:#1A1A1A}
+.drop-cap::first-letter{font-family:var(--serif);font-weight:900;font-size:3.6em;float:left;line-height:.8;margin-right:10px;margin-top:6px;color:var(--accent)}
+.sb{text-align:center;margin:48px 0;color:var(--accent-soft);font-size:18px;letter-spacing:12px;opacity:.6}
+.article h2{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--text);margin:56px 0 20px;line-height:1.5;padding-left:16px;border-left:3px solid var(--accent)}
+.pq{margin:48px -20px;padding:32px 28px;background:var(--accent-bg);border-radius:2px;border-left:4px solid var(--accent);font-family:var(--serif);font-size:18px;line-height:1.8;color:#3D3226}
+.pq em{font-style:normal;color:var(--accent);font-weight:700}
+.pq .src{display:block;margin-top:12px;font-family:var(--sans);font-size:13px;font-weight:400;color:var(--text-light);letter-spacing:.3px}
+.hl{background:linear-gradient(transparent 60%,rgba(184,134,11,.15) 60%);padding:0 2px}
+.hint{font-family:var(--serif);font-size:13.5px;color:var(--text-light);text-align:center;margin:8px 0 4px;font-style:italic}
+
+/* ─── Interactive Zone ─── */
+.iz{margin:48px -12px;padding:28px 20px 20px;background:#fff;border:1px solid var(--border);border-radius:8px;position:relative;overflow:hidden}
+.iz .lbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase;margin-bottom:16px;text-align:center}
+.iz canvas{display:block;margin:0 auto;border-radius:4px;touch-action:none}
+
+/* ─── Boxes ─── */
+.ib{margin:48px 0;padding:28px 24px;background:#fff;border:1px solid var(--border);border-radius:4px;position:relative}
+.ib::before{content:attr(data-label);position:absolute;top:-11px;left:20px;background:var(--bg);padding:0 10px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+.ib p{font-size:15.5px;line-height:1.85;margin-bottom:12px;color:var(--text-light)}
+.ib p:last-child{margin-bottom:0}
+
+.os{margin:48px 0;padding:28px 24px;background:#F1F8E9;line-height:1.9;border-left:4px solid var(--green);border-radius:2px}
+.os .olbl{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:12px}
+.os p{font-size:15.5px;line-height:1.85;color:#2C3E2C;margin-bottom:12px}
+.os p:last-child{margin-bottom:0}
+
+.tk{margin:56px 0 0;padding:32px 28px;background:linear-gradient(135deg,#1A1410,#2C2318);color:#FAF7F2;border-radius:4px;text-align:center}
+.tk .tlbl{font-size:11px;letter-spacing:3px;color:var(--accent-soft);font-weight:500;margin-bottom:16px}
+.tk p{font-family:var(--serif);font-size:18px;line-height:1.8;color:#E8E0D5}
+.tk strong{color:var(--accent-soft)}
+
+.footer{text-align:center;padding:40px 24px 60px;font-size:12px;color:#A89F94;letter-spacing:.5px}
+
+@keyframes fu{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ─── Quadrant Annotation (below canvas) ─── */
+.q-desc{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q-desc .qd{padding:14px 16px;border-radius:6px;font-size:13.5px;line-height:1.7;color:var(--text-light);transition:all .5s ease;opacity:.5;transform:scale(.97)}
+.q-desc .qd.active{opacity:1;transform:scale(1)}
+.q-desc .qd strong{display:block;font-size:14px;margin-bottom:4px}
+.qd-1{background:#FDF6E3;border:1px solid var(--accent)}
+.qd-1 strong{color:var(--accent)}
+.qd-2{background:#FFF3E0;border:1px solid #E65100}
+.qd-2 strong{color:#E65100}
+.qd-3{background:#F3E5F5;border:1px solid #7B1FA2}
+.qd-3 strong{color:#7B1FA2}
+.qd-4{background:#E8F5E9;border:1px solid var(--green)}
+.qd-4 strong{color:var(--green)}
+
+@media(max-width:600px){
+  .header{padding:60px 20px 50px}
+  .article{padding:40px 20px 60px}
+  .article p{font-size:16px}
+  .pq{margin:36px -10px;padding:24px 20px;font-size:16.5px}
+  .iz{margin:36px -8px;padding:20px 14px 16px}
+  .q-desc{grid-template-columns:1fr;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="header-inner">
+  <div class="series-label">투자 에세이 · 특별강 IX</div>
+  <h1>축이 다른 두 세계</h1>
+  <p class="header-sub">근면성실과 투자를 같은 줄 위에 놓지 않는다</p>
+  <div class="header-meta">특별강 · 읽는 시간 약 9분</div>
+</div>
+</header>
+
+<article class="article">
+
+<!-- ═══ 도입: 이상한 불편함 ═══ -->
+
+<p class="drop-cap fade-in">처음 투자 수익이 통장에 찍혔을 때, 나는 기뻤을까. 솔직하게 말하면 — 기쁨보다 먼저 찜찜함이 왔다. 아무것도 안 했는데 돈이 생겼다는 감각. 일하지 않고 번 돈이라는 생각. 그 감정은 꽤 오래 나를 따라다녔다.</p>
+
+<p class="fade-in">시간이 지나면서 알게 되었다. 그 찜찜함은 내가 만든 것이 아니었다. 누군가가 — 학교가, 사회가, 어른들이 — 내 안에 깔아놓은 하나의 직선이 있었다. 그 직선의 한쪽 끝에는 <strong>"근면성실 = 선 = 정당한 소득"</strong>이 있었고, 반대쪽 끝에는 <strong>"투자 = 불로소득 = 탐욕"</strong>이 있었다. 나는 오랫동안 그 직선 위에서 내 위치를 가늠하며 살았다.</p>
+
+<p class="fade-in">열심히 일하면 선한 쪽으로 간다. 투자에 관심을 가지면 악한 쪽으로 간다. 누구도 그렇게 말해준 적은 없었지만, 교육이 만든 무의식은 말보다 정확하게 작동한다.</p>
+
+<p class="fade-in">그런데 어느 날, 한 가지 의문이 생겼다. <span class="hl">이 두 개는 정말 같은 직선 위에 있는 것일까?</span></p>
+
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 1단계: 누가 같은 줄 위에 올려놓았는가 ═══ -->
+
+<h2 class="fade-in">누가 이 두 개를 같은 줄 위에 올려놓았는가</h2>
+
+<p class="fade-in">니체라는 철학자가 『도덕의 계보학』에서 묻는다. <strong>도덕적 가치 그 자체의 가치는 무엇인가?</strong> 우리가 "선하다"고 부르는 것은 정말 선한 것인가, 아니면 누군가가 그렇게 이름 붙인 것인가?</p>
+
+<p class="fade-in">니체의 추적은 이렇다. 원래 "좋다(gut)"라는 단어는 강하고 행동하는 자들이 자기 자신을 가리키는 말이었다. 스스로 무언가를 만들고, 개척하고, 위험을 감수하는 사람들이 "우리는 좋은 사람이다"라고 선언했던 것이다.</p>
+
+<p class="fade-in">그런데 이 가치가 뒤집혔다. 니체는 이것을 <strong>노예도덕(Sklavenmoral)</strong>이라 부른다. 갖지 못하는 상태가 "청빈"으로, 행동하지 않는 것이 "겸손"으로, 위험을 피하는 것이 "신중함"으로 재포장되었다. 동시에 부를 추구하는 것은 "탐욕"이 되었고, 위험을 감수하는 것은 "무모함"이 되었다.</p>
+
+<div class="pq fade-in">
+  <em>"그들은 약함 자체를 공적으로, 무기력을 선함으로, 비겁한 비굴함을 겸손으로 바꿔 불렀다."</em>
+  <span class="src">— 프리드리히 니체, 『도덕의 계보학』 제1논문 §14</span>
+</div>
+
+<p class="fade-in">나는 니체가 옳다고 말하려는 것이 아니다. 다만 하나만은 확실히 보인다. 내가 투자를 시작했을 때 느꼈던 그 찜찜함, 그 죄책감의 뿌리가 여기 있었다. <strong>"갖고자 하는 의지 = 악"이라는 등식.</strong> 한국 교육은 이 등식을 아주 정밀하게 내면화시켰다. "부지런히 일해서 번 돈은 깨끗하고, 투자로 번 돈은 덜 깨끗하다"라는 무의식. 이것은 사실이 아니다. 이것은 <span class="hl">특정 시대, 특정 교육이 만든 하나의 해석</span>이었다.</p>
+
+<p class="fade-in">나는 오랫동안 그 해석 안에서 살았다. 그리고 그 해석에서 벗어나는 데 꽤 오랜 시간이 걸렸다. 벗어나는 방법은 단순했다 — <strong>직선을 좌표평면으로 바꾸는 것</strong>이었다.</p>
+
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 2단계: 4사분면 ═══ -->
+
+<h2 class="fade-in">하나의 직선이 두 개의 축이 되는 순간</h2>
+
+<p class="fade-in">수학 시간에 좌표평면을 배운다. X축과 Y축. 이 두 축은 <strong>독립</strong>이다. X축 위에서 오른쪽으로 가도, Y축에는 아무 영향이 없다. 위로 가도, 아래로 가도, X축은 그대로다. 이것이 핵심이었다.</p>
+
+<p class="fade-in">내가 오랫동안 품고 있던 직선에서는, 근면성실의 반대편에 투자가 있었다. 마치 하나가 올라가면 다른 하나가 내려가는 것처럼. 그런데 그 직선을 끊고, 두 개를 각각 독립된 축으로 세우는 순간 — 세상이 완전히 다르게 보이기 시작했다.</p>
+
+<p class="hint fade-in">아래 좌표평면 위에서, 네 개의 사분면을 각각 눌러 보세요.</p>
+
+<!-- ★ Interactive 4-Quadrant -->
+<div class="iz fade-in" id="quadZone">
+  <div class="lbl">체험 · 축이 다른 두 세계</div>
+  <canvas id="qCanvas" width="620" height="440"></canvas>
+  <div class="q-desc" id="qDesc">
+    <div class="qd qd-1" id="qd1">
+      <strong>1사분면 — 성실한 투자자</strong>
+      자기 일에 성실하면서, 번 돈을 산업과 기업에 배분하는 사람. 노동과 자본이 서로를 강화한다. 가장 건강한 상태.
+    </div>
+    <div class="qd qd-2" id="qd2">
+      <strong>2사분면 — 투기꾼의 이미지</strong>
+      일은 안 하면서 투자로만 먹고살려는 사람. 교육이 만든 등식은 이 사분면을 전체 투자자에게 덮어씌운 것이다.
+    </div>
+    <div class="qd qd-4" id="qd4">
+      <strong>4사분면 — 교육이 가르친 이상</strong>
+      열심히 일하지만 자본 배분은 하지 않는 사람. 한국 교육이 이상적이라 가르친 모델. 노동소득 하나에 삶 전체를 건 구조.
+    </div>
+    <div class="qd qd-3" id="qd3">
+      <strong>3사분면 — 정체</strong>
+      어디에도 에너지를 쏟지 않는 상태. 일도 하지 않고, 자본 배분도 하지 않는다.
+    </div>
+  </div>
+</div>
+
+<p class="fade-in">이 좌표평면이 보여주는 것은 단순하다. <strong>근면성실(X축)과 투자(Y축)는 서로 독립된 축이다.</strong> 하나가 올라간다고 다른 하나가 내려가지 않는다. 둘은 애초에 같은 직선 위에 있지 않았다.</p>
+
+<p class="fade-in">오랫동안 나를 괴롭혔던 것은 2사분면의 이미지였다. 일은 안 하고 투자로만 돈을 벌려는 사람. 사회가 "투기꾼"이라 부르는 사람. 교육은 그 이미지를 투자라는 행위 전체에 덮어씌웠다. 그래서 나는 투자에 관심을 가지는 것만으로도 2사분면으로 미끄러지는 듯한 죄책감을 느꼈던 것이다.</p>
+
+<p class="fade-in">하지만 실제로 내가 가려는 곳은 <strong>1사분면</strong>이었다. 내 일에 성실하면서, 동시에 번 소득의 일부를 미래 산업에 배분하는 것. 이 두 행위는 충돌하지 않는다. 오히려 하나가 다른 하나를 강화한다. 성실하게 일해야 투자할 자본이 생기고, 투자를 통해 자본이 일하면서 성실한 노동의 가치가 증폭된다.</p>
+
+<p class="fade-in">직선 위에서는 보이지 않던 것이, 좌표평면 위에서는 보였다.</p>
+
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 3단계: 투자는 불로소득이 아니다 ═══ -->
+
+<h2 class="fade-in">불로(不勞)라는 낡은 이름</h2>
+
+<p class="fade-in">축이 분리되고 나니, 하나 더 선명하게 보이는 것이 있었다. "불로소득"이라는 단어 자체의 문제다.</p>
+
+<p class="fade-in">불로(不勞). 노동하지 않았다. 그런데 나는 정말 아무것도 하지 않았는가?</p>
+
+<p class="fade-in">투자라는 행위의 실체를 들여다보면 이렇다. 내 자본을 어떤 산업에, 어떤 기업에 배분할 것인지를 판단한다. 그 기업이 자본을 가지고 공장을 짓고, 연구소를 운영하고, 사람을 채용한다. 기업이 실패하면 내 자본은 사라진다. 성공하면 그 성공의 일부가 돌아온다. 나는 이 과정에서 <strong>리스크를 진다.</strong> 기업을 분석하고, 산업의 방향을 읽고, 내릴 때를 참고, 폭락할 때 버틴다.</p>
+
+<p class="fade-in">이것을 "아무것도 안 했다"고 말할 수 있을까.</p>
+
+<p class="fade-in">은행에 예금을 넣으면, 은행은 그 돈으로 대출을 한다. 주식을 사면, 기업은 그 자본으로 사업을 한다. 투자자는 <strong>"누구에게 내 자본을 맡길 것인가"</strong>를 판단하고, 그 판단의 결과에 책임을 진다. 좋은 판단에는 수익이 오고, 나쁜 판단에는 손실이 온다. 이것은 노동의 형태가 다를 뿐이지, 노동이 아닌 것이 아니다.</p>
+
+<div class="pq fade-in">
+  투자 수익은 불로소득이 아니다.<br>
+  <em>판단의 소득이고, 인내의 소득이고, 리스크를 감내한 대가다.</em>
+</div>
+
+<p class="fade-in">이것을 "불로"라고 부르는 순간, 나는 다시 옛날의 그 거짓 직선 위로 돌아가게 된다. "일하지 않고 번 돈 = 나쁜 돈"이라는 등식 위로. 니체가 지적한 바로 그 구조 위로.</p>
+
+<p class="fade-in">나는 이제 그 직선 위로 돌아가지 않는다.</p>
+
+<div class="sb fade-in">· · ·</div>
+
+<!-- ═══ 재정의 ═══ -->
+
+<h2 class="fade-in">근면성실을 부정하지 않는다 — 재정의한다</h2>
+
+<p class="fade-in">오해가 생길 수 있는 지점이 있다. 이 글은 근면성실을 부정하는 글이 아니다. 나는 근면성실이라는 가치를 지금도 믿는다. 다만 그 정의를 바꿨을 뿐이다.</p>
+
+<p class="fade-in">예전의 근면성실은 "시키는 대로 열심히 하는 것"이었다. 주어진 자리에서, 주어진 일을, 불평 없이, 오래 하는 것. 그 정의 안에서 투자는 이질적인 것이었다. 투자는 시키는 일이 아니라 내가 선택한 일이니까. 주어진 것이 아니라 스스로 만든 것이니까.</p>
+
+<p class="fade-in">지금의 근면성실은 다르다. <strong>내가 선택한 방향에 정직하게 에너지를 쏟는 것.</strong> 그 방향이 본업이든, 투자이든, 둘 다이든. 선택의 책임을 지고, 그 선택에 성실한 것. 그것이 내가 재정의한 근면성실이다.</p>
+
+<div class="ib fade-in" data-label="돌아보기">
+  <p>이 글의 핵심은 세 문장으로 줄일 수 있다.</p>
+  <p><strong>첫째,</strong> "근면성실 ↔ 투자"를 같은 직선의 양 끝에 놓는 것은 교육이 만든 거짓 등식이다.</p>
+  <p><strong>둘째,</strong> 이 둘은 같은 축이 아니라 독립된 두 축이다. 하나가 올라간다고 다른 하나가 내려가지 않는다.</p>
+  <p><strong>셋째,</strong> 투자는 불로소득이 아니라, 판단과 인내와 리스크에 대한 정당한 대가다.</p>
+</div>
+
+<p class="fade-in">축이 다른 두 세계를 하나의 줄 위에 올려놓고 자신을 심판하는 일 — 나는 그것을 오랫동안 했다. 그리고 이제는 하지 않는다. 이 글은 누군가를 설득하기 위해 쓴 것이 아니다. 내가 걸어온 사유의 궤적을 기록으로 남기는 것이다.</p>
+
+<div class="tk fade-in">
+  <div class="tlbl">TAKE AWAY</div>
+  <p>축이 다른 것을 같은 줄 위에 올려놓고 판단하지 않는 것.<br><strong>그것이 투자자로서의 첫 번째 성숙이다.</strong></p>
+</div>
+
+</article>
+
+<footer class="footer fade-in">
+  투자 에세이 시리즈 · 특별강 IX &nbsp;|&nbsp; 2026
+</footer>
+
+<!-- ═══ Scripts ═══ -->
+<script>
+// ── Fade-in observer ──
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+// ── 4-Quadrant Canvas ──
+(function() {
+  const canvas = document.getElementById('qCanvas');
+  const ctx = canvas.getContext('2d');
+  const dpr = window.devicePixelRatio || 1;
+  
+  // Responsive sizing
+  function resize() {
+    const container = canvas.parentElement;
+    const w = Math.min(620, container.clientWidth - 40);
+    const h = Math.round(w * 0.71);
+    canvas.style.width = w + 'px';
+    canvas.style.height = h + 'px';
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    draw(w, h);
+  }
+
+  // State
+  let activeQ = 0; // 0=none, 1-4
+  let hoverQ = 0;
+  let animProgress = { 1: 0, 2: 0, 3: 0, 4: 0 };
+  let dotPulse = 0;
+
+  // Colors per quadrant
+  const qColors = {
+    1: { bg: 'rgba(184,134,11,0.08)', border: '#B8860B', text: '#B8860B' },
+    2: { bg: 'rgba(230,81,0,0.06)', border: '#E65100', text: '#E65100' },
+    3: { bg: 'rgba(123,31,162,0.05)', border: '#7B1FA2', text: '#7B1FA2' },
+    4: { bg: 'rgba(46,125,50,0.06)', border: '#2E7D32', text: '#2E7D32' }
+  };
+
+  const qLabels = {
+    1: '성실한 투자자',
+    2: '교육이 덮어씌운 이미지',
+    3: '정체',
+    4: '교육이 가르친 이상'
+  };
+
+  function draw(w, h) {
+    ctx.clearRect(0, 0, w, h);
+
+    const ox = 90; // origin x
+    const oy = h - 60; // origin y
+    const axisW = w - 120;
+    const axisH = h - 90;
+    const cx = ox + axisW / 2;
+    const cy = oy - axisH / 2;
+
+    // ── Background quadrant fills ──
+    for (let q = 1; q <= 4; q++) {
+      let ap = animProgress[q];
+      if (ap > 0) {
+        ctx.save();
+        ctx.globalAlpha = ap * 0.6;
+        let rx, ry, rw, rh;
+        if (q === 1) { rx = cx; ry = oy - axisH; rw = axisW / 2 + 30; rh = axisH / 2; }
+        else if (q === 2) { rx = ox; ry = oy - axisH; rw = axisW / 2 - 0; rh = axisH / 2; }
+        else if (q === 3) { rx = ox; ry = cy; rw = axisW / 2 - 0; rh = axisH / 2; }
+        else { rx = cx; ry = cy; rw = axisW / 2 + 30; rh = axisH / 2; }
+        
+        ctx.fillStyle = qColors[q].bg;
+        ctx.beginPath();
+        ctx.roundRect(rx, ry, rw, rh, 4);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // ── Grid lines (subtle) ──
+    ctx.strokeStyle = 'rgba(224,213,197,0.4)';
+    ctx.lineWidth = 0.5;
+    for (let i = 1; i <= 4; i++) {
+      // Horizontal
+      let yy = oy - (axisH / 5) * i;
+      ctx.beginPath(); ctx.moveTo(ox, yy); ctx.lineTo(ox + axisW, yy); ctx.stroke();
+      // Vertical
+      let xx = ox + (axisW / 5) * i;
+      ctx.beginPath(); ctx.moveTo(xx, oy); ctx.lineTo(xx, oy - axisH); ctx.stroke();
+    }
+
+    // ── Axes ──
+    ctx.strokeStyle = '#2C2C2C';
+    ctx.lineWidth = 1.5;
+    // X axis
+    ctx.beginPath(); ctx.moveTo(ox - 10, oy); ctx.lineTo(ox + axisW + 20, oy); ctx.stroke();
+    // Arrow X
+    ctx.beginPath(); ctx.moveTo(ox + axisW + 20, oy); ctx.lineTo(ox + axisW + 10, oy - 5); ctx.lineTo(ox + axisW + 10, oy + 5); ctx.closePath(); ctx.fillStyle = '#2C2C2C'; ctx.fill();
+    // Y axis
+    ctx.beginPath(); ctx.moveTo(ox, oy + 10); ctx.lineTo(ox, oy - axisH - 20); ctx.stroke();
+    // Arrow Y
+    ctx.beginPath(); ctx.moveTo(ox, oy - axisH - 20); ctx.lineTo(ox - 5, oy - axisH - 10); ctx.lineTo(ox + 5, oy - axisH - 10); ctx.closePath(); ctx.fill();
+
+    // ── Axis labels ──
+    ctx.font = '500 13px "Noto Sans KR", sans-serif';
+    ctx.fillStyle = '#2C2C2C';
+    ctx.textAlign = 'center';
+    ctx.fillText('근면성실 →', ox + axisW / 2, oy + 36);
+    
+    ctx.save();
+    ctx.translate(ox - 46, oy - axisH / 2);
+    ctx.rotate(-Math.PI / 2);
+    ctx.fillText('투자 (자본 배분) →', 0, 0);
+    ctx.restore();
+
+    // ── "False line" (diagonal, dashed) when no quadrant active ──
+    if (activeQ === 0) {
+      ctx.save();
+      ctx.setLineDash([6, 4]);
+      ctx.strokeStyle = 'rgba(183,28,28,0.3)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(ox + axisW + 10, oy - 10);
+      ctx.lineTo(ox + 10, oy - axisH - 5);
+      ctx.stroke();
+      ctx.setLineDash([]);
+      ctx.restore();
+
+      // Label for false line
+      ctx.save();
+      ctx.font = '400 11.5px "Noto Sans KR", sans-serif';
+      ctx.fillStyle = 'rgba(183,28,28,0.5)';
+      ctx.textAlign = 'center';
+      ctx.translate(ox + axisW / 2 + 40, oy - axisH / 2 - 16);
+      ctx.rotate(-Math.atan2(axisH, axisW));
+      ctx.fillText('← 교육이 만든 거짓 직선 →', 0, 0);
+      ctx.restore();
+    }
+
+    // ── Quadrant labels ──
+    ctx.font = '700 12.5px "Noto Sans KR", sans-serif';
+    ctx.textAlign = 'center';
+
+    for (let q = 1; q <= 4; q++) {
+      let lx, ly;
+      if (q === 1) { lx = cx + axisW / 4 + 15; ly = oy - axisH * 0.75; }
+      else if (q === 2) { lx = ox + axisW / 4 - 10; ly = oy - axisH * 0.75; }
+      else if (q === 3) { lx = ox + axisW / 4 - 10; ly = oy - axisH * 0.25; }
+      else { lx = cx + axisW / 4 + 15; ly = oy - axisH * 0.25; }
+
+      let isActive = activeQ === q || hoverQ === q;
+      ctx.globalAlpha = isActive ? 1 : 0.45;
+      ctx.fillStyle = qColors[q].text;
+      ctx.fillText(qLabels[q], lx, ly);
+
+      // Quadrant number circle
+      let cnx = lx, cny = ly - 22;
+      ctx.beginPath();
+      ctx.arc(cnx, cny, 12, 0, Math.PI * 2);
+      ctx.fillStyle = isActive ? qColors[q].border : 'rgba(0,0,0,0.08)';
+      ctx.fill();
+      ctx.fillStyle = isActive ? '#fff' : '#999';
+      ctx.font = '700 11px "Noto Sans KR", sans-serif';
+      ctx.fillText(q, cnx, cny + 4);
+      ctx.font = '700 12.5px "Noto Sans KR", sans-serif';
+
+      ctx.globalAlpha = 1;
+    }
+
+    // ── Pulsing dot for Q1 when active ──
+    if (activeQ === 1) {
+      let dx = cx + axisW * 0.3;
+      let dy = oy - axisH * 0.7;
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(dx, dy, 6 + Math.sin(dotPulse) * 2, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(184,134,11,0.7)';
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(dx, dy, 12 + Math.sin(dotPulse) * 4, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(184,134,11,0.15)';
+      ctx.fill();
+      ctx.restore();
+    }
+
+    // ── Origin label ──
+    ctx.font = '400 11px "Noto Sans KR", sans-serif';
+    ctx.fillStyle = '#999';
+    ctx.textAlign = 'right';
+    ctx.fillText('O', ox - 10, oy + 5);
+  }
+
+  // ── Hit detection ──
+  function getQuadrant(mx, my) {
+    const rect = canvas.getBoundingClientRect();
+    const x = (mx - rect.left);
+    const y = (my - rect.top);
+    const w = parseFloat(canvas.style.width);
+    const h = parseFloat(canvas.style.height);
+    const ox = 90;
+    const oy = h - 60;
+    const axisW = w - 120;
+    const axisH = h - 90;
+    const cx = ox + axisW / 2;
+    const cy = oy - axisH / 2;
+
+    if (x < ox || x > ox + axisW || y < oy - axisH || y > oy) return 0;
+    if (x >= cx && y <= cy) return 1;
+    if (x < cx && y <= cy) return 2;
+    if (x < cx && y > cy) return 3;
+    if (x >= cx && y > cy) return 4;
+    return 0;
+  }
+
+  canvas.addEventListener('click', (e) => {
+    let q = getQuadrant(e.clientX, e.clientY);
+    if (q === activeQ) activeQ = 0; else activeQ = q;
+    updateDescriptions();
+  });
+
+  canvas.addEventListener('mousemove', (e) => {
+    let q = getQuadrant(e.clientX, e.clientY);
+    hoverQ = q;
+    canvas.style.cursor = q > 0 ? 'pointer' : 'default';
+  });
+
+  canvas.addEventListener('mouseleave', () => { hoverQ = 0; });
+
+  // Touch
+  canvas.addEventListener('touchend', (e) => {
+    e.preventDefault();
+    let t = e.changedTouches[0];
+    let q = getQuadrant(t.clientX, t.clientY);
+    if (q === activeQ) activeQ = 0; else activeQ = q;
+    updateDescriptions();
+  });
+
+  function updateDescriptions() {
+    for (let i = 1; i <= 4; i++) {
+      // map i to DOM: 1→qd1, 2→qd2, 3→qd3, 4→qd4
+      let el = document.getElementById('qd' + i);
+      if (activeQ === 0 || activeQ === i) el.classList.add('active');
+      else el.classList.remove('active');
+    }
+  }
+
+  // Animation loop
+  function tick() {
+    dotPulse += 0.06;
+    for (let q = 1; q <= 4; q++) {
+      let target = (activeQ === q || hoverQ === q) ? 1 : 0;
+      animProgress[q] += (target - animProgress[q]) * 0.12;
+    }
+    let w = parseFloat(canvas.style.width);
+    let h = parseFloat(canvas.style.height);
+    if (w > 0) draw(w, h);
+    requestAnimationFrame(tick);
+  }
+
+  // Initialize: all descriptions active
+  updateDescriptions();
+  resize();
+  window.addEventListener('resize', resize);
+  requestAnimationFrame(tick);
+})();
+</script>
+
+</body>
+</html>
