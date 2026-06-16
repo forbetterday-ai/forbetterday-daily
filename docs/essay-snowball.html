@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-06-17">
+<meta name="post-description" content="월 30만 원이 17억이 된다. 단, 조건이 있다. 멈추지 않는 것. 그리고 연 5%p의 차이가 30년 뒤 30억 원의 격차를 만든다는 사실.">
+<meta name="post-tags" content="특별강, 복리, CAGR, 적립식투자, 눈덩이, 수익률격차">
+<title>작은 눈덩이의 힘</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --text: #2C2C2C;
+    --text-light: #6B6560;
+    --accent: #B8860B;
+    --accent-soft: #D4A843;
+    --accent-bg: #FDF6E3;
+    --border: #E0D5C5;
+    --green: #2E7D32;
+    --serif: 'Noto Serif KR', Georgia, serif;
+    --sans: 'Noto Sans KR', -apple-system, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: var(--sans); font-weight: 400; line-height: 1.9; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  .header { background: linear-gradient(175deg, #0F0C08 0%, #1A1410 30%, #2C2318 65%, #3D3226 100%); color: #FAF7F2; padding: 80px 24px 70px; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 20%, rgba(184,134,11,0.15) 0%, transparent 60%), radial-gradient(ellipse at 70% 80%, rgba(184,134,11,0.08) 0%, transparent 50%); }
+  .header-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .series-label { font-family: var(--sans); font-weight: 500; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft); margin-bottom: 28px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.2s; }
+  .header h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(28px, 5vw, 42px); line-height: 1.4; margin-bottom: 20px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s; }
+  .header-sub { font-family: var(--sans); font-weight: 300; font-size: 15px; color: #BDB3A4; line-height: 1.7; opacity: 0; animation: fadeUp 0.8s ease forwards 0.6s; }
+  .header-meta { margin-top: 32px; font-size: 12px; color: #8A7F72; letter-spacing: 0.5px; opacity: 0; animation: fadeUp 0.8s ease forwards 0.8s; }
+  .article { max-width: 680px; margin: 0 auto; padding: 56px 24px 80px; }
+  .article p { margin-bottom: 24px; font-size: 17px; line-height: 1.95; color: var(--text); word-break: keep-all; }
+  .article strong { font-weight: 700; color: #1A1A1A; }
+  .drop-cap::first-letter { font-family: var(--serif); font-weight: 900; font-size: 3.6em; float: left; line-height: 0.8; margin-right: 10px; margin-top: 6px; color: var(--accent); }
+  .section-break { text-align: center; margin: 48px 0; color: var(--accent-soft); font-size: 18px; letter-spacing: 12px; opacity: 0.6; }
+  .article h2 { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--text); margin: 56px 0 20px; line-height: 1.5; padding-left: 16px; border-left: 3px solid var(--accent); }
+  .pull-quote { margin: 48px -20px; padding: 32px 28px; background: var(--accent-bg); border-radius: 2px; border-left: 4px solid var(--accent); font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #3D3226; }
+  .pull-quote em { font-style: normal; color: var(--accent); font-weight: 700; }
+  .insight-box { margin: 48px 0; padding: 28px 24px; background: #FFFFFF; border: 1px solid var(--border); border-radius: 4px; position: relative; }
+  .insight-box::before { content: attr(data-label); position: absolute; top: -11px; left: 20px; background: var(--bg); padding: 0 10px; font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--accent); text-transform: uppercase; }
+  .insight-box p { font-size: 15.5px; line-height: 1.85; margin-bottom: 12px; color: var(--text-light); }
+  .insight-box p:last-child { margin-bottom: 0; }
+
+  /* 비교 테이블 */
+  .compare-table { width: 100%; border-collapse: collapse; margin: 28px 0; font-size: 15px; }
+  .compare-table th { font-family: var(--sans); font-weight: 700; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; padding: 12px 10px; text-align: center; border-bottom: 2px solid var(--accent); color: var(--text-light); }
+  .compare-table td { padding: 14px 10px; text-align: center; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
+  .compare-table tr:last-child td { border-bottom: 2px solid var(--accent); font-weight: 700; }
+  .compare-table .col-15 { color: #2E75B6; }
+  .compare-table .col-20 { color: #C45911; }
+  .compare-table .col-gap { color: #B8860B; font-weight: 600; }
+  .compare-table .highlight-row td { background: var(--accent-bg); font-weight: 700; }
+
+  .formula-box { margin: 32px 0; padding: 20px 24px; background: #F8F5F0; border: 1px solid var(--border); border-radius: 4px; text-align: center; }
+  .formula-box .formula { font-family: var(--serif); font-size: 17px; color: var(--text); letter-spacing: 0.5px; margin-bottom: 8px; }
+  .formula-box .formula-note { font-size: 13px; color: var(--text-light); }
+
+  .personal-note { margin: 48px 0; padding: 28px 24px; background: linear-gradient(135deg, #FAF7F2, #F5F0E8); border: 1px solid var(--accent-soft); border-radius: 4px; position: relative; }
+  .personal-note::before { content: '✦'; position: absolute; top: -10px; left: 24px; background: var(--bg); padding: 0 8px; font-size: 14px; color: var(--accent); }
+  .personal-note p { font-size: 16.5px; line-height: 2; color: var(--text); margin-bottom: 16px; }
+  .personal-note p:last-child { margin-bottom: 0; }
+
+  .one-step { margin: 48px 0; padding: 24px 28px; background: linear-gradient(135deg, #F0FAF0, #E8F5E9); border-left: 4px solid var(--green); border-radius: 2px; }
+  .one-step .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--green); margin-bottom: 12px; }
+  .one-step p { font-size: 15.5px; line-height: 1.85; color: #2C3E2C; margin-bottom: 12px; }
+  .one-step p:last-child { margin-bottom: 0; }
+  .takeaway { margin: 56px 0 0; padding: 32px 28px; background: linear-gradient(135deg, #1A1410, #2C2318); color: #FAF7F2; border-radius: 4px; text-align: center; }
+  .takeaway .label { font-size: 11px; letter-spacing: 3px; color: var(--accent-soft); font-weight: 500; margin-bottom: 16px; }
+  .takeaway p { font-family: var(--serif); font-size: 18px; line-height: 1.8; color: #E8E0D5; margin-bottom: 0; }
+  .takeaway strong { color: var(--accent-soft); }
+  .takeaway .sub { font-size: 14px; color: #8A7F72; margin-top: 12px; display: inline-block; }
+  .footer { text-align: center; padding: 40px 24px 60px; font-size: 12px; color: #A89F94; letter-spacing: 0.5px; }
+  .hl { background: linear-gradient(transparent 60%, rgba(184,134,11,0.15) 60%); padding: 0 2px; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+  @media (max-width: 600px) {
+    .header { padding: 60px 20px 50px; }
+    .article { padding: 40px 20px 60px; }
+    .article p { font-size: 16px; }
+    .pull-quote { margin: 36px -10px; padding: 24px 20px; font-size: 16.5px; }
+    .compare-table { font-size: 13.5px; }
+    .compare-table th, .compare-table td { padding: 10px 6px; }
+    .personal-note { padding: 24px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="series-label">투자 에세이 · 특별강</div>
+    <h1>작은 눈덩이의 힘</h1>
+    <p class="header-sub">월 30만 원이 17억이 된다. 단, 조건이 하나 있다 — 멈추지 않는 것</p>
+    <div class="header-meta">작은 시작이 만드는 큰 차이 — 읽는 시간 약 16분</div>
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- 1. 도입 — 초두효과: 결론을 먼저 던진다 -->
+  <p class="drop-cap fade-in">월 30만 원이 17억이 된다. 치킨 열 마리 값을 매달 넣으면, 30년 뒤에 17억이 된다. 조건은 하나다. 멈추지 않는 것. 이 이야기가 믿기 어렵다면, 숫자를 직접 보자.</p>
+
+  <p class="fade-in">투자를 시작하면 누구나 한 번쯤 이 생각을 한다. "이 정도로 뭘 할 수 있을까?" 수익률 40%. 숫자로 보면 대단하다. 하지만 원금이 작으면 금액도 작다. 100만 원의 40%는 40만 원. 한 달 식비다. "이걸로 뭘 하겠어"라는 생각이 자연스럽게 따라온다.</p>
+
+  <p class="fade-in">그런데 이 생각이 가장 위험한 함정이다. 눈앞의 금액만 보는 사람은 금액이 충분해질 때까지 기다린다. 기다리는 동안 시간이 흐른다. 그리고 투자에서 시간은 돈보다 비싸다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 2. 버핏 콜백 — 22강 참조, 짧게 -->
+  <h2 class="fade-in">젖은 눈과 긴 언덕</h2>
+
+  <p class="fade-in">22강에서 다뤘듯, 워런 버핏 자산의 99%는 50세 이후에 만들어졌다. 11세에 투자를 시작해서 39년간 쌓은 것보다 그 이후에 쌓인 것이 100배 더 많다. 복리의 마법이 뒷부분에 폭발하기 때문이다.</p>
+
+  <p class="fade-in">버핏은 자신의 인생을 눈덩이에 비유했다. <strong>"중요한 것은 젖은 눈과 아주 긴 언덕이다."</strong> 젖은 눈은 수익률, 긴 언덕은 시간이다. 둘 중에 지금 당장 확보할 수 있는 것은 시간이다. 30세에 시작하면 언덕이 30년이다. 40세에 시작하면 20년이다. 고작 10년 차이라고 생각할 수 있지만, 복리의 세계에서 10년은 결과를 몇 배로 갈라놓는다.</p>
+
+  <p class="fade-in">그런데 여기서 한 가지 더 중요한 것이 있다. 같은 길이의 언덕이라도, <strong>눈이 얼마나 젖어 있는가</strong>에 따라 30년 뒤 눈덩이의 크기가 극적으로 달라진다. 연 5%p의 차이. 작아 보인다. 하지만 이 작은 차이가 만드는 세계를, 지금부터 숫자로 보자.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 3. 복리의 진짜 숫자 — CAGR 정확 환산 -->
+  <h2 class="fade-in">복리의 진짜 숫자</h2>
+
+  <p class="fade-in">먼저 한 가지를 짚고 가자. "연 15% 수익률"이라고 할 때, 이 숫자를 12개월로 나누면 월 1.25%가 된다. 그런데 이 1.25%를 매달 복리로 다시 굴리면 1년 뒤 실제 수익률은 15%가 아니라 <strong>16.08%</strong>가 된다. 이자에 이자가 붙기 때문이다.</p>
+
+  <p class="fade-in">정확히 연 15%를 재현하려면, 월 수익률을 <strong>1.1715%</strong>로 잡아야 한다. 수식으로 쓰면 이렇다.</p>
+
+  <div class="formula-box fade-in">
+    <div class="formula">(1 + 0.15)<sup>1/12</sup> − 1 = <strong>1.1715%</strong></div>
+    <div class="formula-note">연 복합성장률(CAGR) 15%에 정확히 대응하는 월 수익률</div>
+  </div>
+
+  <p class="fade-in">이제 이 정확한 수치로 계산해보자. 월 30만 원, 연 CAGR 15%.</p>
+
+  <p class="fade-in"><strong>5년 후</strong> — 약 2,590만 원. 투입금 1,800만 원의 1.4배. 솔직히, 아직은 별다를 게 없다.</p>
+
+  <p class="fade-in"><strong>10년 후</strong> — 약 7,800만 원. 투입금 3,600만 원의 2.2배. 슬슬 "어, 좀 다른데?" 하는 시점이 온다.</p>
+
+  <p class="fade-in"><strong>20년 후</strong> — 약 3.9억 원. 투입금 7,200만 원의 5.5배. 넣은 돈의 다섯 배 이상이 "시간"이 만든 돈이다.</p>
+
+  <p class="fade-in"><strong>30년 후</strong> — <span class="hl">약 16.7억 원.</span> 투입금 1.08억 원의 <strong>15.5배.</strong> 매달 30만 원이었다. 치킨 열 마리 값이었다. 그것이 30년 뒤에 17억이 되어 있다.</p>
+
+  <p class="fade-in">그리고 한 가지 더. 이 계산은 30년 내내 월 30만 원을 유지한다는 가정이다. 하지만 현실에서는 경력이 쌓이면 소득이 늘고, 인플레이션만큼 화폐의 단위도 커진다. 5년 뒤, 10년 뒤에 적립금을 월 50만 원, 그 이상으로 올릴 가능성은 높다. <strong>뒷부분에서 투입금까지 늘어나면, 복리 곡선은 위 숫자보다 훨씬 더 가파르게 올라간다.</strong> 17억은 최소한의 그림이다. 멈추지 않고, 성장하는 사람에게 복리가 돌려주는 보상은 이보다 크다.</p>
+
+  <p class="fade-in">22강에서 봤던 것과 같은 곡선이다. 앞부분은 거의 평평하고, 뒷부분에 수직으로 올라간다. 처음 10년에 쌓인 이자보다 마지막 10년에 쌓인 이자가 수십 배 더 크다. <strong>복리의 진짜 힘은 뒷부분에 있다.</strong></p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 4. 핵심 신설 섹션: 5%의 차이 -->
+  <h2 class="fade-in">5%의 차이가 만드는 세계</h2>
+
+  <p class="fade-in">이제 하나만 바꿔보자. 연 수익률을 15%에서 <strong>20%</strong>로.</p>
+
+  <p class="fade-in">20%는 워런 버핏의 평생 연평균 수익률이기도 하다. 범접할 수 없는 숫자처럼 보일 수 있지만, 꼭 그렇지만은 않다. 지난 30년간 나스닥 100의 연평균 수익률이 약 14~16%였고, AI·반도체·클라우드 같은 세상을 바꾸는 흐름에 일찍 올라탄 투자자들은 이 이상의 성과를 경험해왔다. 무리하게 레버리지를 쓰거나 위험한 종목에 몰빵하지 않아도, <strong>세상의 흐름을 읽고 꾸준히 따라간다면</strong> 도달 가능한 수준이다.</p>
+
+  <p class="fade-in">같은 월 30만 원. 같은 30년. 달라지는 것은 연 수익률 <strong>5%p</strong>뿐이다.</p>
+
+  <div class="fade-in" style="overflow-x: auto;">
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>시점</th>
+        <th>투입금</th>
+        <th class="col-15">CAGR 15%</th>
+        <th class="col-20">CAGR 20%</th>
+        <th class="col-gap">격차</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>5년</td>
+        <td>1,800만</td>
+        <td class="col-15">2,590만</td>
+        <td class="col-20">2,916만</td>
+        <td class="col-gap">326만</td>
+      </tr>
+      <tr>
+        <td>10년</td>
+        <td>3,600만</td>
+        <td class="col-15">7,799만</td>
+        <td class="col-20">1.02억</td>
+        <td class="col-gap">2,374만</td>
+      </tr>
+      <tr>
+        <td>15년</td>
+        <td>5,400만</td>
+        <td class="col-15">1.83억</td>
+        <td class="col-20">2.82억</td>
+        <td class="col-gap">9,955만</td>
+      </tr>
+      <tr>
+        <td>20년</td>
+        <td>7,200만</td>
+        <td class="col-15">3.94억</td>
+        <td class="col-20">7.32억</td>
+        <td class="col-gap">3.4억</td>
+      </tr>
+      <tr class="highlight-row">
+        <td>30년</td>
+        <td>1.08억</td>
+        <td class="col-15">16.7억</td>
+        <td class="col-20">46.3억</td>
+        <td class="col-gap">29.6억</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="fade-in">5년 차에는 격차가 326만 원이다. 스마트폰 하나 값이다. "15%나 20%나 비슷하네"라고 느껴진다.</p>
+
+  <p class="fade-in">10년 차에도 아직 2,374만 원. 차 한 대 정도의 차이. 여전히 "그래서 뭐?"라는 생각이 들 수 있다.</p>
+
+  <p class="fade-in">그런데 20년이 지나면 격차가 <strong>3.4억</strong>으로 벌어진다. 소형 아파트 한 채 차이다. 같은 돈을 넣었는데, 수익률 5%p의 차이가 아파트 한 채를 만들었다.</p>
+
+  <p class="fade-in">그리고 30년. <strong>29.6억.</strong> 격차만으로 서울 고급 아파트를 살 수 있다. 15%로 투자한 사람의 자산이 16.7억일 때, 20%로 투자한 사람은 46.3억이다. <span class="hl">같은 월 30만 원을 넣었는데, 결과가 2.8배 차이</span>가 난다.</p>
+
+  <div class="pull-quote fade-in">
+    5%p는 매일 체감되지 않는다. 1년 단위로 봐도 큰 차이가 아니다. 하지만 복리가 이 작은 차이를 30년간 증폭시키면, <em>그 끝에서 기다리고 있는 것은 완전히 다른 세계다.</em> 복리에서는 '작은 차이 × 긴 시간 = 큰 결과'라는 등식이 예외 없이 성립한다.
+  </div>
+
+  <p class="fade-in">그래서 중요한 것은 두 가지다. 첫째, <strong>수익률을 조금이라도 더 높이는 노력.</strong> 세상이 어디로 가고 있는지를 공부하고, 성장하는 곳에 돈을 두는 것. 22강에서 배운 복리의 세 조건 중 첫 번째, "양(+)의 수익률"의 크기를 키우는 것이다. 둘째, 그리고 이것이 더 어려운데 — <strong>그 수익률을 30년간 유지하는 것.</strong> 수익률 5%p를 높이는 것보다, 30년을 중단하지 않고 유지하는 것이 훨씬 어렵다. 그리고 훨씬 더 큰 차이를 만든다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 5. 진짜 자산은 수익률이 아니라 실수하지 않는 법 -->
+  <h2 class="fade-in">지금 배우는 것의 진짜 가치</h2>
+
+  <p class="fade-in">지금 40%를 벌었다고 하자. 하지만 진짜 배운 것은 40%가 아니다. 언제 사고 언제 파는지. 공포에 팔지 않는 법. 욕심에 몰빵하지 않는 법. 하락장에서 버티는 법. 이 모든 것을 <strong>작은 돈으로 배우고 있다는 것</strong>이 진짜 자산이다.</p>
+
+  <p class="fade-in">50% 손실은 원금 복구에 100%가 필요하다. 100만 원에서 50만 원을 잃으면 아프지만 배운다. 1억에서 5,000만 원을 잃으면 재기가 어렵다. 작은 돈으로 실수하는 것이 가장 싼 수업료다. 지금은 실수해도 되는 시기다. 이 시기에 배운 것이 나중에 큰 돈을 지킨다.</p>
+
+  <p class="fade-in">위 표에서 본 15%와 20%의 차이도 여기서 비롯된다. 20%를 만들어내는 것은 마법이 아니다. <strong>더 좋은 판단을 조금 더 자주 하고, 나쁜 판단을 조금 더 적게 하는 것의 축적</strong>이다. 지금 작은 돈으로 쌓고 있는 판단력이, 5%p를 만드는 원천이 된다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 6. 기다리는 사람의 함정 -->
+  <h2 class="fade-in">기다리는 사람의 함정</h2>
+
+  <p class="fade-in">"돈 좀 모이면 그때 시작하지." 이 생각이 가장 비싼 생각이다.</p>
+
+  <p class="fade-in">모이는 동안 잃는 것이 있다. 시간, 경험, 그리고 복리의 초반 곡선. 완벽한 금액이 올 때까지 기다리면 언덕이 짧아진다. 젖은 눈이 있어도 언덕이 없으면 눈덩이는 커지지 않는다.</p>
+
+  <p class="fade-in">위 표에서 5년 차의 격차가 고작 326만 원인 것을 다시 보자. 초반은 누구에게나 느리다. 당연하다. <strong>그 느린 시간을 통과한 사람만이 뒷부분의 폭발을 경험한다.</strong> 이미 시작했다면, 그 함정은 지나온 것이다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 7. 레버리지 — 준비된 사람에게 오는 가속 -->
+  <h2 class="fade-in">언덕 위의 바람</h2>
+
+  <p class="fade-in">눈덩이가 충분히 커지면, 바람이 불기 시작한다. 투자의 세계에서 이 바람의 이름은 <strong>타인자본</strong>이다.</p>
+
+  <p class="fade-in">두 가지 상황을 생각해보자. 회사에서 주택자금 대출을 <strong>연 1%</strong>로 해준다. 투자 수익률이 10%라면, 나는 9%p의 차이를 거의 공짜로 가져갈 수 있다. 운이 좋은 경우다.</p>
+
+  <p class="fade-in">하지만 이런 혜택이 없는 사람이 더 많다. 그래도 괜찮다. 은행에서 <strong>연 3.5%</strong>로 빌린다고 해보자. 투자 수익률이 10%라면, 6.5%p의 차이가 남는다. 1%짜리 대출보다는 적지만, 여전히 의미 있는 수치다. 그리고 이 6.5%p는 은행이 준 것이 아니다. <strong>순전히 나의 투자 실력이 만든 것이다.</strong> 시장을 읽는 눈, 흔들리지 않는 마음, 꾸준히 쌓아온 판단력 — 그것이 3.5%와 10% 사이의 간격을 벌린 것이다.</p>
+
+  <div class="formula-box fade-in">
+    <div class="formula">빌린 돈의 수익률 − 이자율 = 자기 돈 없이 생기는 수익</div>
+    <div class="formula-note">회사 대출 1%라면 9%p · 은행 대출 3.5%라면 6.5%p — 어느 쪽이든 안목이 차이를 만든다</div>
+  </div>
+
+  <p class="fade-in">하지만 진짜 문제는 돈이 없는 것이 아니라 준비가 안 된 것이다. 돈은 빌릴 수 있다. 안목은 빌릴 수 없다.</p>
+
+  <p class="fade-in">지금 월 30만 원으로 쌓고 있는 것은 자산만이 아니다. 그 기회가 왔을 때 "나는 준비됐다"고 말할 수 있는 자격이다. 시간은 지금 이 순간에도 확보되고 있다. 중간에 그만두고 싶었던 적이 있다면 — 그 충동을 이겨낸 순간이 복리의 사슬을 한 고리 더 이어붙인 순간이었다. 그리고 기억하자. 안목이 충분히 쌓인 뒤에는, <strong>바람을 탈 수 있는 기회가 온다.</strong> 그 기회를 알아볼 수 있는 눈은, 지금 이 시간이 만들고 있다.</p>
+
+  <div class="section-break fade-in">· · ·</div>
+
+  <!-- 한 걸음 더 -->
+  <div class="one-step fade-in">
+    <div class="label">한 걸음 더 — 나의 5%p는 어디에서 오는가</div>
+    <p>오늘 밤 30초만 생각해보자. 15%와 20%의 차이가 30년 뒤 30억 원의 격차를 만든다면, <strong>나의 5%p를 높일 수 있는 곳은 어디인가.</strong></p>
+    <p>더 넓은 시야로 세상의 흐름을 읽는 것일 수도 있다. 공포에 팔지 않는 훈련일 수도 있다. 혹은 단순히, 시작한 것을 멈추지 않는 것일 수도 있다. 5%p는 하루에 만들어지지 않는다. 매일 조금 더 나은 판단을 쌓아가는 것 — 그 축적이 5%p가 된다.</p>
+  </div>
+
+  <!-- 결론 — 최신효과: 미래에서 돌아보게 만든다 -->
+  <div class="takeaway fade-in">
+    <div class="label">오늘의 한 줄</div>
+    <p>10년 뒤, 누군가 당신의 자산을 보고 물을 것이다.<br>
+    "어떻게 그렇게 만들었어?"<br><br>
+    당신은 그때 알 것이다.<br>
+    답은 큰 돈이 아니었다는 것을.<br>
+    특별한 종목도 아니었다는 것을.<br><br>
+    매달 30만 원이었고,<br>
+    멈추지 않은 것이었고,<br>
+    <strong>5%p를 만들기 위해 매일 조금씩 나아진 것이었다는 것을.</strong><br>
+    <span class="sub">눈덩이는 멈추면 녹는다. 굴리면 커진다.<br>그리고 젖은 눈을 찾는 사람에게는, 더 큰 눈덩이가 기다리고 있다.</span></p>
+  </div>
+
+</article>
+
+<footer class="footer">
+  <p>투자 에세이 시리즈 · 특별강<br>
+  <span style="opacity:0.6;">작은 시작이 만드는 큰 차이 — 복리와 시간의 힘</span></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
