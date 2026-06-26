@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="post-date" content="2026-06-26">
+<meta name="post-description" content="로켓이 지구 중력을 벗어나는 궤도탈출 속도처럼, 개인 재무에도 생활비라는 중력을 넘어서는 순간이 있다. 투자 복리가 근로소득을 추월하는 교차점을 계산한다.">
+<meta name="post-tags" content="궤도탈출속도, 복리, 세율, 투자소득, 근로소득, 교차점, 카너먼">
+<title>재무적 궤도탈출 속도 — 중력을 넘어서는 숫자</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAF7F2;--text:#2C2C2C;--text-light:#6B6560;--accent:#B8860B;--accent-soft:#D4A843;--accent-bg:#FDF6E3;--border:#E0D5C5;--green:#2E7D32;--red:#C62828;--blue:#1565C0;--serif:'Noto Serif KR',Georgia,serif;--sans:'Noto Sans KR',-apple-system,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:400;line-height:1.9;font-size:17px;-webkit-font-smoothing:antialiased}
+.header{background:linear-gradient(175deg,#0F0C08 0%,#1A1410 30%,#2C2318 65%,#3D3226 100%);color:#FAF7F2;padding:80px 24px 70px;text-align:center;position:relative;overflow:hidden}
+.header::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 30% 20%,rgba(184,134,11,.15) 0%,transparent 60%),radial-gradient(ellipse at 70% 80%,rgba(184,134,11,.08) 0%,transparent 50%)}
+.header-inner{position:relative;max-width:680px;margin:0 auto}
+.series-label{font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--accent-soft);margin-bottom:28px;opacity:0;animation:fadeUp .8s ease forwards .2s}
+.header h1{font-family:var(--serif);font-weight:900;font-size:clamp(28px,5vw,42px);line-height:1.4;margin-bottom:20px;opacity:0;animation:fadeUp .8s ease forwards .4s}
+.header-sub{font-family:var(--sans);font-weight:300;font-size:15px;color:#BDB3A4;line-height:1.7;opacity:0;animation:fadeUp .8s ease forwards .6s}
+.header-meta{margin-top:32px;font-size:12px;color:#8A7F72;letter-spacing:.5px;opacity:0;animation:fadeUp .8s ease forwards .8s}
+.article{max-width:680px;margin:0 auto;padding:56px 24px 80px}
+.article p{margin-bottom:24px;font-size:17px;line-height:1.95;color:var(--text);word-break:keep-all}
+.article strong{font-weight:700;color:#1A1A1A}
+.drop-cap::first-letter{font-family:var(--serif);font-weight:900;font-size:3.6em;float:left;line-height:.8;margin-right:10px;margin-top:6px;color:var(--accent)}
+.sb{text-align:center;margin:48px 0;color:var(--accent-soft);font-size:18px;letter-spacing:12px;opacity:.6}
+.article h2{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--text);margin:56px 0 20px;line-height:1.5;padding-left:16px;border-left:3px solid var(--accent)}
+.pq{margin:48px -20px;padding:32px 28px;background:var(--accent-bg);border-radius:2px;border-left:4px solid var(--accent);font-family:var(--serif);font-size:18px;line-height:1.8;color:#3D3226}
+.pq em{font-style:normal;color:var(--accent);font-weight:700}
+.pq .src{display:block;font-family:var(--sans);font-size:12px;color:var(--text-light);margin-top:12px;font-style:normal}
+.ib{margin:48px 0;padding:28px 24px 20px;background:#fff;border:1px solid var(--border);border-radius:4px;position:relative}
+.ib::before{content:attr(data-label);position:absolute;top:-11px;left:20px;background:var(--bg);padding:0 10px;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);text-transform:uppercase}
+.ib p{font-size:15.5px;line-height:1.85;margin-bottom:12px;color:var(--text-light)}
+.ib p:last-child{margin-bottom:0}
+.hl{background:linear-gradient(transparent 60%,rgba(184,134,11,.15) 60%);padding:0 2px}
+
+/* ─── Chart Container ─── */
+.sim{margin:48px -20px;background:#fff;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.sim-header{background:linear-gradient(135deg,#1A1410,#2C2318);color:#FAF7F2;padding:20px 24px}
+.sim-header h3{font-family:var(--serif);font-weight:700;font-size:18px}
+.sim-header p{font-size:13px;color:#8A7F72;margin-top:4px}
+.sim-body{padding:24px}
+
+/* ─── Sliders ─── */
+.sl{margin-bottom:20px}
+.sl-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px}
+.sl-label{font-size:13px;font-weight:500;color:var(--text)}
+.sl-val{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--accent)}
+.sl-val small{font-size:12px;font-weight:400;color:var(--text-light)}
+input[type=range]{-webkit-appearance:none;width:100%;height:5px;border-radius:3px;background:#E0D5C5;outline:none;margin:4px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.2)}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--accent);cursor:pointer;border:2px solid #fff}
+.sl-ticks{display:flex;justify-content:space-between;font-size:10px;color:#A89F94;margin-top:2px}
+
+/* ─── Canvas ─── */
+.chart-wrap{position:relative;width:100%;height:320px;margin:16px 0 8px}
+.chart-wrap canvas{width:100%;height:100%}
+
+/* ─── Legend ─── */
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:8px;padding-top:12px;border-top:1px solid var(--border)}
+.lg{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-light)}
+.lg-dot{width:14px;height:3px;border-radius:2px;flex-shrink:0}
+
+/* ─── Stats ─── */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.st{padding:14px 10px;background:var(--accent-bg);border-radius:4px;text-align:center}
+.st-n{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--accent);line-height:1.2}
+.st-l{font-size:10px;color:var(--text-light);margin-top:3px;letter-spacing:.3px;line-height:1.4}
+
+/* ─── Year Table ─── */
+.yr-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:12px}
+.yr-table th{background:#1A1410;color:#FAF7F2;padding:8px 6px;text-align:right;font-weight:500;font-size:11px}
+.yr-table th:first-child{text-align:center;width:40px}
+.yr-table td{padding:7px 6px;border-bottom:1px solid var(--border);text-align:right;color:var(--text-light);font-variant-numeric:tabular-nums}
+.yr-table td:first-child{text-align:center;font-weight:500;color:var(--text)}
+.yr-table .cross-row{background:var(--accent-bg);font-weight:600}
+.yr-table .cross-row td{color:var(--accent)}
+.tbl-toggle{display:block;margin:12px auto 0;padding:6px 16px;background:none;border:1px solid var(--border);border-radius:4px;font-size:12px;color:var(--text-light);cursor:pointer;font-family:var(--sans)}
+.tbl-toggle:hover{border-color:var(--accent);color:var(--accent)}
+
+/* ─── Bottom sections ─── */
+.one-step{margin:48px 0;padding:24px 28px;background:linear-gradient(135deg,#F0FAF0,#E8F5E9);border-left:4px solid var(--green);border-radius:2px}
+.one-step .label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--green);margin-bottom:12px}
+.one-step p{font-size:15.5px;line-height:1.85;color:#2C3E2C;margin-bottom:12px}
+.one-step p:last-child{margin-bottom:0}
+.takeaway{margin:56px 0 0;padding:32px 28px;background:linear-gradient(135deg,#1A1410,#2C2318);color:#FAF7F2;border-radius:4px;text-align:center}
+.takeaway .label{font-size:11px;letter-spacing:3px;color:var(--accent-soft);font-weight:500;margin-bottom:16px}
+.takeaway p{font-family:var(--serif);font-size:18px;line-height:1.8;color:#E8E0D5;margin-bottom:0}
+.takeaway strong{color:var(--accent-soft)}
+.footer{text-align:center;padding:40px 24px 60px;font-size:12px;color:#A89F94;letter-spacing:.5px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:600px){
+  .header{padding:60px 20px 50px}
+  .article{padding:40px 20px 60px}
+  .article p{font-size:16px}
+  .pq{margin:36px -10px;padding:24px 20px;font-size:16.5px}
+  .sim{margin:36px -8px}
+  .sim-body{padding:16px}
+  .stats{grid-template-columns:1fr}
+  .chart-wrap{height:260px}
+  .yr-table{font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<div class="header-inner">
+  <div class="series-label">투자 에세이 · 특별강</div>
+  <h1>재무적 궤도탈출 속도</h1>
+  <p class="header-sub">근로소득의 중력을 넘어, 투자소득이 추월하는 교차점을 찾다</p>
+  <div class="header-meta">특별강 · 읽는 시간 약 16분</div>
+</div>
+</header>
+
+<article class="article">
+
+<p class="drop-cap fade-in">로켓이 지구를 떠나려면 초속 11.2km가 필요하다. 이보다 느리면 아무리 높이 올라가도 결국 다시 땅으로 돌아온다. 이것을 궤도탈출 속도(Escape Velocity)라고 부른다. 돌멩이를 하늘로 던지면 잠깐 올라갔다가 다시 떨어진다. 중력이라는 힘이 끊임없이 아래로 잡아당기기 때문이다. 로켓은 그 중력보다 더 빠르게 올라감으로써 궤도를 벗어난다.</p>
+
+<p class="fade-in">개인의 재무에도 이 중력이 있다. <strong>생활비</strong>라는 이름의 중력이다.</p>
+
+<p class="fade-in">매달 월세, 식비, 교통비, 통신비, 보험료. 2026년 기준 서울 1인 가구는 대략 월 150~180만 원을 쓰고 있다. 숫자는 사람마다 다르지만, <span class="hl">숨을 쉬는 것만으로 매달 일정 금액이 빠져나간다는 구조</span>는 같다. 이 생활비라는 중력을 넘어서지 못하면, 아무리 열심히 일해도 돈은 잠깐 손에 머물렀다가 다시 떨어진다.</p>
+
+<p class="fade-in">소득이 생활비를 초과하는 순간 — 잉여가 양수가 되는 순간 — 비로소 자산의 궤도에 진입한다. 연봉 3,500만 원, 월 생활비 170만 원이라면 — 이미 이 순간을 지나고 있다. 매달 크지 않더라도 잉여가 남고 있다면, 당신의 로켓은 이미 발사대를 떠난 것이다. 문제는 그 잉여를 어디에 놓느냐다.</p>
+
+<div class="sb fade-in">· · ·</div>
+
+<h2 class="fade-in">두 개의 곡선이 교차하는 지점</h2>
+
+<p class="fade-in">잉여를 만들었다면, 다음 질문은 이것이다. <strong>그 잉여를 어디에 놓을 것인가.</strong></p>
+
+<p class="fade-in">은행에 넣으면 이자가 붙는다. 투자에 넣으면 수익이 붙는다. 핵심은 이 수익이 <strong>복리로 쌓인다</strong>는 것이다. 22강에서 말했듯 복리는 직선이 아니라 곡선을 그린다 — 시간이 갈수록 기울기가 가팔라지는 곡선이다.</p>
+
+<p class="fade-in">이제 두 개의 소득원을 동시에 그려보자.</p>
+
+<p class="fade-in"><strong>첫 번째 선: 근로 잉여.</strong> 매년 연봉에서 세금과 생활비를 빼고 남는 금액이다. 연봉이 크게 오르지 않는 한 이 선은 거의 수평이다.</p>
+
+<p class="fade-in"><strong>두 번째 선: 투자소득.</strong> 잉여를 투자에 넣고 복리로 굴리면, 누적 자산이 커지면서 매년 발생하는 투자수익도 점점 커진다. 이 선은 복리 곡선을 따라 위로 휘어진다.</p>
+
+<p class="fade-in">처음에는 투자소득이 근로 잉여보다 훨씬 작다. 1,000만 원을 투자해서 15%를 벌어도 150만 원이다. 연간 잉여 1,000만 원에 비하면 아직 작아 보인다. 하지만 매년 잉여를 추가로 투자하고 수익을 재투자하면 — 원금도 커지고 수익도 커지고, 그 수익의 수익도 커진다. 생각보다 빠르게 불어난다.</p>
+
+<p class="fade-in"><span class="hl">어느 해, 이 두 선이 교차한다.</span> 투자소득이 근로 잉여를 추월하는 순간이다. 이 교차점 이후부터는 연봉을 올리려는 노력보다 <strong>투자 실력을 1%라도 높이는 것</strong>이 자산 성장에 더 크게 기여한다. 아래에서 직접 확인해보자.</p>
+
+<!-- ═══ SIMULATOR ═══ -->
+<div class="sim fade-in">
+  <div class="sim-header">
+    <h3>궤도탈출 시뮬레이터</h3>
+    <p>슬라이더를 조절하면 교차 연도(N년차)가 실시간으로 바뀝니다</p>
+  </div>
+  <div class="sim-body">
+
+    <div class="sl">
+      <div class="sl-row">
+        <span class="sl-label">연봉 (세전)</span>
+        <span class="sl-val" id="vSal">3,500<small>만 원</small></span>
+      </div>
+      <input type="range" id="sSal" min="2000" max="10000" value="3500" step="500">
+      <div class="sl-ticks"><span>2,000</span><span>3,500</span><span>6,000</span><span>10,000</span></div>
+    </div>
+
+    <div class="sl">
+      <div class="sl-row">
+        <span class="sl-label">월 생활비</span>
+        <span class="sl-val" id="vCost">170<small>만 원</small></span>
+      </div>
+      <input type="range" id="sCost" min="100" max="300" value="170" step="10">
+      <div class="sl-ticks"><span>100</span><span>170</span><span>230</span><span>300</span></div>
+    </div>
+
+    <div class="sl">
+      <div class="sl-row">
+        <span class="sl-label">연간 투자수익률</span>
+        <span class="sl-val" id="vRate">15<small>%</small></span>
+      </div>
+      <input type="range" id="sRate" min="3" max="25" value="15" step="1">
+      <div class="sl-ticks"><span>3%</span><span>10%</span><span>15%</span><span>25%</span></div>
+    </div>
+
+    <!-- Chart -->
+    <div class="chart-wrap">
+      <canvas id="cvs"></canvas>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <div class="lg"><div class="lg-dot" style="background:var(--accent)"></div>연간 근로 잉여</div>
+      <div class="lg"><div class="lg-dot" style="background:var(--blue)"></div>연간 투자소득</div>
+      <div class="lg"><div class="lg-dot" style="background:var(--green);height:10px;width:10px;border-radius:50%"></div>교차점 (N년차)</div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="st">
+        <div class="st-n" id="stCross">—</div>
+        <div class="st-l">투자소득 추월<br>N년차</div>
+      </div>
+      <div class="st">
+        <div class="st-n" id="stPort">—</div>
+        <div class="st-l">교차 시점<br>누적 자산 (만 원)</div>
+      </div>
+      <div class="st">
+        <div class="st-n" id="stInv">—</div>
+        <div class="st-l">교차 시점<br>연 투자소득 (만 원)</div>
+      </div>
+    </div>
+
+    <!-- Year Table -->
+    <button class="tbl-toggle" id="tblBtn" type="button">연도별 상세 테이블 보기 ▾</button>
+    <div id="tblWrap" style="display:none;overflow-x:auto;margin-top:12px"></div>
+
+  </div>
+</div>
+
+<p class="fade-in">그래프를 조작하면 몇 가지 패턴이 보인다.</p>
+
+<p class="fade-in"><strong>첫째, 수익률의 위력.</strong> 수익률을 8%에서 15%로 올리면 교차점이 5~6년이나 앞당겨진다. 연봉을 1,000만 원 올리는 것보다 수익률을 5%p 높이는 것이 교차점을 더 빠르게 가져온다. 이것이 "투자 실력"이 가진 레버리지다.</p>
+
+<p class="fade-in"><strong>둘째, 생활비의 중력.</strong> 생활비를 월 30만 원 줄이면(연 360만 원), 매년 투자에 넣는 금액이 그만큼 늘어나고, 이 차이가 복리로 증폭된다. 생활비 절감은 단순히 "아끼는 것"이 아니라 복리의 연료를 추가하는 것이다.</p>
+
+<p class="fade-in"><strong>셋째, 교차 이후의 가속.</strong> 교차점을 넘기면 투자소득 곡선이 근로 잉여 선을 순식간에 벌려놓는다. 처음에는 겨우 추월했지만, 3~4년만 지나면 투자소득이 근로 잉여의 2배, 3배가 된다. 이것이 복리의 본질이다 — 22강에서 버핏의 자산 99%가 50세 이후에 생겼다는 바로 그 구조.</p>
+
+<div class="sb fade-in">· · ·</div>
+
+<h2 class="fade-in">세율이 만드는 천장, 복리가 뚫는 천장</h2>
+
+<p class="fade-in">한국의 소득세는 누진세다. 과세표준 기준으로 1,400만 원까지 6%, 5,000만 원까지 15%, 8,800만 원까지 24%, 그 이상은 35~45%까지 올라간다. 여기에 4대 보험(약 9.4%)과 지방소득세를 더하면, 연봉이 올라갈수록 실수령 비율은 점점 줄어든다.</p>
+
+<p class="fade-in">시뮬레이터에서 연봉을 3,500만 원에서 5,000만 원으로 올려보자. 세전 연봉은 1,500만 원 올랐지만, 세후 잉여 증가분은 약 1,100만 원이다. 다시 5,000만 원에서 7,000만 원으로 올리면? 세전으로는 똑같이 2,000만 원 증가인데, 세후 잉여 증가분은 약 1,400만 원 — 연봉이 올라갈수록 같은 금액을 올려도 실수령 증가폭은 줄어든다. <strong>근로소득의 한계효율은 분명히 존재한다.</strong></p>
+
+<p class="fade-in">반면 투자수익률에는 이런 천장이 없다. 물론 높은 수익률을 유지하는 것은 어렵다. 하지만 수익률 1%의 증가는 누적 자산 전체에 적용되기 때문에, 자산이 커질수록 1%의 절대적 효과가 커진다. 자산 1억 원에서 수익률 1%는 100만 원이지만, 자산 5억 원에서 1%는 500만 원이다.</p>
+
+<div class="pq fade-in">
+  근로소득의 곡선에는 세율이라는 <em>천장</em>이 있다.<br>
+  투자소득의 곡선에는 복리라는 <em>바닥</em>이 있다.<br>
+  <span class="src">천장 아래에서 뛰는 것과, 바닥 위에서 쌓는 것은 다른 종류의 성장이다.</span>
+</div>
+
+<div class="sb fade-in">· · ·</div>
+
+<h2 class="fade-in">카너먼이 같은 곳을 가리킨다</h2>
+
+<p class="fade-in">이 구조가 세금에서만 나타나는 것은 아니다. 2010년 노벨 경제학상 수상자 대니얼 카너먼과 앵거스 디턴은 소득과 행복 사이의 관계를 연구했다. 소득이 올라가면 행복도 올라가지만, <strong>연 $75,000(현재 가치 약 $110,000)</strong>을 지나면 행복 증가가 정체된다는 결론이었다. 한화로 환산하면 연봉 7,000~8,000만 원 수준이다.</p>
+
+<p class="fade-in">2023년에 카너먼과 킬링스워스가 공동 연구를 통해 이 논쟁을 해소했다. 대부분의 사람에게는 소득과 행복이 계속 비례했지만, <strong>가장 불행한 하위 20%</strong>에게는 $100,000 이후 행복 정체가 실재했다. 즉, 불행을 줄이는 데는 소득의 한계가 있지만, 이미 행복한 사람에게는 소득보다 다른 요소(자율성, 의미, 성장)가 더 중요하다는 뜻이다.</p>
+
+<p class="fade-in">이 연구가 우리의 그래프와 겹친다. 세율 곡선의 변곡점(연봉 7,000~8,800만 원)과 행복 정체 구간이 놀랍도록 일치한다. <span class="hl">돈을 더 벌어도 세금이 더 떼가고, 행복도 더 늘지 않는 구간</span> — 그 구간이 바로 에너지의 방향을 바꿔야 하는 좌표다.</p>
+
+<div class="sb fade-in">· · ·</div>
+
+<h2 class="fade-in">에너지의 방향을 바꾼다는 것</h2>
+
+<p class="fade-in">오해가 없어야 한다. 이 글은 "일을 그만두라"는 이야기가 아니다. 근로소득은 투자의 씨앗을 만드는 원천이다. 씨앗 없이 나무는 자라지 않는다.</p>
+
+<p class="fade-in">이 글이 말하는 것은 <strong>에너지 배분의 전환</strong>이다. 시뮬레이터에서 확인했듯, 교차점 이전까지는 잉여를 만드는 것(= 근로소득)이 자산 성장의 주된 엔진이다. 하지만 교차점을 지나면 투자소득이 엔진의 주도권을 가져간다. 이 시점부터는 주당 50시간을 60시간으로 늘려 연봉을 올리는 것보다, 50시간을 유지하면서 <strong>잔여 시간에 투자 실력을 1%라도 높이는 것</strong>이 자산 성장에 더 크게 기여한다.</p>
+
+<p class="fade-in">잔여 시간의 전환이란 넷플릭스를 보는 시간을 늘리자는 것이 아니다. 하지만 거창할 필요도 없다. 이 에세이를 읽고 있는 지금 이 시간이 이미 자기계발이다. 투자에 대해 한 줄이라도 읽고, 복리의 구조를 한 번이라도 떠올려보는 것 — 그것이 수익률 슬라이더를 1%라도 올리는 행위다. 시뮬레이터에서 수익률을 1%만 올려보면, 교차점이 앞당겨지고 10년 뒤 누적 자산의 차이는 수천만 원에 이른다.</p>
+
+<p class="fade-in">근로소득은 은퇴와 함께 끊어진다. 투자소득은 끊어지지 않는다. 22강에서 말했다 — <strong>복리는 중단하지 않는 한 영원히 작동한다.</strong> 특별강(축이 다른 두 세계)에서 말했다 — 근면성실과 투자는 같은 축 위의 양 끝이 아니라 <strong>독립된 두 축</strong>이다. 지금의 근면성실로 씨앗을 모으고, 그 씨앗을 투자라는 궤도에 올려놓는 것. 이 두 축을 동시에 세우는 것이 궤도탈출의 완성이다.</p>
+
+<!-- ═══ 한 걸음 더 ═══ -->
+<div class="one-step fade-in">
+  <div class="label">한 걸음 더 — 이미 시작되고 있는 것</div>
+  <p>위 시뮬레이터의 기본값은 연봉 3,500만 원, 생활비 170만 원이다. 만약 이 숫자가 자신의 상황과 크게 다르지 않다면, 시뮬레이터가 이미 계산을 끝내놓은 셈이다.</p>
+  <p>수익률 15% 기준, <strong>6년차</strong>에 투자소득이 근로 잉여를 추월한다. 6년이다. 정년까지 30년을 기다릴 필요 없이, 지금 시작하면 30대 안에 교차점을 지난다.</p>
+  <p>지금 당장 뭔가를 바꿀 필요는 없다. 다만 한 가지만 기억하면 된다. 매달 남는 잉여가 — 크든 작든 — <strong>은행이 아니라 투자 계좌에 들어가기 시작하면</strong>, 시뮬레이터의 곡선이 현실이 된다. 수익률 슬라이더를 1%만 올려보면, 그 작은 차이가 교차점을 얼마나 앞당기는지 볼 수 있다.</p>
+</div>
+
+<div class="takeaway fade-in">
+  <div class="label">오늘의 한 줄</div>
+  <p><strong>씨앗을 모으는 시간</strong>과<br>
+  <strong>씨앗이 자라는 시간</strong>은<br>
+  다른 종류의 시간이다.<br>
+  <span style="font-size:14px;color:#8A7F72;margin-top:8px;display:inline-block;">— 지금 모으고 있다면, 이미 시작된 것이다.</span></p>
+</div>
+
+</article>
+
+<footer class="footer">
+  <p>투자 에세이 시리즈 · 특별강<br>
+  <span style="opacity:.6">22강(복리), 특별강 IX(축이 다른 두 세계)의 확장편</span></p>
+</footer>
+
+<script>
+// ═══ Tax Calculation ═══
+var TAX = [
+  {lim:1400, r:0.06, d:0},
+  {lim:5000, r:0.15, d:126},
+  {lim:8800, r:0.24, d:576},
+  {lim:15000, r:0.35, d:1544},
+  {lim:30000, r:0.38, d:1994},
+  {lim:50000, r:0.40, d:2594},
+  {lim:100000, r:0.42, d:3594},
+  {lim:Infinity, r:0.45, d:6594}
+];
+
+function earnDed(s) {
+  if (s <= 500) return s * 0.70;
+  if (s <= 1500) return 350 + (s - 500) * 0.40;
+  if (s <= 4500) return 750 + (s - 1500) * 0.15;
+  if (s <= 10000) return 1200 + (s - 4500) * 0.05;
+  return 1475 + (s - 10000) * 0.02;
+}
+
+function incomeTax(ti) {
+  if (ti <= 0) return 0;
+  for (var i = 0; i < TAX.length; i++) {
+    if (ti <= TAX[i].lim) return ti * TAX[i].r - TAX[i].d;
+  }
+  return 0;
+}
+
+function netIncome(salary) {
+  var si = salary * 0.094;
+  var ed = earnDed(salary);
+  var ti = salary - ed - 150 - si;
+  if (ti < 0) ti = 0;
+  var tax = Math.max(0, incomeTax(ti));
+  var local = tax * 0.1;
+  return salary - si - tax - local;
+}
+
+// ═══ Simulation ═══
+function simulate(salary, monthlyCost, rate) {
+  var annualCost = monthlyCost * 12;
+  var net = netIncome(salary);
+  var surplus = Math.max(0, net - annualCost);
+  var years = 15;
+  var data = [];
+  var portfolio = 0;
+  var crossYear = -1;
+
+  for (var y = 0; y <= years; y++) {
+    var invIncome = portfolio * rate;
+    if (y > 0) {
+      portfolio = portfolio + invIncome + surplus;
+    }
+    // For year 0, just show starting state
+    data.push({
+      year: y,
+      surplus: surplus,
+      invIncome: y === 0 ? 0 : invIncome,
+      portfolio: portfolio
+    });
+    if (y > 0 && invIncome >= surplus && crossYear === -1) {
+      crossYear = y;
+    }
+  }
+  return {data: data, crossYear: crossYear, surplus: surplus};
+}
+
+// ═══ Chart Drawing ═══
+var cvs = document.getElementById('cvs');
+var c = cvs.getContext('2d');
+
+function draw() {
+  var salary = parseInt(document.getElementById('sSal').value);
+  var cost = parseInt(document.getElementById('sCost').value);
+  var rate = parseInt(document.getElementById('sRate').value) / 100;
+
+  // Update displays
+  document.getElementById('vSal').innerHTML = salary.toLocaleString() + '<small>만 원</small>';
+  document.getElementById('vCost').innerHTML = cost + '<small>만 원</small>';
+  document.getElementById('vRate').innerHTML = (rate * 100).toFixed(0) + '<small>%</small>';
+
+  var sim = simulate(salary, cost, rate);
+  var d = sim.data;
+
+  // Canvas setup
+  var dpr = window.devicePixelRatio || 1;
+  var rect = cvs.parentElement.getBoundingClientRect();
+  cvs.width = rect.width * dpr;
+  cvs.height = rect.height * dpr;
+  cvs.style.width = rect.width + 'px';
+  cvs.style.height = rect.height + 'px';
+  c.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  var W = rect.width;
+  var H = rect.height;
+  var pad = {t:24, r:16, b:44, l:56};
+  var cw = W - pad.l - pad.r;
+  var ch = H - pad.t - pad.b;
+
+  // Find max Y
+  var maxInv = 0;
+  for (var i = 0; i < d.length; i++) {
+    if (d[i].invIncome > maxInv) maxInv = d[i].invIncome;
+  }
+  var maxY = Math.max(sim.surplus * 1.5, maxInv * 1.15);
+  if (maxY <= 0) maxY = 1000;
+  var maxX = 15;
+
+  function tx(v) { return pad.l + (v / maxX) * cw; }
+  function ty(v) { return pad.t + ch - (v / maxY) * ch; }
+
+  c.clearRect(0, 0, W, H);
+
+  // Grid
+  c.strokeStyle = '#E0D5C5';
+  c.lineWidth = 0.5;
+  c.setLineDash([3, 3]);
+  var step = maxY < 3000 ? 500 : maxY < 10000 ? 2000 : maxY < 50000 ? 10000 : 50000;
+  for (var gy = 0; gy <= maxY; gy += step) {
+    c.beginPath(); c.moveTo(pad.l, ty(gy)); c.lineTo(W - pad.r, ty(gy)); c.stroke();
+  }
+  for (var gx = 0; gx <= 15; gx += 3) {
+    c.beginPath(); c.moveTo(tx(gx), pad.t); c.lineTo(tx(gx), H - pad.b); c.stroke();
+  }
+  c.setLineDash([]);
+
+  // Surplus line (horizontal)
+  c.strokeStyle = '#B8860B';
+  c.lineWidth = 2;
+  c.beginPath();
+  c.moveTo(tx(0), ty(sim.surplus));
+  c.lineTo(tx(15), ty(sim.surplus));
+  c.stroke();
+
+  // Label for surplus line
+  c.font = '500 11px "Noto Sans KR"';
+  c.fillStyle = '#B8860B';
+  c.textAlign = 'left';
+  c.fillText('근로 잉여 ' + Math.round(sim.surplus).toLocaleString() + '만', tx(0) + 4, ty(sim.surplus) - 8);
+
+  // Investment income curve
+  c.strokeStyle = '#1565C0';
+  c.lineWidth = 2.5;
+  c.beginPath();
+  for (var i = 0; i < d.length; i++) {
+    var x = tx(d[i].year);
+    var y = ty(d[i].invIncome);
+    if (i === 0) c.moveTo(x, y);
+    else c.lineTo(x, y);
+  }
+  c.stroke();
+
+  // Fill under investment curve
+  c.fillStyle = 'rgba(21,101,192,0.06)';
+  c.beginPath();
+  c.moveTo(tx(0), ty(0));
+  for (var i = 0; i < d.length; i++) {
+    c.lineTo(tx(d[i].year), ty(d[i].invIncome));
+  }
+  c.lineTo(tx(15), ty(0));
+  c.closePath();
+  c.fill();
+
+  // Crossover marker
+  if (sim.crossYear > 0 && sim.crossYear <= 15) {
+    var cx = tx(sim.crossYear);
+    var cy = ty(d[sim.crossYear].invIncome);
+
+    // Vertical line
+    c.setLineDash([4, 3]);
+    c.strokeStyle = '#2E7D32';
+    c.lineWidth = 1;
+    c.beginPath();
+    c.moveTo(cx, pad.t);
+    c.lineTo(cx, H - pad.b);
+    c.stroke();
+    c.setLineDash([]);
+
+    // Dot
+    c.fillStyle = '#2E7D32';
+    c.beginPath();
+    c.arc(cx, cy, 5, 0, Math.PI * 2);
+    c.fill();
+    c.fillStyle = '#fff';
+    c.beginPath();
+    c.arc(cx, cy, 2, 0, Math.PI * 2);
+    c.fill();
+
+    // Label
+    c.fillStyle = '#2E7D32';
+    c.font = '700 12px "Noto Sans KR"';
+    c.textAlign = 'center';
+    c.fillText(sim.crossYear + '년차', cx, pad.t + 16);
+
+    // Investment income label on curve
+    c.fillStyle = '#1565C0';
+    c.font = '500 11px "Noto Sans KR"';
+    var labelIdx = Math.min(sim.crossYear + 3, d.length - 1);
+    c.textAlign = 'left';
+    c.fillText('투자소득', tx(labelIdx) + 4, ty(d[labelIdx].invIncome) - 6);
+  } else {
+    // Label the curve anyway
+    c.fillStyle = '#1565C0';
+    c.font = '500 11px "Noto Sans KR"';
+    c.textAlign = 'left';
+    var li = Math.min(10, d.length - 1);
+    c.fillText('투자소득', tx(li) + 4, ty(d[li].invIncome) - 6);
+  }
+
+  // X axis labels
+  c.fillStyle = '#6B6560';
+  c.font = '400 11px "Noto Sans KR"';
+  c.textAlign = 'center';
+  for (var gx = 0; gx <= 15; gx += 3) {
+    c.fillText(gx + '년', tx(gx), H - pad.b + 18);
+  }
+  c.fillText('투자 시작 후 경과 연수', W / 2, H - 6);
+
+  // Y axis labels
+  c.textAlign = 'right';
+  for (var gy = 0; gy <= maxY; gy += step) {
+    var label = gy >= 10000 ? (gy / 10000).toFixed(1) + '억' : gy.toLocaleString();
+    c.fillText(label, pad.l - 6, ty(gy) + 4);
+  }
+
+  // No surplus warning
+  if (sim.surplus <= 0) {
+    c.fillStyle = '#C62828';
+    c.font = '600 14px "Noto Sans KR"';
+    c.textAlign = 'center';
+    c.fillText('⚠ 잉여소득이 0 이하입니다. 연봉을 높이거나 생활비를 줄여보세요.', W / 2, H / 2);
+  }
+
+  // Update stats
+  if (sim.crossYear > 0 && sim.crossYear <= 15) {
+    document.getElementById('stCross').textContent = sim.crossYear + '년차';
+    document.getElementById('stPort').textContent = Math.round(d[sim.crossYear].portfolio).toLocaleString();
+    document.getElementById('stInv').textContent = Math.round(d[sim.crossYear].invIncome).toLocaleString();
+  } else if (sim.surplus <= 0) {
+    document.getElementById('stCross').textContent = '—';
+    document.getElementById('stPort').textContent = '—';
+    document.getElementById('stInv').textContent = '—';
+  } else {
+    document.getElementById('stCross').textContent = '15년+';
+    document.getElementById('stPort').textContent = Math.round(d[15].portfolio).toLocaleString();
+    document.getElementById('stInv').textContent = Math.round(d[15].invIncome).toLocaleString();
+  }
+
+  // Build table
+  buildTable(d, sim.crossYear, sim.surplus);
+}
+
+function buildTable(d, crossYear, surplus) {
+  var wrap = document.getElementById('tblWrap');
+  if (wrap.style.display === 'none') return; // don't build if hidden
+
+  var html = '<table class="yr-table"><thead><tr>';
+  html += '<th>년차</th><th>연간 잉여</th><th>투자소득</th><th>누적 자산</th><th>자산 중 투자이익</th>';
+  html += '</tr></thead><tbody>';
+
+  var totalContrib = 0;
+  for (var i = 0; i < d.length; i++) {
+    if (i > 0) totalContrib += surplus;
+    var invTotal = d[i].portfolio - totalContrib;
+    if (invTotal < 0) invTotal = 0;
+    var isCross = (i === crossYear);
+    html += '<tr' + (isCross ? ' class="cross-row"' : '') + '>';
+    html += '<td>' + d[i].year + (isCross ? ' ★' : '') + '</td>';
+    html += '<td>' + Math.round(surplus).toLocaleString() + '</td>';
+    html += '<td>' + Math.round(d[i].invIncome).toLocaleString() + '</td>';
+    html += '<td>' + Math.round(d[i].portfolio).toLocaleString() + '</td>';
+    html += '<td>' + Math.round(invTotal).toLocaleString() + '</td>';
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+// ═══ Event Listeners ═══
+document.getElementById('sSal').addEventListener('input', draw);
+document.getElementById('sCost').addEventListener('input', draw);
+document.getElementById('sRate').addEventListener('input', draw);
+window.addEventListener('resize', draw);
+
+document.getElementById('tblBtn').addEventListener('click', function() {
+  var wrap = document.getElementById('tblWrap');
+  var btn = document.getElementById('tblBtn');
+  if (wrap.style.display === 'none') {
+    wrap.style.display = 'block';
+    btn.textContent = '테이블 접기 ▴';
+    draw(); // rebuild table
+  } else {
+    wrap.style.display = 'none';
+    btn.textContent = '연도별 상세 테이블 보기 ▾';
+  }
+});
+
+// Intersection Observer
+var obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, {threshold: 0.15, rootMargin: '0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+
+// Init
+draw();
+</script>
+
+</body>
+</html>
